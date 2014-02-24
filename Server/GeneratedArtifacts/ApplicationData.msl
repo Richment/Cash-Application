@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping CdmEntityContainer="ApplicationDataObjectContext" StorageEntityContainer="ApplicationDataStore">
+    <EntitySetMapping Name="KundenSet">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Kunden)">
+        <MappingFragment StoreEntitySet="KundenSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Vorname" ColumnName="Vorname" />
+          <ScalarProperty Name="Nachnahme" ColumnName="Nachnahme" />
+          <ScalarProperty Name="Firma" ColumnName="Firma" />
+          <ScalarProperty Name="Kundennummer_1" ColumnName="Kundennummer_1" />
+          <ScalarProperty Name="Kundennummer_2" ColumnName="Kundennummer_2" />
+          <ScalarProperty Name="Straße" ColumnName="Straße" />
+          <ScalarProperty Name="Hausnummer" ColumnName="Hausnummer" />
+          <ScalarProperty Name="PLZ" ColumnName="PLZ" />
+          <ScalarProperty Name="Stadt" ColumnName="Stadt" />
+          <ScalarProperty Name="Land" ColumnName="Land" />
+          <ScalarProperty Name="Telefonnummer" ColumnName="Telefonnummer" />
+          <ScalarProperty Name="Faxnummer" ColumnName="Faxnummer" />
+          <ScalarProperty Name="EMailadresse" ColumnName="EMailadresse" />
+          <ScalarProperty Name="Webseite" ColumnName="Webseite" />
+          <ScalarProperty Name="Rabatt" ColumnName="Rabatt" />
+          <ScalarProperty Name="Zahlungsziel" ColumnName="Zahlungsziel" />
+          <ScalarProperty Name="Bemerkungen" ColumnName="Bemerkungen" />
+          <ScalarProperty Name="Sonstiges" ColumnName="Sonstiges" />
+          <ScalarProperty Name="Kunden_Kundengruppe" ColumnName="Kunden_Kundengruppe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KundengruppeSet">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Kundengruppe)">
+        <MappingFragment StoreEntitySet="KundengruppeSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Bezeichnung" ColumnName="Bezeichnung" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ArtikelstammSet">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Artikelstamm)">
+        <MappingFragment StoreEntitySet="ArtikelstammSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Artikelbeschreibung" ColumnName="Artikelbeschreibung" />
+          <ScalarProperty Name="Vertriebsname" ColumnName="Vertriebsname" />
+          <ScalarProperty Name="Artikelnummer" ColumnName="Artikelnummer" />
+          <ScalarProperty Name="Anzahl_PK" ColumnName="Anzahl_PK" />
+          <ScalarProperty Name="HK_pro_PK" ColumnName="HK_pro_PK" />
+          <ScalarProperty Name="EK_pro_PK" ColumnName="EK_pro_PK" />
+          <ScalarProperty Name="VK_pro_PK" ColumnName="VK_pro_PK" />
+          <ScalarProperty Name="Marge" ColumnName="Marge" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RechnungenSet">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Rechnungen)">
+        <MappingFragment StoreEntitySet="RechnungenSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Rechnungen_BestellStatus" ColumnName="Rechnungen_BestellStatus" />
+          <ScalarProperty Name="Auftragsnummer" ColumnName="Auftragsnummer" />
+          <ScalarProperty Name="Referenznummer" ColumnName="Referenznummer" />
+          <ScalarProperty Name="Lieferscheinnummer" ColumnName="Lieferscheinnummer" />
+          <ScalarProperty Name="Webshop_ID" ColumnName="Webshop_ID" />
+          <ScalarProperty Name="Rechnungen_Kunden" ColumnName="Rechnungen_Kunden" />
+          <ScalarProperty Name="Bestelldatum" ColumnName="Bestelldatum" />
+          <ScalarProperty Name="Lieferdatum" ColumnName="Lieferdatum" />
+          <ScalarProperty Name="Rechnungsdatum" ColumnName="Rechnungsdatum" />
+          <ScalarProperty Name="Rechnungsnummer" ColumnName="Rechnungsnummer" />
+          <ScalarProperty Name="Lieferkosten" ColumnName="Lieferkosten" />
+          <ScalarProperty Name="Rabatt" ColumnName="Rabatt" />
+          <ScalarProperty Name="RechnungsadressenId" ColumnName="RechnungsadressenId" />
+          <ScalarProperty Name="LieferadressenId" ColumnName="LieferadressenId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ArtikellisteSet">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Artikelliste)">
+        <MappingFragment StoreEntitySet="ArtikellisteSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Anzahl" ColumnName="Anzahl" />
+          <ScalarProperty Name="Artikelliste_Rechnungen" ColumnName="Artikelliste_Rechnungen" />
+          <ScalarProperty Name="Artikelliste_Artikelstamm" ColumnName="Artikelliste_Artikelstamm" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FirmendatenSet">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Firmendaten)">
+        <MappingFragment StoreEntitySet="FirmendatenSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="eigenName" ColumnName="eigenName" />
+          <ScalarProperty Name="eigenFirmenname" ColumnName="eigenFirmenname" />
+          <ScalarProperty Name="eigenStraße" ColumnName="eigenStraße" />
+          <ScalarProperty Name="eigenHausnummer" ColumnName="eigenHausnummer" />
+          <ScalarProperty Name="eigenPLZ" ColumnName="eigenPLZ" />
+          <ScalarProperty Name="eigenStadt" ColumnName="eigenStadt" />
+          <ScalarProperty Name="eigenLand" ColumnName="eigenLand" />
+          <ScalarProperty Name="eigenUstID" ColumnName="eigenUstID" />
+          <ScalarProperty Name="eigenEMail" ColumnName="eigenEMail" />
+          <ScalarProperty Name="eigenWebseite" ColumnName="eigenWebseite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Meine_DatenSet">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Meine_Daten)">
+        <MappingFragment StoreEntitySet="Meine_DatenSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="selfFirmenname" ColumnName="selfFirmenname" />
+          <ScalarProperty Name="selfStraße" ColumnName="selfStraße" />
+          <ScalarProperty Name="selfHausnummer" ColumnName="selfHausnummer" />
+          <ScalarProperty Name="selfPLZ" ColumnName="selfPLZ" />
+          <ScalarProperty Name="selfStadt" ColumnName="selfStadt" />
+          <ScalarProperty Name="selfLand" ColumnName="selfLand" />
+          <ScalarProperty Name="selfUSTID" ColumnName="selfUSTID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BestellStatusSet">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.BestellStatus)">
+        <MappingFragment StoreEntitySet="BestellStatusSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Bezeichnung" ColumnName="Bezeichnung" />
+          <ScalarProperty Name="Bild" ColumnName="Bild" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdressenSet">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.AdressenSetItem)">
+        <MappingFragment StoreEntitySet="AdressenSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Starße" ColumnName="Starße" />
+          <ScalarProperty Name="Hausnummer" ColumnName="Hausnummer" />
+          <ScalarProperty Name="PLZ" ColumnName="PLZ" />
+          <ScalarProperty Name="Stadt" ColumnName="Stadt" />
+          <ScalarProperty Name="Land" ColumnName="Land" />
+          <ScalarProperty Name="Lieferadresse" ColumnName="Lieferadresse" />
+          <ScalarProperty Name="Kunden_Rechnungsadressen" ColumnName="Kunden_Rechnungsadressen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

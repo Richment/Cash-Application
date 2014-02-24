@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ApplicationDataStore" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ApplicationDataStore">
+    <EntitySet Name="KundenSet" EntityType="ApplicationDataStore.Kunden" store:Type="Tables" Schema="dbo" Table="KundenSet" />
+    <EntitySet Name="KundengruppeSet" EntityType="ApplicationDataStore.Kundengruppe" store:Type="Tables" Schema="dbo" Table="KundengruppeSet" />
+    <EntitySet Name="ArtikelstammSet" EntityType="ApplicationDataStore.Artikelstamm" store:Type="Tables" Schema="dbo" Table="ArtikelstammSet" />
+    <EntitySet Name="RechnungenSet" EntityType="ApplicationDataStore.Rechnungen" store:Type="Tables" Schema="dbo" Table="RechnungenSet" />
+    <EntitySet Name="ArtikellisteSet" EntityType="ApplicationDataStore.Artikelliste" store:Type="Tables" Schema="dbo" Table="ArtikellisteSet" />
+    <EntitySet Name="FirmendatenSet" EntityType="ApplicationDataStore.Firmendaten" store:Type="Tables" Schema="dbo" Table="FirmendatenSet" />
+    <EntitySet Name="Meine_DatenSet" EntityType="ApplicationDataStore.Meine_Daten" store:Type="Tables" Schema="dbo" Table="Meine_DatenSet" />
+    <EntitySet Name="BestellStatusSet" EntityType="ApplicationDataStore.BestellStatus" store:Type="Tables" Schema="dbo" Table="BestellStatusSet" />
+    <EntitySet Name="AdressenSet" EntityType="ApplicationDataStore.AdressenSetItem" store:Type="Tables" Schema="dbo" Table="AdressenSet" />
+    <AssociationSet Name="Artikelliste_Rechnungen" Association="ApplicationDataStore.Artikelliste_Rechnungen">
+      <End Role="Rechnungen" EntitySet="RechnungenSet" />
+      <End Role="Artikelliste" EntitySet="ArtikellisteSet" />
+    </AssociationSet>
+    <AssociationSet Name="Kunden_Kundengruppe" Association="ApplicationDataStore.Kunden_Kundengruppe">
+      <End Role="Kundengruppe" EntitySet="KundengruppeSet" />
+      <End Role="Kunden" EntitySet="KundenSet" />
+    </AssociationSet>
+    <AssociationSet Name="Rechnungen_Kunden" Association="ApplicationDataStore.Rechnungen_Kunden">
+      <End Role="Kunden" EntitySet="KundenSet" />
+      <End Role="Rechnungen" EntitySet="RechnungenSet" />
+    </AssociationSet>
+    <AssociationSet Name="Artikelliste_Artikelstamm" Association="ApplicationDataStore.Artikelliste_Artikelstamm">
+      <End Role="Artikelstamm" EntitySet="ArtikelstammSet" />
+      <End Role="Artikelliste" EntitySet="ArtikellisteSet" />
+    </AssociationSet>
+    <AssociationSet Name="Kunden_AdressenSetItem" Association="ApplicationDataStore.Kunden_AdressenSetItem">
+      <End Role="Kunden" EntitySet="KundenSet" />
+      <End Role="AdressenSetItem" EntitySet="AdressenSet" />
+    </AssociationSet>
+    <AssociationSet Name="Rechnungen_BestellStatus" Association="ApplicationDataStore.Rechnungen_BestellStatus">
+      <End Role="BestellStatus" EntitySet="BestellStatusSet" />
+      <End Role="Rechnungen" EntitySet="RechnungenSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Kunden">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Vorname" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Nachnahme" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Firma" Type="nvarchar" MaxLength="255" />
+    <Property Name="Kundennummer_1" Type="nvarchar" MaxLength="255" />
+    <Property Name="Kundennummer_2" Type="nvarchar" MaxLength="255" />
+    <Property Name="Straße" Type="nvarchar" MaxLength="255" />
+    <Property Name="Hausnummer" Type="int" />
+    <Property Name="PLZ" Type="int" />
+    <Property Name="Stadt" Type="nvarchar" MaxLength="255" />
+    <Property Name="Land" Type="nvarchar" MaxLength="255" />
+    <Property Name="Telefonnummer" Type="nvarchar" MaxLength="255" />
+    <Property Name="Faxnummer" Type="nvarchar" MaxLength="255" />
+    <Property Name="EMailadresse" Type="nvarchar" MaxLength="255" />
+    <Property Name="Webseite" Type="nvarchar" MaxLength="255" />
+    <Property Name="Rabatt" Type="int" Nullable="false" />
+    <Property Name="Zahlungsziel" Type="int" Nullable="false" />
+    <Property Name="Bemerkungen" Type="nvarchar" MaxLength="255" />
+    <Property Name="Sonstiges" Type="nvarchar" MaxLength="255" />
+    <Property Name="Kunden_Kundengruppe" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kundengruppe">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Bezeichnung" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Artikelstamm">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Artikelbeschreibung" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Vertriebsname" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Artikelnummer" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Anzahl_PK" Type="int" Nullable="false" />
+    <Property Name="HK_pro_PK" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="EK_pro_PK" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="VK_pro_PK" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Marge" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Rechnungen">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Auftragsnummer" Type="nvarchar" MaxLength="255" />
+    <Property Name="Referenznummer" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Lieferscheinnummer" Type="nvarchar" MaxLength="255" />
+    <Property Name="Webshop_ID" Type="nvarchar" MaxLength="255" />
+    <Property Name="Bestelldatum" Type="datetime" Nullable="false" />
+    <Property Name="Lieferdatum" Type="datetime" />
+    <Property Name="Rechnungsdatum" Type="datetime" />
+    <Property Name="Rechnungsnummer" Type="int" />
+    <Property Name="Lieferkosten" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Rabatt" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="RechnungsadressenId" Type="int" Nullable="false" />
+    <Property Name="LieferadressenId" Type="int" />
+    <Property Name="Rechnungen_Kunden" Type="int" Nullable="false" />
+    <Property Name="Rechnungen_BestellStatus" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Artikelliste">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Anzahl" Type="int" Nullable="false" />
+    <Property Name="Artikelliste_Rechnungen" Type="int" Nullable="false" />
+    <Property Name="Artikelliste_Artikelstamm" Type="int" />
+  </EntityType>
+  <EntityType Name="Firmendaten">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="eigenName" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="eigenFirmenname" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="eigenStraße" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="eigenHausnummer" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="eigenPLZ" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="eigenStadt" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="eigenLand" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="eigenUstID" Type="nvarchar" MaxLength="255" />
+    <Property Name="eigenEMail" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="eigenWebseite" Type="nvarchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Meine_Daten">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="selfFirmenname" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="selfStraße" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="selfHausnummer" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="selfPLZ" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="selfStadt" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="selfLand" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="selfUSTID" Type="nvarchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="BestellStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Bezeichnung" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Bild" Type="varbinary(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AdressenSetItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Starße" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Hausnummer" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="PLZ" Type="nvarchar" MaxLength="255" />
+    <Property Name="Stadt" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Land" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Lieferadresse" Type="bit" Nullable="false" />
+    <Property Name="Kunden_Rechnungsadressen" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="Artikelliste_Rechnungen">
+    <End Role="Rechnungen" Type="ApplicationDataStore.Rechnungen" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Artikelliste" Type="ApplicationDataStore.Artikelliste" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rechnungen">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Artikelliste">
+        <PropertyRef Name="Artikelliste_Rechnungen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Kunden_Kundengruppe">
+    <End Role="Kundengruppe" Type="ApplicationDataStore.Kundengruppe" Multiplicity="1" />
+    <End Role="Kunden" Type="ApplicationDataStore.Kunden" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kundengruppe">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Kunden">
+        <PropertyRef Name="Kunden_Kundengruppe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Rechnungen_Kunden">
+    <End Role="Kunden" Type="ApplicationDataStore.Kunden" Multiplicity="1" />
+    <End Role="Rechnungen" Type="ApplicationDataStore.Rechnungen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kunden">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Rechnungen">
+        <PropertyRef Name="Rechnungen_Kunden" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Artikelliste_Artikelstamm">
+    <End Role="Artikelstamm" Type="ApplicationDataStore.Artikelstamm" Multiplicity="0..1" />
+    <End Role="Artikelliste" Type="ApplicationDataStore.Artikelliste" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Artikelstamm">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Artikelliste">
+        <PropertyRef Name="Artikelliste_Artikelstamm" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Kunden_AdressenSetItem">
+    <End Role="Kunden" Type="ApplicationDataStore.Kunden" Multiplicity="1" />
+    <End Role="AdressenSetItem" Type="ApplicationDataStore.AdressenSetItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kunden">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AdressenSetItem">
+        <PropertyRef Name="Kunden_Rechnungsadressen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Rechnungen_BestellStatus">
+    <End Role="BestellStatus" Type="ApplicationDataStore.BestellStatus" Multiplicity="1" />
+    <End Role="Rechnungen" Type="ApplicationDataStore.Rechnungen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BestellStatus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Rechnungen">
+        <PropertyRef Name="Rechnungen_BestellStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

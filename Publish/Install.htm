@@ -1,0 +1,60 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <style type="text/css">
+        .style1
+        {
+            font-size: 10pt;
+        }
+        .style2
+        {
+            font-family: "Courier New";
+        }
+        .style3
+        {
+            font-size: 10pt;
+            font-family: "Courier New";
+        }
+    </style>
+</head>
+<h1>
+    Installationsanweisungen für die Microsoft Visual Studio LightSwitch-Anwendung</h1>
+<p style="font-family: Verdana; font-size: small">
+&nbsp;<font size="2">Die folgenden Schritte sind notwendig, um eine Desktopclientanwendung
+    mit zwei Ebenen zu installieren:</font></p>
+<p class="style1" style="font-family: Verdana">
+    1.&nbsp;&nbsp;&nbsp; Installieren Sie SQL Server Express auf dem Zielcomputer (Client),
+    wenn nicht bereits geschehen. LightSwitch-Anwendungen erfordern SQL Server 2005 oder höher 
+    bzw. SQL Server Express 2005 oder höher. 
+    <a href="http://go.microsoft.com/fwlink/?LinkId=206709">Weitere Informationen über die Installationsoptionen von SQL Server Express</a></p>
+<p class="style1" style="font-family: Verdana">
+    2.&nbsp;&nbsp;&nbsp; Stellen Sie auf dem Zielcomputer mit dem Befehlstool sqlcmd.exe 
+    das Datenbankschema bereit. Das Tool Sqlcmd.exe wird mit SQL Server installiert, 
+    normalerweise im Verzeichnis "\Microsoft SQL Server\110\Tools\Binn" unter 
+    dem Verzeichnis "Programme" bzw. "Programme (x86)".</p>
+<p class="style1" style="font-family: Verdana; margin-left: 40px">
+    a.&nbsp;&nbsp;&nbsp;&nbsp; Führen Sie in einer Eingabeaufforderung mit 
+    erweiterten Berechtigungen eine Änderung im Verzeichnis mit der 
+    Veröffentlichungsausgabe durch, und geben Sie einen Befehl ähnlich dem folgenden ein:</p>
+<p class="style1" style="font-family: Verdana; margin-left: 80px">
+    &nbsp;<span class="style2">sqlcmd.exe -i MyApplication.sql -S .\SQLExpress</span></p>
+<p class="style1" style="font-family: Verdana; margin-left: 80px">
+&nbsp;Ersetzen Sie <em>MyApplication</em> durch den Namen Ihrer Anwendung, und ersetzen Sie
+    <em>.\SQLExpress</em> durch den Datenbankspeicherort auf dem Server.</p><p class="style1" style="font-family: Verdana">
+    3.&nbsp;&nbsp;&nbsp; Lokalisieren Sie die web.config-Datei im Unterverzeichnis 
+    "Anwendungsdateien" der Veröffentlichungsausgabe. </p>
+<p class="style1" style="font-family: Verdana; margin-left: 40px">
+    a.&nbsp;&nbsp;&nbsp;&nbsp; Öffnen Sie "web.config" in Notepad, und bearbeiten Sie die 
+    Verbindung im Abschnitt &lt;connectionStrings&gt; <connectionStrings> für die Verwendung Ihres Servers und Datenbanknamens, z. B. 
+    für den Eintrag ähnlich dem folgenden:</p>
+<p class="style3" style="margin-left: 80px">
+    &lt;add name=&quot;_IntrinsicData&quot; connectionString=&quot;Data 
+    Source=SERVERNAME\SQLEXPRESS;Initial Catalog=MyApplication;Integrated 
+    Security=True;Pooling=True;Connect Timeout=30;User Instance=False&quot; /&gt;</p>
+<p class="style1" style="font-family: Verdana; margin-left: 80px">
+    Ersetzen Sie <em>SERVERNAME </em>durch den Namen des Datenbankservers, und ersetzen Sie<em>
+    <em>MyApplication</em> </em>durch den Namen Ihrer Anwendung.</p>
+<p class="style1" style="font-family: Verdana; ">
+    4<em>.&nbsp;&nbsp;&nbsp; 
+</em>
+        Führen Sie "Setup.exe" auf dem Zielcomputer aus, um 
+    die Anwendung zu installieren.</p>
