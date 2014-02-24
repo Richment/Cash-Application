@@ -22,7 +22,7 @@
     <ApplicationServerType>LocalHost</ApplicationServerType>
     <AuthenticationType>None</AuthenticationType>
     <ApplicationName>Cash-Application</ApplicationName>
-    <AssemblyVersion>1.0.7.0</AssemblyVersion>
+    <AssemblyVersion>1.0.8.0</AssemblyVersion>
     <ServiceDefinitionFile>ServiceDefinition.csdef</ServiceDefinitionFile>
     <ServiceConfigurationFile>ServiceConfiguration.cscfg</ServiceConfigurationFile>
     <SqlExpressInstanceName>(LocalDB)\v11.0</SqlExpressInstanceName>
@@ -33,7 +33,7 @@
     <AddAdministrator>True</AddAdministrator>
     <BootstrapperComponentsUrl />
     <DefaultInstallLocation>Application7</DefaultInstallLocation>
-    <DeploySchema>True</DeploySchema>
+    <DeploySchema>False</DeploySchema>
     <PublishNewDatabase>True</PublishNewDatabase>
     <PublishUrl />
     <PublishSite>Default Web Site/Application7</PublishSite>
@@ -53,6 +53,8 @@
     <SccAuxPath />
     <SccLocalPath>
     </SccLocalPath>
+    <PublishLocation>\\BIGB-LAPTOP\SetupFiles</PublishLocation>
+    <DefaultDatabaseName>Cast4Art</DefaultDatabaseName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
