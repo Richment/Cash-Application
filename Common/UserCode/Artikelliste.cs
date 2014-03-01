@@ -6,23 +6,23 @@ using Microsoft.LightSwitch;
 
 namespace LightSwitchApplication
 {
-    public partial class Artikelliste
-    {
+	public partial class Artikelliste
+	{
 
-        partial void Preis_Compute(ref decimal? result)
-        {
-			result = this.Anzahl * Artikelstamm.VK_pro_PK;
-        }
+		partial void Preis_Compute(ref decimal result)
+		{
+			result = Math.Round(this.Anzahl * Artikelstamm.VK_pro_PK, 2);
+		}
 
-        partial void PosPreis_Compute(ref decimal result)
-        {
-			result = 1 * Artikelstamm.VK_pro_PK;
-        }
+		partial void PosPreis_Compute(ref decimal result)
+		{
+			result = Math.Round(Artikelstamm.VK_pro_PK, 2);
+		}
 
-        partial void Position_Compute(ref int result)
-        {
+		partial void Position_Compute(ref int result)
+		{
 			result = this.Position + 1;
-        }
+		}
 
 		partial void Artikelnummer_Compute(ref string result)
 		{
@@ -33,5 +33,5 @@ namespace LightSwitchApplication
 		{
 			result = Artikelstamm.Artikelbeschreibung;
 		}
-    }
+	}
 }

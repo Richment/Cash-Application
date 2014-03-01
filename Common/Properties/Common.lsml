@@ -1605,7 +1605,7 @@
       </EntityProperty>
       <EntityProperty
         Name="Preis"
-        PropertyType=":Decimal?">
+        PropertyType="Microsoft.LightSwitch.Extensions:Money">
         <EntityProperty.Attributes>
           <Computed />
           <NotSearchable />

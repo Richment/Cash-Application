@@ -1392,7 +1392,7 @@
                 </ContentItem>
               </ContentItem>
               <ContentItem
-                DataType=":Decimal?"
+                DataType="Microsoft.LightSwitch.Extensions:Money"
                 Kind="Value"
                 Name="Preis">
                 <ContentItem.DataSource>
@@ -2250,7 +2250,7 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  DataType=":Decimal?"
+                  DataType="Microsoft.LightSwitch.Extensions:Money"
                   Kind="Value"
                   Name="Preis">
                   <ContentItem.DataSource>
@@ -3115,7 +3115,7 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  DataType=":Decimal?"
+                  DataType="Microsoft.LightSwitch.Extensions:Money"
                   Kind="Value"
                   Name="Preis">
                   <ContentItem.DataSource>
@@ -4895,7 +4895,7 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  DataType=":Decimal?"
+                  DataType="Microsoft.LightSwitch.Extensions:Money"
                   Kind="Value"
                   Name="Preis">
                   <ContentItem.DataSource>
@@ -9821,7 +9821,7 @@
                 </ContentItem>
               </ContentItem>
               <ContentItem
-                DataType=":Decimal?"
+                DataType="Microsoft.LightSwitch.Extensions:Money"
                 Kind="Value"
                 Name="Preis">
                 <ContentItem.DataSource>
