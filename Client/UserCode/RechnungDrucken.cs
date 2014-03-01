@@ -127,7 +127,7 @@ namespace LightSwitchApplication
 		{
 			var wordDoc = wordApp.ActiveDocument;
 										 
-			wordDoc.Bookmarks("firma").Range.InsertAfter(ArtikellisteCollection.SelectedItem.Rechnungen.Kunde.Firma);
+//			wordDoc.Bookmarks("firma").Range.InsertAfter(ArtikellisteCollection.SelectedItem.Rechnungen.Kunde.Firma);
 			wordDoc.Bookmarks("Adresse").Range.InsertAfter(ArtikellisteCollection.SelectedItem.Rechnungen.Adresse);
 			wordDoc.Bookmarks("rechnungsnr").Range.InsertAfter(ArtikellisteCollection.SelectedItem.Rechnungen.Rechnungsnummer);
 			wordDoc.Bookmarks("rechnungsdatum").Range.InsertAfter(ArtikellisteCollection.SelectedItem.Rechnungen.Rechnungsdatum);
