@@ -64,7 +64,7 @@ namespace LightSwitchApplication
 
 		partial void SaveDocument_Execute()
 		{
-			string filename = this.FilenameInputBox("Bitte geben Sie einen Dateinamen an.", "Datei speichern...", "dotx", "Neue Rechnung");
+			string filename = this.FilenameInputBox("Bitte geben Sie einen Dateinamen an.", "Datei speichern...", "docx", "Neue Rechnung");
 
 			if ((currentFilename = CreateTemplate()) == null)
 				return;
@@ -127,7 +127,7 @@ namespace LightSwitchApplication
 		{
 			var wordDoc = wordApp.ActiveDocument;
 										 
-//			wordDoc.Bookmarks("firma").Range.InsertAfter(ArtikellisteCollection.SelectedItem.Rechnungen.Kunde.Firma);
+			//wordDoc.Bookmarks("Firma").Range.InsertAfter(ArtikellisteCollection.SelectedItem.Rechnungen.Kunde.Firma);
 			wordDoc.Bookmarks("Adresse").Range.InsertAfter(ArtikellisteCollection.SelectedItem.Rechnungen.Adresse);
 			wordDoc.Bookmarks("rechnungsnr").Range.InsertAfter(ArtikellisteCollection.SelectedItem.Rechnungen.Rechnungsnummer);
 			wordDoc.Bookmarks("rechnungsdatum").Range.InsertAfter(ArtikellisteCollection.SelectedItem.Rechnungen.Rechnungsdatum);

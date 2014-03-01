@@ -68,5 +68,12 @@ namespace LightSwitchApplication
 			};
 			result = String.Join(Environment.NewLine, elements);
 		}
+
+		partial void Netto_Gesamtbetrag_Compute(ref decimal? result)
+		{
+			result = this.ArtikellisteCollection.Sum(i => i.Preis);
+			if (result.HasValue)
+				result = Math.Round(result.Value, 2);
+		}
 	}
 }
