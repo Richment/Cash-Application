@@ -5,43 +5,56 @@ using System.Text;
 using Microsoft.LightSwitch;
 namespace LightSwitchApplication
 {
-    public partial class Rechnungen
-    {
+	public partial class Rechnungen
+	{
 
-        //partial void Rechnungsbetrag_Compute(ref decimal result)
-       // {
-        //    result = GetSubTotal() * (decimal)0.095;
-        //}
+		//partial void Rechnungsbetrag_Compute(ref decimal result)
+	   // {
+		//    result = GetSubTotal() * (decimal)0.095;
+		//}
 
-       // protected decimal GetPreis()
-       // {
-      //      return this.ArtikellisteCollection.Sum(i => i.Preis);
-      //  }
+	   // protected decimal GetPreis()
+	   // {
+	  //      return this.ArtikellisteCollection.Sum(i => i.Preis);
+	  //  }
 
-        partial void Netto_Gesamtbetrag_Compute(ref decimal? result)
-        {
-            result = this.ArtikellisteCollection.Sum(i => i.Preis);
-        }
+	/*	partial void Netto_Gesamtbetrag_Compute(decimal? result)
+		{
+			result = this.ArtikellisteCollection.Sum(i => i.Preis);	
+			if (result.HasValue)
+				result = Math.Round(result.Value, 2);
+		}			  */
 
-        partial void Rabattwert_Compute(ref decimal? result)
-        {
-            result = this.Netto_Gesamtbetrag - Rabatt;
-        }
+		partial void Rabattwert_Compute(ref decimal? result)
+		{
+			result = this.Netto_Gesamtbetrag - Rabatt;
+			if (result.HasValue)
+				result = Math.Round(result.Value, 2);
+		}
 
-        partial void Rechnungsbetrag_Netto_Compute(ref decimal? result)
-        {
-            result = this.Netto_Gesamtbetrag + Lieferkosten;
-        }
+		partial void Rechnungsbetrag_Netto_Compute(ref decimal? result)
+		{
+			result = this.Netto_Gesamtbetrag + Lieferkosten;
+			if (result.HasValue)
+				result = Math.Round(result.Value, 2);
+		}
 
-        partial void Rechnungsbetrag_Brutto_Compute(ref decimal? result)
-        {
-            result = this.Rechnungsbetrag_Netto + (this.Rechnungsbetrag_Netto*19/100);
-        }
+		partial void Rechnungsbetrag_Brutto_Compute(ref decimal? result)
+		{
+			if (this.Rechnungsbetrag_Netto.HasValue)
+			{
+				result = this.Rechnungsbetrag_Netto.Value + (this.Rechnungsbetrag_Netto * 19 / 100);
+				if (result.HasValue)
+					result = Math.Round(result.Value, 2);
+			}
+		}
 
-        partial void Mehrwertsteuer_Compute(ref decimal? result)
-        {
-            result = this.Rechnungsbetrag_Netto * 19 / 100;
-        }
+		partial void Mehrwertsteuer_Compute(ref decimal? result)
+		{
+			result = this.Rechnungsbetrag_Netto * 19 / 100;
+			if (result.HasValue)
+				result = Math.Round(result.Value, 2);
+		}
 
 		partial void Adresse_Compute(ref string result)
 		{
@@ -55,5 +68,5 @@ namespace LightSwitchApplication
 			};
 			result = String.Join(Environment.NewLine, elements);
 		}
-    }
+	}
 }

@@ -2,6 +2,6 @@
 <ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Documents>
     <Document FullPath="C:\Users\Richment\Source\Repos\Cash-Application\Client\Properties\Client.lsml" Checksum="6601F8AC573024CFA2D82C70C1751176970D76ACCDDAFF79C80532970BF9AF46" />
-    <Document FullPath="C:\Users\Richment\Source\Repos\Cash-Application\Common\Properties\Common.lsml" Checksum="C19D483982BEB6489230066282F20228D454A719FFEE33788CEFAA9A2FE1730D" />
+    <Document FullPath="C:\Users\Richment\Source\Repos\Cash-Application\Common\Properties\Common.lsml" Checksum="7543E19EEDEA10F8C79633732B1B45533EF2E55172785740E4603303779345DB" />
   </Documents>
 </ModelDocumentManifest>

@@ -8,15 +8,10 @@ namespace LightSwitchApplication
 {
 	public partial class Artikelliste
 	{
-
-		partial void Preis_Compute(ref decimal result)
-		{
-			result = Math.Round(this.Anzahl * Artikelstamm.VK_pro_PK, 2);
-		}
-
 		partial void PosPreis_Compute(ref decimal result)
 		{
-			result = Math.Round(Artikelstamm.VK_pro_PK, 2);
+			if (Artikelstamm != null)
+				result = Math.Round(this.Artikelstamm.VK_pro_PK, 2);
 		}
 
 		partial void Position_Compute(ref int result)
@@ -25,13 +20,21 @@ namespace LightSwitchApplication
 		}
 
 		partial void Artikelnummer_Compute(ref string result)
-		{
-			result = Artikelstamm.Artikelnummer.ToString();
+		{	
+			if (Artikelstamm != null)
+				result = this.Artikelstamm.Artikelnummer.ToString();
 		}
 
 		partial void Bezeichnung_Compute(ref string result)
+		{ 
+			if (Artikelstamm != null)
+				result = this.Artikelstamm.Artikelbeschreibung;
+		}
+
+		partial void Preis_Compute(ref decimal result)
 		{
-			result = Artikelstamm.Artikelbeschreibung;
+			if (Artikelstamm != null)
+				result = Math.Round(this.Anzahl * this.Artikelstamm.VK_pro_PK, 2);
 		}
 	}
 }
