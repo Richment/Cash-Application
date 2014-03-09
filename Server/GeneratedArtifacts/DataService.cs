@@ -384,6 +384,42 @@ namespace LightSwitchApplication
         partial void AdressenSet_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.AdressenSetItem, bool>> filter);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Bezahlart_CanInsert(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Bezahlart_CanUpdate(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Bezahlart_CanDelete(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Bezahlart_CanRead(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Bezahlart_Inserting(global::LightSwitchApplication.BezahlartItem entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Bezahlart_Inserted(global::LightSwitchApplication.BezahlartItem entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Bezahlart_Updating(global::LightSwitchApplication.BezahlartItem entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Bezahlart_Updated(global::LightSwitchApplication.BezahlartItem entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Bezahlart_Deleting(global::LightSwitchApplication.BezahlartItem entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Bezahlart_Deleted(global::LightSwitchApplication.BezahlartItem entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Bezahlart_Validate(global::LightSwitchApplication.BezahlartItem entity, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder results);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Bezahlart_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.BezahlartItem, bool>> filter);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void SaveChanges_CanExecute(ref bool result);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1120,6 +1156,81 @@ namespace LightSwitchApplication
             {
                 global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.AdressenSetItem, bool>> filter = null;
                 d.AdressenSet_Filter(ref filter);
+                return filter;
+            }
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.BezahlartItem>
+                __BezahlartEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.BezahlartItem>(
+                    "Bezahlart",
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Bezahlart_CanInsert,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Bezahlart_CanUpdate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Bezahlart_CanDelete,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Bezahlart_CanRead,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Bezahlart_Inserting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Bezahlart_Inserted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Bezahlart_Updating,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Bezahlart_Updated,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Bezahlart_Deleting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Bezahlart_Deleted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Bezahlart_Validate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Bezahlart_Filter);
+            private static bool __Bezahlart_CanInsert(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.Bezahlart_CanInsert(ref result);
+                return result;
+            }
+            private static bool __Bezahlart_CanUpdate(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.Bezahlart_CanUpdate(ref result);
+                return result;
+            }
+            private static bool __Bezahlart_CanDelete(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.Bezahlart_CanDelete(ref result);
+                return result;
+            }
+            private static bool __Bezahlart_CanRead(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.Bezahlart_CanRead(ref result);
+                return result;
+            }
+            private static void __Bezahlart_Inserting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.BezahlartItem e)
+            {
+                d.Bezahlart_Inserting(e);
+            }
+            private static void __Bezahlart_Inserted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.BezahlartItem e)
+            {
+                d.Bezahlart_Inserted(e);
+            }
+            private static void __Bezahlart_Updating(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.BezahlartItem e)
+            {
+                d.Bezahlart_Updating(e);
+            }
+            private static void __Bezahlart_Updated(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.BezahlartItem e)
+            {
+                d.Bezahlart_Updated(e);
+            }
+            private static void __Bezahlart_Deleting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.BezahlartItem e)
+            {
+                d.Bezahlart_Deleting(e);
+            }
+            private static void __Bezahlart_Deleted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.BezahlartItem e)
+            {
+                d.Bezahlart_Deleted(e);
+            }
+            private static void __Bezahlart_Validate(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.BezahlartItem e, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder r)
+            {
+                d.Bezahlart_Validate(e, r);
+            }
+            private static global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.BezahlartItem, bool>> __Bezahlart_Filter(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.BezahlartItem, bool>> filter = null;
+                d.Bezahlart_Filter(ref filter);
                 return filter;
             }
             

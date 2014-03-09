@@ -354,16 +354,22 @@ namespace LightSwitchApplication.Implementation
     public partial class Rechnungen :
         global::LightSwitchApplication.Rechnungen.DetailsClass.IImplementation
     {
+        partial void OnRechnungen_KundenChanged()
+        {
+            this.___OnPropertyChanged("Rechnungen_Kunden");
+            this.___OnPropertyChanged("Kunde");
+        }
+        
         partial void OnRechnungen_BestellStatusChanged()
         {
             this.___OnPropertyChanged("Rechnungen_BestellStatus");
             this.___OnPropertyChanged("BestellStatus");
         }
         
-        partial void OnRechnungen_KundenChanged()
+        partial void OnRechnungen_BezahlartItemChanged()
         {
-            this.___OnPropertyChanged("Rechnungen_Kunden");
-            this.___OnPropertyChanged("Kunde");
+            this.___OnPropertyChanged("Rechnungen_BezahlartItem");
+            this.___OnPropertyChanged("BezahlartItem");
         }
         
         partial void OnIdChanged()
@@ -376,6 +382,11 @@ namespace LightSwitchApplication.Implementation
             this.___OnPropertyChanged("RowVersion");
         }
         
+        partial void OnBestellerChanged()
+        {
+            this.___OnPropertyChanged("Besteller");
+        }
+        
         partial void OnAuftragsnummerChanged()
         {
             this.___OnPropertyChanged("Auftragsnummer");
@@ -384,11 +395,6 @@ namespace LightSwitchApplication.Implementation
         partial void OnReferenznummerChanged()
         {
             this.___OnPropertyChanged("Referenznummer");
-        }
-        
-        partial void OnLieferscheinnummerChanged()
-        {
-            this.___OnPropertyChanged("Lieferscheinnummer");
         }
         
         partial void OnWebshop_IDChanged()
@@ -404,6 +410,11 @@ namespace LightSwitchApplication.Implementation
         partial void OnLieferdatumChanged()
         {
             this.___OnPropertyChanged("Lieferdatum");
+        }
+        
+        partial void OnLieferscheinnummerChanged()
+        {
+            this.___OnPropertyChanged("Lieferscheinnummer");
         }
         
         partial void OnRechnungsdatumChanged()
@@ -435,6 +446,38 @@ namespace LightSwitchApplication.Implementation
         {
             this.___OnPropertyChanged("LieferadressenId");
         }
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Rechnungen.DetailsClass.IImplementation.Kunde
+        {
+            get
+            {
+                return this.Kunde;
+            }
+            set
+            {
+                this.Kunde = (global::LightSwitchApplication.Implementation.Kunden)value;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.Kunden> __Kunde
+        {
+            get
+            {
+                if (this.___Kunde == null)
+                {
+                    this.___Kunde = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.Kunden>(
+                        this,
+                        "Kunde",
+                        new string[] { "Rechnungen_Kunden" },
+                        e => global::System.Object.Equals(e.Id, this.Rechnungen_Kunden),
+                        () => this._Kunde,
+                        e => this._Kunde = e);
+                }
+                return this.___Kunde;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.Kunden> ___Kunde;
         
         global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Rechnungen.DetailsClass.IImplementation.BestellStatus
         {
@@ -468,37 +511,37 @@ namespace LightSwitchApplication.Implementation
         
         private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.BestellStatus> ___BestellStatus;
         
-        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Rechnungen.DetailsClass.IImplementation.Kunde
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Rechnungen.DetailsClass.IImplementation.BezahlartItem
         {
             get
             {
-                return this.Kunde;
+                return this.BezahlartItem;
             }
             set
             {
-                this.Kunde = (global::LightSwitchApplication.Implementation.Kunden)value;
+                this.BezahlartItem = (global::LightSwitchApplication.Implementation.BezahlartItem)value;
             }
         }
         
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.Kunden> __Kunde
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.BezahlartItem> __BezahlartItem
         {
             get
             {
-                if (this.___Kunde == null)
+                if (this.___BezahlartItem == null)
                 {
-                    this.___Kunde = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.Kunden>(
+                    this.___BezahlartItem = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.BezahlartItem>(
                         this,
-                        "Kunde",
-                        new string[] { "Rechnungen_Kunden" },
-                        e => global::System.Object.Equals(e.Id, this.Rechnungen_Kunden),
-                        () => this._Kunde,
-                        e => this._Kunde = e);
+                        "BezahlartItem",
+                        new string[] { "Rechnungen_BezahlartItem" },
+                        e => global::System.Object.Equals(e.Id, this.Rechnungen_BezahlartItem),
+                        () => this._BezahlartItem,
+                        e => this._BezahlartItem = e);
                 }
-                return this.___Kunde;
+                return this.___BezahlartItem;
             }
         }
         
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.Kunden> ___Kunde;
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.BezahlartItem> ___BezahlartItem;
         
         global::System.Collections.IEnumerable global::LightSwitchApplication.Rechnungen.DetailsClass.IImplementation.ArtikellisteCollection
         {
@@ -839,6 +882,11 @@ namespace LightSwitchApplication.Implementation
             this.___OnPropertyChanged("Name");
         }
         
+        partial void OnzHd_Besteller_optionalChanged()
+        {
+            this.___OnPropertyChanged("zHd_Besteller_optional");
+        }
+        
         partial void OnStarßeChanged()
         {
             this.___OnPropertyChanged("Starße");
@@ -904,6 +952,62 @@ namespace LightSwitchApplication.Implementation
     }
     #endregion
     
+    #region BezahlartItem
+    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/ApplicationData.Implementation")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class BezahlartItem :
+        global::LightSwitchApplication.BezahlartItem.DetailsClass.IImplementation
+    {
+        partial void OnIdChanged()
+        {
+            this.___OnPropertyChanged("Id");
+        }
+        
+        partial void OnRowVersionChanged()
+        {
+            this.___OnPropertyChanged("RowVersion");
+        }
+        
+        partial void OnBezeichnungChanged()
+        {
+            this.___OnPropertyChanged("Bezeichnung");
+        }
+        
+        partial void OnText_RechnungChanged()
+        {
+            this.___OnPropertyChanged("Text_Rechnung");
+        }
+        
+        global::System.Collections.IEnumerable global::LightSwitchApplication.BezahlartItem.DetailsClass.IImplementation.RechnungenCollection
+        {
+            get
+            {
+                return this.RechnungenCollection;
+            }
+        }
+        
+        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.Rechnungen> __RechnungenCollection
+        {
+            get
+            {
+                if (this.___RechnungenCollection == null)
+                {
+                    this.___RechnungenCollection = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.Rechnungen>(
+                        this,
+                        "RechnungenCollection",
+                        () => this._RechnungenCollection,
+                        e => global::System.Object.Equals(e.Rechnungen_BezahlartItem, this.Id));
+                }
+                return this.___RechnungenCollection;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.Rechnungen> ___RechnungenCollection;
+        
+    }
+    #endregion
+    
     #region ApplicationDataObjectContext
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -946,6 +1050,10 @@ namespace LightSwitchApplication.Implementation
             if (typeof(T) == typeof(global::LightSwitchApplication.AdressenSetItem))
             {
                 return new global::LightSwitchApplication.Implementation.AdressenSetItem();
+            }
+            if (typeof(T) == typeof(global::LightSwitchApplication.BezahlartItem))
+            {
+                return new global::LightSwitchApplication.Implementation.BezahlartItem();
             }
             return null;
         }
@@ -1025,6 +1133,10 @@ namespace LightSwitchApplication.Implementation
             if (typeof(global::LightSwitchApplication.AdressenSetItem) == definitionType)
             {
                 return typeof(global::LightSwitchApplication.Implementation.AdressenSetItem);
+            }
+            if (typeof(global::LightSwitchApplication.BezahlartItem) == definitionType)
+            {
+                return typeof(global::LightSwitchApplication.Implementation.BezahlartItem);
             }
             return null;
         }

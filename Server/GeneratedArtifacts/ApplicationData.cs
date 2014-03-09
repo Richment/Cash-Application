@@ -25,6 +25,7 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "Artikelliste_Artikelstamm", "Artikelstamm", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ApplicationData.Implementation.Artikelstamm), "Artikelliste", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.Artikelliste), true)]
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "Kunden_AdressenSetItem", "Kunden", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApplicationData.Implementation.Kunden), "AdressenSetItem", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.AdressenSetItem), true)]
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "Rechnungen_BestellStatus", "BestellStatus", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApplicationData.Implementation.BestellStatus), "Rechnungen", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.Rechnungen), true)]
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "Rechnungen_BezahlartItem", "BezahlartItem", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApplicationData.Implementation.BezahlartItem), "Rechnungen", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.Rechnungen), true)]
 
 #endregion
 
@@ -216,6 +217,22 @@ namespace ApplicationData.Implementation
             }
         }
         private ObjectSet<AdressenSetItem> _AdressenSet;
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        public ObjectSet<BezahlartItem> Bezahlart
+        {
+            get
+            {
+                if ((_Bezahlart == null))
+                {
+                    _Bezahlart = base.CreateObjectSet<BezahlartItem>("Bezahlart");
+                }
+                return _Bezahlart;
+            }
+        }
+        private ObjectSet<BezahlartItem> _Bezahlart;
 
         #endregion
 
@@ -291,6 +308,14 @@ namespace ApplicationData.Implementation
         public void AddToAdressenSet(AdressenSetItem adressenSetItem)
         {
             base.AddObject("AdressenSet", adressenSetItem);
+        }
+    
+        /// <summary>
+        /// Veraltete Methode zum Hinzufügen eines neuen Objekts zum EntitySet 'Bezahlart'. Verwenden Sie stattdessen die Methode '.Add' der zugeordneten Eigenschaft 'ObjectSet&lt;T&gt;'.
+        /// </summary>
+        public void AddToBezahlart(BezahlartItem bezahlartItem)
+        {
+            base.AddObject("Bezahlart", bezahlartItem);
         }
 
         #endregion
@@ -416,6 +441,30 @@ namespace ApplicationData.Implementation
         private global::System.String _Name;
         partial void OnNameChanging(global::System.String value);
         partial void OnNameChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String zHd_Besteller_optional
+        {
+            get
+            {
+                return _zHd_Besteller_optional;
+            }
+            set
+            {
+                OnzHd_Besteller_optionalChanging(value);
+                ReportPropertyChanging("zHd_Besteller_optional");
+                _zHd_Besteller_optional = value;
+                ReportPropertyChanged("zHd_Besteller_optional");
+                OnzHd_Besteller_optionalChanged();
+            }
+        }
+        private global::System.String _zHd_Besteller_optional;
+        partial void OnzHd_Besteller_optionalChanging(global::System.String value);
+        partial void OnzHd_Besteller_optionalChanged();
     
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.
@@ -1337,6 +1386,167 @@ namespace ApplicationData.Implementation
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Rechnungen>("LightSwitchApplication.Rechnungen_BestellStatus", "Rechnungen", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// Keine Dokumentation für Metadaten verfügbar.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="BezahlartItem")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class BezahlartItem : EntityObject
+    {
+        #region Factory-Methode
+    
+        /// <summary>
+        /// Erstellt ein neues BezahlartItem-Objekt.
+        /// </summary>
+        /// <param name="id">Anfangswert der Eigenschaft Id.</param>
+        /// <param name="rowVersion">Anfangswert der Eigenschaft RowVersion.</param>
+        /// <param name="bezeichnung">Anfangswert der Eigenschaft Bezeichnung.</param>
+        /// <param name="text_Rechnung">Anfangswert der Eigenschaft Text_Rechnung.</param>
+        public static BezahlartItem CreateBezahlartItem(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.String bezeichnung, global::System.String text_Rechnung)
+        {
+            BezahlartItem bezahlartItem = new BezahlartItem();
+            bezahlartItem.Id = id;
+            bezahlartItem.RowVersion = rowVersion;
+            bezahlartItem.Bezeichnung = bezeichnung;
+            bezahlartItem.Text_Rechnung = text_Rechnung;
+            return bezahlartItem;
+        }
+
+        #endregion
+
+        #region Primitive Eigenschaften
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = value;
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] RowVersion
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_RowVersion);
+            }
+            set
+            {
+                OnRowVersionChanging(value);
+                ReportPropertyChanging("RowVersion");
+                _RowVersion = value;
+                ReportPropertyChanged("RowVersion");
+                OnRowVersionChanged();
+            }
+        }
+        private global::System.Byte[] _RowVersion;
+        partial void OnRowVersionChanging(global::System.Byte[] value);
+        partial void OnRowVersionChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Bezeichnung
+        {
+            get
+            {
+                return _Bezeichnung;
+            }
+            set
+            {
+                OnBezeichnungChanging(value);
+                ReportPropertyChanging("Bezeichnung");
+                _Bezeichnung = value;
+                ReportPropertyChanged("Bezeichnung");
+                OnBezeichnungChanged();
+            }
+        }
+        private global::System.String _Bezeichnung;
+        partial void OnBezeichnungChanging(global::System.String value);
+        partial void OnBezeichnungChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Text_Rechnung
+        {
+            get
+            {
+                return _Text_Rechnung;
+            }
+            set
+            {
+                OnText_RechnungChanging(value);
+                ReportPropertyChanging("Text_Rechnung");
+                _Text_Rechnung = value;
+                ReportPropertyChanged("Text_Rechnung");
+                OnText_RechnungChanged();
+            }
+        }
+        private global::System.String _Text_Rechnung;
+        partial void OnText_RechnungChanging(global::System.String value);
+        partial void OnText_RechnungChanged();
+
+        #endregion
+
+    
+        #region Navigationseigenschaften
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "Rechnungen_BezahlartItem", "Rechnungen")]
+        public EntityCollection<Rechnungen> RechnungenCollection
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Rechnungen>("LightSwitchApplication.Rechnungen_BezahlartItem", "Rechnungen");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Rechnungen>("LightSwitchApplication.Rechnungen_BezahlartItem", "Rechnungen", value);
                 }
             }
         }
@@ -2741,7 +2951,8 @@ namespace ApplicationData.Implementation
         /// <param name="rechnungsadressenId">Anfangswert der Eigenschaft RechnungsadressenId.</param>
         /// <param name="rechnungen_Kunden">Anfangswert der Eigenschaft Rechnungen_Kunden.</param>
         /// <param name="rechnungen_BestellStatus">Anfangswert der Eigenschaft Rechnungen_BestellStatus.</param>
-        public static Rechnungen CreateRechnungen(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.String referenznummer, global::System.DateTime bestelldatum, global::System.Decimal lieferkosten, global::System.Decimal rabatt, global::System.Int32 rechnungsadressenId, global::System.Int32 rechnungen_Kunden, global::System.Int32 rechnungen_BestellStatus)
+        /// <param name="rechnungen_BezahlartItem">Anfangswert der Eigenschaft Rechnungen_BezahlartItem.</param>
+        public static Rechnungen CreateRechnungen(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.String referenznummer, global::System.DateTime bestelldatum, global::System.Decimal lieferkosten, global::System.Decimal rabatt, global::System.Int32 rechnungsadressenId, global::System.Int32 rechnungen_Kunden, global::System.Int32 rechnungen_BestellStatus, global::System.Int32 rechnungen_BezahlartItem)
         {
             Rechnungen rechnungen = new Rechnungen();
             rechnungen.Id = id;
@@ -2753,6 +2964,7 @@ namespace ApplicationData.Implementation
             rechnungen.RechnungsadressenId = rechnungsadressenId;
             rechnungen.Rechnungen_Kunden = rechnungen_Kunden;
             rechnungen.Rechnungen_BestellStatus = rechnungen_BestellStatus;
+            rechnungen.Rechnungen_BezahlartItem = rechnungen_BezahlartItem;
             return rechnungen;
         }
 
@@ -2816,6 +3028,30 @@ namespace ApplicationData.Implementation
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
+        public global::System.String Besteller
+        {
+            get
+            {
+                return _Besteller;
+            }
+            set
+            {
+                OnBestellerChanging(value);
+                ReportPropertyChanging("Besteller");
+                _Besteller = value;
+                ReportPropertyChanged("Besteller");
+                OnBestellerChanged();
+            }
+        }
+        private global::System.String _Besteller;
+        partial void OnBestellerChanging(global::System.String value);
+        partial void OnBestellerChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
         public global::System.String Auftragsnummer
         {
             get
@@ -2858,30 +3094,6 @@ namespace ApplicationData.Implementation
         private global::System.String _Referenznummer;
         partial void OnReferenznummerChanging(global::System.String value);
         partial void OnReferenznummerChanged();
-    
-        /// <summary>
-        /// Keine Dokumentation für Metadaten verfügbar.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String Lieferscheinnummer
-        {
-            get
-            {
-                return _Lieferscheinnummer;
-            }
-            set
-            {
-                OnLieferscheinnummerChanging(value);
-                ReportPropertyChanging("Lieferscheinnummer");
-                _Lieferscheinnummer = value;
-                ReportPropertyChanged("Lieferscheinnummer");
-                OnLieferscheinnummerChanged();
-            }
-        }
-        private global::System.String _Lieferscheinnummer;
-        partial void OnLieferscheinnummerChanging(global::System.String value);
-        partial void OnLieferscheinnummerChanged();
     
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.
@@ -2954,6 +3166,30 @@ namespace ApplicationData.Implementation
         private Nullable<global::System.DateTime> _Lieferdatum;
         partial void OnLieferdatumChanging(Nullable<global::System.DateTime> value);
         partial void OnLieferdatumChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Lieferscheinnummer
+        {
+            get
+            {
+                return _Lieferscheinnummer;
+            }
+            set
+            {
+                OnLieferscheinnummerChanging(value);
+                ReportPropertyChanging("Lieferscheinnummer");
+                _Lieferscheinnummer = value;
+                ReportPropertyChanged("Lieferscheinnummer");
+                OnLieferscheinnummerChanged();
+            }
+        }
+        private global::System.String _Lieferscheinnummer;
+        partial void OnLieferscheinnummerChanging(global::System.String value);
+        partial void OnLieferscheinnummerChanged();
     
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.
@@ -3146,11 +3382,73 @@ namespace ApplicationData.Implementation
         private global::System.Int32 _Rechnungen_BestellStatus;
         partial void OnRechnungen_BestellStatusChanging(global::System.Int32 value);
         partial void OnRechnungen_BestellStatusChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Rechnungen_BezahlartItem
+        {
+            get
+            {
+                return _Rechnungen_BezahlartItem;
+            }
+            set
+            {
+                OnRechnungen_BezahlartItemChanging(value);
+                ReportPropertyChanging("Rechnungen_BezahlartItem");
+                _Rechnungen_BezahlartItem = value;
+                ReportPropertyChanged("Rechnungen_BezahlartItem");
+                OnRechnungen_BezahlartItemChanged();
+            }
+        }
+        private global::System.Int32 _Rechnungen_BezahlartItem;
+        partial void OnRechnungen_BezahlartItemChanging(global::System.Int32 value);
+        partial void OnRechnungen_BezahlartItemChanged();
 
         #endregion
 
     
         #region Navigationseigenschaften
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "Rechnungen_Kunden", "Kunden")]
+        public Kunden Kunde
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Kunden>("LightSwitchApplication.Rechnungen_Kunden", "Kunden").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Kunden>("LightSwitchApplication.Rechnungen_Kunden", "Kunden").Value = value;
+            }
+        }
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Kunden> KundeReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Kunden>("LightSwitchApplication.Rechnungen_Kunden", "Kunden");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Kunden>("LightSwitchApplication.Rechnungen_Kunden", "Kunden", value);
+                }
+            }
+        }
     
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.
@@ -3196,16 +3494,16 @@ namespace ApplicationData.Implementation
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "Rechnungen_Kunden", "Kunden")]
-        public Kunden Kunde
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "Rechnungen_BezahlartItem", "BezahlartItem")]
+        public BezahlartItem BezahlartItem
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Kunden>("LightSwitchApplication.Rechnungen_Kunden", "Kunden").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<BezahlartItem>("LightSwitchApplication.Rechnungen_BezahlartItem", "BezahlartItem").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Kunden>("LightSwitchApplication.Rechnungen_Kunden", "Kunden").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<BezahlartItem>("LightSwitchApplication.Rechnungen_BezahlartItem", "BezahlartItem").Value = value;
             }
         }
         /// <summary>
@@ -3213,17 +3511,17 @@ namespace ApplicationData.Implementation
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<Kunden> KundeReference
+        public EntityReference<BezahlartItem> BezahlartItemReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Kunden>("LightSwitchApplication.Rechnungen_Kunden", "Kunden");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<BezahlartItem>("LightSwitchApplication.Rechnungen_BezahlartItem", "BezahlartItem");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Kunden>("LightSwitchApplication.Rechnungen_Kunden", "Kunden", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<BezahlartItem>("LightSwitchApplication.Rechnungen_BezahlartItem", "BezahlartItem", value);
                 }
             }
         }

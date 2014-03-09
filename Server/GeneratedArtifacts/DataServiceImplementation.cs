@@ -96,6 +96,10 @@ namespace LightSwitchApplication.Implementation
             {
                 return new global::ApplicationData.Implementation.AdressenSetItem();
             }
+            if (type == typeof(global::ApplicationData.Implementation.BezahlartItem))
+            {
+                return new global::ApplicationData.Implementation.BezahlartItem();
+            }
     
             return base.CreateObject(type);
         }
@@ -146,6 +150,10 @@ namespace LightSwitchApplication.Implementation
             if (typeof(T) == typeof(global::LightSwitchApplication.AdressenSetItem))
             {
                 return new global::ApplicationData.Implementation.AdressenSetItem();
+            }
+            if (typeof(T) == typeof(global::LightSwitchApplication.BezahlartItem))
+            {
+                return new global::ApplicationData.Implementation.BezahlartItem();
             }
             return null;
         }
@@ -227,6 +235,10 @@ namespace LightSwitchApplication.Implementation
             if (typeof(global::LightSwitchApplication.AdressenSetItem) == definitionType)
             {
                 return typeof(global::ApplicationData.Implementation.AdressenSetItem);
+            }
+            if (typeof(global::LightSwitchApplication.BezahlartItem) == definitionType)
+            {
+                return typeof(global::ApplicationData.Implementation.BezahlartItem);
             }
             return null;
         }
@@ -397,22 +409,6 @@ namespace ApplicationData.Implementation
         global::LightSwitchApplication.Rechnungen.DetailsClass.IImplementation
     {
     
-        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Rechnungen.DetailsClass.IImplementation.BestellStatus
-        {
-            get
-            {
-                return this.BestellStatus;
-            }
-            set
-            {
-                this.BestellStatus = (global::ApplicationData.Implementation.BestellStatus)value;
-                if (this.__host != null)
-                {
-                    this.__host.RaisePropertyChanged("BestellStatus");
-                }
-            }
-        }
-        
         global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Rechnungen.DetailsClass.IImplementation.Kunde
         {
             get
@@ -429,11 +425,51 @@ namespace ApplicationData.Implementation
             }
         }
         
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Rechnungen.DetailsClass.IImplementation.BestellStatus
+        {
+            get
+            {
+                return this.BestellStatus;
+            }
+            set
+            {
+                this.BestellStatus = (global::ApplicationData.Implementation.BestellStatus)value;
+                if (this.__host != null)
+                {
+                    this.__host.RaisePropertyChanged("BestellStatus");
+                }
+            }
+        }
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Rechnungen.DetailsClass.IImplementation.BezahlartItem
+        {
+            get
+            {
+                return this.BezahlartItem;
+            }
+            set
+            {
+                this.BezahlartItem = (global::ApplicationData.Implementation.BezahlartItem)value;
+                if (this.__host != null)
+                {
+                    this.__host.RaisePropertyChanged("BezahlartItem");
+                }
+            }
+        }
+        
         global::System.Collections.IEnumerable global::LightSwitchApplication.Rechnungen.DetailsClass.IImplementation.ArtikellisteCollection
         {
             get
             {
                 return this.ArtikellisteCollection;
+            }
+        }
+        
+        partial void OnRechnungen_KundenChanged()
+        {
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged("Kunde");
             }
         }
         
@@ -445,11 +481,11 @@ namespace ApplicationData.Implementation
             }
         }
         
-        partial void OnRechnungen_KundenChanged()
+        partial void OnRechnungen_BezahlartItemChanged()
         {
             if (this.__host != null)
             {
-                this.__host.RaisePropertyChanged("Kunde");
+                this.__host.RaisePropertyChanged("BezahlartItem");
             }
         }
         
@@ -695,6 +731,47 @@ namespace ApplicationData.Implementation
             if (this.__host != null)
             {
                 this.__host.RaisePropertyChanged("KundenRechnungsadresse");
+            }
+        }
+        
+        #region IEntityImplementation Members
+        private global::Microsoft.LightSwitch.Internal.IEntityImplementationHost __host;
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementationHost global::Microsoft.LightSwitch.Internal.IEntityImplementation.Host
+        {
+            get
+            {
+                return this.__host;
+            }
+        }
+        
+        void global::Microsoft.LightSwitch.Internal.IEntityImplementation.Initialize(global::Microsoft.LightSwitch.Internal.IEntityImplementationHost host)
+        {
+            this.__host = host;
+        }
+        
+        protected override void OnPropertyChanged(string propertyName)
+        {
+            base.OnPropertyChanged(propertyName);
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged(propertyName);
+            }
+        }
+        #endregion
+    }
+    
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class BezahlartItem :
+        global::LightSwitchApplication.BezahlartItem.DetailsClass.IImplementation
+    {
+    
+        global::System.Collections.IEnumerable global::LightSwitchApplication.BezahlartItem.DetailsClass.IImplementation.RechnungenCollection
+        {
+            get
+            {
+                return this.RechnungenCollection;
             }
         }
         

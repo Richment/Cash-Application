@@ -922,6 +922,102 @@
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
     </QueryOperation>
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="BezahlartItem"
+      Name="Bezahlart" />
+    <QueryOperation
+      Name="Bezahlart_Single"
+      ReturnType="BezahlartItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Bezahlart" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der Id-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Bezahlart_SingleOrDefault"
+      ReturnType="BezahlartItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird, oder NULL, wenn keine solche Entität vorhanden ist." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Bezahlart" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der Id-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <AssociationSet
+      Association="Rechnungen_BezahlartItem"
+      Name="Rechnungen_BezahlartItemSet">
+      <AssociationSetEnd
+        EntitySet="RechnungenSet"
+        Name="Rechnungen" />
+      <AssociationSetEnd
+        EntitySet="Bezahlart"
+        Name="BezahlartItem" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType
     Name="Kunden">
@@ -1346,10 +1442,28 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
+        Association="Rechnungen_Kunden"
+        FromEnd="Rechnungen"
+        Name="Kunde"
+        ToEnd="Kunden" />
+      <EntityProperty
+        Name="Besteller"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
         Association="Rechnungen_BestellStatus"
         FromEnd="Rechnungen"
         Name="BestellStatus"
         ToEnd="BestellStatus" />
+      <NavigationProperty
+        Association="Rechnungen_BezahlartItem"
+        FromEnd="Rechnungen"
+        Name="BezahlartItem"
+        ToEnd="BezahlartItem" />
       <EntityProperty
         Name="Auftragsnummer"
         PropertyType=":String?">
@@ -1368,14 +1482,6 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
-        Name="Lieferscheinnummer"
-        PropertyType=":String?">
-        <EntityProperty.Attributes>
-          <MaxLength
-            Value="255" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
         Name="Webshop_ID"
         PropertyType=":String?">
         <EntityProperty.Attributes>
@@ -1383,11 +1489,6 @@
             Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
-      <NavigationProperty
-        Association="Rechnungen_Kunden"
-        FromEnd="Rechnungen"
-        Name="Kunde"
-        ToEnd="Kunden" />
       <EntityProperty
         Name="Bestelldatum"
         PropertyType=":Date">
@@ -1401,6 +1502,14 @@
         PropertyType=":Date?">
         <EntityProperty.Attributes>
           <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Lieferscheinnummer"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -2037,6 +2146,14 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
+        Name="zHd_Besteller_optional"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
         Name="Starße"
         PropertyType=":String">
         <EntityProperty.Attributes>
@@ -2127,6 +2244,76 @@
       EntityType="BestellStatus"
       Multiplicity="One"
       Name="BestellStatus">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <EntityType
+    Name="BezahlartItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="RowVersion"
+        PropertyType=":RowVersion">
+        <EntityProperty.Attributes>
+          <UseForConcurrency />
+          <Generated />
+          <Hidden />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Bezeichnung"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Text_Rechnung"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Association="Rechnungen_BezahlartItem"
+        FromEnd="BezahlartItem"
+        Name="RechnungenCollection"
+        ToEnd="Rechnungen" />
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="Rechnungen_BezahlartItem">
+    <AssociationEnd
+      EntityType="Rechnungen"
+      Multiplicity="Many"
+      Name="Rechnungen" />
+    <AssociationEnd
+      EntityType="BezahlartItem"
+      Multiplicity="One"
+      Name="BezahlartItem">
       <AssociationEnd.Attributes>
         <DeleteRule
           Action="Restrict" />

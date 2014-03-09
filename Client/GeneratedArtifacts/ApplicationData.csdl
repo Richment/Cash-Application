@@ -60,12 +60,13 @@
     </Key>
     <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Besteller" Type="Edm.String" MaxLength="255" />
     <Property Name="Auftragsnummer" Type="Edm.String" MaxLength="255" />
     <Property Name="Referenznummer" Type="Edm.String" Nullable="false" MaxLength="255" />
-    <Property Name="Lieferscheinnummer" Type="Edm.String" MaxLength="255" />
     <Property Name="Webshop_ID" Type="Edm.String" MaxLength="255" />
     <Property Name="Bestelldatum" Type="Edm.DateTime" Nullable="false" />
     <Property Name="Lieferdatum" Type="Edm.DateTime" />
+    <Property Name="Lieferscheinnummer" Type="Edm.String" MaxLength="255" />
     <Property Name="Rechnungsdatum" Type="Edm.DateTime" />
     <Property Name="Rechnungsnummer" Type="Edm.Int32" />
     <Property Name="Lieferkosten" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="2" />
@@ -74,8 +75,10 @@
     <Property Name="LieferadressenId" Type="Edm.Int32" />
     <Property Name="Rechnungen_Kunden" Type="Edm.Int32" Nullable="false" />
     <Property Name="Rechnungen_BestellStatus" Type="Edm.Int32" Nullable="false" />
-    <NavigationProperty Name="BestellStatus" Relationship="LightSwitchApplication.Rechnungen_BestellStatus" ToRole="BestellStatus" FromRole="Rechnungen" />
+    <Property Name="Rechnungen_BezahlartItem" Type="Edm.Int32" Nullable="false" />
     <NavigationProperty Name="Kunde" Relationship="LightSwitchApplication.Rechnungen_Kunden" ToRole="Kunden" FromRole="Rechnungen" />
+    <NavigationProperty Name="BestellStatus" Relationship="LightSwitchApplication.Rechnungen_BestellStatus" ToRole="BestellStatus" FromRole="Rechnungen" />
+    <NavigationProperty Name="BezahlartItem" Relationship="LightSwitchApplication.Rechnungen_BezahlartItem" ToRole="BezahlartItem" FromRole="Rechnungen" />
     <NavigationProperty Name="ArtikellisteCollection" Relationship="LightSwitchApplication.Artikelliste_Rechnungen" ToRole="Artikelliste" FromRole="Rechnungen" />
   </EntityType>
   <EntityType Name="Artikelliste">
@@ -138,6 +141,7 @@
     <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
     <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="zHd_Besteller_optional" Type="Edm.String" MaxLength="255" />
     <Property Name="Starße" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="Hausnummer" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="PLZ" Type="Edm.String" MaxLength="255" />
@@ -146,6 +150,16 @@
     <Property Name="Lieferadresse" Type="Edm.Boolean" Nullable="false" />
     <Property Name="Kunden_Rechnungsadressen" Type="Edm.Int32" Nullable="false" />
     <NavigationProperty Name="KundenRechnungsadresse" Relationship="LightSwitchApplication.Kunden_AdressenSetItem" ToRole="Kunden" FromRole="AdressenSetItem" />
+  </EntityType>
+  <EntityType Name="BezahlartItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Bezeichnung" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="Text_Rechnung" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <NavigationProperty Name="RechnungenCollection" Relationship="LightSwitchApplication.Rechnungen_BezahlartItem" ToRole="Rechnungen" FromRole="BezahlartItem" />
   </EntityType>
   <Association Name="Artikelliste_Rechnungen">
     <End Role="Rechnungen" Type="LightSwitchApplication.Rechnungen" Multiplicity="1">
@@ -221,6 +235,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="Rechnungen_BezahlartItem">
+    <End Role="BezahlartItem" Type="LightSwitchApplication.BezahlartItem" Multiplicity="1" />
+    <End Role="Rechnungen" Type="LightSwitchApplication.Rechnungen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BezahlartItem">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Rechnungen">
+        <PropertyRef Name="Rechnungen_BezahlartItem" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="ApplicationDataObjectContext" m:IsDefaultEntityContainer="true">
     <EntitySet Name="KundenSet" EntityType="LightSwitchApplication.Kunden" />
     <EntitySet Name="KundengruppeSet" EntityType="LightSwitchApplication.Kundengruppe" />
@@ -231,6 +257,7 @@
     <EntitySet Name="Meine_DatenSet" EntityType="LightSwitchApplication.Meine_Daten" />
     <EntitySet Name="BestellStatusSet" EntityType="LightSwitchApplication.BestellStatus" />
     <EntitySet Name="AdressenSet" EntityType="LightSwitchApplication.AdressenSetItem" />
+    <EntitySet Name="Bezahlart" EntityType="LightSwitchApplication.BezahlartItem" />
     <AssociationSet Name="Artikelliste_Rechnungen" Association="LightSwitchApplication.Artikelliste_Rechnungen">
       <End Role="Rechnungen" EntitySet="RechnungenSet" />
       <End Role="Artikelliste" EntitySet="ArtikellisteSet" />
@@ -253,6 +280,10 @@
     </AssociationSet>
     <AssociationSet Name="Rechnungen_BestellStatus" Association="LightSwitchApplication.Rechnungen_BestellStatus">
       <End Role="BestellStatus" EntitySet="BestellStatusSet" />
+      <End Role="Rechnungen" EntitySet="RechnungenSet" />
+    </AssociationSet>
+    <AssociationSet Name="Rechnungen_BezahlartItem" Association="LightSwitchApplication.Rechnungen_BezahlartItem">
+      <End Role="BezahlartItem" EntitySet="Bezahlart" />
       <End Role="Rechnungen" EntitySet="RechnungenSet" />
     </AssociationSet>
   </EntityContainer>

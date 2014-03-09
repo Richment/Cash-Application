@@ -135,7 +135,7 @@ namespace LightSwitchApplication
 			wordDoc.Bookmarks("lieferscheinnr").Range.InsertAfter(ArtikellisteCollection.SelectedItem.Rechnungen.Lieferscheinnummer);
 			wordDoc.Bookmarks("lieferdatum").Range.InsertAfter(ArtikellisteCollection.SelectedItem.Rechnungen.Lieferdatum);
 			wordDoc.Bookmarks("lieferkosten").Range.InsertAfter(ArtikellisteCollection.SelectedItem.Rechnungen.Lieferkosten);
-			wordDoc.Bookmarks("gesamtnetto").Range.InsertAfter(ArtikellisteCollection.SelectedItem.Rechnungen.Netto_Gesamtbetrag);
+            wordDoc.Bookmarks("gesamtnetto").Range.InsertAfter(ArtikellisteCollection.SelectedItem.Rechnungen.Rechnungsbetrag_Netto);
 			wordDoc.Bookmarks("mehrwertsteuer").Range.InsertAfter(ArtikellisteCollection.SelectedItem.Rechnungen.Mehrwertsteuer);
 			wordDoc.Bookmarks("brutto").Range.InsertAfter(ArtikellisteCollection.SelectedItem.Rechnungen.Rechnungsbetrag_Brutto);
 

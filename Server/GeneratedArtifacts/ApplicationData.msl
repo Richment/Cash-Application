@@ -58,14 +58,16 @@
         <MappingFragment StoreEntitySet="RechnungenSet">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Rechnungen_Kunden" ColumnName="Rechnungen_Kunden" />
+          <ScalarProperty Name="Besteller" ColumnName="Besteller" />
           <ScalarProperty Name="Rechnungen_BestellStatus" ColumnName="Rechnungen_BestellStatus" />
+          <ScalarProperty Name="Rechnungen_BezahlartItem" ColumnName="Rechnungen_BezahlartItem" />
           <ScalarProperty Name="Auftragsnummer" ColumnName="Auftragsnummer" />
           <ScalarProperty Name="Referenznummer" ColumnName="Referenznummer" />
-          <ScalarProperty Name="Lieferscheinnummer" ColumnName="Lieferscheinnummer" />
           <ScalarProperty Name="Webshop_ID" ColumnName="Webshop_ID" />
-          <ScalarProperty Name="Rechnungen_Kunden" ColumnName="Rechnungen_Kunden" />
           <ScalarProperty Name="Bestelldatum" ColumnName="Bestelldatum" />
           <ScalarProperty Name="Lieferdatum" ColumnName="Lieferdatum" />
+          <ScalarProperty Name="Lieferscheinnummer" ColumnName="Lieferscheinnummer" />
           <ScalarProperty Name="Rechnungsdatum" ColumnName="Rechnungsdatum" />
           <ScalarProperty Name="Rechnungsnummer" ColumnName="Rechnungsnummer" />
           <ScalarProperty Name="Lieferkosten" ColumnName="Lieferkosten" />
@@ -135,6 +137,7 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
           <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="zHd_Besteller_optional" ColumnName="zHd_Besteller_optional" />
           <ScalarProperty Name="Starße" ColumnName="Starße" />
           <ScalarProperty Name="Hausnummer" ColumnName="Hausnummer" />
           <ScalarProperty Name="PLZ" ColumnName="PLZ" />
@@ -142,6 +145,16 @@
           <ScalarProperty Name="Land" ColumnName="Land" />
           <ScalarProperty Name="Lieferadresse" ColumnName="Lieferadresse" />
           <ScalarProperty Name="Kunden_Rechnungsadressen" ColumnName="Kunden_Rechnungsadressen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bezahlart">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.BezahlartItem)">
+        <MappingFragment StoreEntitySet="Bezahlart">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Bezeichnung" ColumnName="Bezeichnung" />
+          <ScalarProperty Name="Text_Rechnung" ColumnName="Text_Rechnung" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

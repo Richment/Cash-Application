@@ -156,6 +156,30 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public string zHd_Besteller_optional
+        {
+            get
+            {
+                return global::LightSwitchApplication.AdressenSetItem.DetailsClass.GetValue(this, global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.zHd_Besteller_optional);
+            }
+            set
+            {
+                global::LightSwitchApplication.AdressenSetItem.DetailsClass.SetValue(this, global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.zHd_Besteller_optional, value);
+            }
+        }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void zHd_Besteller_optional_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void zHd_Besteller_optional_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void zHd_Besteller_optional_Changed();
+
+        /// <summary>
+        /// Keine modellierte Beschreibung verfügbar
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public string Starße
         {
             get
@@ -425,6 +449,14 @@ namespace LightSwitchApplication
                     }
                 }
                 
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string> zHd_Besteller_optional
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.zHd_Besteller_optional) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>;
+                    }
+                }
+                
                 public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string> Starße
                 {
                     get
@@ -490,6 +522,7 @@ namespace LightSwitchApplication
                 new int Id { get; set; }
                 new byte[] RowVersion { get; set; }
                 new string Name { get; set; }
+                new string zHd_Besteller_optional { get; set; }
                 new string Starße { get; set; }
                 new string Hausnummer { get; set; }
                 new string PLZ { get; set; }
@@ -615,6 +648,43 @@ namespace LightSwitchApplication
                 private static void _Name_OnValueChanged(global::LightSwitchApplication.AdressenSetItem e)
                 {
                     e.Name_Changed();
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Entry
+                    zHd_Besteller_optional = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Entry(
+                        "zHd_Besteller_optional",
+                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._zHd_Besteller_optional_Stub,
+                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._zHd_Besteller_optional_ComputeIsReadOnly,
+                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._zHd_Besteller_optional_Validate,
+                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._zHd_Besteller_optional_GetImplementationValue,
+                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._zHd_Besteller_optional_SetImplementationValue,
+                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._zHd_Besteller_optional_OnValueChanged);
+                private static void _zHd_Besteller_optional_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.AdressenSetItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Data> c, global::LightSwitchApplication.AdressenSetItem.DetailsClass d, object sf)
+                {
+                    c(d, ref d._zHd_Besteller_optional, sf);
+                }
+                private static bool _zHd_Besteller_optional_ComputeIsReadOnly(global::LightSwitchApplication.AdressenSetItem e)
+                {
+                    bool result = false;
+                    e.zHd_Besteller_optional_IsReadOnly(ref result);
+                    return result;
+                }
+                private static void _zHd_Besteller_optional_Validate(global::LightSwitchApplication.AdressenSetItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                {
+                    e.zHd_Besteller_optional_Validate(r);
+                }
+                private static string _zHd_Besteller_optional_GetImplementationValue(global::LightSwitchApplication.AdressenSetItem.DetailsClass d)
+                {
+                    return d.ImplementationEntity.zHd_Besteller_optional;
+                }
+                private static void _zHd_Besteller_optional_SetImplementationValue(global::LightSwitchApplication.AdressenSetItem.DetailsClass d, string v)
+                {
+                    d.ImplementationEntity.zHd_Besteller_optional = v;
+                }
+                private static void _zHd_Besteller_optional_OnValueChanged(global::LightSwitchApplication.AdressenSetItem e)
+                {
+                    e.zHd_Besteller_optional_Changed();
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -896,6 +966,9 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Data _Name;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Data _zHd_Besteller_optional;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Data _Starße;

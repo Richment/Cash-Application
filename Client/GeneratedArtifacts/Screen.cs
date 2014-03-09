@@ -1835,8 +1835,10 @@ namespace LightSwitchApplication
             {
                 return global::Microsoft.LightSwitch.DataServiceQueryable.Include(
                     global::Microsoft.LightSwitch.DataServiceQueryable.Include(
-                        this.Screen.DataWorkspace.ApplicationData.RechnungenSet,
-                        "Kunde"),
+                        global::Microsoft.LightSwitch.DataServiceQueryable.Include(
+                            this.Screen.DataWorkspace.ApplicationData.RechnungenSet,
+                            "Kunde"),
+                        "BezahlartItem"),
                     "BestellStatus");
             }
 
@@ -7474,6 +7476,276 @@ namespace LightSwitchApplication
                     d.Screen.Drucken_Execute();
                 }
 
+            }
+        }
+    }
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    public sealed partial class EditableBezahlartGrid
+        : global::Microsoft.LightSwitch.Framework.Client.ScreenObject<global::LightSwitchApplication.EditableBezahlartGrid, global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass>
+    {
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private EditableBezahlartGrid() : base("LightSwitchApplication:EditableBezahlartGrid")
+        {
+            global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass.Initialize(this);
+        }
+
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public static EditableBezahlartGrid CreateInstance()
+        {
+            return new global::LightSwitchApplication.EditableBezahlartGrid(
+            );
+        }
+
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void EditableBezahlartGrid_InitializeDataWorkspace(global::System.Collections.Generic.List<global::Microsoft.LightSwitch.IDataService> saveChangesTo);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void EditableBezahlartGrid_Created();
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void EditableBezahlartGrid_Activated();
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void EditableBezahlartGrid_Saving(ref bool handled);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void EditableBezahlartGrid_Saved();
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void EditableBezahlartGrid_Closing(ref bool cancel);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void EditableBezahlartGrid_SaveError(global::System.Exception exception, ref bool handled);
+     
+        #region Private Properties
+        
+        /// <summary>
+        /// Ruft das Application-Objekt für diese Anwendung ab. Das Application-Objekt stellt Zugriff auf aktive Bildschirme, Methoden zum Öffnen von Bildschirmen sowie Zugriff auf den aktuellen Benutzer bereit.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private global::LightSwitchApplication.Application Application
+        {
+            get
+            {
+                return global::LightSwitchApplication.Application.Current;
+            }
+        }
+        
+        /// <summary>
+        /// Ruft den übergeordneten Datenarbeitsbereich ab. Der Datenarbeitsbereich stellt Zugriff auf alle Datenquellen in der Anwendung bereit.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private global::LightSwitchApplication.DataWorkspace DataWorkspace
+        {
+            get
+            {
+                return (global::LightSwitchApplication.DataWorkspace)((global::Microsoft.LightSwitch.Details.Client.IScreenDetails)this.Details).DataWorkspace;
+            }
+        }
+        
+        #endregion
+ 
+        partial void Bezahlart_SelectionChanged();
+
+        partial void Bezahlart_Changed(global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e);
+
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Bezahlart_Loaded(bool succeeded);
+
+        /// <summary>
+        /// Ruft die visuelle Bezahlart-Auflistung ab. Diese Auflistung enthält alle Datensätze, die derzeit in der entsprechenden Liste oder im entsprechenden Rastersteuerelement angezeigt werden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Microsoft.LightSwitch.Framework.Client.VisualCollection<global::LightSwitchApplication.BezahlartItem> Bezahlart
+        {
+            get
+            {
+                return global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass.GetValue(this, global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass.PropertySetProperties.Bezahlart);
+            }
+        }
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Bezahlart_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
+ 
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public sealed class DetailsClass
+            : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenDetails<global::LightSwitchApplication.EditableBezahlartGrid, global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass, global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass.PropertySet, global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass.CommandSet, global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass.MethodSet>
+        {
+
+            static DetailsClass()
+            {
+                var initializePropertyEntry = global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass.PropertySetProperties.Bezahlart;
+            }
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static global::Microsoft.LightSwitch.Details.Framework.Client.ScreenDetails<global::LightSwitchApplication.EditableBezahlartGrid, global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass>.Entry
+                __EditableBezahlartGridEntry = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenDetails<global::LightSwitchApplication.EditableBezahlartGrid, global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass>.Entry(
+                    global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass.__EditableBezahlartGrid_InvokeInitializeDataWorkspace,
+                    global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass.__EditableBezahlartGrid_InvokeSavingEvent,
+                    global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass.__EditableBezahlartGrid_InvokeSavedEvent,
+                    global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass.__EditableBezahlartGrid_InvokeClosingEvent,
+                    global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass.__EditableBezahlartGrid_InvokeCreated,
+                    global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass.__EditableBezahlartGrid_InvokeActivated,
+                    global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass.__EditableBezahlartGrid_InvokeSaveErrorEvent);
+            private static void __EditableBezahlartGrid_InvokeInitializeDataWorkspace(global::LightSwitchApplication.EditableBezahlartGrid s, global::System.Collections.Generic.List<global::Microsoft.LightSwitch.IDataService> saveChangesTo)
+            {
+                s.EditableBezahlartGrid_InitializeDataWorkspace(saveChangesTo);
+            }
+            private static bool __EditableBezahlartGrid_InvokeSavingEvent(global::LightSwitchApplication.EditableBezahlartGrid s)
+            {
+                bool handled = false;
+                s.EditableBezahlartGrid_Saving(ref handled);
+                return handled;
+            }
+            private static void __EditableBezahlartGrid_InvokeSavedEvent(global::LightSwitchApplication.EditableBezahlartGrid s)
+            {
+                s.EditableBezahlartGrid_Saved();
+            }
+            private static bool __EditableBezahlartGrid_InvokeClosingEvent(global::LightSwitchApplication.EditableBezahlartGrid s)
+            {
+                bool cancel = false;
+                s.EditableBezahlartGrid_Closing(ref cancel);
+                return cancel;
+            }
+            private static void __EditableBezahlartGrid_InvokeCreated(global::LightSwitchApplication.EditableBezahlartGrid s)
+            {
+                s.EditableBezahlartGrid_Created();
+            }
+            private static void __EditableBezahlartGrid_InvokeActivated(global::LightSwitchApplication.EditableBezahlartGrid s)
+            {
+                s.EditableBezahlartGrid_Activated();
+            }
+            private static bool __EditableBezahlartGrid_InvokeSaveErrorEvent(global::LightSwitchApplication.EditableBezahlartGrid s, global::System.Exception ex)
+            {
+                bool handled = false;
+                s.EditableBezahlartGrid_SaveError(ex, ref handled);
+                return handled;
+            }
+
+            public DetailsClass() : base()
+            {
+            }
+
+            public new global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass.PropertySet Properties
+            {
+                get
+                {
+                    return base.Properties;
+                }
+            }
+
+            public new global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass.CommandSet Commands
+            {
+                get
+                {
+                    return base.Commands;
+                }
+            }
+
+            public new global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass.MethodSet Methods
+            {
+                get
+                {
+                    return base.Methods;
+                }
+            }
+
+            private global::Microsoft.LightSwitch.IDataServiceQueryable BezahlartQuery()
+            {
+                return this.Screen.DataWorkspace.ApplicationData.Bezahlart;
+            }
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.EditableBezahlartGrid, global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass, global::LightSwitchApplication.BezahlartItem>.Data _Bezahlart;
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public sealed class PropertySet
+                : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenPropertySet<global::LightSwitchApplication.EditableBezahlartGrid, global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass>
+            {
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.EditableBezahlartGrid, global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass, global::LightSwitchApplication.BezahlartItem> Bezahlart
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.EditableBezahlartGrid, global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass, global::LightSwitchApplication.BezahlartItem>)base.GetItem(global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass.PropertySetProperties.Bezahlart);
+                    }
+                }
+
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public sealed class CommandSet
+                : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommandSet<global::LightSwitchApplication.EditableBezahlartGrid, global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass>
+            {
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public sealed class MethodSet
+                : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethodSet<global::LightSwitchApplication.EditableBezahlartGrid, global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass>
+            {
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal sealed class PropertySetProperties
+            {
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.EditableBezahlartGrid, global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass, global::LightSwitchApplication.BezahlartItem>.Entry
+                    Bezahlart = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.EditableBezahlartGrid, global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass, global::LightSwitchApplication.BezahlartItem>.Entry(
+                        "Bezahlart",
+                        global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass.PropertySetProperties._Bezahlart_Stub,
+                        global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass.PropertySetProperties._Bezahlart_Validate,
+                        global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass.PropertySetProperties._Bezahlart_CreateQuery,
+                        global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass.PropertySetProperties._Bezahlart_SelectionChanged,
+                        global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass.PropertySetProperties._Bezahlart_OnCollectionChanged,
+                        global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass.PropertySetProperties._Bezahlart_OnLoaded);
+                private static void _Bezahlart_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.EditableBezahlartGrid, global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass, global::LightSwitchApplication.BezahlartItem>.Data> c, global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass d, object sf)
+                {
+                    c(d, ref d._Bezahlart, sf);
+                }
+                private static void _Bezahlart_Validate(global::LightSwitchApplication.EditableBezahlartGrid s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
+                {
+                    s.Bezahlart_Validate(r);
+                }
+                private static global::Microsoft.LightSwitch.IDataServiceQueryable _Bezahlart_CreateQuery(global::LightSwitchApplication.EditableBezahlartGrid.DetailsClass d, object[] args)
+                {
+                    return d.BezahlartQuery();
+                }
+                private static void _Bezahlart_SelectionChanged(global::LightSwitchApplication.EditableBezahlartGrid s)
+                {
+                    s.Bezahlart_SelectionChanged();
+                }
+                private static void _Bezahlart_OnCollectionChanged(global::LightSwitchApplication.EditableBezahlartGrid s, global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+                {
+                    s.Bezahlart_Changed(e);
+                }
+                private static void _Bezahlart_OnLoaded(global::LightSwitchApplication.EditableBezahlartGrid s, bool succeeded)
+                {
+                    s.Bezahlart_Loaded(succeeded);
+                }
+
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal sealed class CommandSetProperties
+            {
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal sealed class MethodSetProperties
+            {
             }
         }
     }

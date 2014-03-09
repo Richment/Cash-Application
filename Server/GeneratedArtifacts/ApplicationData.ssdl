@@ -10,6 +10,7 @@
     <EntitySet Name="Meine_DatenSet" EntityType="ApplicationDataStore.Meine_Daten" store:Type="Tables" Schema="dbo" Table="Meine_DatenSet" />
     <EntitySet Name="BestellStatusSet" EntityType="ApplicationDataStore.BestellStatus" store:Type="Tables" Schema="dbo" Table="BestellStatusSet" />
     <EntitySet Name="AdressenSet" EntityType="ApplicationDataStore.AdressenSetItem" store:Type="Tables" Schema="dbo" Table="AdressenSet" />
+    <EntitySet Name="Bezahlart" EntityType="ApplicationDataStore.BezahlartItem" store:Type="Tables" Schema="dbo" Table="Bezahlart" />
     <AssociationSet Name="Artikelliste_Rechnungen" Association="ApplicationDataStore.Artikelliste_Rechnungen">
       <End Role="Rechnungen" EntitySet="RechnungenSet" />
       <End Role="Artikelliste" EntitySet="ArtikellisteSet" />
@@ -32,6 +33,10 @@
     </AssociationSet>
     <AssociationSet Name="Rechnungen_BestellStatus" Association="ApplicationDataStore.Rechnungen_BestellStatus">
       <End Role="BestellStatus" EntitySet="BestellStatusSet" />
+      <End Role="Rechnungen" EntitySet="RechnungenSet" />
+    </AssociationSet>
+    <AssociationSet Name="Rechnungen_BezahlartItem" Association="ApplicationDataStore.Rechnungen_BezahlartItem">
+      <End Role="BezahlartItem" EntitySet="Bezahlart" />
       <End Role="Rechnungen" EntitySet="RechnungenSet" />
     </AssociationSet>
   </EntityContainer>
@@ -90,12 +95,13 @@
     </Key>
     <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Besteller" Type="nvarchar" MaxLength="255" />
     <Property Name="Auftragsnummer" Type="nvarchar" MaxLength="255" />
     <Property Name="Referenznummer" Type="nvarchar" Nullable="false" MaxLength="255" />
-    <Property Name="Lieferscheinnummer" Type="nvarchar" MaxLength="255" />
     <Property Name="Webshop_ID" Type="nvarchar" MaxLength="255" />
     <Property Name="Bestelldatum" Type="datetime" Nullable="false" />
     <Property Name="Lieferdatum" Type="datetime" />
+    <Property Name="Lieferscheinnummer" Type="nvarchar" MaxLength="255" />
     <Property Name="Rechnungsdatum" Type="datetime" />
     <Property Name="Rechnungsnummer" Type="int" />
     <Property Name="Lieferkosten" Type="decimal" Nullable="false" Precision="18" Scale="2" />
@@ -104,6 +110,7 @@
     <Property Name="LieferadressenId" Type="int" />
     <Property Name="Rechnungen_Kunden" Type="int" Nullable="false" />
     <Property Name="Rechnungen_BestellStatus" Type="int" Nullable="false" />
+    <Property Name="Rechnungen_BezahlartItem" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Artikelliste">
     <Key>
@@ -162,6 +169,7 @@
     <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
     <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="zHd_Besteller_optional" Type="nvarchar" MaxLength="255" />
     <Property Name="Starße" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="Hausnummer" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="PLZ" Type="nvarchar" MaxLength="255" />
@@ -169,6 +177,15 @@
     <Property Name="Land" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="Lieferadresse" Type="bit" Nullable="false" />
     <Property Name="Kunden_Rechnungsadressen" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BezahlartItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Bezeichnung" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Text_Rechnung" Type="nvarchar" Nullable="false" MaxLength="255" />
   </EntityType>
   <Association Name="Artikelliste_Rechnungen">
     <End Role="Rechnungen" Type="ApplicationDataStore.Rechnungen" Multiplicity="1">
@@ -241,6 +258,18 @@
       </Principal>
       <Dependent Role="Rechnungen">
         <PropertyRef Name="Rechnungen_BestellStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Rechnungen_BezahlartItem">
+    <End Role="BezahlartItem" Type="ApplicationDataStore.BezahlartItem" Multiplicity="1" />
+    <End Role="Rechnungen" Type="ApplicationDataStore.Rechnungen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BezahlartItem">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Rechnungen">
+        <PropertyRef Name="Rechnungen_BezahlartItem" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
