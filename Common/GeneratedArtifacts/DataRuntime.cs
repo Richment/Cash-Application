@@ -475,22 +475,6 @@ namespace LightSwitchApplication
         }
         
         /// <summary>
-        /// Keine modellierte Beschreibung verfügbar
-        /// </summary>
-        public global::Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.AdressenSetItem> Rechnungsadressen()
-        {
-            return this.Details.Methods.Rechnungsadressen.CreateInvocation().Execute();
-        }
-        
-        /// <summary>
-        /// Keine modellierte Beschreibung verfügbar
-        /// </summary>
-        public global::Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.AdressenSetItem> Lieferadressen()
-        {
-            return this.Details.Methods.Lieferadressen.CreateInvocation().Execute();
-        }
-        
-        /// <summary>
         /// Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird.
         /// </summary>
         /// <param name="Id">
@@ -701,22 +685,6 @@ namespace LightSwitchApplication
                     get
                     {
                         return base.GetItem(global::LightSwitchApplication.ApplicationData.DetailsClass.MethodSetProperties.AdressenSet_SingleOrDefault) as global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.AdressenSetItem>;
-                    }
-                }
-                
-                public global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.AdressenSetItem> Rechnungsadressen
-                {
-                    get
-                    {
-                        return base.GetItem(global::LightSwitchApplication.ApplicationData.DetailsClass.MethodSetProperties.Rechnungsadressen) as global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.AdressenSetItem>;
-                    }
-                }
-                
-                public global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.AdressenSetItem> Lieferadressen
-                {
-                    get
-                    {
-                        return base.GetItem(global::LightSwitchApplication.ApplicationData.DetailsClass.MethodSetProperties.Lieferadressen) as global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.AdressenSetItem>;
                     }
                 }
                 
@@ -1018,26 +986,6 @@ namespace LightSwitchApplication
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Entry
-                    Rechnungsadressen = new global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Entry(
-                        "Rechnungsadressen",
-                        global::LightSwitchApplication.ApplicationData.DetailsClass.MethodSetProperties._Rechnungsadressen_Stub);
-                private static void _Rechnungsadressen_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ApplicationData.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Data> c, global::LightSwitchApplication.ApplicationData.DetailsClass d, object sf)
-                {
-                    c(d, ref d._Rechnungsadressen, sf);
-                }
-    
-                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Entry
-                    Lieferadressen = new global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Entry(
-                        "Lieferadressen",
-                        global::LightSwitchApplication.ApplicationData.DetailsClass.MethodSetProperties._Lieferadressen_Stub);
-                private static void _Lieferadressen_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ApplicationData.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Data> c, global::LightSwitchApplication.ApplicationData.DetailsClass d, object sf)
-                {
-                    c(d, ref d._Lieferadressen, sf);
-                }
-    
-                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.BezahlartItem>.Entry
                     Bezahlart_Single = new global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.BezahlartItem>.Entry(
                         "Bezahlart_Single",
@@ -1250,12 +1198,6 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Data _AdressenSet_SingleOrDefault;
-            
-            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Data _Rechnungsadressen;
-            
-            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Data _Lieferadressen;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.BezahlartItem>.Data _Bezahlart_Single;

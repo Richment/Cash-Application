@@ -1838,8 +1838,8 @@ namespace LightSwitchApplication
                         global::Microsoft.LightSwitch.DataServiceQueryable.Include(
                             this.Screen.DataWorkspace.ApplicationData.RechnungenSet,
                             "Kunde"),
-                        "BezahlartItem"),
-                    "BestellStatus");
+                        "BestellStatus"),
+                    "BezahlartItem");
             }
 
             private global::Microsoft.LightSwitch.IDataServiceQueryable ArtikellisteCollectionQuery()
@@ -4645,19 +4645,12 @@ namespace LightSwitchApplication
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void Rechnungen_Loaded(bool succeeded);
 
-        partial void Rechnungsadressen_SelectionChanged();
+        partial void Adressen_SelectionChanged();
 
-        partial void Rechnungsadressen_Changed(global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e);
-
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Rechnungsadressen_Loaded(bool succeeded);
-
-        partial void Lieferadressen_SelectionChanged();
-
-        partial void Lieferadressen_Changed(global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e);
+        partial void Adressen_Changed(global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e);
 
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Lieferadressen_Loaded(bool succeeded);
+        partial void Adressen_Loaded(bool succeeded);
 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4703,34 +4696,19 @@ namespace LightSwitchApplication
         partial void Rechnungen_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
  
         /// <summary>
-        /// Ruft die visuelle Rechnungsadressen-Auflistung ab. Diese Auflistung enthält alle Datensätze, die derzeit in der entsprechenden Liste oder im entsprechenden Rastersteuerelement angezeigt werden.
+        /// Ruft die visuelle Adressen-Auflistung ab. Diese Auflistung enthält alle Datensätze, die derzeit in der entsprechenden Liste oder im entsprechenden Rastersteuerelement angezeigt werden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::Microsoft.LightSwitch.Framework.Client.VisualCollection<global::LightSwitchApplication.AdressenSetItem> Rechnungsadressen
+        public global::Microsoft.LightSwitch.Framework.Client.VisualCollection<global::LightSwitchApplication.AdressenSetItem> Adressen
         {
             get
             {
-                return global::LightSwitchApplication.KundenÜbersicht.DetailsClass.GetValue(this, global::LightSwitchApplication.KundenÜbersicht.DetailsClass.PropertySetProperties.Rechnungsadressen);
+                return global::LightSwitchApplication.KundenÜbersicht.DetailsClass.GetValue(this, global::LightSwitchApplication.KundenÜbersicht.DetailsClass.PropertySetProperties.Adressen);
             }
         }
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Rechnungsadressen_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
- 
-        /// <summary>
-        /// Ruft die visuelle Lieferadressen-Auflistung ab. Diese Auflistung enthält alle Datensätze, die derzeit in der entsprechenden Liste oder im entsprechenden Rastersteuerelement angezeigt werden.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::Microsoft.LightSwitch.Framework.Client.VisualCollection<global::LightSwitchApplication.AdressenSetItem> Lieferadressen
-        {
-            get
-            {
-                return global::LightSwitchApplication.KundenÜbersicht.DetailsClass.GetValue(this, global::LightSwitchApplication.KundenÜbersicht.DetailsClass.PropertySetProperties.Lieferadressen);
-            }
-        }
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Lieferadressen_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
+        partial void Adressen_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
  
         /// <summary>
         /// Ruft die Bildschirmmethode LieferadressenAddAndEditNew auf.
@@ -4924,7 +4902,7 @@ namespace LightSwitchApplication
                     "Kunde");
             }
 
-            private global::Microsoft.LightSwitch.IDataServiceQueryable RechnungsadressenQuery()
+            private global::Microsoft.LightSwitch.IDataServiceQueryable AdressenQuery()
             {
                 if (this.Screen.Kunden == null)
                 {
@@ -4938,32 +4916,7 @@ namespace LightSwitchApplication
                     return null;
                 }
 
-                return global::Microsoft.LightSwitch.DataServiceQueryable.Include(
-                    global::Microsoft.LightSwitch.DataServiceQueryable.Where(
-                        loader,
-                        (a) => (a.Lieferadresse == false)),
-                    "KundenRechnungsadresse");
-            }
-
-            private global::Microsoft.LightSwitch.IDataServiceQueryable LieferadressenQuery()
-            {
-                if (this.Screen.Kunden == null)
-                {
-                    return null;
-                }
-
-                global::Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.AdressenSetItem> loader =
-                    (global::Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.AdressenSetItem>)((global::Microsoft.LightSwitch.Details.ILoadableProperty)this.Screen.Kunden.Details.Properties.Adressen).Loader;
-                if (loader == null)
-                {
-                    return null;
-                }
-
-                return global::Microsoft.LightSwitch.DataServiceQueryable.Include(
-                    global::Microsoft.LightSwitch.DataServiceQueryable.Where(
-                        loader,
-                        (a) => (a.Lieferadresse == true)),
-                    "KundenRechnungsadresse");
+                return loader;
             }
 
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -4976,10 +4929,7 @@ namespace LightSwitchApplication
             private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.KundenÜbersicht, global::LightSwitchApplication.KundenÜbersicht.DetailsClass, global::LightSwitchApplication.Rechnungen>.Data _Rechnungen;
 
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.KundenÜbersicht, global::LightSwitchApplication.KundenÜbersicht.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Data _Rechnungsadressen;
-
-            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.KundenÜbersicht, global::LightSwitchApplication.KundenÜbersicht.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Data _Lieferadressen;
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.KundenÜbersicht, global::LightSwitchApplication.KundenÜbersicht.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Data _Adressen;
 
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.KundenÜbersicht, global::LightSwitchApplication.KundenÜbersicht.DetailsClass>.Data _LieferadressenAddAndEditNewCommand;
@@ -5054,19 +5004,11 @@ namespace LightSwitchApplication
                     }
                 }
 
-                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.KundenÜbersicht, global::LightSwitchApplication.KundenÜbersicht.DetailsClass, global::LightSwitchApplication.AdressenSetItem> Rechnungsadressen
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.KundenÜbersicht, global::LightSwitchApplication.KundenÜbersicht.DetailsClass, global::LightSwitchApplication.AdressenSetItem> Adressen
                 {
                     get
                     {
-                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.KundenÜbersicht, global::LightSwitchApplication.KundenÜbersicht.DetailsClass, global::LightSwitchApplication.AdressenSetItem>)base.GetItem(global::LightSwitchApplication.KundenÜbersicht.DetailsClass.PropertySetProperties.Rechnungsadressen);
-                    }
-                }
-
-                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.KundenÜbersicht, global::LightSwitchApplication.KundenÜbersicht.DetailsClass, global::LightSwitchApplication.AdressenSetItem> Lieferadressen
-                {
-                    get
-                    {
-                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.KundenÜbersicht, global::LightSwitchApplication.KundenÜbersicht.DetailsClass, global::LightSwitchApplication.AdressenSetItem>)base.GetItem(global::LightSwitchApplication.KundenÜbersicht.DetailsClass.PropertySetProperties.Lieferadressen);
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.KundenÜbersicht, global::LightSwitchApplication.KundenÜbersicht.DetailsClass, global::LightSwitchApplication.AdressenSetItem>)base.GetItem(global::LightSwitchApplication.KundenÜbersicht.DetailsClass.PropertySetProperties.Adressen);
                     }
                 }
 
@@ -5293,71 +5235,37 @@ namespace LightSwitchApplication
                 }
 
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.KundenÜbersicht, global::LightSwitchApplication.KundenÜbersicht.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Entry
-                    Rechnungsadressen = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.KundenÜbersicht, global::LightSwitchApplication.KundenÜbersicht.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Entry(
-                        "Rechnungsadressen",
-                        global::LightSwitchApplication.KundenÜbersicht.DetailsClass.PropertySetProperties._Rechnungsadressen_Stub,
-                        global::LightSwitchApplication.KundenÜbersicht.DetailsClass.PropertySetProperties._Rechnungsadressen_Validate,
-                        global::LightSwitchApplication.KundenÜbersicht.DetailsClass.PropertySetProperties._Rechnungsadressen_CreateQuery,
-                        global::LightSwitchApplication.KundenÜbersicht.DetailsClass.PropertySetProperties._Rechnungsadressen_SelectionChanged,
-                        global::LightSwitchApplication.KundenÜbersicht.DetailsClass.PropertySetProperties._Rechnungsadressen_OnCollectionChanged,
-                        global::LightSwitchApplication.KundenÜbersicht.DetailsClass.PropertySetProperties._Rechnungsadressen_OnLoaded);
-                private static void _Rechnungsadressen_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.KundenÜbersicht.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.KundenÜbersicht, global::LightSwitchApplication.KundenÜbersicht.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Data> c, global::LightSwitchApplication.KundenÜbersicht.DetailsClass d, object sf)
+                    Adressen = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.KundenÜbersicht, global::LightSwitchApplication.KundenÜbersicht.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Entry(
+                        "Adressen",
+                        global::LightSwitchApplication.KundenÜbersicht.DetailsClass.PropertySetProperties._Adressen_Stub,
+                        global::LightSwitchApplication.KundenÜbersicht.DetailsClass.PropertySetProperties._Adressen_Validate,
+                        global::LightSwitchApplication.KundenÜbersicht.DetailsClass.PropertySetProperties._Adressen_CreateQuery,
+                        global::LightSwitchApplication.KundenÜbersicht.DetailsClass.PropertySetProperties._Adressen_SelectionChanged,
+                        global::LightSwitchApplication.KundenÜbersicht.DetailsClass.PropertySetProperties._Adressen_OnCollectionChanged,
+                        global::LightSwitchApplication.KundenÜbersicht.DetailsClass.PropertySetProperties._Adressen_OnLoaded);
+                private static void _Adressen_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.KundenÜbersicht.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.KundenÜbersicht, global::LightSwitchApplication.KundenÜbersicht.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Data> c, global::LightSwitchApplication.KundenÜbersicht.DetailsClass d, object sf)
                 {
-                    c(d, ref d._Rechnungsadressen, sf);
+                    c(d, ref d._Adressen, sf);
                 }
-                private static void _Rechnungsadressen_Validate(global::LightSwitchApplication.KundenÜbersicht s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
+                private static void _Adressen_Validate(global::LightSwitchApplication.KundenÜbersicht s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
                 {
-                    s.Rechnungsadressen_Validate(r);
+                    s.Adressen_Validate(r);
                 }
-                private static global::Microsoft.LightSwitch.IDataServiceQueryable _Rechnungsadressen_CreateQuery(global::LightSwitchApplication.KundenÜbersicht.DetailsClass d, object[] args)
+                private static global::Microsoft.LightSwitch.IDataServiceQueryable _Adressen_CreateQuery(global::LightSwitchApplication.KundenÜbersicht.DetailsClass d, object[] args)
                 {
-                    return d.RechnungsadressenQuery();
+                    return d.AdressenQuery();
                 }
-                private static void _Rechnungsadressen_SelectionChanged(global::LightSwitchApplication.KundenÜbersicht s)
+                private static void _Adressen_SelectionChanged(global::LightSwitchApplication.KundenÜbersicht s)
                 {
-                    s.Rechnungsadressen_SelectionChanged();
+                    s.Adressen_SelectionChanged();
                 }
-                private static void _Rechnungsadressen_OnCollectionChanged(global::LightSwitchApplication.KundenÜbersicht s, global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+                private static void _Adressen_OnCollectionChanged(global::LightSwitchApplication.KundenÜbersicht s, global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
                 {
-                    s.Rechnungsadressen_Changed(e);
+                    s.Adressen_Changed(e);
                 }
-                private static void _Rechnungsadressen_OnLoaded(global::LightSwitchApplication.KundenÜbersicht s, bool succeeded)
+                private static void _Adressen_OnLoaded(global::LightSwitchApplication.KundenÜbersicht s, bool succeeded)
                 {
-                    s.Rechnungsadressen_Loaded(succeeded);
-                }
-
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.KundenÜbersicht, global::LightSwitchApplication.KundenÜbersicht.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Entry
-                    Lieferadressen = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.KundenÜbersicht, global::LightSwitchApplication.KundenÜbersicht.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Entry(
-                        "Lieferadressen",
-                        global::LightSwitchApplication.KundenÜbersicht.DetailsClass.PropertySetProperties._Lieferadressen_Stub,
-                        global::LightSwitchApplication.KundenÜbersicht.DetailsClass.PropertySetProperties._Lieferadressen_Validate,
-                        global::LightSwitchApplication.KundenÜbersicht.DetailsClass.PropertySetProperties._Lieferadressen_CreateQuery,
-                        global::LightSwitchApplication.KundenÜbersicht.DetailsClass.PropertySetProperties._Lieferadressen_SelectionChanged,
-                        global::LightSwitchApplication.KundenÜbersicht.DetailsClass.PropertySetProperties._Lieferadressen_OnCollectionChanged,
-                        global::LightSwitchApplication.KundenÜbersicht.DetailsClass.PropertySetProperties._Lieferadressen_OnLoaded);
-                private static void _Lieferadressen_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.KundenÜbersicht.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.KundenÜbersicht, global::LightSwitchApplication.KundenÜbersicht.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Data> c, global::LightSwitchApplication.KundenÜbersicht.DetailsClass d, object sf)
-                {
-                    c(d, ref d._Lieferadressen, sf);
-                }
-                private static void _Lieferadressen_Validate(global::LightSwitchApplication.KundenÜbersicht s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
-                {
-                    s.Lieferadressen_Validate(r);
-                }
-                private static global::Microsoft.LightSwitch.IDataServiceQueryable _Lieferadressen_CreateQuery(global::LightSwitchApplication.KundenÜbersicht.DetailsClass d, object[] args)
-                {
-                    return d.LieferadressenQuery();
-                }
-                private static void _Lieferadressen_SelectionChanged(global::LightSwitchApplication.KundenÜbersicht s)
-                {
-                    s.Lieferadressen_SelectionChanged();
-                }
-                private static void _Lieferadressen_OnCollectionChanged(global::LightSwitchApplication.KundenÜbersicht s, global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
-                {
-                    s.Lieferadressen_Changed(e);
-                }
-                private static void _Lieferadressen_OnLoaded(global::LightSwitchApplication.KundenÜbersicht s, bool succeeded)
-                {
-                    s.Lieferadressen_Loaded(succeeded);
+                    s.Adressen_Loaded(succeeded);
                 }
 
             }
@@ -5984,20 +5892,6 @@ namespace LightSwitchApplication
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void AdressenSet_Loaded(bool succeeded);
 
-        partial void Rechnungsadressen_SelectionChanged();
-
-        partial void Rechnungsadressen_Changed(global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e);
-
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Rechnungsadressen_Loaded(bool succeeded);
-
-        partial void Lieferadressen_SelectionChanged();
-
-        partial void Lieferadressen_Changed(global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e);
-
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Lieferadressen_Loaded(bool succeeded);
-
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public global::LightSwitchApplication.Rechnungen Rechnungen
@@ -6055,36 +5949,6 @@ namespace LightSwitchApplication
         }
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void AdressenSet_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
- 
-        /// <summary>
-        /// Ruft die visuelle Rechnungsadressen-Auflistung ab. Diese Auflistung enthält alle Datensätze, die derzeit in der entsprechenden Liste oder im entsprechenden Rastersteuerelement angezeigt werden.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::Microsoft.LightSwitch.Framework.Client.VisualCollection<global::LightSwitchApplication.AdressenSetItem> Rechnungsadressen
-        {
-            get
-            {
-                return global::LightSwitchApplication.RechnungDrucken.DetailsClass.GetValue(this, global::LightSwitchApplication.RechnungDrucken.DetailsClass.PropertySetProperties.Rechnungsadressen);
-            }
-        }
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Rechnungsadressen_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
- 
-        /// <summary>
-        /// Ruft die visuelle Lieferadressen-Auflistung ab. Diese Auflistung enthält alle Datensätze, die derzeit in der entsprechenden Liste oder im entsprechenden Rastersteuerelement angezeigt werden.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::Microsoft.LightSwitch.Framework.Client.VisualCollection<global::LightSwitchApplication.AdressenSetItem> Lieferadressen
-        {
-            get
-            {
-                return global::LightSwitchApplication.RechnungDrucken.DetailsClass.GetValue(this, global::LightSwitchApplication.RechnungDrucken.DetailsClass.PropertySetProperties.Lieferadressen);
-            }
-        }
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Lieferadressen_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
  
         /// <summary>
         /// Ruft die Bildschirmmethode Drucken auf.
@@ -6223,16 +6087,6 @@ namespace LightSwitchApplication
                 return this.Screen.DataWorkspace.ApplicationData.AdressenSet;
             }
 
-            private global::Microsoft.LightSwitch.IDataServiceQueryable RechnungsadressenQuery()
-            {
-                return this.Screen.DataWorkspace.ApplicationData.Rechnungsadressen();
-            }
-
-            private global::Microsoft.LightSwitch.IDataServiceQueryable LieferadressenQuery()
-            {
-                return this.Screen.DataWorkspace.ApplicationData.Lieferadressen();
-            }
-
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenReferenceProperty<global::LightSwitchApplication.RechnungDrucken, global::LightSwitchApplication.RechnungDrucken.DetailsClass, global::LightSwitchApplication.Rechnungen>.Data _Rechnungen;
 
@@ -6244,12 +6098,6 @@ namespace LightSwitchApplication
 
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.RechnungDrucken, global::LightSwitchApplication.RechnungDrucken.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Data _AdressenSet;
-
-            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.RechnungDrucken, global::LightSwitchApplication.RechnungDrucken.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Data _Rechnungsadressen;
-
-            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.RechnungDrucken, global::LightSwitchApplication.RechnungDrucken.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Data _Lieferadressen;
 
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.RechnungDrucken, global::LightSwitchApplication.RechnungDrucken.DetailsClass>.Data _DruckenCommand;
@@ -6299,22 +6147,6 @@ namespace LightSwitchApplication
                     get
                     {
                         return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.RechnungDrucken, global::LightSwitchApplication.RechnungDrucken.DetailsClass, global::LightSwitchApplication.AdressenSetItem>)base.GetItem(global::LightSwitchApplication.RechnungDrucken.DetailsClass.PropertySetProperties.AdressenSet);
-                    }
-                }
-
-                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.RechnungDrucken, global::LightSwitchApplication.RechnungDrucken.DetailsClass, global::LightSwitchApplication.AdressenSetItem> Rechnungsadressen
-                {
-                    get
-                    {
-                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.RechnungDrucken, global::LightSwitchApplication.RechnungDrucken.DetailsClass, global::LightSwitchApplication.AdressenSetItem>)base.GetItem(global::LightSwitchApplication.RechnungDrucken.DetailsClass.PropertySetProperties.Rechnungsadressen);
-                    }
-                }
-
-                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.RechnungDrucken, global::LightSwitchApplication.RechnungDrucken.DetailsClass, global::LightSwitchApplication.AdressenSetItem> Lieferadressen
-                {
-                    get
-                    {
-                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.RechnungDrucken, global::LightSwitchApplication.RechnungDrucken.DetailsClass, global::LightSwitchApplication.AdressenSetItem>)base.GetItem(global::LightSwitchApplication.RechnungDrucken.DetailsClass.PropertySetProperties.Lieferadressen);
                     }
                 }
 
@@ -6492,74 +6324,6 @@ namespace LightSwitchApplication
                 private static void _AdressenSet_OnLoaded(global::LightSwitchApplication.RechnungDrucken s, bool succeeded)
                 {
                     s.AdressenSet_Loaded(succeeded);
-                }
-
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.RechnungDrucken, global::LightSwitchApplication.RechnungDrucken.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Entry
-                    Rechnungsadressen = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.RechnungDrucken, global::LightSwitchApplication.RechnungDrucken.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Entry(
-                        "Rechnungsadressen",
-                        global::LightSwitchApplication.RechnungDrucken.DetailsClass.PropertySetProperties._Rechnungsadressen_Stub,
-                        global::LightSwitchApplication.RechnungDrucken.DetailsClass.PropertySetProperties._Rechnungsadressen_Validate,
-                        global::LightSwitchApplication.RechnungDrucken.DetailsClass.PropertySetProperties._Rechnungsadressen_CreateQuery,
-                        global::LightSwitchApplication.RechnungDrucken.DetailsClass.PropertySetProperties._Rechnungsadressen_SelectionChanged,
-                        global::LightSwitchApplication.RechnungDrucken.DetailsClass.PropertySetProperties._Rechnungsadressen_OnCollectionChanged,
-                        global::LightSwitchApplication.RechnungDrucken.DetailsClass.PropertySetProperties._Rechnungsadressen_OnLoaded);
-                private static void _Rechnungsadressen_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.RechnungDrucken.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.RechnungDrucken, global::LightSwitchApplication.RechnungDrucken.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Data> c, global::LightSwitchApplication.RechnungDrucken.DetailsClass d, object sf)
-                {
-                    c(d, ref d._Rechnungsadressen, sf);
-                }
-                private static void _Rechnungsadressen_Validate(global::LightSwitchApplication.RechnungDrucken s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
-                {
-                    s.Rechnungsadressen_Validate(r);
-                }
-                private static global::Microsoft.LightSwitch.IDataServiceQueryable _Rechnungsadressen_CreateQuery(global::LightSwitchApplication.RechnungDrucken.DetailsClass d, object[] args)
-                {
-                    return d.RechnungsadressenQuery();
-                }
-                private static void _Rechnungsadressen_SelectionChanged(global::LightSwitchApplication.RechnungDrucken s)
-                {
-                    s.Rechnungsadressen_SelectionChanged();
-                }
-                private static void _Rechnungsadressen_OnCollectionChanged(global::LightSwitchApplication.RechnungDrucken s, global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
-                {
-                    s.Rechnungsadressen_Changed(e);
-                }
-                private static void _Rechnungsadressen_OnLoaded(global::LightSwitchApplication.RechnungDrucken s, bool succeeded)
-                {
-                    s.Rechnungsadressen_Loaded(succeeded);
-                }
-
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.RechnungDrucken, global::LightSwitchApplication.RechnungDrucken.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Entry
-                    Lieferadressen = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.RechnungDrucken, global::LightSwitchApplication.RechnungDrucken.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Entry(
-                        "Lieferadressen",
-                        global::LightSwitchApplication.RechnungDrucken.DetailsClass.PropertySetProperties._Lieferadressen_Stub,
-                        global::LightSwitchApplication.RechnungDrucken.DetailsClass.PropertySetProperties._Lieferadressen_Validate,
-                        global::LightSwitchApplication.RechnungDrucken.DetailsClass.PropertySetProperties._Lieferadressen_CreateQuery,
-                        global::LightSwitchApplication.RechnungDrucken.DetailsClass.PropertySetProperties._Lieferadressen_SelectionChanged,
-                        global::LightSwitchApplication.RechnungDrucken.DetailsClass.PropertySetProperties._Lieferadressen_OnCollectionChanged,
-                        global::LightSwitchApplication.RechnungDrucken.DetailsClass.PropertySetProperties._Lieferadressen_OnLoaded);
-                private static void _Lieferadressen_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.RechnungDrucken.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.RechnungDrucken, global::LightSwitchApplication.RechnungDrucken.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Data> c, global::LightSwitchApplication.RechnungDrucken.DetailsClass d, object sf)
-                {
-                    c(d, ref d._Lieferadressen, sf);
-                }
-                private static void _Lieferadressen_Validate(global::LightSwitchApplication.RechnungDrucken s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
-                {
-                    s.Lieferadressen_Validate(r);
-                }
-                private static global::Microsoft.LightSwitch.IDataServiceQueryable _Lieferadressen_CreateQuery(global::LightSwitchApplication.RechnungDrucken.DetailsClass d, object[] args)
-                {
-                    return d.LieferadressenQuery();
-                }
-                private static void _Lieferadressen_SelectionChanged(global::LightSwitchApplication.RechnungDrucken s)
-                {
-                    s.Lieferadressen_SelectionChanged();
-                }
-                private static void _Lieferadressen_OnCollectionChanged(global::LightSwitchApplication.RechnungDrucken s, global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
-                {
-                    s.Lieferadressen_Changed(e);
-                }
-                private static void _Lieferadressen_OnLoaded(global::LightSwitchApplication.RechnungDrucken s, bool succeeded)
-                {
-                    s.Lieferadressen_Loaded(succeeded);
                 }
 
             }

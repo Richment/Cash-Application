@@ -3398,19 +3398,6 @@
                 </ContentItem.DataSource>
               </ContentItem>
             </ContentItem>
-            <ContentItem
-              DataType=":Boolean"
-              Kind="Value"
-              Name="Lieferadresse">
-              <ContentItem.DataSource>
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <MemberExpression
-                      Member="LightSwitchCommonModule:AdressenSetItem/Properties[Lieferadresse]" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ContentItem.DataSource>
-            </ContentItem>
           </ContentItem>
         </ContentItem>
       </ContentItem>
@@ -7126,19 +7113,6 @@
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
-                <ContentItem
-                  DataType=":Boolean"
-                  Kind="Value"
-                  Name="Lieferadresse">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="LightSwitchCommonModule:AdressenSetItem/Properties[Lieferadresse]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
               </ContentItem>
             </ContentItem>
           </ContentItem>
@@ -7278,30 +7252,15 @@
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
       <ScreenCollectionProperty
-        Name="Rechnungsadressen"
+        Name="Adressen"
         PageSize="45"
         PropertyType="LightSwitchCommonModule:CollectionView$AdressenSetItem">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
-            Name="RechnungsadressenQuery"
+            Name="AdressenQuery"
             ReturnType="LightSwitchCommonModule:AdressenSetItem*">
             <ScreenQueryDefinition.FilterExpression>
-              <QueryFilterExpressionTree>
-                <BinaryExpression
-                  NodeType="Equal">
-                  <BinaryExpression.Left>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="LightSwitchCommonModule:AdressenSetItem/Properties[Lieferadresse]" />
-                    </ChainExpression>
-                  </BinaryExpression.Left>
-                  <BinaryExpression.Right>
-                    <ConstantExpression
-                      ResultType=":Boolean"
-                      Value="False" />
-                  </BinaryExpression.Right>
-                </BinaryExpression>
-              </QueryFilterExpressionTree>
+              <QueryFilterExpressionTree />
             </ScreenQueryDefinition.FilterExpression>
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
@@ -7318,52 +7277,7 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="KundenÜbersicht/Properties[Rechnungsadressen]/Query" />
-          </ChainExpression>
-        </ScreenExpressionTree>
-      </ScreenCollectionProperty>
-      <ScreenCollectionProperty
-        Name="Lieferadressen"
-        PageSize="45"
-        PropertyType="LightSwitchCommonModule:CollectionView$AdressenSetItem">
-        <ScreenCollectionProperty.Query>
-          <ScreenQueryDefinition
-            Name="LieferadressenQuery"
-            ReturnType="LightSwitchCommonModule:AdressenSetItem*">
-            <ScreenQueryDefinition.FilterExpression>
-              <QueryFilterExpressionTree>
-                <BinaryExpression
-                  NodeType="Equal">
-                  <BinaryExpression.Left>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="LightSwitchCommonModule:AdressenSetItem/Properties[Lieferadresse]" />
-                    </ChainExpression>
-                  </BinaryExpression.Left>
-                  <BinaryExpression.Right>
-                    <ConstantExpression
-                      ResultType=":Boolean"
-                      Value="True" />
-                  </BinaryExpression.Right>
-                </BinaryExpression>
-              </QueryFilterExpressionTree>
-            </ScreenQueryDefinition.FilterExpression>
-            <ScreenQueryDefinition.Source>
-              <QuerySourceExpressionTree>
-                <ChainExpression>
-                  <MemberExpression
-                    Member="KundenÜbersicht/Properties[Kunden]" />
-                  <MemberExpression
-                    Member="Adressen" />
-                </ChainExpression>
-              </QuerySourceExpressionTree>
-            </ScreenQueryDefinition.Source>
-          </ScreenQueryDefinition>
-        </ScreenCollectionProperty.Query>
-        <ScreenExpressionTree>
-          <ChainExpression>
-            <CallExpression
-              Target="KundenÜbersicht/Properties[Lieferadressen]/Query" />
+              Target="KundenÜbersicht/Properties[Adressen]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
@@ -7723,48 +7637,48 @@
             <ContentItem
               DataType="LightSwitchCommonModule:CollectionView$AdressenSetItem"
               Kind="Collection"
-              Name="Rechnungsadressen">
+              Name="Adressen">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Lieferadressen" />
+              </ContentItem.Attributes>
               <ContentItem.CommandItems>
                 <ContentItem
                   Kind="Command"
-                  Name="RechnungsadressenAddAndEditNew">
-                  <ContentItem.Attributes>
-                    <DisplayName
-                      Value="Hinzufügen..." />
-                  </ContentItem.Attributes>
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <CallExpression
-                          Target="KundenÜbersicht/Methods[RechnungsadressenAddAndEditNew]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Kind="Command"
-                  Name="RechnungsadressenEditSelected">
-                  <ContentItem.Attributes>
-                    <DisplayName
-                      Value="Bearbeiten..." />
-                  </ContentItem.Attributes>
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <CallExpression
-                          Target="KundenÜbersicht/Methods[RechnungsadressenEditSelected]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Kind="Command"
-                  Name="Rechnungsadressen_DeleteSelected">
+                  Name="Adressen_AddAndEditNew">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="KundenÜbersicht/Properties[Rechnungsadressen]" />
+                          Member="KundenÜbersicht/Properties[Adressen]" />
+                        <CallExpression
+                          Target="AddAndEditNew" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Kind="Command"
+                  Name="Adressen_EditSelected">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="KundenÜbersicht/Properties[Adressen]" />
+                        <CallExpression
+                          Target="EditSelected" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Kind="Command"
+                  Name="Adressen_DeleteSelected">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="KundenÜbersicht/Properties[Adressen]" />
                         <CallExpression
                           Target="DeleteSelected" />
                       </ChainExpression>
@@ -7776,185 +7690,14 @@
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="KundenÜbersicht/Properties[Rechnungsadressen]" />
+                      Member="KundenÜbersicht/Properties[Adressen]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
               <ContentItem
                 DataType="LightSwitchCommonModule:AdressenSetItem"
                 Kind="Details"
-                Name="RechnungsadressenTemplate">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value="Rechnungsadressen" />
-                </ContentItem.Attributes>
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression />
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-                <ContentItem
-                  DataType=":String"
-                  Kind="Value"
-                  Name="Name2">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="LightSwitchCommonModule:AdressenSetItem/Properties[Name]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  DataType=":String"
-                  Kind="Value"
-                  Name="Starße2">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="LightSwitchCommonModule:AdressenSetItem/Properties[Starße]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  DataType=":String"
-                  Kind="Value"
-                  Name="Hausnummer3">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="LightSwitchCommonModule:AdressenSetItem/Properties[Hausnummer]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  DataType=":String?"
-                  Kind="Value"
-                  Name="PLZ3">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="LightSwitchCommonModule:AdressenSetItem/Properties[PLZ]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  DataType=":String"
-                  Kind="Value"
-                  Name="Stadt3">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="LightSwitchCommonModule:AdressenSetItem/Properties[Stadt]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  DataType=":String"
-                  Kind="Value"
-                  Name="Land3">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="LightSwitchCommonModule:AdressenSetItem/Properties[Land]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  DataType=":Boolean"
-                  IsHidden="True"
-                  Kind="Value"
-                  Name="Lieferadresse3">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="LightSwitchCommonModule:AdressenSetItem/Properties[Lieferadresse]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-              </ContentItem>
-            </ContentItem>
-            <ContentItem
-              DataType="LightSwitchCommonModule:CollectionView$AdressenSetItem"
-              Kind="Collection"
-              Name="Lieferadressen">
-              <ContentItem.CommandItems>
-                <ContentItem
-                  Kind="Command"
-                  Name="LieferadressenAddAndEditNew1">
-                  <ContentItem.Attributes>
-                    <DisplayName
-                      Value="Hinzufügen..." />
-                  </ContentItem.Attributes>
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <CallExpression
-                          Target="KundenÜbersicht/Methods[LieferadressenAddAndEditNew1]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Kind="Command"
-                  Name="LieferadressenEditSelected">
-                  <ContentItem.Attributes>
-                    <DisplayName
-                      Value="Bearbeiten..." />
-                  </ContentItem.Attributes>
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <CallExpression
-                          Target="KundenÜbersicht/Methods[LieferadressenEditSelected]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Kind="Command"
-                  Name="Lieferadressen_DeleteSelected">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="KundenÜbersicht/Properties[Lieferadressen]" />
-                        <CallExpression
-                          Target="DeleteSelected" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-              </ContentItem.CommandItems>
-              <ContentItem.DataSource>
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <MemberExpression
-                      Member="KundenÜbersicht/Properties[Lieferadressen]" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ContentItem.DataSource>
-              <ContentItem
-                DataType="LightSwitchCommonModule:AdressenSetItem"
-                Kind="Details"
-                Name="LieferadressenTemplate">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value="Lieferadressen" />
-                </ContentItem.Attributes>
+                Name="AdressenTemplate">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression />
@@ -7969,6 +7712,23 @@
                       <ChainExpression>
                         <MemberExpression
                           Member="LightSwitchCommonModule:AdressenSetItem/Properties[Name]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  DataType=":String?"
+                  Kind="Value"
+                  Name="zHd_Besteller_optional">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Besteller (optional)" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="LightSwitchCommonModule:AdressenSetItem/Properties[zHd_Besteller_optional]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -8038,27 +7798,13 @@
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
-                <ContentItem
-                  DataType=":Boolean"
-                  IsHidden="True"
-                  Kind="Value"
-                  Name="Lieferadresse1">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="LightSwitchCommonModule:AdressenSetItem/Properties[Lieferadresse]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
               </ContentItem>
             </ContentItem>
             <ContentItem
               DataType="LightSwitchCommonModule:CollectionView$Rechnungen"
               Kind="Collection"
               Name="Rechnungen"
-              View=":DataGrid">
+              View=":CollectionCustomContentControl">
               <ContentItem.CommandItems>
                 <ContentItem
                   Kind="Command"
@@ -8393,275 +8139,6 @@
           <ContentItem
             IsHidden="True"
             Kind="Group"
-            Name="ModalAddressRechnung"
-            View=":ModalWindow">
-            <ContentItem.Attributes>
-              <DisplayName
-                Value="Rechnungsadresse" />
-            </ContentItem.Attributes>
-            <ContentItem.PropertySources>
-              <ControlPropertySource
-                Property="Microsoft.LightSwitch:RootControl/Properties[MinWidth]">
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <ConstantExpression
-                      ResultType=":Double"
-                      Value="200" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ControlPropertySource>
-              <ControlPropertySource
-                Property="Microsoft.LightSwitch:RootControl/Properties[Width]">
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <ConstantExpression
-                      ResultType=":Double"
-                      Value="200" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ControlPropertySource>
-              <ControlPropertySource
-                Property="Microsoft.LightSwitch:RootControl/Properties[WidthSizingMode]">
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <ConstantExpression
-                      ResultType=":String"
-                      Value="Pixels" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ControlPropertySource>
-            </ContentItem.PropertySources>
-            <ContentItem
-              Kind="Group"
-              Name="Group">
-              <ContentItem
-                DataType=":Int32"
-                IsHidden="True"
-                Kind="Value"
-                Name="Rechnungsadressen_SelectedItem_Id">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="KundenÜbersicht/Properties[Rechnungsadressen]" />
-                      <MemberExpression
-                        Member="SelectedItem" />
-                      <MemberExpression
-                        Member="Id" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                DataType=":String"
-                Kind="Value"
-                Name="Rechnungsadressen_SelectedItem_Name">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="KundenÜbersicht/Properties[Rechnungsadressen]" />
-                      <MemberExpression
-                        Member="SelectedItem" />
-                      <MemberExpression
-                        Member="Name" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-            </ContentItem>
-            <ContentItem
-              Kind="Group"
-              Name="Group2"
-              View=":ColumnsLayout">
-              <ContentItem
-                DataType=":String"
-                Kind="Value"
-                Name="Rechnungsadressen_SelectedItem_Starße">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="KundenÜbersicht/Properties[Rechnungsadressen]" />
-                      <MemberExpression
-                        Member="SelectedItem" />
-                      <MemberExpression
-                        Member="Starße" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                DataType=":String"
-                Kind="Value"
-                Name="Rechnungsadressen_SelectedItem_Hausnummer">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value="Nr." />
-                </ContentItem.Attributes>
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="KundenÜbersicht/Properties[Rechnungsadressen]" />
-                      <MemberExpression
-                        Member="SelectedItem" />
-                      <MemberExpression
-                        Member="Hausnummer" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-            </ContentItem>
-            <ContentItem
-              Kind="Group"
-              Name="Group3">
-              <ContentItem
-                DataType=":String?"
-                Kind="Value"
-                Name="Rechnungsadressen_SelectedItem_PLZ">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="KundenÜbersicht/Properties[Rechnungsadressen]" />
-                      <MemberExpression
-                        Member="SelectedItem" />
-                      <MemberExpression
-                        Member="PLZ" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                DataType=":String"
-                Kind="Value"
-                Name="Rechnungsadressen_SelectedItem_Stadt">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="KundenÜbersicht/Properties[Rechnungsadressen]" />
-                      <MemberExpression
-                        Member="SelectedItem" />
-                      <MemberExpression
-                        Member="Stadt" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                DataType=":String"
-                Kind="Value"
-                Name="Rechnungsadressen_SelectedItem_Land">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="KundenÜbersicht/Properties[Rechnungsadressen]" />
-                      <MemberExpression
-                        Member="SelectedItem" />
-                      <MemberExpression
-                        Member="Land" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                DataType=":Boolean"
-                IsHidden="True"
-                Kind="Value"
-                Name="Rechnungsadressen_SelectedItem_Lieferadresse">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="KundenÜbersicht/Properties[Rechnungsadressen]" />
-                      <MemberExpression
-                        Member="SelectedItem" />
-                      <MemberExpression
-                        Member="Lieferadresse" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                DataType="LightSwitchCommonModule:Kunden"
-                IsHidden="True"
-                Kind="Details"
-                Name="Rechnungsadressen_SelectedItem_KundenRechnungsadresse">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="KundenÜbersicht/Properties[Rechnungsadressen]" />
-                      <MemberExpression
-                        Member="SelectedItem" />
-                      <MemberExpression
-                        Member="KundenRechnungsadresse" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-                <ContentItem
-                  DataType="LightSwitchCommonModule:Kunden"
-                  Kind="Details"
-                  Name="Kunden">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression />
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-              </ContentItem>
-            </ContentItem>
-            <ContentItem
-              Kind="Group"
-              Name="Group1">
-              <ContentItem.CommandItems>
-                <ContentItem
-                  Kind="Command"
-                  Name="RechnungOK">
-                  <ContentItem.Attributes>
-                    <DisplayName
-                      Value="OK" />
-                  </ContentItem.Attributes>
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <CallExpression
-                          Target="KundenÜbersicht/Methods[RechnungOK]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem.PropertySources>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch:RootControl/Properties[HorizontalAlignment]">
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <ConstantExpression
-                            ResultType=":String"
-                            Value="Right" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch:RootControl/Properties[VerticalAlignment]">
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <ConstantExpression
-                            ResultType=":String"
-                            Value="Bottom" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                  </ContentItem.PropertySources>
-                </ContentItem>
-              </ContentItem.CommandItems>
-            </ContentItem>
-          </ContentItem>
-          <ContentItem
-            IsHidden="True"
-            Kind="Group"
             Name="ModalAddressLiefer"
             View=":ModalWindow">
             <ContentItem.Attributes>
@@ -8692,187 +8169,14 @@
             </ContentItem.PropertySources>
             <ContentItem
               Kind="Group"
-              Name="Group7">
-              <ContentItem
-                DataType=":Int32"
-                IsHidden="True"
-                Kind="Value"
-                Name="Lieferadressen_SelectedItem_Id">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="KundenÜbersicht/Properties[Lieferadressen]" />
-                      <MemberExpression
-                        Member="SelectedItem" />
-                      <MemberExpression
-                        Member="Id" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                DataType=":String"
-                Kind="Value"
-                Name="Lieferadressen_SelectedItem_Name">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="KundenÜbersicht/Properties[Lieferadressen]" />
-                      <MemberExpression
-                        Member="SelectedItem" />
-                      <MemberExpression
-                        Member="Name" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-            </ContentItem>
+              Name="Group7" />
             <ContentItem
               Kind="Group"
               Name="Group5"
-              View=":ColumnsLayout">
-              <ContentItem
-                DataType=":String"
-                Kind="Value"
-                Name="Lieferadressen_SelectedItem_Starße">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="KundenÜbersicht/Properties[Lieferadressen]" />
-                      <MemberExpression
-                        Member="SelectedItem" />
-                      <MemberExpression
-                        Member="Starße" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                DataType=":String"
-                Kind="Value"
-                Name="Lieferadressen_SelectedItem_Hausnummer">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value="Nr." />
-                </ContentItem.Attributes>
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="KundenÜbersicht/Properties[Lieferadressen]" />
-                      <MemberExpression
-                        Member="SelectedItem" />
-                      <MemberExpression
-                        Member="Hausnummer" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-            </ContentItem>
+              View=":ColumnsLayout" />
             <ContentItem
               Kind="Group"
-              Name="Group4">
-              <ContentItem
-                DataType=":String?"
-                Kind="Value"
-                Name="Lieferadressen_SelectedItem_PLZ">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="KundenÜbersicht/Properties[Lieferadressen]" />
-                      <MemberExpression
-                        Member="SelectedItem" />
-                      <MemberExpression
-                        Member="PLZ" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                DataType=":String"
-                Kind="Value"
-                Name="Lieferadressen_SelectedItem_Stadt">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="KundenÜbersicht/Properties[Lieferadressen]" />
-                      <MemberExpression
-                        Member="SelectedItem" />
-                      <MemberExpression
-                        Member="Stadt" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                DataType=":String"
-                Kind="Value"
-                Name="Lieferadressen_SelectedItem_Land">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="KundenÜbersicht/Properties[Lieferadressen]" />
-                      <MemberExpression
-                        Member="SelectedItem" />
-                      <MemberExpression
-                        Member="Land" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                DataType=":Boolean"
-                IsHidden="True"
-                Kind="Value"
-                Name="Lieferadressen_SelectedItem_Lieferadresse">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="KundenÜbersicht/Properties[Lieferadressen]" />
-                      <MemberExpression
-                        Member="SelectedItem" />
-                      <MemberExpression
-                        Member="Lieferadresse" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                DataType="LightSwitchCommonModule:Kunden"
-                IsHidden="True"
-                Kind="Details"
-                Name="Lieferadressen_SelectedItem_KundenRechnungsadresse">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="KundenÜbersicht/Properties[Lieferadressen]" />
-                      <MemberExpression
-                        Member="SelectedItem" />
-                      <MemberExpression
-                        Member="KundenRechnungsadresse" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-                <ContentItem
-                  DataType="LightSwitchCommonModule:Kunden"
-                  Kind="Details"
-                  Name="Kunden1">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression />
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-              </ContentItem>
-            </ContentItem>
+              Name="Group4" />
             <ContentItem
               Kind="Group"
               Name="Group6">
@@ -9197,19 +8501,6 @@
                   </ContentItem.DataSource>
                 </ContentItem>
               </ContentItem>
-              <ContentItem
-                DataType=":Boolean"
-                Kind="Value"
-                Name="Lieferadresse">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="LightSwitchCommonModule:AdressenSetItem/Properties[Lieferadresse]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
             </ContentItem>
           </ContentItem>
         </ContentItem>
@@ -9337,62 +8628,6 @@
           <ChainExpression>
             <CallExpression
               Target="RechnungDrucken/Properties[AdressenSet]/Query" />
-          </ChainExpression>
-        </ScreenExpressionTree>
-      </ScreenCollectionProperty>
-      <ScreenCollectionProperty
-        Name="Rechnungsadressen"
-        PageSize="45"
-        PropertyType="LightSwitchCommonModule:CollectionView$AdressenSetItem">
-        <ScreenCollectionProperty.Query>
-          <ScreenQueryDefinition
-            Name="RechnungsadressenQuery"
-            ReturnType="LightSwitchCommonModule:AdressenSetItem*">
-            <ScreenQueryDefinition.FilterExpression>
-              <QueryFilterExpressionTree />
-            </ScreenQueryDefinition.FilterExpression>
-            <ScreenQueryDefinition.Source>
-              <QuerySourceExpressionTree>
-                <MemberExpression
-                  Member="LightSwitchCommonModule:ApplicationData/Members[Rechnungsadressen]" />
-              </QuerySourceExpressionTree>
-            </ScreenQueryDefinition.Source>
-          </ScreenQueryDefinition>
-        </ScreenCollectionProperty.Query>
-        <ScreenExpressionTree>
-          <ChainExpression>
-            <CallExpression
-              Target="RechnungDrucken/Properties[Rechnungsadressen]/Query" />
-          </ChainExpression>
-        </ScreenExpressionTree>
-      </ScreenCollectionProperty>
-      <ScreenCollectionProperty
-        Name="Lieferadressen"
-        PageSize="45"
-        PropertyType="LightSwitchCommonModule:CollectionView$AdressenSetItem">
-        <ScreenCollectionProperty.Attributes>
-          <DisplayName
-            Value="Lieferadresse" />
-        </ScreenCollectionProperty.Attributes>
-        <ScreenCollectionProperty.Query>
-          <ScreenQueryDefinition
-            Name="LieferadressenQuery"
-            ReturnType="LightSwitchCommonModule:AdressenSetItem*">
-            <ScreenQueryDefinition.FilterExpression>
-              <QueryFilterExpressionTree />
-            </ScreenQueryDefinition.FilterExpression>
-            <ScreenQueryDefinition.Source>
-              <QuerySourceExpressionTree>
-                <MemberExpression
-                  Member="LightSwitchCommonModule:ApplicationData/Members[Lieferadressen]" />
-              </QuerySourceExpressionTree>
-            </ScreenQueryDefinition.Source>
-          </ScreenQueryDefinition>
-        </ScreenCollectionProperty.Query>
-        <ScreenExpressionTree>
-          <ChainExpression>
-            <CallExpression
-              Target="RechnungDrucken/Properties[Lieferadressen]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>

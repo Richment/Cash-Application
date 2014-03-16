@@ -40,66 +40,6 @@ namespace LightSwitchApplication
 
 
 
-		#region Rechnung
-
-		private void RechnungAvailable(object sender, ControlAvailableEventArgs e)
-		{
-			this.FindControl(FRMRechnung).ControlAvailable -= RechnungAvailable;
-			((ChildWindow)e.Control).Closed += new EventHandler(RechnungClosed);
-		}
-
-		private void RechnungClosed(object sender, EventArgs e)
-		{
-			((ChildWindow)sender).Closed -= RechnungClosed;
-
-			if (newItem != null)
-				newItem.Lieferadresse = false;
-
-			if (!((ChildWindow)sender).DialogResult.HasValue)
-				RechnungCancelChanges();
-
-			this.RechnungCloseWindow();
-		}
-
-		private void RechnungCancelChanges()
-		{
-			foreach (AdressenSetItem item in this.DataWorkspace.ApplicationData.Details.GetChanges().AddedEntities.OfType<AdressenSetItem>())
-				item.Details.DiscardChanges();
-			newItem = null;
-		}
-
-		private void RechnungCloseWindow()
-		{
-			this.CloseModalWindow(FRMRechnung);
-			this.FindControl(FRMRechnung).IsVisible = false;
-		}
-
-		#endregion
-
-		partial void RechnungsadressenAddAndEditNew_Execute()
-		{
-			newItem = this.Rechnungsadressen.AddNew();
-
-			this.OpenModalWindow(FRMRechnung);
-			this.FindControl(FRMRechnung).ControlAvailable += new EventHandler<ControlAvailableEventArgs>(RechnungAvailable);
-		}
-
-		partial void RechnungsadressenEditSelected_Execute()
-		{
-			newItem = this.Rechnungsadressen.SelectedItem;
-			this.OpenModalWindow(FRMRechnung);
-			this.FindControl(FRMRechnung).ControlAvailable += new EventHandler<ControlAvailableEventArgs>(RechnungAvailable);
-		}
-
-		partial void RechnungOK_Execute()
-		{
-			this.RechnungCloseWindow();
-		}
-
-
-
-
-
 
 		#region Liefer
 
@@ -114,7 +54,7 @@ namespace LightSwitchApplication
 			((ChildWindow)sender).Closed -= LieferClosed;
 
 			if (newItem != null)
-				newItem.Lieferadresse = true;
+				; //newItem.Lieferadresse = true;
 
 			if (!((ChildWindow)sender).DialogResult.HasValue)
 				LieferCancelChanges();
@@ -139,7 +79,7 @@ namespace LightSwitchApplication
 	
 		partial void LieferadressenAddAndEditNew1_Execute()
 		{
-			newItem = this.Lieferadressen.AddNew();
+			newItem = this.Adressen.AddNew();
 
 			this.OpenModalWindow(FRMLiefer);
 			this.FindControl(FRMLiefer).ControlAvailable += new EventHandler<ControlAvailableEventArgs>(LieferAvailable);
@@ -148,7 +88,7 @@ namespace LightSwitchApplication
 	
 		partial void LieferadressenEditSelected_Execute()
 		{
-			newItem = this.Lieferadressen.SelectedItem;
+			newItem = this.Adressen.SelectedItem;
 			this.OpenModalWindow(FRMLiefer);
 			this.FindControl(FRMLiefer).ControlAvailable += new EventHandler<ControlAvailableEventArgs>(LieferAvailable);
 	  	}

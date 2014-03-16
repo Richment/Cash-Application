@@ -60,7 +60,7 @@ namespace LightSwitchApplication
 		{
 			string[] elements = new string[]
 			{
-				//Kunde.Firma,
+				Kunde.Firma,
 				Kunde.Vorname +' '+ Kunde.Nachnahme,
 				Kunde.Straße +' '+ Kunde.Hausnummer,
 				Kunde.PLZ +' '+ Kunde.Stadt,

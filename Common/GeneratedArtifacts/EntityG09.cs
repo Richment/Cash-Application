@@ -300,30 +300,6 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public bool Lieferadresse
-        {
-            get
-            {
-                return global::LightSwitchApplication.AdressenSetItem.DetailsClass.GetValue(this, global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.Lieferadresse);
-            }
-            set
-            {
-                global::LightSwitchApplication.AdressenSetItem.DetailsClass.SetValue(this, global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.Lieferadresse, value);
-            }
-        }
-        
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Lieferadresse_IsReadOnly(ref bool result);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Lieferadresse_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Lieferadresse_Changed();
-
-        /// <summary>
-        /// Keine modellierte Beschreibung verfügbar
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public global::LightSwitchApplication.Kunden KundenRechnungsadresse
         {
             get
@@ -497,14 +473,6 @@ namespace LightSwitchApplication
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, bool> Lieferadresse
-                {
-                    get
-                    {
-                        return base.GetItem(global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.Lieferadresse) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, bool>;
-                    }
-                }
-                
                 public global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, global::LightSwitchApplication.Kunden> KundenRechnungsadresse
                 {
                     get
@@ -528,7 +496,6 @@ namespace LightSwitchApplication
                 new string PLZ { get; set; }
                 new string Stadt { get; set; }
                 new string Land { get; set; }
-                new bool Lieferadresse { get; set; }
                 new global::Microsoft.LightSwitch.Internal.IEntityImplementation KundenRechnungsadresse { get; set; }
             }
             #pragma warning restore 109
@@ -873,43 +840,6 @@ namespace LightSwitchApplication
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, bool>.Entry
-                    Lieferadresse = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, bool>.Entry(
-                        "Lieferadresse",
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Lieferadresse_Stub,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Lieferadresse_ComputeIsReadOnly,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Lieferadresse_Validate,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Lieferadresse_GetImplementationValue,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Lieferadresse_SetImplementationValue,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Lieferadresse_OnValueChanged);
-                private static void _Lieferadresse_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.AdressenSetItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, bool>.Data> c, global::LightSwitchApplication.AdressenSetItem.DetailsClass d, object sf)
-                {
-                    c(d, ref d._Lieferadresse, sf);
-                }
-                private static bool _Lieferadresse_ComputeIsReadOnly(global::LightSwitchApplication.AdressenSetItem e)
-                {
-                    bool result = false;
-                    e.Lieferadresse_IsReadOnly(ref result);
-                    return result;
-                }
-                private static void _Lieferadresse_Validate(global::LightSwitchApplication.AdressenSetItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
-                {
-                    e.Lieferadresse_Validate(r);
-                }
-                private static bool _Lieferadresse_GetImplementationValue(global::LightSwitchApplication.AdressenSetItem.DetailsClass d)
-                {
-                    return d.ImplementationEntity.Lieferadresse;
-                }
-                private static void _Lieferadresse_SetImplementationValue(global::LightSwitchApplication.AdressenSetItem.DetailsClass d, bool v)
-                {
-                    d.ImplementationEntity.Lieferadresse = v;
-                }
-                private static void _Lieferadresse_OnValueChanged(global::LightSwitchApplication.AdressenSetItem e)
-                {
-                    e.Lieferadresse_Changed();
-                }
-    
-                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, global::LightSwitchApplication.Kunden>.Entry
                     KundenRechnungsadresse = new global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, global::LightSwitchApplication.Kunden>.Entry(
                         "KundenRechnungsadresse",
@@ -984,9 +914,6 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Data _Land;
-            
-            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, bool>.Data _Lieferadresse;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, global::LightSwitchApplication.Kunden>.Data _KundenRechnungsadresse;

@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Ursprünglicher Dateiname:
-// Erstellungsdatum: 09.03.2014 14:39:37
+// Erstellungsdatum: 16.03.2014 16:59:03
 namespace LightSwitchApplication.Implementation
 {
     
@@ -2164,14 +2164,16 @@ namespace LightSwitchApplication.Implementation
         /// <param name="ID">Anfangswert von Id.</param>
         /// <param name="rowVersion">Anfangswert von RowVersion.</param>
         /// <param name="anzahl">Anfangswert von Anzahl.</param>
+        /// <param name="rabatt">Anfangswert von Rabatt.</param>
         /// <param name="artikelliste_Rechnungen">Anfangswert von Artikelliste_Rechnungen.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Artikelliste CreateArtikelliste(int ID, byte[] rowVersion, int anzahl, int artikelliste_Rechnungen)
+        public static Artikelliste CreateArtikelliste(int ID, byte[] rowVersion, int anzahl, decimal rabatt, int artikelliste_Rechnungen)
         {
             Artikelliste artikelliste = new Artikelliste();
             artikelliste.Id = ID;
             artikelliste.RowVersion = rowVersion;
             artikelliste.Anzahl = anzahl;
+            artikelliste.Rabatt = rabatt;
             artikelliste.Artikelliste_Rechnungen = artikelliste_Rechnungen;
             return artikelliste;
         }
@@ -2260,6 +2262,32 @@ namespace LightSwitchApplication.Implementation
         private int _Anzahl;
         partial void OnAnzahlChanging(int value);
         partial void OnAnzahlChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "Rabatt" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public decimal Rabatt
+        {
+            get
+            {
+                return this._Rabatt;
+            }
+            set
+            {
+                this.OnRabattChanging(value);
+                if (object.Equals(this.Rabatt, value))
+                {
+                    return;
+                }
+                this._Rabatt = value;
+                this.OnRabattChanged();
+                this.OnPropertyChanged("Rabatt");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private decimal _Rabatt;
+        partial void OnRabattChanging(decimal value);
+        partial void OnRabattChanged();
         /// <summary>
         /// Im Schema sind keine Kommentare für die Eigenschaft "Artikelliste_Rechnungen" vorhanden.
         /// </summary>
@@ -3272,10 +3300,9 @@ namespace LightSwitchApplication.Implementation
         /// <param name="hausnummer">Anfangswert von Hausnummer.</param>
         /// <param name="stadt">Anfangswert von Stadt.</param>
         /// <param name="land">Anfangswert von Land.</param>
-        /// <param name="lieferadresse">Anfangswert von Lieferadresse.</param>
         /// <param name="kunden_Rechnungsadressen">Anfangswert von Kunden_Rechnungsadressen.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static AdressenSetItem CreateAdressenSetItem(int ID, byte[] rowVersion, string name, string starße, string hausnummer, string stadt, string land, bool lieferadresse, int kunden_Rechnungsadressen)
+        public static AdressenSetItem CreateAdressenSetItem(int ID, byte[] rowVersion, string name, string starße, string hausnummer, string stadt, string land, int kunden_Rechnungsadressen)
         {
             AdressenSetItem adressenSetItem = new AdressenSetItem();
             adressenSetItem.Id = ID;
@@ -3285,7 +3312,6 @@ namespace LightSwitchApplication.Implementation
             adressenSetItem.Hausnummer = hausnummer;
             adressenSetItem.Stadt = stadt;
             adressenSetItem.Land = land;
-            adressenSetItem.Lieferadresse = lieferadresse;
             adressenSetItem.Kunden_Rechnungsadressen = kunden_Rechnungsadressen;
             return adressenSetItem;
         }
@@ -3530,32 +3556,6 @@ namespace LightSwitchApplication.Implementation
         private string _Land;
         partial void OnLandChanging(string value);
         partial void OnLandChanged();
-        /// <summary>
-        /// Im Schema sind keine Kommentare für die Eigenschaft "Lieferadresse" vorhanden.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public bool Lieferadresse
-        {
-            get
-            {
-                return this._Lieferadresse;
-            }
-            set
-            {
-                this.OnLieferadresseChanging(value);
-                if (object.Equals(this.Lieferadresse, value))
-                {
-                    return;
-                }
-                this._Lieferadresse = value;
-                this.OnLieferadresseChanged();
-                this.OnPropertyChanged("Lieferadresse");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private bool _Lieferadresse;
-        partial void OnLieferadresseChanging(bool value);
-        partial void OnLieferadresseChanged();
         /// <summary>
         /// Im Schema sind keine Kommentare für die Eigenschaft "Kunden_Rechnungsadressen" vorhanden.
         /// </summary>

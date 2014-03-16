@@ -34,7 +34,13 @@ namespace LightSwitchApplication
 		partial void Preis_Compute(ref decimal result)
 		{
 			if (Artikelstamm != null)
-				result = Math.Round(this.Anzahl * this.Artikelstamm.VK_pro_PK, 2);
+				result = Math.Round(this.Anzahl * this.Artikelstamm.VK_pro_PK, 2) - this.Rabattwert;
+		}
+
+		partial void Rabattwert_Compute(ref decimal result)
+		{
+			if (Artikelstamm != null)
+				result = Math.Round(this.Anzahl * this.PosPreis * (this.Rabatt / 100M), 2);
 		}
 	}
 }

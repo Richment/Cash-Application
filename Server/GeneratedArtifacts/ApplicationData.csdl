@@ -88,6 +88,7 @@
     <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
     <Property Name="Anzahl" Type="Edm.Int32" Nullable="false" />
+    <Property Name="Rabatt" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="2" />
     <Property Name="Artikelliste_Rechnungen" Type="Edm.Int32" Nullable="false" />
     <Property Name="Artikelliste_Artikelstamm" Type="Edm.Int32" />
     <NavigationProperty Name="Rechnungen" Relationship="LightSwitchApplication.Artikelliste_Rechnungen" ToRole="Rechnungen" FromRole="Artikelliste" />
@@ -147,7 +148,6 @@
     <Property Name="PLZ" Type="Edm.String" MaxLength="255" />
     <Property Name="Stadt" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="Land" Type="Edm.String" Nullable="false" MaxLength="255" />
-    <Property Name="Lieferadresse" Type="Edm.Boolean" Nullable="false" />
     <Property Name="Kunden_Rechnungsadressen" Type="Edm.Int32" Nullable="false" />
     <NavigationProperty Name="KundenRechnungsadresse" Relationship="LightSwitchApplication.Kunden_AdressenSetItem" ToRole="Kunden" FromRole="AdressenSetItem" />
   </EntityType>

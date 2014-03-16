@@ -50,7 +50,7 @@ namespace LightSwitchApplication
 
 					object wdoc = Word.GetDocument(Word.GetWord(), doc.Filename);
 					Word.Export(wdoc, "MapTableNoHeading", 2, false, this.ArtikellisteCollection, artikelFields);	  */
-		
+
 					if (!doc.Print())
 						this.ShowError(new Exception("Dokument konnte nicht gedruckt werden."));
 				}
@@ -69,28 +69,28 @@ namespace LightSwitchApplication
 			if ((currentFilename = CreateTemplate()) == null)
 				return;
 
-		/*    List<ColumnMapping> mappings = new List<ColumnMapping>()
-			{
-				 new ColumnMapping("Adresse","Adresse"),
-			};
+			/*    List<ColumnMapping> mappings = new List<ColumnMapping>()
+				{
+					 new ColumnMapping("Adresse","Adresse"),
+				};
 			
-			List<string> artikelFields = new List<string>() 
-			{
-				"Position", 
-				"ArtikelStamm.ArtikelNummer", 
-				"Anzahl",
-				"PosPreis", 
-				"Preis" 
-			};
+				List<string> artikelFields = new List<string>() 
+				{
+					"Position", 
+					"ArtikelStamm.ArtikelNummer", 
+					"Anzahl",
+					"PosPreis", 
+					"Preis" 
+				};
 			
-			object wdoc = Word.GenerateDocument(tempFilename, this.ArtikellisteCollection.SelectedItem.Rechnungen, mappings);
+				object wdoc = Word.GenerateDocument(tempFilename, this.ArtikellisteCollection.SelectedItem.Rechnungen, mappings);
 			
-			Word.Export(wdoc, "MapTableNoHeading", 2, false, this.ArtikellisteCollection, artikelFields);
+				Word.Export(wdoc, "MapTableNoHeading", 2, false, this.ArtikellisteCollection, artikelFields);
 
-			Word.SaveAsPDF(wdoc, @"C:\users\richment\desktop\xx__XX__xx.pdf",false);
+				Word.SaveAsPDF(wdoc, @"C:\users\richment\desktop\xx__XX__xx.pdf",false);
 			
-			return;			 */
-			
+				return;			 */
+
 			using (WordDocument doc = new WordDocument(currentFilename, ProcessDocument))
 			{
 				try
@@ -126,7 +126,7 @@ namespace LightSwitchApplication
 		private void ProcessDocument(dynamic wordApp)
 		{
 			var wordDoc = wordApp.ActiveDocument;
-										 
+
 			//wordDoc.Bookmarks("Firma").Range.InsertAfter(ArtikellisteCollection.SelectedItem.Rechnungen.Kunde.Firma);
 			wordDoc.Bookmarks("Adresse").Range.InsertAfter(ArtikellisteCollection.SelectedItem.Rechnungen.Adresse);
 			wordDoc.Bookmarks("rechnungsnr").Range.InsertAfter(ArtikellisteCollection.SelectedItem.Rechnungen.Rechnungsnummer);
@@ -135,7 +135,7 @@ namespace LightSwitchApplication
 			wordDoc.Bookmarks("lieferscheinnr").Range.InsertAfter(ArtikellisteCollection.SelectedItem.Rechnungen.Lieferscheinnummer);
 			wordDoc.Bookmarks("lieferdatum").Range.InsertAfter(ArtikellisteCollection.SelectedItem.Rechnungen.Lieferdatum);
 			wordDoc.Bookmarks("lieferkosten").Range.InsertAfter(ArtikellisteCollection.SelectedItem.Rechnungen.Lieferkosten);
-            wordDoc.Bookmarks("gesamtnetto").Range.InsertAfter(ArtikellisteCollection.SelectedItem.Rechnungen.Rechnungsbetrag_Netto);
+			wordDoc.Bookmarks("gesamtnetto").Range.InsertAfter(ArtikellisteCollection.SelectedItem.Rechnungen.Rechnungsbetrag_Netto);
 			wordDoc.Bookmarks("mehrwertsteuer").Range.InsertAfter(ArtikellisteCollection.SelectedItem.Rechnungen.Mehrwertsteuer);
 			wordDoc.Bookmarks("brutto").Range.InsertAfter(ArtikellisteCollection.SelectedItem.Rechnungen.Rechnungsbetrag_Brutto);
 

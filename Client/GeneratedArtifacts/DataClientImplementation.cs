@@ -606,6 +606,11 @@ namespace LightSwitchApplication.Implementation
             this.___OnPropertyChanged("Anzahl");
         }
         
+        partial void OnRabattChanged()
+        {
+            this.___OnPropertyChanged("Rabatt");
+        }
+        
         global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Artikelliste.DetailsClass.IImplementation.Rechnungen
         {
             get
@@ -910,11 +915,6 @@ namespace LightSwitchApplication.Implementation
         partial void OnLandChanged()
         {
             this.___OnPropertyChanged("Land");
-        }
-        
-        partial void OnLieferadresseChanged()
-        {
-            this.___OnPropertyChanged("Lieferadresse");
         }
         
         global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.AdressenSetItem.DetailsClass.IImplementation.KundenRechnungsadresse

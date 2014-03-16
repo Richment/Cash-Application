@@ -866,62 +866,6 @@
         EntitySet="BestellStatusSet"
         Name="BestellStatus" />
     </AssociationSet>
-    <QueryOperation
-      Name="Rechnungsadressen"
-      ReturnType="AdressenSetItem*">
-      <QueryOperation.FilterExpression>
-        <QueryFilterExpressionTree>
-          <BinaryExpression
-            NodeType="Equal">
-            <BinaryExpression.Left>
-              <ChainExpression>
-                <MemberExpression
-                  Member="Lieferadresse" />
-              </ChainExpression>
-            </BinaryExpression.Left>
-            <BinaryExpression.Right>
-              <ConstantExpression
-                ResultType=":Boolean?"
-                Value="False" />
-            </BinaryExpression.Right>
-          </BinaryExpression>
-        </QueryFilterExpressionTree>
-      </QueryOperation.FilterExpression>
-      <QueryOperation.Source>
-        <QuerySourceExpressionTree>
-          <MemberExpression
-            Member="AdressenSet" />
-        </QuerySourceExpressionTree>
-      </QueryOperation.Source>
-    </QueryOperation>
-    <QueryOperation
-      Name="Lieferadressen"
-      ReturnType="AdressenSetItem*">
-      <QueryOperation.FilterExpression>
-        <QueryFilterExpressionTree>
-          <BinaryExpression
-            NodeType="Equal">
-            <BinaryExpression.Left>
-              <ChainExpression>
-                <MemberExpression
-                  Member="Lieferadresse" />
-              </ChainExpression>
-            </BinaryExpression.Left>
-            <BinaryExpression.Right>
-              <ConstantExpression
-                ResultType=":Boolean?"
-                Value="True" />
-            </BinaryExpression.Right>
-          </BinaryExpression>
-        </QueryFilterExpressionTree>
-      </QueryOperation.FilterExpression>
-      <QueryOperation.Source>
-        <QuerySourceExpressionTree>
-          <MemberExpression
-            Member="AdressenSet" />
-        </QuerySourceExpressionTree>
-      </QueryOperation.Source>
-    </QueryOperation>
     <EntitySet
       CanDelete="True"
       CanInsert="True"
@@ -1772,6 +1716,30 @@
           <Computed />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <EntityProperty
+        Name="Rabatt"
+        PropertyType=":Decimal">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <Required />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Rabattwert"
+        PropertyType="Microsoft.LightSwitch.Extensions:Money">
+        <EntityProperty.Attributes>
+          <Computed />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="IsoCurrencySymbol"
+              Value="EUR" />
+          </Attribute>
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <Association
@@ -2195,14 +2163,6 @@
           <Required />
           <MaxLength
             Value="255" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="Lieferadresse"
-        PropertyType=":Boolean">
-        <EntityProperty.Attributes>
-          <NotSearchable />
-          <Required />
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty

@@ -346,9 +346,8 @@ namespace ApplicationData.Implementation
         /// <param name="hausnummer">Anfangswert der Eigenschaft Hausnummer.</param>
         /// <param name="stadt">Anfangswert der Eigenschaft Stadt.</param>
         /// <param name="land">Anfangswert der Eigenschaft Land.</param>
-        /// <param name="lieferadresse">Anfangswert der Eigenschaft Lieferadresse.</param>
         /// <param name="kunden_Rechnungsadressen">Anfangswert der Eigenschaft Kunden_Rechnungsadressen.</param>
-        public static AdressenSetItem CreateAdressenSetItem(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.String name, global::System.String starße, global::System.String hausnummer, global::System.String stadt, global::System.String land, global::System.Boolean lieferadresse, global::System.Int32 kunden_Rechnungsadressen)
+        public static AdressenSetItem CreateAdressenSetItem(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.String name, global::System.String starße, global::System.String hausnummer, global::System.String stadt, global::System.String land, global::System.Int32 kunden_Rechnungsadressen)
         {
             AdressenSetItem adressenSetItem = new AdressenSetItem();
             adressenSetItem.Id = id;
@@ -358,7 +357,6 @@ namespace ApplicationData.Implementation
             adressenSetItem.Hausnummer = hausnummer;
             adressenSetItem.Stadt = stadt;
             adressenSetItem.Land = land;
-            adressenSetItem.Lieferadresse = lieferadresse;
             adressenSetItem.Kunden_Rechnungsadressen = kunden_Rechnungsadressen;
             return adressenSetItem;
         }
@@ -591,30 +589,6 @@ namespace ApplicationData.Implementation
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Boolean Lieferadresse
-        {
-            get
-            {
-                return _Lieferadresse;
-            }
-            set
-            {
-                OnLieferadresseChanging(value);
-                ReportPropertyChanging("Lieferadresse");
-                _Lieferadresse = value;
-                ReportPropertyChanged("Lieferadresse");
-                OnLieferadresseChanged();
-            }
-        }
-        private global::System.Boolean _Lieferadresse;
-        partial void OnLieferadresseChanging(global::System.Boolean value);
-        partial void OnLieferadresseChanged();
-    
-        /// <summary>
-        /// Keine Dokumentation für Metadaten verfügbar.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
         public global::System.Int32 Kunden_Rechnungsadressen
         {
             get
@@ -697,13 +671,15 @@ namespace ApplicationData.Implementation
         /// <param name="id">Anfangswert der Eigenschaft Id.</param>
         /// <param name="rowVersion">Anfangswert der Eigenschaft RowVersion.</param>
         /// <param name="anzahl">Anfangswert der Eigenschaft Anzahl.</param>
+        /// <param name="rabatt">Anfangswert der Eigenschaft Rabatt.</param>
         /// <param name="artikelliste_Rechnungen">Anfangswert der Eigenschaft Artikelliste_Rechnungen.</param>
-        public static Artikelliste CreateArtikelliste(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.Int32 anzahl, global::System.Int32 artikelliste_Rechnungen)
+        public static Artikelliste CreateArtikelliste(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.Int32 anzahl, global::System.Decimal rabatt, global::System.Int32 artikelliste_Rechnungen)
         {
             Artikelliste artikelliste = new Artikelliste();
             artikelliste.Id = id;
             artikelliste.RowVersion = rowVersion;
             artikelliste.Anzahl = anzahl;
+            artikelliste.Rabatt = rabatt;
             artikelliste.Artikelliste_Rechnungen = artikelliste_Rechnungen;
             return artikelliste;
         }
@@ -786,6 +762,30 @@ namespace ApplicationData.Implementation
         private global::System.Int32 _Anzahl;
         partial void OnAnzahlChanging(global::System.Int32 value);
         partial void OnAnzahlChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Decimal Rabatt
+        {
+            get
+            {
+                return _Rabatt;
+            }
+            set
+            {
+                OnRabattChanging(value);
+                ReportPropertyChanging("Rabatt");
+                _Rabatt = value;
+                ReportPropertyChanged("Rabatt");
+                OnRabattChanged();
+            }
+        }
+        private global::System.Decimal _Rabatt;
+        partial void OnRabattChanging(global::System.Decimal value);
+        partial void OnRabattChanged();
     
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.

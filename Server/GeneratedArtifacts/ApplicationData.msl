@@ -85,6 +85,7 @@
           <ScalarProperty Name="Anzahl" ColumnName="Anzahl" />
           <ScalarProperty Name="Artikelliste_Rechnungen" ColumnName="Artikelliste_Rechnungen" />
           <ScalarProperty Name="Artikelliste_Artikelstamm" ColumnName="Artikelliste_Artikelstamm" />
+          <ScalarProperty Name="Rabatt" ColumnName="Rabatt" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -143,7 +144,6 @@
           <ScalarProperty Name="PLZ" ColumnName="PLZ" />
           <ScalarProperty Name="Stadt" ColumnName="Stadt" />
           <ScalarProperty Name="Land" ColumnName="Land" />
-          <ScalarProperty Name="Lieferadresse" ColumnName="Lieferadresse" />
           <ScalarProperty Name="Kunden_Rechnungsadressen" ColumnName="Kunden_Rechnungsadressen" />
         </MappingFragment>
       </EntityTypeMapping>

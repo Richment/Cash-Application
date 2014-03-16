@@ -37,24 +37,6 @@ namespace LightSwitchApplication.Implementation
         }
     
     #region Queries
-        public global::System.Linq.IQueryable<global::ApplicationData.Implementation.AdressenSetItem> Rechnungsadressen()
-        {
-            global::System.Linq.IQueryable<global::ApplicationData.Implementation.AdressenSetItem> query;
-            query = global::System.Linq.Queryable.Where(
-                this.GetQuery<global::ApplicationData.Implementation.AdressenSetItem>("AdressenSet"),
-                (a) => (a.Lieferadresse == false));
-            return query;
-        }
-    
-        public global::System.Linq.IQueryable<global::ApplicationData.Implementation.AdressenSetItem> Lieferadressen()
-        {
-            global::System.Linq.IQueryable<global::ApplicationData.Implementation.AdressenSetItem> query;
-            query = global::System.Linq.Queryable.Where(
-                this.GetQuery<global::ApplicationData.Implementation.AdressenSetItem>("AdressenSet"),
-                (a) => (a.Lieferadresse == true));
-            return query;
-        }
-    
     #endregion
 
     #region Protected Methods

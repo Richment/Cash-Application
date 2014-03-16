@@ -432,36 +432,6 @@ namespace LightSwitchApplication
         partial void SaveChanges_ExecuteFailed(global::System.Exception exception);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Rechnungsadressen_CanExecute(ref bool result);
-    
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        partial void Rechnungsadressen_Executing();
-    
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Rechnungsadressen_PreprocessQuery(ref global::System.Linq.IQueryable<global::LightSwitchApplication.AdressenSetItem> query);
-    
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        partial void Rechnungsadressen_Executed(global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.AdressenSetItem> result);
-    
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        partial void Rechnungsadressen_ExecuteFailed(global::System.Exception exception);
-    
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Lieferadressen_CanExecute(ref bool result);
-    
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        partial void Lieferadressen_Executing();
-    
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Lieferadressen_PreprocessQuery(ref global::System.Linq.IQueryable<global::LightSwitchApplication.AdressenSetItem> query);
-    
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        partial void Lieferadressen_Executed(global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.AdressenSetItem> result);
-    
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        partial void Lieferadressen_ExecuteFailed(global::System.Exception exception);
-    
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void Query_Executing(global::Microsoft.LightSwitch.QueryExecutingDescriptor queryDescriptor);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1258,72 +1228,6 @@ namespace LightSwitchApplication
             private static void __SaveChanges_Failed(global::LightSwitchApplication.ApplicationDataService d, object[] args, global::System.Exception ex)
             {
                 d.SaveChanges_ExecuteFailed(ex);
-            }
-            
-            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.QueryOperationEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.AdressenSetItem>
-                __RechnungsadressenEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.QueryOperationEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.AdressenSetItem>(
-                    "Rechnungsadressen",
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Rechnungsadressen_CanExecute,
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Rechnungsadressen_Executing,
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Rechnungsadressen_Executed,
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Rechnungsadressen_Failed,
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Rechnungsadressen_PreprocessQuery);
-            private static bool __Rechnungsadressen_CanExecute(global::LightSwitchApplication.ApplicationDataService d, bool r)
-            {
-                d.Rechnungsadressen_CanExecute(ref r);
-                return r;
-            }
-            private static void __Rechnungsadressen_Executing(global::LightSwitchApplication.ApplicationDataService d, object[] args)
-            {
-                d.Rechnungsadressen_Executing();
-            }
-            private static void __Rechnungsadressen_Executed(global::LightSwitchApplication.ApplicationDataService d, object[] args)
-            {
-                d.Rechnungsadressen_Executed((global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.AdressenSetItem>)args[0]);
-            }
-            private static void __Rechnungsadressen_Failed(global::LightSwitchApplication.ApplicationDataService d, object[] args, global::System.Exception ex)
-            {
-                d.Rechnungsadressen_ExecuteFailed(ex);
-            }
-            private static global::System.Linq.IQueryable __Rechnungsadressen_PreprocessQuery(global::LightSwitchApplication.ApplicationDataService d, object[] args)
-            {
-                global::System.Linq.IQueryable<global::LightSwitchApplication.AdressenSetItem> query = (global::System.Linq.IQueryable<global::LightSwitchApplication.AdressenSetItem>)args[0];
-                d.Rechnungsadressen_PreprocessQuery(ref query);
-                return query;
-            }
-            
-            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.QueryOperationEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.AdressenSetItem>
-                __LieferadressenEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.QueryOperationEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.AdressenSetItem>(
-                    "Lieferadressen",
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Lieferadressen_CanExecute,
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Lieferadressen_Executing,
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Lieferadressen_Executed,
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Lieferadressen_Failed,
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Lieferadressen_PreprocessQuery);
-            private static bool __Lieferadressen_CanExecute(global::LightSwitchApplication.ApplicationDataService d, bool r)
-            {
-                d.Lieferadressen_CanExecute(ref r);
-                return r;
-            }
-            private static void __Lieferadressen_Executing(global::LightSwitchApplication.ApplicationDataService d, object[] args)
-            {
-                d.Lieferadressen_Executing();
-            }
-            private static void __Lieferadressen_Executed(global::LightSwitchApplication.ApplicationDataService d, object[] args)
-            {
-                d.Lieferadressen_Executed((global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.AdressenSetItem>)args[0]);
-            }
-            private static void __Lieferadressen_Failed(global::LightSwitchApplication.ApplicationDataService d, object[] args, global::System.Exception ex)
-            {
-                d.Lieferadressen_ExecuteFailed(ex);
-            }
-            private static global::System.Linq.IQueryable __Lieferadressen_PreprocessQuery(global::LightSwitchApplication.ApplicationDataService d, object[] args)
-            {
-                global::System.Linq.IQueryable<global::LightSwitchApplication.AdressenSetItem> query = (global::System.Linq.IQueryable<global::LightSwitchApplication.AdressenSetItem>)args[0];
-                d.Lieferadressen_PreprocessQuery(ref query);
-                return query;
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
