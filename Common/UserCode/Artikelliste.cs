@@ -42,5 +42,12 @@ namespace LightSwitchApplication
 			if (Artikelstamm != null)
 				result = Math.Round(this.Anzahl * this.PosPreis * (this.Rabatt / 100M), 2);
 		}
+
+		public override string ToString()
+		{
+			if (Artikelstamm != null)
+				return this.Artikelstamm.Artikelbeschreibung;
+			return base.ToString();
+		}
 	}
 }
