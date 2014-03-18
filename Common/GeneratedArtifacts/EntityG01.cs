@@ -468,7 +468,7 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public int Rabatt
+        public decimal Rabatt
         {
             get
             {
@@ -839,11 +839,11 @@ namespace LightSwitchApplication
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Kunden, global::LightSwitchApplication.Kunden.DetailsClass, int> Rabatt
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Kunden, global::LightSwitchApplication.Kunden.DetailsClass, decimal> Rabatt
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.Kunden.DetailsClass.PropertySetProperties.Rabatt) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Kunden, global::LightSwitchApplication.Kunden.DetailsClass, int>;
+                        return base.GetItem(global::LightSwitchApplication.Kunden.DetailsClass.PropertySetProperties.Rabatt) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Kunden, global::LightSwitchApplication.Kunden.DetailsClass, decimal>;
                     }
                 }
                 
@@ -917,7 +917,7 @@ namespace LightSwitchApplication
                 new string Faxnummer { get; set; }
                 new string EMailadresse { get; set; }
                 new string Webseite { get; set; }
-                new int Rabatt { get; set; }
+                new decimal Rabatt { get; set; }
                 new int Zahlungsziel { get; set; }
                 new string Bemerkungen { get; set; }
                 new string Sonstiges { get; set; }
@@ -1526,8 +1526,8 @@ namespace LightSwitchApplication
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Kunden, global::LightSwitchApplication.Kunden.DetailsClass, int>.Entry
-                    Rabatt = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Kunden, global::LightSwitchApplication.Kunden.DetailsClass, int>.Entry(
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Kunden, global::LightSwitchApplication.Kunden.DetailsClass, decimal>.Entry
+                    Rabatt = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Kunden, global::LightSwitchApplication.Kunden.DetailsClass, decimal>.Entry(
                         "Rabatt",
                         global::LightSwitchApplication.Kunden.DetailsClass.PropertySetProperties._Rabatt_Stub,
                         global::LightSwitchApplication.Kunden.DetailsClass.PropertySetProperties._Rabatt_ComputeIsReadOnly,
@@ -1535,7 +1535,7 @@ namespace LightSwitchApplication
                         global::LightSwitchApplication.Kunden.DetailsClass.PropertySetProperties._Rabatt_GetImplementationValue,
                         global::LightSwitchApplication.Kunden.DetailsClass.PropertySetProperties._Rabatt_SetImplementationValue,
                         global::LightSwitchApplication.Kunden.DetailsClass.PropertySetProperties._Rabatt_OnValueChanged);
-                private static void _Rabatt_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Kunden.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Kunden, global::LightSwitchApplication.Kunden.DetailsClass, int>.Data> c, global::LightSwitchApplication.Kunden.DetailsClass d, object sf)
+                private static void _Rabatt_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Kunden.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Kunden, global::LightSwitchApplication.Kunden.DetailsClass, decimal>.Data> c, global::LightSwitchApplication.Kunden.DetailsClass d, object sf)
                 {
                     c(d, ref d._Rabatt, sf);
                 }
@@ -1549,11 +1549,11 @@ namespace LightSwitchApplication
                 {
                     e.Rabatt_Validate(r);
                 }
-                private static int _Rabatt_GetImplementationValue(global::LightSwitchApplication.Kunden.DetailsClass d)
+                private static decimal _Rabatt_GetImplementationValue(global::LightSwitchApplication.Kunden.DetailsClass d)
                 {
                     return d.ImplementationEntity.Rabatt;
                 }
-                private static void _Rabatt_SetImplementationValue(global::LightSwitchApplication.Kunden.DetailsClass d, int v)
+                private static void _Rabatt_SetImplementationValue(global::LightSwitchApplication.Kunden.DetailsClass d, decimal v)
                 {
                     d.ImplementationEntity.Rabatt = v;
                 }
@@ -1811,7 +1811,7 @@ namespace LightSwitchApplication
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Kunden, global::LightSwitchApplication.Kunden.DetailsClass, string>.Data _Webseite;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Kunden, global::LightSwitchApplication.Kunden.DetailsClass, int>.Data _Rabatt;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Kunden, global::LightSwitchApplication.Kunden.DetailsClass, decimal>.Data _Rabatt;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Kunden, global::LightSwitchApplication.Kunden.DetailsClass, int>.Data _Zahlungsziel;

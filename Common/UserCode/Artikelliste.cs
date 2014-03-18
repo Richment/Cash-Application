@@ -8,6 +8,11 @@ namespace LightSwitchApplication
 {
 	public partial class Artikelliste
 	{
+		partial void Artikelliste_Created()
+		{
+			this.Anzahl = 1;
+		}
+
 		partial void PosPreis_Compute(ref decimal result)
 		{
 			if (Artikelstamm != null)
@@ -16,7 +21,7 @@ namespace LightSwitchApplication
 
 		partial void Position_Compute(ref int result)
 		{
-			result = this.Position + 1;
+			result = this.Rechnungen.ArtikellisteCollection.ToList().IndexOf(this) + 1;
 		}
 
 		partial void Artikelnummer_Compute(ref string result)

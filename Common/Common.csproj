@@ -82,6 +82,27 @@
       <Visible>false</Visible>
     </ServiceMetadataReference>
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="blau_dunkel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="blau_hell.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="gelb.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="grau.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="grün.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="orange.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="rot.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\LightSwitch\$(LightSwitchVersion)\Microsoft.LightSwitch.Build.Tasks.targets" />
   <Target Name="BeforeBuild">

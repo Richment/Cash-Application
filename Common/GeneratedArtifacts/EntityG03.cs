@@ -132,6 +132,30 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public string Artikelnummer
+        {
+            get
+            {
+                return global::LightSwitchApplication.Artikelstamm.DetailsClass.GetValue(this, global::LightSwitchApplication.Artikelstamm.DetailsClass.PropertySetProperties.Artikelnummer);
+            }
+            set
+            {
+                global::LightSwitchApplication.Artikelstamm.DetailsClass.SetValue(this, global::LightSwitchApplication.Artikelstamm.DetailsClass.PropertySetProperties.Artikelnummer, value);
+            }
+        }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Artikelnummer_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Artikelnummer_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Artikelnummer_Changed();
+
+        /// <summary>
+        /// Keine modellierte Beschreibung verfügbar
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public string Artikelbeschreibung
         {
             get
@@ -174,30 +198,6 @@ namespace LightSwitchApplication
         partial void Vertriebsname_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void Vertriebsname_Changed();
-
-        /// <summary>
-        /// Keine modellierte Beschreibung verfügbar
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public string Artikelnummer
-        {
-            get
-            {
-                return global::LightSwitchApplication.Artikelstamm.DetailsClass.GetValue(this, global::LightSwitchApplication.Artikelstamm.DetailsClass.PropertySetProperties.Artikelnummer);
-            }
-            set
-            {
-                global::LightSwitchApplication.Artikelstamm.DetailsClass.SetValue(this, global::LightSwitchApplication.Artikelstamm.DetailsClass.PropertySetProperties.Artikelnummer, value);
-            }
-        }
-        
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Artikelnummer_IsReadOnly(ref bool result);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Artikelnummer_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Artikelnummer_Changed();
 
         /// <summary>
         /// Keine modellierte Beschreibung verfügbar
@@ -440,6 +440,14 @@ namespace LightSwitchApplication
                     }
                 }
                 
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelstamm, global::LightSwitchApplication.Artikelstamm.DetailsClass, string> Artikelnummer
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.Artikelstamm.DetailsClass.PropertySetProperties.Artikelnummer) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelstamm, global::LightSwitchApplication.Artikelstamm.DetailsClass, string>;
+                    }
+                }
+                
                 public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelstamm, global::LightSwitchApplication.Artikelstamm.DetailsClass, string> Artikelbeschreibung
                 {
                     get
@@ -453,14 +461,6 @@ namespace LightSwitchApplication
                     get
                     {
                         return base.GetItem(global::LightSwitchApplication.Artikelstamm.DetailsClass.PropertySetProperties.Vertriebsname) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelstamm, global::LightSwitchApplication.Artikelstamm.DetailsClass, string>;
-                    }
-                }
-                
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelstamm, global::LightSwitchApplication.Artikelstamm.DetailsClass, string> Artikelnummer
-                {
-                    get
-                    {
-                        return base.GetItem(global::LightSwitchApplication.Artikelstamm.DetailsClass.PropertySetProperties.Artikelnummer) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelstamm, global::LightSwitchApplication.Artikelstamm.DetailsClass, string>;
                     }
                 }
                 
@@ -520,9 +520,9 @@ namespace LightSwitchApplication
             {
                 new int Id { get; set; }
                 new byte[] RowVersion { get; set; }
+                new string Artikelnummer { get; set; }
                 new string Artikelbeschreibung { get; set; }
                 new string Vertriebsname { get; set; }
-                new string Artikelnummer { get; set; }
                 new int Anzahl_PK { get; set; }
                 new global::System.Nullable<decimal> HK_pro_PK { get; set; }
                 new decimal EK_pro_PK { get; set; }
@@ -614,6 +614,43 @@ namespace LightSwitchApplication
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelstamm, global::LightSwitchApplication.Artikelstamm.DetailsClass, string>.Entry
+                    Artikelnummer = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelstamm, global::LightSwitchApplication.Artikelstamm.DetailsClass, string>.Entry(
+                        "Artikelnummer",
+                        global::LightSwitchApplication.Artikelstamm.DetailsClass.PropertySetProperties._Artikelnummer_Stub,
+                        global::LightSwitchApplication.Artikelstamm.DetailsClass.PropertySetProperties._Artikelnummer_ComputeIsReadOnly,
+                        global::LightSwitchApplication.Artikelstamm.DetailsClass.PropertySetProperties._Artikelnummer_Validate,
+                        global::LightSwitchApplication.Artikelstamm.DetailsClass.PropertySetProperties._Artikelnummer_GetImplementationValue,
+                        global::LightSwitchApplication.Artikelstamm.DetailsClass.PropertySetProperties._Artikelnummer_SetImplementationValue,
+                        global::LightSwitchApplication.Artikelstamm.DetailsClass.PropertySetProperties._Artikelnummer_OnValueChanged);
+                private static void _Artikelnummer_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Artikelstamm.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelstamm, global::LightSwitchApplication.Artikelstamm.DetailsClass, string>.Data> c, global::LightSwitchApplication.Artikelstamm.DetailsClass d, object sf)
+                {
+                    c(d, ref d._Artikelnummer, sf);
+                }
+                private static bool _Artikelnummer_ComputeIsReadOnly(global::LightSwitchApplication.Artikelstamm e)
+                {
+                    bool result = false;
+                    e.Artikelnummer_IsReadOnly(ref result);
+                    return result;
+                }
+                private static void _Artikelnummer_Validate(global::LightSwitchApplication.Artikelstamm e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                {
+                    e.Artikelnummer_Validate(r);
+                }
+                private static string _Artikelnummer_GetImplementationValue(global::LightSwitchApplication.Artikelstamm.DetailsClass d)
+                {
+                    return d.ImplementationEntity.Artikelnummer;
+                }
+                private static void _Artikelnummer_SetImplementationValue(global::LightSwitchApplication.Artikelstamm.DetailsClass d, string v)
+                {
+                    d.ImplementationEntity.Artikelnummer = v;
+                }
+                private static void _Artikelnummer_OnValueChanged(global::LightSwitchApplication.Artikelstamm e)
+                {
+                    e.Artikelnummer_Changed();
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelstamm, global::LightSwitchApplication.Artikelstamm.DetailsClass, string>.Entry
                     Artikelbeschreibung = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelstamm, global::LightSwitchApplication.Artikelstamm.DetailsClass, string>.Entry(
                         "Artikelbeschreibung",
                         global::LightSwitchApplication.Artikelstamm.DetailsClass.PropertySetProperties._Artikelbeschreibung_Stub,
@@ -684,43 +721,6 @@ namespace LightSwitchApplication
                 private static void _Vertriebsname_OnValueChanged(global::LightSwitchApplication.Artikelstamm e)
                 {
                     e.Vertriebsname_Changed();
-                }
-    
-                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelstamm, global::LightSwitchApplication.Artikelstamm.DetailsClass, string>.Entry
-                    Artikelnummer = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelstamm, global::LightSwitchApplication.Artikelstamm.DetailsClass, string>.Entry(
-                        "Artikelnummer",
-                        global::LightSwitchApplication.Artikelstamm.DetailsClass.PropertySetProperties._Artikelnummer_Stub,
-                        global::LightSwitchApplication.Artikelstamm.DetailsClass.PropertySetProperties._Artikelnummer_ComputeIsReadOnly,
-                        global::LightSwitchApplication.Artikelstamm.DetailsClass.PropertySetProperties._Artikelnummer_Validate,
-                        global::LightSwitchApplication.Artikelstamm.DetailsClass.PropertySetProperties._Artikelnummer_GetImplementationValue,
-                        global::LightSwitchApplication.Artikelstamm.DetailsClass.PropertySetProperties._Artikelnummer_SetImplementationValue,
-                        global::LightSwitchApplication.Artikelstamm.DetailsClass.PropertySetProperties._Artikelnummer_OnValueChanged);
-                private static void _Artikelnummer_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Artikelstamm.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelstamm, global::LightSwitchApplication.Artikelstamm.DetailsClass, string>.Data> c, global::LightSwitchApplication.Artikelstamm.DetailsClass d, object sf)
-                {
-                    c(d, ref d._Artikelnummer, sf);
-                }
-                private static bool _Artikelnummer_ComputeIsReadOnly(global::LightSwitchApplication.Artikelstamm e)
-                {
-                    bool result = false;
-                    e.Artikelnummer_IsReadOnly(ref result);
-                    return result;
-                }
-                private static void _Artikelnummer_Validate(global::LightSwitchApplication.Artikelstamm e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
-                {
-                    e.Artikelnummer_Validate(r);
-                }
-                private static string _Artikelnummer_GetImplementationValue(global::LightSwitchApplication.Artikelstamm.DetailsClass d)
-                {
-                    return d.ImplementationEntity.Artikelnummer;
-                }
-                private static void _Artikelnummer_SetImplementationValue(global::LightSwitchApplication.Artikelstamm.DetailsClass d, string v)
-                {
-                    d.ImplementationEntity.Artikelnummer = v;
-                }
-                private static void _Artikelnummer_OnValueChanged(global::LightSwitchApplication.Artikelstamm e)
-                {
-                    e.Artikelnummer_Changed();
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -937,13 +937,13 @@ namespace LightSwitchApplication
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelstamm, global::LightSwitchApplication.Artikelstamm.DetailsClass, byte[]>.Data _RowVersion;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelstamm, global::LightSwitchApplication.Artikelstamm.DetailsClass, string>.Data _Artikelnummer;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelstamm, global::LightSwitchApplication.Artikelstamm.DetailsClass, string>.Data _Artikelbeschreibung;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelstamm, global::LightSwitchApplication.Artikelstamm.DetailsClass, string>.Data _Vertriebsname;
-            
-            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelstamm, global::LightSwitchApplication.Artikelstamm.DetailsClass, string>.Data _Artikelnummer;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelstamm, global::LightSwitchApplication.Artikelstamm.DetailsClass, int>.Data _Anzahl_PK;

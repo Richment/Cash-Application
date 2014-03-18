@@ -312,42 +312,6 @@ namespace LightSwitchApplication
         partial void Meine_DatenSet_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.Meine_Daten, bool>> filter);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void BestellStatusSet_CanInsert(ref bool result);
-    
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void BestellStatusSet_CanUpdate(ref bool result);
-    
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void BestellStatusSet_CanDelete(ref bool result);
-    
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void BestellStatusSet_CanRead(ref bool result);
-    
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void BestellStatusSet_Inserting(global::LightSwitchApplication.BestellStatus entity);
-    
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void BestellStatusSet_Inserted(global::LightSwitchApplication.BestellStatus entity);
-    
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void BestellStatusSet_Updating(global::LightSwitchApplication.BestellStatus entity);
-    
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void BestellStatusSet_Updated(global::LightSwitchApplication.BestellStatus entity);
-    
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void BestellStatusSet_Deleting(global::LightSwitchApplication.BestellStatus entity);
-    
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void BestellStatusSet_Deleted(global::LightSwitchApplication.BestellStatus entity);
-    
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void BestellStatusSet_Validate(global::LightSwitchApplication.BestellStatus entity, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder results);
-    
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void BestellStatusSet_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.BestellStatus, bool>> filter);
-    
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void AdressenSet_CanInsert(ref bool result);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -430,6 +394,21 @@ namespace LightSwitchApplication
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void SaveChanges_ExecuteFailed(global::System.Exception exception);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void SortedQuery_CanExecute(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void SortedQuery_Executing();
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void SortedQuery_PreprocessQuery(ref global::System.Linq.IQueryable<global::LightSwitchApplication.Artikelliste> query);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void SortedQuery_Executed(global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.Artikelliste> result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void SortedQuery_ExecuteFailed(global::System.Exception exception);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void Query_Executing(global::Microsoft.LightSwitch.QueryExecutingDescriptor queryDescriptor);
@@ -980,81 +959,6 @@ namespace LightSwitchApplication
             }
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.BestellStatus>
-                __BestellStatusSetEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.BestellStatus>(
-                    "BestellStatusSet",
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__BestellStatusSet_CanInsert,
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__BestellStatusSet_CanUpdate,
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__BestellStatusSet_CanDelete,
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__BestellStatusSet_CanRead,
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__BestellStatusSet_Inserting,
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__BestellStatusSet_Inserted,
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__BestellStatusSet_Updating,
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__BestellStatusSet_Updated,
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__BestellStatusSet_Deleting,
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__BestellStatusSet_Deleted,
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__BestellStatusSet_Validate,
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__BestellStatusSet_Filter);
-            private static bool __BestellStatusSet_CanInsert(global::LightSwitchApplication.ApplicationDataService d)
-            {
-                bool result = true;
-                d.BestellStatusSet_CanInsert(ref result);
-                return result;
-            }
-            private static bool __BestellStatusSet_CanUpdate(global::LightSwitchApplication.ApplicationDataService d)
-            {
-                bool result = true;
-                d.BestellStatusSet_CanUpdate(ref result);
-                return result;
-            }
-            private static bool __BestellStatusSet_CanDelete(global::LightSwitchApplication.ApplicationDataService d)
-            {
-                bool result = true;
-                d.BestellStatusSet_CanDelete(ref result);
-                return result;
-            }
-            private static bool __BestellStatusSet_CanRead(global::LightSwitchApplication.ApplicationDataService d)
-            {
-                bool result = true;
-                d.BestellStatusSet_CanRead(ref result);
-                return result;
-            }
-            private static void __BestellStatusSet_Inserting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.BestellStatus e)
-            {
-                d.BestellStatusSet_Inserting(e);
-            }
-            private static void __BestellStatusSet_Inserted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.BestellStatus e)
-            {
-                d.BestellStatusSet_Inserted(e);
-            }
-            private static void __BestellStatusSet_Updating(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.BestellStatus e)
-            {
-                d.BestellStatusSet_Updating(e);
-            }
-            private static void __BestellStatusSet_Updated(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.BestellStatus e)
-            {
-                d.BestellStatusSet_Updated(e);
-            }
-            private static void __BestellStatusSet_Deleting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.BestellStatus e)
-            {
-                d.BestellStatusSet_Deleting(e);
-            }
-            private static void __BestellStatusSet_Deleted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.BestellStatus e)
-            {
-                d.BestellStatusSet_Deleted(e);
-            }
-            private static void __BestellStatusSet_Validate(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.BestellStatus e, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder r)
-            {
-                d.BestellStatusSet_Validate(e, r);
-            }
-            private static global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.BestellStatus, bool>> __BestellStatusSet_Filter(global::LightSwitchApplication.ApplicationDataService d)
-            {
-                global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.BestellStatus, bool>> filter = null;
-                d.BestellStatusSet_Filter(ref filter);
-                return filter;
-            }
-            
-            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.AdressenSetItem>
                 __AdressenSetEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.AdressenSetItem>(
                     "AdressenSet",
@@ -1228,6 +1132,39 @@ namespace LightSwitchApplication
             private static void __SaveChanges_Failed(global::LightSwitchApplication.ApplicationDataService d, object[] args, global::System.Exception ex)
             {
                 d.SaveChanges_ExecuteFailed(ex);
+            }
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.QueryOperationEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.Artikelliste>
+                __SortedQueryEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.QueryOperationEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.Artikelliste>(
+                    "SortedQuery",
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__SortedQuery_CanExecute,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__SortedQuery_Executing,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__SortedQuery_Executed,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__SortedQuery_Failed,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__SortedQuery_PreprocessQuery);
+            private static bool __SortedQuery_CanExecute(global::LightSwitchApplication.ApplicationDataService d, bool r)
+            {
+                d.SortedQuery_CanExecute(ref r);
+                return r;
+            }
+            private static void __SortedQuery_Executing(global::LightSwitchApplication.ApplicationDataService d, object[] args)
+            {
+                d.SortedQuery_Executing();
+            }
+            private static void __SortedQuery_Executed(global::LightSwitchApplication.ApplicationDataService d, object[] args)
+            {
+                d.SortedQuery_Executed((global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.Artikelliste>)args[0]);
+            }
+            private static void __SortedQuery_Failed(global::LightSwitchApplication.ApplicationDataService d, object[] args, global::System.Exception ex)
+            {
+                d.SortedQuery_ExecuteFailed(ex);
+            }
+            private static global::System.Linq.IQueryable __SortedQuery_PreprocessQuery(global::LightSwitchApplication.ApplicationDataService d, object[] args)
+            {
+                global::System.Linq.IQueryable<global::LightSwitchApplication.Artikelliste> query = (global::System.Linq.IQueryable<global::LightSwitchApplication.Artikelliste>)args[0];
+                d.SortedQuery_PreprocessQuery(ref query);
+                return query;
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]

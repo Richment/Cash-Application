@@ -37,6 +37,15 @@ namespace LightSwitchApplication.Implementation
         }
     
     #region Queries
+        public global::System.Linq.IQueryable<global::ApplicationData.Implementation.Artikelliste> SortedQuery()
+        {
+            global::System.Linq.IQueryable<global::ApplicationData.Implementation.Artikelliste> query;
+            query = global::System.Linq.Queryable.OrderBy(
+                this.GetQuery<global::ApplicationData.Implementation.Artikelliste>("ArtikellisteSet"),
+                (a) => a.Anzahl);
+            return query;
+        }
+    
     #endregion
 
     #region Protected Methods
@@ -69,10 +78,6 @@ namespace LightSwitchApplication.Implementation
             if (type == typeof(global::ApplicationData.Implementation.Meine_Daten))
             {
                 return new global::ApplicationData.Implementation.Meine_Daten();
-            }
-            if (type == typeof(global::ApplicationData.Implementation.BestellStatus))
-            {
-                return new global::ApplicationData.Implementation.BestellStatus();
             }
             if (type == typeof(global::ApplicationData.Implementation.AdressenSetItem))
             {
@@ -124,10 +129,6 @@ namespace LightSwitchApplication.Implementation
             if (typeof(T) == typeof(global::LightSwitchApplication.Meine_Daten))
             {
                 return new global::ApplicationData.Implementation.Meine_Daten();
-            }
-            if (typeof(T) == typeof(global::LightSwitchApplication.BestellStatus))
-            {
-                return new global::ApplicationData.Implementation.BestellStatus();
             }
             if (typeof(T) == typeof(global::LightSwitchApplication.AdressenSetItem))
             {
@@ -209,10 +210,6 @@ namespace LightSwitchApplication.Implementation
             if (typeof(global::LightSwitchApplication.Meine_Daten) == definitionType)
             {
                 return typeof(global::ApplicationData.Implementation.Meine_Daten);
-            }
-            if (typeof(global::LightSwitchApplication.BestellStatus) == definitionType)
-            {
-                return typeof(global::ApplicationData.Implementation.BestellStatus);
             }
             if (typeof(global::LightSwitchApplication.AdressenSetItem) == definitionType)
             {
@@ -407,22 +404,6 @@ namespace ApplicationData.Implementation
             }
         }
         
-        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Rechnungen.DetailsClass.IImplementation.BestellStatus
-        {
-            get
-            {
-                return this.BestellStatus;
-            }
-            set
-            {
-                this.BestellStatus = (global::ApplicationData.Implementation.BestellStatus)value;
-                if (this.__host != null)
-                {
-                    this.__host.RaisePropertyChanged("BestellStatus");
-                }
-            }
-        }
-        
         global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Rechnungen.DetailsClass.IImplementation.BezahlartItem
         {
             get
@@ -452,14 +433,6 @@ namespace ApplicationData.Implementation
             if (this.__host != null)
             {
                 this.__host.RaisePropertyChanged("Kunde");
-            }
-        }
-        
-        partial void OnRechnungen_BestellStatusChanged()
-        {
-            if (this.__host != null)
-            {
-                this.__host.RaisePropertyChanged("BestellStatus");
             }
         }
         
@@ -504,22 +477,6 @@ namespace ApplicationData.Implementation
         global::LightSwitchApplication.Artikelliste.DetailsClass.IImplementation
     {
     
-        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Artikelliste.DetailsClass.IImplementation.Rechnungen
-        {
-            get
-            {
-                return this.Rechnungen;
-            }
-            set
-            {
-                this.Rechnungen = (global::ApplicationData.Implementation.Rechnungen)value;
-                if (this.__host != null)
-                {
-                    this.__host.RaisePropertyChanged("Rechnungen");
-                }
-            }
-        }
-        
         global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Artikelliste.DetailsClass.IImplementation.Artikelstamm
         {
             get
@@ -536,11 +493,19 @@ namespace ApplicationData.Implementation
             }
         }
         
-        partial void OnArtikelliste_RechnungenChanged()
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Artikelliste.DetailsClass.IImplementation.Rechnungen
         {
-            if (this.__host != null)
+            get
             {
-                this.__host.RaisePropertyChanged("Rechnungen");
+                return this.Rechnungen;
+            }
+            set
+            {
+                this.Rechnungen = (global::ApplicationData.Implementation.Rechnungen)value;
+                if (this.__host != null)
+                {
+                    this.__host.RaisePropertyChanged("Rechnungen");
+                }
             }
         }
         
@@ -549,6 +514,14 @@ namespace ApplicationData.Implementation
             if (this.__host != null)
             {
                 this.__host.RaisePropertyChanged("Artikelstamm");
+            }
+        }
+        
+        partial void OnArtikelliste_RechnungenChanged()
+        {
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged("Rechnungen");
             }
         }
         
@@ -618,47 +591,6 @@ namespace ApplicationData.Implementation
         global::LightSwitchApplication.Meine_Daten.DetailsClass.IImplementation
     {
     
-        #region IEntityImplementation Members
-        private global::Microsoft.LightSwitch.Internal.IEntityImplementationHost __host;
-        
-        global::Microsoft.LightSwitch.Internal.IEntityImplementationHost global::Microsoft.LightSwitch.Internal.IEntityImplementation.Host
-        {
-            get
-            {
-                return this.__host;
-            }
-        }
-        
-        void global::Microsoft.LightSwitch.Internal.IEntityImplementation.Initialize(global::Microsoft.LightSwitch.Internal.IEntityImplementationHost host)
-        {
-            this.__host = host;
-        }
-        
-        protected override void OnPropertyChanged(string propertyName)
-        {
-            base.OnPropertyChanged(propertyName);
-            if (this.__host != null)
-            {
-                this.__host.RaisePropertyChanged(propertyName);
-            }
-        }
-        #endregion
-    }
-    
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    public partial class BestellStatus :
-        global::LightSwitchApplication.BestellStatus.DetailsClass.IImplementation
-    {
-    
-        global::System.Collections.IEnumerable global::LightSwitchApplication.BestellStatus.DetailsClass.IImplementation.Rechnungen
-        {
-            get
-            {
-                return this.Rechnungen;
-            }
-        }
-        
         #region IEntityImplementation Members
         private global::Microsoft.LightSwitch.Internal.IEntityImplementationHost __host;
         

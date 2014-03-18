@@ -20,7 +20,7 @@
     <Property Name="Faxnummer" Type="Edm.String" MaxLength="255" />
     <Property Name="EMailadresse" Type="Edm.String" MaxLength="255" />
     <Property Name="Webseite" Type="Edm.String" MaxLength="255" />
-    <Property Name="Rabatt" Type="Edm.Int32" Nullable="false" />
+    <Property Name="Rabatt" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="2" />
     <Property Name="Zahlungsziel" Type="Edm.Int32" Nullable="false" />
     <Property Name="Bemerkungen" Type="Edm.String" MaxLength="255" />
     <Property Name="Sonstiges" Type="Edm.String" MaxLength="255" />
@@ -44,9 +44,9 @@
     </Key>
     <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Artikelnummer" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="Artikelbeschreibung" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="Vertriebsname" Type="Edm.String" Nullable="false" MaxLength="255" />
-    <Property Name="Artikelnummer" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="Anzahl_PK" Type="Edm.Int32" Nullable="false" />
     <Property Name="HK_pro_PK" Type="Edm.Decimal" Precision="18" Scale="2" />
     <Property Name="EK_pro_PK" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="2" />
@@ -60,10 +60,11 @@
     </Key>
     <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
-    <Property Name="Besteller" Type="Edm.String" MaxLength="255" />
+    <Property Name="Status" Type="Edm.Int32" Nullable="false" />
     <Property Name="Auftragsnummer" Type="Edm.String" MaxLength="255" />
     <Property Name="Referenznummer" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="Webshop_ID" Type="Edm.String" MaxLength="255" />
+    <Property Name="Besteller" Type="Edm.String" MaxLength="255" />
     <Property Name="Bestelldatum" Type="Edm.DateTime" Nullable="false" />
     <Property Name="Lieferdatum" Type="Edm.DateTime" />
     <Property Name="Lieferscheinnummer" Type="Edm.String" MaxLength="255" />
@@ -71,13 +72,10 @@
     <Property Name="Rechnungsnummer" Type="Edm.Int32" />
     <Property Name="Lieferkosten" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="2" />
     <Property Name="Rabatt" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="2" />
-    <Property Name="RechnungsadressenId" Type="Edm.Int32" Nullable="false" />
     <Property Name="LieferadressenId" Type="Edm.Int32" />
     <Property Name="Rechnungen_Kunden" Type="Edm.Int32" Nullable="false" />
-    <Property Name="Rechnungen_BestellStatus" Type="Edm.Int32" Nullable="false" />
     <Property Name="Rechnungen_BezahlartItem" Type="Edm.Int32" Nullable="false" />
     <NavigationProperty Name="Kunde" Relationship="LightSwitchApplication.Rechnungen_Kunden" ToRole="Kunden" FromRole="Rechnungen" />
-    <NavigationProperty Name="BestellStatus" Relationship="LightSwitchApplication.Rechnungen_BestellStatus" ToRole="BestellStatus" FromRole="Rechnungen" />
     <NavigationProperty Name="BezahlartItem" Relationship="LightSwitchApplication.Rechnungen_BezahlartItem" ToRole="BezahlartItem" FromRole="Rechnungen" />
     <NavigationProperty Name="ArtikellisteCollection" Relationship="LightSwitchApplication.Artikelliste_Rechnungen" ToRole="Artikelliste" FromRole="Rechnungen" />
   </EntityType>
@@ -91,8 +89,8 @@
     <Property Name="Rabatt" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="2" />
     <Property Name="Artikelliste_Rechnungen" Type="Edm.Int32" Nullable="false" />
     <Property Name="Artikelliste_Artikelstamm" Type="Edm.Int32" />
-    <NavigationProperty Name="Rechnungen" Relationship="LightSwitchApplication.Artikelliste_Rechnungen" ToRole="Rechnungen" FromRole="Artikelliste" />
     <NavigationProperty Name="Artikelstamm" Relationship="LightSwitchApplication.Artikelliste_Artikelstamm" ToRole="Artikelstamm" FromRole="Artikelliste" />
+    <NavigationProperty Name="Rechnungen" Relationship="LightSwitchApplication.Artikelliste_Rechnungen" ToRole="Rechnungen" FromRole="Artikelliste" />
   </EntityType>
   <EntityType Name="Firmendaten">
     <Key>
@@ -100,16 +98,16 @@
     </Key>
     <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
-    <Property Name="eigenName" Type="Edm.String" Nullable="false" MaxLength="255" />
-    <Property Name="eigenFirmenname" Type="Edm.String" Nullable="false" MaxLength="255" />
-    <Property Name="eigenStraße" Type="Edm.String" Nullable="false" MaxLength="255" />
-    <Property Name="eigenHausnummer" Type="Edm.String" Nullable="false" MaxLength="255" />
-    <Property Name="eigenPLZ" Type="Edm.String" Nullable="false" MaxLength="255" />
-    <Property Name="eigenStadt" Type="Edm.String" Nullable="false" MaxLength="255" />
-    <Property Name="eigenLand" Type="Edm.String" Nullable="false" MaxLength="255" />
-    <Property Name="eigenUstID" Type="Edm.String" MaxLength="255" />
-    <Property Name="eigenEMail" Type="Edm.String" Nullable="false" MaxLength="255" />
-    <Property Name="eigenWebseite" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="Firmenname" Type="Edm.String" MaxLength="255" />
+    <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="Straße" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="Hausnummer" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="PLZ" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="Stadt" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="Land" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="UstID" Type="Edm.String" MaxLength="255" />
+    <Property Name="EMail" Type="Edm.String" MaxLength="255" />
+    <Property Name="Webseite" Type="Edm.String" MaxLength="255" />
   </EntityType>
   <EntityType Name="Meine_Daten">
     <Key>
@@ -124,16 +122,6 @@
     <Property Name="selfStadt" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="selfLand" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="selfUSTID" Type="Edm.String" Nullable="false" MaxLength="255" />
-  </EntityType>
-  <EntityType Name="BestellStatus">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
-    <Property Name="Bezeichnung" Type="Edm.String" Nullable="false" MaxLength="255" />
-    <Property Name="Bild" Type="Edm.Binary" Nullable="false" MaxLength="Max" />
-    <NavigationProperty Name="Rechnungen" Relationship="LightSwitchApplication.Rechnungen_BestellStatus" ToRole="Rechnungen" FromRole="BestellStatus" />
   </EntityType>
   <EntityType Name="AdressenSetItem">
     <Key>
@@ -223,18 +211,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="Rechnungen_BestellStatus">
-    <End Role="BestellStatus" Type="LightSwitchApplication.BestellStatus" Multiplicity="1" />
-    <End Role="Rechnungen" Type="LightSwitchApplication.Rechnungen" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="BestellStatus">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Rechnungen">
-        <PropertyRef Name="Rechnungen_BestellStatus" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="Rechnungen_BezahlartItem">
     <End Role="BezahlartItem" Type="LightSwitchApplication.BezahlartItem" Multiplicity="1" />
     <End Role="Rechnungen" Type="LightSwitchApplication.Rechnungen" Multiplicity="*" />
@@ -255,7 +231,6 @@
     <EntitySet Name="ArtikellisteSet" EntityType="LightSwitchApplication.Artikelliste" />
     <EntitySet Name="FirmendatenSet" EntityType="LightSwitchApplication.Firmendaten" />
     <EntitySet Name="Meine_DatenSet" EntityType="LightSwitchApplication.Meine_Daten" />
-    <EntitySet Name="BestellStatusSet" EntityType="LightSwitchApplication.BestellStatus" />
     <EntitySet Name="AdressenSet" EntityType="LightSwitchApplication.AdressenSetItem" />
     <EntitySet Name="Bezahlart" EntityType="LightSwitchApplication.BezahlartItem" />
     <AssociationSet Name="Artikelliste_Rechnungen" Association="LightSwitchApplication.Artikelliste_Rechnungen">
@@ -277,10 +252,6 @@
     <AssociationSet Name="Kunden_AdressenSetItem" Association="LightSwitchApplication.Kunden_AdressenSetItem">
       <End Role="Kunden" EntitySet="KundenSet" />
       <End Role="AdressenSetItem" EntitySet="AdressenSet" />
-    </AssociationSet>
-    <AssociationSet Name="Rechnungen_BestellStatus" Association="LightSwitchApplication.Rechnungen_BestellStatus">
-      <End Role="BestellStatus" EntitySet="BestellStatusSet" />
-      <End Role="Rechnungen" EntitySet="RechnungenSet" />
     </AssociationSet>
     <AssociationSet Name="Rechnungen_BezahlartItem" Association="LightSwitchApplication.Rechnungen_BezahlartItem">
       <End Role="BezahlartItem" EntitySet="Bezahlart" />

@@ -3,14 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.LightSwitch;
+
 namespace LightSwitchApplication
 {
-    public partial class Artikelstamm
-    {
-        partial void VK_pro_PK_Validate(EntityValidationResultsBuilder results)
-        {
-            // results.AddPropertyError("<Fehlermeldung>");
-
-        }
-    }
+	public partial class Artikelstamm
+	{
+		public override string ToString()
+		{
+			try
+			{
+				return String.Format("[{0}] {1}", Artikelnummer, Anzahl_PK == 1 ? Artikelbeschreibung : Anzahl_PK.ToString() + " × " + Artikelbeschreibung);
+			}
+			catch
+			{
+				return base.ToString();
+			}
+		}
+	  
+	}
 }

@@ -678,92 +678,6 @@
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="BestellStatus"
-      Name="BestellStatusSet" />
-    <QueryOperation
-      Name="BestellStatusSet_Single"
-      ReturnType="BestellStatus">
-      <QueryOperation.Attributes>
-        <Generated />
-        <Description
-          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird." />
-      </QueryOperation.Attributes>
-      <QueryOperation.FilterExpression>
-        <QueryFilterExpressionTree>
-          <BinaryExpression
-            NodeType="Equal">
-            <BinaryExpression.Left>
-              <ChainExpression>
-                <MemberExpression
-                  Member="Id" />
-              </ChainExpression>
-            </BinaryExpression.Left>
-            <BinaryExpression.Right>
-              <ParameterExpression
-                Parameter="Id" />
-            </BinaryExpression.Right>
-          </BinaryExpression>
-        </QueryFilterExpressionTree>
-      </QueryOperation.FilterExpression>
-      <QueryOperation.Source>
-        <QuerySourceExpressionTree>
-          <MemberExpression
-            Member="BestellStatusSet" />
-        </QuerySourceExpressionTree>
-      </QueryOperation.Source>
-      <QueryOperationParameter
-        Name="Id"
-        ParameterType=":Int32?">
-        <QueryOperationParameter.Attributes>
-          <Description
-            Value="Der Wert der Id-Schlüsseleigenschaft der abzurufenden Entität." />
-        </QueryOperationParameter.Attributes>
-      </QueryOperationParameter>
-    </QueryOperation>
-    <QueryOperation
-      Name="BestellStatusSet_SingleOrDefault"
-      ReturnType="BestellStatus">
-      <QueryOperation.Attributes>
-        <Generated />
-        <Description
-          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird, oder NULL, wenn keine solche Entität vorhanden ist." />
-      </QueryOperation.Attributes>
-      <QueryOperation.FilterExpression>
-        <QueryFilterExpressionTree>
-          <BinaryExpression
-            NodeType="Equal">
-            <BinaryExpression.Left>
-              <ChainExpression>
-                <MemberExpression
-                  Member="Id" />
-              </ChainExpression>
-            </BinaryExpression.Left>
-            <BinaryExpression.Right>
-              <ParameterExpression
-                Parameter="Id" />
-            </BinaryExpression.Right>
-          </BinaryExpression>
-        </QueryFilterExpressionTree>
-      </QueryOperation.FilterExpression>
-      <QueryOperation.Source>
-        <QuerySourceExpressionTree>
-          <MemberExpression
-            Member="BestellStatusSet" />
-        </QuerySourceExpressionTree>
-      </QueryOperation.Source>
-      <QueryOperationParameter
-        Name="Id"
-        ParameterType=":Int32?">
-        <QueryOperationParameter.Attributes>
-          <Description
-            Value="Der Wert der Id-Schlüsseleigenschaft der abzurufenden Entität." />
-        </QueryOperationParameter.Attributes>
-      </QueryOperationParameter>
-    </QueryOperation>
-    <EntitySet
-      CanDelete="True"
-      CanInsert="True"
-      CanUpdate="True"
       EntityType="AdressenSetItem"
       Name="AdressenSet" />
     <QueryOperation
@@ -855,16 +769,6 @@
       <AssociationSetEnd
         EntitySet="AdressenSet"
         Name="AdressenSetItem" />
-    </AssociationSet>
-    <AssociationSet
-      Association="Rechnungen_BestellStatus"
-      Name="Rechnungen_BestellStatusSet">
-      <AssociationSetEnd
-        EntitySet="RechnungenSet"
-        Name="Rechnungen" />
-      <AssociationSetEnd
-        EntitySet="BestellStatusSet"
-        Name="BestellStatus" />
     </AssociationSet>
     <EntitySet
       CanDelete="True"
@@ -962,6 +866,27 @@
         EntitySet="Bezahlart"
         Name="BezahlartItem" />
     </AssociationSet>
+    <QueryOperation
+      Name="SortedQuery"
+      ReturnType="Artikelliste*">
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree />
+      </QueryOperation.FilterExpression>
+      <QueryOperation.SortCriteria>
+        <SortCriterion>
+          <ChainExpression>
+            <MemberExpression
+              Member="Anzahl" />
+          </ChainExpression>
+        </SortCriterion>
+      </QueryOperation.SortCriteria>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="ArtikellisteSet" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+    </QueryOperation>
   </EntityContainer>
   <EntityType
     Name="Kunden">
@@ -1117,10 +1042,15 @@
       </EntityProperty>
       <EntityProperty
         Name="Rabatt"
-        PropertyType=":Int32">
+        PropertyType=":Decimal">
         <EntityProperty.Attributes>
           <Required />
           <NotSearchable />
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <StringValueFormat
+            Value="0.00 \%" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -1241,6 +1171,15 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
+        Name="Artikelnummer"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
         Name="Artikelbeschreibung"
         PropertyType=":String">
         <EntityProperty.Attributes>
@@ -1251,15 +1190,6 @@
       </EntityProperty>
       <EntityProperty
         Name="Vertriebsname"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <Required />
-          <MaxLength
-            Value="255" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="Artikelnummer"
         PropertyType=":String">
         <EntityProperty.Attributes>
           <Required />
@@ -1385,29 +1315,51 @@
           <NotSearchable />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <EntityProperty
+        Name="StatusImage"
+        PropertyType="Microsoft.LightSwitch.Extensions:Image">
+        <EntityProperty.Attributes>
+          <Computed />
+          <Hidden />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Status"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <Range
+            Maximum="6"
+            Minimum="0" />
+          <Required />
+          <SupportedValue
+            DisplayName="Neue Bestellung"
+            Value="0" />
+          <SupportedValue
+            DisplayName="Bearbeitet"
+            Value="1" />
+          <SupportedValue
+            DisplayName="Versendet"
+            Value="2" />
+          <SupportedValue
+            DisplayName="In Rechnung gestellt"
+            Value="3" />
+          <SupportedValue
+            DisplayName="Geliefert"
+            Value="4" />
+          <SupportedValue
+            DisplayName="Bezahlt"
+            Value="5" />
+          <SupportedValue
+            DisplayName="Zahlungsverzug"
+            Value="6" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
       <NavigationProperty
         Association="Rechnungen_Kunden"
         FromEnd="Rechnungen"
         Name="Kunde"
         ToEnd="Kunden" />
-      <EntityProperty
-        Name="Besteller"
-        PropertyType=":String?">
-        <EntityProperty.Attributes>
-          <MaxLength
-            Value="255" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <NavigationProperty
-        Association="Rechnungen_BestellStatus"
-        FromEnd="Rechnungen"
-        Name="BestellStatus"
-        ToEnd="BestellStatus" />
-      <NavigationProperty
-        Association="Rechnungen_BezahlartItem"
-        FromEnd="Rechnungen"
-        Name="BezahlartItem"
-        ToEnd="BezahlartItem" />
       <EntityProperty
         Name="Auftragsnummer"
         PropertyType=":String?">
@@ -1433,6 +1385,19 @@
             Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <EntityProperty
+        Name="Besteller"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Association="Rechnungen_BezahlartItem"
+        FromEnd="Rechnungen"
+        Name="BezahlartItem"
+        ToEnd="BezahlartItem" />
       <EntityProperty
         Name="Bestelldatum"
         PropertyType=":Date">
@@ -1469,22 +1434,6 @@
         <EntityProperty.Attributes>
           <IncludeInUniqueIndex />
           <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="Netto_Gesamtbetrag"
-        PropertyType="Microsoft.LightSwitch.Extensions:Money?">
-        <EntityProperty.Attributes>
-          <Computed />
-          <NotSearchable />
-          <DisplayName
-            Value="Gesamtbetrag" />
-          <Attribute
-            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
-            <Property
-              Name="IsoCurrencySymbol"
-              Value="EUR" />
-          </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -1525,6 +1474,35 @@
           <Required />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <NavigationProperty
+        Association="Artikelliste_Rechnungen"
+        FromEnd="Rechnungen"
+        Name="ArtikellisteCollection"
+        ToEnd="Artikelliste" />
+      <EntityProperty
+        Name="LieferadressenId"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <Hidden />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Netto_Gesamtbetrag"
+        PropertyType="Microsoft.LightSwitch.Extensions:Money?">
+        <EntityProperty.Attributes>
+          <Computed />
+          <NotSearchable />
+          <DisplayName
+            Value="Gesamtbetrag" />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="IsoCurrencySymbol"
+              Value="EUR" />
+          </Attribute>
+        </EntityProperty.Attributes>
+      </EntityProperty>
       <EntityProperty
         Name="Rechnungsbetrag_Netto"
         PropertyType="Microsoft.LightSwitch.Extensions:Money?">
@@ -1537,6 +1515,9 @@
               Name="IsoCurrencySymbol"
               Value="EUR" />
           </Attribute>
+          <Hidden />
+          <DisplayName
+            Value="Nettobetrag" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -1550,13 +1531,11 @@
               Name="IsoCurrencySymbol"
               Value="EUR" />
           </Attribute>
+          <Hidden />
+          <DisplayName
+            Value="Bruttobetrag" />
         </EntityProperty.Attributes>
       </EntityProperty>
-      <NavigationProperty
-        Association="Artikelliste_Rechnungen"
-        FromEnd="Rechnungen"
-        Name="ArtikellisteCollection"
-        ToEnd="Artikelliste" />
       <EntityProperty
         Name="Rabattwert"
         PropertyType="Microsoft.LightSwitch.Extensions:Money?">
@@ -1574,6 +1553,9 @@
               Name="IsFormatted"
               Value="False" />
           </Attribute>
+          <Hidden />
+          <DisplayName
+            Value="Rabattbetrag" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -1587,22 +1569,6 @@
               Name="IsoCurrencySymbol"
               Value="EUR" />
           </Attribute>
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="RechnungsadressenId"
-        PropertyType=":Int32">
-        <EntityProperty.Attributes>
-          <NotSearchable />
-          <Required />
-          <Hidden />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="LieferadressenId"
-        PropertyType=":Int32?">
-        <EntityProperty.Attributes>
-          <NotSearchable />
           <Hidden />
         </EntityProperty.Attributes>
       </EntityProperty>
@@ -1646,6 +1612,24 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
+        Name="Position"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Computed />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Association="Artikelliste_Artikelstamm"
+        FromEnd="Artikelliste"
+        Name="Artikelstamm"
+        ToEnd="Artikelstamm">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Artikel" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
+      <EntityProperty
         Name="Anzahl"
         PropertyType=":Int32">
         <EntityProperty.Attributes>
@@ -1654,6 +1638,44 @@
             Minimum="1" />
           <Hidden />
           <Required />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Rabatt"
+        PropertyType=":Decimal">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <Required />
+          <Range
+            Minimum="0" />
+          <StringValueFormat
+            Value="0.00 \%" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Association="Artikelliste_Rechnungen"
+        FromEnd="Artikelliste"
+        Name="Rechnungen"
+        ToEnd="Rechnungen">
+        <NavigationProperty.Attributes>
+          <Hidden />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
+      <EntityProperty
+        Name="Artikelnummer"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Computed />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Bezeichnung"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Computed />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -1671,22 +1693,17 @@
           </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
-      <NavigationProperty
-        Association="Artikelliste_Rechnungen"
-        FromEnd="Artikelliste"
-        Name="Rechnungen"
-        ToEnd="Rechnungen" />
-      <NavigationProperty
-        Association="Artikelliste_Artikelstamm"
-        FromEnd="Artikelliste"
-        Name="Artikelstamm"
-        ToEnd="Artikelstamm" />
       <EntityProperty
-        Name="Position"
-        PropertyType=":Int32">
+        Name="Rabattwert"
+        PropertyType="Microsoft.LightSwitch.Extensions:Money">
         <EntityProperty.Attributes>
           <Computed />
-          <NotSearchable />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="IsoCurrencySymbol"
+              Value="EUR" />
+          </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -1700,44 +1717,8 @@
               Name="IsoCurrencySymbol"
               Value="EUR" />
           </Attribute>
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="Artikelnummer"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <Computed />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="Bezeichnung"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <Computed />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="Rabatt"
-        PropertyType=":Decimal">
-        <EntityProperty.Attributes>
-          <NotSearchable />
-          <DecimalConstraint
-            Precision="18"
-            Scale="2" />
-          <Required />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="Rabattwert"
-        PropertyType="Microsoft.LightSwitch.Extensions:Money">
-        <EntityProperty.Attributes>
-          <Computed />
-          <Attribute
-            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
-            <Property
-              Name="IsoCurrencySymbol"
-              Value="EUR" />
-          </Attribute>
+          <DisplayName
+            Value="Listenpreis" />
         </EntityProperty.Attributes>
       </EntityProperty>
     </EntityType.Properties>
@@ -1838,70 +1819,7 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
-        Name="eigenName"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <Required />
-          <MaxLength
-            Value="255" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="eigenFirmenname"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <Required />
-          <MaxLength
-            Value="255" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="eigenStraße"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <Required />
-          <MaxLength
-            Value="255" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="eigenHausnummer"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <Required />
-          <MaxLength
-            Value="255" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="eigenPLZ"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <Required />
-          <MaxLength
-            Value="255" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="eigenStadt"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <Required />
-          <MaxLength
-            Value="255" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="eigenLand"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <Required />
-          <MaxLength
-            Value="255" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="eigenUstID"
+        Name="Firmenname"
         PropertyType=":String?">
         <EntityProperty.Attributes>
           <MaxLength
@@ -1909,7 +1827,7 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
-        Name="eigenEMail"
+        Name="Name"
         PropertyType=":String">
         <EntityProperty.Attributes>
           <Required />
@@ -1918,10 +1836,70 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
-        Name="eigenWebseite"
+        Name="Straße"
         PropertyType=":String">
         <EntityProperty.Attributes>
           <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Hausnummer"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PLZ"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Stadt"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Land"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+          <Required />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="UstID"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="EMail"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Webseite"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
           <MaxLength
             Value="255" />
         </EntityProperty.Attributes>
@@ -2020,59 +1998,6 @@
             Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
-    </EntityType.Properties>
-  </EntityType>
-  <EntityType
-    Name="BestellStatus">
-    <EntityType.Methods>
-      <EntityMethod
-        Name="Delete">
-        <EntityMethod.Attributes>
-          <Generated />
-        </EntityMethod.Attributes>
-      </EntityMethod>
-    </EntityType.Methods>
-    <EntityType.Properties>
-      <KeyProperty
-        Name="Id"
-        PropertyType=":Int32">
-        <KeyProperty.Attributes>
-          <Required />
-          <NotSearchable />
-        </KeyProperty.Attributes>
-      </KeyProperty>
-      <EntityProperty
-        Name="RowVersion"
-        PropertyType=":RowVersion">
-        <EntityProperty.Attributes>
-          <UseForConcurrency />
-          <Generated />
-          <Hidden />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="Bezeichnung"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <MaxLength
-            Value="255" />
-          <Required />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="Bild"
-        PropertyType="Microsoft.LightSwitch.Extensions:Image">
-        <EntityProperty.Attributes>
-          <Required />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <NavigationProperty
-        Association="Rechnungen_BestellStatus"
-        FromEnd="BestellStatus"
-        Name="Rechnungen"
-        ToEnd="Rechnungen" />
     </EntityType.Properties>
   </EntityType>
   <EntityType
@@ -2193,22 +2118,6 @@
       EntityType="AdressenSetItem"
       Multiplicity="Many"
       Name="AdressenSetItem" />
-  </Association>
-  <Association
-    Name="Rechnungen_BestellStatus">
-    <AssociationEnd
-      EntityType="Rechnungen"
-      Multiplicity="Many"
-      Name="Rechnungen" />
-    <AssociationEnd
-      EntityType="BestellStatus"
-      Multiplicity="One"
-      Name="BestellStatus">
-      <AssociationEnd.Attributes>
-        <DeleteRule
-          Action="Restrict" />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
   </Association>
   <EntityType
     Name="BezahlartItem">

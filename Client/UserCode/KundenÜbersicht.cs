@@ -13,9 +13,11 @@ namespace LightSwitchApplication
 {
 	public partial class KundenÜbersicht
 	{
-		private const string FRMRechnung = "ModalAddressRechnung";
 		private const string FRMLiefer = "ModalAddressLiefer";
+		private const string TXTHeader = "HeaderText";		   
+	
 		private AdressenSetItem newItem;
+		private string header;
 
 
 		partial void Kunden_Loaded(bool succeeded)
@@ -46,6 +48,7 @@ namespace LightSwitchApplication
 		private void LieferAvailable(object sender, ControlAvailableEventArgs e)
 		{
 			this.FindControl(FRMLiefer).ControlAvailable -= LieferAvailable;
+			this.FindControl(TXTHeader).SetProperty("Text", header);
 			((ChildWindow)e.Control).Closed += new EventHandler(LieferClosed);
 		}
 
@@ -77,25 +80,25 @@ namespace LightSwitchApplication
 
 		#endregion
 	
-		partial void LieferadressenAddAndEditNew1_Execute()
-		{
-			newItem = this.Adressen.AddNew();
-
-			this.OpenModalWindow(FRMLiefer);
-			this.FindControl(FRMLiefer).ControlAvailable += new EventHandler<ControlAvailableEventArgs>(LieferAvailable);
-	   	}
-
-	
-		partial void LieferadressenEditSelected_Execute()
-		{
-			newItem = this.Adressen.SelectedItem;
-			this.OpenModalWindow(FRMLiefer);
-			this.FindControl(FRMLiefer).ControlAvailable += new EventHandler<ControlAvailableEventArgs>(LieferAvailable);
-	  	}
-
 		partial void LieferOK_Execute()
 		{
 			this.LieferCloseWindow();	
+		}
+	
+		partial void AdressenAddAndEditNew_Execute()
+		{
+			header = "Lieferadresse hinzufügen...";
+			newItem = this.Adressen.AddNew();
+			this.OpenModalWindow(FRMLiefer);
+			this.FindControl(FRMLiefer).ControlAvailable += new EventHandler<ControlAvailableEventArgs>(LieferAvailable);
+		}
+
+		partial void AdressenEditSelected_Execute()
+		{	  
+			header = "Lieferadresse bearbeiten...";
+			newItem = this.Adressen.SelectedItem;
+			this.OpenModalWindow(FRMLiefer);
+			this.FindControl(FRMLiefer).ControlAvailable += new EventHandler<ControlAvailableEventArgs>(LieferAvailable);
 		}
 	}
 }

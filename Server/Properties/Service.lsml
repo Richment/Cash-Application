@@ -107,10 +107,6 @@
           Nullable="False"
           Type="int" />
         <SsdlForeignKeyProperty
-          Name="Rechnungen_BestellStatus"
-          Nullable="False"
-          Type="int" />
-        <SsdlForeignKeyProperty
           Name="Rechnungen_BezahlartItem"
           Nullable="False"
           Type="int" />
@@ -167,27 +163,6 @@
           Type="int" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
-    <AssociationSetMapping
-      AssociationSet="Rechnungen_BestellStatusSet">
-      <AssociationSetMapping.Attributes>
-        <SsdlAssociationSet
-          Name="Rechnungen_BestellStatusSet" />
-        <SsdlAssociationSetEnd
-          End="LightSwitchCommonModule:ApplicationData/Members[Rechnungen_BestellStatusSet]/Members[Rechnungen]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="Rechnungen_BestellStatus" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-        <SsdlAssociationSetEnd
-          End="LightSwitchCommonModule:ApplicationData/Members[Rechnungen_BestellStatusSet]/Members[BestellStatus]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="Id" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-      </AssociationSetMapping.Attributes>
-    </AssociationSetMapping>
     <AssociationSetMapping
       AssociationSet="Rechnungen_BezahlartItemSet">
       <AssociationSetMapping.Attributes>

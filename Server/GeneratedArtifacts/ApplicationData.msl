@@ -42,9 +42,9 @@
         <MappingFragment StoreEntitySet="ArtikelstammSet">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Artikelnummer" ColumnName="Artikelnummer" />
           <ScalarProperty Name="Artikelbeschreibung" ColumnName="Artikelbeschreibung" />
           <ScalarProperty Name="Vertriebsname" ColumnName="Vertriebsname" />
-          <ScalarProperty Name="Artikelnummer" ColumnName="Artikelnummer" />
           <ScalarProperty Name="Anzahl_PK" ColumnName="Anzahl_PK" />
           <ScalarProperty Name="HK_pro_PK" ColumnName="HK_pro_PK" />
           <ScalarProperty Name="EK_pro_PK" ColumnName="EK_pro_PK" />
@@ -58,13 +58,13 @@
         <MappingFragment StoreEntitySet="RechnungenSet">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="Rechnungen_Kunden" ColumnName="Rechnungen_Kunden" />
-          <ScalarProperty Name="Besteller" ColumnName="Besteller" />
-          <ScalarProperty Name="Rechnungen_BestellStatus" ColumnName="Rechnungen_BestellStatus" />
-          <ScalarProperty Name="Rechnungen_BezahlartItem" ColumnName="Rechnungen_BezahlartItem" />
           <ScalarProperty Name="Auftragsnummer" ColumnName="Auftragsnummer" />
           <ScalarProperty Name="Referenznummer" ColumnName="Referenznummer" />
           <ScalarProperty Name="Webshop_ID" ColumnName="Webshop_ID" />
+          <ScalarProperty Name="Besteller" ColumnName="Besteller" />
+          <ScalarProperty Name="Rechnungen_BezahlartItem" ColumnName="Rechnungen_BezahlartItem" />
           <ScalarProperty Name="Bestelldatum" ColumnName="Bestelldatum" />
           <ScalarProperty Name="Lieferdatum" ColumnName="Lieferdatum" />
           <ScalarProperty Name="Lieferscheinnummer" ColumnName="Lieferscheinnummer" />
@@ -72,7 +72,6 @@
           <ScalarProperty Name="Rechnungsnummer" ColumnName="Rechnungsnummer" />
           <ScalarProperty Name="Lieferkosten" ColumnName="Lieferkosten" />
           <ScalarProperty Name="Rabatt" ColumnName="Rabatt" />
-          <ScalarProperty Name="RechnungsadressenId" ColumnName="RechnungsadressenId" />
           <ScalarProperty Name="LieferadressenId" ColumnName="LieferadressenId" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -82,10 +81,10 @@
         <MappingFragment StoreEntitySet="ArtikellisteSet">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
-          <ScalarProperty Name="Anzahl" ColumnName="Anzahl" />
-          <ScalarProperty Name="Artikelliste_Rechnungen" ColumnName="Artikelliste_Rechnungen" />
           <ScalarProperty Name="Artikelliste_Artikelstamm" ColumnName="Artikelliste_Artikelstamm" />
+          <ScalarProperty Name="Anzahl" ColumnName="Anzahl" />
           <ScalarProperty Name="Rabatt" ColumnName="Rabatt" />
+          <ScalarProperty Name="Artikelliste_Rechnungen" ColumnName="Artikelliste_Rechnungen" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -94,16 +93,16 @@
         <MappingFragment StoreEntitySet="FirmendatenSet">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
-          <ScalarProperty Name="eigenName" ColumnName="eigenName" />
-          <ScalarProperty Name="eigenFirmenname" ColumnName="eigenFirmenname" />
-          <ScalarProperty Name="eigenStraße" ColumnName="eigenStraße" />
-          <ScalarProperty Name="eigenHausnummer" ColumnName="eigenHausnummer" />
-          <ScalarProperty Name="eigenPLZ" ColumnName="eigenPLZ" />
-          <ScalarProperty Name="eigenStadt" ColumnName="eigenStadt" />
-          <ScalarProperty Name="eigenLand" ColumnName="eigenLand" />
-          <ScalarProperty Name="eigenUstID" ColumnName="eigenUstID" />
-          <ScalarProperty Name="eigenEMail" ColumnName="eigenEMail" />
-          <ScalarProperty Name="eigenWebseite" ColumnName="eigenWebseite" />
+          <ScalarProperty Name="Firmenname" ColumnName="Firmenname" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Straße" ColumnName="Straße" />
+          <ScalarProperty Name="Hausnummer" ColumnName="Hausnummer" />
+          <ScalarProperty Name="PLZ" ColumnName="PLZ" />
+          <ScalarProperty Name="Stadt" ColumnName="Stadt" />
+          <ScalarProperty Name="Land" ColumnName="Land" />
+          <ScalarProperty Name="UstID" ColumnName="UstID" />
+          <ScalarProperty Name="EMail" ColumnName="EMail" />
+          <ScalarProperty Name="Webseite" ColumnName="Webseite" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -119,16 +118,6 @@
           <ScalarProperty Name="selfStadt" ColumnName="selfStadt" />
           <ScalarProperty Name="selfLand" ColumnName="selfLand" />
           <ScalarProperty Name="selfUSTID" ColumnName="selfUSTID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="BestellStatusSet">
-      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.BestellStatus)">
-        <MappingFragment StoreEntitySet="BestellStatusSet">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
-          <ScalarProperty Name="Bezeichnung" ColumnName="Bezeichnung" />
-          <ScalarProperty Name="Bild" ColumnName="Bild" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

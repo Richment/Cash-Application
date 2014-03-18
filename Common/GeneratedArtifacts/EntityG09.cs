@@ -17,32 +17,32 @@ namespace LightSwitchApplication
     /// Keine modellierte Beschreibung verfügbar
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-    public sealed partial class AdressenSetItem : global::Microsoft.LightSwitch.Framework.Base.EntityObject<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass>
+    public sealed partial class BezahlartItem : global::Microsoft.LightSwitch.Framework.Base.EntityObject<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass>
     {
         #region Constructors
     
         /// <summary>
-        /// Initialisiert eine neue Instanz der Entität AdressenSetItem.
+        /// Initialisiert eine neue Instanz der Entität BezahlartItem.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public AdressenSetItem()
+        public BezahlartItem()
             : this(null)
         {
         }
     
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public AdressenSetItem(global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.AdressenSetItem> entitySet)
+        public BezahlartItem(global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.BezahlartItem> entitySet)
             : base(entitySet)
         {
-            global::LightSwitchApplication.AdressenSetItem.DetailsClass.Initialize(this);
+            global::LightSwitchApplication.BezahlartItem.DetailsClass.Initialize(this);
         }
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void AdressenSetItem_Created();
+        partial void BezahlartItem_Created();
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void AdressenSetItem_AllowSaveWithErrors(ref bool result);
+        partial void BezahlartItem_AllowSaveWithErrors(ref bool result);
     
         #endregion
     
@@ -87,11 +87,11 @@ namespace LightSwitchApplication
         {
             get
             {
-                return global::LightSwitchApplication.AdressenSetItem.DetailsClass.GetValue(this, global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.Id);
+                return global::LightSwitchApplication.BezahlartItem.DetailsClass.GetValue(this, global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties.Id);
             }
             set
             {
-                global::LightSwitchApplication.AdressenSetItem.DetailsClass.SetValue(this, global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.Id, value);
+                global::LightSwitchApplication.BezahlartItem.DetailsClass.SetValue(this, global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties.Id, value);
             }
         }
         
@@ -112,11 +112,11 @@ namespace LightSwitchApplication
         {
             get
             {
-                return global::LightSwitchApplication.AdressenSetItem.DetailsClass.GetValue(this, global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.RowVersion);
+                return global::LightSwitchApplication.BezahlartItem.DetailsClass.GetValue(this, global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties.RowVersion);
             }
             set
             {
-                global::LightSwitchApplication.AdressenSetItem.DetailsClass.SetValue(this, global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.RowVersion, value);
+                global::LightSwitchApplication.BezahlartItem.DetailsClass.SetValue(this, global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties.RowVersion, value);
             }
         }
         
@@ -132,192 +132,71 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public string Name
+        public string Bezeichnung
         {
             get
             {
-                return global::LightSwitchApplication.AdressenSetItem.DetailsClass.GetValue(this, global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.Name);
+                return global::LightSwitchApplication.BezahlartItem.DetailsClass.GetValue(this, global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties.Bezeichnung);
             }
             set
             {
-                global::LightSwitchApplication.AdressenSetItem.DetailsClass.SetValue(this, global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.Name, value);
+                global::LightSwitchApplication.BezahlartItem.DetailsClass.SetValue(this, global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties.Bezeichnung, value);
             }
         }
         
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Name_IsReadOnly(ref bool result);
+        partial void Bezeichnung_IsReadOnly(ref bool result);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Name_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        partial void Bezeichnung_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Name_Changed();
+        partial void Bezeichnung_Changed();
 
         /// <summary>
         /// Keine modellierte Beschreibung verfügbar
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public string zHd_Besteller_optional
+        public string Text_Rechnung
         {
             get
             {
-                return global::LightSwitchApplication.AdressenSetItem.DetailsClass.GetValue(this, global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.zHd_Besteller_optional);
+                return global::LightSwitchApplication.BezahlartItem.DetailsClass.GetValue(this, global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties.Text_Rechnung);
             }
             set
             {
-                global::LightSwitchApplication.AdressenSetItem.DetailsClass.SetValue(this, global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.zHd_Besteller_optional, value);
+                global::LightSwitchApplication.BezahlartItem.DetailsClass.SetValue(this, global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties.Text_Rechnung, value);
             }
         }
         
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void zHd_Besteller_optional_IsReadOnly(ref bool result);
+        partial void Text_Rechnung_IsReadOnly(ref bool result);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void zHd_Besteller_optional_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        partial void Text_Rechnung_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void zHd_Besteller_optional_Changed();
+        partial void Text_Rechnung_Changed();
 
         /// <summary>
         /// Keine modellierte Beschreibung verfügbar
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public string Starße
+        public global::Microsoft.LightSwitch.Framework.EntityCollection<global::LightSwitchApplication.Rechnungen> RechnungenCollection
         {
             get
             {
-                return global::LightSwitchApplication.AdressenSetItem.DetailsClass.GetValue(this, global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.Starße);
-            }
-            set
-            {
-                global::LightSwitchApplication.AdressenSetItem.DetailsClass.SetValue(this, global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.Starße, value);
+                return global::LightSwitchApplication.BezahlartItem.DetailsClass.GetValue(this, global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties.RechnungenCollection);
             }
         }
         
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Starße_IsReadOnly(ref bool result);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Starße_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Starße_Changed();
-
-        /// <summary>
-        /// Keine modellierte Beschreibung verfügbar
-        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public string Hausnummer
+        public Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.Rechnungen> RechnungenCollectionQuery
         {
             get
             {
-                return global::LightSwitchApplication.AdressenSetItem.DetailsClass.GetValue(this, global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.Hausnummer);
-            }
-            set
-            {
-                global::LightSwitchApplication.AdressenSetItem.DetailsClass.SetValue(this, global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.Hausnummer, value);
+                return global::LightSwitchApplication.BezahlartItem.DetailsClass.GetQuery(this, global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties.RechnungenCollection);
             }
         }
-        
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Hausnummer_IsReadOnly(ref bool result);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Hausnummer_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Hausnummer_Changed();
-
-        /// <summary>
-        /// Keine modellierte Beschreibung verfügbar
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public string PLZ
-        {
-            get
-            {
-                return global::LightSwitchApplication.AdressenSetItem.DetailsClass.GetValue(this, global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.PLZ);
-            }
-            set
-            {
-                global::LightSwitchApplication.AdressenSetItem.DetailsClass.SetValue(this, global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.PLZ, value);
-            }
-        }
-        
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void PLZ_IsReadOnly(ref bool result);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void PLZ_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void PLZ_Changed();
-
-        /// <summary>
-        /// Keine modellierte Beschreibung verfügbar
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public string Stadt
-        {
-            get
-            {
-                return global::LightSwitchApplication.AdressenSetItem.DetailsClass.GetValue(this, global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.Stadt);
-            }
-            set
-            {
-                global::LightSwitchApplication.AdressenSetItem.DetailsClass.SetValue(this, global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.Stadt, value);
-            }
-        }
-        
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Stadt_IsReadOnly(ref bool result);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Stadt_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Stadt_Changed();
-
-        /// <summary>
-        /// Keine modellierte Beschreibung verfügbar
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public string Land
-        {
-            get
-            {
-                return global::LightSwitchApplication.AdressenSetItem.DetailsClass.GetValue(this, global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.Land);
-            }
-            set
-            {
-                global::LightSwitchApplication.AdressenSetItem.DetailsClass.SetValue(this, global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.Land, value);
-            }
-        }
-        
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Land_IsReadOnly(ref bool result);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Land_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Land_Changed();
-
-        /// <summary>
-        /// Keine modellierte Beschreibung verfügbar
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::LightSwitchApplication.Kunden KundenRechnungsadresse
-        {
-            get
-            {
-                return global::LightSwitchApplication.AdressenSetItem.DetailsClass.GetValue(this, global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.KundenRechnungsadresse);
-            }
-            set
-            {
-                global::LightSwitchApplication.AdressenSetItem.DetailsClass.SetValue(this, global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.KundenRechnungsadresse, value);
-            }
-        }
-        
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void KundenRechnungsadresse_IsReadOnly(ref bool result);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void KundenRechnungsadresse_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void KundenRechnungsadresse_Changed();
 
         #endregion
     
@@ -328,37 +207,37 @@ namespace LightSwitchApplication
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public sealed class DetailsClass : global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<
-                global::LightSwitchApplication.AdressenSetItem,
-                global::LightSwitchApplication.AdressenSetItem.DetailsClass,
-                global::LightSwitchApplication.AdressenSetItem.DetailsClass.IImplementation,
-                global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySet,
-                global::Microsoft.LightSwitch.Details.Framework.EntityCommandSet<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass>,
-                global::Microsoft.LightSwitch.Details.Framework.EntityMethodSet<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass>>
+                global::LightSwitchApplication.BezahlartItem,
+                global::LightSwitchApplication.BezahlartItem.DetailsClass,
+                global::LightSwitchApplication.BezahlartItem.DetailsClass.IImplementation,
+                global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySet,
+                global::Microsoft.LightSwitch.Details.Framework.EntityCommandSet<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass>,
+                global::Microsoft.LightSwitch.Details.Framework.EntityMethodSet<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass>>
         {
     
             static DetailsClass()
             {
-                var initializeEntry = global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.Id;
+                var initializeEntry = global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties.Id;
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private static readonly global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass>.Entry
-                __AdressenSetItemEntry = new global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass>.Entry(
-                    global::LightSwitchApplication.AdressenSetItem.DetailsClass.__AdressenSetItem_CreateNew,
-                    global::LightSwitchApplication.AdressenSetItem.DetailsClass.__AdressenSetItem_Created,
-                    global::LightSwitchApplication.AdressenSetItem.DetailsClass.__AdressenSetItem_AllowSaveWithErrors);
-            private static global::LightSwitchApplication.AdressenSetItem __AdressenSetItem_CreateNew(global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.AdressenSetItem> es)
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass>.Entry
+                __BezahlartItemEntry = new global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass>.Entry(
+                    global::LightSwitchApplication.BezahlartItem.DetailsClass.__BezahlartItem_CreateNew,
+                    global::LightSwitchApplication.BezahlartItem.DetailsClass.__BezahlartItem_Created,
+                    global::LightSwitchApplication.BezahlartItem.DetailsClass.__BezahlartItem_AllowSaveWithErrors);
+            private static global::LightSwitchApplication.BezahlartItem __BezahlartItem_CreateNew(global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.BezahlartItem> es)
             {
-                return new global::LightSwitchApplication.AdressenSetItem(es);
+                return new global::LightSwitchApplication.BezahlartItem(es);
             }
-            private static void __AdressenSetItem_Created(global::LightSwitchApplication.AdressenSetItem e)
+            private static void __BezahlartItem_Created(global::LightSwitchApplication.BezahlartItem e)
             {
-                e.AdressenSetItem_Created();
+                e.BezahlartItem_Created();
             }
-            private static bool __AdressenSetItem_AllowSaveWithErrors(global::LightSwitchApplication.AdressenSetItem e)
+            private static bool __BezahlartItem_AllowSaveWithErrors(global::LightSwitchApplication.BezahlartItem e)
             {
                 bool result = false;
-                e.AdressenSetItem_AllowSaveWithErrors(ref result);
+                e.BezahlartItem_AllowSaveWithErrors(ref result);
                 return result;
             }
     
@@ -366,7 +245,7 @@ namespace LightSwitchApplication
             {
             }
     
-            public new global::Microsoft.LightSwitch.Details.Framework.EntityCommandSet<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass> Commands
+            public new global::Microsoft.LightSwitch.Details.Framework.EntityCommandSet<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass> Commands
             {
                 get
                 {
@@ -374,7 +253,7 @@ namespace LightSwitchApplication
                 }
             }
     
-            public new global::Microsoft.LightSwitch.Details.Framework.EntityMethodSet<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass> Methods
+            public new global::Microsoft.LightSwitch.Details.Framework.EntityMethodSet<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass> Methods
             {
                 get
                 {
@@ -382,7 +261,7 @@ namespace LightSwitchApplication
                 }
             }
     
-            public new global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySet Properties
+            public new global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySet Properties
             {
                 get
                 {
@@ -394,90 +273,50 @@ namespace LightSwitchApplication
             [global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public sealed class PropertySet : global::Microsoft.LightSwitch.Details.Framework.Base.EntityPropertySet<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass>
+            public sealed class PropertySet : global::Microsoft.LightSwitch.Details.Framework.Base.EntityPropertySet<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass>
             {
     
                 public PropertySet() : base()
                 {
                 }
     
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, int> Id
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass, int> Id
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.Id) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, int>;
+                        return base.GetItem(global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties.Id) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass, int>;
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, byte[]> RowVersion
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass, byte[]> RowVersion
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.RowVersion) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, byte[]>;
+                        return base.GetItem(global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties.RowVersion) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass, byte[]>;
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string> Name
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass, string> Bezeichnung
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.Name) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>;
+                        return base.GetItem(global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties.Bezeichnung) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass, string>;
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string> zHd_Besteller_optional
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass, string> Text_Rechnung
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.zHd_Besteller_optional) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>;
+                        return base.GetItem(global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties.Text_Rechnung) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass, string>;
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string> Starße
+                public global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass, global::LightSwitchApplication.Rechnungen> RechnungenCollection
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.Starße) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>;
-                    }
-                }
-                
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string> Hausnummer
-                {
-                    get
-                    {
-                        return base.GetItem(global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.Hausnummer) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>;
-                    }
-                }
-                
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string> PLZ
-                {
-                    get
-                    {
-                        return base.GetItem(global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.PLZ) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>;
-                    }
-                }
-                
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string> Stadt
-                {
-                    get
-                    {
-                        return base.GetItem(global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.Stadt) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>;
-                    }
-                }
-                
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string> Land
-                {
-                    get
-                    {
-                        return base.GetItem(global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.Land) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>;
-                    }
-                }
-                
-                public global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, global::LightSwitchApplication.Kunden> KundenRechnungsadresse
-                {
-                    get
-                    {
-                        return base.GetItem(global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.KundenRechnungsadresse) as global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, global::LightSwitchApplication.Kunden>;
+                        return base.GetItem(global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties.RechnungenCollection) as global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass, global::LightSwitchApplication.Rechnungen>;
                     }
                 }
                 
@@ -489,14 +328,9 @@ namespace LightSwitchApplication
             {
                 new int Id { get; set; }
                 new byte[] RowVersion { get; set; }
-                new string Name { get; set; }
-                new string zHd_Besteller_optional { get; set; }
-                new string Starße { get; set; }
-                new string Hausnummer { get; set; }
-                new string PLZ { get; set; }
-                new string Stadt { get; set; }
-                new string Land { get; set; }
-                new global::Microsoft.LightSwitch.Internal.IEntityImplementation KundenRechnungsadresse { get; set; }
+                new string Bezeichnung { get; set; }
+                new string Text_Rechnung { get; set; }
+                new global::System.Collections.IEnumerable RechnungenCollection { get; }
             }
             #pragma warning restore 109
     
@@ -507,416 +341,189 @@ namespace LightSwitchApplication
             {
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, int>.Entry
-                    Id = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, int>.Entry(
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass, int>.Entry
+                    Id = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass, int>.Entry(
                         "Id",
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Id_Stub,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Id_ComputeIsReadOnly,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Id_Validate,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Id_GetImplementationValue,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Id_SetImplementationValue,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Id_OnValueChanged);
-                private static void _Id_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.AdressenSetItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, int>.Data> c, global::LightSwitchApplication.AdressenSetItem.DetailsClass d, object sf)
+                        global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties._Id_Stub,
+                        global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties._Id_ComputeIsReadOnly,
+                        global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties._Id_Validate,
+                        global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties._Id_GetImplementationValue,
+                        global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties._Id_SetImplementationValue,
+                        global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties._Id_OnValueChanged);
+                private static void _Id_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.BezahlartItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass, int>.Data> c, global::LightSwitchApplication.BezahlartItem.DetailsClass d, object sf)
                 {
                     c(d, ref d._Id, sf);
                 }
-                private static bool _Id_ComputeIsReadOnly(global::LightSwitchApplication.AdressenSetItem e)
+                private static bool _Id_ComputeIsReadOnly(global::LightSwitchApplication.BezahlartItem e)
                 {
                     bool result = false;
                     e.Id_IsReadOnly(ref result);
                     return result;
                 }
-                private static void _Id_Validate(global::LightSwitchApplication.AdressenSetItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                private static void _Id_Validate(global::LightSwitchApplication.BezahlartItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
                 {
                     e.Id_Validate(r);
                 }
-                private static int _Id_GetImplementationValue(global::LightSwitchApplication.AdressenSetItem.DetailsClass d)
+                private static int _Id_GetImplementationValue(global::LightSwitchApplication.BezahlartItem.DetailsClass d)
                 {
                     return d.ImplementationEntity.Id;
                 }
-                private static void _Id_SetImplementationValue(global::LightSwitchApplication.AdressenSetItem.DetailsClass d, int v)
+                private static void _Id_SetImplementationValue(global::LightSwitchApplication.BezahlartItem.DetailsClass d, int v)
                 {
                     d.ImplementationEntity.Id = v;
                 }
-                private static void _Id_OnValueChanged(global::LightSwitchApplication.AdressenSetItem e)
+                private static void _Id_OnValueChanged(global::LightSwitchApplication.BezahlartItem e)
                 {
                     e.Id_Changed();
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, byte[]>.Entry
-                    RowVersion = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, byte[]>.Entry(
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass, byte[]>.Entry
+                    RowVersion = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass, byte[]>.Entry(
                         "RowVersion",
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._RowVersion_Stub,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._RowVersion_ComputeIsReadOnly,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._RowVersion_Validate,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._RowVersion_GetImplementationValue,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._RowVersion_SetImplementationValue,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._RowVersion_OnValueChanged);
-                private static void _RowVersion_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.AdressenSetItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, byte[]>.Data> c, global::LightSwitchApplication.AdressenSetItem.DetailsClass d, object sf)
+                        global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties._RowVersion_Stub,
+                        global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties._RowVersion_ComputeIsReadOnly,
+                        global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties._RowVersion_Validate,
+                        global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties._RowVersion_GetImplementationValue,
+                        global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties._RowVersion_SetImplementationValue,
+                        global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties._RowVersion_OnValueChanged);
+                private static void _RowVersion_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.BezahlartItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass, byte[]>.Data> c, global::LightSwitchApplication.BezahlartItem.DetailsClass d, object sf)
                 {
                     c(d, ref d._RowVersion, sf);
                 }
-                private static bool _RowVersion_ComputeIsReadOnly(global::LightSwitchApplication.AdressenSetItem e)
+                private static bool _RowVersion_ComputeIsReadOnly(global::LightSwitchApplication.BezahlartItem e)
                 {
                     bool result = false;
                     e.RowVersion_IsReadOnly(ref result);
                     return result;
                 }
-                private static void _RowVersion_Validate(global::LightSwitchApplication.AdressenSetItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                private static void _RowVersion_Validate(global::LightSwitchApplication.BezahlartItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
                 {
                     e.RowVersion_Validate(r);
                 }
-                private static byte[] _RowVersion_GetImplementationValue(global::LightSwitchApplication.AdressenSetItem.DetailsClass d)
+                private static byte[] _RowVersion_GetImplementationValue(global::LightSwitchApplication.BezahlartItem.DetailsClass d)
                 {
                     return d.ImplementationEntity.RowVersion;
                 }
-                private static void _RowVersion_SetImplementationValue(global::LightSwitchApplication.AdressenSetItem.DetailsClass d, byte[] v)
+                private static void _RowVersion_SetImplementationValue(global::LightSwitchApplication.BezahlartItem.DetailsClass d, byte[] v)
                 {
                     d.ImplementationEntity.RowVersion = v;
                 }
-                private static void _RowVersion_OnValueChanged(global::LightSwitchApplication.AdressenSetItem e)
+                private static void _RowVersion_OnValueChanged(global::LightSwitchApplication.BezahlartItem e)
                 {
                     e.RowVersion_Changed();
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Entry
-                    Name = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Entry(
-                        "Name",
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Name_Stub,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Name_ComputeIsReadOnly,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Name_Validate,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Name_GetImplementationValue,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Name_SetImplementationValue,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Name_OnValueChanged);
-                private static void _Name_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.AdressenSetItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Data> c, global::LightSwitchApplication.AdressenSetItem.DetailsClass d, object sf)
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass, string>.Entry
+                    Bezeichnung = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass, string>.Entry(
+                        "Bezeichnung",
+                        global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties._Bezeichnung_Stub,
+                        global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties._Bezeichnung_ComputeIsReadOnly,
+                        global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties._Bezeichnung_Validate,
+                        global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties._Bezeichnung_GetImplementationValue,
+                        global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties._Bezeichnung_SetImplementationValue,
+                        global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties._Bezeichnung_OnValueChanged);
+                private static void _Bezeichnung_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.BezahlartItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass, string>.Data> c, global::LightSwitchApplication.BezahlartItem.DetailsClass d, object sf)
                 {
-                    c(d, ref d._Name, sf);
+                    c(d, ref d._Bezeichnung, sf);
                 }
-                private static bool _Name_ComputeIsReadOnly(global::LightSwitchApplication.AdressenSetItem e)
+                private static bool _Bezeichnung_ComputeIsReadOnly(global::LightSwitchApplication.BezahlartItem e)
                 {
                     bool result = false;
-                    e.Name_IsReadOnly(ref result);
+                    e.Bezeichnung_IsReadOnly(ref result);
                     return result;
                 }
-                private static void _Name_Validate(global::LightSwitchApplication.AdressenSetItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                private static void _Bezeichnung_Validate(global::LightSwitchApplication.BezahlartItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
                 {
-                    e.Name_Validate(r);
+                    e.Bezeichnung_Validate(r);
                 }
-                private static string _Name_GetImplementationValue(global::LightSwitchApplication.AdressenSetItem.DetailsClass d)
+                private static string _Bezeichnung_GetImplementationValue(global::LightSwitchApplication.BezahlartItem.DetailsClass d)
                 {
-                    return d.ImplementationEntity.Name;
+                    return d.ImplementationEntity.Bezeichnung;
                 }
-                private static void _Name_SetImplementationValue(global::LightSwitchApplication.AdressenSetItem.DetailsClass d, string v)
+                private static void _Bezeichnung_SetImplementationValue(global::LightSwitchApplication.BezahlartItem.DetailsClass d, string v)
                 {
-                    d.ImplementationEntity.Name = v;
+                    d.ImplementationEntity.Bezeichnung = v;
                 }
-                private static void _Name_OnValueChanged(global::LightSwitchApplication.AdressenSetItem e)
+                private static void _Bezeichnung_OnValueChanged(global::LightSwitchApplication.BezahlartItem e)
                 {
-                    e.Name_Changed();
+                    e.Bezeichnung_Changed();
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Entry
-                    zHd_Besteller_optional = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Entry(
-                        "zHd_Besteller_optional",
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._zHd_Besteller_optional_Stub,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._zHd_Besteller_optional_ComputeIsReadOnly,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._zHd_Besteller_optional_Validate,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._zHd_Besteller_optional_GetImplementationValue,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._zHd_Besteller_optional_SetImplementationValue,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._zHd_Besteller_optional_OnValueChanged);
-                private static void _zHd_Besteller_optional_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.AdressenSetItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Data> c, global::LightSwitchApplication.AdressenSetItem.DetailsClass d, object sf)
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass, string>.Entry
+                    Text_Rechnung = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass, string>.Entry(
+                        "Text_Rechnung",
+                        global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties._Text_Rechnung_Stub,
+                        global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties._Text_Rechnung_ComputeIsReadOnly,
+                        global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties._Text_Rechnung_Validate,
+                        global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties._Text_Rechnung_GetImplementationValue,
+                        global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties._Text_Rechnung_SetImplementationValue,
+                        global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties._Text_Rechnung_OnValueChanged);
+                private static void _Text_Rechnung_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.BezahlartItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass, string>.Data> c, global::LightSwitchApplication.BezahlartItem.DetailsClass d, object sf)
                 {
-                    c(d, ref d._zHd_Besteller_optional, sf);
+                    c(d, ref d._Text_Rechnung, sf);
                 }
-                private static bool _zHd_Besteller_optional_ComputeIsReadOnly(global::LightSwitchApplication.AdressenSetItem e)
+                private static bool _Text_Rechnung_ComputeIsReadOnly(global::LightSwitchApplication.BezahlartItem e)
                 {
                     bool result = false;
-                    e.zHd_Besteller_optional_IsReadOnly(ref result);
+                    e.Text_Rechnung_IsReadOnly(ref result);
                     return result;
                 }
-                private static void _zHd_Besteller_optional_Validate(global::LightSwitchApplication.AdressenSetItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                private static void _Text_Rechnung_Validate(global::LightSwitchApplication.BezahlartItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
                 {
-                    e.zHd_Besteller_optional_Validate(r);
+                    e.Text_Rechnung_Validate(r);
                 }
-                private static string _zHd_Besteller_optional_GetImplementationValue(global::LightSwitchApplication.AdressenSetItem.DetailsClass d)
+                private static string _Text_Rechnung_GetImplementationValue(global::LightSwitchApplication.BezahlartItem.DetailsClass d)
                 {
-                    return d.ImplementationEntity.zHd_Besteller_optional;
+                    return d.ImplementationEntity.Text_Rechnung;
                 }
-                private static void _zHd_Besteller_optional_SetImplementationValue(global::LightSwitchApplication.AdressenSetItem.DetailsClass d, string v)
+                private static void _Text_Rechnung_SetImplementationValue(global::LightSwitchApplication.BezahlartItem.DetailsClass d, string v)
                 {
-                    d.ImplementationEntity.zHd_Besteller_optional = v;
+                    d.ImplementationEntity.Text_Rechnung = v;
                 }
-                private static void _zHd_Besteller_optional_OnValueChanged(global::LightSwitchApplication.AdressenSetItem e)
+                private static void _Text_Rechnung_OnValueChanged(global::LightSwitchApplication.BezahlartItem e)
                 {
-                    e.zHd_Besteller_optional_Changed();
+                    e.Text_Rechnung_Changed();
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Entry
-                    Starße = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Entry(
-                        "Starße",
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Starße_Stub,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Starße_ComputeIsReadOnly,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Starße_Validate,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Starße_GetImplementationValue,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Starße_SetImplementationValue,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Starße_OnValueChanged);
-                private static void _Starße_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.AdressenSetItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Data> c, global::LightSwitchApplication.AdressenSetItem.DetailsClass d, object sf)
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass, global::LightSwitchApplication.Rechnungen>.Entry
+                    RechnungenCollection = new global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass, global::LightSwitchApplication.Rechnungen>.Entry(
+                        "RechnungenCollection",
+                        global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties._RechnungenCollection_Stub,
+                        global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties._RechnungenCollection_GetReferencedEntities,
+                        global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties._RechnungenCollection_GetEntityCollection);
+                private static void _RechnungenCollection_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.BezahlartItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass, global::LightSwitchApplication.Rechnungen>.Data> c, global::LightSwitchApplication.BezahlartItem.DetailsClass d, object sf)
                 {
-                    c(d, ref d._Starße, sf);
+                    c(d, ref d._RechnungenCollection, sf);
                 }
-                private static bool _Starße_ComputeIsReadOnly(global::LightSwitchApplication.AdressenSetItem e)
+                private static global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.Rechnungen> _RechnungenCollection_GetReferencedEntities(global::LightSwitchApplication.BezahlartItem.DetailsClass d)
                 {
-                    bool result = false;
-                    e.Starße_IsReadOnly(ref result);
-                    return result;
+                    return d.GetReferencedEntities<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass>(global::LightSwitchApplication.BezahlartItem.DetailsClass.PropertySetProperties.RechnungenCollection, ref d._RechnungenCollection);
                 }
-                private static void _Starße_Validate(global::LightSwitchApplication.AdressenSetItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                private static global::System.Collections.IEnumerable _RechnungenCollection_GetEntityCollection(global::LightSwitchApplication.BezahlartItem.DetailsClass d)
                 {
-                    e.Starße_Validate(r);
-                }
-                private static string _Starße_GetImplementationValue(global::LightSwitchApplication.AdressenSetItem.DetailsClass d)
-                {
-                    return d.ImplementationEntity.Starße;
-                }
-                private static void _Starße_SetImplementationValue(global::LightSwitchApplication.AdressenSetItem.DetailsClass d, string v)
-                {
-                    d.ImplementationEntity.Starße = v;
-                }
-                private static void _Starße_OnValueChanged(global::LightSwitchApplication.AdressenSetItem e)
-                {
-                    e.Starße_Changed();
-                }
-    
-                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Entry
-                    Hausnummer = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Entry(
-                        "Hausnummer",
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Hausnummer_Stub,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Hausnummer_ComputeIsReadOnly,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Hausnummer_Validate,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Hausnummer_GetImplementationValue,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Hausnummer_SetImplementationValue,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Hausnummer_OnValueChanged);
-                private static void _Hausnummer_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.AdressenSetItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Data> c, global::LightSwitchApplication.AdressenSetItem.DetailsClass d, object sf)
-                {
-                    c(d, ref d._Hausnummer, sf);
-                }
-                private static bool _Hausnummer_ComputeIsReadOnly(global::LightSwitchApplication.AdressenSetItem e)
-                {
-                    bool result = false;
-                    e.Hausnummer_IsReadOnly(ref result);
-                    return result;
-                }
-                private static void _Hausnummer_Validate(global::LightSwitchApplication.AdressenSetItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
-                {
-                    e.Hausnummer_Validate(r);
-                }
-                private static string _Hausnummer_GetImplementationValue(global::LightSwitchApplication.AdressenSetItem.DetailsClass d)
-                {
-                    return d.ImplementationEntity.Hausnummer;
-                }
-                private static void _Hausnummer_SetImplementationValue(global::LightSwitchApplication.AdressenSetItem.DetailsClass d, string v)
-                {
-                    d.ImplementationEntity.Hausnummer = v;
-                }
-                private static void _Hausnummer_OnValueChanged(global::LightSwitchApplication.AdressenSetItem e)
-                {
-                    e.Hausnummer_Changed();
-                }
-    
-                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Entry
-                    PLZ = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Entry(
-                        "PLZ",
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._PLZ_Stub,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._PLZ_ComputeIsReadOnly,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._PLZ_Validate,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._PLZ_GetImplementationValue,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._PLZ_SetImplementationValue,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._PLZ_OnValueChanged);
-                private static void _PLZ_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.AdressenSetItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Data> c, global::LightSwitchApplication.AdressenSetItem.DetailsClass d, object sf)
-                {
-                    c(d, ref d._PLZ, sf);
-                }
-                private static bool _PLZ_ComputeIsReadOnly(global::LightSwitchApplication.AdressenSetItem e)
-                {
-                    bool result = false;
-                    e.PLZ_IsReadOnly(ref result);
-                    return result;
-                }
-                private static void _PLZ_Validate(global::LightSwitchApplication.AdressenSetItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
-                {
-                    e.PLZ_Validate(r);
-                }
-                private static string _PLZ_GetImplementationValue(global::LightSwitchApplication.AdressenSetItem.DetailsClass d)
-                {
-                    return d.ImplementationEntity.PLZ;
-                }
-                private static void _PLZ_SetImplementationValue(global::LightSwitchApplication.AdressenSetItem.DetailsClass d, string v)
-                {
-                    d.ImplementationEntity.PLZ = v;
-                }
-                private static void _PLZ_OnValueChanged(global::LightSwitchApplication.AdressenSetItem e)
-                {
-                    e.PLZ_Changed();
-                }
-    
-                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Entry
-                    Stadt = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Entry(
-                        "Stadt",
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Stadt_Stub,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Stadt_ComputeIsReadOnly,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Stadt_Validate,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Stadt_GetImplementationValue,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Stadt_SetImplementationValue,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Stadt_OnValueChanged);
-                private static void _Stadt_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.AdressenSetItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Data> c, global::LightSwitchApplication.AdressenSetItem.DetailsClass d, object sf)
-                {
-                    c(d, ref d._Stadt, sf);
-                }
-                private static bool _Stadt_ComputeIsReadOnly(global::LightSwitchApplication.AdressenSetItem e)
-                {
-                    bool result = false;
-                    e.Stadt_IsReadOnly(ref result);
-                    return result;
-                }
-                private static void _Stadt_Validate(global::LightSwitchApplication.AdressenSetItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
-                {
-                    e.Stadt_Validate(r);
-                }
-                private static string _Stadt_GetImplementationValue(global::LightSwitchApplication.AdressenSetItem.DetailsClass d)
-                {
-                    return d.ImplementationEntity.Stadt;
-                }
-                private static void _Stadt_SetImplementationValue(global::LightSwitchApplication.AdressenSetItem.DetailsClass d, string v)
-                {
-                    d.ImplementationEntity.Stadt = v;
-                }
-                private static void _Stadt_OnValueChanged(global::LightSwitchApplication.AdressenSetItem e)
-                {
-                    e.Stadt_Changed();
-                }
-    
-                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Entry
-                    Land = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Entry(
-                        "Land",
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Land_Stub,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Land_ComputeIsReadOnly,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Land_Validate,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Land_GetImplementationValue,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Land_SetImplementationValue,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Land_OnValueChanged);
-                private static void _Land_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.AdressenSetItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Data> c, global::LightSwitchApplication.AdressenSetItem.DetailsClass d, object sf)
-                {
-                    c(d, ref d._Land, sf);
-                }
-                private static bool _Land_ComputeIsReadOnly(global::LightSwitchApplication.AdressenSetItem e)
-                {
-                    bool result = false;
-                    e.Land_IsReadOnly(ref result);
-                    return result;
-                }
-                private static void _Land_Validate(global::LightSwitchApplication.AdressenSetItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
-                {
-                    e.Land_Validate(r);
-                }
-                private static string _Land_GetImplementationValue(global::LightSwitchApplication.AdressenSetItem.DetailsClass d)
-                {
-                    return d.ImplementationEntity.Land;
-                }
-                private static void _Land_SetImplementationValue(global::LightSwitchApplication.AdressenSetItem.DetailsClass d, string v)
-                {
-                    d.ImplementationEntity.Land = v;
-                }
-                private static void _Land_OnValueChanged(global::LightSwitchApplication.AdressenSetItem e)
-                {
-                    e.Land_Changed();
-                }
-    
-                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, global::LightSwitchApplication.Kunden>.Entry
-                    KundenRechnungsadresse = new global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, global::LightSwitchApplication.Kunden>.Entry(
-                        "KundenRechnungsadresse",
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._KundenRechnungsadresse_Stub,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._KundenRechnungsadresse_ComputeIsReadOnly,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._KundenRechnungsadresse_Validate,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._KundenRechnungsadresse_GetCoreImplementationValue,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._KundenRechnungsadresse_GetImplementationValue,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._KundenRechnungsadresse_SetImplementationValue,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._KundenRechnungsadresse_Refresh,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._KundenRechnungsadresse_OnValueChanged);
-                private static void _KundenRechnungsadresse_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.AdressenSetItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, global::LightSwitchApplication.Kunden>.Data> c, global::LightSwitchApplication.AdressenSetItem.DetailsClass d, object sf)
-                {
-                    c(d, ref d._KundenRechnungsadresse, sf);
-                }
-                private static bool _KundenRechnungsadresse_ComputeIsReadOnly(global::LightSwitchApplication.AdressenSetItem e)
-                {
-                    bool result = false;
-                    e.KundenRechnungsadresse_IsReadOnly(ref result);
-                    return result;
-                }
-                private static void _KundenRechnungsadresse_Validate(global::LightSwitchApplication.AdressenSetItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
-                {
-                    e.KundenRechnungsadresse_Validate(r);
-                }
-                private static global::Microsoft.LightSwitch.Internal.IEntityImplementation _KundenRechnungsadresse_GetCoreImplementationValue(global::LightSwitchApplication.AdressenSetItem.DetailsClass d)
-                {
-                    return d.ImplementationEntity.KundenRechnungsadresse;
-                }
-                private static global::LightSwitchApplication.Kunden _KundenRechnungsadresse_GetImplementationValue(global::LightSwitchApplication.AdressenSetItem.DetailsClass d)
-                {
-                    return d.GetImplementationValue<global::LightSwitchApplication.Kunden, global::LightSwitchApplication.Kunden.DetailsClass>(global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.KundenRechnungsadresse, ref d._KundenRechnungsadresse);
-                }
-                private static void _KundenRechnungsadresse_SetImplementationValue(global::LightSwitchApplication.AdressenSetItem.DetailsClass d, global::LightSwitchApplication.Kunden v)
-                {
-                    d.SetImplementationValue(global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.KundenRechnungsadresse, ref d._KundenRechnungsadresse, (i, ev) => i.KundenRechnungsadresse = ev, v);
-                }
-                private static void _KundenRechnungsadresse_Refresh(global::LightSwitchApplication.AdressenSetItem.DetailsClass d)
-                {
-                    d.RefreshNavigationProperty(global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.KundenRechnungsadresse, ref d._KundenRechnungsadresse);
-                }
-                private static void _KundenRechnungsadresse_OnValueChanged(global::LightSwitchApplication.AdressenSetItem e)
-                {
-                    e.KundenRechnungsadresse_Changed();
+                    return d.ImplementationEntity.RechnungenCollection;
                 }
     
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, int>.Data _Id;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass, int>.Data _Id;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, byte[]>.Data _RowVersion;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass, byte[]>.Data _RowVersion;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Data _Name;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass, string>.Data _Bezeichnung;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Data _zHd_Besteller_optional;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass, string>.Data _Text_Rechnung;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Data _Starße;
-            
-            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Data _Hausnummer;
-            
-            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Data _PLZ;
-            
-            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Data _Stadt;
-            
-            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Data _Land;
-            
-            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, global::LightSwitchApplication.Kunden>.Data _KundenRechnungsadresse;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.BezahlartItem, global::LightSwitchApplication.BezahlartItem.DetailsClass, global::LightSwitchApplication.Rechnungen>.Data _RechnungenCollection;
             
         }
     

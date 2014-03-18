@@ -132,6 +132,24 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public int Position
+        {
+            get
+            {
+                return global::LightSwitchApplication.Artikelliste.DetailsClass.GetValue(this, global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties.Position);
+            }
+        }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Position_Compute(ref int result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Position_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+
+        /// <summary>
+        /// Keine modellierte Beschreibung verfügbar
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public int Anzahl
         {
             get
@@ -156,54 +174,24 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public decimal Preis
+        public decimal Rabatt
         {
             get
             {
-                return global::LightSwitchApplication.Artikelliste.DetailsClass.GetValue(this, global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties.Preis);
+                return global::LightSwitchApplication.Artikelliste.DetailsClass.GetValue(this, global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties.Rabatt);
+            }
+            set
+            {
+                global::LightSwitchApplication.Artikelliste.DetailsClass.SetValue(this, global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties.Rabatt, value);
             }
         }
         
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Preis_Compute(ref decimal result);
+        partial void Rabatt_IsReadOnly(ref bool result);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Preis_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
-
-        /// <summary>
-        /// Keine modellierte Beschreibung verfügbar
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public int Position
-        {
-            get
-            {
-                return global::LightSwitchApplication.Artikelliste.DetailsClass.GetValue(this, global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties.Position);
-            }
-        }
-        
+        partial void Rabatt_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Position_Compute(ref int result);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Position_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
-
-        /// <summary>
-        /// Keine modellierte Beschreibung verfügbar
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public decimal PosPreis
-        {
-            get
-            {
-                return global::LightSwitchApplication.Artikelliste.DetailsClass.GetValue(this, global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties.PosPreis);
-            }
-        }
-        
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void PosPreis_Compute(ref decimal result);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void PosPreis_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        partial void Rabatt_Changed();
 
         /// <summary>
         /// Keine modellierte Beschreibung verfügbar
@@ -246,24 +234,18 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public decimal Rabatt
+        public decimal Preis
         {
             get
             {
-                return global::LightSwitchApplication.Artikelliste.DetailsClass.GetValue(this, global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties.Rabatt);
-            }
-            set
-            {
-                global::LightSwitchApplication.Artikelliste.DetailsClass.SetValue(this, global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties.Rabatt, value);
+                return global::LightSwitchApplication.Artikelliste.DetailsClass.GetValue(this, global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties.Preis);
             }
         }
         
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Rabatt_IsReadOnly(ref bool result);
+        partial void Preis_Compute(ref decimal result);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Rabatt_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Rabatt_Changed();
+        partial void Preis_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
 
         /// <summary>
         /// Keine modellierte Beschreibung verfügbar
@@ -288,24 +270,18 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::LightSwitchApplication.Rechnungen Rechnungen
+        public decimal PosPreis
         {
             get
             {
-                return global::LightSwitchApplication.Artikelliste.DetailsClass.GetValue(this, global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties.Rechnungen);
-            }
-            set
-            {
-                global::LightSwitchApplication.Artikelliste.DetailsClass.SetValue(this, global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties.Rechnungen, value);
+                return global::LightSwitchApplication.Artikelliste.DetailsClass.GetValue(this, global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties.PosPreis);
             }
         }
         
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Rechnungen_IsReadOnly(ref bool result);
+        partial void PosPreis_Compute(ref decimal result);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Rechnungen_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Rechnungen_Changed();
+        partial void PosPreis_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
 
         /// <summary>
         /// Keine modellierte Beschreibung verfügbar
@@ -330,6 +306,30 @@ namespace LightSwitchApplication
         partial void Artikelstamm_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void Artikelstamm_Changed();
+
+        /// <summary>
+        /// Keine modellierte Beschreibung verfügbar
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::LightSwitchApplication.Rechnungen Rechnungen
+        {
+            get
+            {
+                return global::LightSwitchApplication.Artikelliste.DetailsClass.GetValue(this, global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties.Rechnungen);
+            }
+            set
+            {
+                global::LightSwitchApplication.Artikelliste.DetailsClass.SetValue(this, global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties.Rechnungen, value);
+            }
+        }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Rechnungen_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Rechnungen_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Rechnungen_Changed();
 
         #endregion
     
@@ -429,22 +429,6 @@ namespace LightSwitchApplication
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, int> Anzahl
-                {
-                    get
-                    {
-                        return base.GetItem(global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties.Anzahl) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, int>;
-                    }
-                }
-                
-                public global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, decimal> Preis
-                {
-                    get
-                    {
-                        return base.GetItem(global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties.Preis) as global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, decimal>;
-                    }
-                }
-                
                 public global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, int> Position
                 {
                     get
@@ -453,11 +437,19 @@ namespace LightSwitchApplication
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, decimal> PosPreis
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, int> Anzahl
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties.PosPreis) as global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, decimal>;
+                        return base.GetItem(global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties.Anzahl) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, int>;
+                    }
+                }
+                
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, decimal> Rabatt
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties.Rabatt) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, decimal>;
                     }
                 }
                 
@@ -477,11 +469,11 @@ namespace LightSwitchApplication
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, decimal> Rabatt
+                public global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, decimal> Preis
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties.Rabatt) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, decimal>;
+                        return base.GetItem(global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties.Preis) as global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, decimal>;
                     }
                 }
                 
@@ -493,11 +485,11 @@ namespace LightSwitchApplication
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, global::LightSwitchApplication.Rechnungen> Rechnungen
+                public global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, decimal> PosPreis
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties.Rechnungen) as global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, global::LightSwitchApplication.Rechnungen>;
+                        return base.GetItem(global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties.PosPreis) as global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, decimal>;
                     }
                 }
                 
@@ -506,6 +498,14 @@ namespace LightSwitchApplication
                     get
                     {
                         return base.GetItem(global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties.Artikelstamm) as global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, global::LightSwitchApplication.Artikelstamm>;
+                    }
+                }
+                
+                public global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, global::LightSwitchApplication.Rechnungen> Rechnungen
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties.Rechnungen) as global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, global::LightSwitchApplication.Rechnungen>;
                     }
                 }
                 
@@ -519,8 +519,8 @@ namespace LightSwitchApplication
                 new byte[] RowVersion { get; set; }
                 new int Anzahl { get; set; }
                 new decimal Rabatt { get; set; }
-                new global::Microsoft.LightSwitch.Internal.IEntityImplementation Rechnungen { get; set; }
                 new global::Microsoft.LightSwitch.Internal.IEntityImplementation Artikelstamm { get; set; }
+                new global::Microsoft.LightSwitch.Internal.IEntityImplementation Rechnungen { get; set; }
             }
             #pragma warning restore 109
     
@@ -605,6 +605,28 @@ namespace LightSwitchApplication
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, int>.Entry
+                    Position = new global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, int>.Entry(
+                        "Position",
+                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Position_Stub,
+                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Position_Validate,
+                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Position_ComputeValue);
+                private static void _Position_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Artikelliste.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, int>.Data> c, global::LightSwitchApplication.Artikelliste.DetailsClass d, object sf)
+                {
+                    c(d, ref d._Position, sf);
+                }
+                private static void _Position_Validate(global::LightSwitchApplication.Artikelliste e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                {
+                    e.Position_Validate(r);
+                }
+                private static int _Position_ComputeValue(global::LightSwitchApplication.Artikelliste e)
+                {
+                    int value = default(int);
+                    e.Position_Compute(ref value);
+                    return value;
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, int>.Entry
                     Anzahl = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, int>.Entry(
                         "Anzahl",
@@ -642,69 +664,40 @@ namespace LightSwitchApplication
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, decimal>.Entry
-                    Preis = new global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, decimal>.Entry(
-                        "Preis",
-                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Preis_Stub,
-                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Preis_Validate,
-                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Preis_ComputeValue);
-                private static void _Preis_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Artikelliste.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, decimal>.Data> c, global::LightSwitchApplication.Artikelliste.DetailsClass d, object sf)
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, decimal>.Entry
+                    Rabatt = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, decimal>.Entry(
+                        "Rabatt",
+                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Rabatt_Stub,
+                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Rabatt_ComputeIsReadOnly,
+                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Rabatt_Validate,
+                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Rabatt_GetImplementationValue,
+                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Rabatt_SetImplementationValue,
+                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Rabatt_OnValueChanged);
+                private static void _Rabatt_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Artikelliste.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, decimal>.Data> c, global::LightSwitchApplication.Artikelliste.DetailsClass d, object sf)
                 {
-                    c(d, ref d._Preis, sf);
+                    c(d, ref d._Rabatt, sf);
                 }
-                private static void _Preis_Validate(global::LightSwitchApplication.Artikelliste e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                private static bool _Rabatt_ComputeIsReadOnly(global::LightSwitchApplication.Artikelliste e)
                 {
-                    e.Preis_Validate(r);
+                    bool result = false;
+                    e.Rabatt_IsReadOnly(ref result);
+                    return result;
                 }
-                private static decimal _Preis_ComputeValue(global::LightSwitchApplication.Artikelliste e)
+                private static void _Rabatt_Validate(global::LightSwitchApplication.Artikelliste e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
                 {
-                    decimal value = default(decimal);
-                    e.Preis_Compute(ref value);
-                    return value;
+                    e.Rabatt_Validate(r);
                 }
-    
-                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, int>.Entry
-                    Position = new global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, int>.Entry(
-                        "Position",
-                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Position_Stub,
-                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Position_Validate,
-                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Position_ComputeValue);
-                private static void _Position_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Artikelliste.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, int>.Data> c, global::LightSwitchApplication.Artikelliste.DetailsClass d, object sf)
+                private static decimal _Rabatt_GetImplementationValue(global::LightSwitchApplication.Artikelliste.DetailsClass d)
                 {
-                    c(d, ref d._Position, sf);
+                    return d.ImplementationEntity.Rabatt;
                 }
-                private static void _Position_Validate(global::LightSwitchApplication.Artikelliste e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                private static void _Rabatt_SetImplementationValue(global::LightSwitchApplication.Artikelliste.DetailsClass d, decimal v)
                 {
-                    e.Position_Validate(r);
+                    d.ImplementationEntity.Rabatt = v;
                 }
-                private static int _Position_ComputeValue(global::LightSwitchApplication.Artikelliste e)
+                private static void _Rabatt_OnValueChanged(global::LightSwitchApplication.Artikelliste e)
                 {
-                    int value = default(int);
-                    e.Position_Compute(ref value);
-                    return value;
-                }
-    
-                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, decimal>.Entry
-                    PosPreis = new global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, decimal>.Entry(
-                        "PosPreis",
-                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._PosPreis_Stub,
-                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._PosPreis_Validate,
-                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._PosPreis_ComputeValue);
-                private static void _PosPreis_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Artikelliste.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, decimal>.Data> c, global::LightSwitchApplication.Artikelliste.DetailsClass d, object sf)
-                {
-                    c(d, ref d._PosPreis, sf);
-                }
-                private static void _PosPreis_Validate(global::LightSwitchApplication.Artikelliste e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
-                {
-                    e.PosPreis_Validate(r);
-                }
-                private static decimal _PosPreis_ComputeValue(global::LightSwitchApplication.Artikelliste e)
-                {
-                    decimal value = default(decimal);
-                    e.PosPreis_Compute(ref value);
-                    return value;
+                    e.Rabatt_Changed();
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -752,40 +745,25 @@ namespace LightSwitchApplication
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, decimal>.Entry
-                    Rabatt = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, decimal>.Entry(
-                        "Rabatt",
-                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Rabatt_Stub,
-                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Rabatt_ComputeIsReadOnly,
-                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Rabatt_Validate,
-                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Rabatt_GetImplementationValue,
-                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Rabatt_SetImplementationValue,
-                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Rabatt_OnValueChanged);
-                private static void _Rabatt_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Artikelliste.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, decimal>.Data> c, global::LightSwitchApplication.Artikelliste.DetailsClass d, object sf)
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, decimal>.Entry
+                    Preis = new global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, decimal>.Entry(
+                        "Preis",
+                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Preis_Stub,
+                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Preis_Validate,
+                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Preis_ComputeValue);
+                private static void _Preis_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Artikelliste.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, decimal>.Data> c, global::LightSwitchApplication.Artikelliste.DetailsClass d, object sf)
                 {
-                    c(d, ref d._Rabatt, sf);
+                    c(d, ref d._Preis, sf);
                 }
-                private static bool _Rabatt_ComputeIsReadOnly(global::LightSwitchApplication.Artikelliste e)
+                private static void _Preis_Validate(global::LightSwitchApplication.Artikelliste e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
                 {
-                    bool result = false;
-                    e.Rabatt_IsReadOnly(ref result);
-                    return result;
+                    e.Preis_Validate(r);
                 }
-                private static void _Rabatt_Validate(global::LightSwitchApplication.Artikelliste e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                private static decimal _Preis_ComputeValue(global::LightSwitchApplication.Artikelliste e)
                 {
-                    e.Rabatt_Validate(r);
-                }
-                private static decimal _Rabatt_GetImplementationValue(global::LightSwitchApplication.Artikelliste.DetailsClass d)
-                {
-                    return d.ImplementationEntity.Rabatt;
-                }
-                private static void _Rabatt_SetImplementationValue(global::LightSwitchApplication.Artikelliste.DetailsClass d, decimal v)
-                {
-                    d.ImplementationEntity.Rabatt = v;
-                }
-                private static void _Rabatt_OnValueChanged(global::LightSwitchApplication.Artikelliste e)
-                {
-                    e.Rabatt_Changed();
+                    decimal value = default(decimal);
+                    e.Preis_Compute(ref value);
+                    return value;
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -811,50 +789,25 @@ namespace LightSwitchApplication
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, global::LightSwitchApplication.Rechnungen>.Entry
-                    Rechnungen = new global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, global::LightSwitchApplication.Rechnungen>.Entry(
-                        "Rechnungen",
-                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Rechnungen_Stub,
-                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Rechnungen_ComputeIsReadOnly,
-                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Rechnungen_Validate,
-                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Rechnungen_GetCoreImplementationValue,
-                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Rechnungen_GetImplementationValue,
-                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Rechnungen_SetImplementationValue,
-                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Rechnungen_Refresh,
-                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Rechnungen_OnValueChanged);
-                private static void _Rechnungen_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Artikelliste.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, global::LightSwitchApplication.Rechnungen>.Data> c, global::LightSwitchApplication.Artikelliste.DetailsClass d, object sf)
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, decimal>.Entry
+                    PosPreis = new global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, decimal>.Entry(
+                        "PosPreis",
+                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._PosPreis_Stub,
+                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._PosPreis_Validate,
+                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._PosPreis_ComputeValue);
+                private static void _PosPreis_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Artikelliste.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, decimal>.Data> c, global::LightSwitchApplication.Artikelliste.DetailsClass d, object sf)
                 {
-                    c(d, ref d._Rechnungen, sf);
+                    c(d, ref d._PosPreis, sf);
                 }
-                private static bool _Rechnungen_ComputeIsReadOnly(global::LightSwitchApplication.Artikelliste e)
+                private static void _PosPreis_Validate(global::LightSwitchApplication.Artikelliste e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
                 {
-                    bool result = false;
-                    e.Rechnungen_IsReadOnly(ref result);
-                    return result;
+                    e.PosPreis_Validate(r);
                 }
-                private static void _Rechnungen_Validate(global::LightSwitchApplication.Artikelliste e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                private static decimal _PosPreis_ComputeValue(global::LightSwitchApplication.Artikelliste e)
                 {
-                    e.Rechnungen_Validate(r);
-                }
-                private static global::Microsoft.LightSwitch.Internal.IEntityImplementation _Rechnungen_GetCoreImplementationValue(global::LightSwitchApplication.Artikelliste.DetailsClass d)
-                {
-                    return d.ImplementationEntity.Rechnungen;
-                }
-                private static global::LightSwitchApplication.Rechnungen _Rechnungen_GetImplementationValue(global::LightSwitchApplication.Artikelliste.DetailsClass d)
-                {
-                    return d.GetImplementationValue<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass>(global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties.Rechnungen, ref d._Rechnungen);
-                }
-                private static void _Rechnungen_SetImplementationValue(global::LightSwitchApplication.Artikelliste.DetailsClass d, global::LightSwitchApplication.Rechnungen v)
-                {
-                    d.SetImplementationValue(global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties.Rechnungen, ref d._Rechnungen, (i, ev) => i.Rechnungen = ev, v);
-                }
-                private static void _Rechnungen_Refresh(global::LightSwitchApplication.Artikelliste.DetailsClass d)
-                {
-                    d.RefreshNavigationProperty(global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties.Rechnungen, ref d._Rechnungen);
-                }
-                private static void _Rechnungen_OnValueChanged(global::LightSwitchApplication.Artikelliste e)
-                {
-                    e.Rechnungen_Changed();
+                    decimal value = default(decimal);
+                    e.PosPreis_Compute(ref value);
+                    return value;
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -904,6 +857,53 @@ namespace LightSwitchApplication
                     e.Artikelstamm_Changed();
                 }
     
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, global::LightSwitchApplication.Rechnungen>.Entry
+                    Rechnungen = new global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, global::LightSwitchApplication.Rechnungen>.Entry(
+                        "Rechnungen",
+                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Rechnungen_Stub,
+                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Rechnungen_ComputeIsReadOnly,
+                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Rechnungen_Validate,
+                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Rechnungen_GetCoreImplementationValue,
+                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Rechnungen_GetImplementationValue,
+                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Rechnungen_SetImplementationValue,
+                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Rechnungen_Refresh,
+                        global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties._Rechnungen_OnValueChanged);
+                private static void _Rechnungen_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Artikelliste.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, global::LightSwitchApplication.Rechnungen>.Data> c, global::LightSwitchApplication.Artikelliste.DetailsClass d, object sf)
+                {
+                    c(d, ref d._Rechnungen, sf);
+                }
+                private static bool _Rechnungen_ComputeIsReadOnly(global::LightSwitchApplication.Artikelliste e)
+                {
+                    bool result = false;
+                    e.Rechnungen_IsReadOnly(ref result);
+                    return result;
+                }
+                private static void _Rechnungen_Validate(global::LightSwitchApplication.Artikelliste e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                {
+                    e.Rechnungen_Validate(r);
+                }
+                private static global::Microsoft.LightSwitch.Internal.IEntityImplementation _Rechnungen_GetCoreImplementationValue(global::LightSwitchApplication.Artikelliste.DetailsClass d)
+                {
+                    return d.ImplementationEntity.Rechnungen;
+                }
+                private static global::LightSwitchApplication.Rechnungen _Rechnungen_GetImplementationValue(global::LightSwitchApplication.Artikelliste.DetailsClass d)
+                {
+                    return d.GetImplementationValue<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass>(global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties.Rechnungen, ref d._Rechnungen);
+                }
+                private static void _Rechnungen_SetImplementationValue(global::LightSwitchApplication.Artikelliste.DetailsClass d, global::LightSwitchApplication.Rechnungen v)
+                {
+                    d.SetImplementationValue(global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties.Rechnungen, ref d._Rechnungen, (i, ev) => i.Rechnungen = ev, v);
+                }
+                private static void _Rechnungen_Refresh(global::LightSwitchApplication.Artikelliste.DetailsClass d)
+                {
+                    d.RefreshNavigationProperty(global::LightSwitchApplication.Artikelliste.DetailsClass.PropertySetProperties.Rechnungen, ref d._Rechnungen);
+                }
+                private static void _Rechnungen_OnValueChanged(global::LightSwitchApplication.Artikelliste e)
+                {
+                    e.Rechnungen_Changed();
+                }
+    
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -913,16 +913,13 @@ namespace LightSwitchApplication
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, byte[]>.Data _RowVersion;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, int>.Data _Anzahl;
-            
-            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, decimal>.Data _Preis;
-            
-            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, int>.Data _Position;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, decimal>.Data _PosPreis;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, int>.Data _Anzahl;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, decimal>.Data _Rabatt;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, string>.Data _Artikelnummer;
@@ -931,16 +928,19 @@ namespace LightSwitchApplication
             private global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, string>.Data _Bezeichnung;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, decimal>.Data _Rabatt;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, decimal>.Data _Preis;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, decimal>.Data _Rabattwert;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, global::LightSwitchApplication.Rechnungen>.Data _Rechnungen;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, decimal>.Data _PosPreis;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, global::LightSwitchApplication.Artikelstamm>.Data _Artikelstamm;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass, global::LightSwitchApplication.Rechnungen>.Data _Rechnungen;
             
         }
     
