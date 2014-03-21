@@ -235,6 +235,15 @@
   <ItemGroup>
     <Resource Include="Resources\credit.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Sent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Cash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Product.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\LightSwitch\$(LightSwitchVersion)\Microsoft.LightSwitch.Build.Tasks.targets" />
   <Target Name="BeforeBuild">

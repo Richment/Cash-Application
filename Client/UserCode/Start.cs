@@ -12,19 +12,57 @@ namespace LightSwitchApplication
 {
 	public partial class Start
 	{
-		partial void Bearbeiten_CanExecute(ref bool result)
+		partial void Geliefert_CanExecute(ref bool result)
 		{
 			if (this.Rechnungen.SelectedItem == null)
 			{
 				result = false;
 				return;
 			}
-			result = this.Rechnungen.SelectedItem.Status == (int)LightSwitchApplication.Bestellstatus.Neu;
+			result = this.Rechnungen.SelectedItem.Status == (int)LightSwitchApplication.Bestellstatus.InRechnung;
 		}
 
-		partial void Bearbeiten_Execute()
+		partial void Geliefert_Execute()
 		{
-			
+			// Erstellen Sie hier Ihren Code.
+
+		}
+
+
+
+		partial void Versendet_CanExecute(ref bool result)
+		{
+			if (this.Rechnungen.SelectedItem == null)
+			{
+				result = false;
+				return;
+			}
+			result = this.Rechnungen.SelectedItem.Status == (int)LightSwitchApplication.Bestellstatus.Bearbeitet;
+		}
+
+		partial void Versendet_Execute()
+		{
+			// Erstellen Sie hier Ihren Code.
+
+		}
+
+
+
+
+		partial void Bezahlt_CanExecute(ref bool result)
+		{
+			if (this.Rechnungen.SelectedItem == null)
+			{
+				result = false;
+				return;
+			}
+			result = this.Rechnungen.SelectedItem.Status == (int)LightSwitchApplication.Bestellstatus.Geliefert;
+		}
+
+		partial void Bezahlt_Execute()
+		{
+			// Erstellen Sie hier Ihren Code.
+
 		}
 	}
 }

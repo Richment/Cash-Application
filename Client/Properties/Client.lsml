@@ -4751,38 +4751,10 @@
               <ContentItem.CommandItems>
                 <ContentItem
                   Kind="Command"
-                  Name="Bearbeiten">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <CallExpression
-                          Target="Start/Methods[Bearbeiten]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Kind="Command"
-                  Name="Bezahlt">
-                  <ContentItem.Attributes>
-                    <DisplayName
-                      Value="Bezahlen" />
-                  </ContentItem.Attributes>
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <CallExpression
-                          Target="Start/Methods[Bezahlt]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Kind="Command"
                   Name="Geliefert">
                   <ContentItem.Attributes>
-                    <DisplayName
-                      Value="Liefern" />
+                    <Description
+                      Value="Als &quot;Geliefert&quot; markieren." />
                   </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
@@ -4795,10 +4767,10 @@
                 </ContentItem>
                 <ContentItem
                   Kind="Command"
-                  Name="Berrechnen">
+                  Name="Versendet">
                   <ContentItem.Attributes>
-                    <DisplayName
-                      Value="In Rechnung stellen" />
+                    <Description
+                      Value="Als &quot;Versendet&quot; markieren." />
                   </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
@@ -4808,6 +4780,46 @@
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch:RootControl/Properties[Image]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            ResultType=":String"
+                            Value="Microsoft.LightSwitch.UserImageResources::Resources\Product.png" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem
+                  Kind="Command"
+                  Name="Bezahlt">
+                  <ContentItem.Attributes>
+                    <Description
+                      Value="Als &quot;Bezahlt&quot; markieren." />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <CallExpression
+                          Target="Start/Methods[Bezahlt]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch:RootControl/Properties[Image]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            ResultType=":String"
+                            Value="Microsoft.LightSwitch.UserImageResources::Resources\Cash.png" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
                 </ContentItem>
                 <ContentItem
                   Kind="Command"
