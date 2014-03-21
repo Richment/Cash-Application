@@ -436,11 +436,6 @@ namespace LightSwitchApplication.Implementation
             this.___OnPropertyChanged("Rabatt");
         }
         
-        partial void OnLieferadressenIdChanged()
-        {
-            this.___OnPropertyChanged("LieferadressenId");
-        }
-        
         global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Rechnungen.DetailsClass.IImplementation.Kunde
         {
             get

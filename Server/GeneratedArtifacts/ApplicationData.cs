@@ -3146,30 +3146,6 @@ namespace ApplicationData.Implementation
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Int32> LieferadressenId
-        {
-            get
-            {
-                return _LieferadressenId;
-            }
-            set
-            {
-                OnLieferadressenIdChanging(value);
-                ReportPropertyChanging("LieferadressenId");
-                _LieferadressenId = value;
-                ReportPropertyChanged("LieferadressenId");
-                OnLieferadressenIdChanged();
-            }
-        }
-        private Nullable<global::System.Int32> _LieferadressenId;
-        partial void OnLieferadressenIdChanging(Nullable<global::System.Int32> value);
-        partial void OnLieferadressenIdChanged();
-    
-        /// <summary>
-        /// Keine Dokumentation für Metadaten verfügbar.
-        /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.Int32 Rechnungen_Kunden

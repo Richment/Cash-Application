@@ -72,7 +72,6 @@
     <Property Name="Rechnungsnummer" Type="Edm.Int32" />
     <Property Name="Lieferkosten" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="2" />
     <Property Name="Rabatt" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="2" />
-    <Property Name="LieferadressenId" Type="Edm.Int32" />
     <Property Name="Rechnungen_Kunden" Type="Edm.Int32" Nullable="false" />
     <Property Name="Rechnungen_BezahlartItem" Type="Edm.Int32" Nullable="false" />
     <NavigationProperty Name="Kunde" Relationship="LightSwitchApplication.Rechnungen_KundenItem" ToRole="KundenItem" FromRole="Rechnungen" />

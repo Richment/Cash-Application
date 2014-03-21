@@ -206,14 +206,14 @@
     <Compile Include="Helper\ProcessVisibility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserCode\Application.cs" />
-    <Compile Include="UserCode\CreateNewAdressenSetItem.cs" />
-    <Compile Include="UserCode\KundeÜbersicht.cs" />
-    <Compile Include="UserCode\ArtikelNeu.cs" />
-    <Compile Include="UserCode\CreateNewMeine_Daten.cs" />
+    <Compile Include="UserCode\AuftragsSammlung.cs" />
     <Compile Include="UserCode\KundenDetails.cs" />
-    <Compile Include="UserCode\ListDetail_Rechnungen.cs" />
+    <Compile Include="UserCode\ArtikelNeu.cs" />
+    <Compile Include="UserCode\FirmenDaten.cs" />
+    <Compile Include="UserCode\BestellungListDetails.cs" />
     <Compile Include="UserCode\RechnungDrucken.cs" />
-    <Compile Include="UserCode\RechnungDetail.cs" />
+    <Compile Include="UserCode\BestellungenÜbersicht.cs" />
+    <Compile Include="UserCode\BestellungDetails.cs" />
     <Compile Include="UserCode\Start.cs" />
     <Compile Include="WordDocument.cs" />
     <Compile Include="XmlDoc.cs" />
@@ -243,6 +243,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Product.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Media-Play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Process.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\LightSwitch\$(LightSwitchVersion)\Microsoft.LightSwitch.Build.Tasks.targets" />

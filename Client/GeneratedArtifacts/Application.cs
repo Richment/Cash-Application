@@ -67,78 +67,48 @@ namespace LightSwitchApplication
         }
         
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void CreateNewMeine_Daten_CanRun(ref bool result);
+        partial void FirmenDaten_CanRun(ref bool result);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void CreateNewMeine_Daten_Run(ref bool handled);
+        partial void FirmenDaten_Run(ref bool handled);
     
         /// <summary>
-        /// Initialisiert eine neue Instanz des Bildschirms ShowCreateNewMeine_Daten.
+        /// Initialisiert eine neue Instanz des Bildschirms ShowFirmenDaten.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public void ShowCreateNewMeine_Daten()
+        public void ShowFirmenDaten()
         {
-            ((global::Microsoft.LightSwitch.Details.Client.IClientApplicationDetails)this.Details).InvokeMethod(this.Details.Methods.ShowCreateNewMeine_Daten);
+            ((global::Microsoft.LightSwitch.Details.Client.IClientApplicationDetails)this.Details).InvokeMethod(this.Details.Methods.ShowFirmenDaten);
         }
         
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void ListDetail_Rechnungen_CanRun(ref bool result);
+        partial void BestellungListDetails_CanRun(ref bool result);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void ListDetail_Rechnungen_Run(ref bool handled);
+        partial void BestellungListDetails_Run(ref bool handled);
     
         /// <summary>
-        /// Öffnet den Bildschirm ShowListDetail_Rechnungen. Wenn der Bildschirm bereits geöffnet ist, wird er aktiviert und angezeigt.
+        /// Öffnet den Bildschirm ShowBestellungListDetails. Wenn der Bildschirm bereits geöffnet ist, wird er aktiviert und angezeigt.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public void ShowListDetail_Rechnungen()
+        public void ShowBestellungListDetails()
         {
-            ((global::Microsoft.LightSwitch.Details.Client.IClientApplicationDetails)this.Details).InvokeMethod(this.Details.Methods.ShowListDetail_Rechnungen);
+            ((global::Microsoft.LightSwitch.Details.Client.IClientApplicationDetails)this.Details).InvokeMethod(this.Details.Methods.ShowBestellungListDetails);
         }
         
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void RechnungDetail_CanRun(ref bool result);
+        partial void BestellungenÜbersicht_CanRun(ref bool result);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void RechnungDetail_Run(ref bool handled);
+        partial void BestellungenÜbersicht_Run(ref bool handled);
     
         /// <summary>
-        /// Öffnet den Bildschirm ShowRechnungDetail. Wenn der Bildschirm bereits geöffnet ist, wird er aktiviert und angezeigt.
+        /// Öffnet den Bildschirm ShowBestellungenÜbersicht. Wenn der Bildschirm bereits geöffnet ist, wird er aktiviert und angezeigt.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public void ShowRechnungDetail()
+        public void ShowBestellungenÜbersicht()
         {
-            ((global::Microsoft.LightSwitch.Details.Client.IClientApplicationDetails)this.Details).InvokeMethod(this.Details.Methods.ShowRechnungDetail);
-        }
-        
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void CreateNewAdressenSetItem_CanRun(ref bool result);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void CreateNewAdressenSetItem_Run(ref bool handled);
-    
-        /// <summary>
-        /// Initialisiert eine neue Instanz des Bildschirms ShowCreateNewAdressenSetItem.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public void ShowCreateNewAdressenSetItem()
-        {
-            ((global::Microsoft.LightSwitch.Details.Client.IClientApplicationDetails)this.Details).InvokeMethod(this.Details.Methods.ShowCreateNewAdressenSetItem);
-        }
-        
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void KundenDetails_CanRun(ref bool result, int KundenId);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void KundenDetails_Run(ref bool handled, int KundenId);
-    
-        /// <summary>
-        /// Öffnet den Bildschirm ShowKundenDetails. Wenn der Bildschirm bereits geöffnet ist, wird er aktiviert und angezeigt.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public void ShowKundenDetails(int KundenId)
-        {
-            ((global::Microsoft.LightSwitch.Details.Client.IClientApplicationDetails)this.Details).InvokeMethod(this.Details.Methods.ShowKundenDetails, KundenId);
+            ((global::Microsoft.LightSwitch.Details.Client.IClientApplicationDetails)this.Details).InvokeMethod(this.Details.Methods.ShowBestellungenÜbersicht);
         }
         
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -157,21 +127,6 @@ namespace LightSwitchApplication
         }
         
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void EditableBestellStatusSetGrid_CanRun(ref bool result);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void EditableBestellStatusSetGrid_Run(ref bool handled);
-    
-        /// <summary>
-        /// Öffnet den Bildschirm ShowEditableBestellStatusSetGrid. Wenn der Bildschirm bereits geöffnet ist, wird er aktiviert und angezeigt.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public void ShowEditableBestellStatusSetGrid()
-        {
-            ((global::Microsoft.LightSwitch.Details.Client.IClientApplicationDetails)this.Details).InvokeMethod(this.Details.Methods.ShowEditableBestellStatusSetGrid);
-        }
-        
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void Start_CanRun(ref bool result);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void Start_Run(ref bool handled);
@@ -187,48 +142,33 @@ namespace LightSwitchApplication
         }
         
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void KundeSuchen_CanRun(ref bool result);
+        partial void KundenÜbersicht_CanRun(ref bool result);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void KundeSuchen_Run(ref bool handled);
+        partial void KundenÜbersicht_Run(ref bool handled);
     
         /// <summary>
-        /// Öffnet den Bildschirm ShowKundeSuchen. Wenn der Bildschirm bereits geöffnet ist, wird er aktiviert und angezeigt.
+        /// Öffnet den Bildschirm ShowKundenÜbersicht. Wenn der Bildschirm bereits geöffnet ist, wird er aktiviert und angezeigt.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public void ShowKundeSuchen()
+        public void ShowKundenÜbersicht()
         {
-            ((global::Microsoft.LightSwitch.Details.Client.IClientApplicationDetails)this.Details).InvokeMethod(this.Details.Methods.ShowKundeSuchen);
+            ((global::Microsoft.LightSwitch.Details.Client.IClientApplicationDetails)this.Details).InvokeMethod(this.Details.Methods.ShowKundenÜbersicht);
         }
         
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void KundeÜbersicht_CanRun(ref bool result, int KundenId);
+        partial void KundenDetails_CanRun(ref bool result, int KundenId);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void KundeÜbersicht_Run(ref bool handled, int KundenId);
+        partial void KundenDetails_Run(ref bool handled, int KundenId);
     
         /// <summary>
-        /// Öffnet den Bildschirm ShowKundeÜbersicht. Wenn der Bildschirm bereits geöffnet ist, wird er aktiviert und angezeigt.
+        /// Öffnet den Bildschirm ShowKundenDetails. Wenn der Bildschirm bereits geöffnet ist, wird er aktiviert und angezeigt.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public void ShowKundeÜbersicht(int KundenId)
+        public void ShowKundenDetails(int KundenId)
         {
-            ((global::Microsoft.LightSwitch.Details.Client.IClientApplicationDetails)this.Details).InvokeMethod(this.Details.Methods.ShowKundeÜbersicht, KundenId);
-        }
-        
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void AdressenÜbersicht_CanRun(ref bool result);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void AdressenÜbersicht_Run(ref bool handled);
-    
-        /// <summary>
-        /// Öffnet den Bildschirm ShowAdressenÜbersicht. Wenn der Bildschirm bereits geöffnet ist, wird er aktiviert und angezeigt.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public void ShowAdressenÜbersicht()
-        {
-            ((global::Microsoft.LightSwitch.Details.Client.IClientApplicationDetails)this.Details).InvokeMethod(this.Details.Methods.ShowAdressenÜbersicht);
+            ((global::Microsoft.LightSwitch.Details.Client.IClientApplicationDetails)this.Details).InvokeMethod(this.Details.Methods.ShowKundenDetails, KundenId);
         }
         
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -247,33 +187,48 @@ namespace LightSwitchApplication
         }
         
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void NeuerBestellvorgang_CanRun(ref bool result);
+        partial void Bezahlarten_CanRun(ref bool result);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void NeuerBestellvorgang_Run(ref bool handled);
+        partial void Bezahlarten_Run(ref bool handled);
     
         /// <summary>
-        /// Öffnet den Bildschirm ShowNeuerBestellvorgang. Wenn der Bildschirm bereits geöffnet ist, wird er aktiviert und angezeigt.
+        /// Öffnet den Bildschirm ShowBezahlarten. Wenn der Bildschirm bereits geöffnet ist, wird er aktiviert und angezeigt.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public void ShowNeuerBestellvorgang()
+        public void ShowBezahlarten()
         {
-            ((global::Microsoft.LightSwitch.Details.Client.IClientApplicationDetails)this.Details).InvokeMethod(this.Details.Methods.ShowNeuerBestellvorgang);
+            ((global::Microsoft.LightSwitch.Details.Client.IClientApplicationDetails)this.Details).InvokeMethod(this.Details.Methods.ShowBezahlarten);
         }
         
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void EditableBezahlartGrid_CanRun(ref bool result);
+        partial void AuftragsSammlung_CanRun(ref bool result);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void EditableBezahlartGrid_Run(ref bool handled);
+        partial void AuftragsSammlung_Run(ref bool handled);
     
         /// <summary>
-        /// Öffnet den Bildschirm ShowEditableBezahlartGrid. Wenn der Bildschirm bereits geöffnet ist, wird er aktiviert und angezeigt.
+        /// Öffnet den Bildschirm ShowAuftragsSammlung. Wenn der Bildschirm bereits geöffnet ist, wird er aktiviert und angezeigt.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public void ShowEditableBezahlartGrid()
+        public void ShowAuftragsSammlung()
         {
-            ((global::Microsoft.LightSwitch.Details.Client.IClientApplicationDetails)this.Details).InvokeMethod(this.Details.Methods.ShowEditableBezahlartGrid);
+            ((global::Microsoft.LightSwitch.Details.Client.IClientApplicationDetails)this.Details).InvokeMethod(this.Details.Methods.ShowAuftragsSammlung);
+        }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void BestellungDetails_CanRun(ref bool result, int RechnungenId);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void BestellungDetails_Run(ref bool handled, int RechnungenId);
+    
+        /// <summary>
+        /// Öffnet den Bildschirm ShowBestellungDetails. Wenn der Bildschirm bereits geöffnet ist, wird er aktiviert und angezeigt.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public void ShowBestellungDetails(int RechnungenId)
+        {
+            ((global::Microsoft.LightSwitch.Details.Client.IClientApplicationDetails)this.Details).InvokeMethod(this.Details.Methods.ShowBestellungDetails, RechnungenId);
         }
         
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -339,34 +294,28 @@ namespace LightSwitchApplication
                         return global::LightSwitchApplication.ArtikelNeu.CreateInstance();
                     case "ArtikelÜbersicht":
                         return global::LightSwitchApplication.ArtikelÜbersicht.CreateInstance();
-                    case "CreateNewMeine_Daten":
-                        return global::LightSwitchApplication.CreateNewMeine_Daten.CreateInstance();
-                    case "ListDetail_Rechnungen":
-                        return global::LightSwitchApplication.ListDetail_Rechnungen.CreateInstance();
-                    case "RechnungDetail":
-                        return global::LightSwitchApplication.RechnungDetail.CreateInstance();
-                    case "CreateNewAdressenSetItem":
-                        return global::LightSwitchApplication.CreateNewAdressenSetItem.CreateInstance();
-                    case "KundenDetails":
-                        return global::LightSwitchApplication.KundenDetails.CreateInstance((int)args[0]);
+                    case "FirmenDaten":
+                        return global::LightSwitchApplication.FirmenDaten.CreateInstance();
+                    case "BestellungListDetails":
+                        return global::LightSwitchApplication.BestellungListDetails.CreateInstance();
+                    case "BestellungenÜbersicht":
+                        return global::LightSwitchApplication.BestellungenÜbersicht.CreateInstance();
                     case "Kundengruppen":
                         return global::LightSwitchApplication.Kundengruppen.CreateInstance();
-                    case "EditableBestellStatusSetGrid":
-                        return global::LightSwitchApplication.EditableBestellStatusSetGrid.CreateInstance();
                     case "Start":
                         return global::LightSwitchApplication.Start.CreateInstance();
-                    case "KundeSuchen":
-                        return global::LightSwitchApplication.KundeSuchen.CreateInstance();
-                    case "KundeÜbersicht":
-                        return global::LightSwitchApplication.KundeÜbersicht.CreateInstance((int)args[0]);
-                    case "AdressenÜbersicht":
-                        return global::LightSwitchApplication.AdressenÜbersicht.CreateInstance();
+                    case "KundenÜbersicht":
+                        return global::LightSwitchApplication.KundenÜbersicht.CreateInstance();
+                    case "KundenDetails":
+                        return global::LightSwitchApplication.KundenDetails.CreateInstance((int)args[0]);
                     case "RechnungDrucken":
                         return global::LightSwitchApplication.RechnungDrucken.CreateInstance((int)args[0]);
-                    case "NeuerBestellvorgang":
-                        return global::LightSwitchApplication.NeuerBestellvorgang.CreateInstance();
-                    case "EditableBezahlartGrid":
-                        return global::LightSwitchApplication.EditableBezahlartGrid.CreateInstance();
+                    case "Bezahlarten":
+                        return global::LightSwitchApplication.Bezahlarten.CreateInstance();
+                    case "AuftragsSammlung":
+                        return global::LightSwitchApplication.AuftragsSammlung.CreateInstance();
+                    case "BestellungDetails":
+                        return global::LightSwitchApplication.BestellungDetails.CreateInstance((int)args[0]);
                 }
             
                 return base.CreateScreen(screenName, args);
@@ -406,39 +355,30 @@ namespace LightSwitchApplication
                     }
                 }
 
-                public global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowCreateNewMeine_Daten
+                public global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowFirmenDaten
                 {
                     get
                     {
                         return (global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>)
-                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties.ShowCreateNewMeine_Daten);
+                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties.ShowFirmenDaten);
                     }
                 }
 
-                public global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowListDetail_Rechnungen
+                public global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowBestellungListDetails
                 {
                     get
                     {
                         return (global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>)
-                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties.ShowListDetail_Rechnungen);
+                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties.ShowBestellungListDetails);
                     }
                 }
 
-                public global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowRechnungDetail
+                public global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowBestellungenÜbersicht
                 {
                     get
                     {
                         return (global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>)
-                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties.ShowRechnungDetail);
-                    }
-                }
-
-                public global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowCreateNewAdressenSetItem
-                {
-                    get
-                    {
-                        return (global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>)
-                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties.ShowCreateNewAdressenSetItem);
+                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties.ShowBestellungenÜbersicht);
                     }
                 }
 
@@ -451,15 +391,6 @@ namespace LightSwitchApplication
                     }
                 }
 
-                public global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowEditableBestellStatusSetGrid
-                {
-                    get
-                    {
-                        return (global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>)
-                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties.ShowEditableBestellStatusSetGrid);
-                    }
-                }
-
                 public global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowStart
                 {
                     get
@@ -469,39 +400,30 @@ namespace LightSwitchApplication
                     }
                 }
 
-                public global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowKundeSuchen
+                public global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowKundenÜbersicht
                 {
                     get
                     {
                         return (global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>)
-                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties.ShowKundeSuchen);
+                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties.ShowKundenÜbersicht);
                     }
                 }
 
-                public global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowAdressenÜbersicht
+                public global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowBezahlarten
                 {
                     get
                     {
                         return (global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>)
-                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties.ShowAdressenÜbersicht);
+                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties.ShowBezahlarten);
                     }
                 }
 
-                public global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowNeuerBestellvorgang
+                public global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowAuftragsSammlung
                 {
                     get
                     {
                         return (global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>)
-                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties.ShowNeuerBestellvorgang);
-                    }
-                }
-
-                public global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowEditableBezahlartGrid
-                {
-                    get
-                    {
-                        return (global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>)
-                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties.ShowEditableBezahlartGrid);
+                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties.ShowAuftragsSammlung);
                     }
                 }
 
@@ -532,48 +454,30 @@ namespace LightSwitchApplication
                     }
                 }
 
-                public global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowCreateNewMeine_Daten
+                public global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowFirmenDaten
                 {
                     get
                     {
                         return (global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>)
-                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties.ShowCreateNewMeine_Daten);
+                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties.ShowFirmenDaten);
                     }
                 }
 
-                public global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowListDetail_Rechnungen
+                public global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowBestellungListDetails
                 {
                     get
                     {
                         return (global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>)
-                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties.ShowListDetail_Rechnungen);
+                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties.ShowBestellungListDetails);
                     }
                 }
 
-                public global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowRechnungDetail
+                public global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowBestellungenÜbersicht
                 {
                     get
                     {
                         return (global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>)
-                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties.ShowRechnungDetail);
-                    }
-                }
-
-                public global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowCreateNewAdressenSetItem
-                {
-                    get
-                    {
-                        return (global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>)
-                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties.ShowCreateNewAdressenSetItem);
-                    }
-                }
-
-                public global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowKundenDetails
-                {
-                    get
-                    {
-                        return (global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>)
-                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties.ShowKundenDetails);
+                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties.ShowBestellungenÜbersicht);
                     }
                 }
 
@@ -586,15 +490,6 @@ namespace LightSwitchApplication
                     }
                 }
 
-                public global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowEditableBestellStatusSetGrid
-                {
-                    get
-                    {
-                        return (global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>)
-                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties.ShowEditableBestellStatusSetGrid);
-                    }
-                }
-
                 public global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowStart
                 {
                     get
@@ -604,30 +499,21 @@ namespace LightSwitchApplication
                     }
                 }
 
-                public global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowKundeSuchen
+                public global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowKundenÜbersicht
                 {
                     get
                     {
                         return (global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>)
-                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties.ShowKundeSuchen);
+                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties.ShowKundenÜbersicht);
                     }
                 }
 
-                public global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowKundeÜbersicht
+                public global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowKundenDetails
                 {
                     get
                     {
                         return (global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>)
-                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties.ShowKundeÜbersicht);
-                    }
-                }
-
-                public global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowAdressenÜbersicht
-                {
-                    get
-                    {
-                        return (global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>)
-                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties.ShowAdressenÜbersicht);
+                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties.ShowKundenDetails);
                     }
                 }
 
@@ -640,21 +526,30 @@ namespace LightSwitchApplication
                     }
                 }
 
-                public global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowNeuerBestellvorgang
+                public global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowBezahlarten
                 {
                     get
                     {
                         return (global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>)
-                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties.ShowNeuerBestellvorgang);
+                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties.ShowBezahlarten);
                     }
                 }
 
-                public global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowEditableBezahlartGrid
+                public global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowAuftragsSammlung
                 {
                     get
                     {
                         return (global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>)
-                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties.ShowEditableBezahlartGrid);
+                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties.ShowAuftragsSammlung);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowBestellungDetails
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>)
+                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties.ShowBestellungDetails);
                     }
                 }
 
@@ -703,59 +598,45 @@ namespace LightSwitchApplication
                 }
 
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
-                    ShowCreateNewMeine_Daten = new global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
-                        "ShowCreateNewMeine_Daten",
-                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowCreateNewMeine_Daten_Stub,
-                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowCreateNewMeine_Daten_CreateExecutableObject);
-                private static void _ShowCreateNewMeine_Daten_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
+                    ShowFirmenDaten = new global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
+                        "ShowFirmenDaten",
+                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowFirmenDaten_Stub,
+                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowFirmenDaten_CreateExecutableObject);
+                private static void _ShowFirmenDaten_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
                 {
-                    c(d, ref d._ShowCreateNewMeine_DatenCommand, sf);
+                    c(d, ref d._ShowFirmenDatenCommand, sf);
                 }
-                private static global::Microsoft.LightSwitch.IExecutable _ShowCreateNewMeine_Daten_CreateExecutableObject(global::LightSwitchApplication.Application.DetailsClass d)
+                private static global::Microsoft.LightSwitch.IExecutable _ShowFirmenDaten_CreateExecutableObject(global::LightSwitchApplication.Application.DetailsClass d)
                 {
-                    return ((global::LightSwitchApplication.Application.DetailsClass)d).Methods.ShowCreateNewMeine_Daten.CreateInvocation(new object[0]);
-                }
-
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
-                    ShowListDetail_Rechnungen = new global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
-                        "ShowListDetail_Rechnungen",
-                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowListDetail_Rechnungen_Stub,
-                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowListDetail_Rechnungen_CreateExecutableObject);
-                private static void _ShowListDetail_Rechnungen_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
-                {
-                    c(d, ref d._ShowListDetail_RechnungenCommand, sf);
-                }
-                private static global::Microsoft.LightSwitch.IExecutable _ShowListDetail_Rechnungen_CreateExecutableObject(global::LightSwitchApplication.Application.DetailsClass d)
-                {
-                    return ((global::LightSwitchApplication.Application.DetailsClass)d).Methods.ShowListDetail_Rechnungen.CreateInvocation(new object[0]);
+                    return ((global::LightSwitchApplication.Application.DetailsClass)d).Methods.ShowFirmenDaten.CreateInvocation(new object[0]);
                 }
 
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
-                    ShowRechnungDetail = new global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
-                        "ShowRechnungDetail",
-                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowRechnungDetail_Stub,
-                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowRechnungDetail_CreateExecutableObject);
-                private static void _ShowRechnungDetail_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
+                    ShowBestellungListDetails = new global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
+                        "ShowBestellungListDetails",
+                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowBestellungListDetails_Stub,
+                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowBestellungListDetails_CreateExecutableObject);
+                private static void _ShowBestellungListDetails_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
                 {
-                    c(d, ref d._ShowRechnungDetailCommand, sf);
+                    c(d, ref d._ShowBestellungListDetailsCommand, sf);
                 }
-                private static global::Microsoft.LightSwitch.IExecutable _ShowRechnungDetail_CreateExecutableObject(global::LightSwitchApplication.Application.DetailsClass d)
+                private static global::Microsoft.LightSwitch.IExecutable _ShowBestellungListDetails_CreateExecutableObject(global::LightSwitchApplication.Application.DetailsClass d)
                 {
-                    return ((global::LightSwitchApplication.Application.DetailsClass)d).Methods.ShowRechnungDetail.CreateInvocation(new object[0]);
+                    return ((global::LightSwitchApplication.Application.DetailsClass)d).Methods.ShowBestellungListDetails.CreateInvocation(new object[0]);
                 }
 
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
-                    ShowCreateNewAdressenSetItem = new global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
-                        "ShowCreateNewAdressenSetItem",
-                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowCreateNewAdressenSetItem_Stub,
-                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowCreateNewAdressenSetItem_CreateExecutableObject);
-                private static void _ShowCreateNewAdressenSetItem_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
+                    ShowBestellungenÜbersicht = new global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
+                        "ShowBestellungenÜbersicht",
+                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowBestellungenÜbersicht_Stub,
+                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowBestellungenÜbersicht_CreateExecutableObject);
+                private static void _ShowBestellungenÜbersicht_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
                 {
-                    c(d, ref d._ShowCreateNewAdressenSetItemCommand, sf);
+                    c(d, ref d._ShowBestellungenÜbersichtCommand, sf);
                 }
-                private static global::Microsoft.LightSwitch.IExecutable _ShowCreateNewAdressenSetItem_CreateExecutableObject(global::LightSwitchApplication.Application.DetailsClass d)
+                private static global::Microsoft.LightSwitch.IExecutable _ShowBestellungenÜbersicht_CreateExecutableObject(global::LightSwitchApplication.Application.DetailsClass d)
                 {
-                    return ((global::LightSwitchApplication.Application.DetailsClass)d).Methods.ShowCreateNewAdressenSetItem.CreateInvocation(new object[0]);
+                    return ((global::LightSwitchApplication.Application.DetailsClass)d).Methods.ShowBestellungenÜbersicht.CreateInvocation(new object[0]);
                 }
 
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
@@ -773,20 +654,6 @@ namespace LightSwitchApplication
                 }
 
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
-                    ShowEditableBestellStatusSetGrid = new global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
-                        "ShowEditableBestellStatusSetGrid",
-                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowEditableBestellStatusSetGrid_Stub,
-                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowEditableBestellStatusSetGrid_CreateExecutableObject);
-                private static void _ShowEditableBestellStatusSetGrid_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
-                {
-                    c(d, ref d._ShowEditableBestellStatusSetGridCommand, sf);
-                }
-                private static global::Microsoft.LightSwitch.IExecutable _ShowEditableBestellStatusSetGrid_CreateExecutableObject(global::LightSwitchApplication.Application.DetailsClass d)
-                {
-                    return ((global::LightSwitchApplication.Application.DetailsClass)d).Methods.ShowEditableBestellStatusSetGrid.CreateInvocation(new object[0]);
-                }
-
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
                     ShowStart = new global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
                         "ShowStart",
                         global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowStart_Stub,
@@ -801,59 +668,45 @@ namespace LightSwitchApplication
                 }
 
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
-                    ShowKundeSuchen = new global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
-                        "ShowKundeSuchen",
-                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowKundeSuchen_Stub,
-                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowKundeSuchen_CreateExecutableObject);
-                private static void _ShowKundeSuchen_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
+                    ShowKundenÜbersicht = new global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
+                        "ShowKundenÜbersicht",
+                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowKundenÜbersicht_Stub,
+                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowKundenÜbersicht_CreateExecutableObject);
+                private static void _ShowKundenÜbersicht_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
                 {
-                    c(d, ref d._ShowKundeSuchenCommand, sf);
+                    c(d, ref d._ShowKundenÜbersichtCommand, sf);
                 }
-                private static global::Microsoft.LightSwitch.IExecutable _ShowKundeSuchen_CreateExecutableObject(global::LightSwitchApplication.Application.DetailsClass d)
+                private static global::Microsoft.LightSwitch.IExecutable _ShowKundenÜbersicht_CreateExecutableObject(global::LightSwitchApplication.Application.DetailsClass d)
                 {
-                    return ((global::LightSwitchApplication.Application.DetailsClass)d).Methods.ShowKundeSuchen.CreateInvocation(new object[0]);
-                }
-
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
-                    ShowAdressenÜbersicht = new global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
-                        "ShowAdressenÜbersicht",
-                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowAdressenÜbersicht_Stub,
-                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowAdressenÜbersicht_CreateExecutableObject);
-                private static void _ShowAdressenÜbersicht_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
-                {
-                    c(d, ref d._ShowAdressenÜbersichtCommand, sf);
-                }
-                private static global::Microsoft.LightSwitch.IExecutable _ShowAdressenÜbersicht_CreateExecutableObject(global::LightSwitchApplication.Application.DetailsClass d)
-                {
-                    return ((global::LightSwitchApplication.Application.DetailsClass)d).Methods.ShowAdressenÜbersicht.CreateInvocation(new object[0]);
+                    return ((global::LightSwitchApplication.Application.DetailsClass)d).Methods.ShowKundenÜbersicht.CreateInvocation(new object[0]);
                 }
 
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
-                    ShowNeuerBestellvorgang = new global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
-                        "ShowNeuerBestellvorgang",
-                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowNeuerBestellvorgang_Stub,
-                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowNeuerBestellvorgang_CreateExecutableObject);
-                private static void _ShowNeuerBestellvorgang_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
+                    ShowBezahlarten = new global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
+                        "ShowBezahlarten",
+                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowBezahlarten_Stub,
+                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowBezahlarten_CreateExecutableObject);
+                private static void _ShowBezahlarten_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
                 {
-                    c(d, ref d._ShowNeuerBestellvorgangCommand, sf);
+                    c(d, ref d._ShowBezahlartenCommand, sf);
                 }
-                private static global::Microsoft.LightSwitch.IExecutable _ShowNeuerBestellvorgang_CreateExecutableObject(global::LightSwitchApplication.Application.DetailsClass d)
+                private static global::Microsoft.LightSwitch.IExecutable _ShowBezahlarten_CreateExecutableObject(global::LightSwitchApplication.Application.DetailsClass d)
                 {
-                    return ((global::LightSwitchApplication.Application.DetailsClass)d).Methods.ShowNeuerBestellvorgang.CreateInvocation(new object[0]);
+                    return ((global::LightSwitchApplication.Application.DetailsClass)d).Methods.ShowBezahlarten.CreateInvocation(new object[0]);
                 }
 
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
-                    ShowEditableBezahlartGrid = new global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
-                        "ShowEditableBezahlartGrid",
-                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowEditableBezahlartGrid_Stub,
-                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowEditableBezahlartGrid_CreateExecutableObject);
-                private static void _ShowEditableBezahlartGrid_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
+                    ShowAuftragsSammlung = new global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
+                        "ShowAuftragsSammlung",
+                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowAuftragsSammlung_Stub,
+                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowAuftragsSammlung_CreateExecutableObject);
+                private static void _ShowAuftragsSammlung_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
                 {
-                    c(d, ref d._ShowEditableBezahlartGridCommand, sf);
+                    c(d, ref d._ShowAuftragsSammlungCommand, sf);
                 }
-                private static global::Microsoft.LightSwitch.IExecutable _ShowEditableBezahlartGrid_CreateExecutableObject(global::LightSwitchApplication.Application.DetailsClass d)
+                private static global::Microsoft.LightSwitch.IExecutable _ShowAuftragsSammlung_CreateExecutableObject(global::LightSwitchApplication.Application.DetailsClass d)
                 {
-                    return ((global::LightSwitchApplication.Application.DetailsClass)d).Methods.ShowEditableBezahlartGrid.CreateInvocation(new object[0]);
+                    return ((global::LightSwitchApplication.Application.DetailsClass)d).Methods.ShowAuftragsSammlung.CreateInvocation(new object[0]);
                 }
 
             }
@@ -917,132 +770,80 @@ namespace LightSwitchApplication
                 }
  
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
-                    ShowCreateNewMeine_Daten = new global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
-                        "ShowCreateNewMeine_Daten",
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowCreateNewMeine_Daten_Stub,
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowCreateNewMeine_Daten_CanInvoke,
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowCreateNewMeine_Daten_InvokeMethod);
-                private static void _ShowCreateNewMeine_Daten_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
+                    ShowFirmenDaten = new global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
+                        "ShowFirmenDaten",
+                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowFirmenDaten_Stub,
+                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowFirmenDaten_CanInvoke,
+                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowFirmenDaten_InvokeMethod);
+                private static void _ShowFirmenDaten_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
                 {
-                    c(d, ref d._ShowCreateNewMeine_DatenMethod, sf);
+                    c(d, ref d._ShowFirmenDatenMethod, sf);
                 }
-                private static global::System.Exception _ShowCreateNewMeine_Daten_CanInvoke(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
+                private static global::System.Exception _ShowFirmenDaten_CanInvoke(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
                 {
                     bool result = true;
-                    d.Application.CreateNewMeine_Daten_CanRun(ref result);
+                    d.Application.FirmenDaten_CanRun(ref result);
                     return result ? null : ex;
                 }
-                private static void _ShowCreateNewMeine_Daten_InvokeMethod(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
+                private static void _ShowFirmenDaten_InvokeMethod(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
                 {
                     bool handled = false;
-                    d.Application.CreateNewMeine_Daten_Run(ref handled);
+                    d.Application.FirmenDaten_Run(ref handled);
                     if (!handled)
                     {
-                        d.ShowScreen("LightSwitchApplication:CreateNewMeine_Daten", () => global::LightSwitchApplication.CreateNewMeine_Daten.CreateInstance(), args);
+                        d.ShowScreen("LightSwitchApplication:FirmenDaten", () => global::LightSwitchApplication.FirmenDaten.CreateInstance(), args);
                     }
                 }
  
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
-                    ShowListDetail_Rechnungen = new global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
-                        "ShowListDetail_Rechnungen",
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowListDetail_Rechnungen_Stub,
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowListDetail_Rechnungen_CanInvoke,
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowListDetail_Rechnungen_InvokeMethod);
-                private static void _ShowListDetail_Rechnungen_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
+                    ShowBestellungListDetails = new global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
+                        "ShowBestellungListDetails",
+                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowBestellungListDetails_Stub,
+                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowBestellungListDetails_CanInvoke,
+                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowBestellungListDetails_InvokeMethod);
+                private static void _ShowBestellungListDetails_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
                 {
-                    c(d, ref d._ShowListDetail_RechnungenMethod, sf);
+                    c(d, ref d._ShowBestellungListDetailsMethod, sf);
                 }
-                private static global::System.Exception _ShowListDetail_Rechnungen_CanInvoke(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
+                private static global::System.Exception _ShowBestellungListDetails_CanInvoke(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
                 {
                     bool result = true;
-                    d.Application.ListDetail_Rechnungen_CanRun(ref result);
+                    d.Application.BestellungListDetails_CanRun(ref result);
                     return result ? null : ex;
                 }
-                private static void _ShowListDetail_Rechnungen_InvokeMethod(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
+                private static void _ShowBestellungListDetails_InvokeMethod(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
                 {
                     bool handled = false;
-                    d.Application.ListDetail_Rechnungen_Run(ref handled);
+                    d.Application.BestellungListDetails_Run(ref handled);
                     if (!handled)
                     {
-                        d.ShowScreen("LightSwitchApplication:ListDetail_Rechnungen", () => global::LightSwitchApplication.ListDetail_Rechnungen.CreateInstance(), args);
+                        d.ShowScreen("LightSwitchApplication:BestellungListDetails", () => global::LightSwitchApplication.BestellungListDetails.CreateInstance(), args);
                     }
                 }
  
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
-                    ShowRechnungDetail = new global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
-                        "ShowRechnungDetail",
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowRechnungDetail_Stub,
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowRechnungDetail_CanInvoke,
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowRechnungDetail_InvokeMethod);
-                private static void _ShowRechnungDetail_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
+                    ShowBestellungenÜbersicht = new global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
+                        "ShowBestellungenÜbersicht",
+                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowBestellungenÜbersicht_Stub,
+                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowBestellungenÜbersicht_CanInvoke,
+                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowBestellungenÜbersicht_InvokeMethod);
+                private static void _ShowBestellungenÜbersicht_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
                 {
-                    c(d, ref d._ShowRechnungDetailMethod, sf);
+                    c(d, ref d._ShowBestellungenÜbersichtMethod, sf);
                 }
-                private static global::System.Exception _ShowRechnungDetail_CanInvoke(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
+                private static global::System.Exception _ShowBestellungenÜbersicht_CanInvoke(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
                 {
                     bool result = true;
-                    d.Application.RechnungDetail_CanRun(ref result);
+                    d.Application.BestellungenÜbersicht_CanRun(ref result);
                     return result ? null : ex;
                 }
-                private static void _ShowRechnungDetail_InvokeMethod(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
+                private static void _ShowBestellungenÜbersicht_InvokeMethod(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
                 {
                     bool handled = false;
-                    d.Application.RechnungDetail_Run(ref handled);
+                    d.Application.BestellungenÜbersicht_Run(ref handled);
                     if (!handled)
                     {
-                        d.ShowScreen("LightSwitchApplication:RechnungDetail", () => global::LightSwitchApplication.RechnungDetail.CreateInstance(), args);
-                    }
-                }
- 
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
-                    ShowCreateNewAdressenSetItem = new global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
-                        "ShowCreateNewAdressenSetItem",
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowCreateNewAdressenSetItem_Stub,
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowCreateNewAdressenSetItem_CanInvoke,
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowCreateNewAdressenSetItem_InvokeMethod);
-                private static void _ShowCreateNewAdressenSetItem_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
-                {
-                    c(d, ref d._ShowCreateNewAdressenSetItemMethod, sf);
-                }
-                private static global::System.Exception _ShowCreateNewAdressenSetItem_CanInvoke(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
-                {
-                    bool result = true;
-                    d.Application.CreateNewAdressenSetItem_CanRun(ref result);
-                    return result ? null : ex;
-                }
-                private static void _ShowCreateNewAdressenSetItem_InvokeMethod(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
-                {
-                    bool handled = false;
-                    d.Application.CreateNewAdressenSetItem_Run(ref handled);
-                    if (!handled)
-                    {
-                        d.ShowScreen("LightSwitchApplication:CreateNewAdressenSetItem", () => global::LightSwitchApplication.CreateNewAdressenSetItem.CreateInstance(), args);
-                    }
-                }
- 
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
-                    ShowKundenDetails = new global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
-                        "ShowKundenDetails",
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowKundenDetails_Stub,
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowKundenDetails_CanInvoke,
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowKundenDetails_InvokeMethod);
-                private static void _ShowKundenDetails_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
-                {
-                    c(d, ref d._ShowKundenDetailsMethod, sf);
-                }
-                private static global::System.Exception _ShowKundenDetails_CanInvoke(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
-                {
-                    bool result = true;
-                    d.Application.KundenDetails_CanRun(ref result, (int)args[0]);
-                    return result ? null : ex;
-                }
-                private static void _ShowKundenDetails_InvokeMethod(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
-                {
-                    bool handled = false;
-                    d.Application.KundenDetails_Run(ref handled, (int)args[0]);
-                    if (!handled)
-                    {
-                        d.ShowScreen("LightSwitchApplication:KundenDetails", () => global::LightSwitchApplication.KundenDetails.CreateInstance((int)args[0]), args);
+                        d.ShowScreen("LightSwitchApplication:BestellungenÜbersicht", () => global::LightSwitchApplication.BestellungenÜbersicht.CreateInstance(), args);
                     }
                 }
  
@@ -1073,32 +874,6 @@ namespace LightSwitchApplication
                 }
  
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
-                    ShowEditableBestellStatusSetGrid = new global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
-                        "ShowEditableBestellStatusSetGrid",
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowEditableBestellStatusSetGrid_Stub,
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowEditableBestellStatusSetGrid_CanInvoke,
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowEditableBestellStatusSetGrid_InvokeMethod);
-                private static void _ShowEditableBestellStatusSetGrid_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
-                {
-                    c(d, ref d._ShowEditableBestellStatusSetGridMethod, sf);
-                }
-                private static global::System.Exception _ShowEditableBestellStatusSetGrid_CanInvoke(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
-                {
-                    bool result = true;
-                    d.Application.EditableBestellStatusSetGrid_CanRun(ref result);
-                    return result ? null : ex;
-                }
-                private static void _ShowEditableBestellStatusSetGrid_InvokeMethod(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
-                {
-                    bool handled = false;
-                    d.Application.EditableBestellStatusSetGrid_Run(ref handled);
-                    if (!handled)
-                    {
-                        d.ShowScreen("LightSwitchApplication:EditableBestellStatusSetGrid", () => global::LightSwitchApplication.EditableBestellStatusSetGrid.CreateInstance(), args);
-                    }
-                }
- 
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
                     ShowStart = new global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
                         "ShowStart",
                         global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowStart_Stub,
@@ -1125,80 +900,54 @@ namespace LightSwitchApplication
                 }
  
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
-                    ShowKundeSuchen = new global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
-                        "ShowKundeSuchen",
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowKundeSuchen_Stub,
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowKundeSuchen_CanInvoke,
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowKundeSuchen_InvokeMethod);
-                private static void _ShowKundeSuchen_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
+                    ShowKundenÜbersicht = new global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
+                        "ShowKundenÜbersicht",
+                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowKundenÜbersicht_Stub,
+                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowKundenÜbersicht_CanInvoke,
+                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowKundenÜbersicht_InvokeMethod);
+                private static void _ShowKundenÜbersicht_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
                 {
-                    c(d, ref d._ShowKundeSuchenMethod, sf);
+                    c(d, ref d._ShowKundenÜbersichtMethod, sf);
                 }
-                private static global::System.Exception _ShowKundeSuchen_CanInvoke(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
+                private static global::System.Exception _ShowKundenÜbersicht_CanInvoke(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
                 {
                     bool result = true;
-                    d.Application.KundeSuchen_CanRun(ref result);
+                    d.Application.KundenÜbersicht_CanRun(ref result);
                     return result ? null : ex;
                 }
-                private static void _ShowKundeSuchen_InvokeMethod(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
+                private static void _ShowKundenÜbersicht_InvokeMethod(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
                 {
                     bool handled = false;
-                    d.Application.KundeSuchen_Run(ref handled);
+                    d.Application.KundenÜbersicht_Run(ref handled);
                     if (!handled)
                     {
-                        d.ShowScreen("LightSwitchApplication:KundeSuchen", () => global::LightSwitchApplication.KundeSuchen.CreateInstance(), args);
+                        d.ShowScreen("LightSwitchApplication:KundenÜbersicht", () => global::LightSwitchApplication.KundenÜbersicht.CreateInstance(), args);
                     }
                 }
  
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
-                    ShowKundeÜbersicht = new global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
-                        "ShowKundeÜbersicht",
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowKundeÜbersicht_Stub,
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowKundeÜbersicht_CanInvoke,
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowKundeÜbersicht_InvokeMethod);
-                private static void _ShowKundeÜbersicht_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
+                    ShowKundenDetails = new global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
+                        "ShowKundenDetails",
+                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowKundenDetails_Stub,
+                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowKundenDetails_CanInvoke,
+                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowKundenDetails_InvokeMethod);
+                private static void _ShowKundenDetails_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
                 {
-                    c(d, ref d._ShowKundeÜbersichtMethod, sf);
+                    c(d, ref d._ShowKundenDetailsMethod, sf);
                 }
-                private static global::System.Exception _ShowKundeÜbersicht_CanInvoke(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
+                private static global::System.Exception _ShowKundenDetails_CanInvoke(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
                 {
                     bool result = true;
-                    d.Application.KundeÜbersicht_CanRun(ref result, (int)args[0]);
+                    d.Application.KundenDetails_CanRun(ref result, (int)args[0]);
                     return result ? null : ex;
                 }
-                private static void _ShowKundeÜbersicht_InvokeMethod(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
+                private static void _ShowKundenDetails_InvokeMethod(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
                 {
                     bool handled = false;
-                    d.Application.KundeÜbersicht_Run(ref handled, (int)args[0]);
+                    d.Application.KundenDetails_Run(ref handled, (int)args[0]);
                     if (!handled)
                     {
-                        d.ShowScreen("LightSwitchApplication:KundeÜbersicht", () => global::LightSwitchApplication.KundeÜbersicht.CreateInstance((int)args[0]), args);
-                    }
-                }
- 
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
-                    ShowAdressenÜbersicht = new global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
-                        "ShowAdressenÜbersicht",
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowAdressenÜbersicht_Stub,
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowAdressenÜbersicht_CanInvoke,
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowAdressenÜbersicht_InvokeMethod);
-                private static void _ShowAdressenÜbersicht_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
-                {
-                    c(d, ref d._ShowAdressenÜbersichtMethod, sf);
-                }
-                private static global::System.Exception _ShowAdressenÜbersicht_CanInvoke(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
-                {
-                    bool result = true;
-                    d.Application.AdressenÜbersicht_CanRun(ref result);
-                    return result ? null : ex;
-                }
-                private static void _ShowAdressenÜbersicht_InvokeMethod(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
-                {
-                    bool handled = false;
-                    d.Application.AdressenÜbersicht_Run(ref handled);
-                    if (!handled)
-                    {
-                        d.ShowScreen("LightSwitchApplication:AdressenÜbersicht", () => global::LightSwitchApplication.AdressenÜbersicht.CreateInstance(), args);
+                        d.ShowScreen("LightSwitchApplication:KundenDetails", () => global::LightSwitchApplication.KundenDetails.CreateInstance((int)args[0]), args);
                     }
                 }
  
@@ -1229,54 +978,80 @@ namespace LightSwitchApplication
                 }
  
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
-                    ShowNeuerBestellvorgang = new global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
-                        "ShowNeuerBestellvorgang",
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowNeuerBestellvorgang_Stub,
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowNeuerBestellvorgang_CanInvoke,
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowNeuerBestellvorgang_InvokeMethod);
-                private static void _ShowNeuerBestellvorgang_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
+                    ShowBezahlarten = new global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
+                        "ShowBezahlarten",
+                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowBezahlarten_Stub,
+                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowBezahlarten_CanInvoke,
+                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowBezahlarten_InvokeMethod);
+                private static void _ShowBezahlarten_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
                 {
-                    c(d, ref d._ShowNeuerBestellvorgangMethod, sf);
+                    c(d, ref d._ShowBezahlartenMethod, sf);
                 }
-                private static global::System.Exception _ShowNeuerBestellvorgang_CanInvoke(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
+                private static global::System.Exception _ShowBezahlarten_CanInvoke(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
                 {
                     bool result = true;
-                    d.Application.NeuerBestellvorgang_CanRun(ref result);
+                    d.Application.Bezahlarten_CanRun(ref result);
                     return result ? null : ex;
                 }
-                private static void _ShowNeuerBestellvorgang_InvokeMethod(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
+                private static void _ShowBezahlarten_InvokeMethod(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
                 {
                     bool handled = false;
-                    d.Application.NeuerBestellvorgang_Run(ref handled);
+                    d.Application.Bezahlarten_Run(ref handled);
                     if (!handled)
                     {
-                        d.ShowScreen("LightSwitchApplication:NeuerBestellvorgang", () => global::LightSwitchApplication.NeuerBestellvorgang.CreateInstance(), args);
+                        d.ShowScreen("LightSwitchApplication:Bezahlarten", () => global::LightSwitchApplication.Bezahlarten.CreateInstance(), args);
                     }
                 }
  
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
-                    ShowEditableBezahlartGrid = new global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
-                        "ShowEditableBezahlartGrid",
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowEditableBezahlartGrid_Stub,
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowEditableBezahlartGrid_CanInvoke,
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowEditableBezahlartGrid_InvokeMethod);
-                private static void _ShowEditableBezahlartGrid_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
+                    ShowAuftragsSammlung = new global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
+                        "ShowAuftragsSammlung",
+                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowAuftragsSammlung_Stub,
+                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowAuftragsSammlung_CanInvoke,
+                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowAuftragsSammlung_InvokeMethod);
+                private static void _ShowAuftragsSammlung_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
                 {
-                    c(d, ref d._ShowEditableBezahlartGridMethod, sf);
+                    c(d, ref d._ShowAuftragsSammlungMethod, sf);
                 }
-                private static global::System.Exception _ShowEditableBezahlartGrid_CanInvoke(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
+                private static global::System.Exception _ShowAuftragsSammlung_CanInvoke(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
                 {
                     bool result = true;
-                    d.Application.EditableBezahlartGrid_CanRun(ref result);
+                    d.Application.AuftragsSammlung_CanRun(ref result);
                     return result ? null : ex;
                 }
-                private static void _ShowEditableBezahlartGrid_InvokeMethod(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
+                private static void _ShowAuftragsSammlung_InvokeMethod(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
                 {
                     bool handled = false;
-                    d.Application.EditableBezahlartGrid_Run(ref handled);
+                    d.Application.AuftragsSammlung_Run(ref handled);
                     if (!handled)
                     {
-                        d.ShowScreen("LightSwitchApplication:EditableBezahlartGrid", () => global::LightSwitchApplication.EditableBezahlartGrid.CreateInstance(), args);
+                        d.ShowScreen("LightSwitchApplication:AuftragsSammlung", () => global::LightSwitchApplication.AuftragsSammlung.CreateInstance(), args);
+                    }
+                }
+ 
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
+                    ShowBestellungDetails = new global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
+                        "ShowBestellungDetails",
+                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowBestellungDetails_Stub,
+                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowBestellungDetails_CanInvoke,
+                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowBestellungDetails_InvokeMethod);
+                private static void _ShowBestellungDetails_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
+                {
+                    c(d, ref d._ShowBestellungDetailsMethod, sf);
+                }
+                private static global::System.Exception _ShowBestellungDetails_CanInvoke(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
+                {
+                    bool result = true;
+                    d.Application.BestellungDetails_CanRun(ref result, (int)args[0]);
+                    return result ? null : ex;
+                }
+                private static void _ShowBestellungDetails_InvokeMethod(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
+                {
+                    bool handled = false;
+                    d.Application.BestellungDetails_Run(ref handled, (int)args[0]);
+                    if (!handled)
+                    {
+                        d.ShowScreen("LightSwitchApplication:BestellungDetails", () => global::LightSwitchApplication.BestellungDetails.CreateInstance((int)args[0]), args);
                     }
                 }
  
@@ -1286,59 +1061,47 @@ namespace LightSwitchApplication
 
             private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowArtikelÜbersichtMethod;
 
-            private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowCreateNewMeine_DatenMethod;
+            private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowFirmenDatenMethod;
 
-            private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowListDetail_RechnungenMethod;
+            private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowBestellungListDetailsMethod;
 
-            private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowRechnungDetailMethod;
-
-            private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowCreateNewAdressenSetItemMethod;
-
-            private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowKundenDetailsMethod;
+            private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowBestellungenÜbersichtMethod;
 
             private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowKundengruppenMethod;
 
-            private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowEditableBestellStatusSetGridMethod;
-
             private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowStartMethod;
 
-            private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowKundeSuchenMethod;
+            private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowKundenÜbersichtMethod;
 
-            private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowKundeÜbersichtMethod;
-
-            private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowAdressenÜbersichtMethod;
+            private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowKundenDetailsMethod;
 
             private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowRechnungDruckenMethod;
 
-            private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowNeuerBestellvorgangMethod;
+            private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowBezahlartenMethod;
 
-            private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowEditableBezahlartGridMethod;
+            private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowAuftragsSammlungMethod;
+
+            private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowBestellungDetailsMethod;
 
             private global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowArtikelNeuCommand;
 
             private global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowArtikelÜbersichtCommand;
 
-            private global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowCreateNewMeine_DatenCommand;
+            private global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowFirmenDatenCommand;
 
-            private global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowListDetail_RechnungenCommand;
+            private global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowBestellungListDetailsCommand;
 
-            private global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowRechnungDetailCommand;
-
-            private global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowCreateNewAdressenSetItemCommand;
+            private global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowBestellungenÜbersichtCommand;
 
             private global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowKundengruppenCommand;
 
-            private global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowEditableBestellStatusSetGridCommand;
-
             private global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowStartCommand;
 
-            private global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowKundeSuchenCommand;
+            private global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowKundenÜbersichtCommand;
 
-            private global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowAdressenÜbersichtCommand;
+            private global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowBezahlartenCommand;
 
-            private global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowNeuerBestellvorgangCommand;
-
-            private global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowEditableBezahlartGridCommand;
+            private global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowAuftragsSammlungCommand;
 
         }
     }

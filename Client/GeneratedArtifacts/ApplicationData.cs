@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Ursprünglicher Dateiname:
-// Erstellungsdatum: 21.03.2014 17:07:22
+// Erstellungsdatum: 21.03.2014 21:59:00
 namespace LightSwitchApplication.Implementation
 {
     
@@ -1846,32 +1846,6 @@ namespace LightSwitchApplication.Implementation
         private decimal _Rabatt;
         partial void OnRabattChanging(decimal value);
         partial void OnRabattChanged();
-        /// <summary>
-        /// Im Schema sind keine Kommentare für die Eigenschaft "LieferadressenId" vorhanden.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Nullable<int> LieferadressenId
-        {
-            get
-            {
-                return this._LieferadressenId;
-            }
-            set
-            {
-                this.OnLieferadressenIdChanging(value);
-                if (object.Equals(this.LieferadressenId, value))
-                {
-                    return;
-                }
-                this._LieferadressenId = value;
-                this.OnLieferadressenIdChanged();
-                this.OnPropertyChanged("LieferadressenId");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Nullable<int> _LieferadressenId;
-        partial void OnLieferadressenIdChanging(global::System.Nullable<int> value);
-        partial void OnLieferadressenIdChanged();
         /// <summary>
         /// Im Schema sind keine Kommentare für die Eigenschaft "Rechnungen_Kunden" vorhanden.
         /// </summary>

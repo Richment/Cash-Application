@@ -411,6 +411,21 @@ namespace LightSwitchApplication
         partial void InBearbeitung_ExecuteFailed(global::System.Exception exception);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void AuftragsSammlung_CanExecute(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void AuftragsSammlung_Executing();
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void AuftragsSammlung_PreprocessQuery(ref global::System.Linq.IQueryable<global::LightSwitchApplication.Rechnungen> query);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void AuftragsSammlung_Executed(global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.Rechnungen> result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void AuftragsSammlung_ExecuteFailed(global::System.Exception exception);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void Query_Executing(global::Microsoft.LightSwitch.QueryExecutingDescriptor queryDescriptor);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1164,6 +1179,39 @@ namespace LightSwitchApplication
             {
                 global::System.Linq.IQueryable<global::LightSwitchApplication.Rechnungen> query = (global::System.Linq.IQueryable<global::LightSwitchApplication.Rechnungen>)args[0];
                 d.InBearbeitung_PreprocessQuery(ref query);
+                return query;
+            }
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.QueryOperationEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.Rechnungen>
+                __AuftragsSammlungEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.QueryOperationEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.Rechnungen>(
+                    "AuftragsSammlung",
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__AuftragsSammlung_CanExecute,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__AuftragsSammlung_Executing,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__AuftragsSammlung_Executed,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__AuftragsSammlung_Failed,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__AuftragsSammlung_PreprocessQuery);
+            private static bool __AuftragsSammlung_CanExecute(global::LightSwitchApplication.ApplicationDataService d, bool r)
+            {
+                d.AuftragsSammlung_CanExecute(ref r);
+                return r;
+            }
+            private static void __AuftragsSammlung_Executing(global::LightSwitchApplication.ApplicationDataService d, object[] args)
+            {
+                d.AuftragsSammlung_Executing();
+            }
+            private static void __AuftragsSammlung_Executed(global::LightSwitchApplication.ApplicationDataService d, object[] args)
+            {
+                d.AuftragsSammlung_Executed((global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.Rechnungen>)args[0]);
+            }
+            private static void __AuftragsSammlung_Failed(global::LightSwitchApplication.ApplicationDataService d, object[] args, global::System.Exception ex)
+            {
+                d.AuftragsSammlung_ExecuteFailed(ex);
+            }
+            private static global::System.Linq.IQueryable __AuftragsSammlung_PreprocessQuery(global::LightSwitchApplication.ApplicationDataService d, object[] args)
+            {
+                global::System.Linq.IQueryable<global::LightSwitchApplication.Rechnungen> query = (global::System.Linq.IQueryable<global::LightSwitchApplication.Rechnungen>)args[0];
+                d.AuftragsSammlung_PreprocessQuery(ref query);
                 return query;
             }
     

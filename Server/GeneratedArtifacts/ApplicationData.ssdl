@@ -102,7 +102,6 @@
     <Property Name="Rechnungsnummer" Type="int" />
     <Property Name="Lieferkosten" Type="decimal" Nullable="false" Precision="18" Scale="2" />
     <Property Name="Rabatt" Type="decimal" Nullable="false" Precision="18" Scale="2" />
-    <Property Name="LieferadressenId" Type="int" />
     <Property Name="Rechnungen_Kunden" Type="int" Nullable="false" />
     <Property Name="Rechnungen_BezahlartItem" Type="int" Nullable="false" />
   </EntityType>

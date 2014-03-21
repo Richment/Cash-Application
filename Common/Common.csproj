@@ -70,6 +70,7 @@
     <Compile Include="UserCode\AdressenSetItem.cs" />
     <Compile Include="UserCode\ArtikelstammItem.cs" />
     <Compile Include="UserCode\ArtikellisteItem.cs" />
+    <Compile Include="UserCode\FirmendatenItem.cs" />
     <Compile Include="UserCode\KundengruppenItem.cs" />
     <Compile Include="UserCode\KundenItem.cs" />
     <Compile Include="UserCode\Rechnungen.cs" />

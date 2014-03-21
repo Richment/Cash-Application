@@ -72,7 +72,6 @@
           <ScalarProperty Name="Rechnungsnummer" ColumnName="Rechnungsnummer" />
           <ScalarProperty Name="Lieferkosten" ColumnName="Lieferkosten" />
           <ScalarProperty Name="Rabatt" ColumnName="Rabatt" />
-          <ScalarProperty Name="LieferadressenId" ColumnName="LieferadressenId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

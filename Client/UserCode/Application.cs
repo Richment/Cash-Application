@@ -102,4 +102,13 @@ namespace LightSwitchApplication
         }
     }
     */
+	public partial class Application
+	{
+		partial void FirmenDaten_Run(ref bool handled)
+		{
+		/*	string firmendatenName = this.Details.
+		if(this.ActiveScreens.FirstOrDefault(n=>n.GetName()==
+		  */
+		}
+	}
 }

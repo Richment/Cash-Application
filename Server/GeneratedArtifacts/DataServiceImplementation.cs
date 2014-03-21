@@ -48,6 +48,17 @@ namespace LightSwitchApplication.Implementation
             return query;
         }
     
+        public global::System.Linq.IQueryable<global::ApplicationData.Implementation.Rechnungen> AuftragsSammlung()
+        {
+            global::System.Linq.IQueryable<global::ApplicationData.Implementation.Rechnungen> query;
+            query = global::System.Linq.Queryable.OrderBy(
+                global::System.Linq.Queryable.Where(
+                    this.GetQuery<global::ApplicationData.Implementation.Rechnungen>("RechnungenSet"),
+                    (r) => (r.Status == 0)),
+                (r) => r.Bestelldatum);
+            return query;
+        }
+    
     #endregion
 
     #region Protected Methods

@@ -902,16 +902,52 @@
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
     </QueryOperation>
+    <QueryOperation
+      Name="AuftragsSammlung"
+      ReturnType="Rechnungen*">
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Status" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ConstantExpression
+                ResultType=":Int32"
+                Value="0" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.SortCriteria>
+        <SortCriterion>
+          <ChainExpression>
+            <MemberExpression
+              Member="Bestelldatum" />
+          </ChainExpression>
+        </SortCriterion>
+      </QueryOperation.SortCriteria>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="RechnungenSet" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+    </QueryOperation>
   </EntityContainer>
   <EntityType
     Name="KundenItem">
     <EntityType.Attributes>
       <DefaultScreen
-        Value="LightSwitchApplication:KundeÜbersicht">
+        Value="LightSwitchApplication:KundenDetails">
         <DefaultScreen.Attributes>
           <ScreenParameterMapping
             KeyProperty="KundenItem/Properties[Id]"
-            ScreenParameter="LightSwitchApplication:KundeÜbersicht/Properties[KundenId]" />
+            ScreenParameter="LightSwitchApplication:KundenDetails/Properties[KundenId]" />
         </DefaultScreen.Attributes>
       </DefaultScreen>
     </EntityType.Attributes>
@@ -1390,6 +1426,7 @@
           <Required />
           <MaxLength
             Value="255" />
+          <IncludeInUniqueIndex />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -1406,6 +1443,7 @@
         <EntityProperty.Attributes>
           <MaxLength
             Value="255" />
+          <NotSearchable />
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
@@ -1447,7 +1485,6 @@
         Name="Rechnungsnummer"
         PropertyType=":Int32?">
         <EntityProperty.Attributes>
-          <IncludeInUniqueIndex />
           <NotSearchable />
         </EntityProperty.Attributes>
       </EntityProperty>
@@ -1494,14 +1531,6 @@
         FromEnd="Rechnungen"
         Name="ArtikellisteCollection"
         ToEnd="ArtikellisteItem" />
-      <EntityProperty
-        Name="LieferadressenId"
-        PropertyType=":Int32?">
-        <EntityProperty.Attributes>
-          <NotSearchable />
-          <Hidden />
-        </EntityProperty.Attributes>
-      </EntityProperty>
       <EntityProperty
         Name="Netto_Gesamtbetrag"
         PropertyType="Microsoft.LightSwitch.Extensions:Money?">
