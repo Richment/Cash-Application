@@ -38,13 +38,6 @@ namespace LightSwitchApplication
 			}
 		}
 
-		partial void Rabattwert_Compute(ref decimal? result)
-		{
-			result = this.Netto_Gesamtbetrag - Rabatt;
-			if (result.HasValue)
-				result = Math.Round(result.Value, 2);
-		}
-
 		partial void Rechnungsbetrag_Netto_Compute(ref decimal? result)
 		{
 			result = this.Netto_Gesamtbetrag + Lieferkosten;

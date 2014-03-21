@@ -1507,25 +1507,6 @@
             Minimum="0" />
         </EntityProperty.Attributes>
       </EntityProperty>
-      <EntityProperty
-        Name="Rabatt"
-        PropertyType="Microsoft.LightSwitch.Extensions:Money">
-        <EntityProperty.Attributes>
-          <NotSearchable />
-          <DecimalConstraint
-            Precision="18"
-            Scale="2" />
-          <Attribute
-            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
-            <Property
-              Name="IsoCurrencySymbol"
-              Value="EUR" />
-          </Attribute>
-          <Range
-            Minimum="0" />
-          <Required />
-        </EntityProperty.Attributes>
-      </EntityProperty>
       <NavigationProperty
         Association="ArtikellisteItem_Rechnungen"
         FromEnd="Rechnungen"
@@ -1578,28 +1559,6 @@
           <Hidden />
           <DisplayName
             Value="Bruttobetrag" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="Rabattwert"
-        PropertyType="Microsoft.LightSwitch.Extensions:Money?">
-        <EntityProperty.Attributes>
-          <Computed />
-          <Attribute
-            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
-            <Property
-              Name="IsoCurrencySymbol"
-              Value="EUR" />
-            <Property
-              Name="IsGrouped"
-              Value="False" />
-            <Property
-              Name="IsFormatted"
-              Value="False" />
-          </Attribute>
-          <Hidden />
-          <DisplayName
-            Value="Rabattbetrag" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty

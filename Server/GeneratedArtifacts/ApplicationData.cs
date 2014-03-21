@@ -2782,10 +2782,9 @@ namespace ApplicationData.Implementation
         /// <param name="referenznummer">Anfangswert der Eigenschaft Referenznummer.</param>
         /// <param name="bestelldatum">Anfangswert der Eigenschaft Bestelldatum.</param>
         /// <param name="lieferkosten">Anfangswert der Eigenschaft Lieferkosten.</param>
-        /// <param name="rabatt">Anfangswert der Eigenschaft Rabatt.</param>
         /// <param name="rechnungen_Kunden">Anfangswert der Eigenschaft Rechnungen_Kunden.</param>
         /// <param name="rechnungen_BezahlartItem">Anfangswert der Eigenschaft Rechnungen_BezahlartItem.</param>
-        public static Rechnungen CreateRechnungen(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.Int32 status, global::System.String referenznummer, global::System.DateTime bestelldatum, global::System.Decimal lieferkosten, global::System.Decimal rabatt, global::System.Int32 rechnungen_Kunden, global::System.Int32 rechnungen_BezahlartItem)
+        public static Rechnungen CreateRechnungen(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.Int32 status, global::System.String referenznummer, global::System.DateTime bestelldatum, global::System.Decimal lieferkosten, global::System.Int32 rechnungen_Kunden, global::System.Int32 rechnungen_BezahlartItem)
         {
             Rechnungen rechnungen = new Rechnungen();
             rechnungen.Id = id;
@@ -2794,7 +2793,6 @@ namespace ApplicationData.Implementation
             rechnungen.Referenznummer = referenznummer;
             rechnungen.Bestelldatum = bestelldatum;
             rechnungen.Lieferkosten = lieferkosten;
-            rechnungen.Rabatt = rabatt;
             rechnungen.Rechnungen_Kunden = rechnungen_Kunden;
             rechnungen.Rechnungen_BezahlartItem = rechnungen_BezahlartItem;
             return rechnungen;
@@ -3118,30 +3116,6 @@ namespace ApplicationData.Implementation
         private global::System.Decimal _Lieferkosten;
         partial void OnLieferkostenChanging(global::System.Decimal value);
         partial void OnLieferkostenChanged();
-    
-        /// <summary>
-        /// Keine Dokumentation für Metadaten verfügbar.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Decimal Rabatt
-        {
-            get
-            {
-                return _Rabatt;
-            }
-            set
-            {
-                OnRabattChanging(value);
-                ReportPropertyChanging("Rabatt");
-                _Rabatt = value;
-                ReportPropertyChanged("Rabatt");
-                OnRabattChanged();
-            }
-        }
-        private global::System.Decimal _Rabatt;
-        partial void OnRabattChanging(global::System.Decimal value);
-        partial void OnRabattChanged();
     
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.

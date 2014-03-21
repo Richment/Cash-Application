@@ -431,11 +431,6 @@ namespace LightSwitchApplication.Implementation
             this.___OnPropertyChanged("Lieferkosten");
         }
         
-        partial void OnRabattChanged()
-        {
-            this.___OnPropertyChanged("Rabatt");
-        }
-        
         global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Rechnungen.DetailsClass.IImplementation.Kunde
         {
             get

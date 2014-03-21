@@ -1585,19 +1585,6 @@
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
-                <ContentItem
-                  DataType="Microsoft.LightSwitch.Extensions:Money"
-                  Kind="Value"
-                  Name="Rabatt">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="LightSwitchCommonModule:Rechnungen/Properties[Rabatt]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
               </ContentItem>
             </ContentItem>
           </ContentItem>
@@ -1721,19 +1708,6 @@
                         <ChainExpression>
                           <MemberExpression
                             Member="LightSwitchCommonModule:Rechnungen/Properties[Besteller]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    DataType="Microsoft.LightSwitch.Extensions:Money"
-                    Kind="Value"
-                    Name="Rabatt1">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="LightSwitchCommonModule:Rechnungen/Properties[Rabatt]" />
                         </ChainExpression>
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
@@ -2641,19 +2615,6 @@
                     </ContentItem.DataSource>
                   </ContentItem>
                   <ContentItem
-                    DataType="Microsoft.LightSwitch.Extensions:Money"
-                    Kind="Value"
-                    Name="Rabatt">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="LightSwitchCommonModule:Rechnungen/Properties[Rabatt]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
                     DataType="Microsoft.LightSwitch.Extensions:Money?"
                     Kind="Value"
                     Name="Netto_Gesamtbetrag">
@@ -2947,19 +2908,6 @@
                     <ChainExpression>
                       <MemberExpression
                         Member="LightSwitchCommonModule:Rechnungen/Properties[Lieferkosten]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                DataType="Microsoft.LightSwitch.Extensions:Money"
-                Kind="Value"
-                Name="Rabatt1">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="LightSwitchCommonModule:Rechnungen/Properties[Rabatt]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -6298,20 +6246,6 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  DataType="Microsoft.LightSwitch.Extensions:Money"
-                  Kind="Value"
-                  Name="Rabatt2"
-                  View="Microsoft.LightSwitch.Extensions:MoneyViewerControl">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="LightSwitchCommonModule:Rechnungen/Properties[Rabatt]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
                   DataType="Microsoft.LightSwitch.Extensions:Money?"
                   Kind="Value"
                   Name="Netto_Gesamtbetrag1">
@@ -7028,19 +6962,6 @@
                     <ChainExpression>
                       <MemberExpression
                         Member="LightSwitchCommonModule:Rechnungen/Properties[Lieferkosten]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                DataType="Microsoft.LightSwitch.Extensions:Money"
-                Kind="Value"
-                Name="Rabatt">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="LightSwitchCommonModule:Rechnungen/Properties[Rabatt]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -7890,19 +7811,6 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  DataType="Microsoft.LightSwitch.Extensions:Money"
-                  Kind="Value"
-                  Name="Rabatt">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="LightSwitchCommonModule:Rechnungen/Properties[Rabatt]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
                   DataType="Microsoft.LightSwitch.Extensions:Money?"
                   Kind="Value"
                   Name="Netto_Gesamtbetrag">
@@ -8159,20 +8067,6 @@
                     <ChainExpression>
                       <MemberExpression
                         Member="LightSwitchCommonModule:Rechnungen/Properties[Lieferkosten]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                DataType="Microsoft.LightSwitch.Extensions:Money"
-                Kind="Value"
-                Name="Rabatt1"
-                View="Microsoft.LightSwitch.Extensions:MoneyViewerControl">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="LightSwitchCommonModule:Rechnungen/Properties[Rabatt]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -8600,19 +8494,6 @@
                     <ChainExpression>
                       <MemberExpression
                         Member="LightSwitchCommonModule:Rechnungen/Properties[Lieferscheinnummer]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                DataType="Microsoft.LightSwitch.Extensions:Money"
-                Kind="Value"
-                Name="Rabatt">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="LightSwitchCommonModule:Rechnungen/Properties[Rabatt]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>

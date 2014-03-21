@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Ursprünglicher Dateiname:
-// Erstellungsdatum: 21.03.2014 21:59:00
+// Erstellungsdatum: 21.03.2014 22:43:36
 namespace LightSwitchApplication.Implementation
 {
     
@@ -1457,11 +1457,10 @@ namespace LightSwitchApplication.Implementation
         /// <param name="referenznummer">Anfangswert von Referenznummer.</param>
         /// <param name="bestelldatum">Anfangswert von Bestelldatum.</param>
         /// <param name="lieferkosten">Anfangswert von Lieferkosten.</param>
-        /// <param name="rabatt">Anfangswert von Rabatt.</param>
         /// <param name="rechnungen_Kunden">Anfangswert von Rechnungen_Kunden.</param>
         /// <param name="rechnungen_BezahlartItem">Anfangswert von Rechnungen_BezahlartItem.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Rechnungen CreateRechnungen(int ID, byte[] rowVersion, int status, string referenznummer, global::System.DateTime bestelldatum, decimal lieferkosten, decimal rabatt, int rechnungen_Kunden, int rechnungen_BezahlartItem)
+        public static Rechnungen CreateRechnungen(int ID, byte[] rowVersion, int status, string referenznummer, global::System.DateTime bestelldatum, decimal lieferkosten, int rechnungen_Kunden, int rechnungen_BezahlartItem)
         {
             Rechnungen rechnungen = new Rechnungen();
             rechnungen.Id = ID;
@@ -1470,7 +1469,6 @@ namespace LightSwitchApplication.Implementation
             rechnungen.Referenznummer = referenznummer;
             rechnungen.Bestelldatum = bestelldatum;
             rechnungen.Lieferkosten = lieferkosten;
-            rechnungen.Rabatt = rabatt;
             rechnungen.Rechnungen_Kunden = rechnungen_Kunden;
             rechnungen.Rechnungen_BezahlartItem = rechnungen_BezahlartItem;
             return rechnungen;
@@ -1820,32 +1818,6 @@ namespace LightSwitchApplication.Implementation
         private decimal _Lieferkosten;
         partial void OnLieferkostenChanging(decimal value);
         partial void OnLieferkostenChanged();
-        /// <summary>
-        /// Im Schema sind keine Kommentare für die Eigenschaft "Rabatt" vorhanden.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public decimal Rabatt
-        {
-            get
-            {
-                return this._Rabatt;
-            }
-            set
-            {
-                this.OnRabattChanging(value);
-                if (object.Equals(this.Rabatt, value))
-                {
-                    return;
-                }
-                this._Rabatt = value;
-                this.OnRabattChanged();
-                this.OnPropertyChanged("Rabatt");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private decimal _Rabatt;
-        partial void OnRabattChanging(decimal value);
-        partial void OnRabattChanged();
         /// <summary>
         /// Im Schema sind keine Kommentare für die Eigenschaft "Rechnungen_Kunden" vorhanden.
         /// </summary>
