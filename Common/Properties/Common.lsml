@@ -36,11 +36,11 @@
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="Kunden"
-      Name="KundenSet" />
+      EntityType="KundenItem"
+      Name="Kunden" />
     <QueryOperation
-      Name="KundenSet_Single"
-      ReturnType="Kunden">
+      Name="Kunden_Single"
+      ReturnType="KundenItem">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -66,7 +66,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="KundenSet" />
+            Member="Kunden" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -79,8 +79,8 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="KundenSet_SingleOrDefault"
-      ReturnType="Kunden">
+      Name="Kunden_SingleOrDefault"
+      ReturnType="KundenItem">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -106,7 +106,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="KundenSet" />
+            Member="Kunden" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -122,11 +122,11 @@
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="Kundengruppe"
-      Name="KundengruppeSet" />
+      EntityType="KundengruppenItem"
+      Name="Kundengruppen" />
     <QueryOperation
-      Name="KundengruppeSet_Single"
-      ReturnType="Kundengruppe">
+      Name="Kundengruppen_Single"
+      ReturnType="KundengruppenItem">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -152,7 +152,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="KundengruppeSet" />
+            Member="Kundengruppen" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -165,8 +165,8 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="KundengruppeSet_SingleOrDefault"
-      ReturnType="Kundengruppe">
+      Name="Kundengruppen_SingleOrDefault"
+      ReturnType="KundengruppenItem">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -192,7 +192,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="KundengruppeSet" />
+            Member="Kundengruppen" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -208,11 +208,11 @@
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="Artikelstamm"
-      Name="ArtikelstammSet" />
+      EntityType="ArtikelstammItem"
+      Name="Artikelstamm" />
     <QueryOperation
-      Name="ArtikelstammSet_Single"
-      ReturnType="Artikelstamm">
+      Name="Artikelstamm_Single"
+      ReturnType="ArtikelstammItem">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -238,7 +238,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="ArtikelstammSet" />
+            Member="Artikelstamm" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -251,8 +251,8 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="ArtikelstammSet_SingleOrDefault"
-      ReturnType="Artikelstamm">
+      Name="Artikelstamm_SingleOrDefault"
+      ReturnType="ArtikelstammItem">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -278,7 +278,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="ArtikelstammSet" />
+            Member="Artikelstamm" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -380,11 +380,11 @@
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="Artikelliste"
-      Name="ArtikellisteSet" />
+      EntityType="ArtikellisteItem"
+      Name="Artikelliste" />
     <QueryOperation
-      Name="ArtikellisteSet_Single"
-      ReturnType="Artikelliste">
+      Name="Artikelliste_Single"
+      ReturnType="ArtikellisteItem">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -410,7 +410,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="ArtikellisteSet" />
+            Member="Artikelliste" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -423,8 +423,8 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="ArtikellisteSet_SingleOrDefault"
-      ReturnType="Artikelliste">
+      Name="Artikelliste_SingleOrDefault"
+      ReturnType="ArtikellisteItem">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -450,7 +450,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="ArtikellisteSet" />
+            Member="Artikelliste" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -463,54 +463,54 @@
       </QueryOperationParameter>
     </QueryOperation>
     <AssociationSet
-      Association="Artikelliste_Rechnungen"
-      Name="Artikelliste_RechnungenSet">
+      Association="ArtikellisteItem_Rechnungen"
+      Name="ArtikellisteItem_RechnungenSet">
       <AssociationSetEnd
-        EntitySet="ArtikellisteSet"
-        Name="Artikelliste" />
+        EntitySet="Artikelliste"
+        Name="ArtikellisteItem" />
       <AssociationSetEnd
         EntitySet="RechnungenSet"
         Name="Rechnungen" />
     </AssociationSet>
     <AssociationSet
-      Association="Kunden_Kundengruppe"
-      Name="Kunden_KundengruppeSet">
+      Association="KundenItem_KundengruppenItem"
+      Name="KundenItem_KundengruppenItemSet">
       <AssociationSetEnd
-        EntitySet="KundenSet"
-        Name="Kunden" />
+        EntitySet="Kunden"
+        Name="KundenItem" />
       <AssociationSetEnd
-        EntitySet="KundengruppeSet"
-        Name="Kundengruppe" />
+        EntitySet="Kundengruppen"
+        Name="KundengruppenItem" />
     </AssociationSet>
     <AssociationSet
-      Association="Rechnungen_Kunden"
-      Name="Rechnungen_KundenSet">
+      Association="Rechnungen_KundenItem"
+      Name="Rechnungen_KundenItemSet">
       <AssociationSetEnd
         EntitySet="RechnungenSet"
         Name="Rechnungen" />
       <AssociationSetEnd
-        EntitySet="KundenSet"
-        Name="Kunden" />
+        EntitySet="Kunden"
+        Name="KundenItem" />
     </AssociationSet>
     <AssociationSet
-      Association="Artikelliste_Artikelstamm"
-      Name="Artikelliste_ArtikelstammSet">
+      Association="ArtikellisteItem_ArtikelstammItem"
+      Name="ArtikellisteItem_ArtikelstammItemSet">
       <AssociationSetEnd
-        EntitySet="ArtikellisteSet"
-        Name="Artikelliste" />
+        EntitySet="Artikelliste"
+        Name="ArtikellisteItem" />
       <AssociationSetEnd
-        EntitySet="ArtikelstammSet"
-        Name="Artikelstamm" />
+        EntitySet="Artikelstamm"
+        Name="ArtikelstammItem" />
     </AssociationSet>
     <EntitySet
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="Firmendaten"
-      Name="FirmendatenSet" />
+      EntityType="FirmendatenItem"
+      Name="Firmendaten" />
     <QueryOperation
-      Name="FirmendatenSet_Single"
-      ReturnType="Firmendaten">
+      Name="Firmendaten_Single"
+      ReturnType="FirmendatenItem">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -536,7 +536,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="FirmendatenSet" />
+            Member="Firmendaten" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -549,8 +549,8 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="FirmendatenSet_SingleOrDefault"
-      ReturnType="Firmendaten">
+      Name="Firmendaten_SingleOrDefault"
+      ReturnType="FirmendatenItem">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -576,7 +576,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="FirmendatenSet" />
+            Member="Firmendaten" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -592,11 +592,11 @@
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="Meine_Daten"
-      Name="Meine_DatenSet" />
+      EntityType="Meine_DatenItem"
+      Name="Meine_Daten" />
     <QueryOperation
-      Name="Meine_DatenSet_Single"
-      ReturnType="Meine_Daten">
+      Name="Meine_Daten_Single"
+      ReturnType="Meine_DatenItem">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -622,7 +622,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Meine_DatenSet" />
+            Member="Meine_Daten" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -635,8 +635,8 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="Meine_DatenSet_SingleOrDefault"
-      ReturnType="Meine_Daten">
+      Name="Meine_Daten_SingleOrDefault"
+      ReturnType="Meine_DatenItem">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -662,7 +662,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Meine_DatenSet" />
+            Member="Meine_Daten" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -679,9 +679,9 @@
       CanInsert="True"
       CanUpdate="True"
       EntityType="AdressenSetItem"
-      Name="AdressenSet" />
+      Name="LieferAdresse" />
     <QueryOperation
-      Name="AdressenSet_Single"
+      Name="LieferAdresse_Single"
       ReturnType="AdressenSetItem">
       <QueryOperation.Attributes>
         <Generated />
@@ -708,7 +708,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="AdressenSet" />
+            Member="LieferAdresse" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -721,7 +721,7 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="AdressenSet_SingleOrDefault"
+      Name="LieferAdresse_SingleOrDefault"
       ReturnType="AdressenSetItem">
       <QueryOperation.Attributes>
         <Generated />
@@ -748,7 +748,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="AdressenSet" />
+            Member="LieferAdresse" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -761,13 +761,13 @@
       </QueryOperationParameter>
     </QueryOperation>
     <AssociationSet
-      Association="Kunden_AdressenSetItem"
-      Name="Kunden_AdressenSetItemSet">
+      Association="KundenItem_AdressenSetItem"
+      Name="KundenItem_AdressenSetItemSet">
       <AssociationSetEnd
-        EntitySet="KundenSet"
-        Name="Kunden" />
+        EntitySet="Kunden"
+        Name="KundenItem" />
       <AssociationSetEnd
-        EntitySet="AdressenSet"
+        EntitySet="LieferAdresse"
         Name="AdressenSetItem" />
     </AssociationSet>
     <EntitySet
@@ -867,36 +867,51 @@
         Name="BezahlartItem" />
     </AssociationSet>
     <QueryOperation
-      Name="SortedQuery"
-      ReturnType="Artikelliste*">
+      Name="InBearbeitung"
+      ReturnType="Rechnungen*">
       <QueryOperation.FilterExpression>
-        <QueryFilterExpressionTree />
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="LessThan">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Status" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ConstantExpression
+                ResultType=":Int32"
+                Value="5" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
       </QueryOperation.FilterExpression>
       <QueryOperation.SortCriteria>
         <SortCriterion>
           <ChainExpression>
             <MemberExpression
-              Member="Anzahl" />
+              Member="Bestelldatum" />
           </ChainExpression>
         </SortCriterion>
       </QueryOperation.SortCriteria>
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="ArtikellisteSet" />
+            Member="RechnungenSet" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
     </QueryOperation>
   </EntityContainer>
   <EntityType
-    Name="Kunden">
+    Name="KundenItem">
     <EntityType.Attributes>
       <DefaultScreen
-        Value="LightSwitchApplication:KundenÜbersicht">
+        Value="LightSwitchApplication:KundeÜbersicht">
         <DefaultScreen.Attributes>
           <ScreenParameterMapping
-            KeyProperty="Kunden/Properties[Id]"
-            ScreenParameter="LightSwitchApplication:KundenÜbersicht/Properties[KundenId]" />
+            KeyProperty="KundenItem/Properties[Id]"
+            ScreenParameter="LightSwitchApplication:KundeÜbersicht/Properties[KundenId]" />
         </DefaultScreen.Attributes>
       </DefaultScreen>
     </EntityType.Attributes>
@@ -1080,24 +1095,24 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
-        Association="Kunden_Kundengruppe"
-        FromEnd="Kunden"
-        Name="Kundengruppe"
-        ToEnd="Kundengruppe" />
+        Association="KundenItem_KundengruppenItem"
+        FromEnd="KundenItem"
+        Name="KundengruppenItem"
+        ToEnd="KundengruppenItem" />
       <NavigationProperty
-        Association="Kunden_AdressenSetItem"
-        FromEnd="Kunden"
+        Association="KundenItem_AdressenSetItem"
+        FromEnd="KundenItem"
         Name="Adressen"
         ToEnd="AdressenSetItem" />
       <NavigationProperty
-        Association="Rechnungen_Kunden"
-        FromEnd="Kunden"
+        Association="Rechnungen_KundenItem"
+        FromEnd="KundenItem"
         Name="Rechnungen"
         ToEnd="Rechnungen" />
     </EntityType.Properties>
   </EntityType>
   <EntityType
-    Name="Kundengruppe">
+    Name="KundengruppenItem">
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -1135,14 +1150,14 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
-        Association="Kunden_Kundengruppe"
-        FromEnd="Kundengruppe"
+        Association="KundenItem_KundengruppenItem"
+        FromEnd="KundengruppenItem"
         Name="Kunden"
-        ToEnd="Kunden" />
+        ToEnd="KundenItem" />
     </EntityType.Properties>
   </EntityType>
   <EntityType
-    Name="Artikelstamm">
+    Name="ArtikelstammItem">
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -1276,10 +1291,10 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
-        Association="Artikelliste_Artikelstamm"
-        FromEnd="Artikelstamm"
-        Name="ArtikellisteCollection"
-        ToEnd="Artikelliste">
+        Association="ArtikellisteItem_ArtikelstammItem"
+        FromEnd="ArtikelstammItem"
+        Name="ArtikellisteItem"
+        ToEnd="ArtikellisteItem">
         <NavigationProperty.Attributes>
           <Hidden />
         </NavigationProperty.Attributes>
@@ -1356,10 +1371,10 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
-        Association="Rechnungen_Kunden"
+        Association="Rechnungen_KundenItem"
         FromEnd="Rechnungen"
         Name="Kunde"
-        ToEnd="Kunden" />
+        ToEnd="KundenItem" />
       <EntityProperty
         Name="Auftragsnummer"
         PropertyType=":String?">
@@ -1475,10 +1490,10 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
-        Association="Artikelliste_Rechnungen"
+        Association="ArtikellisteItem_Rechnungen"
         FromEnd="Rechnungen"
         Name="ArtikellisteCollection"
-        ToEnd="Artikelliste" />
+        ToEnd="ArtikellisteItem" />
       <EntityProperty
         Name="LieferadressenId"
         PropertyType=":Int32?">
@@ -1583,7 +1598,7 @@
     </EntityType.Properties>
   </EntityType>
   <EntityType
-    Name="Artikelliste">
+    Name="ArtikellisteItem">
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -1620,10 +1635,10 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
-        Association="Artikelliste_Artikelstamm"
-        FromEnd="Artikelliste"
-        Name="Artikelstamm"
-        ToEnd="Artikelstamm">
+        Association="ArtikellisteItem_ArtikelstammItem"
+        FromEnd="ArtikellisteItem"
+        Name="ArtikelstammItem"
+        ToEnd="ArtikelstammItem">
         <NavigationProperty.Attributes>
           <DisplayName
             Value="Artikel" />
@@ -1656,8 +1671,8 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
-        Association="Artikelliste_Rechnungen"
-        FromEnd="Artikelliste"
+        Association="ArtikellisteItem_Rechnungen"
+        FromEnd="ArtikellisteItem"
         Name="Rechnungen"
         ToEnd="Rechnungen">
         <NavigationProperty.Attributes>
@@ -1721,14 +1736,33 @@
             Value="Listenpreis" />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <EntityProperty
+        Name="AnzeigeName"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Computed />
+          <Hidden />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PositionIntern"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+          <Hidden />
+          <Range
+            Minimum="0" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <Association
-    Name="Artikelliste_Rechnungen">
+    Name="ArtikellisteItem_Rechnungen">
     <AssociationEnd
-      EntityType="Artikelliste"
+      EntityType="ArtikellisteItem"
       Multiplicity="Many"
-      Name="Artikelliste" />
+      Name="ArtikellisteItem" />
     <AssociationEnd
       EntityType="Rechnungen"
       Multiplicity="One"
@@ -1740,15 +1774,15 @@
     </AssociationEnd>
   </Association>
   <Association
-    Name="Kunden_Kundengruppe">
+    Name="KundenItem_KundengruppenItem">
     <AssociationEnd
-      EntityType="Kunden"
+      EntityType="KundenItem"
       Multiplicity="Many"
-      Name="Kunden" />
+      Name="KundenItem" />
     <AssociationEnd
-      EntityType="Kundengruppe"
+      EntityType="KundengruppenItem"
       Multiplicity="One"
-      Name="Kundengruppe">
+      Name="KundengruppenItem">
       <AssociationEnd.Attributes>
         <DeleteRule
           Action="Restrict" />
@@ -1756,30 +1790,30 @@
     </AssociationEnd>
   </Association>
   <Association
-    Name="Rechnungen_Kunden">
+    Name="Rechnungen_KundenItem">
     <AssociationEnd
       EntityType="Rechnungen"
       Multiplicity="Many"
       Name="Rechnungen" />
     <AssociationEnd
-      EntityType="Kunden"
+      EntityType="KundenItem"
       Multiplicity="One"
-      Name="Kunden">
+      Name="KundenItem">
       <AssociationEnd.Attributes>
         <DeleteRule
-          Action="Restrict" />
+          Action="Cascade" />
       </AssociationEnd.Attributes>
     </AssociationEnd>
   </Association>
   <Association
-    Name="Artikelliste_Artikelstamm">
+    Name="ArtikellisteItem_ArtikelstammItem">
     <AssociationEnd
-      EntityType="Artikelliste"
+      EntityType="ArtikellisteItem"
       Multiplicity="Many"
-      Name="Artikelliste" />
+      Name="ArtikellisteItem" />
     <AssociationEnd
-      EntityType="Artikelstamm"
-      Name="Artikelstamm">
+      EntityType="ArtikelstammItem"
+      Name="ArtikelstammItem">
       <AssociationEnd.Attributes>
         <DeleteRule
           Action="Restrict" />
@@ -1787,7 +1821,7 @@
     </AssociationEnd>
   </Association>
   <EntityType
-    Name="Firmendaten">
+    Name="FirmendatenItem">
     <EntityType.Attributes>
       <NotSearchable />
     </EntityType.Attributes>
@@ -1907,7 +1941,7 @@
     </EntityType.Properties>
   </EntityType>
   <EntityType
-    Name="Meine_Daten">
+    Name="Meine_DatenItem">
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -2091,10 +2125,10 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
-        Association="Kunden_AdressenSetItem"
+        Association="KundenItem_AdressenSetItem"
         FromEnd="AdressenSetItem"
         Name="KundenRechnungsadresse"
-        ToEnd="Kunden">
+        ToEnd="KundenItem">
         <NavigationProperty.Attributes>
           <DisplayName
             Value="Kundenrechnung" />
@@ -2104,14 +2138,14 @@
     </EntityType.Properties>
   </EntityType>
   <Association
-    Name="Kunden_AdressenSetItem">
+    Name="KundenItem_AdressenSetItem">
     <AssociationEnd
-      EntityType="Kunden"
+      EntityType="KundenItem"
       Multiplicity="One"
-      Name="Kunden">
+      Name="KundenItem">
       <AssociationEnd.Attributes>
         <DeleteRule
-          Action="Restrict" />
+          Action="Cascade" />
       </AssociationEnd.Attributes>
     </AssociationEnd>
     <AssociationEnd

@@ -570,7 +570,7 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::LightSwitchApplication.Kunden Kunde
+        public global::LightSwitchApplication.KundenItem Kunde
         {
             get
             {
@@ -618,7 +618,7 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::Microsoft.LightSwitch.Framework.EntityCollection<global::LightSwitchApplication.Artikelliste> ArtikellisteCollection
+        public global::Microsoft.LightSwitch.Framework.EntityCollection<global::LightSwitchApplication.ArtikellisteItem> ArtikellisteCollection
         {
             get
             {
@@ -628,7 +628,7 @@ namespace LightSwitchApplication
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.Artikelliste> ArtikellisteCollectionQuery
+        public Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.ArtikellisteItem> ArtikellisteCollectionQuery
         {
             get
             {
@@ -894,11 +894,11 @@ namespace LightSwitchApplication
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.Kunden> Kunde
+                public global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.KundenItem> Kunde
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties.Kunde) as global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.Kunden>;
+                        return base.GetItem(global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties.Kunde) as global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.KundenItem>;
                     }
                 }
                 
@@ -910,11 +910,11 @@ namespace LightSwitchApplication
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.Artikelliste> ArtikellisteCollection
+                public global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.ArtikellisteItem> ArtikellisteCollection
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties.ArtikellisteCollection) as global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.Artikelliste>;
+                        return base.GetItem(global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties.ArtikellisteCollection) as global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.ArtikellisteItem>;
                     }
                 }
                 
@@ -1661,8 +1661,8 @@ namespace LightSwitchApplication
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.Kunden>.Entry
-                    Kunde = new global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.Kunden>.Entry(
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.KundenItem>.Entry
+                    Kunde = new global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.KundenItem>.Entry(
                         "Kunde",
                         global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._Kunde_Stub,
                         global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._Kunde_ComputeIsReadOnly,
@@ -1672,7 +1672,7 @@ namespace LightSwitchApplication
                         global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._Kunde_SetImplementationValue,
                         global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._Kunde_Refresh,
                         global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._Kunde_OnValueChanged);
-                private static void _Kunde_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Rechnungen.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.Kunden>.Data> c, global::LightSwitchApplication.Rechnungen.DetailsClass d, object sf)
+                private static void _Kunde_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Rechnungen.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.KundenItem>.Data> c, global::LightSwitchApplication.Rechnungen.DetailsClass d, object sf)
                 {
                     c(d, ref d._Kunde, sf);
                 }
@@ -1690,11 +1690,11 @@ namespace LightSwitchApplication
                 {
                     return d.ImplementationEntity.Kunde;
                 }
-                private static global::LightSwitchApplication.Kunden _Kunde_GetImplementationValue(global::LightSwitchApplication.Rechnungen.DetailsClass d)
+                private static global::LightSwitchApplication.KundenItem _Kunde_GetImplementationValue(global::LightSwitchApplication.Rechnungen.DetailsClass d)
                 {
-                    return d.GetImplementationValue<global::LightSwitchApplication.Kunden, global::LightSwitchApplication.Kunden.DetailsClass>(global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties.Kunde, ref d._Kunde);
+                    return d.GetImplementationValue<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass>(global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties.Kunde, ref d._Kunde);
                 }
-                private static void _Kunde_SetImplementationValue(global::LightSwitchApplication.Rechnungen.DetailsClass d, global::LightSwitchApplication.Kunden v)
+                private static void _Kunde_SetImplementationValue(global::LightSwitchApplication.Rechnungen.DetailsClass d, global::LightSwitchApplication.KundenItem v)
                 {
                     d.SetImplementationValue(global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties.Kunde, ref d._Kunde, (i, ev) => i.Kunde = ev, v);
                 }
@@ -1755,19 +1755,19 @@ namespace LightSwitchApplication
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.Artikelliste>.Entry
-                    ArtikellisteCollection = new global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.Artikelliste>.Entry(
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.ArtikellisteItem>.Entry
+                    ArtikellisteCollection = new global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.ArtikellisteItem>.Entry(
                         "ArtikellisteCollection",
                         global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._ArtikellisteCollection_Stub,
                         global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._ArtikellisteCollection_GetReferencedEntities,
                         global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._ArtikellisteCollection_GetEntityCollection);
-                private static void _ArtikellisteCollection_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Rechnungen.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.Artikelliste>.Data> c, global::LightSwitchApplication.Rechnungen.DetailsClass d, object sf)
+                private static void _ArtikellisteCollection_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Rechnungen.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.ArtikellisteItem>.Data> c, global::LightSwitchApplication.Rechnungen.DetailsClass d, object sf)
                 {
                     c(d, ref d._ArtikellisteCollection, sf);
                 }
-                private static global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.Artikelliste> _ArtikellisteCollection_GetReferencedEntities(global::LightSwitchApplication.Rechnungen.DetailsClass d)
+                private static global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.ArtikellisteItem> _ArtikellisteCollection_GetReferencedEntities(global::LightSwitchApplication.Rechnungen.DetailsClass d)
                 {
-                    return d.GetReferencedEntities<global::LightSwitchApplication.Artikelliste, global::LightSwitchApplication.Artikelliste.DetailsClass>(global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties.ArtikellisteCollection, ref d._ArtikellisteCollection);
+                    return d.GetReferencedEntities<global::LightSwitchApplication.ArtikellisteItem, global::LightSwitchApplication.ArtikellisteItem.DetailsClass>(global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties.ArtikellisteCollection, ref d._ArtikellisteCollection);
                 }
                 private static global::System.Collections.IEnumerable _ArtikellisteCollection_GetEntityCollection(global::LightSwitchApplication.Rechnungen.DetailsClass d)
                 {
@@ -1843,13 +1843,13 @@ namespace LightSwitchApplication
             private global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, string>.Data _Adresse;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.Kunden>.Data _Kunde;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.KundenItem>.Data _Kunde;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.BezahlartItem>.Data _BezahlartItem;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.Artikelliste>.Data _ArtikellisteCollection;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.ArtikellisteItem>.Data _ArtikellisteCollection;
             
         }
     

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" Namespace="LightSwitchApplication" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-  <EntityType Name="Kunden">
+  <EntityType Name="KundenItem">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
@@ -25,20 +25,20 @@
     <Property Name="Bemerkungen" Type="Edm.String" MaxLength="255" />
     <Property Name="Sonstiges" Type="Edm.String" MaxLength="255" />
     <Property Name="Kunden_Kundengruppe" Type="Edm.Int32" Nullable="false" />
-    <NavigationProperty Name="Kundengruppe" Relationship="LightSwitchApplication.Kunden_Kundengruppe" ToRole="Kundengruppe" FromRole="Kunden" />
-    <NavigationProperty Name="Adressen" Relationship="LightSwitchApplication.Kunden_AdressenSetItem" ToRole="AdressenSetItem" FromRole="Kunden" />
-    <NavigationProperty Name="Rechnungen" Relationship="LightSwitchApplication.Rechnungen_Kunden" ToRole="Rechnungen" FromRole="Kunden" />
+    <NavigationProperty Name="KundengruppenItem" Relationship="LightSwitchApplication.KundenItem_KundengruppenItem" ToRole="KundengruppenItem" FromRole="KundenItem" />
+    <NavigationProperty Name="Adressen" Relationship="LightSwitchApplication.KundenItem_AdressenSetItem" ToRole="AdressenSetItem" FromRole="KundenItem" />
+    <NavigationProperty Name="Rechnungen" Relationship="LightSwitchApplication.Rechnungen_KundenItem" ToRole="Rechnungen" FromRole="KundenItem" />
   </EntityType>
-  <EntityType Name="Kundengruppe">
+  <EntityType Name="KundengruppenItem">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
     <Property Name="Bezeichnung" Type="Edm.String" MaxLength="255" />
-    <NavigationProperty Name="Kunden" Relationship="LightSwitchApplication.Kunden_Kundengruppe" ToRole="Kunden" FromRole="Kundengruppe" />
+    <NavigationProperty Name="Kunden" Relationship="LightSwitchApplication.KundenItem_KundengruppenItem" ToRole="KundenItem" FromRole="KundengruppenItem" />
   </EntityType>
-  <EntityType Name="Artikelstamm">
+  <EntityType Name="ArtikelstammItem">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
@@ -52,7 +52,7 @@
     <Property Name="EK_pro_PK" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="2" />
     <Property Name="VK_pro_PK" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="2" />
     <Property Name="Marge" Type="Edm.Decimal" Precision="18" Scale="2" />
-    <NavigationProperty Name="ArtikellisteCollection" Relationship="LightSwitchApplication.Artikelliste_Artikelstamm" ToRole="Artikelliste" FromRole="Artikelstamm" />
+    <NavigationProperty Name="ArtikellisteItem" Relationship="LightSwitchApplication.ArtikellisteItem_ArtikelstammItem" ToRole="ArtikellisteItem" FromRole="ArtikelstammItem" />
   </EntityType>
   <EntityType Name="Rechnungen">
     <Key>
@@ -75,11 +75,11 @@
     <Property Name="LieferadressenId" Type="Edm.Int32" />
     <Property Name="Rechnungen_Kunden" Type="Edm.Int32" Nullable="false" />
     <Property Name="Rechnungen_BezahlartItem" Type="Edm.Int32" Nullable="false" />
-    <NavigationProperty Name="Kunde" Relationship="LightSwitchApplication.Rechnungen_Kunden" ToRole="Kunden" FromRole="Rechnungen" />
+    <NavigationProperty Name="Kunde" Relationship="LightSwitchApplication.Rechnungen_KundenItem" ToRole="KundenItem" FromRole="Rechnungen" />
     <NavigationProperty Name="BezahlartItem" Relationship="LightSwitchApplication.Rechnungen_BezahlartItem" ToRole="BezahlartItem" FromRole="Rechnungen" />
-    <NavigationProperty Name="ArtikellisteCollection" Relationship="LightSwitchApplication.Artikelliste_Rechnungen" ToRole="Artikelliste" FromRole="Rechnungen" />
+    <NavigationProperty Name="ArtikellisteCollection" Relationship="LightSwitchApplication.ArtikellisteItem_Rechnungen" ToRole="ArtikellisteItem" FromRole="Rechnungen" />
   </EntityType>
-  <EntityType Name="Artikelliste">
+  <EntityType Name="ArtikellisteItem">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
@@ -87,12 +87,13 @@
     <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
     <Property Name="Anzahl" Type="Edm.Int32" Nullable="false" />
     <Property Name="Rabatt" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="PositionIntern" Type="Edm.Int32" Nullable="false" />
     <Property Name="Artikelliste_Rechnungen" Type="Edm.Int32" Nullable="false" />
     <Property Name="Artikelliste_Artikelstamm" Type="Edm.Int32" />
-    <NavigationProperty Name="Artikelstamm" Relationship="LightSwitchApplication.Artikelliste_Artikelstamm" ToRole="Artikelstamm" FromRole="Artikelliste" />
-    <NavigationProperty Name="Rechnungen" Relationship="LightSwitchApplication.Artikelliste_Rechnungen" ToRole="Rechnungen" FromRole="Artikelliste" />
+    <NavigationProperty Name="ArtikelstammItem" Relationship="LightSwitchApplication.ArtikellisteItem_ArtikelstammItem" ToRole="ArtikelstammItem" FromRole="ArtikellisteItem" />
+    <NavigationProperty Name="Rechnungen" Relationship="LightSwitchApplication.ArtikellisteItem_Rechnungen" ToRole="Rechnungen" FromRole="ArtikellisteItem" />
   </EntityType>
-  <EntityType Name="Firmendaten">
+  <EntityType Name="FirmendatenItem">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
@@ -109,7 +110,7 @@
     <Property Name="EMail" Type="Edm.String" MaxLength="255" />
     <Property Name="Webseite" Type="Edm.String" MaxLength="255" />
   </EntityType>
-  <EntityType Name="Meine_Daten">
+  <EntityType Name="Meine_DatenItem">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
@@ -137,7 +138,7 @@
     <Property Name="Stadt" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="Land" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="Kunden_Rechnungsadressen" Type="Edm.Int32" Nullable="false" />
-    <NavigationProperty Name="KundenRechnungsadresse" Relationship="LightSwitchApplication.Kunden_AdressenSetItem" ToRole="Kunden" FromRole="AdressenSetItem" />
+    <NavigationProperty Name="KundenRechnungsadresse" Relationship="LightSwitchApplication.KundenItem_AdressenSetItem" ToRole="KundenItem" FromRole="AdressenSetItem" />
   </EntityType>
   <EntityType Name="BezahlartItem">
     <Key>
@@ -149,37 +150,39 @@
     <Property Name="Text_Rechnung" Type="Edm.String" Nullable="false" MaxLength="255" />
     <NavigationProperty Name="RechnungenCollection" Relationship="LightSwitchApplication.Rechnungen_BezahlartItem" ToRole="Rechnungen" FromRole="BezahlartItem" />
   </EntityType>
-  <Association Name="Artikelliste_Rechnungen">
+  <Association Name="ArtikellisteItem_Rechnungen">
     <End Role="Rechnungen" Type="LightSwitchApplication.Rechnungen" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="Artikelliste" Type="LightSwitchApplication.Artikelliste" Multiplicity="*" />
+    <End Role="ArtikellisteItem" Type="LightSwitchApplication.ArtikellisteItem" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Rechnungen">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="Artikelliste">
+      <Dependent Role="ArtikellisteItem">
         <PropertyRef Name="Artikelliste_Rechnungen" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="Kunden_Kundengruppe">
-    <End Role="Kundengruppe" Type="LightSwitchApplication.Kundengruppe" Multiplicity="1" />
-    <End Role="Kunden" Type="LightSwitchApplication.Kunden" Multiplicity="*" />
+  <Association Name="KundenItem_KundengruppenItem">
+    <End Role="KundengruppenItem" Type="LightSwitchApplication.KundengruppenItem" Multiplicity="1" />
+    <End Role="KundenItem" Type="LightSwitchApplication.KundenItem" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Kundengruppe">
+      <Principal Role="KundengruppenItem">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="Kunden">
+      <Dependent Role="KundenItem">
         <PropertyRef Name="Kunden_Kundengruppe" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="Rechnungen_Kunden">
-    <End Role="Kunden" Type="LightSwitchApplication.Kunden" Multiplicity="1" />
+  <Association Name="Rechnungen_KundenItem">
+    <End Role="KundenItem" Type="LightSwitchApplication.KundenItem" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Rechnungen" Type="LightSwitchApplication.Rechnungen" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Kunden">
+      <Principal Role="KundenItem">
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="Rechnungen">
@@ -187,23 +190,25 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="Artikelliste_Artikelstamm">
-    <End Role="Artikelstamm" Type="LightSwitchApplication.Artikelstamm" Multiplicity="0..1" />
-    <End Role="Artikelliste" Type="LightSwitchApplication.Artikelliste" Multiplicity="*" />
+  <Association Name="ArtikellisteItem_ArtikelstammItem">
+    <End Role="ArtikelstammItem" Type="LightSwitchApplication.ArtikelstammItem" Multiplicity="0..1" />
+    <End Role="ArtikellisteItem" Type="LightSwitchApplication.ArtikellisteItem" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Artikelstamm">
+      <Principal Role="ArtikelstammItem">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="Artikelliste">
+      <Dependent Role="ArtikellisteItem">
         <PropertyRef Name="Artikelliste_Artikelstamm" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="Kunden_AdressenSetItem">
-    <End Role="Kunden" Type="LightSwitchApplication.Kunden" Multiplicity="1" />
+  <Association Name="KundenItem_AdressenSetItem">
+    <End Role="KundenItem" Type="LightSwitchApplication.KundenItem" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="AdressenSetItem" Type="LightSwitchApplication.AdressenSetItem" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Kunden">
+      <Principal Role="KundenItem">
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="AdressenSetItem">
@@ -224,34 +229,34 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="ApplicationDataObjectContext" m:IsDefaultEntityContainer="true">
-    <EntitySet Name="KundenSet" EntityType="LightSwitchApplication.Kunden" />
-    <EntitySet Name="KundengruppeSet" EntityType="LightSwitchApplication.Kundengruppe" />
-    <EntitySet Name="ArtikelstammSet" EntityType="LightSwitchApplication.Artikelstamm" />
+    <EntitySet Name="Kunden" EntityType="LightSwitchApplication.KundenItem" />
+    <EntitySet Name="Kundengruppen" EntityType="LightSwitchApplication.KundengruppenItem" />
+    <EntitySet Name="Artikelstamm" EntityType="LightSwitchApplication.ArtikelstammItem" />
     <EntitySet Name="RechnungenSet" EntityType="LightSwitchApplication.Rechnungen" />
-    <EntitySet Name="ArtikellisteSet" EntityType="LightSwitchApplication.Artikelliste" />
-    <EntitySet Name="FirmendatenSet" EntityType="LightSwitchApplication.Firmendaten" />
-    <EntitySet Name="Meine_DatenSet" EntityType="LightSwitchApplication.Meine_Daten" />
-    <EntitySet Name="AdressenSet" EntityType="LightSwitchApplication.AdressenSetItem" />
+    <EntitySet Name="Artikelliste" EntityType="LightSwitchApplication.ArtikellisteItem" />
+    <EntitySet Name="Firmendaten" EntityType="LightSwitchApplication.FirmendatenItem" />
+    <EntitySet Name="Meine_Daten" EntityType="LightSwitchApplication.Meine_DatenItem" />
+    <EntitySet Name="LieferAdresse" EntityType="LightSwitchApplication.AdressenSetItem" />
     <EntitySet Name="Bezahlart" EntityType="LightSwitchApplication.BezahlartItem" />
-    <AssociationSet Name="Artikelliste_Rechnungen" Association="LightSwitchApplication.Artikelliste_Rechnungen">
+    <AssociationSet Name="ArtikellisteItem_Rechnungen" Association="LightSwitchApplication.ArtikellisteItem_Rechnungen">
       <End Role="Rechnungen" EntitySet="RechnungenSet" />
-      <End Role="Artikelliste" EntitySet="ArtikellisteSet" />
+      <End Role="ArtikellisteItem" EntitySet="Artikelliste" />
     </AssociationSet>
-    <AssociationSet Name="Kunden_Kundengruppe" Association="LightSwitchApplication.Kunden_Kundengruppe">
-      <End Role="Kundengruppe" EntitySet="KundengruppeSet" />
-      <End Role="Kunden" EntitySet="KundenSet" />
+    <AssociationSet Name="KundenItem_KundengruppenItem" Association="LightSwitchApplication.KundenItem_KundengruppenItem">
+      <End Role="KundengruppenItem" EntitySet="Kundengruppen" />
+      <End Role="KundenItem" EntitySet="Kunden" />
     </AssociationSet>
-    <AssociationSet Name="Rechnungen_Kunden" Association="LightSwitchApplication.Rechnungen_Kunden">
-      <End Role="Kunden" EntitySet="KundenSet" />
+    <AssociationSet Name="Rechnungen_KundenItem" Association="LightSwitchApplication.Rechnungen_KundenItem">
+      <End Role="KundenItem" EntitySet="Kunden" />
       <End Role="Rechnungen" EntitySet="RechnungenSet" />
     </AssociationSet>
-    <AssociationSet Name="Artikelliste_Artikelstamm" Association="LightSwitchApplication.Artikelliste_Artikelstamm">
-      <End Role="Artikelstamm" EntitySet="ArtikelstammSet" />
-      <End Role="Artikelliste" EntitySet="ArtikellisteSet" />
+    <AssociationSet Name="ArtikellisteItem_ArtikelstammItem" Association="LightSwitchApplication.ArtikellisteItem_ArtikelstammItem">
+      <End Role="ArtikelstammItem" EntitySet="Artikelstamm" />
+      <End Role="ArtikellisteItem" EntitySet="Artikelliste" />
     </AssociationSet>
-    <AssociationSet Name="Kunden_AdressenSetItem" Association="LightSwitchApplication.Kunden_AdressenSetItem">
-      <End Role="Kunden" EntitySet="KundenSet" />
-      <End Role="AdressenSetItem" EntitySet="AdressenSet" />
+    <AssociationSet Name="KundenItem_AdressenSetItem" Association="LightSwitchApplication.KundenItem_AdressenSetItem">
+      <End Role="KundenItem" EntitySet="Kunden" />
+      <End Role="AdressenSetItem" EntitySet="LieferAdresse" />
     </AssociationSet>
     <AssociationSet Name="Rechnungen_BezahlartItem" Association="LightSwitchApplication.Rechnungen_BezahlartItem">
       <End Role="BezahlartItem" EntitySet="Bezahlart" />

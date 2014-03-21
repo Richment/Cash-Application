@@ -9,10 +9,13 @@ namespace LightSwitchApplication
 {
 	public partial class ApplicationDataService
 	{
-
-		partial void SortedQuery_PreprocessQuery(ref IQueryable<Artikelliste> query)
+		partial void Artikelliste_Inserting(ArtikellisteItem entity)
 		{
-			query = query.ToArray().OrderBy(n => n.Position).AsQueryable();
+			entity.PositionIntern = entity.Position;
+		}
+		partial void Artikelliste_Updating(ArtikellisteItem entity)
+		{ 
+			entity.PositionIntern = entity.Position;
 		}
 	}
 }

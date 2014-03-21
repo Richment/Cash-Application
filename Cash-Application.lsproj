@@ -194,6 +194,10 @@
     </_BuildFile>
   </ItemGroup>
   <ItemGroup>
+    <LightSwitchExtension Include="MetroThemeExtension">
+      <Client>METROTHEMEEXTENSION.CLIENT;METROTHEMEEXTENSION.COMMON</Client>
+      <Server>METROTHEMEEXTENSION.COMMON</Server>
+    </LightSwitchExtension>
     <LightSwitchExtension Include="Microsoft.LightSwitch.Cosmopolitan">
       <Client>MICROSOFT.LIGHTSWITCH.COSMOPOLITAN.CLIENT</Client>
     </LightSwitchExtension>

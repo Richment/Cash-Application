@@ -65,11 +65,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bestellstatus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserCode\AdressenSetItem.cs" />
-    <Compile Include="UserCode\Artikelstamm.cs" />
-    <Compile Include="UserCode\Artikelliste.cs" />
-    <Compile Include="UserCode\Kunden.cs" />
+    <Compile Include="UserCode\ArtikelstammItem.cs" />
+    <Compile Include="UserCode\ArtikellisteItem.cs" />
+    <Compile Include="UserCode\KundengruppenItem.cs" />
+    <Compile Include="UserCode\KundenItem.cs" />
     <Compile Include="UserCode\Rechnungen.cs" />
   </ItemGroup>
   <ItemGroup>

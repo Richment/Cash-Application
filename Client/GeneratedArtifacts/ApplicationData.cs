@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Ursprünglicher Dateiname:
-// Erstellungsdatum: 18.03.2014 20:01:18
+// Erstellungsdatum: 21.03.2014 16:34:52
 namespace LightSwitchApplication.Implementation
 {
     
@@ -61,56 +61,56 @@ namespace LightSwitchApplication.Implementation
             return null;
         }
         /// <summary>
-        /// Im Schema sind keine Kommentare für "KundenSet" vorhanden.
+        /// Im Schema sind keine Kommentare für "Kunden" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceQuery<Kunden> KundenSet
+        public global::System.Data.Services.Client.DataServiceQuery<KundenItem> Kunden
         {
             get
             {
-                if ((this._KundenSet == null))
+                if ((this._Kunden == null))
                 {
-                    this._KundenSet = base.CreateQuery<Kunden>("KundenSet");
+                    this._Kunden = base.CreateQuery<KundenItem>("Kunden");
                 }
-                return this._KundenSet;
+                return this._Kunden;
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceQuery<Kunden> _KundenSet;
+        private global::System.Data.Services.Client.DataServiceQuery<KundenItem> _Kunden;
         /// <summary>
-        /// Im Schema sind keine Kommentare für "KundengruppeSet" vorhanden.
+        /// Im Schema sind keine Kommentare für "Kundengruppen" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceQuery<Kundengruppe> KundengruppeSet
+        public global::System.Data.Services.Client.DataServiceQuery<KundengruppenItem> Kundengruppen
         {
             get
             {
-                if ((this._KundengruppeSet == null))
+                if ((this._Kundengruppen == null))
                 {
-                    this._KundengruppeSet = base.CreateQuery<Kundengruppe>("KundengruppeSet");
+                    this._Kundengruppen = base.CreateQuery<KundengruppenItem>("Kundengruppen");
                 }
-                return this._KundengruppeSet;
+                return this._Kundengruppen;
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceQuery<Kundengruppe> _KundengruppeSet;
+        private global::System.Data.Services.Client.DataServiceQuery<KundengruppenItem> _Kundengruppen;
         /// <summary>
-        /// Im Schema sind keine Kommentare für "ArtikelstammSet" vorhanden.
+        /// Im Schema sind keine Kommentare für "Artikelstamm" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceQuery<Artikelstamm> ArtikelstammSet
+        public global::System.Data.Services.Client.DataServiceQuery<ArtikelstammItem> Artikelstamm
         {
             get
             {
-                if ((this._ArtikelstammSet == null))
+                if ((this._Artikelstamm == null))
                 {
-                    this._ArtikelstammSet = base.CreateQuery<Artikelstamm>("ArtikelstammSet");
+                    this._Artikelstamm = base.CreateQuery<ArtikelstammItem>("Artikelstamm");
                 }
-                return this._ArtikelstammSet;
+                return this._Artikelstamm;
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceQuery<Artikelstamm> _ArtikelstammSet;
+        private global::System.Data.Services.Client.DataServiceQuery<ArtikelstammItem> _Artikelstamm;
         /// <summary>
         /// Im Schema sind keine Kommentare für "RechnungenSet" vorhanden.
         /// </summary>
@@ -129,73 +129,73 @@ namespace LightSwitchApplication.Implementation
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceQuery<Rechnungen> _RechnungenSet;
         /// <summary>
-        /// Im Schema sind keine Kommentare für "ArtikellisteSet" vorhanden.
+        /// Im Schema sind keine Kommentare für "Artikelliste" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceQuery<Artikelliste> ArtikellisteSet
+        public global::System.Data.Services.Client.DataServiceQuery<ArtikellisteItem> Artikelliste
         {
             get
             {
-                if ((this._ArtikellisteSet == null))
+                if ((this._Artikelliste == null))
                 {
-                    this._ArtikellisteSet = base.CreateQuery<Artikelliste>("ArtikellisteSet");
+                    this._Artikelliste = base.CreateQuery<ArtikellisteItem>("Artikelliste");
                 }
-                return this._ArtikellisteSet;
+                return this._Artikelliste;
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceQuery<Artikelliste> _ArtikellisteSet;
+        private global::System.Data.Services.Client.DataServiceQuery<ArtikellisteItem> _Artikelliste;
         /// <summary>
-        /// Im Schema sind keine Kommentare für "FirmendatenSet" vorhanden.
+        /// Im Schema sind keine Kommentare für "Firmendaten" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceQuery<Firmendaten> FirmendatenSet
+        public global::System.Data.Services.Client.DataServiceQuery<FirmendatenItem> Firmendaten
         {
             get
             {
-                if ((this._FirmendatenSet == null))
+                if ((this._Firmendaten == null))
                 {
-                    this._FirmendatenSet = base.CreateQuery<Firmendaten>("FirmendatenSet");
+                    this._Firmendaten = base.CreateQuery<FirmendatenItem>("Firmendaten");
                 }
-                return this._FirmendatenSet;
+                return this._Firmendaten;
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceQuery<Firmendaten> _FirmendatenSet;
+        private global::System.Data.Services.Client.DataServiceQuery<FirmendatenItem> _Firmendaten;
         /// <summary>
-        /// Im Schema sind keine Kommentare für "Meine_DatenSet" vorhanden.
+        /// Im Schema sind keine Kommentare für "Meine_Daten" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceQuery<Meine_Daten> Meine_DatenSet
+        public global::System.Data.Services.Client.DataServiceQuery<Meine_DatenItem> Meine_Daten
         {
             get
             {
-                if ((this._Meine_DatenSet == null))
+                if ((this._Meine_Daten == null))
                 {
-                    this._Meine_DatenSet = base.CreateQuery<Meine_Daten>("Meine_DatenSet");
+                    this._Meine_Daten = base.CreateQuery<Meine_DatenItem>("Meine_Daten");
                 }
-                return this._Meine_DatenSet;
+                return this._Meine_Daten;
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceQuery<Meine_Daten> _Meine_DatenSet;
+        private global::System.Data.Services.Client.DataServiceQuery<Meine_DatenItem> _Meine_Daten;
         /// <summary>
-        /// Im Schema sind keine Kommentare für "AdressenSet" vorhanden.
+        /// Im Schema sind keine Kommentare für "LieferAdresse" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceQuery<AdressenSetItem> AdressenSet
+        public global::System.Data.Services.Client.DataServiceQuery<AdressenSetItem> LieferAdresse
         {
             get
             {
-                if ((this._AdressenSet == null))
+                if ((this._LieferAdresse == null))
                 {
-                    this._AdressenSet = base.CreateQuery<AdressenSetItem>("AdressenSet");
+                    this._LieferAdresse = base.CreateQuery<AdressenSetItem>("LieferAdresse");
                 }
-                return this._AdressenSet;
+                return this._LieferAdresse;
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceQuery<AdressenSetItem> _AdressenSet;
+        private global::System.Data.Services.Client.DataServiceQuery<AdressenSetItem> _LieferAdresse;
         /// <summary>
         /// Im Schema sind keine Kommentare für "Bezahlart" vorhanden.
         /// </summary>
@@ -214,28 +214,28 @@ namespace LightSwitchApplication.Implementation
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceQuery<BezahlartItem> _Bezahlart;
         /// <summary>
-        /// Im Schema sind keine Kommentare für "KundenSet" vorhanden.
+        /// Im Schema sind keine Kommentare für "Kunden" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public void AddToKundenSet(Kunden kunden)
+        public void AddToKunden(KundenItem kundenItem)
         {
-            base.AddObject("KundenSet", kunden);
+            base.AddObject("Kunden", kundenItem);
         }
         /// <summary>
-        /// Im Schema sind keine Kommentare für "KundengruppeSet" vorhanden.
+        /// Im Schema sind keine Kommentare für "Kundengruppen" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public void AddToKundengruppeSet(Kundengruppe kundengruppe)
+        public void AddToKundengruppen(KundengruppenItem kundengruppenItem)
         {
-            base.AddObject("KundengruppeSet", kundengruppe);
+            base.AddObject("Kundengruppen", kundengruppenItem);
         }
         /// <summary>
-        /// Im Schema sind keine Kommentare für "ArtikelstammSet" vorhanden.
+        /// Im Schema sind keine Kommentare für "Artikelstamm" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public void AddToArtikelstammSet(Artikelstamm artikelstamm)
+        public void AddToArtikelstamm(ArtikelstammItem artikelstammItem)
         {
-            base.AddObject("ArtikelstammSet", artikelstamm);
+            base.AddObject("Artikelstamm", artikelstammItem);
         }
         /// <summary>
         /// Im Schema sind keine Kommentare für "RechnungenSet" vorhanden.
@@ -246,36 +246,36 @@ namespace LightSwitchApplication.Implementation
             base.AddObject("RechnungenSet", rechnungen);
         }
         /// <summary>
-        /// Im Schema sind keine Kommentare für "ArtikellisteSet" vorhanden.
+        /// Im Schema sind keine Kommentare für "Artikelliste" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public void AddToArtikellisteSet(Artikelliste artikelliste)
+        public void AddToArtikelliste(ArtikellisteItem artikellisteItem)
         {
-            base.AddObject("ArtikellisteSet", artikelliste);
+            base.AddObject("Artikelliste", artikellisteItem);
         }
         /// <summary>
-        /// Im Schema sind keine Kommentare für "FirmendatenSet" vorhanden.
+        /// Im Schema sind keine Kommentare für "Firmendaten" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public void AddToFirmendatenSet(Firmendaten firmendaten)
+        public void AddToFirmendaten(FirmendatenItem firmendatenItem)
         {
-            base.AddObject("FirmendatenSet", firmendaten);
+            base.AddObject("Firmendaten", firmendatenItem);
         }
         /// <summary>
-        /// Im Schema sind keine Kommentare für "Meine_DatenSet" vorhanden.
+        /// Im Schema sind keine Kommentare für "Meine_Daten" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public void AddToMeine_DatenSet(Meine_Daten meine_Daten)
+        public void AddToMeine_Daten(Meine_DatenItem meine_DatenItem)
         {
-            base.AddObject("Meine_DatenSet", meine_Daten);
+            base.AddObject("Meine_Daten", meine_DatenItem);
         }
         /// <summary>
-        /// Im Schema sind keine Kommentare für "AdressenSet" vorhanden.
+        /// Im Schema sind keine Kommentare für "LieferAdresse" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public void AddToAdressenSet(AdressenSetItem adressenSetItem)
+        public void AddToLieferAdresse(AdressenSetItem adressenSetItem)
         {
-            base.AddObject("AdressenSet", adressenSetItem);
+            base.AddObject("LieferAdresse", adressenSetItem);
         }
         /// <summary>
         /// Im Schema sind keine Kommentare für "Bezahlart" vorhanden.
@@ -287,17 +287,17 @@ namespace LightSwitchApplication.Implementation
         }
     }
     /// <summary>
-    /// Im Schema sind keine Kommentare für "LightSwitchApplication.Kunden" vorhanden.
+    /// Im Schema sind keine Kommentare für "LightSwitchApplication.KundenItem" vorhanden.
     /// </summary>
     /// <KeyProperties>
     /// Id
     /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("KundenSet")]
+    [global::System.Data.Services.Common.EntitySetAttribute("Kunden")]
     [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
-    public partial class Kunden : global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityBase, global::System.ComponentModel.INotifyPropertyChanged
+    public partial class KundenItem : global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityBase, global::System.ComponentModel.INotifyPropertyChanged
     {
         /// <summary>
-        /// Erstellt ein neues Kunden-Objekt.
+        /// Erstellt ein neues KundenItem-Objekt.
         /// </summary>
         /// <param name="ID">Anfangswert von Id.</param>
         /// <param name="rowVersion">Anfangswert von RowVersion.</param>
@@ -307,17 +307,17 @@ namespace LightSwitchApplication.Implementation
         /// <param name="zahlungsziel">Anfangswert von Zahlungsziel.</param>
         /// <param name="kunden_Kundengruppe">Anfangswert von Kunden_Kundengruppe.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Kunden CreateKunden(int ID, byte[] rowVersion, string vorname, string nachnahme, decimal rabatt, int zahlungsziel, int kunden_Kundengruppe)
+        public static KundenItem CreateKundenItem(int ID, byte[] rowVersion, string vorname, string nachnahme, decimal rabatt, int zahlungsziel, int kunden_Kundengruppe)
         {
-            Kunden kunden = new Kunden();
-            kunden.Id = ID;
-            kunden.RowVersion = rowVersion;
-            kunden.Vorname = vorname;
-            kunden.Nachnahme = nachnahme;
-            kunden.Rabatt = rabatt;
-            kunden.Zahlungsziel = zahlungsziel;
-            kunden.Kunden_Kundengruppe = kunden_Kundengruppe;
-            return kunden;
+            KundenItem kundenItem = new KundenItem();
+            kundenItem.Id = ID;
+            kundenItem.RowVersion = rowVersion;
+            kundenItem.Vorname = vorname;
+            kundenItem.Nachnahme = nachnahme;
+            kundenItem.Rabatt = rabatt;
+            kundenItem.Zahlungsziel = zahlungsziel;
+            kundenItem.Kunden_Kundengruppe = kunden_Kundengruppe;
+            return kundenItem;
         }
         /// <summary>
         /// Im Schema sind keine Kommentare für die Eigenschaft "Id" vorhanden.
@@ -873,27 +873,27 @@ namespace LightSwitchApplication.Implementation
         partial void OnKunden_KundengruppeChanging(int value);
         partial void OnKunden_KundengruppeChanged();
         /// <summary>
-        /// Im Schema sind keine Kommentare für "Kundengruppe" vorhanden.
+        /// Im Schema sind keine Kommentare für "KundengruppenItem" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Kundengruppe Kundengruppe
+        public KundengruppenItem KundengruppenItem
         {
             get
             {
-                this.@__Kundengruppe.EnsureValueInitialized();
-                return this._Kundengruppe;
+                this.@__KundengruppenItem.EnsureValueInitialized();
+                return this._KundengruppenItem;
             }
             set
             {
-                Kundengruppe previous = this.Kundengruppe;
+                KundengruppenItem previous = this.KundengruppenItem;
                 if ((previous == value))
                 {
                     return;
                 }
                 if ((previous != null))
                 {
-                    this._Kundengruppe = null;
-                    this.@__Kundengruppe.OnValueSet();
+                    this._KundengruppenItem = null;
+                    this.@__KundengruppenItem.OnValueSet();
                     previous.Kunden.Remove(this);
                 }
                 if ((this.___Host != null))
@@ -907,18 +907,18 @@ namespace LightSwitchApplication.Implementation
                         this.Kunden_Kundengruppe = default(int);
                     }
                 }
-                this._Kundengruppe = value;
-                this.@__Kundengruppe.OnValueSet();
+                this._KundengruppenItem = value;
+                this.@__KundengruppenItem.OnValueSet();
                 if ((value != null))
                 {
                     value.@__Kunden.Add(this);
                 }
-                this.___OnPropertyChanged("Kundengruppe");
-                this.OnPropertyChanged("Kundengruppe");
+                this.___OnPropertyChanged("KundengruppenItem");
+                this.OnPropertyChanged("KundengruppenItem");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Kundengruppe _Kundengruppe;
+        private KundengruppenItem _KundengruppenItem;
         /// <summary>
         /// Im Schema sind keine Kommentare für "Adressen" vorhanden.
         /// </summary>
@@ -969,27 +969,27 @@ namespace LightSwitchApplication.Implementation
         }
     }
     /// <summary>
-    /// Im Schema sind keine Kommentare für "LightSwitchApplication.Kundengruppe" vorhanden.
+    /// Im Schema sind keine Kommentare für "LightSwitchApplication.KundengruppenItem" vorhanden.
     /// </summary>
     /// <KeyProperties>
     /// Id
     /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("KundengruppeSet")]
+    [global::System.Data.Services.Common.EntitySetAttribute("Kundengruppen")]
     [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
-    public partial class Kundengruppe : global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityBase, global::System.ComponentModel.INotifyPropertyChanged
+    public partial class KundengruppenItem : global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityBase, global::System.ComponentModel.INotifyPropertyChanged
     {
         /// <summary>
-        /// Erstellt ein neues Kundengruppe-Objekt.
+        /// Erstellt ein neues KundengruppenItem-Objekt.
         /// </summary>
         /// <param name="ID">Anfangswert von Id.</param>
         /// <param name="rowVersion">Anfangswert von RowVersion.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Kundengruppe CreateKundengruppe(int ID, byte[] rowVersion)
+        public static KundengruppenItem CreateKundengruppenItem(int ID, byte[] rowVersion)
         {
-            Kundengruppe kundengruppe = new Kundengruppe();
-            kundengruppe.Id = ID;
-            kundengruppe.RowVersion = rowVersion;
-            return kundengruppe;
+            KundengruppenItem kundengruppenItem = new KundengruppenItem();
+            kundengruppenItem.Id = ID;
+            kundengruppenItem.RowVersion = rowVersion;
+            return kundengruppenItem;
         }
         /// <summary>
         /// Im Schema sind keine Kommentare für die Eigenschaft "Id" vorhanden.
@@ -1080,7 +1080,7 @@ namespace LightSwitchApplication.Implementation
         /// Im Schema sind keine Kommentare für "Kunden" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceCollection<Kunden> Kunden
+        public global::System.Data.Services.Client.DataServiceCollection<KundenItem> Kunden
         {
             get
             {
@@ -1094,7 +1094,7 @@ namespace LightSwitchApplication.Implementation
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<Kunden> _Kunden = new global::System.Data.Services.Client.DataServiceCollection<Kunden>(null, global::System.Data.Services.Client.TrackingMode.None);
+        private global::System.Data.Services.Client.DataServiceCollection<KundenItem> _Kunden = new global::System.Data.Services.Client.DataServiceCollection<KundenItem>(null, global::System.Data.Services.Client.TrackingMode.None);
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -1107,17 +1107,17 @@ namespace LightSwitchApplication.Implementation
         }
     }
     /// <summary>
-    /// Im Schema sind keine Kommentare für "LightSwitchApplication.Artikelstamm" vorhanden.
+    /// Im Schema sind keine Kommentare für "LightSwitchApplication.ArtikelstammItem" vorhanden.
     /// </summary>
     /// <KeyProperties>
     /// Id
     /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("ArtikelstammSet")]
+    [global::System.Data.Services.Common.EntitySetAttribute("Artikelstamm")]
     [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
-    public partial class Artikelstamm : global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityBase, global::System.ComponentModel.INotifyPropertyChanged
+    public partial class ArtikelstammItem : global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityBase, global::System.ComponentModel.INotifyPropertyChanged
     {
         /// <summary>
-        /// Erstellt ein neues Artikelstamm-Objekt.
+        /// Erstellt ein neues ArtikelstammItem-Objekt.
         /// </summary>
         /// <param name="ID">Anfangswert von Id.</param>
         /// <param name="rowVersion">Anfangswert von RowVersion.</param>
@@ -1128,18 +1128,18 @@ namespace LightSwitchApplication.Implementation
         /// <param name="eK_pro_PK">Anfangswert von EK_pro_PK.</param>
         /// <param name="vK_pro_PK">Anfangswert von VK_pro_PK.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Artikelstamm CreateArtikelstamm(int ID, byte[] rowVersion, string artikelnummer, string artikelbeschreibung, string vertriebsname, int anzahl_PK, decimal eK_pro_PK, decimal vK_pro_PK)
+        public static ArtikelstammItem CreateArtikelstammItem(int ID, byte[] rowVersion, string artikelnummer, string artikelbeschreibung, string vertriebsname, int anzahl_PK, decimal eK_pro_PK, decimal vK_pro_PK)
         {
-            Artikelstamm artikelstamm = new Artikelstamm();
-            artikelstamm.Id = ID;
-            artikelstamm.RowVersion = rowVersion;
-            artikelstamm.Artikelnummer = artikelnummer;
-            artikelstamm.Artikelbeschreibung = artikelbeschreibung;
-            artikelstamm.Vertriebsname = vertriebsname;
-            artikelstamm.Anzahl_PK = anzahl_PK;
-            artikelstamm.EK_pro_PK = eK_pro_PK;
-            artikelstamm.VK_pro_PK = vK_pro_PK;
-            return artikelstamm;
+            ArtikelstammItem artikelstammItem = new ArtikelstammItem();
+            artikelstammItem.Id = ID;
+            artikelstammItem.RowVersion = rowVersion;
+            artikelstammItem.Artikelnummer = artikelnummer;
+            artikelstammItem.Artikelbeschreibung = artikelbeschreibung;
+            artikelstammItem.Vertriebsname = vertriebsname;
+            artikelstammItem.Anzahl_PK = anzahl_PK;
+            artikelstammItem.EK_pro_PK = eK_pro_PK;
+            artikelstammItem.VK_pro_PK = vK_pro_PK;
+            return artikelstammItem;
         }
         /// <summary>
         /// Im Schema sind keine Kommentare für die Eigenschaft "Id" vorhanden.
@@ -1409,24 +1409,24 @@ namespace LightSwitchApplication.Implementation
         partial void OnMargeChanging(global::System.Nullable<decimal> value);
         partial void OnMargeChanged();
         /// <summary>
-        /// Im Schema sind keine Kommentare für "ArtikellisteCollection" vorhanden.
+        /// Im Schema sind keine Kommentare für "ArtikellisteItem" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceCollection<Artikelliste> ArtikellisteCollection
+        public global::System.Data.Services.Client.DataServiceCollection<ArtikellisteItem> ArtikellisteItem
         {
             get
             {
-                this.@__ArtikellisteCollection.EnsureValueInitialized();
-                return this._ArtikellisteCollection;
+                this.@__ArtikellisteItem.EnsureValueInitialized();
+                return this._ArtikellisteItem;
             }
             set
             {
-                this._ArtikellisteCollection = value;
-                this.OnPropertyChanged("ArtikellisteCollection");
+                this._ArtikellisteItem = value;
+                this.OnPropertyChanged("ArtikellisteItem");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<Artikelliste> _ArtikellisteCollection = new global::System.Data.Services.Client.DataServiceCollection<Artikelliste>(null, global::System.Data.Services.Client.TrackingMode.None);
+        private global::System.Data.Services.Client.DataServiceCollection<ArtikellisteItem> _ArtikellisteItem = new global::System.Data.Services.Client.DataServiceCollection<ArtikellisteItem>(null, global::System.Data.Services.Client.TrackingMode.None);
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -1928,7 +1928,7 @@ namespace LightSwitchApplication.Implementation
         /// Im Schema sind keine Kommentare für "Kunde" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Kunden Kunde
+        public KundenItem Kunde
         {
             get
             {
@@ -1937,7 +1937,7 @@ namespace LightSwitchApplication.Implementation
             }
             set
             {
-                Kunden previous = this.Kunde;
+                KundenItem previous = this.Kunde;
                 if ((previous == value))
                 {
                     return;
@@ -1970,7 +1970,7 @@ namespace LightSwitchApplication.Implementation
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Kunden _Kunde;
+        private KundenItem _Kunde;
         /// <summary>
         /// Im Schema sind keine Kommentare für "BezahlartItem" vorhanden.
         /// </summary>
@@ -2022,7 +2022,7 @@ namespace LightSwitchApplication.Implementation
         /// Im Schema sind keine Kommentare für "ArtikellisteCollection" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceCollection<Artikelliste> ArtikellisteCollection
+        public global::System.Data.Services.Client.DataServiceCollection<ArtikellisteItem> ArtikellisteCollection
         {
             get
             {
@@ -2036,7 +2036,7 @@ namespace LightSwitchApplication.Implementation
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<Artikelliste> _ArtikellisteCollection = new global::System.Data.Services.Client.DataServiceCollection<Artikelliste>(null, global::System.Data.Services.Client.TrackingMode.None);
+        private global::System.Data.Services.Client.DataServiceCollection<ArtikellisteItem> _ArtikellisteCollection = new global::System.Data.Services.Client.DataServiceCollection<ArtikellisteItem>(null, global::System.Data.Services.Client.TrackingMode.None);
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -2049,33 +2049,35 @@ namespace LightSwitchApplication.Implementation
         }
     }
     /// <summary>
-    /// Im Schema sind keine Kommentare für "LightSwitchApplication.Artikelliste" vorhanden.
+    /// Im Schema sind keine Kommentare für "LightSwitchApplication.ArtikellisteItem" vorhanden.
     /// </summary>
     /// <KeyProperties>
     /// Id
     /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("ArtikellisteSet")]
+    [global::System.Data.Services.Common.EntitySetAttribute("Artikelliste")]
     [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
-    public partial class Artikelliste : global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityBase, global::System.ComponentModel.INotifyPropertyChanged
+    public partial class ArtikellisteItem : global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityBase, global::System.ComponentModel.INotifyPropertyChanged
     {
         /// <summary>
-        /// Erstellt ein neues Artikelliste-Objekt.
+        /// Erstellt ein neues ArtikellisteItem-Objekt.
         /// </summary>
         /// <param name="ID">Anfangswert von Id.</param>
         /// <param name="rowVersion">Anfangswert von RowVersion.</param>
         /// <param name="anzahl">Anfangswert von Anzahl.</param>
         /// <param name="rabatt">Anfangswert von Rabatt.</param>
+        /// <param name="positionIntern">Anfangswert von PositionIntern.</param>
         /// <param name="artikelliste_Rechnungen">Anfangswert von Artikelliste_Rechnungen.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Artikelliste CreateArtikelliste(int ID, byte[] rowVersion, int anzahl, decimal rabatt, int artikelliste_Rechnungen)
+        public static ArtikellisteItem CreateArtikellisteItem(int ID, byte[] rowVersion, int anzahl, decimal rabatt, int positionIntern, int artikelliste_Rechnungen)
         {
-            Artikelliste artikelliste = new Artikelliste();
-            artikelliste.Id = ID;
-            artikelliste.RowVersion = rowVersion;
-            artikelliste.Anzahl = anzahl;
-            artikelliste.Rabatt = rabatt;
-            artikelliste.Artikelliste_Rechnungen = artikelliste_Rechnungen;
-            return artikelliste;
+            ArtikellisteItem artikellisteItem = new ArtikellisteItem();
+            artikellisteItem.Id = ID;
+            artikellisteItem.RowVersion = rowVersion;
+            artikellisteItem.Anzahl = anzahl;
+            artikellisteItem.Rabatt = rabatt;
+            artikellisteItem.PositionIntern = positionIntern;
+            artikellisteItem.Artikelliste_Rechnungen = artikelliste_Rechnungen;
+            return artikellisteItem;
         }
         /// <summary>
         /// Im Schema sind keine Kommentare für die Eigenschaft "Id" vorhanden.
@@ -2189,6 +2191,32 @@ namespace LightSwitchApplication.Implementation
         partial void OnRabattChanging(decimal value);
         partial void OnRabattChanged();
         /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "PositionIntern" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public int PositionIntern
+        {
+            get
+            {
+                return this._PositionIntern;
+            }
+            set
+            {
+                this.OnPositionInternChanging(value);
+                if (object.Equals(this.PositionIntern, value))
+                {
+                    return;
+                }
+                this._PositionIntern = value;
+                this.OnPositionInternChanged();
+                this.OnPropertyChanged("PositionIntern");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private int _PositionIntern;
+        partial void OnPositionInternChanging(int value);
+        partial void OnPositionInternChanged();
+        /// <summary>
         /// Im Schema sind keine Kommentare für die Eigenschaft "Artikelliste_Rechnungen" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -2241,28 +2269,28 @@ namespace LightSwitchApplication.Implementation
         partial void OnArtikelliste_ArtikelstammChanging(global::System.Nullable<int> value);
         partial void OnArtikelliste_ArtikelstammChanged();
         /// <summary>
-        /// Im Schema sind keine Kommentare für "Artikelstamm" vorhanden.
+        /// Im Schema sind keine Kommentare für "ArtikelstammItem" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Artikelstamm Artikelstamm
+        public ArtikelstammItem ArtikelstammItem
         {
             get
             {
-                this.@__Artikelstamm.EnsureValueInitialized();
-                return this._Artikelstamm;
+                this.@__ArtikelstammItem.EnsureValueInitialized();
+                return this._ArtikelstammItem;
             }
             set
             {
-                Artikelstamm previous = this.Artikelstamm;
+                ArtikelstammItem previous = this.ArtikelstammItem;
                 if ((previous == value))
                 {
                     return;
                 }
                 if ((previous != null))
                 {
-                    this._Artikelstamm = null;
-                    this.@__Artikelstamm.OnValueSet();
-                    previous.ArtikellisteCollection.Remove(this);
+                    this._ArtikelstammItem = null;
+                    this.@__ArtikelstammItem.OnValueSet();
+                    previous.ArtikellisteItem.Remove(this);
                 }
                 if ((this.___Host != null))
                 {
@@ -2275,18 +2303,18 @@ namespace LightSwitchApplication.Implementation
                         this.Artikelliste_Artikelstamm = default(global::System.Nullable<int>);
                     }
                 }
-                this._Artikelstamm = value;
-                this.@__Artikelstamm.OnValueSet();
+                this._ArtikelstammItem = value;
+                this.@__ArtikelstammItem.OnValueSet();
                 if ((value != null))
                 {
-                    value.@__ArtikellisteCollection.Add(this);
+                    value.@__ArtikellisteItem.Add(this);
                 }
-                this.___OnPropertyChanged("Artikelstamm");
-                this.OnPropertyChanged("Artikelstamm");
+                this.___OnPropertyChanged("ArtikelstammItem");
+                this.OnPropertyChanged("ArtikelstammItem");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Artikelstamm _Artikelstamm;
+        private ArtikelstammItem _ArtikelstammItem;
         /// <summary>
         /// Im Schema sind keine Kommentare für "Rechnungen" vorhanden.
         /// </summary>
@@ -2346,17 +2374,17 @@ namespace LightSwitchApplication.Implementation
         }
     }
     /// <summary>
-    /// Im Schema sind keine Kommentare für "LightSwitchApplication.Firmendaten" vorhanden.
+    /// Im Schema sind keine Kommentare für "LightSwitchApplication.FirmendatenItem" vorhanden.
     /// </summary>
     /// <KeyProperties>
     /// Id
     /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("FirmendatenSet")]
+    [global::System.Data.Services.Common.EntitySetAttribute("Firmendaten")]
     [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
-    public partial class Firmendaten : global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityBase, global::System.ComponentModel.INotifyPropertyChanged
+    public partial class FirmendatenItem : global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityBase, global::System.ComponentModel.INotifyPropertyChanged
     {
         /// <summary>
-        /// Erstellt ein neues Firmendaten-Objekt.
+        /// Erstellt ein neues FirmendatenItem-Objekt.
         /// </summary>
         /// <param name="ID">Anfangswert von Id.</param>
         /// <param name="rowVersion">Anfangswert von RowVersion.</param>
@@ -2367,18 +2395,18 @@ namespace LightSwitchApplication.Implementation
         /// <param name="stadt">Anfangswert von Stadt.</param>
         /// <param name="land">Anfangswert von Land.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Firmendaten CreateFirmendaten(int ID, byte[] rowVersion, string name, string straße, string hausnummer, string pLZ, string stadt, string land)
+        public static FirmendatenItem CreateFirmendatenItem(int ID, byte[] rowVersion, string name, string straße, string hausnummer, string pLZ, string stadt, string land)
         {
-            Firmendaten firmendaten = new Firmendaten();
-            firmendaten.Id = ID;
-            firmendaten.RowVersion = rowVersion;
-            firmendaten.Name = name;
-            firmendaten.Straße = straße;
-            firmendaten.Hausnummer = hausnummer;
-            firmendaten.PLZ = pLZ;
-            firmendaten.Stadt = stadt;
-            firmendaten.Land = land;
-            return firmendaten;
+            FirmendatenItem firmendatenItem = new FirmendatenItem();
+            firmendatenItem.Id = ID;
+            firmendatenItem.RowVersion = rowVersion;
+            firmendatenItem.Name = name;
+            firmendatenItem.Straße = straße;
+            firmendatenItem.Hausnummer = hausnummer;
+            firmendatenItem.PLZ = pLZ;
+            firmendatenItem.Stadt = stadt;
+            firmendatenItem.Land = land;
+            return firmendatenItem;
         }
         /// <summary>
         /// Im Schema sind keine Kommentare für die Eigenschaft "Id" vorhanden.
@@ -2711,17 +2739,17 @@ namespace LightSwitchApplication.Implementation
         }
     }
     /// <summary>
-    /// Im Schema sind keine Kommentare für "LightSwitchApplication.Meine_Daten" vorhanden.
+    /// Im Schema sind keine Kommentare für "LightSwitchApplication.Meine_DatenItem" vorhanden.
     /// </summary>
     /// <KeyProperties>
     /// Id
     /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("Meine_DatenSet")]
+    [global::System.Data.Services.Common.EntitySetAttribute("Meine_Daten")]
     [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
-    public partial class Meine_Daten : global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityBase, global::System.ComponentModel.INotifyPropertyChanged
+    public partial class Meine_DatenItem : global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityBase, global::System.ComponentModel.INotifyPropertyChanged
     {
         /// <summary>
-        /// Erstellt ein neues Meine_Daten-Objekt.
+        /// Erstellt ein neues Meine_DatenItem-Objekt.
         /// </summary>
         /// <param name="ID">Anfangswert von Id.</param>
         /// <param name="rowVersion">Anfangswert von RowVersion.</param>
@@ -2733,19 +2761,19 @@ namespace LightSwitchApplication.Implementation
         /// <param name="selfLand">Anfangswert von selfLand.</param>
         /// <param name="selfUSTID">Anfangswert von selfUSTID.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Meine_Daten CreateMeine_Daten(int ID, byte[] rowVersion, string selfFirmenname, string selfStraße, string selfHausnummer, string selfPLZ, string selfStadt, string selfLand, string selfUSTID)
+        public static Meine_DatenItem CreateMeine_DatenItem(int ID, byte[] rowVersion, string selfFirmenname, string selfStraße, string selfHausnummer, string selfPLZ, string selfStadt, string selfLand, string selfUSTID)
         {
-            Meine_Daten meine_Daten = new Meine_Daten();
-            meine_Daten.Id = ID;
-            meine_Daten.RowVersion = rowVersion;
-            meine_Daten.selfFirmenname = selfFirmenname;
-            meine_Daten.selfStraße = selfStraße;
-            meine_Daten.selfHausnummer = selfHausnummer;
-            meine_Daten.selfPLZ = selfPLZ;
-            meine_Daten.selfStadt = selfStadt;
-            meine_Daten.selfLand = selfLand;
-            meine_Daten.selfUSTID = selfUSTID;
-            return meine_Daten;
+            Meine_DatenItem meine_DatenItem = new Meine_DatenItem();
+            meine_DatenItem.Id = ID;
+            meine_DatenItem.RowVersion = rowVersion;
+            meine_DatenItem.selfFirmenname = selfFirmenname;
+            meine_DatenItem.selfStraße = selfStraße;
+            meine_DatenItem.selfHausnummer = selfHausnummer;
+            meine_DatenItem.selfPLZ = selfPLZ;
+            meine_DatenItem.selfStadt = selfStadt;
+            meine_DatenItem.selfLand = selfLand;
+            meine_DatenItem.selfUSTID = selfUSTID;
+            return meine_DatenItem;
         }
         /// <summary>
         /// Im Schema sind keine Kommentare für die Eigenschaft "Id" vorhanden.
@@ -3005,7 +3033,7 @@ namespace LightSwitchApplication.Implementation
     /// <KeyProperties>
     /// Id
     /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("AdressenSet")]
+    [global::System.Data.Services.Common.EntitySetAttribute("LieferAdresse")]
     [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
     public partial class AdressenSetItem : global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityBase, global::System.ComponentModel.INotifyPropertyChanged
     {
@@ -3305,7 +3333,7 @@ namespace LightSwitchApplication.Implementation
         /// Im Schema sind keine Kommentare für "KundenRechnungsadresse" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Kunden KundenRechnungsadresse
+        public KundenItem KundenRechnungsadresse
         {
             get
             {
@@ -3314,7 +3342,7 @@ namespace LightSwitchApplication.Implementation
             }
             set
             {
-                Kunden previous = this.KundenRechnungsadresse;
+                KundenItem previous = this.KundenRechnungsadresse;
                 if ((previous == value))
                 {
                     return;
@@ -3347,7 +3375,7 @@ namespace LightSwitchApplication.Implementation
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Kunden _KundenRechnungsadresse;
+        private KundenItem _KundenRechnungsadresse;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]

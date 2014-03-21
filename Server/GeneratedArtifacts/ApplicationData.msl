@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
   <EntityContainerMapping CdmEntityContainer="ApplicationDataObjectContext" StorageEntityContainer="ApplicationDataStore">
-    <EntitySetMapping Name="KundenSet">
-      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Kunden)">
-        <MappingFragment StoreEntitySet="KundenSet">
+    <EntitySetMapping Name="Kunden">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.KundenItem)">
+        <MappingFragment StoreEntitySet="Kunden">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
           <ScalarProperty Name="Vorname" ColumnName="Vorname" />
@@ -28,18 +28,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="KundengruppeSet">
-      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Kundengruppe)">
-        <MappingFragment StoreEntitySet="KundengruppeSet">
+    <EntitySetMapping Name="Kundengruppen">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.KundengruppenItem)">
+        <MappingFragment StoreEntitySet="Kundengruppen">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
           <ScalarProperty Name="Bezeichnung" ColumnName="Bezeichnung" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ArtikelstammSet">
-      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Artikelstamm)">
-        <MappingFragment StoreEntitySet="ArtikelstammSet">
+    <EntitySetMapping Name="Artikelstamm">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.ArtikelstammItem)">
+        <MappingFragment StoreEntitySet="Artikelstamm">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
           <ScalarProperty Name="Artikelnummer" ColumnName="Artikelnummer" />
@@ -76,21 +76,22 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ArtikellisteSet">
-      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Artikelliste)">
-        <MappingFragment StoreEntitySet="ArtikellisteSet">
+    <EntitySetMapping Name="Artikelliste">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.ArtikellisteItem)">
+        <MappingFragment StoreEntitySet="Artikelliste">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
           <ScalarProperty Name="Artikelliste_Artikelstamm" ColumnName="Artikelliste_Artikelstamm" />
           <ScalarProperty Name="Anzahl" ColumnName="Anzahl" />
           <ScalarProperty Name="Rabatt" ColumnName="Rabatt" />
           <ScalarProperty Name="Artikelliste_Rechnungen" ColumnName="Artikelliste_Rechnungen" />
+          <ScalarProperty Name="PositionIntern" ColumnName="PositionIntern" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="FirmendatenSet">
-      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Firmendaten)">
-        <MappingFragment StoreEntitySet="FirmendatenSet">
+    <EntitySetMapping Name="Firmendaten">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.FirmendatenItem)">
+        <MappingFragment StoreEntitySet="Firmendaten">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
           <ScalarProperty Name="Firmenname" ColumnName="Firmenname" />
@@ -106,9 +107,9 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Meine_DatenSet">
-      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Meine_Daten)">
-        <MappingFragment StoreEntitySet="Meine_DatenSet">
+    <EntitySetMapping Name="Meine_Daten">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Meine_DatenItem)">
+        <MappingFragment StoreEntitySet="Meine_Daten">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
           <ScalarProperty Name="selfFirmenname" ColumnName="selfFirmenname" />
@@ -121,9 +122,9 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="AdressenSet">
+    <EntitySetMapping Name="LieferAdresse">
       <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.AdressenSetItem)">
-        <MappingFragment StoreEntitySet="AdressenSet">
+        <MappingFragment StoreEntitySet="LieferAdresse">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
           <ScalarProperty Name="Name" ColumnName="Name" />

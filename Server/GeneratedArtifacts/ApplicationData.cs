@@ -19,11 +19,11 @@ using System.Xml.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM-Beziehungsmetadaten
 
-[assembly: EdmRelationshipAttribute("LightSwitchApplication", "Artikelliste_Rechnungen", "Rechnungen", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApplicationData.Implementation.Rechnungen), "Artikelliste", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.Artikelliste), true)]
-[assembly: EdmRelationshipAttribute("LightSwitchApplication", "Kunden_Kundengruppe", "Kundengruppe", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApplicationData.Implementation.Kundengruppe), "Kunden", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.Kunden), true)]
-[assembly: EdmRelationshipAttribute("LightSwitchApplication", "Rechnungen_Kunden", "Kunden", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApplicationData.Implementation.Kunden), "Rechnungen", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.Rechnungen), true)]
-[assembly: EdmRelationshipAttribute("LightSwitchApplication", "Artikelliste_Artikelstamm", "Artikelstamm", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ApplicationData.Implementation.Artikelstamm), "Artikelliste", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.Artikelliste), true)]
-[assembly: EdmRelationshipAttribute("LightSwitchApplication", "Kunden_AdressenSetItem", "Kunden", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApplicationData.Implementation.Kunden), "AdressenSetItem", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.AdressenSetItem), true)]
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "ArtikellisteItem_Rechnungen", "Rechnungen", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApplicationData.Implementation.Rechnungen), "ArtikellisteItem", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.ArtikellisteItem), true)]
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "KundenItem_KundengruppenItem", "KundengruppenItem", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApplicationData.Implementation.KundengruppenItem), "KundenItem", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.KundenItem), true)]
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "Rechnungen_KundenItem", "KundenItem", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApplicationData.Implementation.KundenItem), "Rechnungen", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.Rechnungen), true)]
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "ArtikellisteItem_ArtikelstammItem", "ArtikelstammItem", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ApplicationData.Implementation.ArtikelstammItem), "ArtikellisteItem", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.ArtikellisteItem), true)]
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "KundenItem_AdressenSetItem", "KundenItem", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApplicationData.Implementation.KundenItem), "AdressenSetItem", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.AdressenSetItem), true)]
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "Rechnungen_BezahlartItem", "BezahlartItem", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApplicationData.Implementation.BezahlartItem), "Rechnungen", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.Rechnungen), true)]
 
 #endregion
@@ -76,50 +76,50 @@ namespace ApplicationData.Implementation
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.
         /// </summary>
-        public ObjectSet<Kunden> KundenSet
+        public ObjectSet<KundenItem> Kunden
         {
             get
             {
-                if ((_KundenSet == null))
+                if ((_Kunden == null))
                 {
-                    _KundenSet = base.CreateObjectSet<Kunden>("KundenSet");
+                    _Kunden = base.CreateObjectSet<KundenItem>("Kunden");
                 }
-                return _KundenSet;
+                return _Kunden;
             }
         }
-        private ObjectSet<Kunden> _KundenSet;
+        private ObjectSet<KundenItem> _Kunden;
     
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.
         /// </summary>
-        public ObjectSet<Kundengruppe> KundengruppeSet
+        public ObjectSet<KundengruppenItem> Kundengruppen
         {
             get
             {
-                if ((_KundengruppeSet == null))
+                if ((_Kundengruppen == null))
                 {
-                    _KundengruppeSet = base.CreateObjectSet<Kundengruppe>("KundengruppeSet");
+                    _Kundengruppen = base.CreateObjectSet<KundengruppenItem>("Kundengruppen");
                 }
-                return _KundengruppeSet;
+                return _Kundengruppen;
             }
         }
-        private ObjectSet<Kundengruppe> _KundengruppeSet;
+        private ObjectSet<KundengruppenItem> _Kundengruppen;
     
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.
         /// </summary>
-        public ObjectSet<Artikelstamm> ArtikelstammSet
+        public ObjectSet<ArtikelstammItem> Artikelstamm
         {
             get
             {
-                if ((_ArtikelstammSet == null))
+                if ((_Artikelstamm == null))
                 {
-                    _ArtikelstammSet = base.CreateObjectSet<Artikelstamm>("ArtikelstammSet");
+                    _Artikelstamm = base.CreateObjectSet<ArtikelstammItem>("Artikelstamm");
                 }
-                return _ArtikelstammSet;
+                return _Artikelstamm;
             }
         }
-        private ObjectSet<Artikelstamm> _ArtikelstammSet;
+        private ObjectSet<ArtikelstammItem> _Artikelstamm;
     
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.
@@ -140,66 +140,66 @@ namespace ApplicationData.Implementation
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.
         /// </summary>
-        public ObjectSet<Artikelliste> ArtikellisteSet
+        public ObjectSet<ArtikellisteItem> Artikelliste
         {
             get
             {
-                if ((_ArtikellisteSet == null))
+                if ((_Artikelliste == null))
                 {
-                    _ArtikellisteSet = base.CreateObjectSet<Artikelliste>("ArtikellisteSet");
+                    _Artikelliste = base.CreateObjectSet<ArtikellisteItem>("Artikelliste");
                 }
-                return _ArtikellisteSet;
+                return _Artikelliste;
             }
         }
-        private ObjectSet<Artikelliste> _ArtikellisteSet;
+        private ObjectSet<ArtikellisteItem> _Artikelliste;
     
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.
         /// </summary>
-        public ObjectSet<Firmendaten> FirmendatenSet
+        public ObjectSet<FirmendatenItem> Firmendaten
         {
             get
             {
-                if ((_FirmendatenSet == null))
+                if ((_Firmendaten == null))
                 {
-                    _FirmendatenSet = base.CreateObjectSet<Firmendaten>("FirmendatenSet");
+                    _Firmendaten = base.CreateObjectSet<FirmendatenItem>("Firmendaten");
                 }
-                return _FirmendatenSet;
+                return _Firmendaten;
             }
         }
-        private ObjectSet<Firmendaten> _FirmendatenSet;
+        private ObjectSet<FirmendatenItem> _Firmendaten;
     
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.
         /// </summary>
-        public ObjectSet<Meine_Daten> Meine_DatenSet
+        public ObjectSet<Meine_DatenItem> Meine_Daten
         {
             get
             {
-                if ((_Meine_DatenSet == null))
+                if ((_Meine_Daten == null))
                 {
-                    _Meine_DatenSet = base.CreateObjectSet<Meine_Daten>("Meine_DatenSet");
+                    _Meine_Daten = base.CreateObjectSet<Meine_DatenItem>("Meine_Daten");
                 }
-                return _Meine_DatenSet;
+                return _Meine_Daten;
             }
         }
-        private ObjectSet<Meine_Daten> _Meine_DatenSet;
+        private ObjectSet<Meine_DatenItem> _Meine_Daten;
     
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.
         /// </summary>
-        public ObjectSet<AdressenSetItem> AdressenSet
+        public ObjectSet<AdressenSetItem> LieferAdresse
         {
             get
             {
-                if ((_AdressenSet == null))
+                if ((_LieferAdresse == null))
                 {
-                    _AdressenSet = base.CreateObjectSet<AdressenSetItem>("AdressenSet");
+                    _LieferAdresse = base.CreateObjectSet<AdressenSetItem>("LieferAdresse");
                 }
-                return _AdressenSet;
+                return _LieferAdresse;
             }
         }
-        private ObjectSet<AdressenSetItem> _AdressenSet;
+        private ObjectSet<AdressenSetItem> _LieferAdresse;
     
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.
@@ -222,27 +222,27 @@ namespace ApplicationData.Implementation
         #region AddTo-Methoden
     
         /// <summary>
-        /// Veraltete Methode zum Hinzufügen eines neuen Objekts zum EntitySet 'KundenSet'. Verwenden Sie stattdessen die Methode '.Add' der zugeordneten Eigenschaft 'ObjectSet&lt;T&gt;'.
+        /// Veraltete Methode zum Hinzufügen eines neuen Objekts zum EntitySet 'Kunden'. Verwenden Sie stattdessen die Methode '.Add' der zugeordneten Eigenschaft 'ObjectSet&lt;T&gt;'.
         /// </summary>
-        public void AddToKundenSet(Kunden kunden)
+        public void AddToKunden(KundenItem kundenItem)
         {
-            base.AddObject("KundenSet", kunden);
+            base.AddObject("Kunden", kundenItem);
         }
     
         /// <summary>
-        /// Veraltete Methode zum Hinzufügen eines neuen Objekts zum EntitySet 'KundengruppeSet'. Verwenden Sie stattdessen die Methode '.Add' der zugeordneten Eigenschaft 'ObjectSet&lt;T&gt;'.
+        /// Veraltete Methode zum Hinzufügen eines neuen Objekts zum EntitySet 'Kundengruppen'. Verwenden Sie stattdessen die Methode '.Add' der zugeordneten Eigenschaft 'ObjectSet&lt;T&gt;'.
         /// </summary>
-        public void AddToKundengruppeSet(Kundengruppe kundengruppe)
+        public void AddToKundengruppen(KundengruppenItem kundengruppenItem)
         {
-            base.AddObject("KundengruppeSet", kundengruppe);
+            base.AddObject("Kundengruppen", kundengruppenItem);
         }
     
         /// <summary>
-        /// Veraltete Methode zum Hinzufügen eines neuen Objekts zum EntitySet 'ArtikelstammSet'. Verwenden Sie stattdessen die Methode '.Add' der zugeordneten Eigenschaft 'ObjectSet&lt;T&gt;'.
+        /// Veraltete Methode zum Hinzufügen eines neuen Objekts zum EntitySet 'Artikelstamm'. Verwenden Sie stattdessen die Methode '.Add' der zugeordneten Eigenschaft 'ObjectSet&lt;T&gt;'.
         /// </summary>
-        public void AddToArtikelstammSet(Artikelstamm artikelstamm)
+        public void AddToArtikelstamm(ArtikelstammItem artikelstammItem)
         {
-            base.AddObject("ArtikelstammSet", artikelstamm);
+            base.AddObject("Artikelstamm", artikelstammItem);
         }
     
         /// <summary>
@@ -254,35 +254,35 @@ namespace ApplicationData.Implementation
         }
     
         /// <summary>
-        /// Veraltete Methode zum Hinzufügen eines neuen Objekts zum EntitySet 'ArtikellisteSet'. Verwenden Sie stattdessen die Methode '.Add' der zugeordneten Eigenschaft 'ObjectSet&lt;T&gt;'.
+        /// Veraltete Methode zum Hinzufügen eines neuen Objekts zum EntitySet 'Artikelliste'. Verwenden Sie stattdessen die Methode '.Add' der zugeordneten Eigenschaft 'ObjectSet&lt;T&gt;'.
         /// </summary>
-        public void AddToArtikellisteSet(Artikelliste artikelliste)
+        public void AddToArtikelliste(ArtikellisteItem artikellisteItem)
         {
-            base.AddObject("ArtikellisteSet", artikelliste);
+            base.AddObject("Artikelliste", artikellisteItem);
         }
     
         /// <summary>
-        /// Veraltete Methode zum Hinzufügen eines neuen Objekts zum EntitySet 'FirmendatenSet'. Verwenden Sie stattdessen die Methode '.Add' der zugeordneten Eigenschaft 'ObjectSet&lt;T&gt;'.
+        /// Veraltete Methode zum Hinzufügen eines neuen Objekts zum EntitySet 'Firmendaten'. Verwenden Sie stattdessen die Methode '.Add' der zugeordneten Eigenschaft 'ObjectSet&lt;T&gt;'.
         /// </summary>
-        public void AddToFirmendatenSet(Firmendaten firmendaten)
+        public void AddToFirmendaten(FirmendatenItem firmendatenItem)
         {
-            base.AddObject("FirmendatenSet", firmendaten);
+            base.AddObject("Firmendaten", firmendatenItem);
         }
     
         /// <summary>
-        /// Veraltete Methode zum Hinzufügen eines neuen Objekts zum EntitySet 'Meine_DatenSet'. Verwenden Sie stattdessen die Methode '.Add' der zugeordneten Eigenschaft 'ObjectSet&lt;T&gt;'.
+        /// Veraltete Methode zum Hinzufügen eines neuen Objekts zum EntitySet 'Meine_Daten'. Verwenden Sie stattdessen die Methode '.Add' der zugeordneten Eigenschaft 'ObjectSet&lt;T&gt;'.
         /// </summary>
-        public void AddToMeine_DatenSet(Meine_Daten meine_Daten)
+        public void AddToMeine_Daten(Meine_DatenItem meine_DatenItem)
         {
-            base.AddObject("Meine_DatenSet", meine_Daten);
+            base.AddObject("Meine_Daten", meine_DatenItem);
         }
     
         /// <summary>
-        /// Veraltete Methode zum Hinzufügen eines neuen Objekts zum EntitySet 'AdressenSet'. Verwenden Sie stattdessen die Methode '.Add' der zugeordneten Eigenschaft 'ObjectSet&lt;T&gt;'.
+        /// Veraltete Methode zum Hinzufügen eines neuen Objekts zum EntitySet 'LieferAdresse'. Verwenden Sie stattdessen die Methode '.Add' der zugeordneten Eigenschaft 'ObjectSet&lt;T&gt;'.
         /// </summary>
-        public void AddToAdressenSet(AdressenSetItem adressenSetItem)
+        public void AddToLieferAdresse(AdressenSetItem adressenSetItem)
         {
-            base.AddObject("AdressenSet", adressenSetItem);
+            base.AddObject("LieferAdresse", adressenSetItem);
         }
     
         /// <summary>
@@ -594,16 +594,16 @@ namespace ApplicationData.Implementation
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "Kunden_AdressenSetItem", "Kunden")]
-        public Kunden KundenRechnungsadresse
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "KundenItem_AdressenSetItem", "KundenItem")]
+        public KundenItem KundenRechnungsadresse
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Kunden>("LightSwitchApplication.Kunden_AdressenSetItem", "Kunden").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<KundenItem>("LightSwitchApplication.KundenItem_AdressenSetItem", "KundenItem").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Kunden>("LightSwitchApplication.Kunden_AdressenSetItem", "Kunden").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<KundenItem>("LightSwitchApplication.KundenItem_AdressenSetItem", "KundenItem").Value = value;
             }
         }
         /// <summary>
@@ -611,17 +611,17 @@ namespace ApplicationData.Implementation
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<Kunden> KundenRechnungsadresseReference
+        public EntityReference<KundenItem> KundenRechnungsadresseReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Kunden>("LightSwitchApplication.Kunden_AdressenSetItem", "Kunden");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<KundenItem>("LightSwitchApplication.KundenItem_AdressenSetItem", "KundenItem");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Kunden>("LightSwitchApplication.Kunden_AdressenSetItem", "Kunden", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<KundenItem>("LightSwitchApplication.KundenItem_AdressenSetItem", "KundenItem", value);
                 }
             }
         }
@@ -633,30 +633,32 @@ namespace ApplicationData.Implementation
     /// <summary>
     /// Keine Dokumentation für Metadaten verfügbar.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="Artikelliste")]
+    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="ArtikellisteItem")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class Artikelliste : EntityObject
+    public partial class ArtikellisteItem : EntityObject
     {
         #region Factory-Methode
     
         /// <summary>
-        /// Erstellt ein neues Artikelliste-Objekt.
+        /// Erstellt ein neues ArtikellisteItem-Objekt.
         /// </summary>
         /// <param name="id">Anfangswert der Eigenschaft Id.</param>
         /// <param name="rowVersion">Anfangswert der Eigenschaft RowVersion.</param>
         /// <param name="anzahl">Anfangswert der Eigenschaft Anzahl.</param>
         /// <param name="rabatt">Anfangswert der Eigenschaft Rabatt.</param>
+        /// <param name="positionIntern">Anfangswert der Eigenschaft PositionIntern.</param>
         /// <param name="artikelliste_Rechnungen">Anfangswert der Eigenschaft Artikelliste_Rechnungen.</param>
-        public static Artikelliste CreateArtikelliste(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.Int32 anzahl, global::System.Decimal rabatt, global::System.Int32 artikelliste_Rechnungen)
+        public static ArtikellisteItem CreateArtikellisteItem(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.Int32 anzahl, global::System.Decimal rabatt, global::System.Int32 positionIntern, global::System.Int32 artikelliste_Rechnungen)
         {
-            Artikelliste artikelliste = new Artikelliste();
-            artikelliste.Id = id;
-            artikelliste.RowVersion = rowVersion;
-            artikelliste.Anzahl = anzahl;
-            artikelliste.Rabatt = rabatt;
-            artikelliste.Artikelliste_Rechnungen = artikelliste_Rechnungen;
-            return artikelliste;
+            ArtikellisteItem artikellisteItem = new ArtikellisteItem();
+            artikellisteItem.Id = id;
+            artikellisteItem.RowVersion = rowVersion;
+            artikellisteItem.Anzahl = anzahl;
+            artikellisteItem.Rabatt = rabatt;
+            artikellisteItem.PositionIntern = positionIntern;
+            artikellisteItem.Artikelliste_Rechnungen = artikelliste_Rechnungen;
+            return artikellisteItem;
         }
 
         #endregion
@@ -767,6 +769,30 @@ namespace ApplicationData.Implementation
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
+        public global::System.Int32 PositionIntern
+        {
+            get
+            {
+                return _PositionIntern;
+            }
+            set
+            {
+                OnPositionInternChanging(value);
+                ReportPropertyChanging("PositionIntern");
+                _PositionIntern = value;
+                ReportPropertyChanged("PositionIntern");
+                OnPositionInternChanged();
+            }
+        }
+        private global::System.Int32 _PositionIntern;
+        partial void OnPositionInternChanging(global::System.Int32 value);
+        partial void OnPositionInternChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.Int32 Artikelliste_Rechnungen
         {
             get
@@ -821,16 +847,16 @@ namespace ApplicationData.Implementation
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "Artikelliste_Artikelstamm", "Artikelstamm")]
-        public Artikelstamm Artikelstamm
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "ArtikellisteItem_ArtikelstammItem", "ArtikelstammItem")]
+        public ArtikelstammItem ArtikelstammItem
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Artikelstamm>("LightSwitchApplication.Artikelliste_Artikelstamm", "Artikelstamm").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ArtikelstammItem>("LightSwitchApplication.ArtikellisteItem_ArtikelstammItem", "ArtikelstammItem").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Artikelstamm>("LightSwitchApplication.Artikelliste_Artikelstamm", "Artikelstamm").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ArtikelstammItem>("LightSwitchApplication.ArtikellisteItem_ArtikelstammItem", "ArtikelstammItem").Value = value;
             }
         }
         /// <summary>
@@ -838,17 +864,17 @@ namespace ApplicationData.Implementation
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<Artikelstamm> ArtikelstammReference
+        public EntityReference<ArtikelstammItem> ArtikelstammItemReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Artikelstamm>("LightSwitchApplication.Artikelliste_Artikelstamm", "Artikelstamm");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ArtikelstammItem>("LightSwitchApplication.ArtikellisteItem_ArtikelstammItem", "ArtikelstammItem");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Artikelstamm>("LightSwitchApplication.Artikelliste_Artikelstamm", "Artikelstamm", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ArtikelstammItem>("LightSwitchApplication.ArtikellisteItem_ArtikelstammItem", "ArtikelstammItem", value);
                 }
             }
         }
@@ -859,16 +885,16 @@ namespace ApplicationData.Implementation
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "Artikelliste_Rechnungen", "Rechnungen")]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "ArtikellisteItem_Rechnungen", "Rechnungen")]
         public Rechnungen Rechnungen
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Rechnungen>("LightSwitchApplication.Artikelliste_Rechnungen", "Rechnungen").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Rechnungen>("LightSwitchApplication.ArtikellisteItem_Rechnungen", "Rechnungen").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Rechnungen>("LightSwitchApplication.Artikelliste_Rechnungen", "Rechnungen").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Rechnungen>("LightSwitchApplication.ArtikellisteItem_Rechnungen", "Rechnungen").Value = value;
             }
         }
         /// <summary>
@@ -880,13 +906,13 @@ namespace ApplicationData.Implementation
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Rechnungen>("LightSwitchApplication.Artikelliste_Rechnungen", "Rechnungen");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Rechnungen>("LightSwitchApplication.ArtikellisteItem_Rechnungen", "Rechnungen");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Rechnungen>("LightSwitchApplication.Artikelliste_Rechnungen", "Rechnungen", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Rechnungen>("LightSwitchApplication.ArtikellisteItem_Rechnungen", "Rechnungen", value);
                 }
             }
         }
@@ -898,15 +924,15 @@ namespace ApplicationData.Implementation
     /// <summary>
     /// Keine Dokumentation für Metadaten verfügbar.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="Artikelstamm")]
+    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="ArtikelstammItem")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class Artikelstamm : EntityObject
+    public partial class ArtikelstammItem : EntityObject
     {
         #region Factory-Methode
     
         /// <summary>
-        /// Erstellt ein neues Artikelstamm-Objekt.
+        /// Erstellt ein neues ArtikelstammItem-Objekt.
         /// </summary>
         /// <param name="id">Anfangswert der Eigenschaft Id.</param>
         /// <param name="rowVersion">Anfangswert der Eigenschaft RowVersion.</param>
@@ -916,18 +942,18 @@ namespace ApplicationData.Implementation
         /// <param name="anzahl_PK">Anfangswert der Eigenschaft Anzahl_PK.</param>
         /// <param name="eK_pro_PK">Anfangswert der Eigenschaft EK_pro_PK.</param>
         /// <param name="vK_pro_PK">Anfangswert der Eigenschaft VK_pro_PK.</param>
-        public static Artikelstamm CreateArtikelstamm(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.String artikelnummer, global::System.String artikelbeschreibung, global::System.String vertriebsname, global::System.Int32 anzahl_PK, global::System.Decimal eK_pro_PK, global::System.Decimal vK_pro_PK)
+        public static ArtikelstammItem CreateArtikelstammItem(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.String artikelnummer, global::System.String artikelbeschreibung, global::System.String vertriebsname, global::System.Int32 anzahl_PK, global::System.Decimal eK_pro_PK, global::System.Decimal vK_pro_PK)
         {
-            Artikelstamm artikelstamm = new Artikelstamm();
-            artikelstamm.Id = id;
-            artikelstamm.RowVersion = rowVersion;
-            artikelstamm.Artikelnummer = artikelnummer;
-            artikelstamm.Artikelbeschreibung = artikelbeschreibung;
-            artikelstamm.Vertriebsname = vertriebsname;
-            artikelstamm.Anzahl_PK = anzahl_PK;
-            artikelstamm.EK_pro_PK = eK_pro_PK;
-            artikelstamm.VK_pro_PK = vK_pro_PK;
-            return artikelstamm;
+            ArtikelstammItem artikelstammItem = new ArtikelstammItem();
+            artikelstammItem.Id = id;
+            artikelstammItem.RowVersion = rowVersion;
+            artikelstammItem.Artikelnummer = artikelnummer;
+            artikelstammItem.Artikelbeschreibung = artikelbeschreibung;
+            artikelstammItem.Vertriebsname = vertriebsname;
+            artikelstammItem.Anzahl_PK = anzahl_PK;
+            artikelstammItem.EK_pro_PK = eK_pro_PK;
+            artikelstammItem.VK_pro_PK = vK_pro_PK;
+            return artikelstammItem;
         }
 
         #endregion
@@ -1188,18 +1214,18 @@ namespace ApplicationData.Implementation
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "Artikelliste_Artikelstamm", "Artikelliste")]
-        public EntityCollection<Artikelliste> ArtikellisteCollection
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "ArtikellisteItem_ArtikelstammItem", "ArtikellisteItem")]
+        public EntityCollection<ArtikellisteItem> ArtikellisteItem
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Artikelliste>("LightSwitchApplication.Artikelliste_Artikelstamm", "Artikelliste");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ArtikellisteItem>("LightSwitchApplication.ArtikellisteItem_ArtikelstammItem", "ArtikellisteItem");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Artikelliste>("LightSwitchApplication.Artikelliste_Artikelstamm", "Artikelliste", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ArtikellisteItem>("LightSwitchApplication.ArtikellisteItem_ArtikelstammItem", "ArtikellisteItem", value);
                 }
             }
         }
@@ -1372,15 +1398,15 @@ namespace ApplicationData.Implementation
     /// <summary>
     /// Keine Dokumentation für Metadaten verfügbar.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="Firmendaten")]
+    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="FirmendatenItem")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class Firmendaten : EntityObject
+    public partial class FirmendatenItem : EntityObject
     {
         #region Factory-Methode
     
         /// <summary>
-        /// Erstellt ein neues Firmendaten-Objekt.
+        /// Erstellt ein neues FirmendatenItem-Objekt.
         /// </summary>
         /// <param name="id">Anfangswert der Eigenschaft Id.</param>
         /// <param name="rowVersion">Anfangswert der Eigenschaft RowVersion.</param>
@@ -1390,18 +1416,18 @@ namespace ApplicationData.Implementation
         /// <param name="pLZ">Anfangswert der Eigenschaft PLZ.</param>
         /// <param name="stadt">Anfangswert der Eigenschaft Stadt.</param>
         /// <param name="land">Anfangswert der Eigenschaft Land.</param>
-        public static Firmendaten CreateFirmendaten(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.String name, global::System.String straße, global::System.String hausnummer, global::System.String pLZ, global::System.String stadt, global::System.String land)
+        public static FirmendatenItem CreateFirmendatenItem(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.String name, global::System.String straße, global::System.String hausnummer, global::System.String pLZ, global::System.String stadt, global::System.String land)
         {
-            Firmendaten firmendaten = new Firmendaten();
-            firmendaten.Id = id;
-            firmendaten.RowVersion = rowVersion;
-            firmendaten.Name = name;
-            firmendaten.Straße = straße;
-            firmendaten.Hausnummer = hausnummer;
-            firmendaten.PLZ = pLZ;
-            firmendaten.Stadt = stadt;
-            firmendaten.Land = land;
-            return firmendaten;
+            FirmendatenItem firmendatenItem = new FirmendatenItem();
+            firmendatenItem.Id = id;
+            firmendatenItem.RowVersion = rowVersion;
+            firmendatenItem.Name = name;
+            firmendatenItem.Straße = straße;
+            firmendatenItem.Hausnummer = hausnummer;
+            firmendatenItem.PLZ = pLZ;
+            firmendatenItem.Stadt = stadt;
+            firmendatenItem.Land = land;
+            return firmendatenItem;
         }
 
         #endregion
@@ -1707,15 +1733,148 @@ namespace ApplicationData.Implementation
     /// <summary>
     /// Keine Dokumentation für Metadaten verfügbar.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="Kunden")]
+    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="KundengruppenItem")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class Kunden : EntityObject
+    public partial class KundengruppenItem : EntityObject
     {
         #region Factory-Methode
     
         /// <summary>
-        /// Erstellt ein neues Kunden-Objekt.
+        /// Erstellt ein neues KundengruppenItem-Objekt.
+        /// </summary>
+        /// <param name="id">Anfangswert der Eigenschaft Id.</param>
+        /// <param name="rowVersion">Anfangswert der Eigenschaft RowVersion.</param>
+        public static KundengruppenItem CreateKundengruppenItem(global::System.Int32 id, global::System.Byte[] rowVersion)
+        {
+            KundengruppenItem kundengruppenItem = new KundengruppenItem();
+            kundengruppenItem.Id = id;
+            kundengruppenItem.RowVersion = rowVersion;
+            return kundengruppenItem;
+        }
+
+        #endregion
+
+        #region Primitive Eigenschaften
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = value;
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] RowVersion
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_RowVersion);
+            }
+            set
+            {
+                OnRowVersionChanging(value);
+                ReportPropertyChanging("RowVersion");
+                _RowVersion = value;
+                ReportPropertyChanged("RowVersion");
+                OnRowVersionChanged();
+            }
+        }
+        private global::System.Byte[] _RowVersion;
+        partial void OnRowVersionChanging(global::System.Byte[] value);
+        partial void OnRowVersionChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Bezeichnung
+        {
+            get
+            {
+                return _Bezeichnung;
+            }
+            set
+            {
+                OnBezeichnungChanging(value);
+                ReportPropertyChanging("Bezeichnung");
+                _Bezeichnung = value;
+                ReportPropertyChanged("Bezeichnung");
+                OnBezeichnungChanged();
+            }
+        }
+        private global::System.String _Bezeichnung;
+        partial void OnBezeichnungChanging(global::System.String value);
+        partial void OnBezeichnungChanged();
+
+        #endregion
+
+    
+        #region Navigationseigenschaften
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "KundenItem_KundengruppenItem", "KundenItem")]
+        public EntityCollection<KundenItem> Kunden
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<KundenItem>("LightSwitchApplication.KundenItem_KundengruppenItem", "KundenItem");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<KundenItem>("LightSwitchApplication.KundenItem_KundengruppenItem", "KundenItem", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// Keine Dokumentation für Metadaten verfügbar.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="KundenItem")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class KundenItem : EntityObject
+    {
+        #region Factory-Methode
+    
+        /// <summary>
+        /// Erstellt ein neues KundenItem-Objekt.
         /// </summary>
         /// <param name="id">Anfangswert der Eigenschaft Id.</param>
         /// <param name="rowVersion">Anfangswert der Eigenschaft RowVersion.</param>
@@ -1724,17 +1883,17 @@ namespace ApplicationData.Implementation
         /// <param name="rabatt">Anfangswert der Eigenschaft Rabatt.</param>
         /// <param name="zahlungsziel">Anfangswert der Eigenschaft Zahlungsziel.</param>
         /// <param name="kunden_Kundengruppe">Anfangswert der Eigenschaft Kunden_Kundengruppe.</param>
-        public static Kunden CreateKunden(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.String vorname, global::System.String nachnahme, global::System.Decimal rabatt, global::System.Int32 zahlungsziel, global::System.Int32 kunden_Kundengruppe)
+        public static KundenItem CreateKundenItem(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.String vorname, global::System.String nachnahme, global::System.Decimal rabatt, global::System.Int32 zahlungsziel, global::System.Int32 kunden_Kundengruppe)
         {
-            Kunden kunden = new Kunden();
-            kunden.Id = id;
-            kunden.RowVersion = rowVersion;
-            kunden.Vorname = vorname;
-            kunden.Nachnahme = nachnahme;
-            kunden.Rabatt = rabatt;
-            kunden.Zahlungsziel = zahlungsziel;
-            kunden.Kunden_Kundengruppe = kunden_Kundengruppe;
-            return kunden;
+            KundenItem kundenItem = new KundenItem();
+            kundenItem.Id = id;
+            kundenItem.RowVersion = rowVersion;
+            kundenItem.Vorname = vorname;
+            kundenItem.Nachnahme = nachnahme;
+            kundenItem.Rabatt = rabatt;
+            kundenItem.Zahlungsziel = zahlungsziel;
+            kundenItem.Kunden_Kundengruppe = kunden_Kundengruppe;
+            return kundenItem;
         }
 
         #endregion
@@ -2259,16 +2418,16 @@ namespace ApplicationData.Implementation
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "Kunden_Kundengruppe", "Kundengruppe")]
-        public Kundengruppe Kundengruppe
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "KundenItem_KundengruppenItem", "KundengruppenItem")]
+        public KundengruppenItem KundengruppenItem
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Kundengruppe>("LightSwitchApplication.Kunden_Kundengruppe", "Kundengruppe").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<KundengruppenItem>("LightSwitchApplication.KundenItem_KundengruppenItem", "KundengruppenItem").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Kundengruppe>("LightSwitchApplication.Kunden_Kundengruppe", "Kundengruppe").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<KundengruppenItem>("LightSwitchApplication.KundenItem_KundengruppenItem", "KundengruppenItem").Value = value;
             }
         }
         /// <summary>
@@ -2276,17 +2435,17 @@ namespace ApplicationData.Implementation
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<Kundengruppe> KundengruppeReference
+        public EntityReference<KundengruppenItem> KundengruppenItemReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Kundengruppe>("LightSwitchApplication.Kunden_Kundengruppe", "Kundengruppe");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<KundengruppenItem>("LightSwitchApplication.KundenItem_KundengruppenItem", "KundengruppenItem");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Kundengruppe>("LightSwitchApplication.Kunden_Kundengruppe", "Kundengruppe", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<KundengruppenItem>("LightSwitchApplication.KundenItem_KundengruppenItem", "KundengruppenItem", value);
                 }
             }
         }
@@ -2297,18 +2456,18 @@ namespace ApplicationData.Implementation
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "Kunden_AdressenSetItem", "AdressenSetItem")]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "KundenItem_AdressenSetItem", "AdressenSetItem")]
         public EntityCollection<AdressenSetItem> Adressen
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<AdressenSetItem>("LightSwitchApplication.Kunden_AdressenSetItem", "AdressenSetItem");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<AdressenSetItem>("LightSwitchApplication.KundenItem_AdressenSetItem", "AdressenSetItem");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<AdressenSetItem>("LightSwitchApplication.Kunden_AdressenSetItem", "AdressenSetItem", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<AdressenSetItem>("LightSwitchApplication.KundenItem_AdressenSetItem", "AdressenSetItem", value);
                 }
             }
         }
@@ -2319,18 +2478,18 @@ namespace ApplicationData.Implementation
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "Rechnungen_Kunden", "Rechnungen")]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "Rechnungen_KundenItem", "Rechnungen")]
         public EntityCollection<Rechnungen> Rechnungen
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Rechnungen>("LightSwitchApplication.Rechnungen_Kunden", "Rechnungen");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Rechnungen>("LightSwitchApplication.Rechnungen_KundenItem", "Rechnungen");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Rechnungen>("LightSwitchApplication.Rechnungen_Kunden", "Rechnungen", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Rechnungen>("LightSwitchApplication.Rechnungen_KundenItem", "Rechnungen", value);
                 }
             }
         }
@@ -2342,148 +2501,15 @@ namespace ApplicationData.Implementation
     /// <summary>
     /// Keine Dokumentation für Metadaten verfügbar.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="Kundengruppe")]
+    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="Meine_DatenItem")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class Kundengruppe : EntityObject
+    public partial class Meine_DatenItem : EntityObject
     {
         #region Factory-Methode
     
         /// <summary>
-        /// Erstellt ein neues Kundengruppe-Objekt.
-        /// </summary>
-        /// <param name="id">Anfangswert der Eigenschaft Id.</param>
-        /// <param name="rowVersion">Anfangswert der Eigenschaft RowVersion.</param>
-        public static Kundengruppe CreateKundengruppe(global::System.Int32 id, global::System.Byte[] rowVersion)
-        {
-            Kundengruppe kundengruppe = new Kundengruppe();
-            kundengruppe.Id = id;
-            kundengruppe.RowVersion = rowVersion;
-            return kundengruppe;
-        }
-
-        #endregion
-
-        #region Primitive Eigenschaften
-    
-        /// <summary>
-        /// Keine Dokumentation für Metadaten verfügbar.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 Id
-        {
-            get
-            {
-                return _Id;
-            }
-            set
-            {
-                if (_Id != value)
-                {
-                    OnIdChanging(value);
-                    ReportPropertyChanging("Id");
-                    _Id = value;
-                    ReportPropertyChanged("Id");
-                    OnIdChanged();
-                }
-            }
-        }
-        private global::System.Int32 _Id;
-        partial void OnIdChanging(global::System.Int32 value);
-        partial void OnIdChanged();
-    
-        /// <summary>
-        /// Keine Dokumentation für Metadaten verfügbar.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Byte[] RowVersion
-        {
-            get
-            {
-                return StructuralObject.GetValidValue(_RowVersion);
-            }
-            set
-            {
-                OnRowVersionChanging(value);
-                ReportPropertyChanging("RowVersion");
-                _RowVersion = value;
-                ReportPropertyChanged("RowVersion");
-                OnRowVersionChanged();
-            }
-        }
-        private global::System.Byte[] _RowVersion;
-        partial void OnRowVersionChanging(global::System.Byte[] value);
-        partial void OnRowVersionChanged();
-    
-        /// <summary>
-        /// Keine Dokumentation für Metadaten verfügbar.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String Bezeichnung
-        {
-            get
-            {
-                return _Bezeichnung;
-            }
-            set
-            {
-                OnBezeichnungChanging(value);
-                ReportPropertyChanging("Bezeichnung");
-                _Bezeichnung = value;
-                ReportPropertyChanged("Bezeichnung");
-                OnBezeichnungChanged();
-            }
-        }
-        private global::System.String _Bezeichnung;
-        partial void OnBezeichnungChanging(global::System.String value);
-        partial void OnBezeichnungChanged();
-
-        #endregion
-
-    
-        #region Navigationseigenschaften
-    
-        /// <summary>
-        /// Keine Dokumentation für Metadaten verfügbar.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "Kunden_Kundengruppe", "Kunden")]
-        public EntityCollection<Kunden> Kunden
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Kunden>("LightSwitchApplication.Kunden_Kundengruppe", "Kunden");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Kunden>("LightSwitchApplication.Kunden_Kundengruppe", "Kunden", value);
-                }
-            }
-        }
-
-        #endregion
-
-    }
-    
-    /// <summary>
-    /// Keine Dokumentation für Metadaten verfügbar.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="Meine_Daten")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class Meine_Daten : EntityObject
-    {
-        #region Factory-Methode
-    
-        /// <summary>
-        /// Erstellt ein neues Meine_Daten-Objekt.
+        /// Erstellt ein neues Meine_DatenItem-Objekt.
         /// </summary>
         /// <param name="id">Anfangswert der Eigenschaft Id.</param>
         /// <param name="rowVersion">Anfangswert der Eigenschaft RowVersion.</param>
@@ -2494,19 +2520,19 @@ namespace ApplicationData.Implementation
         /// <param name="selfStadt">Anfangswert der Eigenschaft selfStadt.</param>
         /// <param name="selfLand">Anfangswert der Eigenschaft selfLand.</param>
         /// <param name="selfUSTID">Anfangswert der Eigenschaft selfUSTID.</param>
-        public static Meine_Daten CreateMeine_Daten(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.String selfFirmenname, global::System.String selfStraße, global::System.String selfHausnummer, global::System.String selfPLZ, global::System.String selfStadt, global::System.String selfLand, global::System.String selfUSTID)
+        public static Meine_DatenItem CreateMeine_DatenItem(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.String selfFirmenname, global::System.String selfStraße, global::System.String selfHausnummer, global::System.String selfPLZ, global::System.String selfStadt, global::System.String selfLand, global::System.String selfUSTID)
         {
-            Meine_Daten meine_Daten = new Meine_Daten();
-            meine_Daten.Id = id;
-            meine_Daten.RowVersion = rowVersion;
-            meine_Daten.selfFirmenname = selfFirmenname;
-            meine_Daten.selfStraße = selfStraße;
-            meine_Daten.selfHausnummer = selfHausnummer;
-            meine_Daten.selfPLZ = selfPLZ;
-            meine_Daten.selfStadt = selfStadt;
-            meine_Daten.selfLand = selfLand;
-            meine_Daten.selfUSTID = selfUSTID;
-            return meine_Daten;
+            Meine_DatenItem meine_DatenItem = new Meine_DatenItem();
+            meine_DatenItem.Id = id;
+            meine_DatenItem.RowVersion = rowVersion;
+            meine_DatenItem.selfFirmenname = selfFirmenname;
+            meine_DatenItem.selfStraße = selfStraße;
+            meine_DatenItem.selfHausnummer = selfHausnummer;
+            meine_DatenItem.selfPLZ = selfPLZ;
+            meine_DatenItem.selfStadt = selfStadt;
+            meine_DatenItem.selfLand = selfLand;
+            meine_DatenItem.selfUSTID = selfUSTID;
+            return meine_DatenItem;
         }
 
         #endregion
@@ -3200,16 +3226,16 @@ namespace ApplicationData.Implementation
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "Rechnungen_Kunden", "Kunden")]
-        public Kunden Kunde
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "Rechnungen_KundenItem", "KundenItem")]
+        public KundenItem Kunde
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Kunden>("LightSwitchApplication.Rechnungen_Kunden", "Kunden").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<KundenItem>("LightSwitchApplication.Rechnungen_KundenItem", "KundenItem").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Kunden>("LightSwitchApplication.Rechnungen_Kunden", "Kunden").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<KundenItem>("LightSwitchApplication.Rechnungen_KundenItem", "KundenItem").Value = value;
             }
         }
         /// <summary>
@@ -3217,17 +3243,17 @@ namespace ApplicationData.Implementation
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<Kunden> KundeReference
+        public EntityReference<KundenItem> KundeReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Kunden>("LightSwitchApplication.Rechnungen_Kunden", "Kunden");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<KundenItem>("LightSwitchApplication.Rechnungen_KundenItem", "KundenItem");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Kunden>("LightSwitchApplication.Rechnungen_Kunden", "Kunden", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<KundenItem>("LightSwitchApplication.Rechnungen_KundenItem", "KundenItem", value);
                 }
             }
         }
@@ -3276,18 +3302,18 @@ namespace ApplicationData.Implementation
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "Artikelliste_Rechnungen", "Artikelliste")]
-        public EntityCollection<Artikelliste> ArtikellisteCollection
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "ArtikellisteItem_Rechnungen", "ArtikellisteItem")]
+        public EntityCollection<ArtikellisteItem> ArtikellisteCollection
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Artikelliste>("LightSwitchApplication.Artikelliste_Rechnungen", "Artikelliste");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ArtikellisteItem>("LightSwitchApplication.ArtikellisteItem_Rechnungen", "ArtikellisteItem");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Artikelliste>("LightSwitchApplication.Artikelliste_Rechnungen", "Artikelliste", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ArtikellisteItem>("LightSwitchApplication.ArtikellisteItem_Rechnungen", "ArtikellisteItem", value);
                 }
             }
         }

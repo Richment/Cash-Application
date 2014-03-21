@@ -1,41 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ApplicationDataStore" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
   <EntityContainer Name="ApplicationDataStore">
-    <EntitySet Name="KundenSet" EntityType="ApplicationDataStore.Kunden" store:Type="Tables" Schema="dbo" Table="KundenSet" />
-    <EntitySet Name="KundengruppeSet" EntityType="ApplicationDataStore.Kundengruppe" store:Type="Tables" Schema="dbo" Table="KundengruppeSet" />
-    <EntitySet Name="ArtikelstammSet" EntityType="ApplicationDataStore.Artikelstamm" store:Type="Tables" Schema="dbo" Table="ArtikelstammSet" />
+    <EntitySet Name="Kunden" EntityType="ApplicationDataStore.KundenItem" store:Type="Tables" Schema="dbo" Table="Kunden" />
+    <EntitySet Name="Kundengruppen" EntityType="ApplicationDataStore.KundengruppenItem" store:Type="Tables" Schema="dbo" Table="Kundengruppen" />
+    <EntitySet Name="Artikelstamm" EntityType="ApplicationDataStore.ArtikelstammItem" store:Type="Tables" Schema="dbo" Table="Artikelstamm" />
     <EntitySet Name="RechnungenSet" EntityType="ApplicationDataStore.Rechnungen" store:Type="Tables" Schema="dbo" Table="RechnungenSet" />
-    <EntitySet Name="ArtikellisteSet" EntityType="ApplicationDataStore.Artikelliste" store:Type="Tables" Schema="dbo" Table="ArtikellisteSet" />
-    <EntitySet Name="FirmendatenSet" EntityType="ApplicationDataStore.Firmendaten" store:Type="Tables" Schema="dbo" Table="FirmendatenSet" />
-    <EntitySet Name="Meine_DatenSet" EntityType="ApplicationDataStore.Meine_Daten" store:Type="Tables" Schema="dbo" Table="Meine_DatenSet" />
-    <EntitySet Name="AdressenSet" EntityType="ApplicationDataStore.AdressenSetItem" store:Type="Tables" Schema="dbo" Table="AdressenSet" />
+    <EntitySet Name="Artikelliste" EntityType="ApplicationDataStore.ArtikellisteItem" store:Type="Tables" Schema="dbo" Table="Artikelliste" />
+    <EntitySet Name="Firmendaten" EntityType="ApplicationDataStore.FirmendatenItem" store:Type="Tables" Schema="dbo" Table="Firmendaten" />
+    <EntitySet Name="Meine_Daten" EntityType="ApplicationDataStore.Meine_DatenItem" store:Type="Tables" Schema="dbo" Table="Meine_Daten" />
+    <EntitySet Name="LieferAdresse" EntityType="ApplicationDataStore.AdressenSetItem" store:Type="Tables" Schema="dbo" Table="LieferAdresse" />
     <EntitySet Name="Bezahlart" EntityType="ApplicationDataStore.BezahlartItem" store:Type="Tables" Schema="dbo" Table="Bezahlart" />
-    <AssociationSet Name="Artikelliste_Rechnungen" Association="ApplicationDataStore.Artikelliste_Rechnungen">
+    <AssociationSet Name="ArtikellisteItem_Rechnungen" Association="ApplicationDataStore.ArtikellisteItem_Rechnungen">
       <End Role="Rechnungen" EntitySet="RechnungenSet" />
-      <End Role="Artikelliste" EntitySet="ArtikellisteSet" />
+      <End Role="ArtikellisteItem" EntitySet="Artikelliste" />
     </AssociationSet>
-    <AssociationSet Name="Kunden_Kundengruppe" Association="ApplicationDataStore.Kunden_Kundengruppe">
-      <End Role="Kundengruppe" EntitySet="KundengruppeSet" />
-      <End Role="Kunden" EntitySet="KundenSet" />
+    <AssociationSet Name="KundenItem_KundengruppenItem" Association="ApplicationDataStore.KundenItem_KundengruppenItem">
+      <End Role="KundengruppenItem" EntitySet="Kundengruppen" />
+      <End Role="KundenItem" EntitySet="Kunden" />
     </AssociationSet>
-    <AssociationSet Name="Rechnungen_Kunden" Association="ApplicationDataStore.Rechnungen_Kunden">
-      <End Role="Kunden" EntitySet="KundenSet" />
+    <AssociationSet Name="Rechnungen_KundenItem" Association="ApplicationDataStore.Rechnungen_KundenItem">
+      <End Role="KundenItem" EntitySet="Kunden" />
       <End Role="Rechnungen" EntitySet="RechnungenSet" />
     </AssociationSet>
-    <AssociationSet Name="Artikelliste_Artikelstamm" Association="ApplicationDataStore.Artikelliste_Artikelstamm">
-      <End Role="Artikelstamm" EntitySet="ArtikelstammSet" />
-      <End Role="Artikelliste" EntitySet="ArtikellisteSet" />
+    <AssociationSet Name="ArtikellisteItem_ArtikelstammItem" Association="ApplicationDataStore.ArtikellisteItem_ArtikelstammItem">
+      <End Role="ArtikelstammItem" EntitySet="Artikelstamm" />
+      <End Role="ArtikellisteItem" EntitySet="Artikelliste" />
     </AssociationSet>
-    <AssociationSet Name="Kunden_AdressenSetItem" Association="ApplicationDataStore.Kunden_AdressenSetItem">
-      <End Role="Kunden" EntitySet="KundenSet" />
-      <End Role="AdressenSetItem" EntitySet="AdressenSet" />
+    <AssociationSet Name="KundenItem_AdressenSetItem" Association="ApplicationDataStore.KundenItem_AdressenSetItem">
+      <End Role="KundenItem" EntitySet="Kunden" />
+      <End Role="AdressenSetItem" EntitySet="LieferAdresse" />
     </AssociationSet>
     <AssociationSet Name="Rechnungen_BezahlartItem" Association="ApplicationDataStore.Rechnungen_BezahlartItem">
       <End Role="BezahlartItem" EntitySet="Bezahlart" />
       <End Role="Rechnungen" EntitySet="RechnungenSet" />
     </AssociationSet>
   </EntityContainer>
-  <EntityType Name="Kunden">
+  <EntityType Name="KundenItem">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
@@ -61,7 +61,7 @@
     <Property Name="Sonstiges" Type="nvarchar" MaxLength="255" />
     <Property Name="Kunden_Kundengruppe" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="Kundengruppe">
+  <EntityType Name="KundengruppenItem">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
@@ -69,7 +69,7 @@
     <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
     <Property Name="Bezeichnung" Type="nvarchar" MaxLength="255" />
   </EntityType>
-  <EntityType Name="Artikelstamm">
+  <EntityType Name="ArtikelstammItem">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
@@ -106,7 +106,7 @@
     <Property Name="Rechnungen_Kunden" Type="int" Nullable="false" />
     <Property Name="Rechnungen_BezahlartItem" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="Artikelliste">
+  <EntityType Name="ArtikellisteItem">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
@@ -114,10 +114,11 @@
     <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
     <Property Name="Anzahl" Type="int" Nullable="false" />
     <Property Name="Rabatt" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="PositionIntern" Type="int" Nullable="false" />
     <Property Name="Artikelliste_Rechnungen" Type="int" Nullable="false" />
     <Property Name="Artikelliste_Artikelstamm" Type="int" />
   </EntityType>
-  <EntityType Name="Firmendaten">
+  <EntityType Name="FirmendatenItem">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
@@ -134,7 +135,7 @@
     <Property Name="EMail" Type="nvarchar" MaxLength="255" />
     <Property Name="Webseite" Type="nvarchar" MaxLength="255" />
   </EntityType>
-  <EntityType Name="Meine_Daten">
+  <EntityType Name="Meine_DatenItem">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
@@ -172,37 +173,39 @@
     <Property Name="Bezeichnung" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="Text_Rechnung" Type="nvarchar" Nullable="false" MaxLength="255" />
   </EntityType>
-  <Association Name="Artikelliste_Rechnungen">
+  <Association Name="ArtikellisteItem_Rechnungen">
     <End Role="Rechnungen" Type="ApplicationDataStore.Rechnungen" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="Artikelliste" Type="ApplicationDataStore.Artikelliste" Multiplicity="*" />
+    <End Role="ArtikellisteItem" Type="ApplicationDataStore.ArtikellisteItem" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Rechnungen">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="Artikelliste">
+      <Dependent Role="ArtikellisteItem">
         <PropertyRef Name="Artikelliste_Rechnungen" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="Kunden_Kundengruppe">
-    <End Role="Kundengruppe" Type="ApplicationDataStore.Kundengruppe" Multiplicity="1" />
-    <End Role="Kunden" Type="ApplicationDataStore.Kunden" Multiplicity="*" />
+  <Association Name="KundenItem_KundengruppenItem">
+    <End Role="KundengruppenItem" Type="ApplicationDataStore.KundengruppenItem" Multiplicity="1" />
+    <End Role="KundenItem" Type="ApplicationDataStore.KundenItem" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Kundengruppe">
+      <Principal Role="KundengruppenItem">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="Kunden">
+      <Dependent Role="KundenItem">
         <PropertyRef Name="Kunden_Kundengruppe" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="Rechnungen_Kunden">
-    <End Role="Kunden" Type="ApplicationDataStore.Kunden" Multiplicity="1" />
+  <Association Name="Rechnungen_KundenItem">
+    <End Role="KundenItem" Type="ApplicationDataStore.KundenItem" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Rechnungen" Type="ApplicationDataStore.Rechnungen" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Kunden">
+      <Principal Role="KundenItem">
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="Rechnungen">
@@ -210,23 +213,25 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="Artikelliste_Artikelstamm">
-    <End Role="Artikelstamm" Type="ApplicationDataStore.Artikelstamm" Multiplicity="0..1" />
-    <End Role="Artikelliste" Type="ApplicationDataStore.Artikelliste" Multiplicity="*" />
+  <Association Name="ArtikellisteItem_ArtikelstammItem">
+    <End Role="ArtikelstammItem" Type="ApplicationDataStore.ArtikelstammItem" Multiplicity="0..1" />
+    <End Role="ArtikellisteItem" Type="ApplicationDataStore.ArtikellisteItem" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Artikelstamm">
+      <Principal Role="ArtikelstammItem">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="Artikelliste">
+      <Dependent Role="ArtikellisteItem">
         <PropertyRef Name="Artikelliste_Artikelstamm" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="Kunden_AdressenSetItem">
-    <End Role="Kunden" Type="ApplicationDataStore.Kunden" Multiplicity="1" />
+  <Association Name="KundenItem_AdressenSetItem">
+    <End Role="KundenItem" Type="ApplicationDataStore.KundenItem" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="AdressenSetItem" Type="ApplicationDataStore.AdressenSetItem" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Kunden">
+      <Principal Role="KundenItem">
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="AdressenSetItem">

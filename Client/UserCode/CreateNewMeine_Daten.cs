@@ -15,7 +15,7 @@ namespace LightSwitchApplication
         partial void CreateNewMeine_Daten_InitializeDataWorkspace(global::System.Collections.Generic.List<global::Microsoft.LightSwitch.IDataService> saveChangesTo)
         {
             // Erstellen Sie hier Ihren Code.
-            this.Meine_DatenProperty = new Meine_Daten();
+            this.Meine_DatenProperty = new Meine_DatenItem();
         }
 
         partial void CreateNewMeine_Daten_Saved()

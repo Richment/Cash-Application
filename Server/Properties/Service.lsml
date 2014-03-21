@@ -13,19 +13,19 @@
     EntityContainer="LightSwitchCommonModule:ApplicationData"
     Name="ApplicationDataMapping">
     <AssociationSetMapping
-      AssociationSet="Artikelliste_RechnungenSet">
+      AssociationSet="ArtikellisteItem_RechnungenSet">
       <AssociationSetMapping.Attributes>
         <SsdlAssociationSet
           Name="Artikelliste_RechnungenSet" />
         <SsdlAssociationSetEnd
-          End="LightSwitchCommonModule:ApplicationData/Members[Artikelliste_RechnungenSet]/Members[Artikelliste]">
+          End="LightSwitchCommonModule:ApplicationData/Members[ArtikellisteItem_RechnungenSet]/Members[ArtikellisteItem]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Artikelliste_Rechnungen" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="LightSwitchCommonModule:ApplicationData/Members[Artikelliste_RechnungenSet]/Members[Rechnungen]">
+          End="LightSwitchCommonModule:ApplicationData/Members[ArtikellisteItem_RechnungenSet]/Members[Rechnungen]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />
@@ -34,7 +34,7 @@
       </AssociationSetMapping.Attributes>
     </AssociationSetMapping>
     <EntitySetMapping
-      EntitySet="ArtikellisteSet">
+      EntitySet="Artikelliste">
       <EntitySetMapping.Attributes>
         <SsdlForeignKeyProperty
           Name="Artikelliste_Rechnungen"
@@ -47,7 +47,7 @@
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
     <EntitySetMapping
-      EntitySet="KundenSet">
+      EntitySet="Kunden">
       <EntitySetMapping.Attributes>
         <SsdlForeignKeyProperty
           Name="Kunden_Kundengruppe"
@@ -56,19 +56,19 @@
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
     <AssociationSetMapping
-      AssociationSet="Kunden_KundengruppeSet">
+      AssociationSet="KundenItem_KundengruppenItemSet">
       <AssociationSetMapping.Attributes>
         <SsdlAssociationSet
           Name="Kunden_KundengruppeSet" />
         <SsdlAssociationSetEnd
-          End="LightSwitchCommonModule:ApplicationData/Members[Kunden_KundengruppeSet]/Members[Kunden]">
+          End="LightSwitchCommonModule:ApplicationData/Members[KundenItem_KundengruppenItemSet]/Members[KundenItem]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Kunden_Kundengruppe" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="LightSwitchCommonModule:ApplicationData/Members[Kunden_KundengruppeSet]/Members[Kundengruppe]">
+          End="LightSwitchCommonModule:ApplicationData/Members[KundenItem_KundengruppenItemSet]/Members[KundengruppenItem]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />
@@ -77,21 +77,21 @@
       </AssociationSetMapping.Attributes>
     </AssociationSetMapping>
     <EntitySetMapping
-      EntitySet="KundengruppeSet" />
+      EntitySet="Kundengruppen" />
     <AssociationSetMapping
-      AssociationSet="Rechnungen_KundenSet">
+      AssociationSet="Rechnungen_KundenItemSet">
       <AssociationSetMapping.Attributes>
         <SsdlAssociationSet
           Name="Rechnungen_KundenSet" />
         <SsdlAssociationSetEnd
-          End="LightSwitchCommonModule:ApplicationData/Members[Rechnungen_KundenSet]/Members[Rechnungen]">
+          End="LightSwitchCommonModule:ApplicationData/Members[Rechnungen_KundenItemSet]/Members[Rechnungen]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Rechnungen_Kunden" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="LightSwitchCommonModule:ApplicationData/Members[Rechnungen_KundenSet]/Members[Kunden]">
+          End="LightSwitchCommonModule:ApplicationData/Members[Rechnungen_KundenItemSet]/Members[KundenItem]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />
@@ -113,19 +113,19 @@
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
     <AssociationSetMapping
-      AssociationSet="Artikelliste_ArtikelstammSet">
+      AssociationSet="ArtikellisteItem_ArtikelstammItemSet">
       <AssociationSetMapping.Attributes>
         <SsdlAssociationSet
           Name="Artikelliste_ArtikelstammSet" />
         <SsdlAssociationSetEnd
-          End="LightSwitchCommonModule:ApplicationData/Members[Artikelliste_ArtikelstammSet]/Members[Artikelliste]">
+          End="LightSwitchCommonModule:ApplicationData/Members[ArtikellisteItem_ArtikelstammItemSet]/Members[ArtikellisteItem]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Artikelliste_Artikelstamm" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="LightSwitchCommonModule:ApplicationData/Members[Artikelliste_ArtikelstammSet]/Members[Artikelstamm]">
+          End="LightSwitchCommonModule:ApplicationData/Members[ArtikellisteItem_ArtikelstammItemSet]/Members[ArtikelstammItem]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />
@@ -134,19 +134,19 @@
       </AssociationSetMapping.Attributes>
     </AssociationSetMapping>
     <AssociationSetMapping
-      AssociationSet="Kunden_AdressenSetItemSet">
+      AssociationSet="KundenItem_AdressenSetItemSet">
       <AssociationSetMapping.Attributes>
         <SsdlAssociationSet
           Name="Kunden_RechnungsadressenSet" />
         <SsdlAssociationSetEnd
-          End="LightSwitchCommonModule:ApplicationData/Members[Kunden_AdressenSetItemSet]/Members[Kunden]">
+          End="LightSwitchCommonModule:ApplicationData/Members[KundenItem_AdressenSetItemSet]/Members[KundenItem]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="LightSwitchCommonModule:ApplicationData/Members[Kunden_AdressenSetItemSet]/Members[AdressenSetItem]">
+          End="LightSwitchCommonModule:ApplicationData/Members[KundenItem_AdressenSetItemSet]/Members[AdressenSetItem]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Kunden_Rechnungsadressen" />
@@ -155,7 +155,7 @@
       </AssociationSetMapping.Attributes>
     </AssociationSetMapping>
     <EntitySetMapping
-      EntitySet="AdressenSet">
+      EntitySet="LieferAdresse">
       <EntitySetMapping.Attributes>
         <SsdlForeignKeyProperty
           Name="Kunden_Rechnungsadressen"

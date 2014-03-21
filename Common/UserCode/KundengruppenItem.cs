@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Microsoft.LightSwitch;
+
+namespace LightSwitchApplication
+{
+	public partial class KundengruppenItem
+	{
+		
+		public override string ToString()
+		{
+			if(this.Bezeichnung == null)
+				return base.ToString();
+			return this.Bezeichnung;
+		}
+	}
+}
