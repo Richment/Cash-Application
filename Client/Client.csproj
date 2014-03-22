@@ -202,6 +202,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helper\Helper.cs" />
+    <Compile Include="Helper\ModalWrapper.cs" />
     <Compile Include="Helper\ProcessVerb.cs" />
     <Compile Include="Helper\ProcessVisibility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

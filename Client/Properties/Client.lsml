@@ -3707,6 +3707,17 @@
         Name="Stornieren" />
       <ScreenMethod
         Name="Editieren" />
+      <ScreenMethod
+        Name="Versand" />
+      <ScreenMethod
+        Name="InBearbeitungAddAndEditNew">
+        <ScreenMethod.Attributes>
+          <BuiltInMethodOverride
+            MethodName="AddAndEditNew" />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+      <ScreenMethod
+        Name="OK_Artikel" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
@@ -3800,7 +3811,8 @@
         </ContentItem.CommandItems>
         <ContentItem
           Kind="Group"
-          Name="ScreenLayout">
+          Name="ScreenLayout"
+          View=":RowsLayout">
           <ContentItem.PropertySources>
             <ControlPropertySource
               Property="Microsoft.LightSwitch:RootControl/Properties[MinWidth]">
@@ -3816,14 +3828,6 @@
                 <ConstantExpression
                   ResultType=":Double"
                   Value="900" />
-              </ScreenExpressionTree>
-            </ControlPropertySource>
-            <ControlPropertySource
-              Property="Microsoft.LightSwitch:RootControl/Properties[VerticalAlignment]">
-              <ScreenExpressionTree>
-                <ConstantExpression
-                  ResultType=":String"
-                  Value="Top" />
               </ScreenExpressionTree>
             </ControlPropertySource>
           </ContentItem.PropertySources>
@@ -3869,14 +3873,16 @@
                 </ContentItem>
                 <ContentItem
                   Kind="Command"
-                  Name="InBearbeitung_AddAndEditNew">
+                  Name="InBearbeitungAddAndEditNew">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Hinzufügen..." />
+                  </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
-                        <MemberExpression
-                          Member="Start/Properties[InBearbeitung]" />
                         <CallExpression
-                          Target="AddAndEditNew" />
+                          Target="Start/Methods[InBearbeitungAddAndEditNew]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -3933,6 +3939,14 @@
                         ResultType=":Boolean"
                         Value="False" />
                     </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch:RowsLayout/Properties[IsRowResizable]">
+                  <ScreenExpressionTree>
+                    <ConstantExpression
+                      ResultType=":Boolean"
+                      Value="True" />
                   </ScreenExpressionTree>
                 </ControlPropertySource>
               </ContentItem.PropertySources>
@@ -4236,6 +4250,22 @@
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ControlPropertySource>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch:RootControl/Properties[MinHeight]">
+                  <ScreenExpressionTree>
+                    <ConstantExpression
+                      ResultType=":Double"
+                      Value="300" />
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch:GroupBox/Properties[BorderMode]">
+                  <ScreenExpressionTree>
+                    <ConstantExpression
+                      ResultType=":String"
+                      Value="Top" />
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
               </ContentItem.PropertySources>
               <ContentItem
                 Kind="Group"
@@ -4265,6 +4295,14 @@
                             ResultType=":Double"
                             Value="2" />
                         </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch:ColumnsLayout/Properties[IsColumnResizable]">
+                      <ScreenExpressionTree>
+                        <ConstantExpression
+                          ResultType=":Boolean"
+                          Value="True" />
                       </ScreenExpressionTree>
                     </ControlPropertySource>
                   </ContentItem.PropertySources>
@@ -4355,17 +4393,35 @@
                         </ContentItem.PropertySources>
                       </ContentItem>
                       <ContentItem
+                        DataType=":String?"
+                        Kind="Value"
+                        Name="InBearbeitung_SelectedItem_Besteller"
+                        View=":Label">
+                        <ContentItem.DataSource>
+                          <ScreenExpressionTree>
+                            <ChainExpression>
+                              <MemberExpression
+                                Member="Start/Properties[InBearbeitung]" />
+                              <MemberExpression
+                                Member="SelectedItem" />
+                              <MemberExpression
+                                Member="Besteller" />
+                            </ChainExpression>
+                          </ScreenExpressionTree>
+                        </ContentItem.DataSource>
+                      </ContentItem>
+                      <ContentItem
                         DataType=":String"
                         Kind="Value"
                         Name="InBearbeitung_SelectedItem_Referenznummer"
                         View=":Label">
                         <ContentItem.Attributes>
                           <ShowAsLinkSettings
-                            Value="RechnungDrucken">
+                            Value="BestellungDetails">
                             <ShowAsLinkSettings.Attributes>
                               <ScreenParameterMapping
                                 KeyProperty="LightSwitchCommonModule:Rechnungen/Properties[Id]"
-                                ScreenParameter="RechnungDrucken/Properties[RechnungenId]" />
+                                ScreenParameter="BestellungDetails/Properties[RechnungenId]" />
                             </ShowAsLinkSettings.Attributes>
                           </ShowAsLinkSettings>
                         </ContentItem.Attributes>
@@ -4453,10 +4509,9 @@
                       Kind="Group"
                       Name="Details2">
                       <ContentItem
-                        DataType=":String?"
-                        Kind="Value"
-                        Name="InBearbeitung_SelectedItem_Besteller"
-                        View=":Label">
+                        DataType="LightSwitchCommonModule:BezahlartItem"
+                        Kind="Details"
+                        Name="InBearbeitung_SelectedItem_BezahlartItem">
                         <ContentItem.DataSource>
                           <ScreenExpressionTree>
                             <ChainExpression>
@@ -4465,7 +4520,24 @@
                               <MemberExpression
                                 Member="SelectedItem" />
                               <MemberExpression
-                                Member="Besteller" />
+                                Member="BezahlartItem" />
+                            </ChainExpression>
+                          </ScreenExpressionTree>
+                        </ContentItem.DataSource>
+                      </ContentItem>
+                      <ContentItem
+                        DataType="Microsoft.LightSwitch.Extensions:Money"
+                        Kind="Value"
+                        Name="InBearbeitung_SelectedItem_Lieferkosten">
+                        <ContentItem.DataSource>
+                          <ScreenExpressionTree>
+                            <ChainExpression>
+                              <MemberExpression
+                                Member="Start/Properties[InBearbeitung]" />
+                              <MemberExpression
+                                Member="SelectedItem" />
+                              <MemberExpression
+                                Member="Lieferkosten" />
                             </ChainExpression>
                           </ScreenExpressionTree>
                         </ContentItem.DataSource>
@@ -4588,6 +4660,18 @@
                           </ControlPropertySource>
                         </ContentItem.PropertySources>
                       </ContentItem>
+                      <ContentItem
+                        Kind="Command"
+                        Name="Versand">
+                        <ContentItem.DataSource>
+                          <ScreenExpressionTree>
+                            <ChainExpression>
+                              <CallExpression
+                                Target="Start/Methods[Versand]" />
+                            </ChainExpression>
+                          </ScreenExpressionTree>
+                        </ContentItem.DataSource>
+                      </ContentItem>
                     </ContentItem.CommandItems>
                     <ContentItem.PropertySources>
                       <ControlPropertySource
@@ -4701,6 +4785,10 @@
                       DataType=":String"
                       Kind="Value"
                       Name="Bezeichnung">
+                      <ContentItem.Attributes>
+                        <DisplayName
+                          Value="Artikel" />
+                      </ContentItem.Attributes>
                       <ContentItem.DataSource>
                         <ScreenExpressionTree>
                           <ChainExpression>
@@ -4731,6 +4819,19 @@
                           </ScreenExpressionTree>
                         </ControlPropertySource>
                       </ContentItem.PropertySources>
+                    </ContentItem>
+                    <ContentItem
+                      DataType=":Decimal"
+                      Kind="Value"
+                      Name="Rabatt">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="LightSwitchCommonModule:ArtikellisteItem/Properties[Rabatt]" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
                     </ContentItem>
                     <ContentItem
                       DataType="Microsoft.LightSwitch.Extensions:Money"
@@ -4771,74 +4872,477 @@
                 </ContentItem>
               </ContentItem>
             </ContentItem>
+            <ContentItem
+              Kind="ScreenContent"
+              Name="StaticLabel"
+              View=":StaticLabel" />
           </ContentItem>
           <ContentItem
+            IsHidden="True"
             Kind="Group"
-            Name="Modal0"
-            View=":ModalWindow">
-            <ContentItem.Attributes>
-              <DisplayName
-                Value="Rechnungsassistent" />
-            </ContentItem.Attributes>
+            Name="Group9"
+            View=":ColumnsLayout">
             <ContentItem.PropertySources>
               <ControlPropertySource
-                Property="Microsoft.LightSwitch:RootControl/Properties[BrowseOnly]">
+                Property="Microsoft.LightSwitch:RootControl/Properties[MaxHeight]">
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <ConstantExpression
-                      ResultType=":Boolean"
-                      Value="True" />
+                      ResultType=":Double"
+                      Value="0" />
                   </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+              <ControlPropertySource
+                Property="Microsoft.LightSwitch:RootControl/Properties[HeightSizingMode]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      ResultType=":String"
+                      Value="Pixels" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+              <ControlPropertySource
+                Property="Microsoft.LightSwitch:RootControl/Properties[Height]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      ResultType=":Double"
+                      Value="0" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+              <ControlPropertySource
+                Property="Microsoft.LightSwitch:RootControl/Properties[VerticalAlignment]">
+                <ScreenExpressionTree>
+                  <ConstantExpression
+                    ResultType=":String"
+                    Value="Top" />
                 </ScreenExpressionTree>
               </ControlPropertySource>
             </ContentItem.PropertySources>
             <ContentItem
-              Kind="ScreenContent"
-              Name="Text"
-              View=":StaticLabel">
+              IsHidden="True"
+              Kind="Group"
+              Name="Modal0"
+              View=":ModalWindow">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Rechnungsassistent" />
+              </ContentItem.Attributes>
               <ContentItem.PropertySources>
                 <ControlPropertySource
-                  Property="Microsoft.LightSwitch:StaticLabel/Properties[Text]">
+                  Property=":RootControl/Properties[BrowseOnly]">
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <ConstantExpression
-                        ResultType=":String"
-                        Value="Neue Rechnung" />
+                        ResultType=":Boolean"
+                        Value="True" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ControlPropertySource>
               </ContentItem.PropertySources>
-            </ContentItem>
-            <ContentItem
-              Kind="Group"
-              Name="Group3"
-              View=":RowsLayout">
-              <ContentItem.Attributes>
-                <DisplayName
-                  Value=" " />
-              </ContentItem.Attributes>
-            </ContentItem>
-            <ContentItem
-              Kind="Group"
-              Name="Group">
-              <ContentItem.CommandItems>
+              <ContentItem
+                Kind="ScreenContent"
+                Name="Text0"
+                View=":StaticLabel">
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property=":StaticLabel/Properties[Text]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          ResultType=":String"
+                          Value="Neue Rechnung" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+              <ContentItem
+                Kind="Group"
+                Name="Group3"
+                View=":RowsLayout">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value=" " />
+                </ContentItem.Attributes>
                 <ContentItem
-                  Kind="Command"
-                  Name="Ok_NeueRechnung">
-                  <ContentItem.Attributes>
-                    <DisplayName
-                      Value="OK" />
-                  </ContentItem.Attributes>
+                  DataType=":String"
+                  Kind="Value"
+                  Name="InBearbeitung_SelectedItem_Referenznummer1"
+                  View=":TextBox">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
-                        <CallExpression
-                          Target="Start/Methods[Ok_NeueRechnung]" />
+                        <MemberExpression
+                          Member="Start/Properties[InBearbeitung]" />
+                        <MemberExpression
+                          Member="SelectedItem" />
+                        <MemberExpression
+                          Member="Referenznummer" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
-              </ContentItem.CommandItems>
+                <ContentItem
+                  DataType="LightSwitchCommonModule:KundenItem"
+                  Kind="Details"
+                  Name="InBearbeitung_SelectedItem_Kunde1"
+                  View=":DetailsAutoCompleteBox">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Start/Properties[InBearbeitung]" />
+                        <MemberExpression
+                          Member="SelectedItem" />
+                        <MemberExpression
+                          Member="Kunde" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    DataType="LightSwitchCommonModule:KundenItem"
+                    Kind="Details"
+                    Name="InBearbeitung_SelectedItem_Kunde1Template">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+                <ContentItem
+                  DataType=":String?"
+                  Kind="Value"
+                  Name="InBearbeitung_SelectedItem_Auftragsnummer1"
+                  View=":TextBox">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Start/Properties[InBearbeitung]" />
+                        <MemberExpression
+                          Member="SelectedItem" />
+                        <MemberExpression
+                          Member="Auftragsnummer" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  DataType="LightSwitchCommonModule:BezahlartItem"
+                  Kind="Details"
+                  Name="InBearbeitung_SelectedItem_BezahlartItem1"
+                  View=":DetailsAutoCompleteBox">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Start/Properties[InBearbeitung]" />
+                        <MemberExpression
+                          Member="SelectedItem" />
+                        <MemberExpression
+                          Member="BezahlartItem" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    DataType="LightSwitchCommonModule:BezahlartItem"
+                    Kind="Details"
+                    Name="InBearbeitung_SelectedItem_BezahlartItem1Template">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+                <ContentItem
+                  DataType="Microsoft.LightSwitch.Extensions:Money"
+                  Kind="Value"
+                  Name="InBearbeitung_SelectedItem_Lieferkosten1"
+                  View="Microsoft.LightSwitch.Extensions:MoneyEditorControl">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Start/Properties[InBearbeitung]" />
+                        <MemberExpression
+                          Member="SelectedItem" />
+                        <MemberExpression
+                          Member="Lieferkosten" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem>
+              <ContentItem
+                Kind="Group"
+                Name="Group8">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Positionen" />
+                </ContentItem.Attributes>
+                <ContentItem
+                  DataType="LightSwitchCommonModule:CollectionView$ArtikellisteItem"
+                  Kind="Collection"
+                  Name="ArtikellisteCollection1">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Positionen" />
+                  </ContentItem.Attributes>
+                  <ContentItem.CommandItems>
+                    <ContentItem
+                      Kind="Command"
+                      Name="ArtikellisteCollection_AddAndEditNew">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="Start/Properties[ArtikellisteCollection]" />
+                            <CallExpression
+                              Target="AddAndEditNew" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                    </ContentItem>
+                    <ContentItem
+                      Kind="Command"
+                      Name="ArtikellisteCollection_EditSelected">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="Start/Properties[ArtikellisteCollection]" />
+                            <CallExpression
+                              Target="EditSelected" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                    </ContentItem>
+                    <ContentItem
+                      Kind="Command"
+                      Name="ArtikellisteCollection_DeleteSelected">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="Start/Properties[ArtikellisteCollection]" />
+                            <CallExpression
+                              Target="DeleteSelected" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                    </ContentItem>
+                  </ContentItem.CommandItems>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Start/Properties[ArtikellisteCollection]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property=":CollectionControlSupportingExport/Properties[HideExportButton]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            ResultType=":Boolean"
+                            Value="True" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                  <ContentItem
+                    DataType="LightSwitchCommonModule:ArtikellisteItem"
+                    Kind="Details"
+                    Name="ArtikellisteCollection1Template">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                    <ContentItem
+                      DataType=":Int32"
+                      Kind="Value"
+                      Name="Anzahl1">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="LightSwitchCommonModule:ArtikellisteItem/Properties[Anzahl]" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                      <ContentItem.PropertySources>
+                        <ControlPropertySource
+                          Property=":RootControl/Properties[WidthSizingMode]">
+                          <ScreenExpressionTree>
+                            <ChainExpression>
+                              <ConstantExpression
+                                ResultType=":String"
+                                Value="Characters" />
+                            </ChainExpression>
+                          </ScreenExpressionTree>
+                        </ControlPropertySource>
+                        <ControlPropertySource
+                          Property=":Label/Properties[Characters]">
+                          <ScreenExpressionTree>
+                            <ChainExpression>
+                              <ConstantExpression
+                                ResultType=":Int32"
+                                Value="3" />
+                            </ChainExpression>
+                          </ScreenExpressionTree>
+                        </ControlPropertySource>
+                        <ControlPropertySource
+                          Property=":RootControl/Properties[HorizontalAlignment]">
+                          <ScreenExpressionTree>
+                            <ChainExpression>
+                              <ConstantExpression
+                                ResultType=":String"
+                                Value="Left" />
+                            </ChainExpression>
+                          </ScreenExpressionTree>
+                        </ControlPropertySource>
+                      </ContentItem.PropertySources>
+                    </ContentItem>
+                    <ContentItem
+                      DataType="LightSwitchCommonModule:ArtikelstammItem"
+                      Kind="Details"
+                      Name="ArtikelstammItem">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="LightSwitchCommonModule:ArtikellisteItem/Properties[ArtikelstammItem]" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                    </ContentItem>
+                    <ContentItem
+                      DataType=":Decimal"
+                      Kind="Value"
+                      Name="Rabatt1">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="LightSwitchCommonModule:ArtikellisteItem/Properties[Rabatt]" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                      <ContentItem.PropertySources>
+                        <ControlPropertySource
+                          Property=":RootControl/Properties[WidthSizingMode]">
+                          <ScreenExpressionTree>
+                            <ChainExpression>
+                              <ConstantExpression
+                                ResultType=":String"
+                                Value="Characters" />
+                            </ChainExpression>
+                          </ScreenExpressionTree>
+                        </ControlPropertySource>
+                        <ControlPropertySource
+                          Property=":Label/Properties[Characters]">
+                          <ScreenExpressionTree>
+                            <ChainExpression>
+                              <ConstantExpression
+                                ResultType=":Int32"
+                                Value="6" />
+                            </ChainExpression>
+                          </ScreenExpressionTree>
+                        </ControlPropertySource>
+                        <ControlPropertySource
+                          Property=":RootControl/Properties[HorizontalAlignment]">
+                          <ScreenExpressionTree>
+                            <ChainExpression>
+                              <ConstantExpression
+                                ResultType=":String"
+                                Value="Right" />
+                            </ChainExpression>
+                          </ScreenExpressionTree>
+                        </ControlPropertySource>
+                      </ContentItem.PropertySources>
+                    </ContentItem>
+                  </ContentItem>
+                </ContentItem>
+              </ContentItem>
+              <ContentItem
+                Kind="Group"
+                Name="Group">
+                <ContentItem.CommandItems>
+                  <ContentItem
+                    Kind="Command"
+                    Name="Ok_NeueRechnung">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="OK" />
+                    </ContentItem.Attributes>
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <CallExpression
+                            Target="Start/Methods[Ok_NeueRechnung]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem.CommandItems>
+              </ContentItem>
+            </ContentItem>
+            <ContentItem
+              IsHidden="True"
+              Kind="Group"
+              Name="Modal1"
+              View=":ModalWindow">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Rechnungsassistent - Artikel" />
+              </ContentItem.Attributes>
+              <ContentItem
+                Kind="ScreenContent"
+                Name="Text1"
+                View=":StaticLabel">
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property=":StaticLabel/Properties[Text]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          ResultType=":String"
+                          Value="" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+              <ContentItem
+                Kind="Group"
+                Name="Group6" />
+              <ContentItem
+                Kind="Group"
+                Name="Group7">
+                <ContentItem.CommandItems>
+                  <ContentItem
+                    Kind="Command"
+                    Name="OK_Artikel">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <CallExpression
+                            Target="Start/Methods[OK_Artikel]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem.CommandItems>
+              </ContentItem>
             </ContentItem>
           </ContentItem>
         </ContentItem>
@@ -6352,209 +6856,144 @@
                 </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem
-                Kind="Group"
-                Name="Group7">
-                <ContentItem
-                  DataType=":String?"
-                  Kind="Value"
-                  Name="Adressen_SelectedItem_zHd_Besteller_optional">
-                  <ContentItem.Attributes>
-                    <DisplayName
-                      Value="z. Hd. (optional)" />
-                  </ContentItem.Attributes>
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="KundenDetails/Properties[Adressen]" />
-                        <MemberExpression
-                          Member="SelectedItem" />
-                        <MemberExpression
-                          Member="zHd_Besteller_optional" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
+                DataType=":String?"
+                Kind="Value"
+                Name="Adressen_SelectedItem_zHd_Besteller_optional">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="z. Hd. (optional)" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="KundenDetails/Properties[Adressen]" />
+                      <MemberExpression
+                        Member="SelectedItem" />
+                      <MemberExpression
+                        Member="zHd_Besteller_optional" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
-                Kind="Group"
-                Name="Group5"
-                View=":ColumnsLayout">
+                DataType=":String"
+                Kind="Value"
+                Name="Adressen_SelectedItem_Starße">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="KundenDetails/Properties[Adressen]" />
+                      <MemberExpression
+                        Member="SelectedItem" />
+                      <MemberExpression
+                        Member="Starße" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
-                    Property="Microsoft.LightSwitch:RootControl/Properties[HorizontalAlignment]">
+                    Property=":TextBox/Properties[Characters]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          ResultType=":Int32"
+                          Value="25" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                  <ControlPropertySource
+                    Property=":RootControl/Properties[AttachedLabelPosition]">
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <ConstantExpression
                           ResultType=":String"
-                          Value="Left" />
+                          Value="LeftAligned" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>
                 </ContentItem.PropertySources>
-                <ContentItem
-                  DataType=":String"
-                  Kind="Value"
-                  Name="Adressen_SelectedItem_Starße">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="KundenDetails/Properties[Adressen]" />
-                        <MemberExpression
-                          Member="SelectedItem" />
-                        <MemberExpression
-                          Member="Starße" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem.PropertySources>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch:TextBox/Properties[Characters]">
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <ConstantExpression
-                            ResultType=":Int32"
-                            Value="25" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                  </ContentItem.PropertySources>
-                </ContentItem>
-                <ContentItem
-                  DataType=":String"
-                  Kind="Value"
-                  Name="Adressen_SelectedItem_Hausnummer">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="KundenDetails/Properties[Adressen]" />
-                        <MemberExpression
-                          Member="SelectedItem" />
-                        <MemberExpression
-                          Member="Hausnummer" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem.PropertySources>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch:RootControl/Properties[AttachedLabelPosition]">
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <ConstantExpression
-                            ResultType=":String"
-                            Value="None" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch:RootControl/Properties[HorizontalAlignment]">
-                      <ScreenExpressionTree>
-                        <ConstantExpression
-                          ResultType=":String"
-                          Value="Right" />
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch:RootControl/Properties[MinWidth]">
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <ConstantExpression
-                            ResultType=":Double"
-                            Value="38" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch:RootControl/Properties[WidthSizingMode]">
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <ConstantExpression
-                            ResultType=":String"
-                            Value="Characters" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch:TextBox/Properties[Characters]">
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <ConstantExpression
-                            ResultType=":Int32"
-                            Value="5" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                  </ContentItem.PropertySources>
-                </ContentItem>
               </ContentItem>
               <ContentItem
-                Kind="Group"
-                Name="Group">
-                <ContentItem
-                  DataType=":String?"
-                  Kind="Value"
-                  Name="Adressen_SelectedItem_PLZ">
-                  <ContentItem.DataSource>
+                DataType=":String"
+                Kind="Value"
+                Name="Adressen_SelectedItem_Hausnummer">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="KundenDetails/Properties[Adressen]" />
+                      <MemberExpression
+                        Member="SelectedItem" />
+                      <MemberExpression
+                        Member="Hausnummer" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                DataType=":String?"
+                Kind="Value"
+                Name="Adressen_SelectedItem_PLZ">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="KundenDetails/Properties[Adressen]" />
+                      <MemberExpression
+                        Member="SelectedItem" />
+                      <MemberExpression
+                        Member="PLZ" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property=":TextBox/Properties[Characters]">
                     <ScreenExpressionTree>
                       <ChainExpression>
-                        <MemberExpression
-                          Member="KundenDetails/Properties[Adressen]" />
-                        <MemberExpression
-                          Member="SelectedItem" />
-                        <MemberExpression
-                          Member="PLZ" />
+                        <ConstantExpression
+                          ResultType=":Int32"
+                          Value="10" />
                       </ChainExpression>
                     </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem.PropertySources>
-                    <ControlPropertySource
-                      Property=":TextBox/Properties[Characters]">
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <ConstantExpression
-                            ResultType=":Int32"
-                            Value="10" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                  </ContentItem.PropertySources>
-                </ContentItem>
-                <ContentItem
-                  DataType=":String"
-                  Kind="Value"
-                  Name="Adressen_SelectedItem_Stadt">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="KundenDetails/Properties[Adressen]" />
-                        <MemberExpression
-                          Member="SelectedItem" />
-                        <MemberExpression
-                          Member="Stadt" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  DataType=":String"
-                  Kind="Value"
-                  Name="Adressen_SelectedItem_Land">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="KundenDetails/Properties[Adressen]" />
-                        <MemberExpression
-                          Member="SelectedItem" />
-                        <MemberExpression
-                          Member="Land" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+              <ContentItem
+                DataType=":String"
+                Kind="Value"
+                Name="Adressen_SelectedItem_Stadt">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="KundenDetails/Properties[Adressen]" />
+                      <MemberExpression
+                        Member="SelectedItem" />
+                      <MemberExpression
+                        Member="Stadt" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                DataType=":String"
+                Kind="Value"
+                Name="Adressen_SelectedItem_Land">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="KundenDetails/Properties[Adressen]" />
+                      <MemberExpression
+                        Member="SelectedItem" />
+                      <MemberExpression
+                        Member="Land" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
               </ContentItem>
             </ContentItem>
             <ContentItem
@@ -8729,7 +9168,8 @@
                 <ContentItem
                   DataType=":Int32"
                   Kind="Value"
-                  Name="Anzahl">
+                  Name="Anzahl"
+                  View=":Label">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -8740,18 +9180,21 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  DataType="LightSwitchCommonModule:ArtikellisteItem"
+                  DataType="LightSwitchCommonModule:ArtikelstammItem"
                   Kind="Details"
-                  Name="summary"
-                  View="Microsoft.LightSwitch:Summary">
+                  Name="ArtikelstammItem"
+                  View=":Summary">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
-                      <ChainExpression />
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="LightSwitchCommonModule:ArtikellisteItem/Properties[ArtikelstammItem]" />
+                      </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                   <ContentItem.PropertySources>
                     <ControlPropertySource
-                      Property=":RootControl/Properties[ShowAsLink]">
+                      Property="Microsoft.LightSwitch:RootControl/Properties[ShowAsLink]">
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <ConstantExpression
@@ -8761,135 +9204,12 @@
                       </ScreenExpressionTree>
                     </ControlPropertySource>
                   </ContentItem.PropertySources>
-                  <ContentItem
-                    DataType=":Int32"
-                    Kind="Value"
-                    Name="Position1">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="LightSwitchCommonModule:ArtikellisteItem/Properties[Position]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    DataType="LightSwitchCommonModule:ArtikelstammItem"
-                    Kind="Details"
-                    Name="ArtikelstammItem1">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="LightSwitchCommonModule:ArtikellisteItem/Properties[ArtikelstammItem]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                    <ContentItem
-                      DataType="LightSwitchCommonModule:ArtikelstammItem"
-                      Kind="Details"
-                      Name="RowTemplate4">
-                      <ContentItem.DataSource>
-                        <ScreenExpressionTree>
-                          <ChainExpression />
-                        </ScreenExpressionTree>
-                      </ContentItem.DataSource>
-                    </ContentItem>
-                  </ContentItem>
-                  <ContentItem
-                    DataType=":Decimal"
-                    Kind="Value"
-                    Name="Rabatt2">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="LightSwitchCommonModule:ArtikellisteItem/Properties[Rabatt]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    DataType=":String"
-                    Kind="Value"
-                    Name="Artikelnummer1">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="LightSwitchCommonModule:ArtikellisteItem/Properties[Artikelnummer]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    DataType=":String"
-                    Kind="Value"
-                    Name="Bezeichnung1">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="LightSwitchCommonModule:ArtikellisteItem/Properties[Bezeichnung]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    DataType="Microsoft.LightSwitch.Extensions:Money"
-                    Kind="Value"
-                    Name="Rabattwert1">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="LightSwitchCommonModule:ArtikellisteItem/Properties[Rabattwert]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    DataType="Microsoft.LightSwitch.Extensions:Money"
-                    Kind="Value"
-                    Name="PosPreis1">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="LightSwitchCommonModule:ArtikellisteItem/Properties[PosPreis]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                </ContentItem>
-                <ContentItem
-                  DataType="LightSwitchCommonModule:ArtikelstammItem"
-                  Kind="Details"
-                  Name="ArtikelstammItem">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="LightSwitchCommonModule:ArtikellisteItem/Properties[ArtikelstammItem]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem
-                    DataType="LightSwitchCommonModule:ArtikelstammItem"
-                    Kind="Details"
-                    Name="RowTemplate3">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression />
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
                 </ContentItem>
                 <ContentItem
                   DataType=":Decimal"
                   Kind="Value"
-                  Name="Rabatt1">
+                  Name="Rabatt1"
+                  View=":Label">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>

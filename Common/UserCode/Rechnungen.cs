@@ -64,6 +64,9 @@ namespace LightSwitchApplication
 
 		partial void Adresse_Compute(ref string result)
 		{
+			if (Kunde == null)
+				return;
+
 			string[] elements = new string[]
 			{
 				Kunde.Firma,
