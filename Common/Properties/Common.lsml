@@ -1583,6 +1583,17 @@
           <Hidden />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <EntityProperty
+        Name="RequiresProcessing"
+        PropertyType=":Boolean">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+          <Hidden />
+          <DisplayName
+            Value="Verarb. ausstehend" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <EntityType

@@ -1007,8 +1007,10 @@ namespace LightSwitchApplication
             private global::Microsoft.LightSwitch.IDataServiceQueryable RechnungenSetQuery()
             {
                 return global::Microsoft.LightSwitch.DataServiceQueryable.Include(
-                    this.Screen.DataWorkspace.ApplicationData.RechnungenSet,
-                    "Kunde");
+                    global::Microsoft.LightSwitch.DataServiceQueryable.Include(
+                        this.Screen.DataWorkspace.ApplicationData.RechnungenSet,
+                        "Kunde"),
+                    "BezahlartItem");
             }
 
             private global::Microsoft.LightSwitch.IDataServiceQueryable ArtikellisteCollectionQuery()
@@ -5948,7 +5950,9 @@ namespace LightSwitchApplication
             {
                 return global::Microsoft.LightSwitch.DataServiceQueryable.Include(
                     global::Microsoft.LightSwitch.DataServiceQueryable.Include(
-                        this.Screen.DataWorkspace.ApplicationData.AuftragsSammlung(),
+                        global::Microsoft.LightSwitch.DataServiceQueryable.Where(
+                            this.Screen.DataWorkspace.ApplicationData.AuftragsSammlung(),
+                            (r) => (r.RequiresProcessing == true)),
                         "Kunde"),
                     "BezahlartItem");
             }

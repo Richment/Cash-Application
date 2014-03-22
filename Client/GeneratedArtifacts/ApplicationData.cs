@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Ursprünglicher Dateiname:
-// Erstellungsdatum: 22.03.2014 01:10:50
+// Erstellungsdatum: 22.03.2014 13:39:26
 namespace LightSwitchApplication.Implementation
 {
     
@@ -1457,10 +1457,11 @@ namespace LightSwitchApplication.Implementation
         /// <param name="referenznummer">Anfangswert von Referenznummer.</param>
         /// <param name="bestelldatum">Anfangswert von Bestelldatum.</param>
         /// <param name="lieferkosten">Anfangswert von Lieferkosten.</param>
+        /// <param name="requiresProcessing">Anfangswert von RequiresProcessing.</param>
         /// <param name="rechnungen_Kunden">Anfangswert von Rechnungen_Kunden.</param>
         /// <param name="rechnungen_BezahlartItem">Anfangswert von Rechnungen_BezahlartItem.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Rechnungen CreateRechnungen(int ID, byte[] rowVersion, int status, string referenznummer, global::System.DateTime bestelldatum, decimal lieferkosten, int rechnungen_Kunden, int rechnungen_BezahlartItem)
+        public static Rechnungen CreateRechnungen(int ID, byte[] rowVersion, int status, string referenznummer, global::System.DateTime bestelldatum, decimal lieferkosten, bool requiresProcessing, int rechnungen_Kunden, int rechnungen_BezahlartItem)
         {
             Rechnungen rechnungen = new Rechnungen();
             rechnungen.Id = ID;
@@ -1469,6 +1470,7 @@ namespace LightSwitchApplication.Implementation
             rechnungen.Referenznummer = referenznummer;
             rechnungen.Bestelldatum = bestelldatum;
             rechnungen.Lieferkosten = lieferkosten;
+            rechnungen.RequiresProcessing = requiresProcessing;
             rechnungen.Rechnungen_Kunden = rechnungen_Kunden;
             rechnungen.Rechnungen_BezahlartItem = rechnungen_BezahlartItem;
             return rechnungen;
@@ -1818,6 +1820,32 @@ namespace LightSwitchApplication.Implementation
         private decimal _Lieferkosten;
         partial void OnLieferkostenChanging(decimal value);
         partial void OnLieferkostenChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "RequiresProcessing" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public bool RequiresProcessing
+        {
+            get
+            {
+                return this._RequiresProcessing;
+            }
+            set
+            {
+                this.OnRequiresProcessingChanging(value);
+                if (object.Equals(this.RequiresProcessing, value))
+                {
+                    return;
+                }
+                this._RequiresProcessing = value;
+                this.OnRequiresProcessingChanged();
+                this.OnPropertyChanged("RequiresProcessing");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _RequiresProcessing;
+        partial void OnRequiresProcessingChanging(bool value);
+        partial void OnRequiresProcessingChanged();
         /// <summary>
         /// Im Schema sind keine Kommentare für die Eigenschaft "Rechnungen_Kunden" vorhanden.
         /// </summary>

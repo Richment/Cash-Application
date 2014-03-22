@@ -34,7 +34,7 @@ namespace LightSwitchApplication
 				result = false;
 				return;
 			}
-			result = this.InBearbeitung.SelectedItem.Status < (int)LightSwitchApplication.Bestellstatus.Bezahlt;
+			result = (this.InBearbeitung.SelectedItem.Status < (int)LightSwitchApplication.Bestellstatus.Bezahlt) && !this.InBearbeitung.SelectedItem.RequiresProcessing;
 		}
 		partial void NextAction_Execute()
 		{
@@ -92,7 +92,7 @@ namespace LightSwitchApplication
 				result = false;
 				return;
 			}
-			result = this.InBearbeitung.SelectedItem.Status == (int)LightSwitchApplication.Bestellstatus.Bearbeitet;
+			result = (this.InBearbeitung.SelectedItem.Status == (int)LightSwitchApplication.Bestellstatus.Bearbeitet) && !this.InBearbeitung.SelectedItem.RequiresProcessing;
 		}
 		partial void Versand_Execute()
 		{
@@ -104,6 +104,7 @@ namespace LightSwitchApplication
 		partial void InBearbeitungAddAndEditNew_Execute()
 		{
 			InBearbeitung.SelectedItem = current = InBearbeitung.AddNew();
+			
 			mod = new ModalWrapper(this, FRM_NEW, TXT_NEW, "Neue Bestellung eingeben...")
 			{
 				CancelMethod = () =>
@@ -118,8 +119,11 @@ namespace LightSwitchApplication
 					this.Details.Dispatcher.BeginInvoke(ShowArtikelDialog);
 				}
 			};
+			
+			current.RequiresProcessing = true;
 			current.Bestelldatum = DateTime.Now;
 			current.Status = (int)Bestellstatus.Neu;
+			
 			mod.Show();
 		}
 		partial void Ok_NeueRechnung_CanExecute(ref bool result)

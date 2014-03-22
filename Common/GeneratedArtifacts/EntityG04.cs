@@ -504,6 +504,30 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public bool RequiresProcessing
+        {
+            get
+            {
+                return global::LightSwitchApplication.Rechnungen.DetailsClass.GetValue(this, global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties.RequiresProcessing);
+            }
+            set
+            {
+                global::LightSwitchApplication.Rechnungen.DetailsClass.SetValue(this, global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties.RequiresProcessing, value);
+            }
+        }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void RequiresProcessing_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void RequiresProcessing_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void RequiresProcessing_Changed();
+
+        /// <summary>
+        /// Keine modellierte Beschreibung verfügbar
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public global::LightSwitchApplication.KundenItem Kunde
         {
             get
@@ -804,6 +828,14 @@ namespace LightSwitchApplication
                     }
                 }
                 
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, bool> RequiresProcessing
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties.RequiresProcessing) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, bool>;
+                    }
+                }
+                
                 public global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.KundenItem> Kunde
                 {
                     get
@@ -847,6 +879,7 @@ namespace LightSwitchApplication
                 new global::System.Nullable<global::System.DateTime> Rechnungsdatum { get; set; }
                 new global::System.Nullable<int> Rechnungsnummer { get; set; }
                 new decimal Lieferkosten { get; set; }
+                new bool RequiresProcessing { get; set; }
                 new global::Microsoft.LightSwitch.Internal.IEntityImplementation Kunde { get; set; }
                 new global::Microsoft.LightSwitch.Internal.IEntityImplementation BezahlartItem { get; set; }
                 new global::System.Collections.IEnumerable ArtikellisteCollection { get; }
@@ -1473,6 +1506,43 @@ namespace LightSwitchApplication
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, bool>.Entry
+                    RequiresProcessing = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, bool>.Entry(
+                        "RequiresProcessing",
+                        global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._RequiresProcessing_Stub,
+                        global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._RequiresProcessing_ComputeIsReadOnly,
+                        global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._RequiresProcessing_Validate,
+                        global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._RequiresProcessing_GetImplementationValue,
+                        global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._RequiresProcessing_SetImplementationValue,
+                        global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._RequiresProcessing_OnValueChanged);
+                private static void _RequiresProcessing_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Rechnungen.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, bool>.Data> c, global::LightSwitchApplication.Rechnungen.DetailsClass d, object sf)
+                {
+                    c(d, ref d._RequiresProcessing, sf);
+                }
+                private static bool _RequiresProcessing_ComputeIsReadOnly(global::LightSwitchApplication.Rechnungen e)
+                {
+                    bool result = false;
+                    e.RequiresProcessing_IsReadOnly(ref result);
+                    return result;
+                }
+                private static void _RequiresProcessing_Validate(global::LightSwitchApplication.Rechnungen e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                {
+                    e.RequiresProcessing_Validate(r);
+                }
+                private static bool _RequiresProcessing_GetImplementationValue(global::LightSwitchApplication.Rechnungen.DetailsClass d)
+                {
+                    return d.ImplementationEntity.RequiresProcessing;
+                }
+                private static void _RequiresProcessing_SetImplementationValue(global::LightSwitchApplication.Rechnungen.DetailsClass d, bool v)
+                {
+                    d.ImplementationEntity.RequiresProcessing = v;
+                }
+                private static void _RequiresProcessing_OnValueChanged(global::LightSwitchApplication.Rechnungen e)
+                {
+                    e.RequiresProcessing_Changed();
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.KundenItem>.Entry
                     Kunde = new global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.KundenItem>.Entry(
                         "Kunde",
@@ -1644,6 +1714,9 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, string>.Data _Adresse;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, bool>.Data _RequiresProcessing;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.KundenItem>.Data _Kunde;

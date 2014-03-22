@@ -431,6 +431,11 @@ namespace LightSwitchApplication.Implementation
             this.___OnPropertyChanged("Lieferkosten");
         }
         
+        partial void OnRequiresProcessingChanged()
+        {
+            this.___OnPropertyChanged("RequiresProcessing");
+        }
+        
         global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Rechnungen.DetailsClass.IImplementation.Kunde
         {
             get

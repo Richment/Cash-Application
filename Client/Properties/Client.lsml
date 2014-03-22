@@ -1700,6 +1700,29 @@
                     </ContentItem>
                   </ContentItem>
                   <ContentItem
+                    DataType="LightSwitchCommonModule:BezahlartItem"
+                    Kind="Details"
+                    Name="BezahlartItem">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="LightSwitchCommonModule:Rechnungen/Properties[BezahlartItem]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                    <ContentItem
+                      DataType="LightSwitchCommonModule:BezahlartItem"
+                      Kind="Details"
+                      Name="BezahlartItem1">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression />
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                    </ContentItem>
+                  </ContentItem>
+                  <ContentItem
                     DataType=":String?"
                     Kind="Value"
                     Name="Besteller">
@@ -1816,6 +1839,19 @@
                         <ChainExpression>
                           <MemberExpression
                             Member="LightSwitchCommonModule:Rechnungen/Properties[Lieferdatum]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    DataType=":Boolean"
+                    Kind="Value"
+                    Name="RequiresProcessing">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="LightSwitchCommonModule:Rechnungen/Properties[RequiresProcessing]" />
                         </ChainExpression>
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
@@ -2887,14 +2923,14 @@
                 </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
-                DataType="Microsoft.LightSwitch.Extensions:Money?"
+                DataType=":Boolean"
                 Kind="Value"
-                Name="Netto_Gesamtbetrag1">
+                Name="RequiresProcessing">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="LightSwitchCommonModule:Rechnungen/Properties[Netto_Gesamtbetrag]" />
+                        Member="LightSwitchCommonModule:Rechnungen/Properties[RequiresProcessing]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -2947,6 +2983,19 @@
                     <ChainExpression>
                       <MemberExpression
                         Member="LightSwitchCommonModule:Rechnungen/Properties[Rechnungsbetrag_Brutto]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                DataType="Microsoft.LightSwitch.Extensions:Money?"
+                Kind="Value"
+                Name="Netto_Gesamtbetrag1">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="LightSwitchCommonModule:Rechnungen/Properties[Netto_Gesamtbetrag]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -3997,7 +4046,7 @@
                       </ScreenExpressionTree>
                     </ControlPropertySource>
                     <ControlPropertySource
-                      Property=":RootControl/Properties[VerticalAlignment]">
+                      Property=":RootControl/Properties[HorizontalAlignment]">
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <ConstantExpression
@@ -4007,17 +4056,7 @@
                       </ScreenExpressionTree>
                     </ControlPropertySource>
                     <ControlPropertySource
-                      Property="Microsoft.LightSwitch.Extensions:ImageBaseControl/Properties[Stretch]">
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <ConstantExpression
-                            ResultType=":String"
-                            Value="Fill" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                    <ControlPropertySource
-                      Property=":RootControl/Properties[HorizontalAlignment]">
+                      Property="Microsoft.LightSwitch:RootControl/Properties[VerticalAlignment]">
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <ConstantExpression
@@ -7873,7 +7912,22 @@
             Name="AuftragsSammlung1Query"
             ReturnType="LightSwitchCommonModule:Rechnungen*">
             <ScreenQueryDefinition.FilterExpression>
-              <QueryFilterExpressionTree />
+              <QueryFilterExpressionTree>
+                <BinaryExpression
+                  NodeType="Equal">
+                  <BinaryExpression.Left>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="LightSwitchCommonModule:Rechnungen/Properties[RequiresProcessing]" />
+                    </ChainExpression>
+                  </BinaryExpression.Left>
+                  <BinaryExpression.Right>
+                    <ConstantExpression
+                      ResultType=":Boolean"
+                      Value="True" />
+                  </BinaryExpression.Right>
+                </BinaryExpression>
+              </QueryFilterExpressionTree>
             </ScreenQueryDefinition.FilterExpression>
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
@@ -8054,213 +8108,248 @@
               <ContentItem
                 DataType="LightSwitchCommonModule:Rechnungen"
                 Kind="Details"
-                Name="RowTemplate">
+                Name="RowTemplate"
+                View=":TableLayout">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression />
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
                 <ContentItem
-                  DataType=":Int32"
+                  DataType="Microsoft.LightSwitch.Extensions:Image"
                   Kind="Value"
-                  Name="Status">
+                  Name="StatusImage">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="LightSwitchCommonModule:Rechnungen/Properties[Status]" />
+                          Member="LightSwitchCommonModule:Rechnungen/Properties[StatusImage]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch:RootControl/Properties[Width]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            ResultType=":Double"
+                            Value="16" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch:RootControl/Properties[Height]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            ResultType=":Double"
+                            Value="16" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch:RootControl/Properties[VerticalAlignment]">
+                      <ScreenExpressionTree>
+                        <ConstantExpression
+                          ResultType=":String"
+                          Value="Center" />
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
                 </ContentItem>
                 <ContentItem
-                  DataType="LightSwitchCommonModule:KundenItem"
+                  DataType="LightSwitchCommonModule:Rechnungen"
                   Kind="Details"
-                  Name="Kunde">
+                  Name="Rechnungen"
+                  View=":Summary">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="LightSwitchCommonModule:Rechnungen/Properties[Kunde]" />
-                      </ChainExpression>
+                      <ChainExpression />
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
+                  <ContentItem
+                    DataType=":Int32"
+                    Kind="Value"
+                    Name="Status1">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="LightSwitchCommonModule:Rechnungen/Properties[Status]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
                   <ContentItem
                     DataType="LightSwitchCommonModule:KundenItem"
                     Kind="Details"
-                    Name="RowTemplate1">
+                    Name="Kunde2">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
-                        <ChainExpression />
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="LightSwitchCommonModule:Rechnungen/Properties[Kunde]" />
+                        </ChainExpression>
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
                   </ContentItem>
-                </ContentItem>
-                <ContentItem
-                  DataType=":String?"
-                  Kind="Value"
-                  Name="Auftragsnummer">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="LightSwitchCommonModule:Rechnungen/Properties[Auftragsnummer]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  DataType=":String"
-                  Kind="Value"
-                  Name="Referenznummer">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="LightSwitchCommonModule:Rechnungen/Properties[Referenznummer]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  DataType=":String?"
-                  Kind="Value"
-                  Name="Webshop_ID">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="LightSwitchCommonModule:Rechnungen/Properties[Webshop_ID]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  DataType=":String?"
-                  Kind="Value"
-                  Name="Besteller">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="LightSwitchCommonModule:Rechnungen/Properties[Besteller]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  DataType="LightSwitchCommonModule:BezahlartItem"
-                  Kind="Details"
-                  Name="BezahlartItem">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="LightSwitchCommonModule:Rechnungen/Properties[BezahlartItem]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
+                  <ContentItem
+                    DataType=":String?"
+                    Kind="Value"
+                    Name="Auftragsnummer2">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="LightSwitchCommonModule:Rechnungen/Properties[Auftragsnummer]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    DataType=":String"
+                    Kind="Value"
+                    Name="Referenznummer2">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="LightSwitchCommonModule:Rechnungen/Properties[Referenznummer]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    DataType=":String?"
+                    Kind="Value"
+                    Name="Webshop_ID2">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="LightSwitchCommonModule:Rechnungen/Properties[Webshop_ID]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    DataType=":String?"
+                    Kind="Value"
+                    Name="Besteller2">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="LightSwitchCommonModule:Rechnungen/Properties[Besteller]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
                   <ContentItem
                     DataType="LightSwitchCommonModule:BezahlartItem"
                     Kind="Details"
-                    Name="RowTemplate2">
+                    Name="BezahlartItem2">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
-                        <ChainExpression />
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="LightSwitchCommonModule:Rechnungen/Properties[BezahlartItem]" />
+                        </ChainExpression>
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
                   </ContentItem>
-                </ContentItem>
-                <ContentItem
-                  DataType=":Date"
-                  Kind="Value"
-                  Name="Bestelldatum">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="LightSwitchCommonModule:Rechnungen/Properties[Bestelldatum]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  DataType=":Date?"
-                  Kind="Value"
-                  Name="Lieferdatum">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="LightSwitchCommonModule:Rechnungen/Properties[Lieferdatum]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  DataType=":String?"
-                  Kind="Value"
-                  Name="Lieferscheinnummer">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="LightSwitchCommonModule:Rechnungen/Properties[Lieferscheinnummer]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  DataType=":Date?"
-                  Kind="Value"
-                  Name="Rechnungsdatum">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="LightSwitchCommonModule:Rechnungen/Properties[Rechnungsdatum]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  DataType=":Int32?"
-                  Kind="Value"
-                  Name="Rechnungsnummer">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="LightSwitchCommonModule:Rechnungen/Properties[Rechnungsnummer]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  DataType="Microsoft.LightSwitch.Extensions:Money"
-                  Kind="Value"
-                  Name="Lieferkosten">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="LightSwitchCommonModule:Rechnungen/Properties[Lieferkosten]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  DataType="Microsoft.LightSwitch.Extensions:Money?"
-                  Kind="Value"
-                  Name="Netto_Gesamtbetrag">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="LightSwitchCommonModule:Rechnungen/Properties[Netto_Gesamtbetrag]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
+                  <ContentItem
+                    DataType=":Date"
+                    Kind="Value"
+                    Name="Bestelldatum2">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="LightSwitchCommonModule:Rechnungen/Properties[Bestelldatum]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    DataType=":Date?"
+                    Kind="Value"
+                    Name="Lieferdatum2">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="LightSwitchCommonModule:Rechnungen/Properties[Lieferdatum]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    DataType=":String?"
+                    Kind="Value"
+                    Name="Lieferscheinnummer2">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="LightSwitchCommonModule:Rechnungen/Properties[Lieferscheinnummer]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    DataType=":Date?"
+                    Kind="Value"
+                    Name="Rechnungsdatum2">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="LightSwitchCommonModule:Rechnungen/Properties[Rechnungsdatum]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    DataType=":Int32?"
+                    Kind="Value"
+                    Name="Rechnungsnummer2">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="LightSwitchCommonModule:Rechnungen/Properties[Rechnungsnummer]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    DataType="Microsoft.LightSwitch.Extensions:Money"
+                    Kind="Value"
+                    Name="Lieferkosten2">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="LightSwitchCommonModule:Rechnungen/Properties[Lieferkosten]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    DataType="Microsoft.LightSwitch.Extensions:Money?"
+                    Kind="Value"
+                    Name="Netto_Gesamtbetrag2">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="LightSwitchCommonModule:Rechnungen/Properties[Netto_Gesamtbetrag]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
                 </ContentItem>
               </ContentItem>
             </ContentItem>
@@ -8946,6 +9035,19 @@
                     <ChainExpression>
                       <MemberExpression
                         Member="LightSwitchCommonModule:Rechnungen/Properties[Lieferkosten]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                DataType=":Boolean"
+                Kind="Value"
+                Name="RequiresProcessing">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="LightSwitchCommonModule:Rechnungen/Properties[RequiresProcessing]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
