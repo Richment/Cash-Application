@@ -110,13 +110,13 @@ namespace LightSwitchApplication
 				CancelMethod = () =>
 				{
 					foreach (Rechnungen item in DataWorkspace.ApplicationData.Details.GetChanges().AddedEntities.OfType<Rechnungen>())
-						if( item.Id == current.Id)
+						if (item.Id == current.Id)
 							item.Details.DiscardChanges();
 					current = null;
 				},
 				ProceedMethod = () =>
 				{
-					this.Details.Dispatcher.BeginInvoke(ShowArtikelDialog);
+					//this.Details.Dispatcher.BeginInvoke(ShowArtikelDialog);
 				}
 			};
 			
