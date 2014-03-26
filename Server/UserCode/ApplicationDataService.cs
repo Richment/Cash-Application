@@ -17,15 +17,6 @@ namespace LightSwitchApplication
 		private const string PASS = "";
 		private const int PORT = 25;
 
-		partial void Artikelliste_Inserting(ArtikellisteItem entity)
-		{
-			entity.PositionIntern = entity.Position;
-		}
-		partial void Artikelliste_Updating(ArtikellisteItem entity)
-		{ 
-			entity.PositionIntern = entity.Position;
-		}
-
 		private static void SendEmail(OutgoingMail entity)
 		{
 			using (SmtpClient client = new SmtpClient(HOST, PORT))
@@ -48,13 +39,13 @@ namespace LightSwitchApplication
 
 		partial void OutgoingMailSet_Inserting(OutgoingMail entity)
 		{
-		   	entity.Sended = DateTime.Now;
+			entity.Sended = DateTime.Now;
 			SendEmail(entity);
 		}
 
 		partial void OutgoingMailSet_Updating(OutgoingMail entity)
 		{
-		   	entity.Sended = DateTime.Now;
+			entity.Sended = DateTime.Now;
 			SendEmail(entity);
 		}
 

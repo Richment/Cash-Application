@@ -20,19 +20,19 @@ namespace LightSwitchApplication
 		}
 
 		partial void Position_Compute(ref int result)
-		{		 
-			if(Rechnungen!=null)
+		{
+			if (Rechnungen != null)
 				result = this.Rechnungen.ArtikellisteCollection.ToList().IndexOf(this) + 1;
 		}
 
 		partial void Artikelnummer_Compute(ref string result)
-		{	
+		{
 			if (ArtikelstammItem != null)
 				result = this.ArtikelstammItem.Artikelnummer.ToString();
 		}
 
 		partial void Bezeichnung_Compute(ref string result)
-		{ 
+		{
 			if (ArtikelstammItem != null)
 				result = this.ArtikelstammItem.Artikelbeschreibung;
 		}
@@ -49,6 +49,12 @@ namespace LightSwitchApplication
 				result = Math.Round(this.Anzahl * this.PosPreis * (this.Rabatt / 100M), 2);
 		}
 
+		partial void AnzeigeName_Compute(ref string result)
+		{
+			if (ArtikelstammItem != null)
+				result = ArtikelstammItem.ToString();
+		}
+
 		public override string ToString()
 		{
 			if (ArtikelstammItem != null)
@@ -56,10 +62,5 @@ namespace LightSwitchApplication
 			return base.ToString();
 		}
 
-		partial void AnzeigeName_Compute(ref string result)
-		{
-			if (ArtikelstammItem != null)
-				result = ArtikelstammItem.ToString();
-		}
 	}
 }

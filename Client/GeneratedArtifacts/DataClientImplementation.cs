@@ -644,11 +644,6 @@ namespace LightSwitchApplication.Implementation
             this.___OnPropertyChanged("Rabatt");
         }
         
-        partial void OnPositionInternChanged()
-        {
-            this.___OnPropertyChanged("PositionIntern");
-        }
-        
         global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.ArtikellisteItem.DetailsClass.IImplementation.ArtikelstammItem
         {
             get

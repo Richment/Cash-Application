@@ -547,6 +547,17 @@ namespace LightSwitchApplication
             return this.Details.Methods.AnbieterSet_SingleOrDefault.CreateInvocation(Id).Execute();
         }
         
+        /// <summary>
+        /// Keine modellierte Beschreibung verfügbar
+        /// </summary>
+        /// <param name="Id">
+        /// Keine modellierte Beschreibung verfügbar
+        /// </param>
+        public global::Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.AdressenSetItem> LieferAdresssePerKunde(global::System.Nullable<int> Id)
+        {
+            return this.Details.Methods.LieferAdresssePerKunde.CreateInvocation(Id).Execute();
+        }
+        
         #endregion
     
         #region Details Class
@@ -784,6 +795,14 @@ namespace LightSwitchApplication
                     get
                     {
                         return base.GetItem(global::LightSwitchApplication.ApplicationData.DetailsClass.MethodSetProperties.AnbieterSet_SingleOrDefault) as global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.Anbieter>;
+                    }
+                }
+                
+                public global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.AdressenSetItem> LieferAdresssePerKunde
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.ApplicationData.DetailsClass.MethodSetProperties.LieferAdresssePerKunde) as global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.AdressenSetItem>;
                     }
                 }
                 
@@ -1136,6 +1155,16 @@ namespace LightSwitchApplication
                     c(d, ref d._AnbieterSet_SingleOrDefault, sf);
                 }
     
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Entry
+                    LieferAdresssePerKunde = new global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Entry(
+                        "LieferAdresssePerKunde",
+                        global::LightSwitchApplication.ApplicationData.DetailsClass.MethodSetProperties._LieferAdresssePerKunde_Stub);
+                private static void _LieferAdresssePerKunde_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ApplicationData.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Data> c, global::LightSwitchApplication.ApplicationData.DetailsClass d, object sf)
+                {
+                    c(d, ref d._LieferAdresssePerKunde, sf);
+                }
+    
             }
     
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -1360,6 +1389,9 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.Anbieter>.Data _AnbieterSet_SingleOrDefault;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Data _LieferAdresssePerKunde;
             
         }
     

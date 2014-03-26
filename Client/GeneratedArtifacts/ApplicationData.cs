@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Ursprünglicher Dateiname:
-// Erstellungsdatum: 26.03.2014 19:02:02
+// Erstellungsdatum: 26.03.2014 20:04:05
 namespace LightSwitchApplication.Implementation
 {
     
@@ -2237,17 +2237,15 @@ namespace LightSwitchApplication.Implementation
         /// <param name="rowVersion">Anfangswert von RowVersion.</param>
         /// <param name="anzahl">Anfangswert von Anzahl.</param>
         /// <param name="rabatt">Anfangswert von Rabatt.</param>
-        /// <param name="positionIntern">Anfangswert von PositionIntern.</param>
         /// <param name="artikelliste_Rechnungen">Anfangswert von Artikelliste_Rechnungen.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static ArtikellisteItem CreateArtikellisteItem(int ID, byte[] rowVersion, int anzahl, decimal rabatt, int positionIntern, int artikelliste_Rechnungen)
+        public static ArtikellisteItem CreateArtikellisteItem(int ID, byte[] rowVersion, int anzahl, decimal rabatt, int artikelliste_Rechnungen)
         {
             ArtikellisteItem artikellisteItem = new ArtikellisteItem();
             artikellisteItem.Id = ID;
             artikellisteItem.RowVersion = rowVersion;
             artikellisteItem.Anzahl = anzahl;
             artikellisteItem.Rabatt = rabatt;
-            artikellisteItem.PositionIntern = positionIntern;
             artikellisteItem.Artikelliste_Rechnungen = artikelliste_Rechnungen;
             return artikellisteItem;
         }
@@ -2362,32 +2360,6 @@ namespace LightSwitchApplication.Implementation
         private decimal _Rabatt;
         partial void OnRabattChanging(decimal value);
         partial void OnRabattChanged();
-        /// <summary>
-        /// Im Schema sind keine Kommentare für die Eigenschaft "PositionIntern" vorhanden.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public int PositionIntern
-        {
-            get
-            {
-                return this._PositionIntern;
-            }
-            set
-            {
-                this.OnPositionInternChanging(value);
-                if (object.Equals(this.PositionIntern, value))
-                {
-                    return;
-                }
-                this._PositionIntern = value;
-                this.OnPositionInternChanged();
-                this.OnPropertyChanged("PositionIntern");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private int _PositionIntern;
-        partial void OnPositionInternChanging(int value);
-        partial void OnPositionInternChanged();
         /// <summary>
         /// Im Schema sind keine Kommentare für die Eigenschaft "Artikelliste_Rechnungen" vorhanden.
         /// </summary>

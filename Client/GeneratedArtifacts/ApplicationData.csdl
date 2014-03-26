@@ -90,7 +90,6 @@
     <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
     <Property Name="Anzahl" Type="Edm.Int32" Nullable="false" />
     <Property Name="Rabatt" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="2" />
-    <Property Name="PositionIntern" Type="Edm.Int32" Nullable="false" />
     <Property Name="Artikelliste_Rechnungen" Type="Edm.Int32" Nullable="false" />
     <Property Name="Artikelliste_Artikelstamm" Type="Edm.Int32" />
     <NavigationProperty Name="ArtikelstammItem" Relationship="LightSwitchApplication.ArtikellisteItem_ArtikelstammItem" ToRole="ArtikelstammItem" FromRole="ArtikellisteItem" />

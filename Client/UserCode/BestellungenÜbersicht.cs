@@ -20,21 +20,6 @@ namespace LightSwitchApplication
 		private ArtikellisteItem newItem;
 		private string header;
 
-		partial void ArtikellisteCollectionAddAndEditNew_Execute()
-		{
-			header = "Rechnungsposition hinzufügen...";
-			newItem = this.ArtikellisteCollection.AddNew();
-			newItem.Rabatt = this.RechnungenSet.SelectedItem.Kunde.Rabatt;
-			this.OpenModalWindow();
-		}
-
-		partial void ArtikellisteCollectionEditSelected_Execute()
-		{
-			header = "Rechnungsposition bearbeiten...";
-			newItem = this.ArtikellisteCollection.SelectedItem;
-			this.OpenModalWindow();
-		}
-	
 		partial void AcceptArtikel_Execute()
 		{
 			this.CloseModalWindow();
@@ -82,6 +67,26 @@ namespace LightSwitchApplication
 		partial void BestellungenÜbersicht_Saved()
 		{
 			Refresh();
+		}
+
+		partial void ArtikellisteCollectionAddAndEditNew1_Execute()
+		{
+			header = "Rechnungsposition hinzufügen...";
+			newItem = this.ArtikellisteCollection.AddNew();
+			newItem.Rabatt = this.RechnungenSet.SelectedItem.Kunde.Rabatt;
+			this.OpenModalWindow();
+		}
+
+		partial void ArtikellisteCollectionEditSelected1_CanExecute(ref bool result)
+		{
+			result = ArtikellisteCollection.SelectedItem != null;
+		}
+
+		partial void ArtikellisteCollectionEditSelected1_Execute()
+		{
+			header = "Rechnungsposition bearbeiten...";
+			newItem = this.ArtikellisteCollection.SelectedItem;
+			this.OpenModalWindow();
 		}
 
 	}

@@ -59,6 +59,15 @@ namespace LightSwitchApplication.Implementation
             return query;
         }
     
+        public global::System.Linq.IQueryable<global::ApplicationData.Implementation.AdressenSetItem> LieferAdresssePerKunde(global::System.Nullable<int> Id)
+        {
+            global::System.Linq.IQueryable<global::ApplicationData.Implementation.AdressenSetItem> query;
+            query = global::System.Linq.Queryable.Where(
+                this.GetQuery<global::ApplicationData.Implementation.AdressenSetItem>("LieferAdresse"),
+                (a) => (Id.HasValue && (a.KundenRechnungsadresse.Id == Id)));
+            return query;
+        }
+    
     #endregion
 
     #region Protected Methods

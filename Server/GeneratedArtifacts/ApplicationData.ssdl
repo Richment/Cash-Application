@@ -125,7 +125,6 @@
     <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
     <Property Name="Anzahl" Type="int" Nullable="false" />
     <Property Name="Rabatt" Type="decimal" Nullable="false" Precision="18" Scale="2" />
-    <Property Name="PositionIntern" Type="int" Nullable="false" />
     <Property Name="Artikelliste_Rechnungen" Type="int" Nullable="false" />
     <Property Name="Artikelliste_Artikelstamm" Type="int" />
   </EntityType>

@@ -880,16 +880,14 @@ namespace ApplicationData.Implementation
         /// <param name="rowVersion">Anfangswert der Eigenschaft RowVersion.</param>
         /// <param name="anzahl">Anfangswert der Eigenschaft Anzahl.</param>
         /// <param name="rabatt">Anfangswert der Eigenschaft Rabatt.</param>
-        /// <param name="positionIntern">Anfangswert der Eigenschaft PositionIntern.</param>
         /// <param name="artikelliste_Rechnungen">Anfangswert der Eigenschaft Artikelliste_Rechnungen.</param>
-        public static ArtikellisteItem CreateArtikellisteItem(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.Int32 anzahl, global::System.Decimal rabatt, global::System.Int32 positionIntern, global::System.Int32 artikelliste_Rechnungen)
+        public static ArtikellisteItem CreateArtikellisteItem(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.Int32 anzahl, global::System.Decimal rabatt, global::System.Int32 artikelliste_Rechnungen)
         {
             ArtikellisteItem artikellisteItem = new ArtikellisteItem();
             artikellisteItem.Id = id;
             artikellisteItem.RowVersion = rowVersion;
             artikellisteItem.Anzahl = anzahl;
             artikellisteItem.Rabatt = rabatt;
-            artikellisteItem.PositionIntern = positionIntern;
             artikellisteItem.Artikelliste_Rechnungen = artikelliste_Rechnungen;
             return artikellisteItem;
         }
@@ -996,30 +994,6 @@ namespace ApplicationData.Implementation
         private global::System.Decimal _Rabatt;
         partial void OnRabattChanging(global::System.Decimal value);
         partial void OnRabattChanged();
-    
-        /// <summary>
-        /// Keine Dokumentation für Metadaten verfügbar.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 PositionIntern
-        {
-            get
-            {
-                return _PositionIntern;
-            }
-            set
-            {
-                OnPositionInternChanging(value);
-                ReportPropertyChanging("PositionIntern");
-                _PositionIntern = value;
-                ReportPropertyChanged("PositionIntern");
-                OnPositionInternChanged();
-            }
-        }
-        private global::System.Int32 _PositionIntern;
-        partial void OnPositionInternChanging(global::System.Int32 value);
-        partial void OnPositionInternChanged();
     
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.

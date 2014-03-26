@@ -498,6 +498,21 @@ namespace LightSwitchApplication
         partial void AuftragsSammlung_ExecuteFailed(global::System.Exception exception);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void LieferAdresssePerKunde_CanExecute(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void LieferAdresssePerKunde_Executing(global::System.Nullable<int> Id);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void LieferAdresssePerKunde_PreprocessQuery(global::System.Nullable<int> Id, ref global::System.Linq.IQueryable<global::LightSwitchApplication.AdressenSetItem> query);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void LieferAdresssePerKunde_Executed(global::System.Nullable<int> Id, global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.AdressenSetItem> result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void LieferAdresssePerKunde_ExecuteFailed(global::System.Nullable<int> Id, global::System.Exception exception);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void Query_Executing(global::Microsoft.LightSwitch.QueryExecutingDescriptor queryDescriptor);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1434,6 +1449,39 @@ namespace LightSwitchApplication
             {
                 global::System.Linq.IQueryable<global::LightSwitchApplication.Rechnungen> query = (global::System.Linq.IQueryable<global::LightSwitchApplication.Rechnungen>)args[0];
                 d.AuftragsSammlung_PreprocessQuery(ref query);
+                return query;
+            }
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.QueryOperationEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.AdressenSetItem>
+                __LieferAdresssePerKundeEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.QueryOperationEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.AdressenSetItem>(
+                    "LieferAdresssePerKunde",
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__LieferAdresssePerKunde_CanExecute,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__LieferAdresssePerKunde_Executing,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__LieferAdresssePerKunde_Executed,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__LieferAdresssePerKunde_Failed,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__LieferAdresssePerKunde_PreprocessQuery);
+            private static bool __LieferAdresssePerKunde_CanExecute(global::LightSwitchApplication.ApplicationDataService d, bool r)
+            {
+                d.LieferAdresssePerKunde_CanExecute(ref r);
+                return r;
+            }
+            private static void __LieferAdresssePerKunde_Executing(global::LightSwitchApplication.ApplicationDataService d, object[] args)
+            {
+                d.LieferAdresssePerKunde_Executing((global::System.Nullable<int>)args[0]);
+            }
+            private static void __LieferAdresssePerKunde_Executed(global::LightSwitchApplication.ApplicationDataService d, object[] args)
+            {
+                d.LieferAdresssePerKunde_Executed((global::System.Nullable<int>)args[0], (global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.AdressenSetItem>)args[1]);
+            }
+            private static void __LieferAdresssePerKunde_Failed(global::LightSwitchApplication.ApplicationDataService d, object[] args, global::System.Exception ex)
+            {
+                d.LieferAdresssePerKunde_ExecuteFailed((global::System.Nullable<int>)args[0], ex);
+            }
+            private static global::System.Linq.IQueryable __LieferAdresssePerKunde_PreprocessQuery(global::LightSwitchApplication.ApplicationDataService d, object[] args)
+            {
+                global::System.Linq.IQueryable<global::LightSwitchApplication.AdressenSetItem> query = (global::System.Linq.IQueryable<global::LightSwitchApplication.AdressenSetItem>)args[1];
+                d.LieferAdresssePerKunde_PreprocessQuery((global::System.Nullable<int>)args[0], ref query);
                 return query;
             }
     

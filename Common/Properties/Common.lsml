@@ -1130,6 +1130,38 @@
         EntitySet="LieferAdresse"
         Name="AdressenSetItem" />
     </AssociationSet>
+    <QueryOperation
+      Name="LieferAdresssePerKunde"
+      ReturnType="AdressenSetItem*">
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="KundenRechnungsadresse" />
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="LieferAdresse" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?" />
+    </QueryOperation>
   </EntityContainer>
   <EntityType
     Name="KundenItem">
@@ -1833,6 +1865,7 @@
         <EntityProperty.Attributes>
           <Computed />
           <NotSearchable />
+          <Hidden />
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
@@ -1852,7 +1885,6 @@
           <NotSearchable />
           <Range
             Minimum="1" />
-          <Hidden />
           <Required />
         </EntityProperty.Attributes>
       </EntityProperty>
@@ -1943,17 +1975,6 @@
         <EntityProperty.Attributes>
           <Computed />
           <Hidden />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="PositionIntern"
-        PropertyType=":Int32">
-        <EntityProperty.Attributes>
-          <Required />
-          <NotSearchable />
-          <Hidden />
-          <Range
-            Minimum="0" />
         </EntityProperty.Attributes>
       </EntityProperty>
     </EntityType.Properties>

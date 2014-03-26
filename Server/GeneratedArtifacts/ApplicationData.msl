@@ -86,7 +86,6 @@
           <ScalarProperty Name="Anzahl" ColumnName="Anzahl" />
           <ScalarProperty Name="Rabatt" ColumnName="Rabatt" />
           <ScalarProperty Name="Artikelliste_Rechnungen" ColumnName="Artikelliste_Rechnungen" />
-          <ScalarProperty Name="PositionIntern" ColumnName="PositionIntern" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

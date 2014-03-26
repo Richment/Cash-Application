@@ -8,10 +8,9 @@ namespace LightSwitchApplication
 {
 	public partial class OutgoingMail
 	{
-
 		public override string ToString()
 		{
-			if(String.IsNullOrWhiteSpace(Subject))
+			if (String.IsNullOrWhiteSpace(Subject))
 				return base.ToString();
 			return Subject;
 		}

@@ -306,30 +306,6 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public int PositionIntern
-        {
-            get
-            {
-                return global::LightSwitchApplication.ArtikellisteItem.DetailsClass.GetValue(this, global::LightSwitchApplication.ArtikellisteItem.DetailsClass.PropertySetProperties.PositionIntern);
-            }
-            set
-            {
-                global::LightSwitchApplication.ArtikellisteItem.DetailsClass.SetValue(this, global::LightSwitchApplication.ArtikellisteItem.DetailsClass.PropertySetProperties.PositionIntern, value);
-            }
-        }
-        
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void PositionIntern_IsReadOnly(ref bool result);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void PositionIntern_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void PositionIntern_Changed();
-
-        /// <summary>
-        /// Keine modellierte Beschreibung verfügbar
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public global::LightSwitchApplication.ArtikelstammItem ArtikelstammItem
         {
             get
@@ -543,14 +519,6 @@ namespace LightSwitchApplication
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.ArtikellisteItem, global::LightSwitchApplication.ArtikellisteItem.DetailsClass, int> PositionIntern
-                {
-                    get
-                    {
-                        return base.GetItem(global::LightSwitchApplication.ArtikellisteItem.DetailsClass.PropertySetProperties.PositionIntern) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.ArtikellisteItem, global::LightSwitchApplication.ArtikellisteItem.DetailsClass, int>;
-                    }
-                }
-                
                 public global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.ArtikellisteItem, global::LightSwitchApplication.ArtikellisteItem.DetailsClass, global::LightSwitchApplication.ArtikelstammItem> ArtikelstammItem
                 {
                     get
@@ -577,7 +545,6 @@ namespace LightSwitchApplication
                 new byte[] RowVersion { get; set; }
                 new int Anzahl { get; set; }
                 new decimal Rabatt { get; set; }
-                new int PositionIntern { get; set; }
                 new global::Microsoft.LightSwitch.Internal.IEntityImplementation ArtikelstammItem { get; set; }
                 new global::Microsoft.LightSwitch.Internal.IEntityImplementation Rechnungen { get; set; }
             }
@@ -892,43 +859,6 @@ namespace LightSwitchApplication
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.ArtikellisteItem, global::LightSwitchApplication.ArtikellisteItem.DetailsClass, int>.Entry
-                    PositionIntern = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.ArtikellisteItem, global::LightSwitchApplication.ArtikellisteItem.DetailsClass, int>.Entry(
-                        "PositionIntern",
-                        global::LightSwitchApplication.ArtikellisteItem.DetailsClass.PropertySetProperties._PositionIntern_Stub,
-                        global::LightSwitchApplication.ArtikellisteItem.DetailsClass.PropertySetProperties._PositionIntern_ComputeIsReadOnly,
-                        global::LightSwitchApplication.ArtikellisteItem.DetailsClass.PropertySetProperties._PositionIntern_Validate,
-                        global::LightSwitchApplication.ArtikellisteItem.DetailsClass.PropertySetProperties._PositionIntern_GetImplementationValue,
-                        global::LightSwitchApplication.ArtikellisteItem.DetailsClass.PropertySetProperties._PositionIntern_SetImplementationValue,
-                        global::LightSwitchApplication.ArtikellisteItem.DetailsClass.PropertySetProperties._PositionIntern_OnValueChanged);
-                private static void _PositionIntern_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ArtikellisteItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.ArtikellisteItem, global::LightSwitchApplication.ArtikellisteItem.DetailsClass, int>.Data> c, global::LightSwitchApplication.ArtikellisteItem.DetailsClass d, object sf)
-                {
-                    c(d, ref d._PositionIntern, sf);
-                }
-                private static bool _PositionIntern_ComputeIsReadOnly(global::LightSwitchApplication.ArtikellisteItem e)
-                {
-                    bool result = false;
-                    e.PositionIntern_IsReadOnly(ref result);
-                    return result;
-                }
-                private static void _PositionIntern_Validate(global::LightSwitchApplication.ArtikellisteItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
-                {
-                    e.PositionIntern_Validate(r);
-                }
-                private static int _PositionIntern_GetImplementationValue(global::LightSwitchApplication.ArtikellisteItem.DetailsClass d)
-                {
-                    return d.ImplementationEntity.PositionIntern;
-                }
-                private static void _PositionIntern_SetImplementationValue(global::LightSwitchApplication.ArtikellisteItem.DetailsClass d, int v)
-                {
-                    d.ImplementationEntity.PositionIntern = v;
-                }
-                private static void _PositionIntern_OnValueChanged(global::LightSwitchApplication.ArtikellisteItem e)
-                {
-                    e.PositionIntern_Changed();
-                }
-    
-                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.ArtikellisteItem, global::LightSwitchApplication.ArtikellisteItem.DetailsClass, global::LightSwitchApplication.ArtikelstammItem>.Entry
                     ArtikelstammItem = new global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.ArtikellisteItem, global::LightSwitchApplication.ArtikellisteItem.DetailsClass, global::LightSwitchApplication.ArtikelstammItem>.Entry(
                         "ArtikelstammItem",
@@ -1056,9 +986,6 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.ArtikellisteItem, global::LightSwitchApplication.ArtikellisteItem.DetailsClass, string>.Data _AnzeigeName;
-            
-            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.ArtikellisteItem, global::LightSwitchApplication.ArtikellisteItem.DetailsClass, int>.Data _PositionIntern;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.ArtikellisteItem, global::LightSwitchApplication.ArtikellisteItem.DetailsClass, global::LightSwitchApplication.ArtikelstammItem>.Data _ArtikelstammItem;
