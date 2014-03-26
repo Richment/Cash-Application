@@ -73,6 +73,7 @@
     <Compile Include="UserCode\FirmendatenItem.cs" />
     <Compile Include="UserCode\KundengruppenItem.cs" />
     <Compile Include="UserCode\KundenItem.cs" />
+    <Compile Include="UserCode\OutgoingMail.cs" />
     <Compile Include="UserCode\Rechnungen.cs" />
   </ItemGroup>
   <ItemGroup>

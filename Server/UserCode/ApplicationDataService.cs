@@ -26,9 +26,8 @@ namespace LightSwitchApplication
 			entity.PositionIntern = entity.Position;
 		}
 
-		partial void OutgoingMailSet_Inserted(OutgoingMail entity)
+		private static void SendEmail(OutgoingMail entity)
 		{
-			entity.Sended = DateTime.Now;
 			using (SmtpClient client = new SmtpClient(HOST, PORT))
 			{
 				try
@@ -46,5 +45,18 @@ namespace LightSwitchApplication
 				}
 			}
 		}
+
+		partial void OutgoingMailSet_Inserting(OutgoingMail entity)
+		{
+		   	entity.Sended = DateTime.Now;
+			SendEmail(entity);
+		}
+
+		partial void OutgoingMailSet_Updating(OutgoingMail entity)
+		{
+		   	entity.Sended = DateTime.Now;
+			SendEmail(entity);
+		}
+
 	}
 }

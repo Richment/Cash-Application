@@ -7267,4 +7267,349 @@ namespace LightSwitchApplication
             }
         }
     }
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    public sealed partial class GesendeteMails
+        : global::Microsoft.LightSwitch.Framework.Client.ScreenObject<global::LightSwitchApplication.GesendeteMails, global::LightSwitchApplication.GesendeteMails.DetailsClass>
+    {
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private GesendeteMails() : base("LightSwitchApplication:GesendeteMails")
+        {
+            global::LightSwitchApplication.GesendeteMails.DetailsClass.Initialize(this);
+        }
+
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public static GesendeteMails CreateInstance()
+        {
+            return new global::LightSwitchApplication.GesendeteMails(
+            );
+        }
+
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void GesendeteMails_InitializeDataWorkspace(global::System.Collections.Generic.List<global::Microsoft.LightSwitch.IDataService> saveChangesTo);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void GesendeteMails_Created();
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void GesendeteMails_Activated();
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void GesendeteMails_Saving(ref bool handled);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void GesendeteMails_Saved();
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void GesendeteMails_Closing(ref bool cancel);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void GesendeteMails_SaveError(global::System.Exception exception, ref bool handled);
+     
+        #region Private Properties
+        
+        /// <summary>
+        /// Ruft das Application-Objekt für diese Anwendung ab. Das Application-Objekt stellt Zugriff auf aktive Bildschirme, Methoden zum Öffnen von Bildschirmen sowie Zugriff auf den aktuellen Benutzer bereit.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private global::LightSwitchApplication.Application Application
+        {
+            get
+            {
+                return global::LightSwitchApplication.Application.Current;
+            }
+        }
+        
+        /// <summary>
+        /// Ruft den übergeordneten Datenarbeitsbereich ab. Der Datenarbeitsbereich stellt Zugriff auf alle Datenquellen in der Anwendung bereit.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private global::LightSwitchApplication.DataWorkspace DataWorkspace
+        {
+            get
+            {
+                return (global::LightSwitchApplication.DataWorkspace)((global::Microsoft.LightSwitch.Details.Client.IScreenDetails)this.Details).DataWorkspace;
+            }
+        }
+        
+        #endregion
+ 
+        partial void OutgoingMailSet_SelectionChanged();
+
+        partial void OutgoingMailSet_Changed(global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e);
+
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void OutgoingMailSet_Loaded(bool succeeded);
+
+        /// <summary>
+        /// Ruft die visuelle OutgoingMailSet-Auflistung ab. Diese Auflistung enthält alle Datensätze, die derzeit in der entsprechenden Liste oder im entsprechenden Rastersteuerelement angezeigt werden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Microsoft.LightSwitch.Framework.Client.VisualCollection<global::LightSwitchApplication.OutgoingMail> OutgoingMailSet
+        {
+            get
+            {
+                return global::LightSwitchApplication.GesendeteMails.DetailsClass.GetValue(this, global::LightSwitchApplication.GesendeteMails.DetailsClass.PropertySetProperties.OutgoingMailSet);
+            }
+        }
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void OutgoingMailSet_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
+ 
+        /// <summary>
+        /// Ruft die Bildschirmmethode Resend auf.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public void Resend()
+        {
+            this.Details.Methods.Resend.CreateInvocation().Execute();
+        }
+        partial void Resend_CanExecute(ref bool result);
+        partial void Resend_Execute();
+
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public sealed class DetailsClass
+            : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenDetails<global::LightSwitchApplication.GesendeteMails, global::LightSwitchApplication.GesendeteMails.DetailsClass, global::LightSwitchApplication.GesendeteMails.DetailsClass.PropertySet, global::LightSwitchApplication.GesendeteMails.DetailsClass.CommandSet, global::LightSwitchApplication.GesendeteMails.DetailsClass.MethodSet>
+        {
+
+            static DetailsClass()
+            {
+                var initializePropertyEntry = global::LightSwitchApplication.GesendeteMails.DetailsClass.PropertySetProperties.OutgoingMailSet;
+                var initializeCommandEntry = global::LightSwitchApplication.GesendeteMails.DetailsClass.CommandSetProperties.Resend;
+                var initializeMethodEntry = global::LightSwitchApplication.GesendeteMails.DetailsClass.MethodSetProperties.Resend;
+            }
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static global::Microsoft.LightSwitch.Details.Framework.Client.ScreenDetails<global::LightSwitchApplication.GesendeteMails, global::LightSwitchApplication.GesendeteMails.DetailsClass>.Entry
+                __GesendeteMailsEntry = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenDetails<global::LightSwitchApplication.GesendeteMails, global::LightSwitchApplication.GesendeteMails.DetailsClass>.Entry(
+                    global::LightSwitchApplication.GesendeteMails.DetailsClass.__GesendeteMails_InvokeInitializeDataWorkspace,
+                    global::LightSwitchApplication.GesendeteMails.DetailsClass.__GesendeteMails_InvokeSavingEvent,
+                    global::LightSwitchApplication.GesendeteMails.DetailsClass.__GesendeteMails_InvokeSavedEvent,
+                    global::LightSwitchApplication.GesendeteMails.DetailsClass.__GesendeteMails_InvokeClosingEvent,
+                    global::LightSwitchApplication.GesendeteMails.DetailsClass.__GesendeteMails_InvokeCreated,
+                    global::LightSwitchApplication.GesendeteMails.DetailsClass.__GesendeteMails_InvokeActivated,
+                    global::LightSwitchApplication.GesendeteMails.DetailsClass.__GesendeteMails_InvokeSaveErrorEvent);
+            private static void __GesendeteMails_InvokeInitializeDataWorkspace(global::LightSwitchApplication.GesendeteMails s, global::System.Collections.Generic.List<global::Microsoft.LightSwitch.IDataService> saveChangesTo)
+            {
+                s.GesendeteMails_InitializeDataWorkspace(saveChangesTo);
+            }
+            private static bool __GesendeteMails_InvokeSavingEvent(global::LightSwitchApplication.GesendeteMails s)
+            {
+                bool handled = false;
+                s.GesendeteMails_Saving(ref handled);
+                return handled;
+            }
+            private static void __GesendeteMails_InvokeSavedEvent(global::LightSwitchApplication.GesendeteMails s)
+            {
+                s.GesendeteMails_Saved();
+            }
+            private static bool __GesendeteMails_InvokeClosingEvent(global::LightSwitchApplication.GesendeteMails s)
+            {
+                bool cancel = false;
+                s.GesendeteMails_Closing(ref cancel);
+                return cancel;
+            }
+            private static void __GesendeteMails_InvokeCreated(global::LightSwitchApplication.GesendeteMails s)
+            {
+                s.GesendeteMails_Created();
+            }
+            private static void __GesendeteMails_InvokeActivated(global::LightSwitchApplication.GesendeteMails s)
+            {
+                s.GesendeteMails_Activated();
+            }
+            private static bool __GesendeteMails_InvokeSaveErrorEvent(global::LightSwitchApplication.GesendeteMails s, global::System.Exception ex)
+            {
+                bool handled = false;
+                s.GesendeteMails_SaveError(ex, ref handled);
+                return handled;
+            }
+
+            public DetailsClass() : base()
+            {
+            }
+
+            public new global::LightSwitchApplication.GesendeteMails.DetailsClass.PropertySet Properties
+            {
+                get
+                {
+                    return base.Properties;
+                }
+            }
+
+            public new global::LightSwitchApplication.GesendeteMails.DetailsClass.CommandSet Commands
+            {
+                get
+                {
+                    return base.Commands;
+                }
+            }
+
+            public new global::LightSwitchApplication.GesendeteMails.DetailsClass.MethodSet Methods
+            {
+                get
+                {
+                    return base.Methods;
+                }
+            }
+
+            private global::Microsoft.LightSwitch.IDataServiceQueryable OutgoingMailSetQuery()
+            {
+                return this.Screen.DataWorkspace.ApplicationData.OutgoingMailSet;
+            }
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.GesendeteMails, global::LightSwitchApplication.GesendeteMails.DetailsClass, global::LightSwitchApplication.OutgoingMail>.Data _OutgoingMailSet;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.GesendeteMails, global::LightSwitchApplication.GesendeteMails.DetailsClass>.Data _ResendCommand;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.GesendeteMails, global::LightSwitchApplication.GesendeteMails.DetailsClass>.Data _ResendMethod;
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public sealed class PropertySet
+                : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenPropertySet<global::LightSwitchApplication.GesendeteMails, global::LightSwitchApplication.GesendeteMails.DetailsClass>
+            {
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.GesendeteMails, global::LightSwitchApplication.GesendeteMails.DetailsClass, global::LightSwitchApplication.OutgoingMail> OutgoingMailSet
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.GesendeteMails, global::LightSwitchApplication.GesendeteMails.DetailsClass, global::LightSwitchApplication.OutgoingMail>)base.GetItem(global::LightSwitchApplication.GesendeteMails.DetailsClass.PropertySetProperties.OutgoingMailSet);
+                    }
+                }
+
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public sealed class CommandSet
+                : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommandSet<global::LightSwitchApplication.GesendeteMails, global::LightSwitchApplication.GesendeteMails.DetailsClass>
+            {
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.GesendeteMails, global::LightSwitchApplication.GesendeteMails.DetailsClass> Resend
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.GesendeteMails, global::LightSwitchApplication.GesendeteMails.DetailsClass>)base.GetItem(global::LightSwitchApplication.GesendeteMails.DetailsClass.CommandSetProperties.Resend);
+                    }
+                }
+
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public sealed class MethodSet
+                : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethodSet<global::LightSwitchApplication.GesendeteMails, global::LightSwitchApplication.GesendeteMails.DetailsClass>
+            {
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.GesendeteMails, global::LightSwitchApplication.GesendeteMails.DetailsClass> Resend
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.GesendeteMails, global::LightSwitchApplication.GesendeteMails.DetailsClass>)base.GetItem(global::LightSwitchApplication.GesendeteMails.DetailsClass.MethodSetProperties.Resend);
+                    }
+                }
+
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal sealed class PropertySetProperties
+            {
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.GesendeteMails, global::LightSwitchApplication.GesendeteMails.DetailsClass, global::LightSwitchApplication.OutgoingMail>.Entry
+                    OutgoingMailSet = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.GesendeteMails, global::LightSwitchApplication.GesendeteMails.DetailsClass, global::LightSwitchApplication.OutgoingMail>.Entry(
+                        "OutgoingMailSet",
+                        global::LightSwitchApplication.GesendeteMails.DetailsClass.PropertySetProperties._OutgoingMailSet_Stub,
+                        global::LightSwitchApplication.GesendeteMails.DetailsClass.PropertySetProperties._OutgoingMailSet_Validate,
+                        global::LightSwitchApplication.GesendeteMails.DetailsClass.PropertySetProperties._OutgoingMailSet_CreateQuery,
+                        global::LightSwitchApplication.GesendeteMails.DetailsClass.PropertySetProperties._OutgoingMailSet_SelectionChanged,
+                        global::LightSwitchApplication.GesendeteMails.DetailsClass.PropertySetProperties._OutgoingMailSet_OnCollectionChanged,
+                        global::LightSwitchApplication.GesendeteMails.DetailsClass.PropertySetProperties._OutgoingMailSet_OnLoaded);
+                private static void _OutgoingMailSet_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.GesendeteMails.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.GesendeteMails, global::LightSwitchApplication.GesendeteMails.DetailsClass, global::LightSwitchApplication.OutgoingMail>.Data> c, global::LightSwitchApplication.GesendeteMails.DetailsClass d, object sf)
+                {
+                    c(d, ref d._OutgoingMailSet, sf);
+                }
+                private static void _OutgoingMailSet_Validate(global::LightSwitchApplication.GesendeteMails s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
+                {
+                    s.OutgoingMailSet_Validate(r);
+                }
+                private static global::Microsoft.LightSwitch.IDataServiceQueryable _OutgoingMailSet_CreateQuery(global::LightSwitchApplication.GesendeteMails.DetailsClass d, object[] args)
+                {
+                    return d.OutgoingMailSetQuery();
+                }
+                private static void _OutgoingMailSet_SelectionChanged(global::LightSwitchApplication.GesendeteMails s)
+                {
+                    s.OutgoingMailSet_SelectionChanged();
+                }
+                private static void _OutgoingMailSet_OnCollectionChanged(global::LightSwitchApplication.GesendeteMails s, global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+                {
+                    s.OutgoingMailSet_Changed(e);
+                }
+                private static void _OutgoingMailSet_OnLoaded(global::LightSwitchApplication.GesendeteMails s, bool succeeded)
+                {
+                    s.OutgoingMailSet_Loaded(succeeded);
+                }
+
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal sealed class CommandSetProperties
+            {
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.GesendeteMails, global::LightSwitchApplication.GesendeteMails.DetailsClass>.Entry
+                    Resend = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.GesendeteMails, global::LightSwitchApplication.GesendeteMails.DetailsClass>.Entry(
+                        "Resend",
+                        global::LightSwitchApplication.GesendeteMails.DetailsClass.CommandSetProperties._Resend_Stub,
+                        global::LightSwitchApplication.GesendeteMails.DetailsClass.CommandSetProperties._Resend_CreateExecutableObject);
+                private static void _Resend_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.GesendeteMails.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.GesendeteMails, global::LightSwitchApplication.GesendeteMails.DetailsClass>.Data> c, global::LightSwitchApplication.GesendeteMails.DetailsClass d, object sf)
+                {
+                    c(d, ref d._ResendCommand, sf);
+                }
+                private static global::Microsoft.LightSwitch.IExecutable _Resend_CreateExecutableObject(global::LightSwitchApplication.GesendeteMails.DetailsClass d)
+                {
+                    return ((global::LightSwitchApplication.GesendeteMails.DetailsClass)d).Methods.Resend.CreateInvocation();
+                }
+
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal sealed class MethodSetProperties
+            {
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.GesendeteMails, global::LightSwitchApplication.GesendeteMails.DetailsClass>.Entry
+                    Resend = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.GesendeteMails, global::LightSwitchApplication.GesendeteMails.DetailsClass>.Entry(
+                        "Resend",
+                        global::LightSwitchApplication.GesendeteMails.DetailsClass.MethodSetProperties._Resend_Stub,
+                        global::LightSwitchApplication.GesendeteMails.DetailsClass.MethodSetProperties._Resend_CanInvoke,
+                        global::LightSwitchApplication.GesendeteMails.DetailsClass.MethodSetProperties._Resend_InvokeMethod);
+                private static void _Resend_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.GesendeteMails.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.GesendeteMails, global::LightSwitchApplication.GesendeteMails.DetailsClass>.Data> c, global::LightSwitchApplication.GesendeteMails.DetailsClass d, object sf)
+                {
+                    c(d, ref d._ResendMethod, sf);
+                }
+                private static global::System.Exception _Resend_CanInvoke(global::LightSwitchApplication.GesendeteMails.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
+                {
+                    bool result = true;
+                    d.Screen.Resend_CanExecute(ref result);
+                    return result ? null : ex;
+                }
+                private static void _Resend_InvokeMethod(global::LightSwitchApplication.GesendeteMails.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
+                {
+                    d.Screen.Resend_Execute();
+                }
+
+            }
+        }
+    }
 }
