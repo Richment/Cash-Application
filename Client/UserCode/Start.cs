@@ -126,6 +126,7 @@ namespace LightSwitchApplication
 			
 			mod.Show();
 		}
+
 		partial void Ok_NeueRechnung_CanExecute(ref bool result)
 		{
 			if (current == null)
@@ -144,6 +145,7 @@ namespace LightSwitchApplication
 
 
 		}
+	
 		partial void OK_Artikel_CanExecute(ref bool result)
 		{
 			result = current.ArtikellisteCollection.Count() > 0;
@@ -155,22 +157,20 @@ namespace LightSwitchApplication
 
 		#endregion
 
-		partial void Geliefert_CanExecute(ref bool result)
+		partial void Bezahlung_CanExecute(ref bool result)
 		{
 			if (this.InBearbeitung.SelectedItem == null)
 			{
 				result = false;
 				return;
 			}
-			result = this.InBearbeitung.SelectedItem.Status == (int)LightSwitchApplication.Bestellstatus.InRechnung;
+			result = ((this.InBearbeitung.SelectedItem.Status == (int)LightSwitchApplication.Bestellstatus.Geliefert) || (this.InBearbeitung.SelectedItem.Status == (int)LightSwitchApplication.Bestellstatus.Zahlungsverzug)) && !this.InBearbeitung.SelectedItem.RequiresProcessing;
+
 		}
-		partial void Geliefert_Execute()
+		partial void Bezahlung_Execute()
 		{
-			// Erstellen Sie hier Ihren Code.
 
 		}
-
- 
 
 		partial void Bezahlt_CanExecute(ref bool result)
 		{
@@ -194,18 +194,18 @@ namespace LightSwitchApplication
 		
 		}
 
-		partial void Bezahlung_CanExecute(ref bool result)
+
+		partial void Lieferung_CanExecute(ref bool result)
 		{
 			if (this.InBearbeitung.SelectedItem == null)
 			{
 				result = false;
 				return;
 			}
-			result = ((this.InBearbeitung.SelectedItem.Status == (int)LightSwitchApplication.Bestellstatus.Geliefert) || (this.InBearbeitung.SelectedItem.Status == (int)LightSwitchApplication.Bestellstatus.Zahlungsverzug)) && !this.InBearbeitung.SelectedItem.RequiresProcessing;
-
+			result = (this.InBearbeitung.SelectedItem.Status == (int)LightSwitchApplication.Bestellstatus.InRechnung) && !this.InBearbeitung.SelectedItem.RequiresProcessing;
 		}
 
-		partial void Bezahlung_Execute()
+		partial void Lieferung_Execute()
 		{
 			// Erstellen Sie hier Ihren Code.
 

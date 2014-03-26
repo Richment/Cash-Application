@@ -64,17 +64,19 @@ namespace LightSwitchApplication
 					collection[key].Add("");
 				}
 
-				//item.RequiresProcessing = false;
-				//item.Status = (int)Bestellstatus.Bearbeitet;
+				item.RequiresProcessing = false;
+				item.Status = (int)Bestellstatus.Bearbeitet;
 			}
 	
 			foreach (var item in collection)
 			{
+#if DEBUG
 				this.ShowMessageBox(String.Join(Environment.NewLine, item.Value.ToArray()));				
-				/*var newItem = OutgoingMailSet.AddNew();
+#endif
+				var newItem = OutgoingMailSet.AddNew();
 				newItem.Recipient = item.Key.Email;
 				newItem.Subject = "Neue Bestellungen vom " + DateTime.Today.ToShortDateString();
-				newItem.Body = String.Join(Environment.NewLine, item.Value.ToArray());*/
+				newItem.Body = String.Join(Environment.NewLine, item.Value.ToArray());
 			}
 
 			this.Save();
