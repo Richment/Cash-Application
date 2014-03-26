@@ -11,10 +11,10 @@ namespace LightSwitchApplication
 {
 	public partial class ApplicationDataService
 	{
-		private const string SENDER = "";
-		private const string HOST = "";
-		private const string USER = "";
-		private const string PASS = "";
+		private const string SENDER = "order@cast4art.de";
+		private const string HOST = "smtp.1und1.de";
+		private const string USER = "order@cast4art.de";
+		private const string PASS = "!order2014!";
 		private const int PORT = 25;
 
 		private static void SendEmail(OutgoingMail entity)
