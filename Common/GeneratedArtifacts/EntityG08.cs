@@ -319,6 +319,29 @@ namespace LightSwitchApplication
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void KundenRechnungsadresse_Changed();
 
+        /// <summary>
+        /// Keine modellierte Beschreibung verfügbar
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Microsoft.LightSwitch.Framework.EntityCollection<global::LightSwitchApplication.Rechnungen> RechnungenCollection
+        {
+            get
+            {
+                return global::LightSwitchApplication.AdressenSetItem.DetailsClass.GetValue(this, global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.RechnungenCollection);
+            }
+        }
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.Rechnungen> RechnungenCollectionQuery
+        {
+            get
+            {
+                return global::LightSwitchApplication.AdressenSetItem.DetailsClass.GetQuery(this, global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.RechnungenCollection);
+            }
+        }
+
         #endregion
     
         #region Details Class
@@ -481,6 +504,14 @@ namespace LightSwitchApplication
                     }
                 }
                 
+                public global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, global::LightSwitchApplication.Rechnungen> RechnungenCollection
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.RechnungenCollection) as global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, global::LightSwitchApplication.Rechnungen>;
+                    }
+                }
+                
             }
     
             #pragma warning disable 109
@@ -497,6 +528,7 @@ namespace LightSwitchApplication
                 new string Stadt { get; set; }
                 new string Land { get; set; }
                 new global::Microsoft.LightSwitch.Internal.IEntityImplementation KundenRechnungsadresse { get; set; }
+                new global::System.Collections.IEnumerable RechnungenCollection { get; }
             }
             #pragma warning restore 109
     
@@ -886,6 +918,26 @@ namespace LightSwitchApplication
                     e.KundenRechnungsadresse_Changed();
                 }
     
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, global::LightSwitchApplication.Rechnungen>.Entry
+                    RechnungenCollection = new global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, global::LightSwitchApplication.Rechnungen>.Entry(
+                        "RechnungenCollection",
+                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._RechnungenCollection_Stub,
+                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._RechnungenCollection_GetReferencedEntities,
+                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._RechnungenCollection_GetEntityCollection);
+                private static void _RechnungenCollection_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.AdressenSetItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, global::LightSwitchApplication.Rechnungen>.Data> c, global::LightSwitchApplication.AdressenSetItem.DetailsClass d, object sf)
+                {
+                    c(d, ref d._RechnungenCollection, sf);
+                }
+                private static global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.Rechnungen> _RechnungenCollection_GetReferencedEntities(global::LightSwitchApplication.AdressenSetItem.DetailsClass d)
+                {
+                    return d.GetReferencedEntities<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass>(global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.RechnungenCollection, ref d._RechnungenCollection);
+                }
+                private static global::System.Collections.IEnumerable _RechnungenCollection_GetEntityCollection(global::LightSwitchApplication.AdressenSetItem.DetailsClass d)
+                {
+                    return d.ImplementationEntity.RechnungenCollection;
+                }
+    
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -917,6 +969,9 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, global::LightSwitchApplication.KundenItem>.Data _KundenRechnungsadresse;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, global::LightSwitchApplication.Rechnungen>.Data _RechnungenCollection;
             
         }
     

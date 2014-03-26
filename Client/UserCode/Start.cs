@@ -113,11 +113,11 @@ namespace LightSwitchApplication
 						if (item.Id == current.Id)
 							item.Details.DiscardChanges();
 					current = null;
-				},
+				}/*,
 				ProceedMethod = () =>
 				{
 					//this.Details.Dispatcher.BeginInvoke(ShowArtikelDialog);
-				}
+				}	 */
 			};
 			
 			current.RequiresProcessing = true;
@@ -179,7 +179,7 @@ namespace LightSwitchApplication
 				result = false;
 				return;
 			}
-			result = this.InBearbeitung.SelectedItem.Status == (int)LightSwitchApplication.Bestellstatus.Geliefert;
+			result = ((this.InBearbeitung.SelectedItem.Status == (int)LightSwitchApplication.Bestellstatus.Geliefert) || (this.InBearbeitung.SelectedItem.Status == (int)LightSwitchApplication.Bestellstatus.Zahlungsverzug)) && !this.InBearbeitung.SelectedItem.RequiresProcessing;
 		}
 		partial void Bezahlt_Execute()
 		{
@@ -192,6 +192,23 @@ namespace LightSwitchApplication
 		private void StartVersendeDialog()
 		{
 		
+		}
+
+		partial void Bezahlung_CanExecute(ref bool result)
+		{
+			if (this.InBearbeitung.SelectedItem == null)
+			{
+				result = false;
+				return;
+			}
+			result = ((this.InBearbeitung.SelectedItem.Status == (int)LightSwitchApplication.Bestellstatus.Geliefert) || (this.InBearbeitung.SelectedItem.Status == (int)LightSwitchApplication.Bestellstatus.Zahlungsverzug)) && !this.InBearbeitung.SelectedItem.RequiresProcessing;
+
+		}
+
+		partial void Bezahlung_Execute()
+		{
+			// Erstellen Sie hier Ihren Code.
+
 		}
 
 

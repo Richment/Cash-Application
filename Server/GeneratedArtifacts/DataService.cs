@@ -384,6 +384,78 @@ namespace LightSwitchApplication
         partial void Bezahlart_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.BezahlartItem, bool>> filter);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void OutgoingMailSet_CanInsert(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void OutgoingMailSet_CanUpdate(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void OutgoingMailSet_CanDelete(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void OutgoingMailSet_CanRead(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void OutgoingMailSet_Inserting(global::LightSwitchApplication.OutgoingMail entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void OutgoingMailSet_Inserted(global::LightSwitchApplication.OutgoingMail entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void OutgoingMailSet_Updating(global::LightSwitchApplication.OutgoingMail entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void OutgoingMailSet_Updated(global::LightSwitchApplication.OutgoingMail entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void OutgoingMailSet_Deleting(global::LightSwitchApplication.OutgoingMail entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void OutgoingMailSet_Deleted(global::LightSwitchApplication.OutgoingMail entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void OutgoingMailSet_Validate(global::LightSwitchApplication.OutgoingMail entity, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder results);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void OutgoingMailSet_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.OutgoingMail, bool>> filter);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void AnbieterSet_CanInsert(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void AnbieterSet_CanUpdate(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void AnbieterSet_CanDelete(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void AnbieterSet_CanRead(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void AnbieterSet_Inserting(global::LightSwitchApplication.Anbieter entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void AnbieterSet_Inserted(global::LightSwitchApplication.Anbieter entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void AnbieterSet_Updating(global::LightSwitchApplication.Anbieter entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void AnbieterSet_Updated(global::LightSwitchApplication.Anbieter entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void AnbieterSet_Deleting(global::LightSwitchApplication.Anbieter entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void AnbieterSet_Deleted(global::LightSwitchApplication.Anbieter entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void AnbieterSet_Validate(global::LightSwitchApplication.Anbieter entity, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder results);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void AnbieterSet_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.Anbieter, bool>> filter);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void SaveChanges_CanExecute(ref bool result);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1120,6 +1192,156 @@ namespace LightSwitchApplication
             {
                 global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.BezahlartItem, bool>> filter = null;
                 d.Bezahlart_Filter(ref filter);
+                return filter;
+            }
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.OutgoingMail>
+                __OutgoingMailSetEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.OutgoingMail>(
+                    "OutgoingMailSet",
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__OutgoingMailSet_CanInsert,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__OutgoingMailSet_CanUpdate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__OutgoingMailSet_CanDelete,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__OutgoingMailSet_CanRead,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__OutgoingMailSet_Inserting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__OutgoingMailSet_Inserted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__OutgoingMailSet_Updating,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__OutgoingMailSet_Updated,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__OutgoingMailSet_Deleting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__OutgoingMailSet_Deleted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__OutgoingMailSet_Validate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__OutgoingMailSet_Filter);
+            private static bool __OutgoingMailSet_CanInsert(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.OutgoingMailSet_CanInsert(ref result);
+                return result;
+            }
+            private static bool __OutgoingMailSet_CanUpdate(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.OutgoingMailSet_CanUpdate(ref result);
+                return result;
+            }
+            private static bool __OutgoingMailSet_CanDelete(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.OutgoingMailSet_CanDelete(ref result);
+                return result;
+            }
+            private static bool __OutgoingMailSet_CanRead(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.OutgoingMailSet_CanRead(ref result);
+                return result;
+            }
+            private static void __OutgoingMailSet_Inserting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.OutgoingMail e)
+            {
+                d.OutgoingMailSet_Inserting(e);
+            }
+            private static void __OutgoingMailSet_Inserted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.OutgoingMail e)
+            {
+                d.OutgoingMailSet_Inserted(e);
+            }
+            private static void __OutgoingMailSet_Updating(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.OutgoingMail e)
+            {
+                d.OutgoingMailSet_Updating(e);
+            }
+            private static void __OutgoingMailSet_Updated(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.OutgoingMail e)
+            {
+                d.OutgoingMailSet_Updated(e);
+            }
+            private static void __OutgoingMailSet_Deleting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.OutgoingMail e)
+            {
+                d.OutgoingMailSet_Deleting(e);
+            }
+            private static void __OutgoingMailSet_Deleted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.OutgoingMail e)
+            {
+                d.OutgoingMailSet_Deleted(e);
+            }
+            private static void __OutgoingMailSet_Validate(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.OutgoingMail e, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder r)
+            {
+                d.OutgoingMailSet_Validate(e, r);
+            }
+            private static global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.OutgoingMail, bool>> __OutgoingMailSet_Filter(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.OutgoingMail, bool>> filter = null;
+                d.OutgoingMailSet_Filter(ref filter);
+                return filter;
+            }
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.Anbieter>
+                __AnbieterSetEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.Anbieter>(
+                    "AnbieterSet",
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__AnbieterSet_CanInsert,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__AnbieterSet_CanUpdate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__AnbieterSet_CanDelete,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__AnbieterSet_CanRead,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__AnbieterSet_Inserting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__AnbieterSet_Inserted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__AnbieterSet_Updating,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__AnbieterSet_Updated,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__AnbieterSet_Deleting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__AnbieterSet_Deleted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__AnbieterSet_Validate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__AnbieterSet_Filter);
+            private static bool __AnbieterSet_CanInsert(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.AnbieterSet_CanInsert(ref result);
+                return result;
+            }
+            private static bool __AnbieterSet_CanUpdate(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.AnbieterSet_CanUpdate(ref result);
+                return result;
+            }
+            private static bool __AnbieterSet_CanDelete(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.AnbieterSet_CanDelete(ref result);
+                return result;
+            }
+            private static bool __AnbieterSet_CanRead(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.AnbieterSet_CanRead(ref result);
+                return result;
+            }
+            private static void __AnbieterSet_Inserting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.Anbieter e)
+            {
+                d.AnbieterSet_Inserting(e);
+            }
+            private static void __AnbieterSet_Inserted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.Anbieter e)
+            {
+                d.AnbieterSet_Inserted(e);
+            }
+            private static void __AnbieterSet_Updating(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.Anbieter e)
+            {
+                d.AnbieterSet_Updating(e);
+            }
+            private static void __AnbieterSet_Updated(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.Anbieter e)
+            {
+                d.AnbieterSet_Updated(e);
+            }
+            private static void __AnbieterSet_Deleting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.Anbieter e)
+            {
+                d.AnbieterSet_Deleting(e);
+            }
+            private static void __AnbieterSet_Deleted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.Anbieter e)
+            {
+                d.AnbieterSet_Deleted(e);
+            }
+            private static void __AnbieterSet_Validate(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.Anbieter e, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder r)
+            {
+                d.AnbieterSet_Validate(e, r);
+            }
+            private static global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.Anbieter, bool>> __AnbieterSet_Filter(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.Anbieter, bool>> filter = null;
+                d.AnbieterSet_Filter(ref filter);
                 return filter;
             }
             

@@ -576,6 +576,30 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::LightSwitchApplication.AdressenSetItem Lieferadresse
+        {
+            get
+            {
+                return global::LightSwitchApplication.Rechnungen.DetailsClass.GetValue(this, global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties.Lieferadresse);
+            }
+            set
+            {
+                global::LightSwitchApplication.Rechnungen.DetailsClass.SetValue(this, global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties.Lieferadresse, value);
+            }
+        }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Lieferadresse_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Lieferadresse_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Lieferadresse_Changed();
+
+        /// <summary>
+        /// Keine modellierte Beschreibung verfügbar
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public global::Microsoft.LightSwitch.Framework.EntityCollection<global::LightSwitchApplication.ArtikellisteItem> ArtikellisteCollection
         {
             get
@@ -852,6 +876,14 @@ namespace LightSwitchApplication
                     }
                 }
                 
+                public global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.AdressenSetItem> Lieferadresse
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties.Lieferadresse) as global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.AdressenSetItem>;
+                    }
+                }
+                
                 public global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.ArtikellisteItem> ArtikellisteCollection
                 {
                     get
@@ -882,6 +914,7 @@ namespace LightSwitchApplication
                 new bool RequiresProcessing { get; set; }
                 new global::Microsoft.LightSwitch.Internal.IEntityImplementation Kunde { get; set; }
                 new global::Microsoft.LightSwitch.Internal.IEntityImplementation BezahlartItem { get; set; }
+                new global::Microsoft.LightSwitch.Internal.IEntityImplementation Lieferadresse { get; set; }
                 new global::System.Collections.IEnumerable ArtikellisteCollection { get; }
             }
             #pragma warning restore 109
@@ -1637,6 +1670,53 @@ namespace LightSwitchApplication
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Entry
+                    Lieferadresse = new global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Entry(
+                        "Lieferadresse",
+                        global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._Lieferadresse_Stub,
+                        global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._Lieferadresse_ComputeIsReadOnly,
+                        global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._Lieferadresse_Validate,
+                        global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._Lieferadresse_GetCoreImplementationValue,
+                        global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._Lieferadresse_GetImplementationValue,
+                        global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._Lieferadresse_SetImplementationValue,
+                        global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._Lieferadresse_Refresh,
+                        global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._Lieferadresse_OnValueChanged);
+                private static void _Lieferadresse_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Rechnungen.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Data> c, global::LightSwitchApplication.Rechnungen.DetailsClass d, object sf)
+                {
+                    c(d, ref d._Lieferadresse, sf);
+                }
+                private static bool _Lieferadresse_ComputeIsReadOnly(global::LightSwitchApplication.Rechnungen e)
+                {
+                    bool result = false;
+                    e.Lieferadresse_IsReadOnly(ref result);
+                    return result;
+                }
+                private static void _Lieferadresse_Validate(global::LightSwitchApplication.Rechnungen e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                {
+                    e.Lieferadresse_Validate(r);
+                }
+                private static global::Microsoft.LightSwitch.Internal.IEntityImplementation _Lieferadresse_GetCoreImplementationValue(global::LightSwitchApplication.Rechnungen.DetailsClass d)
+                {
+                    return d.ImplementationEntity.Lieferadresse;
+                }
+                private static global::LightSwitchApplication.AdressenSetItem _Lieferadresse_GetImplementationValue(global::LightSwitchApplication.Rechnungen.DetailsClass d)
+                {
+                    return d.GetImplementationValue<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass>(global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties.Lieferadresse, ref d._Lieferadresse);
+                }
+                private static void _Lieferadresse_SetImplementationValue(global::LightSwitchApplication.Rechnungen.DetailsClass d, global::LightSwitchApplication.AdressenSetItem v)
+                {
+                    d.SetImplementationValue(global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties.Lieferadresse, ref d._Lieferadresse, (i, ev) => i.Lieferadresse = ev, v);
+                }
+                private static void _Lieferadresse_Refresh(global::LightSwitchApplication.Rechnungen.DetailsClass d)
+                {
+                    d.RefreshNavigationProperty(global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties.Lieferadresse, ref d._Lieferadresse);
+                }
+                private static void _Lieferadresse_OnValueChanged(global::LightSwitchApplication.Rechnungen e)
+                {
+                    e.Lieferadresse_Changed();
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.ArtikellisteItem>.Entry
                     ArtikellisteCollection = new global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.ArtikellisteItem>.Entry(
                         "ArtikellisteCollection",
@@ -1723,6 +1803,9 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.BezahlartItem>.Data _BezahlartItem;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Data _Lieferadresse;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.ArtikellisteItem>.Data _ArtikellisteCollection;

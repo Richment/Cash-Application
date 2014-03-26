@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Ursprünglicher Dateiname:
-// Erstellungsdatum: 22.03.2014 13:39:26
+// Erstellungsdatum: 26.03.2014 18:04:01
 namespace LightSwitchApplication.Implementation
 {
     
@@ -214,6 +214,40 @@ namespace LightSwitchApplication.Implementation
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceQuery<BezahlartItem> _Bezahlart;
         /// <summary>
+        /// Im Schema sind keine Kommentare für "OutgoingMailSet" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceQuery<OutgoingMail> OutgoingMailSet
+        {
+            get
+            {
+                if ((this._OutgoingMailSet == null))
+                {
+                    this._OutgoingMailSet = base.CreateQuery<OutgoingMail>("OutgoingMailSet");
+                }
+                return this._OutgoingMailSet;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceQuery<OutgoingMail> _OutgoingMailSet;
+        /// <summary>
+        /// Im Schema sind keine Kommentare für "AnbieterSet" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceQuery<Anbieter> AnbieterSet
+        {
+            get
+            {
+                if ((this._AnbieterSet == null))
+                {
+                    this._AnbieterSet = base.CreateQuery<Anbieter>("AnbieterSet");
+                }
+                return this._AnbieterSet;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceQuery<Anbieter> _AnbieterSet;
+        /// <summary>
         /// Im Schema sind keine Kommentare für "Kunden" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -284,6 +318,22 @@ namespace LightSwitchApplication.Implementation
         public void AddToBezahlart(BezahlartItem bezahlartItem)
         {
             base.AddObject("Bezahlart", bezahlartItem);
+        }
+        /// <summary>
+        /// Im Schema sind keine Kommentare für "OutgoingMailSet" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public void AddToOutgoingMailSet(OutgoingMail outgoingMail)
+        {
+            base.AddObject("OutgoingMailSet", outgoingMail);
+        }
+        /// <summary>
+        /// Im Schema sind keine Kommentare für "AnbieterSet" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public void AddToAnbieterSet(Anbieter anbieter)
+        {
+            base.AddObject("AnbieterSet", anbieter);
         }
     }
     /// <summary>
@@ -1127,8 +1177,9 @@ namespace LightSwitchApplication.Implementation
         /// <param name="anzahl_PK">Anfangswert von Anzahl_PK.</param>
         /// <param name="eK_pro_PK">Anfangswert von EK_pro_PK.</param>
         /// <param name="vK_pro_PK">Anfangswert von VK_pro_PK.</param>
+        /// <param name="artikelstammItem_Anbieter">Anfangswert von ArtikelstammItem_Anbieter.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static ArtikelstammItem CreateArtikelstammItem(int ID, byte[] rowVersion, string artikelnummer, string artikelbeschreibung, string vertriebsname, int anzahl_PK, decimal eK_pro_PK, decimal vK_pro_PK)
+        public static ArtikelstammItem CreateArtikelstammItem(int ID, byte[] rowVersion, string artikelnummer, string artikelbeschreibung, string vertriebsname, int anzahl_PK, decimal eK_pro_PK, decimal vK_pro_PK, int artikelstammItem_Anbieter)
         {
             ArtikelstammItem artikelstammItem = new ArtikelstammItem();
             artikelstammItem.Id = ID;
@@ -1139,6 +1190,7 @@ namespace LightSwitchApplication.Implementation
             artikelstammItem.Anzahl_PK = anzahl_PK;
             artikelstammItem.EK_pro_PK = eK_pro_PK;
             artikelstammItem.VK_pro_PK = vK_pro_PK;
+            artikelstammItem.ArtikelstammItem_Anbieter = artikelstammItem_Anbieter;
             return artikelstammItem;
         }
         /// <summary>
@@ -1409,6 +1461,32 @@ namespace LightSwitchApplication.Implementation
         partial void OnMargeChanging(global::System.Nullable<decimal> value);
         partial void OnMargeChanged();
         /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "ArtikelstammItem_Anbieter" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public int ArtikelstammItem_Anbieter
+        {
+            get
+            {
+                return this._ArtikelstammItem_Anbieter;
+            }
+            set
+            {
+                this.OnArtikelstammItem_AnbieterChanging(value);
+                if (object.Equals(this.ArtikelstammItem_Anbieter, value))
+                {
+                    return;
+                }
+                this._ArtikelstammItem_Anbieter = value;
+                this.OnArtikelstammItem_AnbieterChanged();
+                this.OnPropertyChanged("ArtikelstammItem_Anbieter");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private int _ArtikelstammItem_Anbieter;
+        partial void OnArtikelstammItem_AnbieterChanging(int value);
+        partial void OnArtikelstammItem_AnbieterChanged();
+        /// <summary>
         /// Im Schema sind keine Kommentare für "ArtikellisteItem" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -1427,6 +1505,53 @@ namespace LightSwitchApplication.Implementation
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceCollection<ArtikellisteItem> _ArtikellisteItem = new global::System.Data.Services.Client.DataServiceCollection<ArtikellisteItem>(null, global::System.Data.Services.Client.TrackingMode.None);
+        /// <summary>
+        /// Im Schema sind keine Kommentare für "Anbieter" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Anbieter Anbieter
+        {
+            get
+            {
+                this.@__Anbieter.EnsureValueInitialized();
+                return this._Anbieter;
+            }
+            set
+            {
+                Anbieter previous = this.Anbieter;
+                if ((previous == value))
+                {
+                    return;
+                }
+                if ((previous != null))
+                {
+                    this._Anbieter = null;
+                    this.@__Anbieter.OnValueSet();
+                    previous.Artikelstamm.Remove(this);
+                }
+                if ((this.___Host != null))
+                {
+                    if ((value != null))
+                    {
+                        this.ArtikelstammItem_Anbieter = value.Id;
+                    }
+                    else
+                    {
+                        this.ArtikelstammItem_Anbieter = default(int);
+                    }
+                }
+                this._Anbieter = value;
+                this.@__Anbieter.OnValueSet();
+                if ((value != null))
+                {
+                    value.@__Artikelstamm.Add(this);
+                }
+                this.___OnPropertyChanged("Anbieter");
+                this.OnPropertyChanged("Anbieter");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Anbieter _Anbieter;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -1899,6 +2024,32 @@ namespace LightSwitchApplication.Implementation
         partial void OnRechnungen_BezahlartItemChanging(int value);
         partial void OnRechnungen_BezahlartItemChanged();
         /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "Rechnungen_AdressenSetItem" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Nullable<int> Rechnungen_AdressenSetItem
+        {
+            get
+            {
+                return this._Rechnungen_AdressenSetItem;
+            }
+            set
+            {
+                this.OnRechnungen_AdressenSetItemChanging(value);
+                if (object.Equals(this.Rechnungen_AdressenSetItem, value))
+                {
+                    return;
+                }
+                this._Rechnungen_AdressenSetItem = value;
+                this.OnRechnungen_AdressenSetItemChanged();
+                this.OnPropertyChanged("Rechnungen_AdressenSetItem");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Nullable<int> _Rechnungen_AdressenSetItem;
+        partial void OnRechnungen_AdressenSetItemChanging(global::System.Nullable<int> value);
+        partial void OnRechnungen_AdressenSetItemChanged();
+        /// <summary>
         /// Im Schema sind keine Kommentare für "Kunde" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -1992,6 +2143,53 @@ namespace LightSwitchApplication.Implementation
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private BezahlartItem _BezahlartItem;
+        /// <summary>
+        /// Im Schema sind keine Kommentare für "Lieferadresse" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public AdressenSetItem Lieferadresse
+        {
+            get
+            {
+                this.@__Lieferadresse.EnsureValueInitialized();
+                return this._Lieferadresse;
+            }
+            set
+            {
+                AdressenSetItem previous = this.Lieferadresse;
+                if ((previous == value))
+                {
+                    return;
+                }
+                if ((previous != null))
+                {
+                    this._Lieferadresse = null;
+                    this.@__Lieferadresse.OnValueSet();
+                    previous.RechnungenCollection.Remove(this);
+                }
+                if ((this.___Host != null))
+                {
+                    if ((value != null))
+                    {
+                        this.Rechnungen_AdressenSetItem = value.Id;
+                    }
+                    else
+                    {
+                        this.Rechnungen_AdressenSetItem = default(global::System.Nullable<int>);
+                    }
+                }
+                this._Lieferadresse = value;
+                this.@__Lieferadresse.OnValueSet();
+                if ((value != null))
+                {
+                    value.@__RechnungenCollection.Add(this);
+                }
+                this.___OnPropertyChanged("Lieferadresse");
+                this.OnPropertyChanged("Lieferadresse");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private AdressenSetItem _Lieferadresse;
         /// <summary>
         /// Im Schema sind keine Kommentare für "ArtikellisteCollection" vorhanden.
         /// </summary>
@@ -3350,6 +3548,25 @@ namespace LightSwitchApplication.Implementation
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private KundenItem _KundenRechnungsadresse;
+        /// <summary>
+        /// Im Schema sind keine Kommentare für "RechnungenCollection" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceCollection<Rechnungen> RechnungenCollection
+        {
+            get
+            {
+                this.@__RechnungenCollection.EnsureValueInitialized();
+                return this._RechnungenCollection;
+            }
+            set
+            {
+                this._RechnungenCollection = value;
+                this.OnPropertyChanged("RechnungenCollection");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<Rechnungen> _RechnungenCollection = new global::System.Data.Services.Client.DataServiceCollection<Rechnungen>(null, global::System.Data.Services.Client.TrackingMode.None);
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -3518,6 +3735,403 @@ namespace LightSwitchApplication.Implementation
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceCollection<Rechnungen> _RechnungenCollection = new global::System.Data.Services.Client.DataServiceCollection<Rechnungen>(null, global::System.Data.Services.Client.TrackingMode.None);
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// Im Schema sind keine Kommentare für "LightSwitchApplication.OutgoingMail" vorhanden.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("OutgoingMailSet")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
+    public partial class OutgoingMail : global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityBase, global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Erstellt ein neues OutgoingMail-Objekt.
+        /// </summary>
+        /// <param name="ID">Anfangswert von Id.</param>
+        /// <param name="rowVersion">Anfangswert von RowVersion.</param>
+        /// <param name="recipient">Anfangswert von Recipient.</param>
+        /// <param name="subject">Anfangswert von Subject.</param>
+        /// <param name="body">Anfangswert von Body.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static OutgoingMail CreateOutgoingMail(int ID, byte[] rowVersion, string recipient, string subject, string body)
+        {
+            OutgoingMail outgoingMail = new OutgoingMail();
+            outgoingMail.Id = ID;
+            outgoingMail.RowVersion = rowVersion;
+            outgoingMail.Recipient = recipient;
+            outgoingMail.Subject = subject;
+            outgoingMail.Body = body;
+            return outgoingMail;
+        }
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "Id" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public int Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                if (object.Equals(this.Id, value))
+                {
+                    return;
+                }
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private int _Id;
+        partial void OnIdChanging(int value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "RowVersion" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public byte[] RowVersion
+        {
+            get
+            {
+                if ((this._RowVersion != null))
+                {
+                    return ((byte[])(this._RowVersion.Clone()));
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set
+            {
+                this.OnRowVersionChanging(value);
+                if (object.Equals(this.RowVersion, value))
+                {
+                    return;
+                }
+                this._RowVersion = value;
+                this.OnRowVersionChanged();
+                this.OnPropertyChanged("RowVersion");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private byte[] _RowVersion;
+        partial void OnRowVersionChanging(byte[] value);
+        partial void OnRowVersionChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "Sended" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Nullable<global::System.DateTime> Sended
+        {
+            get
+            {
+                return this._Sended;
+            }
+            set
+            {
+                this.OnSendedChanging(value);
+                if (object.Equals(this.Sended, value))
+                {
+                    return;
+                }
+                this._Sended = value;
+                this.OnSendedChanged();
+                this.OnPropertyChanged("Sended");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Nullable<global::System.DateTime> _Sended;
+        partial void OnSendedChanging(global::System.Nullable<global::System.DateTime> value);
+        partial void OnSendedChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "Recipient" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Recipient
+        {
+            get
+            {
+                return this._Recipient;
+            }
+            set
+            {
+                this.OnRecipientChanging(value);
+                if (object.Equals(this.Recipient, value))
+                {
+                    return;
+                }
+                this._Recipient = value;
+                this.OnRecipientChanged();
+                this.OnPropertyChanged("Recipient");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Recipient;
+        partial void OnRecipientChanging(string value);
+        partial void OnRecipientChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "Subject" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Subject
+        {
+            get
+            {
+                return this._Subject;
+            }
+            set
+            {
+                this.OnSubjectChanging(value);
+                if (object.Equals(this.Subject, value))
+                {
+                    return;
+                }
+                this._Subject = value;
+                this.OnSubjectChanged();
+                this.OnPropertyChanged("Subject");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Subject;
+        partial void OnSubjectChanging(string value);
+        partial void OnSubjectChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "Body" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Body
+        {
+            get
+            {
+                return this._Body;
+            }
+            set
+            {
+                this.OnBodyChanging(value);
+                if (object.Equals(this.Body, value))
+                {
+                    return;
+                }
+                this._Body = value;
+                this.OnBodyChanged();
+                this.OnPropertyChanged("Body");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Body;
+        partial void OnBodyChanging(string value);
+        partial void OnBodyChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "Result" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Result
+        {
+            get
+            {
+                return this._Result;
+            }
+            set
+            {
+                this.OnResultChanging(value);
+                if (object.Equals(this.Result, value))
+                {
+                    return;
+                }
+                this._Result = value;
+                this.OnResultChanged();
+                this.OnPropertyChanged("Result");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Result;
+        partial void OnResultChanging(string value);
+        partial void OnResultChanged();
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// Im Schema sind keine Kommentare für "LightSwitchApplication.Anbieter" vorhanden.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("AnbieterSet")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
+    public partial class Anbieter : global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityBase, global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Erstellt ein neues Anbieter-Objekt.
+        /// </summary>
+        /// <param name="ID">Anfangswert von Id.</param>
+        /// <param name="rowVersion">Anfangswert von RowVersion.</param>
+        /// <param name="bezeichnung">Anfangswert von Bezeichnung.</param>
+        /// <param name="email">Anfangswert von Email.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static Anbieter CreateAnbieter(int ID, byte[] rowVersion, string bezeichnung, string email)
+        {
+            Anbieter anbieter = new Anbieter();
+            anbieter.Id = ID;
+            anbieter.RowVersion = rowVersion;
+            anbieter.Bezeichnung = bezeichnung;
+            anbieter.Email = email;
+            return anbieter;
+        }
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "Id" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public int Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                if (object.Equals(this.Id, value))
+                {
+                    return;
+                }
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private int _Id;
+        partial void OnIdChanging(int value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "RowVersion" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public byte[] RowVersion
+        {
+            get
+            {
+                if ((this._RowVersion != null))
+                {
+                    return ((byte[])(this._RowVersion.Clone()));
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set
+            {
+                this.OnRowVersionChanging(value);
+                if (object.Equals(this.RowVersion, value))
+                {
+                    return;
+                }
+                this._RowVersion = value;
+                this.OnRowVersionChanged();
+                this.OnPropertyChanged("RowVersion");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private byte[] _RowVersion;
+        partial void OnRowVersionChanging(byte[] value);
+        partial void OnRowVersionChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "Bezeichnung" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Bezeichnung
+        {
+            get
+            {
+                return this._Bezeichnung;
+            }
+            set
+            {
+                this.OnBezeichnungChanging(value);
+                if (object.Equals(this.Bezeichnung, value))
+                {
+                    return;
+                }
+                this._Bezeichnung = value;
+                this.OnBezeichnungChanged();
+                this.OnPropertyChanged("Bezeichnung");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Bezeichnung;
+        partial void OnBezeichnungChanging(string value);
+        partial void OnBezeichnungChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "Email" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Email
+        {
+            get
+            {
+                return this._Email;
+            }
+            set
+            {
+                this.OnEmailChanging(value);
+                if (object.Equals(this.Email, value))
+                {
+                    return;
+                }
+                this._Email = value;
+                this.OnEmailChanged();
+                this.OnPropertyChanged("Email");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Email;
+        partial void OnEmailChanging(string value);
+        partial void OnEmailChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für "Artikelstamm" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceCollection<ArtikelstammItem> Artikelstamm
+        {
+            get
+            {
+                this.@__Artikelstamm.EnsureValueInitialized();
+                return this._Artikelstamm;
+            }
+            set
+            {
+                this._Artikelstamm = value;
+                this.OnPropertyChanged("Artikelstamm");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<ArtikelstammItem> _Artikelstamm = new global::System.Data.Services.Client.DataServiceCollection<ArtikelstammItem>(null, global::System.Data.Services.Client.TrackingMode.None);
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]

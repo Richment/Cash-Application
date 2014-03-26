@@ -342,6 +342,30 @@ namespace LightSwitchApplication
             }
         }
 
+        /// <summary>
+        /// Keine modellierte Beschreibung verfügbar
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::LightSwitchApplication.Anbieter Anbieter
+        {
+            get
+            {
+                return global::LightSwitchApplication.ArtikelstammItem.DetailsClass.GetValue(this, global::LightSwitchApplication.ArtikelstammItem.DetailsClass.PropertySetProperties.Anbieter);
+            }
+            set
+            {
+                global::LightSwitchApplication.ArtikelstammItem.DetailsClass.SetValue(this, global::LightSwitchApplication.ArtikelstammItem.DetailsClass.PropertySetProperties.Anbieter, value);
+            }
+        }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Anbieter_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Anbieter_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Anbieter_Changed();
+
         #endregion
     
         #region Details Class
@@ -512,6 +536,14 @@ namespace LightSwitchApplication
                     }
                 }
                 
+                public global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.ArtikelstammItem, global::LightSwitchApplication.ArtikelstammItem.DetailsClass, global::LightSwitchApplication.Anbieter> Anbieter
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.ArtikelstammItem.DetailsClass.PropertySetProperties.Anbieter) as global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.ArtikelstammItem, global::LightSwitchApplication.ArtikelstammItem.DetailsClass, global::LightSwitchApplication.Anbieter>;
+                    }
+                }
+                
             }
     
             #pragma warning disable 109
@@ -529,6 +561,7 @@ namespace LightSwitchApplication
                 new decimal VK_pro_PK { get; set; }
                 new global::System.Nullable<decimal> Marge { get; set; }
                 new global::System.Collections.IEnumerable ArtikellisteItem { get; }
+                new global::Microsoft.LightSwitch.Internal.IEntityImplementation Anbieter { get; set; }
             }
             #pragma warning restore 109
     
@@ -928,6 +961,53 @@ namespace LightSwitchApplication
                     return d.ImplementationEntity.ArtikellisteItem;
                 }
     
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.ArtikelstammItem, global::LightSwitchApplication.ArtikelstammItem.DetailsClass, global::LightSwitchApplication.Anbieter>.Entry
+                    Anbieter = new global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.ArtikelstammItem, global::LightSwitchApplication.ArtikelstammItem.DetailsClass, global::LightSwitchApplication.Anbieter>.Entry(
+                        "Anbieter",
+                        global::LightSwitchApplication.ArtikelstammItem.DetailsClass.PropertySetProperties._Anbieter_Stub,
+                        global::LightSwitchApplication.ArtikelstammItem.DetailsClass.PropertySetProperties._Anbieter_ComputeIsReadOnly,
+                        global::LightSwitchApplication.ArtikelstammItem.DetailsClass.PropertySetProperties._Anbieter_Validate,
+                        global::LightSwitchApplication.ArtikelstammItem.DetailsClass.PropertySetProperties._Anbieter_GetCoreImplementationValue,
+                        global::LightSwitchApplication.ArtikelstammItem.DetailsClass.PropertySetProperties._Anbieter_GetImplementationValue,
+                        global::LightSwitchApplication.ArtikelstammItem.DetailsClass.PropertySetProperties._Anbieter_SetImplementationValue,
+                        global::LightSwitchApplication.ArtikelstammItem.DetailsClass.PropertySetProperties._Anbieter_Refresh,
+                        global::LightSwitchApplication.ArtikelstammItem.DetailsClass.PropertySetProperties._Anbieter_OnValueChanged);
+                private static void _Anbieter_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ArtikelstammItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.ArtikelstammItem, global::LightSwitchApplication.ArtikelstammItem.DetailsClass, global::LightSwitchApplication.Anbieter>.Data> c, global::LightSwitchApplication.ArtikelstammItem.DetailsClass d, object sf)
+                {
+                    c(d, ref d._Anbieter, sf);
+                }
+                private static bool _Anbieter_ComputeIsReadOnly(global::LightSwitchApplication.ArtikelstammItem e)
+                {
+                    bool result = false;
+                    e.Anbieter_IsReadOnly(ref result);
+                    return result;
+                }
+                private static void _Anbieter_Validate(global::LightSwitchApplication.ArtikelstammItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                {
+                    e.Anbieter_Validate(r);
+                }
+                private static global::Microsoft.LightSwitch.Internal.IEntityImplementation _Anbieter_GetCoreImplementationValue(global::LightSwitchApplication.ArtikelstammItem.DetailsClass d)
+                {
+                    return d.ImplementationEntity.Anbieter;
+                }
+                private static global::LightSwitchApplication.Anbieter _Anbieter_GetImplementationValue(global::LightSwitchApplication.ArtikelstammItem.DetailsClass d)
+                {
+                    return d.GetImplementationValue<global::LightSwitchApplication.Anbieter, global::LightSwitchApplication.Anbieter.DetailsClass>(global::LightSwitchApplication.ArtikelstammItem.DetailsClass.PropertySetProperties.Anbieter, ref d._Anbieter);
+                }
+                private static void _Anbieter_SetImplementationValue(global::LightSwitchApplication.ArtikelstammItem.DetailsClass d, global::LightSwitchApplication.Anbieter v)
+                {
+                    d.SetImplementationValue(global::LightSwitchApplication.ArtikelstammItem.DetailsClass.PropertySetProperties.Anbieter, ref d._Anbieter, (i, ev) => i.Anbieter = ev, v);
+                }
+                private static void _Anbieter_Refresh(global::LightSwitchApplication.ArtikelstammItem.DetailsClass d)
+                {
+                    d.RefreshNavigationProperty(global::LightSwitchApplication.ArtikelstammItem.DetailsClass.PropertySetProperties.Anbieter, ref d._Anbieter);
+                }
+                private static void _Anbieter_OnValueChanged(global::LightSwitchApplication.ArtikelstammItem e)
+                {
+                    e.Anbieter_Changed();
+                }
+    
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -962,6 +1042,9 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.ArtikelstammItem, global::LightSwitchApplication.ArtikelstammItem.DetailsClass, global::LightSwitchApplication.ArtikellisteItem>.Data _ArtikellisteItem;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.ArtikelstammItem, global::LightSwitchApplication.ArtikelstammItem.DetailsClass, global::LightSwitchApplication.Anbieter>.Data _Anbieter;
             
         }
     

@@ -110,6 +110,10 @@
           Name="Rechnungen_BezahlartItem"
           Nullable="False"
           Type="int" />
+        <SsdlForeignKeyProperty
+          Name="Rechnungen_AdressenSetItem"
+          Nullable="True"
+          Type="int" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
     <AssociationSetMapping
@@ -177,6 +181,57 @@
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
           End="LightSwitchCommonModule:ApplicationData/Members[Rechnungen_BezahlartItemSet]/Members[BezahlartItem]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="ArtikelstammItem_AnbieterSet">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="ArtikelstammItem_AnbieterSet" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:ApplicationData/Members[ArtikelstammItem_AnbieterSet]/Members[ArtikelstammItem]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ArtikelstammItem_Anbieter" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:ApplicationData/Members[ArtikelstammItem_AnbieterSet]/Members[Anbieter]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <EntitySetMapping
+      EntitySet="Artikelstamm">
+      <EntitySetMapping.Attributes>
+        <SsdlForeignKeyProperty
+          Name="ArtikelstammItem_Anbieter"
+          Nullable="False"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="Rechnungen_AdressenSetItemSet">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Rechnungen_AdressenSetItemSet" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:ApplicationData/Members[Rechnungen_AdressenSetItemSet]/Members[Rechnungen]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Rechnungen_AdressenSetItem" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:ApplicationData/Members[Rechnungen_AdressenSetItemSet]/Members[AdressenSetItem]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />

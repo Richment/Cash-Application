@@ -112,6 +112,13 @@
           Name="RechnungenId"
           ParameterType=":Int32" />
       </ApplicationMethod>
+      <ApplicationMethod
+        Name="ShowAnbieterliste">
+        <ApplicationMethod.Attributes>
+          <ShowScreenMethod
+            TargetScreen="Anbieterliste" />
+        </ApplicationMethod.Attributes>
+      </ApplicationMethod>
     </Application.Methods>
     <Application.NavigationItems>
       <ApplicationNavigationGroup
@@ -133,6 +140,9 @@
         <ApplicationNavigationLink
           Command="!module/Commands[ScreenCommandShowBezahlarten]"
           Name="Bezahlarten" />
+        <ApplicationNavigationLink
+          Command="!module/Commands[ScreenCommandShowAnbieterliste]"
+          Name="Anbieterliste" />
       </ApplicationNavigationGroup>
       <ApplicationNavigationGroup
         Name="group2">
@@ -159,6 +169,9 @@
         <ApplicationNavigationLink
           Command="!module/Commands[ScreenCommandShowArtikelÜbersicht]"
           Name="ArtikelÜbersicht" />
+        <ApplicationNavigationLink
+          Command="!module/Commands[ScreenCommandShowAnbieterliste]"
+          Name="link1" />
       </ApplicationNavigationGroup>
       <ApplicationNavigationGroup
         Name="group1">
@@ -169,13 +182,6 @@
         <ApplicationNavigationLink
           Command="!module/Commands[ScreenCommandShowKundenÜbersicht]"
           Name="KundenÜbersicht" />
-      </ApplicationNavigationGroup>
-      <ApplicationNavigationGroup
-        Name="group3">
-        <ApplicationNavigationGroup.Attributes>
-          <DisplayName
-            Value="Adressen" />
-        </ApplicationNavigationGroup.Attributes>
       </ApplicationNavigationGroup>
       <ApplicationNavigationGroup
         Name="Administration">
@@ -221,6 +227,9 @@
     <ApplicationCommand
       Name="ScreenCommandShowAuftragsSammlung"
       Target="!module/Methods[ShowAuftragsSammlung]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowAnbieterliste"
+      Target="!module/Methods[ShowAnbieterliste]" />
   </Application>
   <Screen
     LaunchMode="Multiple"
@@ -374,6 +383,29 @@
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
+            </ContentItem>
+            <ContentItem
+              DataType="LightSwitchCommonModule:Anbieter"
+              Kind="Details"
+              Name="Anbieter">
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="LightSwitchCommonModule:ArtikelstammItem/Properties[Anbieter]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem
+                DataType="LightSwitchCommonModule:Anbieter"
+                Kind="Details"
+                Name="Anbieter1">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression />
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
             </ContentItem>
             <ContentItem
               DataType=":Int32"
@@ -656,6 +688,29 @@
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                DataType="LightSwitchCommonModule:Anbieter"
+                Kind="Details"
+                Name="Anbieter">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="LightSwitchCommonModule:ArtikelstammItem/Properties[Anbieter]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem
+                  DataType="LightSwitchCommonModule:Anbieter"
+                  Kind="Details"
+                  Name="Anbieter1">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression />
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
               </ContentItem>
               <ContentItem
                 DataType=":String"
@@ -1692,6 +1747,29 @@
                       DataType="LightSwitchCommonModule:KundenItem"
                       Kind="Details"
                       Name="RowTemplate2">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression />
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                    </ContentItem>
+                  </ContentItem>
+                  <ContentItem
+                    DataType="LightSwitchCommonModule:AdressenSetItem"
+                    Kind="Details"
+                    Name="Lieferadresse">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="LightSwitchCommonModule:Rechnungen/Properties[Lieferadresse]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                    <ContentItem
+                      DataType="LightSwitchCommonModule:AdressenSetItem"
+                      Kind="Details"
+                      Name="AdressenSetItem">
                       <ContentItem.DataSource>
                         <ScreenExpressionTree>
                           <ChainExpression />
@@ -2766,6 +2844,29 @@
                 </ContentItem>
               </ContentItem>
               <ContentItem
+                DataType="LightSwitchCommonModule:AdressenSetItem"
+                Kind="Details"
+                Name="Lieferadresse">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="LightSwitchCommonModule:Rechnungen/Properties[Lieferadresse]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem
+                  DataType="LightSwitchCommonModule:AdressenSetItem"
+                  Kind="Details"
+                  Name="AdressenSetItem">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression />
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem>
+              <ContentItem
                 DataType="LightSwitchCommonModule:BezahlartItem"
                 Kind="Details"
                 Name="BezahlartItem">
@@ -3767,6 +3868,10 @@
       </ScreenMethod>
       <ScreenMethod
         Name="OK_Artikel" />
+      <ScreenMethod
+        Name="Lieferung" />
+      <ScreenMethod
+        Name="Bezahlung" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
@@ -4702,11 +4807,47 @@
                       <ContentItem
                         Kind="Command"
                         Name="Versand">
+                        <ContentItem.Attributes>
+                          <DisplayName
+                            Value="Versand erfolgt" />
+                        </ContentItem.Attributes>
                         <ContentItem.DataSource>
                           <ScreenExpressionTree>
                             <ChainExpression>
                               <CallExpression
                                 Target="Start/Methods[Versand]" />
+                            </ChainExpression>
+                          </ScreenExpressionTree>
+                        </ContentItem.DataSource>
+                      </ContentItem>
+                      <ContentItem
+                        Kind="Command"
+                        Name="Lieferung">
+                        <ContentItem.Attributes>
+                          <DisplayName
+                            Value="Lieferung erfolgt" />
+                        </ContentItem.Attributes>
+                        <ContentItem.DataSource>
+                          <ScreenExpressionTree>
+                            <ChainExpression>
+                              <CallExpression
+                                Target="Start/Methods[Lieferung]" />
+                            </ChainExpression>
+                          </ScreenExpressionTree>
+                        </ContentItem.DataSource>
+                      </ContentItem>
+                      <ContentItem
+                        Kind="Command"
+                        Name="Bezahlung">
+                        <ContentItem.Attributes>
+                          <DisplayName
+                            Value="Bezahlt" />
+                        </ContentItem.Attributes>
+                        <ContentItem.DataSource>
+                          <ScreenExpressionTree>
+                            <ChainExpression>
+                              <CallExpression
+                                Target="Start/Methods[Bezahlung]" />
                             </ChainExpression>
                           </ScreenExpressionTree>
                         </ContentItem.DataSource>
@@ -5054,10 +5195,9 @@
                   </ContentItem>
                 </ContentItem>
                 <ContentItem
-                  DataType=":String?"
-                  Kind="Value"
-                  Name="InBearbeitung_SelectedItem_Auftragsnummer1"
-                  View=":TextBox">
+                  DataType="LightSwitchCommonModule:AdressenSetItem"
+                  Kind="Details"
+                  Name="InBearbeitung_SelectedItem_Lieferadresse">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -5066,7 +5206,7 @@
                         <MemberExpression
                           Member="SelectedItem" />
                         <MemberExpression
-                          Member="Auftragsnummer" />
+                          Member="Lieferadresse" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -7976,6 +8116,32 @@
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
+      <ScreenCollectionProperty
+        Name="OutgoingMailSet"
+        PageSize="45"
+        PropertyType="LightSwitchCommonModule:CollectionView$OutgoingMail">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="OutgoingMailSetQuery"
+            ReturnType="LightSwitchCommonModule:OutgoingMail*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <MemberExpression
+                  Member="LightSwitchCommonModule:ApplicationData/Members[OutgoingMailSet]" />
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="AuftragsSammlung/Properties[OutgoingMailSet]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
     </Screen.Properties>
     <Screen.RootContentItem>
       <ContentItem
@@ -8975,6 +9141,29 @@
                 </ContentItem>
               </ContentItem>
               <ContentItem
+                DataType="LightSwitchCommonModule:AdressenSetItem"
+                Kind="Details"
+                Name="Lieferadresse">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="LightSwitchCommonModule:Rechnungen/Properties[Lieferadresse]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem
+                  DataType="LightSwitchCommonModule:AdressenSetItem"
+                  Kind="Details"
+                  Name="AdressenSetItem">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression />
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem>
+              <ContentItem
                 DataType=":Int32"
                 Kind="Value"
                 Name="Status">
@@ -9035,19 +9224,6 @@
                     <ChainExpression>
                       <MemberExpression
                         Member="LightSwitchCommonModule:Rechnungen/Properties[Lieferkosten]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                DataType=":Boolean"
-                Kind="Value"
-                Name="RequiresProcessing">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="LightSwitchCommonModule:Rechnungen/Properties[RequiresProcessing]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -9153,6 +9329,19 @@
                     <ChainExpression>
                       <MemberExpression
                         Member="LightSwitchCommonModule:Rechnungen/Properties[Netto_Gesamtbetrag]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                DataType=":Boolean"
+                Kind="Value"
+                Name="RequiresProcessing">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="LightSwitchCommonModule:Rechnungen/Properties[RequiresProcessing]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -9610,6 +9799,224 @@
                   </ContentItem.DataSource>
                 </ContentItem>
               </ContentItem.CommandItems>
+            </ContentItem>
+          </ContentItem>
+        </ContentItem>
+      </ContentItem>
+    </Screen.RootContentItem>
+  </Screen>
+  <Screen
+    Name="Anbieterliste">
+    <Screen.Attributes>
+      <SaveChangesTo
+        EntityContainer="LightSwitchCommonModule:ApplicationData" />
+      <DisplayName
+        Value="Anbieter Übersicht" />
+    </Screen.Attributes>
+    <Screen.Methods>
+      <ScreenMethod
+        Name="Save">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+          <ImageResource
+            ResourceId="Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/Save.png" />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+      <ScreenMethod
+        Name="Refresh">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+          <ImageResource
+            ResourceId="Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/Refresh.png" />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+      <ScreenMethod
+        Name="Close">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+    </Screen.Methods>
+    <Screen.Properties>
+      <ScreenCollectionProperty
+        Name="AnbieterSet"
+        PageSize="45"
+        PropertyType="LightSwitchCommonModule:CollectionView$Anbieter">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="AnbieterSetQuery"
+            ReturnType="LightSwitchCommonModule:Anbieter*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <MemberExpression
+                  Member="LightSwitchCommonModule:ApplicationData/Members[AnbieterSet]" />
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="Anbieterliste/Properties[AnbieterSet]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+    </Screen.Properties>
+    <Screen.RootContentItem>
+      <ContentItem
+        Kind="Screen"
+        Name="RootContentItem">
+        <ContentItem.CommandItems>
+          <ContentItem
+            Kind="Command"
+            Name="Save">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <CallExpression
+                    Target="Anbieterliste/Methods[Save]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+          </ContentItem>
+          <ContentItem
+            Kind="Command"
+            Name="Refresh">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <CallExpression
+                    Target="Anbieterliste/Methods[Refresh]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+          </ContentItem>
+        </ContentItem.CommandItems>
+        <ContentItem
+          Kind="Group"
+          Name="ScreenLayout">
+          <ContentItem
+            DataType="LightSwitchCommonModule:CollectionView$Anbieter"
+            Kind="Collection"
+            Name="grid">
+            <ContentItem.CommandItems>
+              <ContentItem
+                Kind="Command"
+                Name="AnbieterSet_AddAndEditNew">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Anbieterliste/Properties[AnbieterSet]" />
+                      <CallExpression
+                        Target="AddAndEditNew" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Kind="Command"
+                Name="AnbieterSet_EditSelected">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Anbieterliste/Properties[AnbieterSet]" />
+                      <CallExpression
+                        Target="EditSelected" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Kind="Command"
+                Name="AnbieterSet_DeleteSelected">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Anbieterliste/Properties[AnbieterSet]" />
+                      <CallExpression
+                        Target="DeleteSelected" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+            </ContentItem.CommandItems>
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="Anbieterliste/Properties[AnbieterSet]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+            <ContentItem.PropertySources>
+              <ControlPropertySource
+                Property=":RootControl/Properties[VerticalAlignment]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      ResultType=":String"
+                      Value="Stretch" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+              <ControlPropertySource
+                Property=":RootControl/Properties[AttachedLabelPosition]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      ResultType=":String"
+                      Value="Collapsed" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+            </ContentItem.PropertySources>
+            <ContentItem
+              DataType="LightSwitchCommonModule:Anbieter"
+              Kind="Details"
+              Name="RowTemplate">
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression />
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem
+                DataType=":String"
+                Kind="Value"
+                Name="Bezeichnung">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="LightSwitchCommonModule:Anbieter/Properties[Bezeichnung]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                DataType="Microsoft.LightSwitch.Extensions:EmailAddress"
+                Kind="Value"
+                Name="Email">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="LightSwitchCommonModule:Anbieter/Properties[Email]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
             </ContentItem>
           </ContentItem>
         </ContentItem>

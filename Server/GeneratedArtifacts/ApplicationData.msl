@@ -50,6 +50,7 @@
           <ScalarProperty Name="EK_pro_PK" ColumnName="EK_pro_PK" />
           <ScalarProperty Name="VK_pro_PK" ColumnName="VK_pro_PK" />
           <ScalarProperty Name="Marge" ColumnName="Marge" />
+          <ScalarProperty Name="ArtikelstammItem_Anbieter" ColumnName="ArtikelstammItem_Anbieter" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -71,6 +72,7 @@
           <ScalarProperty Name="Rechnungsdatum" ColumnName="Rechnungsdatum" />
           <ScalarProperty Name="Rechnungsnummer" ColumnName="Rechnungsnummer" />
           <ScalarProperty Name="Lieferkosten" ColumnName="Lieferkosten" />
+          <ScalarProperty Name="Rechnungen_AdressenSetItem" ColumnName="Rechnungen_AdressenSetItem" />
           <ScalarProperty Name="RequiresProcessing" ColumnName="RequiresProcessing" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -144,6 +146,29 @@
           <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
           <ScalarProperty Name="Bezeichnung" ColumnName="Bezeichnung" />
           <ScalarProperty Name="Text_Rechnung" ColumnName="Text_Rechnung" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OutgoingMailSet">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.OutgoingMail)">
+        <MappingFragment StoreEntitySet="OutgoingMailSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Sended" ColumnName="Sended" />
+          <ScalarProperty Name="Recipient" ColumnName="Recipient" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="Result" ColumnName="Result" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnbieterSet">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Anbieter)">
+        <MappingFragment StoreEntitySet="AnbieterSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Bezeichnung" ColumnName="Bezeichnung" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

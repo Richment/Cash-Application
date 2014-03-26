@@ -10,6 +10,8 @@
     <EntitySet Name="Meine_Daten" EntityType="ApplicationDataStore.Meine_DatenItem" store:Type="Tables" Schema="dbo" Table="Meine_Daten" />
     <EntitySet Name="LieferAdresse" EntityType="ApplicationDataStore.AdressenSetItem" store:Type="Tables" Schema="dbo" Table="LieferAdresse" />
     <EntitySet Name="Bezahlart" EntityType="ApplicationDataStore.BezahlartItem" store:Type="Tables" Schema="dbo" Table="Bezahlart" />
+    <EntitySet Name="OutgoingMailSet" EntityType="ApplicationDataStore.OutgoingMail" store:Type="Tables" Schema="dbo" Table="OutgoingMailSet" />
+    <EntitySet Name="AnbieterSet" EntityType="ApplicationDataStore.Anbieter" store:Type="Tables" Schema="dbo" Table="AnbieterSet" />
     <AssociationSet Name="ArtikellisteItem_Rechnungen" Association="ApplicationDataStore.ArtikellisteItem_Rechnungen">
       <End Role="Rechnungen" EntitySet="RechnungenSet" />
       <End Role="ArtikellisteItem" EntitySet="Artikelliste" />
@@ -32,6 +34,14 @@
     </AssociationSet>
     <AssociationSet Name="Rechnungen_BezahlartItem" Association="ApplicationDataStore.Rechnungen_BezahlartItem">
       <End Role="BezahlartItem" EntitySet="Bezahlart" />
+      <End Role="Rechnungen" EntitySet="RechnungenSet" />
+    </AssociationSet>
+    <AssociationSet Name="ArtikelstammItem_Anbieter" Association="ApplicationDataStore.ArtikelstammItem_Anbieter">
+      <End Role="Anbieter" EntitySet="AnbieterSet" />
+      <End Role="ArtikelstammItem" EntitySet="Artikelstamm" />
+    </AssociationSet>
+    <AssociationSet Name="Rechnungen_AdressenSetItem" Association="ApplicationDataStore.Rechnungen_AdressenSetItem">
+      <End Role="AdressenSetItem" EntitySet="LieferAdresse" />
       <End Role="Rechnungen" EntitySet="RechnungenSet" />
     </AssociationSet>
   </EntityContainer>
@@ -83,6 +93,7 @@
     <Property Name="EK_pro_PK" Type="decimal" Nullable="false" Precision="18" Scale="2" />
     <Property Name="VK_pro_PK" Type="decimal" Nullable="false" Precision="18" Scale="2" />
     <Property Name="Marge" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ArtikelstammItem_Anbieter" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Rechnungen">
     <Key>
@@ -104,6 +115,7 @@
     <Property Name="RequiresProcessing" Type="bit" Nullable="false" />
     <Property Name="Rechnungen_Kunden" Type="int" Nullable="false" />
     <Property Name="Rechnungen_BezahlartItem" Type="int" Nullable="false" />
+    <Property Name="Rechnungen_AdressenSetItem" Type="int" />
   </EntityType>
   <EntityType Name="ArtikellisteItem">
     <Key>
@@ -171,6 +183,27 @@
     <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
     <Property Name="Bezeichnung" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="Text_Rechnung" Type="nvarchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="OutgoingMail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Sended" Type="datetime" />
+    <Property Name="Recipient" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Subject" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Body" Type="nvarchar" Nullable="false" MaxLength="4000" />
+    <Property Name="Result" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Anbieter">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Bezeichnung" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="255" />
   </EntityType>
   <Association Name="ArtikellisteItem_Rechnungen">
     <End Role="Rechnungen" Type="ApplicationDataStore.Rechnungen" Multiplicity="1">
@@ -247,6 +280,30 @@
       </Principal>
       <Dependent Role="Rechnungen">
         <PropertyRef Name="Rechnungen_BezahlartItem" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ArtikelstammItem_Anbieter">
+    <End Role="Anbieter" Type="ApplicationDataStore.Anbieter" Multiplicity="1" />
+    <End Role="ArtikelstammItem" Type="ApplicationDataStore.ArtikelstammItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Anbieter">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ArtikelstammItem">
+        <PropertyRef Name="ArtikelstammItem_Anbieter" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Rechnungen_AdressenSetItem">
+    <End Role="AdressenSetItem" Type="ApplicationDataStore.AdressenSetItem" Multiplicity="0..1" />
+    <End Role="Rechnungen" Type="ApplicationDataStore.Rechnungen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AdressenSetItem">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Rechnungen">
+        <PropertyRef Name="Rechnungen_AdressenSetItem" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

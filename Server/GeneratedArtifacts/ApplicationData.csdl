@@ -52,7 +52,9 @@
     <Property Name="EK_pro_PK" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="2" />
     <Property Name="VK_pro_PK" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="2" />
     <Property Name="Marge" Type="Edm.Decimal" Precision="18" Scale="2" />
+    <Property Name="ArtikelstammItem_Anbieter" Type="Edm.Int32" Nullable="false" />
     <NavigationProperty Name="ArtikellisteItem" Relationship="LightSwitchApplication.ArtikellisteItem_ArtikelstammItem" ToRole="ArtikellisteItem" FromRole="ArtikelstammItem" />
+    <NavigationProperty Name="Anbieter" Relationship="LightSwitchApplication.ArtikelstammItem_Anbieter" ToRole="Anbieter" FromRole="ArtikelstammItem" />
   </EntityType>
   <EntityType Name="Rechnungen">
     <Key>
@@ -74,8 +76,10 @@
     <Property Name="RequiresProcessing" Type="Edm.Boolean" Nullable="false" />
     <Property Name="Rechnungen_Kunden" Type="Edm.Int32" Nullable="false" />
     <Property Name="Rechnungen_BezahlartItem" Type="Edm.Int32" Nullable="false" />
+    <Property Name="Rechnungen_AdressenSetItem" Type="Edm.Int32" />
     <NavigationProperty Name="Kunde" Relationship="LightSwitchApplication.Rechnungen_KundenItem" ToRole="KundenItem" FromRole="Rechnungen" />
     <NavigationProperty Name="BezahlartItem" Relationship="LightSwitchApplication.Rechnungen_BezahlartItem" ToRole="BezahlartItem" FromRole="Rechnungen" />
+    <NavigationProperty Name="Lieferadresse" Relationship="LightSwitchApplication.Rechnungen_AdressenSetItem" ToRole="AdressenSetItem" FromRole="Rechnungen" />
     <NavigationProperty Name="ArtikellisteCollection" Relationship="LightSwitchApplication.ArtikellisteItem_Rechnungen" ToRole="ArtikellisteItem" FromRole="Rechnungen" />
   </EntityType>
   <EntityType Name="ArtikellisteItem">
@@ -138,6 +142,7 @@
     <Property Name="Land" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="Kunden_Rechnungsadressen" Type="Edm.Int32" Nullable="false" />
     <NavigationProperty Name="KundenRechnungsadresse" Relationship="LightSwitchApplication.KundenItem_AdressenSetItem" ToRole="KundenItem" FromRole="AdressenSetItem" />
+    <NavigationProperty Name="RechnungenCollection" Relationship="LightSwitchApplication.Rechnungen_AdressenSetItem" ToRole="Rechnungen" FromRole="AdressenSetItem" />
   </EntityType>
   <EntityType Name="BezahlartItem">
     <Key>
@@ -148,6 +153,28 @@
     <Property Name="Bezeichnung" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="Text_Rechnung" Type="Edm.String" Nullable="false" MaxLength="255" />
     <NavigationProperty Name="RechnungenCollection" Relationship="LightSwitchApplication.Rechnungen_BezahlartItem" ToRole="Rechnungen" FromRole="BezahlartItem" />
+  </EntityType>
+  <EntityType Name="OutgoingMail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Sended" Type="Edm.DateTime" />
+    <Property Name="Recipient" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="Subject" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="Body" Type="Edm.String" Nullable="false" MaxLength="4000" />
+    <Property Name="Result" Type="Edm.String" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Anbieter">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Bezeichnung" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="Email" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <NavigationProperty Name="Artikelstamm" Relationship="LightSwitchApplication.ArtikelstammItem_Anbieter" ToRole="ArtikelstammItem" FromRole="Anbieter" />
   </EntityType>
   <Association Name="ArtikellisteItem_Rechnungen">
     <End Role="Rechnungen" Type="LightSwitchApplication.Rechnungen" Multiplicity="1">
@@ -227,6 +254,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="ArtikelstammItem_Anbieter">
+    <End Role="Anbieter" Type="LightSwitchApplication.Anbieter" Multiplicity="1" />
+    <End Role="ArtikelstammItem" Type="LightSwitchApplication.ArtikelstammItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Anbieter">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ArtikelstammItem">
+        <PropertyRef Name="ArtikelstammItem_Anbieter" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Rechnungen_AdressenSetItem">
+    <End Role="AdressenSetItem" Type="LightSwitchApplication.AdressenSetItem" Multiplicity="0..1" />
+    <End Role="Rechnungen" Type="LightSwitchApplication.Rechnungen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AdressenSetItem">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Rechnungen">
+        <PropertyRef Name="Rechnungen_AdressenSetItem" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="ApplicationDataObjectContext" m:IsDefaultEntityContainer="true">
     <EntitySet Name="Kunden" EntityType="LightSwitchApplication.KundenItem" />
     <EntitySet Name="Kundengruppen" EntityType="LightSwitchApplication.KundengruppenItem" />
@@ -237,6 +288,8 @@
     <EntitySet Name="Meine_Daten" EntityType="LightSwitchApplication.Meine_DatenItem" />
     <EntitySet Name="LieferAdresse" EntityType="LightSwitchApplication.AdressenSetItem" />
     <EntitySet Name="Bezahlart" EntityType="LightSwitchApplication.BezahlartItem" />
+    <EntitySet Name="OutgoingMailSet" EntityType="LightSwitchApplication.OutgoingMail" />
+    <EntitySet Name="AnbieterSet" EntityType="LightSwitchApplication.Anbieter" />
     <AssociationSet Name="ArtikellisteItem_Rechnungen" Association="LightSwitchApplication.ArtikellisteItem_Rechnungen">
       <End Role="Rechnungen" EntitySet="RechnungenSet" />
       <End Role="ArtikellisteItem" EntitySet="Artikelliste" />
@@ -259,6 +312,14 @@
     </AssociationSet>
     <AssociationSet Name="Rechnungen_BezahlartItem" Association="LightSwitchApplication.Rechnungen_BezahlartItem">
       <End Role="BezahlartItem" EntitySet="Bezahlart" />
+      <End Role="Rechnungen" EntitySet="RechnungenSet" />
+    </AssociationSet>
+    <AssociationSet Name="ArtikelstammItem_Anbieter" Association="LightSwitchApplication.ArtikelstammItem_Anbieter">
+      <End Role="Anbieter" EntitySet="AnbieterSet" />
+      <End Role="ArtikelstammItem" EntitySet="Artikelstamm" />
+    </AssociationSet>
+    <AssociationSet Name="Rechnungen_AdressenSetItem" Association="LightSwitchApplication.Rechnungen_AdressenSetItem">
+      <End Role="AdressenSetItem" EntitySet="LieferAdresse" />
       <End Role="Rechnungen" EntitySet="RechnungenSet" />
     </AssociationSet>
   </EntityContainer>
