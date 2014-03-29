@@ -147,12 +147,6 @@
         <ApplicationNavigationLink
           Command="!module/Commands[ScreenCommandShowBezahlarten]"
           Name="Bezahlarten" />
-        <ApplicationNavigationLink
-          Command="!module/Commands[ScreenCommandShowAnbieterliste]"
-          Name="Anbieterliste" />
-        <ApplicationNavigationLink
-          Command="!module/Commands[ScreenCommandShowGesendeteMails]"
-          Name="GesendeteMails" />
       </ApplicationNavigationGroup>
       <ApplicationNavigationGroup
         Name="group2">
@@ -1982,7 +1976,7 @@
       <SaveChangesTo
         EntityContainer="LightSwitchCommonModule:ApplicationData" />
       <DisplayName
-        Value="Bestellungen" />
+        Value="Bestellungen Übersicht" />
     </Screen.Attributes>
     <Screen.Methods>
       <ScreenMethod
