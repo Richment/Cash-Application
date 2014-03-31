@@ -14,6 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{8735E7
 		.nuget\NuGet.Config = .nuget\NuGet.Config
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
+		.nuget\vssver2.scc = .nuget\vssver2.scc
 	EndProjectSection
 EndProject
 Global
@@ -26,14 +27,14 @@ Global
 		{0EBAE129-20AB-4929-8A55-DB2AED44DF9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0EBAE129-20AB-4929-8A55-DB2AED44DF9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0EBAE129-20AB-4929-8A55-DB2AED44DF9A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{56FD4033-085C-4F24-B8BF-0B1C65CCFEF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{56FD4033-085C-4F24-B8BF-0B1C65CCFEF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{56FD4033-085C-4F24-B8BF-0B1C65CCFEF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{56FD4033-085C-4F24-B8BF-0B1C65CCFEF2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8EB0B3E3-DD60-4F14-B543-4E2B4867204F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8EB0B3E3-DD60-4F14-B543-4E2B4867204F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EB0B3E3-DD60-4F14-B543-4E2B4867204F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EB0B3E3-DD60-4F14-B543-4E2B4867204F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56FD4033-085C-4F24-B8BF-0B1C65CCFEF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56FD4033-085C-4F24-B8BF-0B1C65CCFEF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56FD4033-085C-4F24-B8BF-0B1C65CCFEF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56FD4033-085C-4F24-B8BF-0B1C65CCFEF2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AE92953D-10E9-4322-9A6A-B12EE569B101}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AE92953D-10E9-4322-9A6A-B12EE569B101}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE92953D-10E9-4322-9A6A-B12EE569B101}.Release|Any CPU.ActiveCfg = Release|Any CPU

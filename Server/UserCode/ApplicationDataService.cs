@@ -167,15 +167,22 @@ namespace LightSwitchApplication
 				{
 					if (item.Text.Contains(ADDRESS_TAG))
 					{
-						string[] parts = data.Adresse.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
-						if (parts.Length == 0)
-							parts = new string[] { "" };
-						item.Text = item.Text.Replace(ADDRESS_TAG, String.IsNullOrWhiteSpace(data.Adresse) ? String.Empty : parts[0]);
-						OpenXmlElement last = item;
-						for (int i = 1; i < parts.Length; i++)
+						if (data.Adresse == null)
 						{
-							last = last.InsertAfterSelf(new Break());
-							last = last.InsertAfterSelf(new Text(parts[i]));
+							item.Text = item.Text.Replace(ADDRESS_TAG, String.Empty);
+						}
+						else
+						{
+							string[] parts = data.Adresse.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
+							if (parts.Length == 0)
+								parts = new string[] { "" };
+							item.Text = item.Text.Replace(ADDRESS_TAG, String.IsNullOrWhiteSpace(data.Adresse) ? String.Empty : parts[0]);
+							OpenXmlElement last = item;
+							for (int i = 1; i < parts.Length; i++)
+							{
+								last = last.InsertAfterSelf(new Break());
+								last = last.InsertAfterSelf(new Text(parts[i]));
+							}
 						}
 					}
 

@@ -65,10 +65,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bestellstatus.cs" />
-    <Compile Include="DocDescriptor.cs" />
-    <Compile Include="Position.cs" />
-    <Compile Include="PositionCollection.cs" />
+    <Compile Include="UserCode\Bestellstatus.cs" />
+    <Compile Include="UserCode\DocDescriptor.cs" />
+    <Compile Include="UserCode\Position.cs" />
+    <Compile Include="UserCode\PositionCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserCode\AdressenSetItem.cs" />
     <Compile Include="UserCode\ArtikelstammItem.cs" />
@@ -79,7 +79,7 @@
     <Compile Include="UserCode\KundenItem.cs" />
     <Compile Include="UserCode\OutgoingMail.cs" />
     <Compile Include="UserCode\Rechnungen.cs" />
-    <Compile Include="DictionaryExtension.cs" />
+    <Compile Include="UserCode\DictionaryExtension.cs" />
   </ItemGroup>
   <ItemGroup>
     <LightSwitchModel Include="Properties\Common.lsml">
