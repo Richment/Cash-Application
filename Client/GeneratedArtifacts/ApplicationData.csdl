@@ -175,6 +175,15 @@
     <Property Name="Email" Type="Edm.String" Nullable="false" MaxLength="255" />
     <NavigationProperty Name="Artikelstamm" Relationship="LightSwitchApplication.ArtikelstammItem_Anbieter" ToRole="ArtikelstammItem" FromRole="Anbieter" />
   </EntityType>
+  <EntityType Name="Documents">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Bezeichnung" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="Data" Type="Edm.Binary" MaxLength="Max" />
+  </EntityType>
   <Association Name="ArtikellisteItem_Rechnungen">
     <End Role="Rechnungen" Type="LightSwitchApplication.Rechnungen" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -289,6 +298,7 @@
     <EntitySet Name="Bezahlart" EntityType="LightSwitchApplication.BezahlartItem" />
     <EntitySet Name="OutgoingMailSet" EntityType="LightSwitchApplication.OutgoingMail" />
     <EntitySet Name="AnbieterSet" EntityType="LightSwitchApplication.Anbieter" />
+    <EntitySet Name="DocumentsSet" EntityType="LightSwitchApplication.Documents" />
     <AssociationSet Name="ArtikellisteItem_Rechnungen" Association="LightSwitchApplication.ArtikellisteItem_Rechnungen">
       <End Role="Rechnungen" EntitySet="RechnungenSet" />
       <End Role="ArtikellisteItem" EntitySet="Artikelliste" />

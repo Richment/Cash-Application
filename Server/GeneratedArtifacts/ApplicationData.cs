@@ -250,6 +250,22 @@ namespace ApplicationData.Implementation
             }
         }
         private ObjectSet<Anbieter> _AnbieterSet;
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        public ObjectSet<Documents> DocumentsSet
+        {
+            get
+            {
+                if ((_DocumentsSet == null))
+                {
+                    _DocumentsSet = base.CreateObjectSet<Documents>("DocumentsSet");
+                }
+                return _DocumentsSet;
+            }
+        }
+        private ObjectSet<Documents> _DocumentsSet;
 
         #endregion
 
@@ -341,6 +357,14 @@ namespace ApplicationData.Implementation
         public void AddToAnbieterSet(Anbieter anbieter)
         {
             base.AddObject("AnbieterSet", anbieter);
+        }
+    
+        /// <summary>
+        /// Veraltete Methode zum Hinzufügen eines neuen Objekts zum EntitySet 'DocumentsSet'. Verwenden Sie stattdessen die Methode '.Add' der zugeordneten Eigenschaft 'ObjectSet&lt;T&gt;'.
+        /// </summary>
+        public void AddToDocumentsSet(Documents documents)
+        {
+            base.AddObject("DocumentsSet", documents);
         }
 
         #endregion
@@ -1664,6 +1688,139 @@ namespace ApplicationData.Implementation
 
         #endregion
 
+    }
+    
+    /// <summary>
+    /// Keine Dokumentation für Metadaten verfügbar.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="Documents")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Documents : EntityObject
+    {
+        #region Factory-Methode
+    
+        /// <summary>
+        /// Erstellt ein neues Documents-Objekt.
+        /// </summary>
+        /// <param name="id">Anfangswert der Eigenschaft Id.</param>
+        /// <param name="rowVersion">Anfangswert der Eigenschaft RowVersion.</param>
+        /// <param name="bezeichnung">Anfangswert der Eigenschaft Bezeichnung.</param>
+        public static Documents CreateDocuments(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.String bezeichnung)
+        {
+            Documents documents = new Documents();
+            documents.Id = id;
+            documents.RowVersion = rowVersion;
+            documents.Bezeichnung = bezeichnung;
+            return documents;
+        }
+
+        #endregion
+
+        #region Primitive Eigenschaften
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = value;
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] RowVersion
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_RowVersion);
+            }
+            set
+            {
+                OnRowVersionChanging(value);
+                ReportPropertyChanging("RowVersion");
+                _RowVersion = value;
+                ReportPropertyChanged("RowVersion");
+                OnRowVersionChanged();
+            }
+        }
+        private global::System.Byte[] _RowVersion;
+        partial void OnRowVersionChanging(global::System.Byte[] value);
+        partial void OnRowVersionChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Bezeichnung
+        {
+            get
+            {
+                return _Bezeichnung;
+            }
+            set
+            {
+                OnBezeichnungChanging(value);
+                ReportPropertyChanging("Bezeichnung");
+                _Bezeichnung = value;
+                ReportPropertyChanged("Bezeichnung");
+                OnBezeichnungChanged();
+            }
+        }
+        private global::System.String _Bezeichnung;
+        partial void OnBezeichnungChanging(global::System.String value);
+        partial void OnBezeichnungChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] Data
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_Data);
+            }
+            set
+            {
+                OnDataChanging(value);
+                ReportPropertyChanging("Data");
+                _Data = value;
+                ReportPropertyChanged("Data");
+                OnDataChanged();
+            }
+        }
+        private global::System.Byte[] _Data;
+        partial void OnDataChanging(global::System.Byte[] value);
+        partial void OnDataChanged();
+
+        #endregion
+
+    
     }
     
     /// <summary>

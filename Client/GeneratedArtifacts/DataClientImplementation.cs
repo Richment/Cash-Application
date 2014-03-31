@@ -1112,6 +1112,36 @@ namespace LightSwitchApplication.Implementation
     }
     #endregion
     
+    #region Documents
+    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/ApplicationData.Implementation")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class Documents :
+        global::LightSwitchApplication.Documents.DetailsClass.IImplementation
+    {
+        partial void OnIdChanged()
+        {
+            this.___OnPropertyChanged("Id");
+        }
+        
+        partial void OnRowVersionChanged()
+        {
+            this.___OnPropertyChanged("RowVersion");
+        }
+        
+        partial void OnBezeichnungChanged()
+        {
+            this.___OnPropertyChanged("Bezeichnung");
+        }
+        
+        partial void OnDataChanged()
+        {
+            this.___OnPropertyChanged("Data");
+        }
+        
+    }
+    #endregion
+    
     #region ApplicationDataObjectContext
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1162,6 +1192,10 @@ namespace LightSwitchApplication.Implementation
             if (typeof(T) == typeof(global::LightSwitchApplication.Anbieter))
             {
                 return new global::LightSwitchApplication.Implementation.Anbieter();
+            }
+            if (typeof(T) == typeof(global::LightSwitchApplication.Documents))
+            {
+                return new global::LightSwitchApplication.Implementation.Documents();
             }
             return null;
         }
@@ -1249,6 +1283,10 @@ namespace LightSwitchApplication.Implementation
             if (typeof(global::LightSwitchApplication.Anbieter) == definitionType)
             {
                 return typeof(global::LightSwitchApplication.Implementation.Anbieter);
+            }
+            if (typeof(global::LightSwitchApplication.Documents) == definitionType)
+            {
+                return typeof(global::LightSwitchApplication.Implementation.Documents);
             }
             return null;
         }

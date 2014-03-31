@@ -12,6 +12,7 @@
     <EntitySet Name="Bezahlart" EntityType="ApplicationDataStore.BezahlartItem" store:Type="Tables" Schema="dbo" Table="Bezahlart" />
     <EntitySet Name="OutgoingMailSet" EntityType="ApplicationDataStore.OutgoingMail" store:Type="Tables" Schema="dbo" Table="OutgoingMailSet" />
     <EntitySet Name="AnbieterSet" EntityType="ApplicationDataStore.Anbieter" store:Type="Tables" Schema="dbo" Table="AnbieterSet" />
+    <EntitySet Name="DocumentsSet" EntityType="ApplicationDataStore.Documents" store:Type="Tables" Schema="dbo" Table="DocumentsSet" />
     <AssociationSet Name="ArtikellisteItem_Rechnungen" Association="ApplicationDataStore.ArtikellisteItem_Rechnungen">
       <End Role="Rechnungen" EntitySet="RechnungenSet" />
       <End Role="ArtikellisteItem" EntitySet="Artikelliste" />
@@ -203,6 +204,15 @@
     <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
     <Property Name="Bezeichnung" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Documents">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Bezeichnung" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Data" Type="varbinary(max)" />
   </EntityType>
   <Association Name="ArtikellisteItem_Rechnungen">
     <End Role="Rechnungen" Type="ApplicationDataStore.Rechnungen" Multiplicity="1">

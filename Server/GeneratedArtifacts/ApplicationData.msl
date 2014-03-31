@@ -171,5 +171,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="DocumentsSet">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Documents)">
+        <MappingFragment StoreEntitySet="DocumentsSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Bezeichnung" ColumnName="Bezeichnung" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

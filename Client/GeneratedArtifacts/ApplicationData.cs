@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Ursprünglicher Dateiname:
-// Erstellungsdatum: 26.03.2014 20:04:05
+// Erstellungsdatum: 31.03.2014 11:48:54
 namespace LightSwitchApplication.Implementation
 {
     
@@ -248,6 +248,23 @@ namespace LightSwitchApplication.Implementation
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceQuery<Anbieter> _AnbieterSet;
         /// <summary>
+        /// Im Schema sind keine Kommentare für "DocumentsSet" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceQuery<Documents> DocumentsSet
+        {
+            get
+            {
+                if ((this._DocumentsSet == null))
+                {
+                    this._DocumentsSet = base.CreateQuery<Documents>("DocumentsSet");
+                }
+                return this._DocumentsSet;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceQuery<Documents> _DocumentsSet;
+        /// <summary>
         /// Im Schema sind keine Kommentare für "Kunden" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -334,6 +351,14 @@ namespace LightSwitchApplication.Implementation
         public void AddToAnbieterSet(Anbieter anbieter)
         {
             base.AddObject("AnbieterSet", anbieter);
+        }
+        /// <summary>
+        /// Im Schema sind keine Kommentare für "DocumentsSet" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public void AddToDocumentsSet(Documents documents)
+        {
+            base.AddObject("DocumentsSet", documents);
         }
     }
     /// <summary>
@@ -4104,6 +4129,160 @@ namespace LightSwitchApplication.Implementation
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceCollection<ArtikelstammItem> _Artikelstamm = new global::System.Data.Services.Client.DataServiceCollection<ArtikelstammItem>(null, global::System.Data.Services.Client.TrackingMode.None);
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// Im Schema sind keine Kommentare für "LightSwitchApplication.Documents" vorhanden.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("DocumentsSet")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
+    public partial class Documents : global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityBase, global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Erstellt ein neues Documents-Objekt.
+        /// </summary>
+        /// <param name="ID">Anfangswert von Id.</param>
+        /// <param name="rowVersion">Anfangswert von RowVersion.</param>
+        /// <param name="bezeichnung">Anfangswert von Bezeichnung.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static Documents CreateDocuments(int ID, byte[] rowVersion, string bezeichnung)
+        {
+            Documents documents = new Documents();
+            documents.Id = ID;
+            documents.RowVersion = rowVersion;
+            documents.Bezeichnung = bezeichnung;
+            return documents;
+        }
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "Id" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public int Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                if (object.Equals(this.Id, value))
+                {
+                    return;
+                }
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private int _Id;
+        partial void OnIdChanging(int value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "RowVersion" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public byte[] RowVersion
+        {
+            get
+            {
+                if ((this._RowVersion != null))
+                {
+                    return ((byte[])(this._RowVersion.Clone()));
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set
+            {
+                this.OnRowVersionChanging(value);
+                if (object.Equals(this.RowVersion, value))
+                {
+                    return;
+                }
+                this._RowVersion = value;
+                this.OnRowVersionChanged();
+                this.OnPropertyChanged("RowVersion");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private byte[] _RowVersion;
+        partial void OnRowVersionChanging(byte[] value);
+        partial void OnRowVersionChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "Bezeichnung" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Bezeichnung
+        {
+            get
+            {
+                return this._Bezeichnung;
+            }
+            set
+            {
+                this.OnBezeichnungChanging(value);
+                if (object.Equals(this.Bezeichnung, value))
+                {
+                    return;
+                }
+                this._Bezeichnung = value;
+                this.OnBezeichnungChanged();
+                this.OnPropertyChanged("Bezeichnung");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Bezeichnung;
+        partial void OnBezeichnungChanging(string value);
+        partial void OnBezeichnungChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "Data" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public byte[] Data
+        {
+            get
+            {
+                if ((this._Data != null))
+                {
+                    return ((byte[])(this._Data.Clone()));
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set
+            {
+                this.OnDataChanging(value);
+                if (object.Equals(this.Data, value))
+                {
+                    return;
+                }
+                this._Data = value;
+                this.OnDataChanged();
+                this.OnPropertyChanged("Data");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private byte[] _Data;
+        partial void OnDataChanging(byte[] value);
+        partial void OnDataChanged();
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]

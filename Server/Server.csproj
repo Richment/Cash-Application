@@ -59,6 +59,13 @@
     <NoWarn>1522</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.0.5022.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DocumentFormat.OpenXml.1.0\lib\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Foxby">
+      <HintPath>..\packages\Foxby.1.3.49.0\lib\Foxby.dll</HintPath>
+    </Reference>
     <Reference Include="MetroThemeExtension.Common">
       <HintPath>..\_Pvt_Extensions\MetroThemeExtension\Server\Reference\MetroThemeExtension.Common.dll</HintPath>
     </Reference>
@@ -76,6 +83,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Net" />
     <Reference Include="System.Runtime.Serialization" />
@@ -160,6 +168,7 @@
     <Reference Include="Application.Common">
       <HintPath>Common\Bin\Application.Common.dll</HintPath>
     </Reference>
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup Condition="'$(BuildingInsideVisualStudio)' == 'true'">
     <Reference Include="Application.Common">
@@ -199,6 +208,12 @@
   <ItemGroup>
     <Folder Include="DataLogic\" />
     <Folder Include="DataSources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Template.docx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
