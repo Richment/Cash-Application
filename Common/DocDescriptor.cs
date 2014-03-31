@@ -20,72 +20,9 @@
 		public const string BRUTTO = "brutto";
 		public const string NETTO = "gesamtnetto";
 		public const string TAX = "mehrwertsteuer";
+		public const string REF = "referenznr";
 
 		#endregion
-
-		public class PositionDescription
-		{
-			internal const string ITEM_SEPERATOR = "{|}";
-			internal const string DATASET_SEPERATOR = "{||}";
-
-			public int Anzahl
-			{
-				get;
-				set;
-			}
-			public string Artikelnummer
-			{
-				get;
-				set;
-			}
-			public string Bezeichnung
-			{
-				get;
-				set;
-			}
-			public decimal PosPreis
-			{
-				get;
-				set;
-			}
-			public decimal Preis
-			{
-				get;
-				set;
-			}
-
-			public override string ToString()
-			{
-				return String.Join(ITEM_SEPERATOR, new string[] 
-				{ 
-					Anzahl.ToString(CultureInfo.InvariantCulture.NumberFormat),
-					Artikelnummer, 
-					Bezeichnung,
-					PosPreis.ToString(CultureInfo.InvariantCulture.NumberFormat),
-					Preis.ToString(CultureInfo.InvariantCulture.NumberFormat) 
-				});
-			}
-
-			private static PositionDescription FromString(string value)
-			{
-				var parts = value.Split(new string[] { ITEM_SEPERATOR }, StringSplitOptions.None);
-				try
-				{
-					return new PositionDescription()
-					{
-						Anzahl = Int32.Parse(parts[0], CultureInfo.InvariantCulture.NumberFormat),
-						Artikelnummer = parts[1],
-						Bezeichnung = parts[2],
-						PosPreis = Decimal.Parse(parts[3], CultureInfo.InvariantCulture.NumberFormat),
-						Preis = Decimal.Parse(parts[4], CultureInfo.InvariantCulture.NumberFormat),
-					};
-				}
-				catch (Exception ex)
-				{
-					throw new Exception("Extraction failed.", ex);
-				}
-			}
-		};
 
 		public static explicit operator Dictionary<string, string>(DocDescriptor value)
 		{
@@ -93,9 +30,26 @@
 		}
 		public static explicit operator DocDescriptor(Dictionary<string, string> value)
 		{
-			return new DocDescriptor(value);
+			return new DocDescriptor(initial: value);
 		}
 
+		public string Referenznummer
+		{
+			get
+			{
+				string result;
+				if (data.TryGetValue(REF, out result))
+					return result;
+				return null;
+			}
+			set
+			{
+				if (value != null)
+					data[REF] = value;
+				else
+					data.Remove(REF);
+			}
+		}
 		public string Titel
 		{
 			get
@@ -283,7 +237,6 @@
 					data.Remove(TAX);
 			}
 		}
-
 		public PositionCollection Positionen
 		{
 			get;
@@ -292,21 +245,26 @@
 
 		private Dictionary<string, string> data;
 
-		public DocDescriptor()
+		public DocDescriptor(string referenznummer = null, string titel = null, Dictionary<string, string> initial = null)
 		{
 			data = new Dictionary<string, string>();
 			Positionen = new PositionCollection();
-		}
-		public DocDescriptor(Dictionary<string, string> initial)
-			: this()
-		{
-			foreach (var key in initial.Keys.Except(new string[] { String.Empty }))
-				data.Add(key, initial[key]);
-			string positionString;
-			if (initial.TryGetValue(String.Empty, out positionString))
-				Positionen = PositionCollection.FromString(positionString);
-		}
 
+			if (initial != null)
+			{
+				foreach (var key in initial.Keys.Except(new string[] { String.Empty }))
+					data.Add(key, initial[key]);
+
+				string positionString;
+				if (initial.TryGetValue(String.Empty, out positionString))
+					Positionen = PositionCollection.FromString(positionString);
+			}
+
+			if (referenznummer != null)
+				this.Rechnungsnummer = referenznummer;
+			if (titel != null)
+				this.Titel = titel;
+		}
 
 		public Dictionary<string, string> ToDictionary()
 		{
