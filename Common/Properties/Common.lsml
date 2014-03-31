@@ -2734,6 +2734,14 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
+        Name="Datum"
+        PropertyType=":Date">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
         Name="Bezeichnung"
         PropertyType=":String">
         <EntityProperty.Attributes>
@@ -2748,6 +2756,13 @@
         <EntityProperty.Attributes>
           <NotSearchable />
           <Hidden />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="GeneratedData"
+        PropertyType=":Binary?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
         </EntityProperty.Attributes>
       </EntityProperty>
     </EntityType.Properties>

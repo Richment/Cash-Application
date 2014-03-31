@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Ursprünglicher Dateiname:
-// Erstellungsdatum: 31.03.2014 14:55:49
+// Erstellungsdatum: 31.03.2014 17:19:05
 namespace LightSwitchApplication.Implementation
 {
     
@@ -4155,13 +4155,15 @@ namespace LightSwitchApplication.Implementation
         /// </summary>
         /// <param name="ID">Anfangswert von Id.</param>
         /// <param name="rowVersion">Anfangswert von RowVersion.</param>
+        /// <param name="datum">Anfangswert von Datum.</param>
         /// <param name="bezeichnung">Anfangswert von Bezeichnung.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Documents CreateDocuments(int ID, byte[] rowVersion, string bezeichnung)
+        public static Documents CreateDocuments(int ID, byte[] rowVersion, global::System.DateTime datum, string bezeichnung)
         {
             Documents documents = new Documents();
             documents.Id = ID;
             documents.RowVersion = rowVersion;
+            documents.Datum = datum;
             documents.Bezeichnung = bezeichnung;
             return documents;
         }
@@ -4225,6 +4227,32 @@ namespace LightSwitchApplication.Implementation
         partial void OnRowVersionChanging(byte[] value);
         partial void OnRowVersionChanged();
         /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "Datum" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.DateTime Datum
+        {
+            get
+            {
+                return this._Datum;
+            }
+            set
+            {
+                this.OnDatumChanging(value);
+                if (object.Equals(this.Datum, value))
+                {
+                    return;
+                }
+                this._Datum = value;
+                this.OnDatumChanged();
+                this.OnPropertyChanged("Datum");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.DateTime _Datum;
+        partial void OnDatumChanging(global::System.DateTime value);
+        partial void OnDatumChanged();
+        /// <summary>
         /// Im Schema sind keine Kommentare für die Eigenschaft "Bezeichnung" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -4283,6 +4311,39 @@ namespace LightSwitchApplication.Implementation
         private byte[] _Data;
         partial void OnDataChanging(byte[] value);
         partial void OnDataChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "GeneratedData" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public byte[] GeneratedData
+        {
+            get
+            {
+                if ((this._GeneratedData != null))
+                {
+                    return ((byte[])(this._GeneratedData.Clone()));
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set
+            {
+                this.OnGeneratedDataChanging(value);
+                if (object.Equals(this.GeneratedData, value))
+                {
+                    return;
+                }
+                this._GeneratedData = value;
+                this.OnGeneratedDataChanged();
+                this.OnPropertyChanged("GeneratedData");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private byte[] _GeneratedData;
+        partial void OnGeneratedDataChanging(byte[] value);
+        partial void OnGeneratedDataChanged();
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]

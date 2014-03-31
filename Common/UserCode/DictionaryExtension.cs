@@ -8,7 +8,7 @@
 	public static class DictionaryExtension
 	{
 		private static readonly Encoding enc = Encoding.UTF8;
-		
+
 		public static byte[] Serialize(this Dictionary<string, string> value)
 		{
 			List<byte> result = new List<byte>();
@@ -22,24 +22,37 @@
 			return result.ToArray();
 		}
 
-		public static void Deserialize(this Dictionary<string, string> value, byte[] bytes)
+		public static bool Deserialize(this Dictionary<string, string> value, byte[] bytes)
 		{
 			if (bytes == null)
 				throw new ArgumentNullException("bytes");
 
-			value.Clear();
-			int position = 0;
-			while (position < bytes.Length)
+			Dictionary<string, string> cache = new Dictionary<string, string>();
+			try
 			{
-				string key = DecodeString(bytes, ref position);
-				string val = DecodeString(bytes, ref position);
-				value.Add(key, val);
+				int position = 0;
+				while (position < bytes.Length)
+				{
+					string key = DecodeString(bytes, ref position);
+					string val = DecodeString(bytes, ref position);
+					cache.Add(key, val);
+				}
 			}
+			catch
+			{
+				return false;
+			}
+
+			value.Clear();
+			foreach (var item in cache)
+				value.Add(item.Key, item.Value);
+			return true;
 		}
 
 		private static byte[] EncodeString(string value)
 		{
-			return BitConverter.GetBytes(enc.GetByteCount(value)).Concat(enc.GetBytes(value)).ToArray();
+			byte[] valueBytes = enc.GetBytes(value);
+			return BitConverter.GetBytes(valueBytes.Length).Concat(valueBytes).ToArray();
 		}
 		private static string DecodeString(byte[] array, ref int position)
 		{

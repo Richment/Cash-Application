@@ -7876,4 +7876,398 @@ namespace LightSwitchApplication
             }
         }
     }
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    public sealed partial class DokumentenÜbersicht
+        : global::Microsoft.LightSwitch.Framework.Client.ScreenObject<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>
+    {
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private DokumentenÜbersicht() : base("LightSwitchApplication:DokumentenÜbersicht")
+        {
+            global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.Initialize(this);
+        }
+
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public static DokumentenÜbersicht CreateInstance()
+        {
+            return new global::LightSwitchApplication.DokumentenÜbersicht(
+            );
+        }
+
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void DokumentenÜbersicht_InitializeDataWorkspace(global::System.Collections.Generic.List<global::Microsoft.LightSwitch.IDataService> saveChangesTo);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void DokumentenÜbersicht_Created();
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void DokumentenÜbersicht_Activated();
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void DokumentenÜbersicht_Saving(ref bool handled);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void DokumentenÜbersicht_Saved();
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void DokumentenÜbersicht_Closing(ref bool cancel);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void DokumentenÜbersicht_SaveError(global::System.Exception exception, ref bool handled);
+     
+        #region Private Properties
+        
+        /// <summary>
+        /// Ruft das Application-Objekt für diese Anwendung ab. Das Application-Objekt stellt Zugriff auf aktive Bildschirme, Methoden zum Öffnen von Bildschirmen sowie Zugriff auf den aktuellen Benutzer bereit.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private global::LightSwitchApplication.Application Application
+        {
+            get
+            {
+                return global::LightSwitchApplication.Application.Current;
+            }
+        }
+        
+        /// <summary>
+        /// Ruft den übergeordneten Datenarbeitsbereich ab. Der Datenarbeitsbereich stellt Zugriff auf alle Datenquellen in der Anwendung bereit.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private global::LightSwitchApplication.DataWorkspace DataWorkspace
+        {
+            get
+            {
+                return (global::LightSwitchApplication.DataWorkspace)((global::Microsoft.LightSwitch.Details.Client.IScreenDetails)this.Details).DataWorkspace;
+            }
+        }
+        
+        #endregion
+ 
+        partial void DocumentsSet_SelectionChanged();
+
+        partial void DocumentsSet_Changed(global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e);
+
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void DocumentsSet_Loaded(bool succeeded);
+
+        partial void SelectedDocument_Changed();
+
+        /// <summary>
+        /// Ruft die visuelle DocumentsSet-Auflistung ab. Diese Auflistung enthält alle Datensätze, die derzeit in der entsprechenden Liste oder im entsprechenden Rastersteuerelement angezeigt werden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Microsoft.LightSwitch.Framework.Client.VisualCollection<global::LightSwitchApplication.Documents> DocumentsSet
+        {
+            get
+            {
+                return global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.GetValue(this, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.PropertySetProperties.DocumentsSet);
+            }
+        }
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void DocumentsSet_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
+ 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::LightSwitchApplication.Documents SelectedDocument
+        {
+            get 
+            {
+                return global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.GetValue(this, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.PropertySetProperties.SelectedDocument);
+            }
+            set
+            {
+                global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.SetValue(this, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.PropertySetProperties.SelectedDocument, value);
+            }
+        }
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void SelectedDocument_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
+ 
+        /// <summary>
+        /// Ruft die Bildschirmmethode ShowDocument auf.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public void ShowDocument()
+        {
+            this.Details.Methods.ShowDocument.CreateInvocation().Execute();
+        }
+        partial void ShowDocument_CanExecute(ref bool result);
+        partial void ShowDocument_Execute();
+
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public sealed class DetailsClass
+            : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenDetails<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.PropertySet, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.CommandSet, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.MethodSet>
+        {
+
+            static DetailsClass()
+            {
+                var initializePropertyEntry = global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.PropertySetProperties.DocumentsSet;
+                var initializeCommandEntry = global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.CommandSetProperties.ShowDocument;
+                var initializeMethodEntry = global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.MethodSetProperties.ShowDocument;
+            }
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static global::Microsoft.LightSwitch.Details.Framework.Client.ScreenDetails<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>.Entry
+                __DokumentenÜbersichtEntry = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenDetails<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>.Entry(
+                    global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.__DokumentenÜbersicht_InvokeInitializeDataWorkspace,
+                    global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.__DokumentenÜbersicht_InvokeSavingEvent,
+                    global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.__DokumentenÜbersicht_InvokeSavedEvent,
+                    global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.__DokumentenÜbersicht_InvokeClosingEvent,
+                    global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.__DokumentenÜbersicht_InvokeCreated,
+                    global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.__DokumentenÜbersicht_InvokeActivated,
+                    global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.__DokumentenÜbersicht_InvokeSaveErrorEvent);
+            private static void __DokumentenÜbersicht_InvokeInitializeDataWorkspace(global::LightSwitchApplication.DokumentenÜbersicht s, global::System.Collections.Generic.List<global::Microsoft.LightSwitch.IDataService> saveChangesTo)
+            {
+                s.DokumentenÜbersicht_InitializeDataWorkspace(saveChangesTo);
+            }
+            private static bool __DokumentenÜbersicht_InvokeSavingEvent(global::LightSwitchApplication.DokumentenÜbersicht s)
+            {
+                bool handled = false;
+                s.DokumentenÜbersicht_Saving(ref handled);
+                return handled;
+            }
+            private static void __DokumentenÜbersicht_InvokeSavedEvent(global::LightSwitchApplication.DokumentenÜbersicht s)
+            {
+                s.DokumentenÜbersicht_Saved();
+            }
+            private static bool __DokumentenÜbersicht_InvokeClosingEvent(global::LightSwitchApplication.DokumentenÜbersicht s)
+            {
+                bool cancel = false;
+                s.DokumentenÜbersicht_Closing(ref cancel);
+                return cancel;
+            }
+            private static void __DokumentenÜbersicht_InvokeCreated(global::LightSwitchApplication.DokumentenÜbersicht s)
+            {
+                s.DokumentenÜbersicht_Created();
+            }
+            private static void __DokumentenÜbersicht_InvokeActivated(global::LightSwitchApplication.DokumentenÜbersicht s)
+            {
+                s.DokumentenÜbersicht_Activated();
+            }
+            private static bool __DokumentenÜbersicht_InvokeSaveErrorEvent(global::LightSwitchApplication.DokumentenÜbersicht s, global::System.Exception ex)
+            {
+                bool handled = false;
+                s.DokumentenÜbersicht_SaveError(ex, ref handled);
+                return handled;
+            }
+
+            public DetailsClass() : base()
+            {
+            }
+
+            public new global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.PropertySet Properties
+            {
+                get
+                {
+                    return base.Properties;
+                }
+            }
+
+            public new global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.CommandSet Commands
+            {
+                get
+                {
+                    return base.Commands;
+                }
+            }
+
+            public new global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.MethodSet Methods
+            {
+                get
+                {
+                    return base.Methods;
+                }
+            }
+
+            private global::Microsoft.LightSwitch.IDataServiceQueryable DocumentsSetQuery()
+            {
+                return this.Screen.DataWorkspace.ApplicationData.DocumentsSet;
+            }
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass, global::LightSwitchApplication.Documents>.Data _DocumentsSet;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass, global::LightSwitchApplication.Documents>.Data _SelectedDocument;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>.Data _ShowDocumentCommand;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>.Data _ShowDocumentMethod;
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public sealed class PropertySet
+                : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenPropertySet<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>
+            {
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass, global::LightSwitchApplication.Documents> DocumentsSet
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass, global::LightSwitchApplication.Documents>)base.GetItem(global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.PropertySetProperties.DocumentsSet);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass, global::LightSwitchApplication.Documents> SelectedDocument
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass, global::LightSwitchApplication.Documents>)base.GetItem(global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.PropertySetProperties.SelectedDocument);
+                    }
+                }
+
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public sealed class CommandSet
+                : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommandSet<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>
+            {
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass> ShowDocument
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>)base.GetItem(global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.CommandSetProperties.ShowDocument);
+                    }
+                }
+
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public sealed class MethodSet
+                : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethodSet<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>
+            {
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass> ShowDocument
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>)base.GetItem(global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.MethodSetProperties.ShowDocument);
+                    }
+                }
+
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal sealed class PropertySetProperties
+            {
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass, global::LightSwitchApplication.Documents>.Entry
+                    DocumentsSet = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass, global::LightSwitchApplication.Documents>.Entry(
+                        "DocumentsSet",
+                        global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.PropertySetProperties._DocumentsSet_Stub,
+                        global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.PropertySetProperties._DocumentsSet_Validate,
+                        global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.PropertySetProperties._DocumentsSet_CreateQuery,
+                        global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.PropertySetProperties._DocumentsSet_SelectionChanged,
+                        global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.PropertySetProperties._DocumentsSet_OnCollectionChanged,
+                        global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.PropertySetProperties._DocumentsSet_OnLoaded);
+                private static void _DocumentsSet_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass, global::LightSwitchApplication.Documents>.Data> c, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass d, object sf)
+                {
+                    c(d, ref d._DocumentsSet, sf);
+                }
+                private static void _DocumentsSet_Validate(global::LightSwitchApplication.DokumentenÜbersicht s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
+                {
+                    s.DocumentsSet_Validate(r);
+                }
+                private static global::Microsoft.LightSwitch.IDataServiceQueryable _DocumentsSet_CreateQuery(global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass d, object[] args)
+                {
+                    return d.DocumentsSetQuery();
+                }
+                private static void _DocumentsSet_SelectionChanged(global::LightSwitchApplication.DokumentenÜbersicht s)
+                {
+                    s.DocumentsSet_SelectionChanged();
+                }
+                private static void _DocumentsSet_OnCollectionChanged(global::LightSwitchApplication.DokumentenÜbersicht s, global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+                {
+                    s.DocumentsSet_Changed(e);
+                }
+                private static void _DocumentsSet_OnLoaded(global::LightSwitchApplication.DokumentenÜbersicht s, bool succeeded)
+                {
+                    s.DocumentsSet_Loaded(succeeded);
+                }
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass, global::LightSwitchApplication.Documents>.Entry
+                    SelectedDocument = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass, global::LightSwitchApplication.Documents>.Entry(
+                        "SelectedDocument",
+                        false,
+                        global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.PropertySetProperties._SelectedDocument_Stub,
+                        global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.PropertySetProperties._SelectedDocument_Validate,
+                        global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.PropertySetProperties._SelectedDocument_OnValueChanged);
+                private static void _SelectedDocument_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass, global::LightSwitchApplication.Documents>.Data> c, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass d, object sf)
+                {
+                    c(d, ref d._SelectedDocument, sf);
+                }
+                private static void _SelectedDocument_Validate(global::LightSwitchApplication.DokumentenÜbersicht s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
+                {
+                    s.SelectedDocument_Validate(r);
+                }
+                private static void _SelectedDocument_OnValueChanged(global::LightSwitchApplication.DokumentenÜbersicht s)
+                {
+                    s.SelectedDocument_Changed();
+                }
+
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal sealed class CommandSetProperties
+            {
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>.Entry
+                    ShowDocument = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>.Entry(
+                        "ShowDocument",
+                        global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.CommandSetProperties._ShowDocument_Stub,
+                        global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.CommandSetProperties._ShowDocument_CreateExecutableObject);
+                private static void _ShowDocument_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>.Data> c, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass d, object sf)
+                {
+                    c(d, ref d._ShowDocumentCommand, sf);
+                }
+                private static global::Microsoft.LightSwitch.IExecutable _ShowDocument_CreateExecutableObject(global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass d)
+                {
+                    return ((global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass)d).Methods.ShowDocument.CreateInvocation();
+                }
+
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal sealed class MethodSetProperties
+            {
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>.Entry
+                    ShowDocument = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>.Entry(
+                        "ShowDocument",
+                        global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.MethodSetProperties._ShowDocument_Stub,
+                        global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.MethodSetProperties._ShowDocument_CanInvoke,
+                        global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.MethodSetProperties._ShowDocument_InvokeMethod);
+                private static void _ShowDocument_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>.Data> c, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass d, object sf)
+                {
+                    c(d, ref d._ShowDocumentMethod, sf);
+                }
+                private static global::System.Exception _ShowDocument_CanInvoke(global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
+                {
+                    bool result = true;
+                    d.Screen.ShowDocument_CanExecute(ref result);
+                    return result ? null : ex;
+                }
+                private static void _ShowDocument_InvokeMethod(global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
+                {
+                    d.Screen.ShowDocument_Execute();
+                }
+
+            }
+        }
+    }
 }

@@ -1129,6 +1129,11 @@ namespace LightSwitchApplication.Implementation
             this.___OnPropertyChanged("RowVersion");
         }
         
+        partial void OnDatumChanged()
+        {
+            this.___OnPropertyChanged("Datum");
+        }
+        
         partial void OnBezeichnungChanged()
         {
             this.___OnPropertyChanged("Bezeichnung");
@@ -1137,6 +1142,11 @@ namespace LightSwitchApplication.Implementation
         partial void OnDataChanged()
         {
             this.___OnPropertyChanged("Data");
+        }
+        
+        partial void OnGeneratedDataChanged()
+        {
+            this.___OnPropertyChanged("GeneratedData");
         }
         
     }

@@ -2,7 +2,6 @@
 {
 	using System;
 	using System.Collections.Generic;
-	using System.Globalization;
 	using System.Linq;
 
 	public class DocDescriptor
@@ -261,7 +260,7 @@
 			}
 
 			if (referenznummer != null)
-				this.Rechnungsnummer = referenznummer;
+				this.Referenznummer = referenznummer;
 			if (titel != null)
 				this.Titel = titel;
 		}

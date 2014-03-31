@@ -1705,12 +1705,14 @@ namespace ApplicationData.Implementation
         /// </summary>
         /// <param name="id">Anfangswert der Eigenschaft Id.</param>
         /// <param name="rowVersion">Anfangswert der Eigenschaft RowVersion.</param>
+        /// <param name="datum">Anfangswert der Eigenschaft Datum.</param>
         /// <param name="bezeichnung">Anfangswert der Eigenschaft Bezeichnung.</param>
-        public static Documents CreateDocuments(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.String bezeichnung)
+        public static Documents CreateDocuments(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.DateTime datum, global::System.String bezeichnung)
         {
             Documents documents = new Documents();
             documents.Id = id;
             documents.RowVersion = rowVersion;
+            documents.Datum = datum;
             documents.Bezeichnung = bezeichnung;
             return documents;
         }
@@ -1775,6 +1777,30 @@ namespace ApplicationData.Implementation
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
+        public global::System.DateTime Datum
+        {
+            get
+            {
+                return _Datum;
+            }
+            set
+            {
+                OnDatumChanging(value);
+                ReportPropertyChanging("Datum");
+                _Datum = value;
+                ReportPropertyChanged("Datum");
+                OnDatumChanged();
+            }
+        }
+        private global::System.DateTime _Datum;
+        partial void OnDatumChanging(global::System.DateTime value);
+        partial void OnDatumChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String Bezeichnung
         {
             get
@@ -1817,6 +1843,30 @@ namespace ApplicationData.Implementation
         private global::System.Byte[] _Data;
         partial void OnDataChanging(global::System.Byte[] value);
         partial void OnDataChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] GeneratedData
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_GeneratedData);
+            }
+            set
+            {
+                OnGeneratedDataChanging(value);
+                ReportPropertyChanging("GeneratedData");
+                _GeneratedData = value;
+                ReportPropertyChanged("GeneratedData");
+                OnGeneratedDataChanged();
+            }
+        }
+        private global::System.Byte[] _GeneratedData;
+        partial void OnGeneratedDataChanging(global::System.Byte[] value);
+        partial void OnGeneratedDataChanged();
 
         #endregion
 

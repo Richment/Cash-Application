@@ -41,7 +41,6 @@ namespace LightSwitchApplication
 		private const string TITLE_TAG = "[[" + DocDescriptor.TITLE + "]]";
 		#endregion
 
-
 		#region Private methods
 
 		private static void SendEmail(OutgoingMail entity, byte[] attachment = null, string attachmentName = null)
@@ -119,10 +118,8 @@ namespace LightSwitchApplication
 			return InsertTextRun(last.AppendChild(new Paragraph()), text);
 		}
 
-		private byte[] ProcessDocument(DocDescriptor data)
+		private static  byte[] ProcessDocument(DocDescriptor data)
 		{
-			//data.Adresse = "Herr Axel Dittrich" + Environment.NewLine + "Geile Straße 1" + Environment.NewLine+"67655 KL";
-			//data.Positionen.Add(new Position() { Anzahl = 1, Artikelnummer = "111-111-0", Bezeichnung = "die Bezeichnung", PosPreis = 12, Preis = 0 });
 			using (MemoryStream ms = CreateTemplate())
 			{
 				WordprocessingDocument doc = WordprocessingDocument.Open(ms, true);
@@ -230,6 +227,16 @@ namespace LightSwitchApplication
 			}
 		}
 
+		private static void PrintDocument(byte[] docBytes)
+		{
+			using(MemoryStream ms = new MemoryStream(	docBytes))
+			{
+			/*	var doc = Novacode.DocX.Load(ms);
+				doc.Ex	 */
+
+			}
+		}
+
 		#endregion
 
 
@@ -242,23 +249,25 @@ namespace LightSwitchApplication
 
 		partial void OutgoingMailSet_Updating(OutgoingMail entity)
 		{
-			var doc = new Documents();
-			Dictionary<string, string> tmp = new Dictionary<string, string>();
-			tmp.Add("Name", "test");
-			tmp.Add("Nummer", "245");
-			doc.Data = tmp.Serialize();
-			DocumentsSet_Inserting(doc);
-			//entity.Sended = DateTime.Now;
-			//SendEmail(entity);
+			/*var doc = new Documents();
+			DocDescriptor desc = new DocDescriptor("R-Test", "Rechnung");
+			desc.Adresse = "Herr Axel Dittrich" + Environment.NewLine + "Geile Straße 1" + Environment.NewLine + "67655 KL";
+			desc.Positionen.Add(new Position() { Anzahl = 1, Artikelnummer = "111-111-0", Bezeichnung = "die Bezeichnung", PosPreis = 12, Preis = 0 });
+			doc.Data = desc.ToDictionary().Serialize();
+			DocumentsSet_Inserting(doc);*/
+			entity.Sended = DateTime.Now;
+			SendEmail(entity);
 		}
 
 		partial void DocumentsSet_Inserting(Documents entity)
 		{
 			var data = new Dictionary<string, string>();
-			data.Deserialize(entity.Data);
-			var desc = (DocDescriptor)data;
-			entity.Bezeichnung = desc.Referenznummer + " - " + desc.Titel + " vom " + DateTime.Today.ToShortDateString();
-			entity.Data = ProcessDocument((DocDescriptor)data);
+			if (data.Deserialize(entity.Data))
+			{
+				var desc = (DocDescriptor)data;
+				entity.Bezeichnung = desc.Referenznummer + " - " + desc.Titel + " vom " + entity.Datum.ToShortDateString();
+				entity.GeneratedData = ProcessDocument(desc);
+			}
 		}
 
 	}

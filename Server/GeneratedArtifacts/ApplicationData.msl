@@ -176,8 +176,10 @@
         <MappingFragment StoreEntitySet="DocumentsSet">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Datum" ColumnName="Datum" />
           <ScalarProperty Name="Bezeichnung" ColumnName="Bezeichnung" />
           <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="GeneratedData" ColumnName="GeneratedData" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

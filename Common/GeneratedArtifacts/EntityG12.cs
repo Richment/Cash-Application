@@ -132,6 +132,30 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime Datum
+        {
+            get
+            {
+                return global::LightSwitchApplication.Documents.DetailsClass.GetValue(this, global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties.Datum);
+            }
+            set
+            {
+                global::LightSwitchApplication.Documents.DetailsClass.SetValue(this, global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties.Datum, value);
+            }
+        }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Datum_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Datum_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Datum_Changed();
+
+        /// <summary>
+        /// Keine modellierte Beschreibung verfügbar
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public string Bezeichnung
         {
             get
@@ -174,6 +198,30 @@ namespace LightSwitchApplication
         partial void Data_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void Data_Changed();
+
+        /// <summary>
+        /// Keine modellierte Beschreibung verfügbar
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public byte[] GeneratedData
+        {
+            get
+            {
+                return global::LightSwitchApplication.Documents.DetailsClass.GetValue(this, global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties.GeneratedData);
+            }
+            set
+            {
+                global::LightSwitchApplication.Documents.DetailsClass.SetValue(this, global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties.GeneratedData, value);
+            }
+        }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void GeneratedData_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void GeneratedData_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void GeneratedData_Changed();
 
         #endregion
     
@@ -273,6 +321,14 @@ namespace LightSwitchApplication
                     }
                 }
                 
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, global::System.DateTime> Datum
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties.Datum) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, global::System.DateTime>;
+                    }
+                }
+                
                 public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, string> Bezeichnung
                 {
                     get
@@ -289,6 +345,14 @@ namespace LightSwitchApplication
                     }
                 }
                 
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, byte[]> GeneratedData
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties.GeneratedData) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, byte[]>;
+                    }
+                }
+                
             }
     
             #pragma warning disable 109
@@ -297,8 +361,10 @@ namespace LightSwitchApplication
             {
                 new int Id { get; set; }
                 new byte[] RowVersion { get; set; }
+                new global::System.DateTime Datum { get; set; }
                 new string Bezeichnung { get; set; }
                 new byte[] Data { get; set; }
+                new byte[] GeneratedData { get; set; }
             }
             #pragma warning restore 109
     
@@ -383,6 +449,43 @@ namespace LightSwitchApplication
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, global::System.DateTime>.Entry
+                    Datum = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, global::System.DateTime>.Entry(
+                        "Datum",
+                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._Datum_Stub,
+                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._Datum_ComputeIsReadOnly,
+                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._Datum_Validate,
+                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._Datum_GetImplementationValue,
+                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._Datum_SetImplementationValue,
+                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._Datum_OnValueChanged);
+                private static void _Datum_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Documents.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, global::System.DateTime>.Data> c, global::LightSwitchApplication.Documents.DetailsClass d, object sf)
+                {
+                    c(d, ref d._Datum, sf);
+                }
+                private static bool _Datum_ComputeIsReadOnly(global::LightSwitchApplication.Documents e)
+                {
+                    bool result = false;
+                    e.Datum_IsReadOnly(ref result);
+                    return result;
+                }
+                private static void _Datum_Validate(global::LightSwitchApplication.Documents e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                {
+                    e.Datum_Validate(r);
+                }
+                private static global::System.DateTime _Datum_GetImplementationValue(global::LightSwitchApplication.Documents.DetailsClass d)
+                {
+                    return d.ImplementationEntity.Datum;
+                }
+                private static void _Datum_SetImplementationValue(global::LightSwitchApplication.Documents.DetailsClass d, global::System.DateTime v)
+                {
+                    d.ImplementationEntity.Datum = global::LightSwitchApplication.Documents.DetailsClass.TruncateDate(v);
+                }
+                private static void _Datum_OnValueChanged(global::LightSwitchApplication.Documents e)
+                {
+                    e.Datum_Changed();
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, string>.Entry
                     Bezeichnung = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, string>.Entry(
                         "Bezeichnung",
@@ -456,6 +559,43 @@ namespace LightSwitchApplication
                     e.Data_Changed();
                 }
     
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, byte[]>.Entry
+                    GeneratedData = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, byte[]>.Entry(
+                        "GeneratedData",
+                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._GeneratedData_Stub,
+                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._GeneratedData_ComputeIsReadOnly,
+                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._GeneratedData_Validate,
+                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._GeneratedData_GetImplementationValue,
+                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._GeneratedData_SetImplementationValue,
+                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._GeneratedData_OnValueChanged);
+                private static void _GeneratedData_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Documents.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, byte[]>.Data> c, global::LightSwitchApplication.Documents.DetailsClass d, object sf)
+                {
+                    c(d, ref d._GeneratedData, sf);
+                }
+                private static bool _GeneratedData_ComputeIsReadOnly(global::LightSwitchApplication.Documents e)
+                {
+                    bool result = false;
+                    e.GeneratedData_IsReadOnly(ref result);
+                    return result;
+                }
+                private static void _GeneratedData_Validate(global::LightSwitchApplication.Documents e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                {
+                    e.GeneratedData_Validate(r);
+                }
+                private static byte[] _GeneratedData_GetImplementationValue(global::LightSwitchApplication.Documents.DetailsClass d)
+                {
+                    return d.ImplementationEntity.GeneratedData;
+                }
+                private static void _GeneratedData_SetImplementationValue(global::LightSwitchApplication.Documents.DetailsClass d, byte[] v)
+                {
+                    d.ImplementationEntity.GeneratedData = v;
+                }
+                private static void _GeneratedData_OnValueChanged(global::LightSwitchApplication.Documents e)
+                {
+                    e.GeneratedData_Changed();
+                }
+    
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -465,10 +605,16 @@ namespace LightSwitchApplication
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, byte[]>.Data _RowVersion;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, global::System.DateTime>.Data _Datum;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, string>.Data _Bezeichnung;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, byte[]>.Data _Data;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, byte[]>.Data _GeneratedData;
             
         }
     

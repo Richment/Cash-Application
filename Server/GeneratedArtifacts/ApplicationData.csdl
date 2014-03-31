@@ -181,8 +181,10 @@
     </Key>
     <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Datum" Type="Edm.DateTime" Nullable="false" />
     <Property Name="Bezeichnung" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="Data" Type="Edm.Binary" MaxLength="Max" />
+    <Property Name="GeneratedData" Type="Edm.Binary" MaxLength="Max" />
   </EntityType>
   <Association Name="ArtikellisteItem_Rechnungen">
     <End Role="Rechnungen" Type="LightSwitchApplication.Rechnungen" Multiplicity="1">

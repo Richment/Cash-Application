@@ -8,6 +8,12 @@ namespace LightSwitchApplication
 {
 	public partial class Documents
 	{
+		partial void Documents_Created()
+		{
+			this.Datum = DateTime.Now;
+			this.Bezeichnung = String.Empty;
+		}
+
 		public override string ToString()
 		{
 			return String.IsNullOrWhiteSpace(Bezeichnung) ? base.ToString() : Bezeichnung;
