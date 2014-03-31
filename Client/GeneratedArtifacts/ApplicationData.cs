@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Ursprünglicher Dateiname:
-// Erstellungsdatum: 31.03.2014 17:19:05
+// Erstellungsdatum: 31.03.2014 20:06:47
 namespace LightSwitchApplication.Implementation
 {
     
@@ -4344,6 +4344,32 @@ namespace LightSwitchApplication.Implementation
         private byte[] _GeneratedData;
         partial void OnGeneratedDataChanging(byte[] value);
         partial void OnGeneratedDataChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "Html" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Html
+        {
+            get
+            {
+                return this._Html;
+            }
+            set
+            {
+                this.OnHtmlChanging(value);
+                if (object.Equals(this.Html, value))
+                {
+                    return;
+                }
+                this._Html = value;
+                this.OnHtmlChanged();
+                this.OnPropertyChanged("Html");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Html;
+        partial void OnHtmlChanging(string value);
+        partial void OnHtmlChanged();
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]

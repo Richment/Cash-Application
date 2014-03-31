@@ -1867,6 +1867,30 @@ namespace ApplicationData.Implementation
         private global::System.Byte[] _GeneratedData;
         partial void OnGeneratedDataChanging(global::System.Byte[] value);
         partial void OnGeneratedDataChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Html
+        {
+            get
+            {
+                return _Html;
+            }
+            set
+            {
+                OnHtmlChanging(value);
+                ReportPropertyChanging("Html");
+                _Html = value;
+                ReportPropertyChanged("Html");
+                OnHtmlChanged();
+            }
+        }
+        private global::System.String _Html;
+        partial void OnHtmlChanging(global::System.String value);
+        partial void OnHtmlChanged();
 
         #endregion
 

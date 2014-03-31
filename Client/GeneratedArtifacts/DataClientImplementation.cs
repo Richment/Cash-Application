@@ -1149,6 +1149,11 @@ namespace LightSwitchApplication.Implementation
             this.___OnPropertyChanged("GeneratedData");
         }
         
+        partial void OnHtmlChanged()
+        {
+            this.___OnPropertyChanged("Html");
+        }
+        
     }
     #endregion
     

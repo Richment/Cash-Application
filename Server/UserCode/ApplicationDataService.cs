@@ -227,13 +227,21 @@ namespace LightSwitchApplication
 			}
 		}
 
-		private static void PrintDocument(byte[] docBytes)
+		private static byte[] DocumentToPdf(byte[] docBytes)
 		{
-			using(MemoryStream ms = new MemoryStream(	docBytes))
+			byte[] result = null;
+			using (MemoryStream ms = new MemoryStream(docBytes))
 			{
-			/*	var doc = Novacode.DocX.Load(ms);
-				doc.Ex	 */
-
+				Spire.Doc.Document doc = new Spire.Doc.Document(ms);
+				using (MemoryStream target = new MemoryStream())
+				{
+					doc.SaveToStream(target, Spire.Doc.FileFormat.PDF);
+					result = target.ToArray();
+				}
+#if DEBUG
+				File.WriteAllBytes(@"C:\users\Richment\Desktop\test.pdf", result);
+#endif
+				return result;		
 			}
 		}
 
@@ -256,7 +264,7 @@ namespace LightSwitchApplication
 			doc.Data = desc.ToDictionary().Serialize();
 			DocumentsSet_Inserting(doc);*/
 			entity.Sended = DateTime.Now;
-			SendEmail(entity);
+			SendEmail(entity);							
 		}
 
 		partial void DocumentsSet_Inserting(Documents entity)
@@ -264,10 +272,27 @@ namespace LightSwitchApplication
 			var data = new Dictionary<string, string>();
 			if (data.Deserialize(entity.Data))
 			{
-				var desc = (DocDescriptor)data;
+				DocDescriptor desc = new DocDescriptor(initial: data);
 				entity.Bezeichnung = desc.Referenznummer + " - " + desc.Titel + " vom " + entity.Datum.ToShortDateString();
-				entity.GeneratedData = ProcessDocument(desc);
+				byte[] wordDoc = ProcessDocument(desc);
+				byte[] pdfDoc = DocumentToPdf(wordDoc);
+				entity.Html = "";
+		  		entity.GeneratedData = pdfDoc;
 			}
+		}
+
+		partial void DocumentsSet_Updating(Documents entity)
+		{
+		   var data = new Dictionary<string, string>();
+		   if (data.Deserialize(entity.Data))
+		   {
+			   DocDescriptor desc = new DocDescriptor(initial: data);
+			   entity.Bezeichnung = desc.Referenznummer + " - " + desc.Titel + " vom " + entity.Datum.ToShortDateString();
+			   byte[] wordDoc = ProcessDocument(desc);
+			   byte[] pdfDoc = DocumentToPdf(wordDoc);
+			   entity.Html = "";
+			   entity.GeneratedData = pdfDoc;
+		   }
 		}
 
 	}

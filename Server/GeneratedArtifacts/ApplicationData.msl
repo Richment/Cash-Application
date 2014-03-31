@@ -180,6 +180,7 @@
           <ScalarProperty Name="Bezeichnung" ColumnName="Bezeichnung" />
           <ScalarProperty Name="Data" ColumnName="Data" />
           <ScalarProperty Name="GeneratedData" ColumnName="GeneratedData" />
+          <ScalarProperty Name="Html" ColumnName="Html" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

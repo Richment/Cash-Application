@@ -7993,6 +7993,30 @@ namespace LightSwitchApplication
         partial void ShowDocument_CanExecute(ref bool result);
         partial void ShowDocument_Execute();
 
+        /// <summary>
+        /// Ruft die Bildschirmmethode SaveDocument auf.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public void SaveDocument()
+        {
+            this.Details.Methods.SaveDocument.CreateInvocation().Execute();
+        }
+        partial void SaveDocument_CanExecute(ref bool result);
+        partial void SaveDocument_Execute();
+
+        /// <summary>
+        /// Ruft die Bildschirmmethode DocumentsListEditSelected auf.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public void DocumentsListEditSelected()
+        {
+            this.Details.Methods.DocumentsListEditSelected.CreateInvocation().Execute();
+        }
+        partial void DocumentsListEditSelected_CanExecute(ref bool result);
+        partial void DocumentsListEditSelected_Execute();
+
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8095,7 +8119,19 @@ namespace LightSwitchApplication
             private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>.Data _ShowDocumentCommand;
 
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>.Data _SaveDocumentCommand;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>.Data _DocumentsListEditSelectedCommand;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>.Data _ShowDocumentMethod;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>.Data _SaveDocumentMethod;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>.Data _DocumentsListEditSelectedMethod;
 
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
@@ -8137,6 +8173,22 @@ namespace LightSwitchApplication
                     }
                 }
 
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass> SaveDocument
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>)base.GetItem(global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.CommandSetProperties.SaveDocument);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass> DocumentsListEditSelected
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>)base.GetItem(global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.CommandSetProperties.DocumentsListEditSelected);
+                    }
+                }
+
             }
 
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -8151,6 +8203,22 @@ namespace LightSwitchApplication
                     get
                     {
                         return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>)base.GetItem(global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.MethodSetProperties.ShowDocument);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass> SaveDocument
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>)base.GetItem(global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.MethodSetProperties.SaveDocument);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass> DocumentsListEditSelected
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>)base.GetItem(global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.MethodSetProperties.DocumentsListEditSelected);
                     }
                 }
 
@@ -8238,6 +8306,34 @@ namespace LightSwitchApplication
                     return ((global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass)d).Methods.ShowDocument.CreateInvocation();
                 }
 
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>.Entry
+                    SaveDocument = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>.Entry(
+                        "SaveDocument",
+                        global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.CommandSetProperties._SaveDocument_Stub,
+                        global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.CommandSetProperties._SaveDocument_CreateExecutableObject);
+                private static void _SaveDocument_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>.Data> c, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass d, object sf)
+                {
+                    c(d, ref d._SaveDocumentCommand, sf);
+                }
+                private static global::Microsoft.LightSwitch.IExecutable _SaveDocument_CreateExecutableObject(global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass d)
+                {
+                    return ((global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass)d).Methods.SaveDocument.CreateInvocation();
+                }
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>.Entry
+                    DocumentsListEditSelected = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>.Entry(
+                        "DocumentsListEditSelected",
+                        global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.CommandSetProperties._DocumentsListEditSelected_Stub,
+                        global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.CommandSetProperties._DocumentsListEditSelected_CreateExecutableObject);
+                private static void _DocumentsListEditSelected_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>.Data> c, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass d, object sf)
+                {
+                    c(d, ref d._DocumentsListEditSelectedCommand, sf);
+                }
+                private static global::Microsoft.LightSwitch.IExecutable _DocumentsListEditSelected_CreateExecutableObject(global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass d)
+                {
+                    return ((global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass)d).Methods.DocumentsListEditSelected.CreateInvocation();
+                }
+
             }
 
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -8265,6 +8361,48 @@ namespace LightSwitchApplication
                 private static void _ShowDocument_InvokeMethod(global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
                 {
                     d.Screen.ShowDocument_Execute();
+                }
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>.Entry
+                    SaveDocument = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>.Entry(
+                        "SaveDocument",
+                        global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.MethodSetProperties._SaveDocument_Stub,
+                        global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.MethodSetProperties._SaveDocument_CanInvoke,
+                        global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.MethodSetProperties._SaveDocument_InvokeMethod);
+                private static void _SaveDocument_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>.Data> c, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass d, object sf)
+                {
+                    c(d, ref d._SaveDocumentMethod, sf);
+                }
+                private static global::System.Exception _SaveDocument_CanInvoke(global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
+                {
+                    bool result = true;
+                    d.Screen.SaveDocument_CanExecute(ref result);
+                    return result ? null : ex;
+                }
+                private static void _SaveDocument_InvokeMethod(global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
+                {
+                    d.Screen.SaveDocument_Execute();
+                }
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>.Entry
+                    DocumentsListEditSelected = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>.Entry(
+                        "DocumentsListEditSelected",
+                        global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.MethodSetProperties._DocumentsListEditSelected_Stub,
+                        global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.MethodSetProperties._DocumentsListEditSelected_CanInvoke,
+                        global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass.MethodSetProperties._DocumentsListEditSelected_InvokeMethod);
+                private static void _DocumentsListEditSelected_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.DokumentenÜbersicht, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass>.Data> c, global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass d, object sf)
+                {
+                    c(d, ref d._DocumentsListEditSelectedMethod, sf);
+                }
+                private static global::System.Exception _DocumentsListEditSelected_CanInvoke(global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
+                {
+                    bool result = true;
+                    d.Screen.DocumentsListEditSelected_CanExecute(ref result);
+                    return result ? null : ex;
+                }
+                private static void _DocumentsListEditSelected_InvokeMethod(global::LightSwitchApplication.DokumentenÜbersicht.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
+                {
+                    d.Screen.DocumentsListEditSelected_Execute();
                 }
 
             }

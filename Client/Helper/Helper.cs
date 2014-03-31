@@ -37,6 +37,33 @@
 		}
 
 		/// <summary>
+		/// Retrieves a full path of a temporarary file with the specified fileextension.
+		/// This method ensures a unique non-existing filename.
+		/// </summary>
+		/// <param name="extension">The extension of the file.</param>
+		/// <returns>The full path of the file.</returns>
+		public static string GetFreeTempFilename(string extension)
+		{
+			byte[] num = new byte[4];
+			string result = null;
+			Random random = new Random();
+			extension = "." + extension.Trim('.');
+			do
+			{
+				random.NextBytes(num);
+				try
+				{
+					result = Path.Combine(Path.GetTempPath(), BitConverter.ToUInt32(num, 0).ToString() + extension);
+				}
+				catch
+				{
+					continue;
+				}
+			} while (File.Exists(result));
+			return result;
+		}
+
+		/// <summary>
 		/// This method displays an <see cref="InputBox"/> and returns - after some validation - a proper filename, or <code>null</code> if the user aborts the operatrion.
 		/// </summary>
 		/// <param name="value">The screen to show the <see cref="InputBox"/> on.</param>
@@ -76,7 +103,7 @@
 
 			// Add extension, if we had been passed a defaut extension
 			if (!String.IsNullOrEmpty(ext))
-				return Path.HasExtension(input) ? Path.ChangeExtension(input, ext) : input + '.' + ext;
+				return Path.HasExtension(input) && (StringComparer.InvariantCultureIgnoreCase.Compare(Path.GetExtension(input), ext) == 0) ? Path.ChangeExtension(input, ext) : input + '.' + ext;
 			else
 				return input;
 		}

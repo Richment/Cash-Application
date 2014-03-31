@@ -10357,6 +10357,15 @@
       </ScreenMethod>
       <ScreenMethod
         Name="ShowDocument" />
+      <ScreenMethod
+        Name="SaveDocument" />
+      <ScreenMethod
+        Name="DocumentsListEditSelected">
+        <ScreenMethod.Attributes>
+          <BuiltInMethodOverride
+            MethodName="EditSelected" />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
@@ -10450,28 +10459,16 @@
               <ContentItem.CommandItems>
                 <ContentItem
                   Kind="Command"
-                  Name="DocumentsSet_AddAndEditNew">
+                  Name="DocumentsListEditSelected">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Bearbeiten..." />
+                  </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
-                        <MemberExpression
-                          Member="DokumentenÜbersicht/Properties[DocumentsSet]" />
                         <CallExpression
-                          Target="AddAndEditNew" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Kind="Command"
-                  Name="DocumentsSet_EditSelected">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="DokumentenÜbersicht/Properties[DocumentsSet]" />
-                        <CallExpression
-                          Target="EditSelected" />
+                          Target="DokumentenÜbersicht/Methods[DocumentsListEditSelected]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -10620,6 +10617,19 @@
                 Kind="Value"
                 Name="Bezeichnung1"
                 View=":Label">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="LightSwitchCommonModule:Documents/Properties[Bezeichnung]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Kind="Group"
+                Name="Group"
+                View=":GroupBox">
                 <ContentItem.CommandItems>
                   <ContentItem
                     Kind="Command"
@@ -10637,15 +10647,35 @@
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
                   </ContentItem>
+                  <ContentItem
+                    Kind="Command"
+                    Name="SaveDocument">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Document speichern" />
+                    </ContentItem.Attributes>
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <CallExpression
+                            Target="DokumentenÜbersicht/Methods[SaveDocument]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
                 </ContentItem.CommandItems>
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="LightSwitchCommonModule:Documents/Properties[Bezeichnung]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch:GroupBox/Properties[BorderMode]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          ResultType=":String"
+                          Value="Top" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
               </ContentItem>
             </ContentItem>
           </ContentItem>

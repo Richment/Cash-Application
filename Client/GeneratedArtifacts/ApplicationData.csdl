@@ -185,6 +185,7 @@
     <Property Name="Bezeichnung" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="Data" Type="Edm.Binary" MaxLength="Max" />
     <Property Name="GeneratedData" Type="Edm.Binary" MaxLength="Max" />
+    <Property Name="Html" Type="Edm.String" MaxLength="4000" />
   </EntityType>
   <Association Name="ArtikellisteItem_Rechnungen">
     <End Role="Rechnungen" Type="LightSwitchApplication.Rechnungen" Multiplicity="1">

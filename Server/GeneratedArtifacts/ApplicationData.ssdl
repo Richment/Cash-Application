@@ -215,6 +215,7 @@
     <Property Name="Bezeichnung" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="Data" Type="varbinary(max)" />
     <Property Name="GeneratedData" Type="varbinary(max)" />
+    <Property Name="Html" Type="nvarchar" MaxLength="4000" />
   </EntityType>
   <Association Name="ArtikellisteItem_Rechnungen">
     <End Role="Rechnungen" Type="ApplicationDataStore.Rechnungen" Multiplicity="1">

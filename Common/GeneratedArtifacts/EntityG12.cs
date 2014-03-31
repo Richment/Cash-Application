@@ -223,6 +223,30 @@ namespace LightSwitchApplication
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void GeneratedData_Changed();
 
+        /// <summary>
+        /// Keine modellierte Beschreibung verfügbar
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public string Html
+        {
+            get
+            {
+                return global::LightSwitchApplication.Documents.DetailsClass.GetValue(this, global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties.Html);
+            }
+            set
+            {
+                global::LightSwitchApplication.Documents.DetailsClass.SetValue(this, global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties.Html, value);
+            }
+        }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Html_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Html_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Html_Changed();
+
         #endregion
     
         #region Details Class
@@ -353,6 +377,14 @@ namespace LightSwitchApplication
                     }
                 }
                 
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, string> Html
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties.Html) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, string>;
+                    }
+                }
+                
             }
     
             #pragma warning disable 109
@@ -365,6 +397,7 @@ namespace LightSwitchApplication
                 new string Bezeichnung { get; set; }
                 new byte[] Data { get; set; }
                 new byte[] GeneratedData { get; set; }
+                new string Html { get; set; }
             }
             #pragma warning restore 109
     
@@ -596,6 +629,43 @@ namespace LightSwitchApplication
                     e.GeneratedData_Changed();
                 }
     
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, string>.Entry
+                    Html = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, string>.Entry(
+                        "Html",
+                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._Html_Stub,
+                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._Html_ComputeIsReadOnly,
+                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._Html_Validate,
+                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._Html_GetImplementationValue,
+                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._Html_SetImplementationValue,
+                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._Html_OnValueChanged);
+                private static void _Html_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Documents.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, string>.Data> c, global::LightSwitchApplication.Documents.DetailsClass d, object sf)
+                {
+                    c(d, ref d._Html, sf);
+                }
+                private static bool _Html_ComputeIsReadOnly(global::LightSwitchApplication.Documents e)
+                {
+                    bool result = false;
+                    e.Html_IsReadOnly(ref result);
+                    return result;
+                }
+                private static void _Html_Validate(global::LightSwitchApplication.Documents e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                {
+                    e.Html_Validate(r);
+                }
+                private static string _Html_GetImplementationValue(global::LightSwitchApplication.Documents.DetailsClass d)
+                {
+                    return d.ImplementationEntity.Html;
+                }
+                private static void _Html_SetImplementationValue(global::LightSwitchApplication.Documents.DetailsClass d, string v)
+                {
+                    d.ImplementationEntity.Html = v;
+                }
+                private static void _Html_OnValueChanged(global::LightSwitchApplication.Documents e)
+                {
+                    e.Html_Changed();
+                }
+    
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -615,6 +685,9 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, byte[]>.Data _GeneratedData;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, string>.Data _Html;
             
         }
     
