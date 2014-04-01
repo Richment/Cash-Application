@@ -228,6 +228,7 @@
     <Compile Include="UserCode\RechnungDrucken.cs" />
     <Compile Include="UserCode\BestellungenÜbersicht.cs" />
     <Compile Include="UserCode\BestellungDetails.cs" />
+    <Compile Include="UserCode\RechnungenExtension.cs" />
     <Compile Include="UserCode\Start.cs" />
     <Compile Include="WordDocument.cs" />
   </ItemGroup>

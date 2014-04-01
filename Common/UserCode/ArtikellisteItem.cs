@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.LightSwitch;
-
-namespace LightSwitchApplication
+﻿namespace LightSwitchApplication
 {
+	using System;
+	using System.Collections.Generic;
+	using System.Linq;
+	using System.Text;
+	using Microsoft.LightSwitch;
+
 	public partial class ArtikellisteItem
 	{
 		partial void ArtikellisteItem_Created()
@@ -16,37 +16,37 @@ namespace LightSwitchApplication
 		partial void PosPreis_Compute(ref decimal result)
 		{
 			if (ArtikelstammItem != null)
-				result = Math.Round(this.ArtikelstammItem.VK_pro_PK, 2);
+				result = Math.Round(ArtikelstammItem.VK_pro_PK, 2);
 		}
 
 		partial void Position_Compute(ref int result)
 		{
-			if (Rechnungen != null)
-				result = this.Rechnungen.ArtikellisteCollection.ToList().IndexOf(this) + 1;
+		/*	if (this.Rechnungen != null)
+				result = this.Rechnungen.ArtikellisteCollection.ToList().IndexOf(this) + 1;					 */
 		}
 
 		partial void Artikelnummer_Compute(ref string result)
 		{
 			if (ArtikelstammItem != null)
-				result = this.ArtikelstammItem.Artikelnummer.ToString();
+				result = ArtikelstammItem.Artikelnummer.ToString();
 		}
 
 		partial void Bezeichnung_Compute(ref string result)
 		{
 			if (ArtikelstammItem != null)
-				result = this.ArtikelstammItem.Artikelbeschreibung;
+				result = ArtikelstammItem.Artikelbeschreibung;
 		}
 
 		partial void Preis_Compute(ref decimal result)
 		{
 			if (ArtikelstammItem != null)
-				result = Math.Round(this.Anzahl * this.ArtikelstammItem.VK_pro_PK, 2) - this.Rabattwert;
+				result = Math.Round(Anzahl * ArtikelstammItem.VK_pro_PK, 2) - Rabattwert;
 		}
 
 		partial void Rabattwert_Compute(ref decimal result)
 		{
 			if (ArtikelstammItem != null)
-				result = Math.Round(this.Anzahl * this.PosPreis * (this.Rabatt / 100M), 2);
+				result = Math.Round(Anzahl * PosPreis * (Rabatt / 100M), 2);
 		}
 
 		partial void AnzeigeName_Compute(ref string result)
@@ -58,9 +58,8 @@ namespace LightSwitchApplication
 		public override string ToString()
 		{
 			if (ArtikelstammItem != null)
-				return this.ArtikelstammItem.Artikelbeschreibung;
+				return ArtikelstammItem.Artikelbeschreibung;
 			return base.ToString();
 		}
-
-	}
+	};
 }

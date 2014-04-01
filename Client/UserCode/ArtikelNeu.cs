@@ -10,19 +10,19 @@ using Microsoft.LightSwitch.Presentation.Extensions;
 
 namespace LightSwitchApplication
 {
-    public partial class ArtikelNeu
-    {
+	public partial class ArtikelNeu
+	{
 		partial void ArtikelNeu_InitializeDataWorkspace(List<IDataService> saveChangesTo)
-        {
-            // Erstellen Sie hier Ihren Code.
-            this.ArtikelstammProperty = new ArtikelstammItem();
-        }
+		{
+			// Erstellen Sie hier Ihren Code.
+			this.ArtikelstammProperty = new ArtikelstammItem();
+		}
 
 		partial void ArtikelNeu_Saved()
-        {
-            // Erstellen Sie hier Ihren Code.
-            this.Close(false);
-            Application.Current.ShowDefaultScreen(this.ArtikelstammProperty);
-        }
-    }
+		{
+			// Erstellen Sie hier Ihren Code.
+			this.Close(false);
+			Application.Current.ShowDefaultScreen(this.ArtikelstammProperty);
+		}
+	}
 }

@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.LightSwitch;
-
-namespace LightSwitchApplication
+﻿namespace LightSwitchApplication
 {
+	using System;
+	using System.Collections.Generic;
+	using System.Linq;
+	using System.Text;
+	using Microsoft.LightSwitch;
+
 	public partial class Documents
 	{
 		partial void Documents_Created()
@@ -18,5 +18,5 @@ namespace LightSwitchApplication
 		{
 			return String.IsNullOrWhiteSpace(Bezeichnung) ? base.ToString() : Bezeichnung;
 		}
-	}
+	};
 }

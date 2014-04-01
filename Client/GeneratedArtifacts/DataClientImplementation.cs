@@ -48,16 +48,6 @@ namespace LightSwitchApplication.Implementation
             this.___OnPropertyChanged("Firma");
         }
         
-        partial void OnKundennummer_1Changed()
-        {
-            this.___OnPropertyChanged("Kundennummer_1");
-        }
-        
-        partial void OnKundennummer_2Changed()
-        {
-            this.___OnPropertyChanged("Kundennummer_2");
-        }
-        
         partial void OnStraßeChanged()
         {
             this.___OnPropertyChanged("Straße");
@@ -428,11 +418,6 @@ namespace LightSwitchApplication.Implementation
         partial void OnAuftragsnummerChanged()
         {
             this.___OnPropertyChanged("Auftragsnummer");
-        }
-        
-        partial void OnReferenznummerChanged()
-        {
-            this.___OnPropertyChanged("Referenznummer");
         }
         
         partial void OnWebshop_IDChanged()
@@ -869,9 +854,9 @@ namespace LightSwitchApplication.Implementation
             this.___OnPropertyChanged("zHd_Besteller_optional");
         }
         
-        partial void OnStarßeChanged()
+        partial void OnStraßeChanged()
         {
-            this.___OnPropertyChanged("Starße");
+            this.___OnPropertyChanged("Straße");
         }
         
         partial void OnHausnummerChanged()

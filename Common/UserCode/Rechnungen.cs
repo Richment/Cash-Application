@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-
+﻿using Microsoft.LightSwitch;
 namespace LightSwitchApplication
 {
+	using System;
+	using System.Collections.Generic;
+	using System.IO;
+	using System.Linq;
+	using System.Reflection;
+
 	public partial class Rechnungen
 	{
 		private static List<byte[]> images;
@@ -57,9 +58,12 @@ namespace LightSwitchApplication
 
 		partial void Mehrwertsteuer_Compute(ref decimal? result)
 		{
-			result = this.Rechnungsbetrag_Netto * 19 / 100;
-			if (result.HasValue)
-				result = Math.Round(result.Value, 2);
+			if (this.Rechnungsbetrag_Netto.HasValue)
+			{
+				result = this.Rechnungsbetrag_Netto * 19 / 100;
+				if (result.HasValue)
+					result = Math.Round(result.Value, 2);
+			}
 		}
 
 		partial void Adresse_Compute(ref string result)
@@ -87,17 +91,17 @@ namespace LightSwitchApplication
 
 		partial void StatusImage_Compute(ref byte[] result)
 		{
-			result = images[this.Status];
+			result = images[Status];
 		}
 
 		public override string ToString()
 		{
 			try
 			{
-				string besteller = Kunde.Vorname + ' ' + Kunde.Nachnahme;
+				string result = Kunde.Vorname + ' ' + Kunde.Nachnahme;
 				if (!String.IsNullOrWhiteSpace(Kunde.Firma))
-					besteller = Kunde.Firma + ", " + besteller;
-				return String.Format("[{0}]\t  {1}  ({2})",this.Bestelldatum.ToString("d"),  Referenznummer , besteller );
+					result = Kunde.Firma + ", " + result;
+				return String.Format("[{0}]\t  {1}  ({2})", this.Bestelldatum.ToString("d"), Auftragsnummer, result);
 			}
 			catch
 			{
@@ -105,5 +109,25 @@ namespace LightSwitchApplication
 			}
 		}
 
+		partial void Status_Validate(EntityValidationResultsBuilder results)
+		{
+			if (Status == (int)Bestellstatus.Geliefert)
+			{
+				if (Kunde == null)
+					return;
+
+				if (Rechnungsdatum.HasValue)
+				{
+					if (Rechnungsdatum.Value.AddDays(Kunde.Zahlungsziel) < DateTime.Today)
+					{
+						Status = (int)Bestellstatus.Zahlungsverzug;
+					}
+				}
+				else
+				{
+					results.AddEntityResult("Ohne Rechnungdatum kann kein Zahlungsverzug ermittelt werden.", ValidationSeverity.Informational);
+				}
+			}
+		}
 	}
 }

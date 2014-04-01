@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Ursprünglicher Dateiname:
-// Erstellungsdatum: 01.04.2014 05:04:59
+// Erstellungsdatum: 01.04.2014 19:30:05
 namespace LightSwitchApplication.Implementation
 {
     
@@ -531,58 +531,6 @@ namespace LightSwitchApplication.Implementation
         private string _Firma;
         partial void OnFirmaChanging(string value);
         partial void OnFirmaChanged();
-        /// <summary>
-        /// Im Schema sind keine Kommentare für die Eigenschaft "Kundennummer_1" vorhanden.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Kundennummer_1
-        {
-            get
-            {
-                return this._Kundennummer_1;
-            }
-            set
-            {
-                this.OnKundennummer_1Changing(value);
-                if (object.Equals(this.Kundennummer_1, value))
-                {
-                    return;
-                }
-                this._Kundennummer_1 = value;
-                this.OnKundennummer_1Changed();
-                this.OnPropertyChanged("Kundennummer_1");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Kundennummer_1;
-        partial void OnKundennummer_1Changing(string value);
-        partial void OnKundennummer_1Changed();
-        /// <summary>
-        /// Im Schema sind keine Kommentare für die Eigenschaft "Kundennummer_2" vorhanden.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Kundennummer_2
-        {
-            get
-            {
-                return this._Kundennummer_2;
-            }
-            set
-            {
-                this.OnKundennummer_2Changing(value);
-                if (object.Equals(this.Kundennummer_2, value))
-                {
-                    return;
-                }
-                this._Kundennummer_2 = value;
-                this.OnKundennummer_2Changed();
-                this.OnPropertyChanged("Kundennummer_2");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Kundennummer_2;
-        partial void OnKundennummer_2Changing(string value);
-        partial void OnKundennummer_2Changed();
         /// <summary>
         /// Im Schema sind keine Kommentare für die Eigenschaft "Straße" vorhanden.
         /// </summary>
@@ -1604,20 +1552,20 @@ namespace LightSwitchApplication.Implementation
         /// <param name="ID">Anfangswert von Id.</param>
         /// <param name="rowVersion">Anfangswert von RowVersion.</param>
         /// <param name="status">Anfangswert von Status.</param>
-        /// <param name="referenznummer">Anfangswert von Referenznummer.</param>
+        /// <param name="auftragsnummer">Anfangswert von Auftragsnummer.</param>
         /// <param name="bestelldatum">Anfangswert von Bestelldatum.</param>
         /// <param name="lieferkosten">Anfangswert von Lieferkosten.</param>
         /// <param name="requiresProcessing">Anfangswert von RequiresProcessing.</param>
         /// <param name="rechnungen_Kunden">Anfangswert von Rechnungen_Kunden.</param>
         /// <param name="rechnungen_BezahlartItem">Anfangswert von Rechnungen_BezahlartItem.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Rechnungen CreateRechnungen(int ID, byte[] rowVersion, int status, string referenznummer, global::System.DateTime bestelldatum, decimal lieferkosten, bool requiresProcessing, int rechnungen_Kunden, int rechnungen_BezahlartItem)
+        public static Rechnungen CreateRechnungen(int ID, byte[] rowVersion, int status, string auftragsnummer, global::System.DateTime bestelldatum, decimal lieferkosten, bool requiresProcessing, int rechnungen_Kunden, int rechnungen_BezahlartItem)
         {
             Rechnungen rechnungen = new Rechnungen();
             rechnungen.Id = ID;
             rechnungen.RowVersion = rowVersion;
             rechnungen.Status = status;
-            rechnungen.Referenznummer = referenznummer;
+            rechnungen.Auftragsnummer = auftragsnummer;
             rechnungen.Bestelldatum = bestelldatum;
             rechnungen.Lieferkosten = lieferkosten;
             rechnungen.RequiresProcessing = requiresProcessing;
@@ -1736,32 +1684,6 @@ namespace LightSwitchApplication.Implementation
         private string _Auftragsnummer;
         partial void OnAuftragsnummerChanging(string value);
         partial void OnAuftragsnummerChanged();
-        /// <summary>
-        /// Im Schema sind keine Kommentare für die Eigenschaft "Referenznummer" vorhanden.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Referenznummer
-        {
-            get
-            {
-                return this._Referenznummer;
-            }
-            set
-            {
-                this.OnReferenznummerChanging(value);
-                if (object.Equals(this.Referenznummer, value))
-                {
-                    return;
-                }
-                this._Referenznummer = value;
-                this.OnReferenznummerChanged();
-                this.OnPropertyChanged("Referenznummer");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Referenznummer;
-        partial void OnReferenznummerChanging(string value);
-        partial void OnReferenznummerChanged();
         /// <summary>
         /// Im Schema sind keine Kommentare für die Eigenschaft "Webshop_ID" vorhanden.
         /// </summary>
@@ -3212,19 +3134,19 @@ namespace LightSwitchApplication.Implementation
         /// <param name="ID">Anfangswert von Id.</param>
         /// <param name="rowVersion">Anfangswert von RowVersion.</param>
         /// <param name="name">Anfangswert von Name.</param>
-        /// <param name="starße">Anfangswert von Starße.</param>
+        /// <param name="straße">Anfangswert von Straße.</param>
         /// <param name="hausnummer">Anfangswert von Hausnummer.</param>
         /// <param name="stadt">Anfangswert von Stadt.</param>
         /// <param name="land">Anfangswert von Land.</param>
         /// <param name="kunden_Rechnungsadressen">Anfangswert von Kunden_Rechnungsadressen.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static AdressenSetItem CreateAdressenSetItem(int ID, byte[] rowVersion, string name, string starße, string hausnummer, string stadt, string land, int kunden_Rechnungsadressen)
+        public static AdressenSetItem CreateAdressenSetItem(int ID, byte[] rowVersion, string name, string straße, string hausnummer, string stadt, string land, int kunden_Rechnungsadressen)
         {
             AdressenSetItem adressenSetItem = new AdressenSetItem();
             adressenSetItem.Id = ID;
             adressenSetItem.RowVersion = rowVersion;
             adressenSetItem.Name = name;
-            adressenSetItem.Starße = starße;
+            adressenSetItem.Straße = straße;
             adressenSetItem.Hausnummer = hausnummer;
             adressenSetItem.Stadt = stadt;
             adressenSetItem.Land = land;
@@ -3343,31 +3265,31 @@ namespace LightSwitchApplication.Implementation
         partial void OnzHd_Besteller_optionalChanging(string value);
         partial void OnzHd_Besteller_optionalChanged();
         /// <summary>
-        /// Im Schema sind keine Kommentare für die Eigenschaft "Starße" vorhanden.
+        /// Im Schema sind keine Kommentare für die Eigenschaft "Straße" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Starße
+        public string Straße
         {
             get
             {
-                return this._Starße;
+                return this._Straße;
             }
             set
             {
-                this.OnStarßeChanging(value);
-                if (object.Equals(this.Starße, value))
+                this.OnStraßeChanging(value);
+                if (object.Equals(this.Straße, value))
                 {
                     return;
                 }
-                this._Starße = value;
-                this.OnStarßeChanged();
-                this.OnPropertyChanged("Starße");
+                this._Straße = value;
+                this.OnStraßeChanged();
+                this.OnPropertyChanged("Straße");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Starße;
-        partial void OnStarßeChanging(string value);
-        partial void OnStarßeChanged();
+        private string _Straße;
+        partial void OnStraßeChanging(string value);
+        partial void OnStraßeChanged();
         /// <summary>
         /// Im Schema sind keine Kommentare für die Eigenschaft "Hausnummer" vorhanden.
         /// </summary>

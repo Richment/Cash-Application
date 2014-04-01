@@ -55,8 +55,6 @@
     <Property Name="Vorname" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="Nachnahme" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="Firma" Type="nvarchar" MaxLength="255" />
-    <Property Name="Kundennummer_1" Type="nvarchar" MaxLength="255" />
-    <Property Name="Kundennummer_2" Type="nvarchar" MaxLength="255" />
     <Property Name="Straße" Type="nvarchar" MaxLength="255" />
     <Property Name="Hausnummer" Type="int" />
     <Property Name="PLZ" Type="int" />
@@ -103,8 +101,7 @@
     <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
     <Property Name="Status" Type="int" Nullable="false" />
-    <Property Name="Auftragsnummer" Type="nvarchar" MaxLength="255" />
-    <Property Name="Referenznummer" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Auftragsnummer" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="Webshop_ID" Type="nvarchar" MaxLength="255" />
     <Property Name="Besteller" Type="nvarchar" MaxLength="255" />
     <Property Name="Bestelldatum" Type="datetime" Nullable="false" />
@@ -168,7 +165,7 @@
     <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
     <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="zHd_Besteller_optional" Type="nvarchar" MaxLength="255" />
-    <Property Name="Starße" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Straße" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="Hausnummer" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="PLZ" Type="nvarchar" MaxLength="255" />
     <Property Name="Stadt" Type="nvarchar" Nullable="false" MaxLength="255" />

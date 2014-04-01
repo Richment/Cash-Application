@@ -7,6 +7,7 @@ using Microsoft.LightSwitch;
 using Microsoft.LightSwitch.Framework.Client;
 using Microsoft.LightSwitch.Presentation;
 using Microsoft.LightSwitch.Presentation.Extensions;
+using System.Windows.Controls;
 
 namespace LightSwitchApplication
 {
@@ -17,14 +18,36 @@ namespace LightSwitchApplication
 		private const string FRM_NEW_ARTIKEL = "Modal1";
 		private const string TXT_NEW_ARTIKEL = "Text1";
 		
-		private ModalWrapper mod;
+		private ModalWrapper modNew;
 		private Rechnungen current;
 
-
-		partial void Start_Saved()
+		partial void ArtikellisteCollection_Validate(ScreenValidationResultsBuilder results)
 		{
-			this.Refresh();
+			if (this.DataWorkspace.ApplicationData.Details.HasChanges)
+			{
+				EntityChangeSet changeSet =	this.DataWorkspace.ApplicationData.Details.GetChanges();
+			
+				foreach (Rechnungen entity in changeSet.AddedEntities.OfType<Rechnungen>())
+				{
+					if (entity.ArtikellisteCollection.Count() == 0)
+					{
+						//entity.Details.DiscardChanges(); 
+						//results.AddScreenResult("Eine Bestellung muß mindestens eine Position beinhalten.", ValidationSeverity.Warning);
+						//results.AddPropertyError("Eine Bestellung muß mindestens eine Position beinhalten.");//, entity.Details.Properties.ArtikellisteCollection);
+					}
+				} 
+				foreach (Rechnungen entity in changeSet.ModifiedEntities.OfType<Rechnungen>())
+				{
+					if (entity.ArtikellisteCollection.Count() == 0)
+					{
+						entity.Details.DiscardChanges(); 
+						results.AddScreenResult("Eine Bestellung muß mindestens eine Position beinhalten.", ValidationSeverity.Error);
+						//results.AddPropertyError("<Fehlermeldung>");
+					}
+				}
+			}
 		}
+
 
 		#region NextAction
 		partial void NextAction_CanExecute(ref bool result)
@@ -74,12 +97,22 @@ namespace LightSwitchApplication
 		#endregion
 	
 		#region Editieren
+		partial void InBearbeitungEditSelected_CanExecute(ref bool result)
+		{
+			result = InBearbeitung.SelectedItem != null;
+		}
+		partial void InBearbeitungEditSelected_Execute()
+		{
+			this.Application.ShowBestellungDetails(InBearbeitung.SelectedItem.Id);
+		}
+
 		partial void Editieren_CanExecute(ref bool result)
 		{
 			result = this.InBearbeitung.SelectedItem != null;
 		}
 		partial void Editieren_Execute()
 		{
+			//InBearbeitung.EditSelected();
 			this.Application.ShowBestellungDetails(InBearbeitung.SelectedItem.Id);
 		}
 		#endregion
@@ -101,61 +134,74 @@ namespace LightSwitchApplication
 		#endregion
 	
 		#region Neue Bestellung
+
 		partial void InBearbeitungAddAndEditNew_Execute()
 		{
-			InBearbeitung.SelectedItem = current = InBearbeitung.AddNew();
-			
-			mod = new ModalWrapper(this, FRM_NEW, TXT_NEW, "Neue Bestellung eingeben...")
+			current = null;
+			current = InBearbeitung.AddNew();
+			InBearbeitung.SelectedItem = current;
+			current.Auftragsnummer = current.GetAuftragsNummer();
+			current.RequiresProcessing = true;
+			current.Bestelldatum = DateTime.Now;
+			current.Status = (int)Bestellstatus.Neu;
+
+			modNew = new ModalWrapper(this, FRM_NEW, TXT_NEW, "Neue Bestellung eingeben...")
 			{
 				CancelMethod = () =>
 				{
 					foreach (Rechnungen item in DataWorkspace.ApplicationData.Details.GetChanges().AddedEntities.OfType<Rechnungen>())
 						if (item.Id == current.Id)
+						{
+							foreach (ArtikellisteItem pos in DataWorkspace.ApplicationData.Details.GetChanges().AddedEntities.OfType<ArtikellisteItem>())
+								pos.Details.DiscardChanges();
+							foreach (ArtikellisteItem pos in DataWorkspace.ApplicationData.Details.GetChanges().ModifiedEntities.OfType<ArtikellisteItem>())
+								pos.Details.DiscardChanges();		
+							
 							item.Details.DiscardChanges();
+						}
 					current = null;
-				}/*,
+				},
 				ProceedMethod = () =>
 				{
-					//this.Details.Dispatcher.BeginInvoke(ShowArtikelDialog);
-				}	 */
+					//var b = new ScreenValidationResultsBuilder();
+					//this.InBearbeitung_Validate(b);
+					 //DataWorkspace.ApplicationData.Details.GetChanges().AddedEntities.ToList().ForEach(n=>n.Details.
+//					Application.Details.Dispatcher.BeginInvoke(() => this.Save());
+				}
 			};
-			
-			current.RequiresProcessing = true;
-			current.Bestelldatum = DateTime.Now;
-			current.Status = (int)Bestellstatus.Neu;
-			
-			mod.Show();
-		}
 
+			InBearbeitung.SelectedItem = current;
+			modNew.Show();
+		}
+		
 		partial void Ok_NeueRechnung_CanExecute(ref bool result)
 		{
 			if (current == null)
 				result = false;
 			else
-				result = (current.BezahlartItem != null) && !String.IsNullOrWhiteSpace(current.Referenznummer) && (current.ArtikellisteCollection.Count() > 0);
+				result = (current.BezahlartItem != null) && !String.IsNullOrWhiteSpace(current.Auftragsnummer) && (current.ArtikellisteCollection.Count() > 0) && current.ArtikellisteCollection.All(n => (n.ArtikelstammItem != null) && (n.Anzahl > 0));
 		}
 		partial void Ok_NeueRechnung_Execute()
 		{
-			mod.Close();
-		}
+			modNew.Close();
+		}		
 
-		public void ShowArtikelDialog()
+		partial void ArtikellisteCollection1AddAndEditNew1_Execute()
 		{
-		//	mod= new ModalWrapper(
-
-
+			var tmp = ArtikellisteCollection.AddNew();
+			 	if (current.Kunde != null)
+					tmp.Rabatt = current.Kunde.Rabatt;
+				else
+					tmp.Rabatt=10;
+				
+			this.ArtikellisteCollection.SelectedItem = tmp;
+			ArtikellisteCollection.EditSelected();
 		}
-	
-		partial void OK_Artikel_CanExecute(ref bool result)
-		{
-			result = current.ArtikellisteCollection.Count() > 0;
-		}
-		partial void OK_Artikel_Execute()
-		{
-			mod.Close();
-		}
+		
 
 		#endregion
+
+		#region Bezahlung
 
 		partial void Bezahlung_CanExecute(ref bool result)
 		{
@@ -186,13 +232,7 @@ namespace LightSwitchApplication
 
 		}
 
-
-
-
-		private void StartVersendeDialog()
-		{
-		
-		}
+		#endregion
 
 
 		partial void Lieferung_CanExecute(ref bool result)
@@ -204,7 +244,6 @@ namespace LightSwitchApplication
 			}
 			result = (this.InBearbeitung.SelectedItem.Status == (int)LightSwitchApplication.Bestellstatus.InRechnung) && !this.InBearbeitung.SelectedItem.RequiresProcessing;
 		}
-
 		partial void Lieferung_Execute()
 		{
 			// Erstellen Sie hier Ihren Code.
@@ -213,6 +252,16 @@ namespace LightSwitchApplication
 
 
 
-	
+
+
+		private void StartVersendeDialog()
+		{
+		
+		}
+
+
+
+
+
 	}
 }

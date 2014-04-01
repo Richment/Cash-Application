@@ -9,8 +9,6 @@
           <ScalarProperty Name="Vorname" ColumnName="Vorname" />
           <ScalarProperty Name="Nachnahme" ColumnName="Nachnahme" />
           <ScalarProperty Name="Firma" ColumnName="Firma" />
-          <ScalarProperty Name="Kundennummer_1" ColumnName="Kundennummer_1" />
-          <ScalarProperty Name="Kundennummer_2" ColumnName="Kundennummer_2" />
           <ScalarProperty Name="Straße" ColumnName="Straße" />
           <ScalarProperty Name="Hausnummer" ColumnName="Hausnummer" />
           <ScalarProperty Name="PLZ" ColumnName="PLZ" />
@@ -62,7 +60,6 @@
           <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="Rechnungen_Kunden" ColumnName="Rechnungen_Kunden" />
           <ScalarProperty Name="Auftragsnummer" ColumnName="Auftragsnummer" />
-          <ScalarProperty Name="Referenznummer" ColumnName="Referenznummer" />
           <ScalarProperty Name="Webshop_ID" ColumnName="Webshop_ID" />
           <ScalarProperty Name="Besteller" ColumnName="Besteller" />
           <ScalarProperty Name="Rechnungen_BezahlartItem" ColumnName="Rechnungen_BezahlartItem" />
@@ -82,8 +79,8 @@
         <MappingFragment StoreEntitySet="Artikelliste">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
-          <ScalarProperty Name="Artikelliste_Artikelstamm" ColumnName="Artikelliste_Artikelstamm" />
           <ScalarProperty Name="Anzahl" ColumnName="Anzahl" />
+          <ScalarProperty Name="Artikelliste_Artikelstamm" ColumnName="Artikelliste_Artikelstamm" />
           <ScalarProperty Name="Rabatt" ColumnName="Rabatt" />
           <ScalarProperty Name="Artikelliste_Rechnungen" ColumnName="Artikelliste_Rechnungen" />
         </MappingFragment>
@@ -129,7 +126,7 @@
           <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="zHd_Besteller_optional" ColumnName="zHd_Besteller_optional" />
-          <ScalarProperty Name="Starße" ColumnName="Starße" />
+          <ScalarProperty Name="Straße" ColumnName="Straße" />
           <ScalarProperty Name="Hausnummer" ColumnName="Hausnummer" />
           <ScalarProperty Name="PLZ" ColumnName="PLZ" />
           <ScalarProperty Name="Stadt" ColumnName="Stadt" />

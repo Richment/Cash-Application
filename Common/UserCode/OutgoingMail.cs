@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.LightSwitch;
-
-namespace LightSwitchApplication
+﻿namespace LightSwitchApplication
 {
+	using System;
+	using System.Collections.Generic;
+	using System.Linq;
+	using System.Text;
+	using Microsoft.LightSwitch;
+
 	public partial class OutgoingMail
 	{
 		public override string ToString()
@@ -14,5 +14,5 @@ namespace LightSwitchApplication
 				return base.ToString();
 			return Subject;
 		}
-	}
+	};
 }

@@ -2710,6 +2710,66 @@ namespace LightSwitchApplication
         partial void Bezahlung_CanExecute(ref bool result);
         partial void Bezahlung_Execute();
 
+        /// <summary>
+        /// Ruft die Bildschirmmethode ArtikellisteCollection1AddAndEditNew auf.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public void ArtikellisteCollection1AddAndEditNew()
+        {
+            this.Details.Methods.ArtikellisteCollection1AddAndEditNew.CreateInvocation().Execute();
+        }
+        partial void ArtikellisteCollection1AddAndEditNew_CanExecute(ref bool result);
+        partial void ArtikellisteCollection1AddAndEditNew_Execute();
+
+        /// <summary>
+        /// Ruft die Bildschirmmethode ArtikellisteCollection1EditSelected auf.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public void ArtikellisteCollection1EditSelected()
+        {
+            this.Details.Methods.ArtikellisteCollection1EditSelected.CreateInvocation().Execute();
+        }
+        partial void ArtikellisteCollection1EditSelected_CanExecute(ref bool result);
+        partial void ArtikellisteCollection1EditSelected_Execute();
+
+        /// <summary>
+        /// Ruft die Bildschirmmethode ArtikellisteCollection1AddNew auf.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public void ArtikellisteCollection1AddNew()
+        {
+            this.Details.Methods.ArtikellisteCollection1AddNew.CreateInvocation().Execute();
+        }
+        partial void ArtikellisteCollection1AddNew_CanExecute(ref bool result);
+        partial void ArtikellisteCollection1AddNew_Execute();
+
+        /// <summary>
+        /// Ruft die Bildschirmmethode ArtikellisteCollection1AddAndEditNew1 auf.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public void ArtikellisteCollection1AddAndEditNew1()
+        {
+            this.Details.Methods.ArtikellisteCollection1AddAndEditNew1.CreateInvocation().Execute();
+        }
+        partial void ArtikellisteCollection1AddAndEditNew1_CanExecute(ref bool result);
+        partial void ArtikellisteCollection1AddAndEditNew1_Execute();
+
+        /// <summary>
+        /// Ruft die Bildschirmmethode InBearbeitungEditSelected auf.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public void InBearbeitungEditSelected()
+        {
+            this.Details.Methods.InBearbeitungEditSelected.CreateInvocation().Execute();
+        }
+        partial void InBearbeitungEditSelected_CanExecute(ref bool result);
+        partial void InBearbeitungEditSelected_Execute();
+
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2884,6 +2944,21 @@ namespace LightSwitchApplication
             private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Data _BezahlungCommand;
 
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Data _ArtikellisteCollection1AddAndEditNewCommand;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Data _ArtikellisteCollection1EditSelectedCommand;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Data _ArtikellisteCollection1AddNewCommand;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Data _ArtikellisteCollection1AddAndEditNew1Command;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Data _InBearbeitungEditSelectedCommand;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Data _StartWizardMethod;
 
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -2924,6 +2999,21 @@ namespace LightSwitchApplication
 
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Data _BezahlungMethod;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Data _ArtikellisteCollection1AddAndEditNewMethod;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Data _ArtikellisteCollection1EditSelectedMethod;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Data _ArtikellisteCollection1AddNewMethod;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Data _ArtikellisteCollection1AddAndEditNew1Method;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Data _InBearbeitungEditSelectedMethod;
 
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
@@ -3077,6 +3167,46 @@ namespace LightSwitchApplication
                     }
                 }
 
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass> ArtikellisteCollection1AddAndEditNew
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>)base.GetItem(global::LightSwitchApplication.Start.DetailsClass.CommandSetProperties.ArtikellisteCollection1AddAndEditNew);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass> ArtikellisteCollection1EditSelected
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>)base.GetItem(global::LightSwitchApplication.Start.DetailsClass.CommandSetProperties.ArtikellisteCollection1EditSelected);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass> ArtikellisteCollection1AddNew
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>)base.GetItem(global::LightSwitchApplication.Start.DetailsClass.CommandSetProperties.ArtikellisteCollection1AddNew);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass> ArtikellisteCollection1AddAndEditNew1
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>)base.GetItem(global::LightSwitchApplication.Start.DetailsClass.CommandSetProperties.ArtikellisteCollection1AddAndEditNew1);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass> InBearbeitungEditSelected
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>)base.GetItem(global::LightSwitchApplication.Start.DetailsClass.CommandSetProperties.InBearbeitungEditSelected);
+                    }
+                }
+
             }
 
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -3195,6 +3325,46 @@ namespace LightSwitchApplication
                     get
                     {
                         return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>)base.GetItem(global::LightSwitchApplication.Start.DetailsClass.MethodSetProperties.Bezahlung);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass> ArtikellisteCollection1AddAndEditNew
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>)base.GetItem(global::LightSwitchApplication.Start.DetailsClass.MethodSetProperties.ArtikellisteCollection1AddAndEditNew);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass> ArtikellisteCollection1EditSelected
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>)base.GetItem(global::LightSwitchApplication.Start.DetailsClass.MethodSetProperties.ArtikellisteCollection1EditSelected);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass> ArtikellisteCollection1AddNew
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>)base.GetItem(global::LightSwitchApplication.Start.DetailsClass.MethodSetProperties.ArtikellisteCollection1AddNew);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass> ArtikellisteCollection1AddAndEditNew1
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>)base.GetItem(global::LightSwitchApplication.Start.DetailsClass.MethodSetProperties.ArtikellisteCollection1AddAndEditNew1);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass> InBearbeitungEditSelected
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>)base.GetItem(global::LightSwitchApplication.Start.DetailsClass.MethodSetProperties.InBearbeitungEditSelected);
                     }
                 }
 
@@ -3512,6 +3682,76 @@ namespace LightSwitchApplication
                     return ((global::LightSwitchApplication.Start.DetailsClass)d).Methods.Bezahlung.CreateInvocation();
                 }
 
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Entry
+                    ArtikellisteCollection1AddAndEditNew = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Entry(
+                        "ArtikellisteCollection1AddAndEditNew",
+                        global::LightSwitchApplication.Start.DetailsClass.CommandSetProperties._ArtikellisteCollection1AddAndEditNew_Stub,
+                        global::LightSwitchApplication.Start.DetailsClass.CommandSetProperties._ArtikellisteCollection1AddAndEditNew_CreateExecutableObject);
+                private static void _ArtikellisteCollection1AddAndEditNew_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Start.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Data> c, global::LightSwitchApplication.Start.DetailsClass d, object sf)
+                {
+                    c(d, ref d._ArtikellisteCollection1AddAndEditNewCommand, sf);
+                }
+                private static global::Microsoft.LightSwitch.IExecutable _ArtikellisteCollection1AddAndEditNew_CreateExecutableObject(global::LightSwitchApplication.Start.DetailsClass d)
+                {
+                    return ((global::LightSwitchApplication.Start.DetailsClass)d).Methods.ArtikellisteCollection1AddAndEditNew.CreateInvocation();
+                }
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Entry
+                    ArtikellisteCollection1EditSelected = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Entry(
+                        "ArtikellisteCollection1EditSelected",
+                        global::LightSwitchApplication.Start.DetailsClass.CommandSetProperties._ArtikellisteCollection1EditSelected_Stub,
+                        global::LightSwitchApplication.Start.DetailsClass.CommandSetProperties._ArtikellisteCollection1EditSelected_CreateExecutableObject);
+                private static void _ArtikellisteCollection1EditSelected_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Start.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Data> c, global::LightSwitchApplication.Start.DetailsClass d, object sf)
+                {
+                    c(d, ref d._ArtikellisteCollection1EditSelectedCommand, sf);
+                }
+                private static global::Microsoft.LightSwitch.IExecutable _ArtikellisteCollection1EditSelected_CreateExecutableObject(global::LightSwitchApplication.Start.DetailsClass d)
+                {
+                    return ((global::LightSwitchApplication.Start.DetailsClass)d).Methods.ArtikellisteCollection1EditSelected.CreateInvocation();
+                }
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Entry
+                    ArtikellisteCollection1AddNew = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Entry(
+                        "ArtikellisteCollection1AddNew",
+                        global::LightSwitchApplication.Start.DetailsClass.CommandSetProperties._ArtikellisteCollection1AddNew_Stub,
+                        global::LightSwitchApplication.Start.DetailsClass.CommandSetProperties._ArtikellisteCollection1AddNew_CreateExecutableObject);
+                private static void _ArtikellisteCollection1AddNew_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Start.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Data> c, global::LightSwitchApplication.Start.DetailsClass d, object sf)
+                {
+                    c(d, ref d._ArtikellisteCollection1AddNewCommand, sf);
+                }
+                private static global::Microsoft.LightSwitch.IExecutable _ArtikellisteCollection1AddNew_CreateExecutableObject(global::LightSwitchApplication.Start.DetailsClass d)
+                {
+                    return ((global::LightSwitchApplication.Start.DetailsClass)d).Methods.ArtikellisteCollection1AddNew.CreateInvocation();
+                }
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Entry
+                    ArtikellisteCollection1AddAndEditNew1 = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Entry(
+                        "ArtikellisteCollection1AddAndEditNew1",
+                        global::LightSwitchApplication.Start.DetailsClass.CommandSetProperties._ArtikellisteCollection1AddAndEditNew1_Stub,
+                        global::LightSwitchApplication.Start.DetailsClass.CommandSetProperties._ArtikellisteCollection1AddAndEditNew1_CreateExecutableObject);
+                private static void _ArtikellisteCollection1AddAndEditNew1_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Start.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Data> c, global::LightSwitchApplication.Start.DetailsClass d, object sf)
+                {
+                    c(d, ref d._ArtikellisteCollection1AddAndEditNew1Command, sf);
+                }
+                private static global::Microsoft.LightSwitch.IExecutable _ArtikellisteCollection1AddAndEditNew1_CreateExecutableObject(global::LightSwitchApplication.Start.DetailsClass d)
+                {
+                    return ((global::LightSwitchApplication.Start.DetailsClass)d).Methods.ArtikellisteCollection1AddAndEditNew1.CreateInvocation();
+                }
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Entry
+                    InBearbeitungEditSelected = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Entry(
+                        "InBearbeitungEditSelected",
+                        global::LightSwitchApplication.Start.DetailsClass.CommandSetProperties._InBearbeitungEditSelected_Stub,
+                        global::LightSwitchApplication.Start.DetailsClass.CommandSetProperties._InBearbeitungEditSelected_CreateExecutableObject);
+                private static void _InBearbeitungEditSelected_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Start.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Data> c, global::LightSwitchApplication.Start.DetailsClass d, object sf)
+                {
+                    c(d, ref d._InBearbeitungEditSelectedCommand, sf);
+                }
+                private static global::Microsoft.LightSwitch.IExecutable _InBearbeitungEditSelected_CreateExecutableObject(global::LightSwitchApplication.Start.DetailsClass d)
+                {
+                    return ((global::LightSwitchApplication.Start.DetailsClass)d).Methods.InBearbeitungEditSelected.CreateInvocation();
+                }
+
             }
 
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -3812,6 +4052,111 @@ namespace LightSwitchApplication
                 private static void _Bezahlung_InvokeMethod(global::LightSwitchApplication.Start.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
                 {
                     d.Screen.Bezahlung_Execute();
+                }
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Entry
+                    ArtikellisteCollection1AddAndEditNew = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Entry(
+                        "ArtikellisteCollection1AddAndEditNew",
+                        global::LightSwitchApplication.Start.DetailsClass.MethodSetProperties._ArtikellisteCollection1AddAndEditNew_Stub,
+                        global::LightSwitchApplication.Start.DetailsClass.MethodSetProperties._ArtikellisteCollection1AddAndEditNew_CanInvoke,
+                        global::LightSwitchApplication.Start.DetailsClass.MethodSetProperties._ArtikellisteCollection1AddAndEditNew_InvokeMethod);
+                private static void _ArtikellisteCollection1AddAndEditNew_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Start.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Data> c, global::LightSwitchApplication.Start.DetailsClass d, object sf)
+                {
+                    c(d, ref d._ArtikellisteCollection1AddAndEditNewMethod, sf);
+                }
+                private static global::System.Exception _ArtikellisteCollection1AddAndEditNew_CanInvoke(global::LightSwitchApplication.Start.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
+                {
+                    bool result = true;
+                    d.Screen.ArtikellisteCollection1AddAndEditNew_CanExecute(ref result);
+                    return result ? null : ex;
+                }
+                private static void _ArtikellisteCollection1AddAndEditNew_InvokeMethod(global::LightSwitchApplication.Start.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
+                {
+                    d.Screen.ArtikellisteCollection1AddAndEditNew_Execute();
+                }
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Entry
+                    ArtikellisteCollection1EditSelected = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Entry(
+                        "ArtikellisteCollection1EditSelected",
+                        global::LightSwitchApplication.Start.DetailsClass.MethodSetProperties._ArtikellisteCollection1EditSelected_Stub,
+                        global::LightSwitchApplication.Start.DetailsClass.MethodSetProperties._ArtikellisteCollection1EditSelected_CanInvoke,
+                        global::LightSwitchApplication.Start.DetailsClass.MethodSetProperties._ArtikellisteCollection1EditSelected_InvokeMethod);
+                private static void _ArtikellisteCollection1EditSelected_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Start.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Data> c, global::LightSwitchApplication.Start.DetailsClass d, object sf)
+                {
+                    c(d, ref d._ArtikellisteCollection1EditSelectedMethod, sf);
+                }
+                private static global::System.Exception _ArtikellisteCollection1EditSelected_CanInvoke(global::LightSwitchApplication.Start.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
+                {
+                    bool result = true;
+                    d.Screen.ArtikellisteCollection1EditSelected_CanExecute(ref result);
+                    return result ? null : ex;
+                }
+                private static void _ArtikellisteCollection1EditSelected_InvokeMethod(global::LightSwitchApplication.Start.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
+                {
+                    d.Screen.ArtikellisteCollection1EditSelected_Execute();
+                }
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Entry
+                    ArtikellisteCollection1AddNew = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Entry(
+                        "ArtikellisteCollection1AddNew",
+                        global::LightSwitchApplication.Start.DetailsClass.MethodSetProperties._ArtikellisteCollection1AddNew_Stub,
+                        global::LightSwitchApplication.Start.DetailsClass.MethodSetProperties._ArtikellisteCollection1AddNew_CanInvoke,
+                        global::LightSwitchApplication.Start.DetailsClass.MethodSetProperties._ArtikellisteCollection1AddNew_InvokeMethod);
+                private static void _ArtikellisteCollection1AddNew_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Start.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Data> c, global::LightSwitchApplication.Start.DetailsClass d, object sf)
+                {
+                    c(d, ref d._ArtikellisteCollection1AddNewMethod, sf);
+                }
+                private static global::System.Exception _ArtikellisteCollection1AddNew_CanInvoke(global::LightSwitchApplication.Start.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
+                {
+                    bool result = true;
+                    d.Screen.ArtikellisteCollection1AddNew_CanExecute(ref result);
+                    return result ? null : ex;
+                }
+                private static void _ArtikellisteCollection1AddNew_InvokeMethod(global::LightSwitchApplication.Start.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
+                {
+                    d.Screen.ArtikellisteCollection1AddNew_Execute();
+                }
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Entry
+                    ArtikellisteCollection1AddAndEditNew1 = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Entry(
+                        "ArtikellisteCollection1AddAndEditNew1",
+                        global::LightSwitchApplication.Start.DetailsClass.MethodSetProperties._ArtikellisteCollection1AddAndEditNew1_Stub,
+                        global::LightSwitchApplication.Start.DetailsClass.MethodSetProperties._ArtikellisteCollection1AddAndEditNew1_CanInvoke,
+                        global::LightSwitchApplication.Start.DetailsClass.MethodSetProperties._ArtikellisteCollection1AddAndEditNew1_InvokeMethod);
+                private static void _ArtikellisteCollection1AddAndEditNew1_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Start.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Data> c, global::LightSwitchApplication.Start.DetailsClass d, object sf)
+                {
+                    c(d, ref d._ArtikellisteCollection1AddAndEditNew1Method, sf);
+                }
+                private static global::System.Exception _ArtikellisteCollection1AddAndEditNew1_CanInvoke(global::LightSwitchApplication.Start.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
+                {
+                    bool result = true;
+                    d.Screen.ArtikellisteCollection1AddAndEditNew1_CanExecute(ref result);
+                    return result ? null : ex;
+                }
+                private static void _ArtikellisteCollection1AddAndEditNew1_InvokeMethod(global::LightSwitchApplication.Start.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
+                {
+                    d.Screen.ArtikellisteCollection1AddAndEditNew1_Execute();
+                }
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Entry
+                    InBearbeitungEditSelected = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Entry(
+                        "InBearbeitungEditSelected",
+                        global::LightSwitchApplication.Start.DetailsClass.MethodSetProperties._InBearbeitungEditSelected_Stub,
+                        global::LightSwitchApplication.Start.DetailsClass.MethodSetProperties._InBearbeitungEditSelected_CanInvoke,
+                        global::LightSwitchApplication.Start.DetailsClass.MethodSetProperties._InBearbeitungEditSelected_InvokeMethod);
+                private static void _InBearbeitungEditSelected_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Start.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Data> c, global::LightSwitchApplication.Start.DetailsClass d, object sf)
+                {
+                    c(d, ref d._InBearbeitungEditSelectedMethod, sf);
+                }
+                private static global::System.Exception _InBearbeitungEditSelected_CanInvoke(global::LightSwitchApplication.Start.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
+                {
+                    bool result = true;
+                    d.Screen.InBearbeitungEditSelected_CanExecute(ref result);
+                    return result ? null : ex;
+                }
+                private static void _InBearbeitungEditSelected_InvokeMethod(global::LightSwitchApplication.Start.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
+                {
+                    d.Screen.InBearbeitungEditSelected_Execute();
                 }
 
             }

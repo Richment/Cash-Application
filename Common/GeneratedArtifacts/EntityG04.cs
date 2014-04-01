@@ -198,30 +198,6 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public string Referenznummer
-        {
-            get
-            {
-                return global::LightSwitchApplication.Rechnungen.DetailsClass.GetValue(this, global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties.Referenznummer);
-            }
-            set
-            {
-                global::LightSwitchApplication.Rechnungen.DetailsClass.SetValue(this, global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties.Referenznummer, value);
-            }
-        }
-        
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Referenznummer_IsReadOnly(ref bool result);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Referenznummer_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Referenznummer_Changed();
-
-        /// <summary>
-        /// Keine modellierte Beschreibung verfügbar
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public string Webshop_ID
         {
             get
@@ -740,14 +716,6 @@ namespace LightSwitchApplication
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, string> Referenznummer
-                {
-                    get
-                    {
-                        return base.GetItem(global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties.Referenznummer) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, string>;
-                    }
-                }
-                
                 public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, string> Webshop_ID
                 {
                     get
@@ -902,7 +870,6 @@ namespace LightSwitchApplication
                 new byte[] RowVersion { get; set; }
                 new int Status { get; set; }
                 new string Auftragsnummer { get; set; }
-                new string Referenznummer { get; set; }
                 new string Webshop_ID { get; set; }
                 new string Besteller { get; set; }
                 new global::System.DateTime Bestelldatum { get; set; }
@@ -1093,43 +1060,6 @@ namespace LightSwitchApplication
                 private static void _Auftragsnummer_OnValueChanged(global::LightSwitchApplication.Rechnungen e)
                 {
                     e.Auftragsnummer_Changed();
-                }
-    
-                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, string>.Entry
-                    Referenznummer = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, string>.Entry(
-                        "Referenznummer",
-                        global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._Referenznummer_Stub,
-                        global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._Referenznummer_ComputeIsReadOnly,
-                        global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._Referenznummer_Validate,
-                        global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._Referenznummer_GetImplementationValue,
-                        global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._Referenznummer_SetImplementationValue,
-                        global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._Referenznummer_OnValueChanged);
-                private static void _Referenznummer_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Rechnungen.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, string>.Data> c, global::LightSwitchApplication.Rechnungen.DetailsClass d, object sf)
-                {
-                    c(d, ref d._Referenznummer, sf);
-                }
-                private static bool _Referenznummer_ComputeIsReadOnly(global::LightSwitchApplication.Rechnungen e)
-                {
-                    bool result = false;
-                    e.Referenznummer_IsReadOnly(ref result);
-                    return result;
-                }
-                private static void _Referenznummer_Validate(global::LightSwitchApplication.Rechnungen e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
-                {
-                    e.Referenznummer_Validate(r);
-                }
-                private static string _Referenznummer_GetImplementationValue(global::LightSwitchApplication.Rechnungen.DetailsClass d)
-                {
-                    return d.ImplementationEntity.Referenznummer;
-                }
-                private static void _Referenznummer_SetImplementationValue(global::LightSwitchApplication.Rechnungen.DetailsClass d, string v)
-                {
-                    d.ImplementationEntity.Referenznummer = v;
-                }
-                private static void _Referenznummer_OnValueChanged(global::LightSwitchApplication.Rechnungen e)
-                {
-                    e.Referenznummer_Changed();
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -1752,9 +1682,6 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, string>.Data _Auftragsnummer;
-            
-            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, string>.Data _Referenznummer;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, string>.Data _Webshop_ID;

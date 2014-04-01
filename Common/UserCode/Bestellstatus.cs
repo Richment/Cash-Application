@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace LightSwitchApplication
+﻿namespace LightSwitchApplication
 {
+	using System;
+
 	public enum Bestellstatus : int
 	{
 		Neu = 0,

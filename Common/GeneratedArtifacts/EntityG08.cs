@@ -180,24 +180,24 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public string Starße
+        public string Straße
         {
             get
             {
-                return global::LightSwitchApplication.AdressenSetItem.DetailsClass.GetValue(this, global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.Starße);
+                return global::LightSwitchApplication.AdressenSetItem.DetailsClass.GetValue(this, global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.Straße);
             }
             set
             {
-                global::LightSwitchApplication.AdressenSetItem.DetailsClass.SetValue(this, global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.Starße, value);
+                global::LightSwitchApplication.AdressenSetItem.DetailsClass.SetValue(this, global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.Straße, value);
             }
         }
         
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Starße_IsReadOnly(ref bool result);
+        partial void Straße_IsReadOnly(ref bool result);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Starße_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        partial void Straße_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Starße_Changed();
+        partial void Straße_Changed();
 
         /// <summary>
         /// Keine modellierte Beschreibung verfügbar
@@ -456,11 +456,11 @@ namespace LightSwitchApplication
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string> Starße
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string> Straße
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.Starße) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>;
+                        return base.GetItem(global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.Straße) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>;
                     }
                 }
                 
@@ -522,7 +522,7 @@ namespace LightSwitchApplication
                 new byte[] RowVersion { get; set; }
                 new string Name { get; set; }
                 new string zHd_Besteller_optional { get; set; }
-                new string Starße { get; set; }
+                new string Straße { get; set; }
                 new string Hausnummer { get; set; }
                 new string PLZ { get; set; }
                 new string Stadt { get; set; }
@@ -688,39 +688,39 @@ namespace LightSwitchApplication
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Entry
-                    Starße = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Entry(
-                        "Starße",
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Starße_Stub,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Starße_ComputeIsReadOnly,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Starße_Validate,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Starße_GetImplementationValue,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Starße_SetImplementationValue,
-                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Starße_OnValueChanged);
-                private static void _Starße_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.AdressenSetItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Data> c, global::LightSwitchApplication.AdressenSetItem.DetailsClass d, object sf)
+                    Straße = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Entry(
+                        "Straße",
+                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Straße_Stub,
+                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Straße_ComputeIsReadOnly,
+                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Straße_Validate,
+                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Straße_GetImplementationValue,
+                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Straße_SetImplementationValue,
+                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Straße_OnValueChanged);
+                private static void _Straße_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.AdressenSetItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Data> c, global::LightSwitchApplication.AdressenSetItem.DetailsClass d, object sf)
                 {
-                    c(d, ref d._Starße, sf);
+                    c(d, ref d._Straße, sf);
                 }
-                private static bool _Starße_ComputeIsReadOnly(global::LightSwitchApplication.AdressenSetItem e)
+                private static bool _Straße_ComputeIsReadOnly(global::LightSwitchApplication.AdressenSetItem e)
                 {
                     bool result = false;
-                    e.Starße_IsReadOnly(ref result);
+                    e.Straße_IsReadOnly(ref result);
                     return result;
                 }
-                private static void _Starße_Validate(global::LightSwitchApplication.AdressenSetItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                private static void _Straße_Validate(global::LightSwitchApplication.AdressenSetItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
                 {
-                    e.Starße_Validate(r);
+                    e.Straße_Validate(r);
                 }
-                private static string _Starße_GetImplementationValue(global::LightSwitchApplication.AdressenSetItem.DetailsClass d)
+                private static string _Straße_GetImplementationValue(global::LightSwitchApplication.AdressenSetItem.DetailsClass d)
                 {
-                    return d.ImplementationEntity.Starße;
+                    return d.ImplementationEntity.Straße;
                 }
-                private static void _Starße_SetImplementationValue(global::LightSwitchApplication.AdressenSetItem.DetailsClass d, string v)
+                private static void _Straße_SetImplementationValue(global::LightSwitchApplication.AdressenSetItem.DetailsClass d, string v)
                 {
-                    d.ImplementationEntity.Starße = v;
+                    d.ImplementationEntity.Straße = v;
                 }
-                private static void _Starße_OnValueChanged(global::LightSwitchApplication.AdressenSetItem e)
+                private static void _Straße_OnValueChanged(global::LightSwitchApplication.AdressenSetItem e)
                 {
-                    e.Starße_Changed();
+                    e.Straße_Changed();
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -953,7 +953,7 @@ namespace LightSwitchApplication
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Data _zHd_Besteller_optional;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Data _Starße;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Data _Straße;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Data _Hausnummer;

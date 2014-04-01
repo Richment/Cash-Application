@@ -9,8 +9,6 @@
     <Property Name="Vorname" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="Nachnahme" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="Firma" Type="Edm.String" MaxLength="255" />
-    <Property Name="Kundennummer_1" Type="Edm.String" MaxLength="255" />
-    <Property Name="Kundennummer_2" Type="Edm.String" MaxLength="255" />
     <Property Name="Straße" Type="Edm.String" MaxLength="255" />
     <Property Name="Hausnummer" Type="Edm.Int32" />
     <Property Name="PLZ" Type="Edm.Int32" />
@@ -63,8 +61,7 @@
     <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
     <Property Name="Status" Type="Edm.Int32" Nullable="false" />
-    <Property Name="Auftragsnummer" Type="Edm.String" MaxLength="255" />
-    <Property Name="Referenznummer" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="Auftragsnummer" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="Webshop_ID" Type="Edm.String" MaxLength="255" />
     <Property Name="Besteller" Type="Edm.String" MaxLength="255" />
     <Property Name="Bestelldatum" Type="Edm.DateTime" Nullable="false" />
@@ -134,7 +131,7 @@
     <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
     <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="zHd_Besteller_optional" Type="Edm.String" MaxLength="255" />
-    <Property Name="Starße" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="Straße" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="Hausnummer" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="PLZ" Type="Edm.String" MaxLength="255" />
     <Property Name="Stadt" Type="Edm.String" Nullable="false" MaxLength="255" />

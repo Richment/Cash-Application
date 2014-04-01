@@ -391,18 +391,18 @@ namespace ApplicationData.Implementation
         /// <param name="id">Anfangswert der Eigenschaft Id.</param>
         /// <param name="rowVersion">Anfangswert der Eigenschaft RowVersion.</param>
         /// <param name="name">Anfangswert der Eigenschaft Name.</param>
-        /// <param name="starße">Anfangswert der Eigenschaft Starße.</param>
+        /// <param name="straße">Anfangswert der Eigenschaft Straße.</param>
         /// <param name="hausnummer">Anfangswert der Eigenschaft Hausnummer.</param>
         /// <param name="stadt">Anfangswert der Eigenschaft Stadt.</param>
         /// <param name="land">Anfangswert der Eigenschaft Land.</param>
         /// <param name="kunden_Rechnungsadressen">Anfangswert der Eigenschaft Kunden_Rechnungsadressen.</param>
-        public static AdressenSetItem CreateAdressenSetItem(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.String name, global::System.String starße, global::System.String hausnummer, global::System.String stadt, global::System.String land, global::System.Int32 kunden_Rechnungsadressen)
+        public static AdressenSetItem CreateAdressenSetItem(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.String name, global::System.String straße, global::System.String hausnummer, global::System.String stadt, global::System.String land, global::System.Int32 kunden_Rechnungsadressen)
         {
             AdressenSetItem adressenSetItem = new AdressenSetItem();
             adressenSetItem.Id = id;
             adressenSetItem.RowVersion = rowVersion;
             adressenSetItem.Name = name;
-            adressenSetItem.Starße = starße;
+            adressenSetItem.Straße = straße;
             adressenSetItem.Hausnummer = hausnummer;
             adressenSetItem.Stadt = stadt;
             adressenSetItem.Land = land;
@@ -518,24 +518,24 @@ namespace ApplicationData.Implementation
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String Starße
+        public global::System.String Straße
         {
             get
             {
-                return _Starße;
+                return _Straße;
             }
             set
             {
-                OnStarßeChanging(value);
-                ReportPropertyChanging("Starße");
-                _Starße = value;
-                ReportPropertyChanged("Starße");
-                OnStarßeChanged();
+                OnStraßeChanging(value);
+                ReportPropertyChanging("Straße");
+                _Straße = value;
+                ReportPropertyChanged("Straße");
+                OnStraßeChanged();
             }
         }
-        private global::System.String _Starße;
-        partial void OnStarßeChanging(global::System.String value);
-        partial void OnStarßeChanged();
+        private global::System.String _Straße;
+        partial void OnStraßeChanging(global::System.String value);
+        partial void OnStraßeChanged();
     
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.
@@ -2530,54 +2530,6 @@ namespace ApplicationData.Implementation
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String Kundennummer_1
-        {
-            get
-            {
-                return _Kundennummer_1;
-            }
-            set
-            {
-                OnKundennummer_1Changing(value);
-                ReportPropertyChanging("Kundennummer_1");
-                _Kundennummer_1 = value;
-                ReportPropertyChanged("Kundennummer_1");
-                OnKundennummer_1Changed();
-            }
-        }
-        private global::System.String _Kundennummer_1;
-        partial void OnKundennummer_1Changing(global::System.String value);
-        partial void OnKundennummer_1Changed();
-    
-        /// <summary>
-        /// Keine Dokumentation für Metadaten verfügbar.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String Kundennummer_2
-        {
-            get
-            {
-                return _Kundennummer_2;
-            }
-            set
-            {
-                OnKundennummer_2Changing(value);
-                ReportPropertyChanging("Kundennummer_2");
-                _Kundennummer_2 = value;
-                ReportPropertyChanged("Kundennummer_2");
-                OnKundennummer_2Changed();
-            }
-        }
-        private global::System.String _Kundennummer_2;
-        partial void OnKundennummer_2Changing(global::System.String value);
-        partial void OnKundennummer_2Changed();
-    
-        /// <summary>
-        /// Keine Dokumentation für Metadaten verfügbar.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
         public global::System.String Straße
         {
             get
@@ -3490,19 +3442,19 @@ namespace ApplicationData.Implementation
         /// <param name="id">Anfangswert der Eigenschaft Id.</param>
         /// <param name="rowVersion">Anfangswert der Eigenschaft RowVersion.</param>
         /// <param name="status">Anfangswert der Eigenschaft Status.</param>
-        /// <param name="referenznummer">Anfangswert der Eigenschaft Referenznummer.</param>
+        /// <param name="auftragsnummer">Anfangswert der Eigenschaft Auftragsnummer.</param>
         /// <param name="bestelldatum">Anfangswert der Eigenschaft Bestelldatum.</param>
         /// <param name="lieferkosten">Anfangswert der Eigenschaft Lieferkosten.</param>
         /// <param name="requiresProcessing">Anfangswert der Eigenschaft RequiresProcessing.</param>
         /// <param name="rechnungen_Kunden">Anfangswert der Eigenschaft Rechnungen_Kunden.</param>
         /// <param name="rechnungen_BezahlartItem">Anfangswert der Eigenschaft Rechnungen_BezahlartItem.</param>
-        public static Rechnungen CreateRechnungen(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.Int32 status, global::System.String referenznummer, global::System.DateTime bestelldatum, global::System.Decimal lieferkosten, global::System.Boolean requiresProcessing, global::System.Int32 rechnungen_Kunden, global::System.Int32 rechnungen_BezahlartItem)
+        public static Rechnungen CreateRechnungen(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.Int32 status, global::System.String auftragsnummer, global::System.DateTime bestelldatum, global::System.Decimal lieferkosten, global::System.Boolean requiresProcessing, global::System.Int32 rechnungen_Kunden, global::System.Int32 rechnungen_BezahlartItem)
         {
             Rechnungen rechnungen = new Rechnungen();
             rechnungen.Id = id;
             rechnungen.RowVersion = rowVersion;
             rechnungen.Status = status;
-            rechnungen.Referenznummer = referenznummer;
+            rechnungen.Auftragsnummer = auftragsnummer;
             rechnungen.Bestelldatum = bestelldatum;
             rechnungen.Lieferkosten = lieferkosten;
             rechnungen.RequiresProcessing = requiresProcessing;
@@ -3593,7 +3545,7 @@ namespace ApplicationData.Implementation
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String Auftragsnummer
         {
@@ -3613,30 +3565,6 @@ namespace ApplicationData.Implementation
         private global::System.String _Auftragsnummer;
         partial void OnAuftragsnummerChanging(global::System.String value);
         partial void OnAuftragsnummerChanged();
-    
-        /// <summary>
-        /// Keine Dokumentation für Metadaten verfügbar.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String Referenznummer
-        {
-            get
-            {
-                return _Referenznummer;
-            }
-            set
-            {
-                OnReferenznummerChanging(value);
-                ReportPropertyChanging("Referenznummer");
-                _Referenznummer = value;
-                ReportPropertyChanged("Referenznummer");
-                OnReferenznummerChanged();
-            }
-        }
-        private global::System.String _Referenznummer;
-        partial void OnReferenznummerChanging(global::System.String value);
-        partial void OnReferenznummerChanged();
     
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.

@@ -31,7 +31,7 @@ namespace LightSwitchApplication
 					if (!collection.ContainsKey(key))
 						collection.Add(key, new List<string>());
 
-					collection[key].Add(String.Format("Referenznummer: {0}", item.Referenznummer));
+					collection[key].Add(String.Format("Referenznummer: {0}", item.Auftragsnummer));
 					collection[key].Add("Lieferadresse:");
 					
 					if (item.Lieferadresse == null)
@@ -48,7 +48,7 @@ namespace LightSwitchApplication
 						if (!String.IsNullOrWhiteSpace(item.Lieferadresse.zHd_Besteller_optional))
 							collection[key].Add("   " + item.Lieferadresse.zHd_Besteller_optional);
 						collection[key].Add("   " + item.Lieferadresse.Name);
-						collection[key].Add("   " + item.Lieferadresse.Starße + ' ' + item.Lieferadresse.Hausnummer);
+						collection[key].Add("   " + item.Lieferadresse.Straße + ' ' + item.Lieferadresse.Hausnummer);
 						collection[key].Add("   " + item.Lieferadresse.PLZ + ' ' + item.Lieferadresse.Stadt);
 						collection[key].Add("   " + item.Lieferadresse.Land);
 					}
