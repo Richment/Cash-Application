@@ -25,18 +25,6 @@
     <ExtensionAssembly>Microsoft.LightSwitch.Extensions.Client, Version=11.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35</ExtensionAssembly>
     <ExtensionAssembly>OfficeIntegration.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</ExtensionAssembly>
     <ExtensionAssembly>OfficeIntegration.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</ExtensionAssembly>
-    <ExtensionAssembly>MetroThemeExtension.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35</ExtensionAssembly>
-    <ExtensionAssembly>MetroThemeExtension.Common, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35</ExtensionAssembly>
-    <ExtensionAssembly>DocumentToolkit.Client.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</ExtensionAssembly>
-    <ExtensionAssembly>FirstFloor.Documents, Version=2.5.0.0, Culture=neutral, PublicKeyToken=2D21EC3CD074C59A</ExtensionAssembly>
-    <ExtensionAssembly>FirstFloor.Documents.Controls, Version=2.5.0.0, Culture=neutral, PublicKeyToken=2D21EC3CD074C59A</ExtensionAssembly>
-    <ExtensionAssembly>System.Windows.Interactivity, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35</ExtensionAssembly>
-    <ExtensionAssembly>FirstFloor.Documents.Pdf, Version=2.5.0.0, Culture=neutral, PublicKeyToken=null</ExtensionAssembly>
-    <ExtensionAssembly>ZLib, Version=1.9.1.9000, Culture=neutral, PublicKeyToken=5AA7AB6A0E3EC07B</ExtensionAssembly>
-    <ExtensionAssembly>DocumentToolkit.Client, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</ExtensionAssembly>
-    <ExtensionAssembly>DocumentToolkit.Common, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</ExtensionAssembly>
-    <ExtensionAssembly>FirstFloor.Documents.IO, Version=2.5.2.0, Culture=neutral, PublicKeyToken=null</ExtensionAssembly>
-    <ExtensionAssembly>FirstFloor.Documents.IO.LibTiff, Version=2.5.0.0, Culture=neutral, PublicKeyToken=null</ExtensionAssembly>
     <ExtensionAssembly>Luminous.Controls.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</ExtensionAssembly>
     <ExtensionAssembly>Luminous.Controls.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</ExtensionAssembly>
     <ExtensionAssembly>PixataCustomControls.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</ExtensionAssembly>

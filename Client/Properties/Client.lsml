@@ -10583,100 +10583,20 @@
               </ControlPropertySource>
             </ContentItem.PropertySources>
             <ContentItem
-              DataType="LightSwitchCommonModule:Documents"
-              Kind="Details"
-              Name="DocumentsDetails">
-              <ContentItem.Attributes>
-                <DisplayName
-                  Value="Documents Details" />
-              </ContentItem.Attributes>
+              DataType=":String"
+              Kind="Value"
+              Name="SelectedDocument_Bezeichnung"
+              View=":Label">
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="DokumentenÜbersicht/Properties[DocumentsSet]" />
+                      Member="DokumentenÜbersicht/Properties[SelectedDocument]" />
                     <MemberExpression
-                      Member="SelectedItem" />
+                      Member="Bezeichnung" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
-              <ContentItem.PropertySources>
-                <ControlPropertySource
-                  Property=":RootControl/Properties[VerticalAlignment]">
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <ConstantExpression
-                        ResultType=":String"
-                        Value="Top" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-              </ContentItem.PropertySources>
-              <ContentItem
-                DataType=":String"
-                Kind="Value"
-                Name="Bezeichnung1"
-                View=":Label">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="LightSwitchCommonModule:Documents/Properties[Bezeichnung]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                Kind="Group"
-                Name="Group"
-                View=":GroupBox">
-                <ContentItem.CommandItems>
-                  <ContentItem
-                    Kind="Command"
-                    Name="ShowDocument">
-                    <ContentItem.Attributes>
-                      <DisplayName
-                        Value="Document öffnen" />
-                    </ContentItem.Attributes>
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <CallExpression
-                            Target="DokumentenÜbersicht/Methods[ShowDocument]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Kind="Command"
-                    Name="SaveDocument">
-                    <ContentItem.Attributes>
-                      <DisplayName
-                        Value="Document speichern" />
-                    </ContentItem.Attributes>
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <CallExpression
-                            Target="DokumentenÜbersicht/Methods[SaveDocument]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                </ContentItem.CommandItems>
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch:GroupBox/Properties[BorderMode]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <ConstantExpression
-                          ResultType=":String"
-                          Value="Top" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
-              </ContentItem>
             </ContentItem>
           </ContentItem>
         </ContentItem>

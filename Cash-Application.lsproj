@@ -194,17 +194,9 @@
     </_BuildFile>
   </ItemGroup>
   <ItemGroup>
-    <LightSwitchExtension Include="DocumentToolkit">
-      <Client>DOCUMENTTOOLKIT.CLIENT.CORE;FIRSTFLOOR.DOCUMENTS;FIRSTFLOOR.DOCUMENTS.CONTROLS;SYSTEM.WINDOWS.INTERACTIVITY;FIRSTFLOOR.DOCUMENTS.PDF;ZLIB;DOCUMENTTOOLKIT.CLIENT;DOCUMENTTOOLKIT.COMMON;FIRSTFLOOR.DOCUMENTS.IO;FIRSTFLOOR.DOCUMENTS.IO.LIBTIFF</Client>
-      <Server>DOCUMENTTOOLKIT.COMMON</Server>
-    </LightSwitchExtension>
     <LightSwitchExtension Include="Luminous.Controls">
       <Client>LUMINOUS.CONTROLS.CLIENT;LUMINOUS.CONTROLS.COMMON;LUMINOUS.CONTROLS.CLIENT.DESIGN</Client>
       <Server>LUMINOUS.CONTROLS.COMMON;LUMINOUS.CONTROLS.SERVER</Server>
-    </LightSwitchExtension>
-    <LightSwitchExtension Include="MetroThemeExtension">
-      <Client>METROTHEMEEXTENSION.CLIENT;METROTHEMEEXTENSION.COMMON</Client>
-      <Server>METROTHEMEEXTENSION.COMMON</Server>
     </LightSwitchExtension>
     <LightSwitchExtension Include="Microsoft.LightSwitch.Cosmopolitan">
       <Client>MICROSOFT.LIGHTSWITCH.COSMOPOLITAN.CLIENT</Client>

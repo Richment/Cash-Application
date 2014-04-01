@@ -75,45 +75,11 @@
     <UseDesignTimeFeatures>false</UseDesignTimeFeatures>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DocumentToolkit.Client">
-      <HintPath>..\_Pvt_Extensions\DocumentToolkit\ClientGen\Reference\DocumentToolkit.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="DocumentToolkit.Client.Core">
-      <HintPath>..\_Pvt_Extensions\DocumentToolkit\Client\Reference\DocumentToolkit.Client.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="DocumentToolkit.Common">
-      <HintPath>..\_Pvt_Extensions\DocumentToolkit\ClientGen\Reference\DocumentToolkit.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="FirstFloor.Documents">
-      <HintPath>..\_Pvt_Extensions\DocumentToolkit\ClientGen\Reference\FirstFloor.Documents.dll</HintPath>
-    </Reference>
-    <Reference Include="FirstFloor.Documents.Controls">
-      <HintPath>..\_Pvt_Extensions\DocumentToolkit\ClientGen\Reference\FirstFloor.Documents.Controls.dll</HintPath>
-    </Reference>
-    <Reference Include="FirstFloor.Documents.IO">
-      <HintPath>..\_Pvt_Extensions\DocumentToolkit\ClientGen\Reference\FirstFloor.Documents.IO.dll</HintPath>
-    </Reference>
-    <Reference Include="FirstFloor.Documents.IO.LibTiff">
-      <HintPath>..\_Pvt_Extensions\DocumentToolkit\ClientGen\Reference\FirstFloor.Documents.IO.LibTiff.dll</HintPath>
-    </Reference>
-    <Reference Include="FirstFloor.Documents.Pdf">
-      <HintPath>..\_Pvt_Extensions\DocumentToolkit\ClientGen\Reference\FirstFloor.Documents.Pdf.dll</HintPath>
-    </Reference>
     <Reference Include="Luminous.Controls.Client">
       <HintPath>..\_Pvt_Extensions\Luminous.Controls\Client\Reference\Luminous.Controls.Client.dll</HintPath>
     </Reference>
-    <Reference Include="Luminous.Controls.Client.Design">
-      <HintPath>..\_Pvt_Extensions\Luminous.Controls\Client\DebugOnlyRef\Luminous.Controls.Client.Design.dll</HintPath>
-      <ExtensionReferenceType>DebugOnly</ExtensionReferenceType>
-    </Reference>
     <Reference Include="Luminous.Controls.Common">
       <HintPath>..\_Pvt_Extensions\Luminous.Controls\Client\Reference\Luminous.Controls.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="MetroThemeExtension.Client">
-      <HintPath>..\_Pvt_Extensions\MetroThemeExtension\Client\Reference\MetroThemeExtension.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="MetroThemeExtension.Common">
-      <HintPath>..\_Pvt_Extensions\MetroThemeExtension\Client\Reference\MetroThemeExtension.Common.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.LightSwitch, Version=10.0.11.0, Culture=neutral, PublicKeyToken=8e9329cecb4700e9, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -226,14 +192,10 @@
     <Reference Include="system" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net" />
-    <Reference Include="System.Windows.Interactivity, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Xml.Serialization, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="ZLib">
-      <HintPath>..\_Pvt_Extensions\DocumentToolkit\ClientGen\Reference\ZLib.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
