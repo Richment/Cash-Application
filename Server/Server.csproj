@@ -63,6 +63,15 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
     </Reference>
+    <Reference Include="DocumentToolkit.Common">
+      <HintPath>..\_Pvt_Extensions\DocumentToolkit\ServerGen\Reference\DocumentToolkit.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Luminous.Controls.Common">
+      <HintPath>..\_Pvt_Extensions\Luminous.Controls\Server\Reference\Luminous.Controls.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Luminous.Controls.Server">
+      <HintPath>..\_Pvt_Extensions\Luminous.Controls\Server\Reference\Luminous.Controls.Server.dll</HintPath>
+    </Reference>
     <Reference Include="MetroThemeExtension.Common">
       <HintPath>..\_Pvt_Extensions\MetroThemeExtension\Server\Reference\MetroThemeExtension.Common.dll</HintPath>
     </Reference>
@@ -74,6 +83,12 @@
     </Reference>
     <Reference Include="OfficeIntegration.Server">
       <HintPath>..\_Pvt_Extensions\OfficeIntegration\Server\Reference\OfficeIntegration.Server.dll</HintPath>
+    </Reference>
+    <Reference Include="PixataCustomControls.Common">
+      <HintPath>..\_Pvt_Extensions\PixataCustomControls\Server\Reference\PixataCustomControls.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="PixataCustomControls.Server">
+      <HintPath>..\_Pvt_Extensions\PixataCustomControls\Server\Reference\PixataCustomControls.Server.dll</HintPath>
     </Reference>
     <Reference Include="PresentationFramework" />
     <Reference Include="Spire.Doc">
