@@ -57,7 +57,23 @@ namespace LightSwitchApplication
 				result = false;
 				return;
 			}
-			result = (this.InBearbeitung.SelectedItem.Status < (int)LightSwitchApplication.Bestellstatus.Bezahlt) && !this.InBearbeitung.SelectedItem.RequiresProcessing;
+			switch (InBearbeitung.SelectedItem.Status)
+			{
+				case (int)Bestellstatus.Bearbeitet:
+				case (int)Bestellstatus.InRechnung:
+				case (int)Bestellstatus.Geliefert:
+				case (int)Bestellstatus.Zahlungsverzug:
+					result = true;
+					break;
+		
+				case (int)Bestellstatus.Bezahlt:
+					result = false;
+					break;
+
+				default:
+					result = !this.InBearbeitung.SelectedItem.RequiresProcessing;
+					break;
+			}
 		}
 		partial void NextAction_Execute()
 		{
