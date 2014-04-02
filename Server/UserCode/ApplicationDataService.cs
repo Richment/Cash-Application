@@ -36,9 +36,9 @@ namespace LightSwitchApplication
 		private const string NETTO_TAG = "[[" + DocDescriptor.NETTO + "]]";
 		private const string R_DATE_TAG = "[[" + DocDescriptor.R_DATE + "]]";
 		private const string R_NR_TAG = "[[" + DocDescriptor.R_NR + "]]";	 
-		private const string REF_TAG = "[[" + DocDescriptor.REF + "]]";
 		private const string TAX_TAG = "[[" + DocDescriptor.TAX + "]]";
 		private const string TITLE_TAG = "[[" + DocDescriptor.TITLE + "]]";
+		private const string V_DATE_TAG = "[[" + DocDescriptor.V_DATE + "]]";
 		#endregion
 
 		#region Private methods
@@ -210,12 +210,11 @@ namespace LightSwitchApplication
 					if (item.Text.Contains(R_NR_TAG))
 						item.Text = item.Text.Replace(R_NR_TAG, String.IsNullOrWhiteSpace(data.Rechnungsnummer) ? "" : data.Rechnungsnummer);
 
-					if (item.Text.Contains(REF_TAG))
-						item.Text = item.Text.Replace(REF_TAG, String.IsNullOrWhiteSpace(data.Referenznummer) ? "" : data.Referenznummer);
-
 					if (item.Text.Contains(TITLE_TAG))
 						item.Text = item.Text.Replace(TITLE_TAG, String.IsNullOrWhiteSpace(data.Titel) ? "" : data.Titel);
-
+				 
+					if (item.Text.Contains(V_DATE_TAG))
+						item.Text = item.Text.Replace(V_DATE_TAG, String.IsNullOrWhiteSpace(data.Versanddatum) ? "" : data.Versanddatum);
 				}
 				#endregion
 
@@ -273,7 +272,7 @@ namespace LightSwitchApplication
 			if (data.Deserialize(entity.Data))
 			{
 				DocDescriptor desc = new DocDescriptor(initial: data);
-				entity.Bezeichnung = desc.Referenznummer + " - " + desc.Titel + " vom " + entity.Datum.ToShortDateString();
+				entity.Bezeichnung = desc.Auftragsnummer + " - " + desc.Titel + " vom " + entity.Datum.ToShortDateString();
 				byte[] wordDoc = ProcessDocument(desc);
 				byte[] pdfDoc = DocumentToPdf(wordDoc);
 				entity.Html = "";
@@ -287,7 +286,7 @@ namespace LightSwitchApplication
 		   if (data.Deserialize(entity.Data))
 		   {
 			   DocDescriptor desc = new DocDescriptor(initial: data);
-			   entity.Bezeichnung = desc.Referenznummer + " - " + desc.Titel + " vom " + entity.Datum.ToShortDateString();
+			   entity.Bezeichnung = desc.Auftragsnummer + " - " + desc.Titel + " vom " + entity.Datum.ToShortDateString();
 			   byte[] wordDoc = ProcessDocument(desc);
 			   byte[] pdfDoc = DocumentToPdf(wordDoc);
 			   entity.Html = "";

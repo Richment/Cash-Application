@@ -5,6 +5,21 @@
 
 	public class Position
 	{
+		public static explicit operator Position(ArtikellisteItem value)
+		{
+			if (value == null)
+				return null;
+			
+			return new Position()
+			{
+				Anzahl = value.Anzahl,
+				Bezeichnung = value.Bezeichnung,
+				Artikelnummer = value.Artikelnummer,
+				PosPreis = value.PosPreis,
+				Preis = value.Preis
+			};
+		}
+
 		internal const string ITEM_SEPERATOR = "{|}";
 		internal const string DATASET_SEPERATOR = "{||}";
 

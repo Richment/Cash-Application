@@ -18,8 +18,8 @@
 		public const string L_AMOUNT = "lieferkosten";
 		public const string BRUTTO = "brutto";
 		public const string NETTO = "gesamtnetto";
-		public const string TAX = "mehrwertsteuer";
-		public const string REF = "referenznr";
+		public const string TAX = "mehrwertsteuer";		 
+		public const string V_DATE = "versanddatum";
 
 		#endregion
 
@@ -32,23 +32,6 @@
 			return new DocDescriptor(initial: value);
 		}
 
-		public string Referenznummer
-		{
-			get
-			{
-				string result;
-				if (data.TryGetValue(REF, out result))
-					return result;
-				return null;
-			}
-			set
-			{
-				if (value != null)
-					data[REF] = value;
-				else
-					data.Remove(REF);
-			}
-		}
 		public string Titel
 		{
 			get
@@ -185,6 +168,23 @@
 					data.Remove(L_AMOUNT);
 			}
 		}
+		public string Versanddatum
+		{
+			get
+			{
+				string result;
+				if (data.TryGetValue(V_DATE, out result))
+					return result;
+				return null;
+			}
+			set
+			{
+				if (value != null)
+					data[V_DATE] = value;
+				else
+					data.Remove(V_DATE);
+			}
+		}		
 		public string Brutto
 		{
 			get
@@ -244,7 +244,7 @@
 
 		private Dictionary<string, string> data;
 
-		public DocDescriptor(string referenznummer = null, string titel = null, Dictionary<string, string> initial = null)
+		public DocDescriptor(string auftragsnummer = null, string titel = null, Dictionary<string, string> initial = null)
 		{
 			data = new Dictionary<string, string>();
 			Positionen = new PositionCollection();
@@ -259,8 +259,8 @@
 					Positionen = PositionCollection.FromString(positionString);
 			}
 
-			if (referenznummer != null)
-				this.Referenznummer = referenznummer;
+			if (auftragsnummer != null)
+				this.Auftragsnummer = auftragsnummer;
 			if (titel != null)
 				this.Titel = titel;
 		}
@@ -269,6 +269,27 @@
 		{
 			data[String.Empty] = Positionen.ToString();
 			return data.Where(n => !String.IsNullOrWhiteSpace(n.Value)).ToDictionary(n => n.Key, m => m.Value);
+		}
+
+		public static DocDescriptor CreateLieferschein(Rechnungen value)
+		{
+			DocDescriptor result = new DocDescriptor(value.Auftragsnummer, "Lieferschein");
+
+			result.Adresse = value.Lieferadresse == null ? value.Adresse : value.Lieferadresse.ToString();
+			if (value.Rechnungsbetrag_Brutto.HasValue)
+				result.Brutto = value.Rechnungsbetrag_Brutto.Value.ToString("C");
+			result.Versanddatum = DateTime.Today.ToShortDateString();
+			result.Lieferkosten = value.Lieferkosten.ToString("C");
+			result.Lieferscheinnummer = value.Lieferscheinnummer;
+			if (value.Mehrwertsteuer.HasValue)
+				result.Mehrwertsteuer = value.Mehrwertsteuer.Value.ToString("C");
+			if (value.Netto_Gesamtbetrag.HasValue)
+				result.Netto = value.Netto_Gesamtbetrag.Value.ToString("C");
+
+			foreach (var art in value.ArtikellisteCollection)
+				result.Positionen.Add((Position)art);
+
+			return result;
 		}
 	};
 }

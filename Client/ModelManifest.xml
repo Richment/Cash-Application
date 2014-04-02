@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Documents>
-    <Document FullPath="C:\Users\Richment\Source\Repos\Cash-Application\Client\Properties\Client.lsml" Checksum="BB5F66DFE2FB0AE5433AEBF299A238E3BC845F411DBA7CCB8829A2DEAB2FEE86" />
-    <Document FullPath="C:\Users\Richment\Source\Repos\Cash-Application\Common\Properties\Common.lsml" Checksum="F20F5B9F061E83B34313BF2F733834619181313820B5C21CDB787251874965F3" />
+    <Document FullPath="C:\Users\Richment\Source\Repos\Cash-Application\Client\Properties\Client.lsml" Checksum="BBD633759123155FB056C5606C730D5596B3432CEEF66CCC80C704031A970C36" />
+    <Document FullPath="C:\Users\Richment\Source\Repos\Cash-Application\Common\Properties\Common.lsml" Checksum="82B2737F5C25C1449FB0DD93923020CC1A5AADDA31388DE3E6809730F18424B2" />
   </Documents>
 </ModelDocumentManifest>

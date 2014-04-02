@@ -390,6 +390,30 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Nullable<global::System.DateTime> Versanddatum
+        {
+            get
+            {
+                return global::LightSwitchApplication.Rechnungen.DetailsClass.GetValue(this, global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties.Versanddatum);
+            }
+            set
+            {
+                global::LightSwitchApplication.Rechnungen.DetailsClass.SetValue(this, global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties.Versanddatum, value);
+            }
+        }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Versanddatum_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Versanddatum_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Versanddatum_Changed();
+
+        /// <summary>
+        /// Keine modellierte Beschreibung verfügbar
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public global::System.Nullable<decimal> Netto_Gesamtbetrag
         {
             get
@@ -780,6 +804,14 @@ namespace LightSwitchApplication
                     }
                 }
                 
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::System.Nullable<global::System.DateTime>> Versanddatum
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties.Versanddatum) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::System.Nullable<global::System.DateTime>>;
+                    }
+                }
+                
                 public global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::System.Nullable<decimal>> Netto_Gesamtbetrag
                 {
                     get
@@ -878,6 +910,7 @@ namespace LightSwitchApplication
                 new global::System.Nullable<global::System.DateTime> Rechnungsdatum { get; set; }
                 new global::System.Nullable<int> Rechnungsnummer { get; set; }
                 new decimal Lieferkosten { get; set; }
+                new global::System.Nullable<global::System.DateTime> Versanddatum { get; set; }
                 new bool RequiresProcessing { get; set; }
                 new global::Microsoft.LightSwitch.Internal.IEntityImplementation Kunde { get; set; }
                 new global::Microsoft.LightSwitch.Internal.IEntityImplementation BezahlartItem { get; set; }
@@ -1359,6 +1392,43 @@ namespace LightSwitchApplication
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::System.Nullable<global::System.DateTime>>.Entry
+                    Versanddatum = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::System.Nullable<global::System.DateTime>>.Entry(
+                        "Versanddatum",
+                        global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._Versanddatum_Stub,
+                        global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._Versanddatum_ComputeIsReadOnly,
+                        global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._Versanddatum_Validate,
+                        global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._Versanddatum_GetImplementationValue,
+                        global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._Versanddatum_SetImplementationValue,
+                        global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._Versanddatum_OnValueChanged);
+                private static void _Versanddatum_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Rechnungen.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::System.Nullable<global::System.DateTime>>.Data> c, global::LightSwitchApplication.Rechnungen.DetailsClass d, object sf)
+                {
+                    c(d, ref d._Versanddatum, sf);
+                }
+                private static bool _Versanddatum_ComputeIsReadOnly(global::LightSwitchApplication.Rechnungen e)
+                {
+                    bool result = false;
+                    e.Versanddatum_IsReadOnly(ref result);
+                    return result;
+                }
+                private static void _Versanddatum_Validate(global::LightSwitchApplication.Rechnungen e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                {
+                    e.Versanddatum_Validate(r);
+                }
+                private static global::System.Nullable<global::System.DateTime> _Versanddatum_GetImplementationValue(global::LightSwitchApplication.Rechnungen.DetailsClass d)
+                {
+                    return d.ImplementationEntity.Versanddatum;
+                }
+                private static void _Versanddatum_SetImplementationValue(global::LightSwitchApplication.Rechnungen.DetailsClass d, global::System.Nullable<global::System.DateTime> v)
+                {
+                    d.ImplementationEntity.Versanddatum = global::LightSwitchApplication.Rechnungen.DetailsClass.TruncateDate(v);
+                }
+                private static void _Versanddatum_OnValueChanged(global::LightSwitchApplication.Rechnungen e)
+                {
+                    e.Versanddatum_Changed();
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::System.Nullable<decimal>>.Entry
                     Netto_Gesamtbetrag = new global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::System.Nullable<decimal>>.Entry(
                         "Netto_Gesamtbetrag",
@@ -1706,6 +1776,9 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, decimal>.Data _Lieferkosten;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::System.Nullable<global::System.DateTime>>.Data _Versanddatum;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::System.Nullable<decimal>>.Data _Netto_Gesamtbetrag;

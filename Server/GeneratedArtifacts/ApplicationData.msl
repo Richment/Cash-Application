@@ -70,6 +70,7 @@
           <ScalarProperty Name="Rechnungsnummer" ColumnName="Rechnungsnummer" />
           <ScalarProperty Name="Lieferkosten" ColumnName="Lieferkosten" />
           <ScalarProperty Name="Rechnungen_AdressenSetItem" ColumnName="Rechnungen_AdressenSetItem" />
+          <ScalarProperty Name="Versanddatum" ColumnName="Versanddatum" />
           <ScalarProperty Name="RequiresProcessing" ColumnName="RequiresProcessing" />
         </MappingFragment>
       </EntityTypeMapping>

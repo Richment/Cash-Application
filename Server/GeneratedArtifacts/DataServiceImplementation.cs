@@ -54,8 +54,8 @@ namespace LightSwitchApplication.Implementation
             query = global::System.Linq.Queryable.OrderBy(
                 global::System.Linq.Queryable.Where(
                     this.GetQuery<global::ApplicationData.Implementation.Rechnungen>("RechnungenSet"),
-                    (r) => (r.Status == 0)),
-                (r) => r.Bestelldatum);
+                    (r) => ((r.RequiresProcessing == true) && ((r.Status == 5) == false))),
+                (r) => r.Status);
             return query;
         }
     

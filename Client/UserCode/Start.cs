@@ -15,10 +15,10 @@ namespace LightSwitchApplication
 	{
 		private const string FRM_NEW = "Modal0";
 		private const string TXT_NEW = "Text0";
-		private const string FRM_NEW_ARTIKEL = "Modal1";
-		private const string TXT_NEW_ARTIKEL = "Text1";
+		private const string FRM_VERSENDE = "Modal1";
+		private const string TXT_VERSENDE = "Text1";
 		
-		private ModalWrapper modNew;
+		private ModalWrapper modal;
 		private Rechnungen current;
 
 		partial void ArtikellisteCollection_Validate(ScreenValidationResultsBuilder results)
@@ -131,6 +131,45 @@ namespace LightSwitchApplication
 		{
 			StartVersendeDialog();
 		}
+		
+		private void StartVersendeDialog()
+		{
+			current = InBearbeitung.SelectedItem;
+			current.Versanddatum = DateTime.Today;
+			LieferscheinDruck = false;
+
+			modal = new ModalWrapper(this, FRM_VERSENDE, TXT_VERSENDE, "Bitte ergänzen Sie den Versanddaten...")
+			{
+				CancelMethod = () =>
+				{
+					foreach (Rechnungen item in DataWorkspace.ApplicationData.Details.GetChanges().ModifiedEntities.OfType<Rechnungen>())
+						if (item.Id == current.Id)
+							item.Details.DiscardChanges();
+					current = null;
+				},
+				ProceedMethod = () =>
+				{
+					current.Status = (int)Bestellstatus.Versendet;
+					current.RequiresProcessing = LieferscheinDruck;
+				}
+			};
+			modal.Show();
+		}				
+		
+		partial void OK_Artikel_CanExecute(ref bool result)
+		{
+			result = !String.IsNullOrWhiteSpace(current.Lieferscheinnummer);
+		}
+		partial void OK_Artikel_Execute()
+		{
+			modal.Close();
+		}
+
+
+
+
+
+
 		#endregion
 	
 		#region Neue Bestellung
@@ -145,7 +184,7 @@ namespace LightSwitchApplication
 			current.Bestelldatum = DateTime.Now;
 			current.Status = (int)Bestellstatus.Neu;
 
-			modNew = new ModalWrapper(this, FRM_NEW, TXT_NEW, "Neue Bestellung eingeben...")
+			modal = new ModalWrapper(this, FRM_NEW, TXT_NEW, "Neue Bestellung eingeben...")
 			{
 				CancelMethod = () =>
 				{
@@ -160,18 +199,11 @@ namespace LightSwitchApplication
 							item.Details.DiscardChanges();
 						}
 					current = null;
-				},
-				ProceedMethod = () =>
-				{
-					//var b = new ScreenValidationResultsBuilder();
-					//this.InBearbeitung_Validate(b);
-					 //DataWorkspace.ApplicationData.Details.GetChanges().AddedEntities.ToList().ForEach(n=>n.Details.
-//					Application.Details.Dispatcher.BeginInvoke(() => this.Save());
 				}
 			};
 
 			InBearbeitung.SelectedItem = current;
-			modNew.Show();
+			modal.Show();
 		}
 		
 		partial void Ok_NeueRechnung_CanExecute(ref bool result)
@@ -183,7 +215,7 @@ namespace LightSwitchApplication
 		}
 		partial void Ok_NeueRechnung_Execute()
 		{
-			modNew.Close();
+			modal.Close();
 		}		
 
 		partial void ArtikellisteCollection1AddAndEditNew1_Execute()
@@ -251,13 +283,6 @@ namespace LightSwitchApplication
 		}
 
 
-
-
-
-		private void StartVersendeDialog()
-		{
-		
-		}
 
 
 

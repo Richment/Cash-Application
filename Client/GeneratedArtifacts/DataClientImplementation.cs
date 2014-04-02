@@ -460,6 +460,11 @@ namespace LightSwitchApplication.Implementation
             this.___OnPropertyChanged("Lieferkosten");
         }
         
+        partial void OnVersanddatumChanged()
+        {
+            this.___OnPropertyChanged("Versanddatum");
+        }
+        
         partial void OnRequiresProcessingChanged()
         {
             this.___OnPropertyChanged("RequiresProcessing");

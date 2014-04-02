@@ -3761,6 +3761,30 @@ namespace ApplicationData.Implementation
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.
         /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> Versanddatum
+        {
+            get
+            {
+                return _Versanddatum;
+            }
+            set
+            {
+                OnVersanddatumChanging(value);
+                ReportPropertyChanging("Versanddatum");
+                _Versanddatum = value;
+                ReportPropertyChanged("Versanddatum");
+                OnVersanddatumChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _Versanddatum;
+        partial void OnVersanddatumChanging(Nullable<global::System.DateTime> value);
+        partial void OnVersanddatumChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.Boolean RequiresProcessing

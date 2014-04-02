@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Ursprünglicher Dateiname:
-// Erstellungsdatum: 01.04.2014 19:30:05
+// Erstellungsdatum: 02.04.2014 13:00:01
 namespace LightSwitchApplication.Implementation
 {
     
@@ -1892,6 +1892,32 @@ namespace LightSwitchApplication.Implementation
         private decimal _Lieferkosten;
         partial void OnLieferkostenChanging(decimal value);
         partial void OnLieferkostenChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "Versanddatum" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Nullable<global::System.DateTime> Versanddatum
+        {
+            get
+            {
+                return this._Versanddatum;
+            }
+            set
+            {
+                this.OnVersanddatumChanging(value);
+                if (object.Equals(this.Versanddatum, value))
+                {
+                    return;
+                }
+                this._Versanddatum = value;
+                this.OnVersanddatumChanged();
+                this.OnPropertyChanged("Versanddatum");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Nullable<global::System.DateTime> _Versanddatum;
+        partial void OnVersanddatumChanging(global::System.Nullable<global::System.DateTime> value);
+        partial void OnVersanddatumChanged();
         /// <summary>
         /// Im Schema sind keine Kommentare für die Eigenschaft "RequiresProcessing" vorhanden.
         /// </summary>

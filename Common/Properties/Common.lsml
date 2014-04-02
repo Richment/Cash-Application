@@ -908,17 +908,38 @@
       <QueryOperation.FilterExpression>
         <QueryFilterExpressionTree>
           <BinaryExpression
-            NodeType="Equal">
+            NodeType="And">
             <BinaryExpression.Left>
-              <ChainExpression>
-                <MemberExpression
-                  Member="Status" />
-              </ChainExpression>
+              <BinaryExpression
+                NodeType="Equal">
+                <BinaryExpression.Left>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="RequiresProcessing" />
+                  </ChainExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <ConstantExpression
+                    ResultType=":Boolean"
+                    Value="True" />
+                </BinaryExpression.Right>
+              </BinaryExpression>
             </BinaryExpression.Left>
             <BinaryExpression.Right>
-              <ConstantExpression
-                ResultType=":Int32"
-                Value="0" />
+              <BinaryExpression
+                NodeType="NotEqual">
+                <BinaryExpression.Left>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="Status" />
+                  </ChainExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <ConstantExpression
+                    ResultType=":Int32"
+                    Value="5" />
+                </BinaryExpression.Right>
+              </BinaryExpression>
             </BinaryExpression.Right>
           </BinaryExpression>
         </QueryFilterExpressionTree>
@@ -927,7 +948,7 @@
         <SortCriterion>
           <ChainExpression>
             <MemberExpression
-              Member="Bestelldatum" />
+              Member="Status" />
           </ChainExpression>
         </SortCriterion>
       </QueryOperation.SortCriteria>
@@ -1817,6 +1838,13 @@
         FromEnd="Rechnungen"
         Name="ArtikellisteCollection"
         ToEnd="ArtikellisteItem" />
+      <EntityProperty
+        Name="Versanddatum"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
       <EntityProperty
         Name="Netto_Gesamtbetrag"
         PropertyType="Microsoft.LightSwitch.Extensions:Money?">
