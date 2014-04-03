@@ -492,6 +492,42 @@ namespace LightSwitchApplication
         partial void DocumentsSet_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.Documents, bool>> filter);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void GeneratedDocumentSet_CanInsert(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void GeneratedDocumentSet_CanUpdate(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void GeneratedDocumentSet_CanDelete(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void GeneratedDocumentSet_CanRead(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void GeneratedDocumentSet_Inserting(global::LightSwitchApplication.GeneratedDocument entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void GeneratedDocumentSet_Inserted(global::LightSwitchApplication.GeneratedDocument entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void GeneratedDocumentSet_Updating(global::LightSwitchApplication.GeneratedDocument entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void GeneratedDocumentSet_Updated(global::LightSwitchApplication.GeneratedDocument entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void GeneratedDocumentSet_Deleting(global::LightSwitchApplication.GeneratedDocument entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void GeneratedDocumentSet_Deleted(global::LightSwitchApplication.GeneratedDocument entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void GeneratedDocumentSet_Validate(global::LightSwitchApplication.GeneratedDocument entity, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder results);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void GeneratedDocumentSet_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.GeneratedDocument, bool>> filter);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void SaveChanges_CanExecute(ref bool result);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -547,6 +583,21 @@ namespace LightSwitchApplication
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
         partial void LieferAdresssePerKunde_ExecuteFailed(global::System.Nullable<int> Id, global::System.Exception exception);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void InRechnungGestellt_CanExecute(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void InRechnungGestellt_Executing();
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void InRechnungGestellt_PreprocessQuery(ref global::System.Linq.IQueryable<global::LightSwitchApplication.Rechnungen> query);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void InRechnungGestellt_Executed(global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.Rechnungen> result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void InRechnungGestellt_ExecuteFailed(global::System.Exception exception);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void Query_Executing(global::Microsoft.LightSwitch.QueryExecutingDescriptor queryDescriptor);
@@ -1472,6 +1523,81 @@ namespace LightSwitchApplication
             }
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.GeneratedDocument>
+                __GeneratedDocumentSetEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.GeneratedDocument>(
+                    "GeneratedDocumentSet",
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__GeneratedDocumentSet_CanInsert,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__GeneratedDocumentSet_CanUpdate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__GeneratedDocumentSet_CanDelete,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__GeneratedDocumentSet_CanRead,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__GeneratedDocumentSet_Inserting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__GeneratedDocumentSet_Inserted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__GeneratedDocumentSet_Updating,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__GeneratedDocumentSet_Updated,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__GeneratedDocumentSet_Deleting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__GeneratedDocumentSet_Deleted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__GeneratedDocumentSet_Validate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__GeneratedDocumentSet_Filter);
+            private static bool __GeneratedDocumentSet_CanInsert(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.GeneratedDocumentSet_CanInsert(ref result);
+                return result;
+            }
+            private static bool __GeneratedDocumentSet_CanUpdate(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.GeneratedDocumentSet_CanUpdate(ref result);
+                return result;
+            }
+            private static bool __GeneratedDocumentSet_CanDelete(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.GeneratedDocumentSet_CanDelete(ref result);
+                return result;
+            }
+            private static bool __GeneratedDocumentSet_CanRead(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.GeneratedDocumentSet_CanRead(ref result);
+                return result;
+            }
+            private static void __GeneratedDocumentSet_Inserting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.GeneratedDocument e)
+            {
+                d.GeneratedDocumentSet_Inserting(e);
+            }
+            private static void __GeneratedDocumentSet_Inserted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.GeneratedDocument e)
+            {
+                d.GeneratedDocumentSet_Inserted(e);
+            }
+            private static void __GeneratedDocumentSet_Updating(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.GeneratedDocument e)
+            {
+                d.GeneratedDocumentSet_Updating(e);
+            }
+            private static void __GeneratedDocumentSet_Updated(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.GeneratedDocument e)
+            {
+                d.GeneratedDocumentSet_Updated(e);
+            }
+            private static void __GeneratedDocumentSet_Deleting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.GeneratedDocument e)
+            {
+                d.GeneratedDocumentSet_Deleting(e);
+            }
+            private static void __GeneratedDocumentSet_Deleted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.GeneratedDocument e)
+            {
+                d.GeneratedDocumentSet_Deleted(e);
+            }
+            private static void __GeneratedDocumentSet_Validate(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.GeneratedDocument e, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder r)
+            {
+                d.GeneratedDocumentSet_Validate(e, r);
+            }
+            private static global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.GeneratedDocument, bool>> __GeneratedDocumentSet_Filter(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.GeneratedDocument, bool>> filter = null;
+                d.GeneratedDocumentSet_Filter(ref filter);
+                return filter;
+            }
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.OperationEntry<global::LightSwitchApplication.ApplicationDataService>
                 __SaveChangesEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.OperationEntry<global::LightSwitchApplication.ApplicationDataService>(
                     "SaveChanges",
@@ -1593,6 +1719,39 @@ namespace LightSwitchApplication
             {
                 global::System.Linq.IQueryable<global::LightSwitchApplication.AdressenSetItem> query = (global::System.Linq.IQueryable<global::LightSwitchApplication.AdressenSetItem>)args[1];
                 d.LieferAdresssePerKunde_PreprocessQuery((global::System.Nullable<int>)args[0], ref query);
+                return query;
+            }
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.QueryOperationEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.Rechnungen>
+                __InRechnungGestelltEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.QueryOperationEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.Rechnungen>(
+                    "InRechnungGestellt",
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__InRechnungGestellt_CanExecute,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__InRechnungGestellt_Executing,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__InRechnungGestellt_Executed,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__InRechnungGestellt_Failed,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__InRechnungGestellt_PreprocessQuery);
+            private static bool __InRechnungGestellt_CanExecute(global::LightSwitchApplication.ApplicationDataService d, bool r)
+            {
+                d.InRechnungGestellt_CanExecute(ref r);
+                return r;
+            }
+            private static void __InRechnungGestellt_Executing(global::LightSwitchApplication.ApplicationDataService d, object[] args)
+            {
+                d.InRechnungGestellt_Executing();
+            }
+            private static void __InRechnungGestellt_Executed(global::LightSwitchApplication.ApplicationDataService d, object[] args)
+            {
+                d.InRechnungGestellt_Executed((global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.Rechnungen>)args[0]);
+            }
+            private static void __InRechnungGestellt_Failed(global::LightSwitchApplication.ApplicationDataService d, object[] args, global::System.Exception ex)
+            {
+                d.InRechnungGestellt_ExecuteFailed(ex);
+            }
+            private static global::System.Linq.IQueryable __InRechnungGestellt_PreprocessQuery(global::LightSwitchApplication.ApplicationDataService d, object[] args)
+            {
+                global::System.Linq.IQueryable<global::LightSwitchApplication.Rechnungen> query = (global::System.Linq.IQueryable<global::LightSwitchApplication.Rechnungen>)args[0];
+                d.InRechnungGestellt_PreprocessQuery(ref query);
                 return query;
             }
     

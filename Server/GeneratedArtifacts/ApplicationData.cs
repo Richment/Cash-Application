@@ -27,6 +27,7 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "Rechnungen_BezahlartItem", "BezahlartItem", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApplicationData.Implementation.BezahlartItem), "Rechnungen", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.Rechnungen), true)]
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "ArtikelstammItem_Anbieter", "Anbieter", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApplicationData.Implementation.Anbieter), "ArtikelstammItem", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.ArtikelstammItem), true)]
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "Rechnungen_AdressenSetItem", "AdressenSetItem", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ApplicationData.Implementation.AdressenSetItem), "Rechnungen", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.Rechnungen), true)]
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "Documents_GeneratedDocument", "Documents", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApplicationData.Implementation.Documents), "GeneratedDocument", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ApplicationData.Implementation.GeneratedDocument), true)]
 
 #endregion
 
@@ -266,6 +267,22 @@ namespace ApplicationData.Implementation
             }
         }
         private ObjectSet<Documents> _DocumentsSet;
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        public ObjectSet<GeneratedDocument> GeneratedDocumentSet
+        {
+            get
+            {
+                if ((_GeneratedDocumentSet == null))
+                {
+                    _GeneratedDocumentSet = base.CreateObjectSet<GeneratedDocument>("GeneratedDocumentSet");
+                }
+                return _GeneratedDocumentSet;
+            }
+        }
+        private ObjectSet<GeneratedDocument> _GeneratedDocumentSet;
 
         #endregion
 
@@ -365,6 +382,14 @@ namespace ApplicationData.Implementation
         public void AddToDocumentsSet(Documents documents)
         {
             base.AddObject("DocumentsSet", documents);
+        }
+    
+        /// <summary>
+        /// Veraltete Methode zum Hinzufügen eines neuen Objekts zum EntitySet 'GeneratedDocumentSet'. Verwenden Sie stattdessen die Methode '.Add' der zugeordneten Eigenschaft 'ObjectSet&lt;T&gt;'.
+        /// </summary>
+        public void AddToGeneratedDocumentSet(GeneratedDocument generatedDocument)
+        {
+            base.AddObject("GeneratedDocumentSet", generatedDocument);
         }
 
         #endregion
@@ -1843,58 +1868,52 @@ namespace ApplicationData.Implementation
         private global::System.Byte[] _Data;
         partial void OnDataChanging(global::System.Byte[] value);
         partial void OnDataChanged();
-    
-        /// <summary>
-        /// Keine Dokumentation für Metadaten verfügbar.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.Byte[] GeneratedData
-        {
-            get
-            {
-                return StructuralObject.GetValidValue(_GeneratedData);
-            }
-            set
-            {
-                OnGeneratedDataChanging(value);
-                ReportPropertyChanging("GeneratedData");
-                _GeneratedData = value;
-                ReportPropertyChanged("GeneratedData");
-                OnGeneratedDataChanged();
-            }
-        }
-        private global::System.Byte[] _GeneratedData;
-        partial void OnGeneratedDataChanging(global::System.Byte[] value);
-        partial void OnGeneratedDataChanged();
-    
-        /// <summary>
-        /// Keine Dokumentation für Metadaten verfügbar.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String Html
-        {
-            get
-            {
-                return _Html;
-            }
-            set
-            {
-                OnHtmlChanging(value);
-                ReportPropertyChanging("Html");
-                _Html = value;
-                ReportPropertyChanged("Html");
-                OnHtmlChanged();
-            }
-        }
-        private global::System.String _Html;
-        partial void OnHtmlChanging(global::System.String value);
-        partial void OnHtmlChanged();
 
         #endregion
 
     
+        #region Navigationseigenschaften
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "Documents_GeneratedDocument", "GeneratedDocument")]
+        public GeneratedDocument GeneratedDocument
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<GeneratedDocument>("LightSwitchApplication.Documents_GeneratedDocument", "GeneratedDocument").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<GeneratedDocument>("LightSwitchApplication.Documents_GeneratedDocument", "GeneratedDocument").Value = value;
+            }
+        }
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<GeneratedDocument> GeneratedDocumentReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<GeneratedDocument>("LightSwitchApplication.Documents_GeneratedDocument", "GeneratedDocument");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<GeneratedDocument>("LightSwitchApplication.Documents_GeneratedDocument", "GeneratedDocument", value);
+                }
+            }
+        }
+
+        #endregion
+
     }
     
     /// <summary>
@@ -2230,6 +2249,155 @@ namespace ApplicationData.Implementation
         #endregion
 
     
+    }
+    
+    /// <summary>
+    /// Keine Dokumentation für Metadaten verfügbar.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="GeneratedDocument")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class GeneratedDocument : EntityObject
+    {
+        #region Factory-Methode
+    
+        /// <summary>
+        /// Erstellt ein neues GeneratedDocument-Objekt.
+        /// </summary>
+        /// <param name="id">Anfangswert der Eigenschaft Id.</param>
+        /// <param name="rowVersion">Anfangswert der Eigenschaft RowVersion.</param>
+        public static GeneratedDocument CreateGeneratedDocument(global::System.Int32 id, global::System.Byte[] rowVersion)
+        {
+            GeneratedDocument generatedDocument = new GeneratedDocument();
+            generatedDocument.Id = id;
+            generatedDocument.RowVersion = rowVersion;
+            return generatedDocument;
+        }
+
+        #endregion
+
+        #region Primitive Eigenschaften
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = value;
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] RowVersion
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_RowVersion);
+            }
+            set
+            {
+                OnRowVersionChanging(value);
+                ReportPropertyChanging("RowVersion");
+                _RowVersion = value;
+                ReportPropertyChanged("RowVersion");
+                OnRowVersionChanged();
+            }
+        }
+        private global::System.Byte[] _RowVersion;
+        partial void OnRowVersionChanging(global::System.Byte[] value);
+        partial void OnRowVersionChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] Bytes
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_Bytes);
+            }
+            set
+            {
+                OnBytesChanging(value);
+                ReportPropertyChanging("Bytes");
+                _Bytes = value;
+                ReportPropertyChanged("Bytes");
+                OnBytesChanged();
+            }
+        }
+        private global::System.Byte[] _Bytes;
+        partial void OnBytesChanging(global::System.Byte[] value);
+        partial void OnBytesChanged();
+
+        #endregion
+
+    
+        #region Navigationseigenschaften
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "Documents_GeneratedDocument", "Documents")]
+        public Documents Documents
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Documents>("LightSwitchApplication.Documents_GeneratedDocument", "Documents").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Documents>("LightSwitchApplication.Documents_GeneratedDocument", "Documents").Value = value;
+            }
+        }
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Documents> DocumentsReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Documents>("LightSwitchApplication.Documents_GeneratedDocument", "Documents");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Documents>("LightSwitchApplication.Documents_GeneratedDocument", "Documents", value);
+                }
+            }
+        }
+
+        #endregion
+
     }
     
     /// <summary>

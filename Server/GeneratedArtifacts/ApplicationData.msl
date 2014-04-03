@@ -177,8 +177,15 @@
           <ScalarProperty Name="Datum" ColumnName="Datum" />
           <ScalarProperty Name="Bezeichnung" ColumnName="Bezeichnung" />
           <ScalarProperty Name="Data" ColumnName="Data" />
-          <ScalarProperty Name="GeneratedData" ColumnName="GeneratedData" />
-          <ScalarProperty Name="Html" ColumnName="Html" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GeneratedDocumentSet">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.GeneratedDocument)">
+        <MappingFragment StoreEntitySet="GeneratedDocumentSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Bytes" ColumnName="Bytes" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

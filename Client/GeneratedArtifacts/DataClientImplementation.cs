@@ -1134,15 +1134,95 @@ namespace LightSwitchApplication.Implementation
             this.___OnPropertyChanged("Data");
         }
         
-        partial void OnGeneratedDataChanged()
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Documents.DetailsClass.IImplementation.GeneratedDocument
         {
-            this.___OnPropertyChanged("GeneratedData");
+            get
+            {
+                return this.GeneratedDocument;
+            }
+            set
+            {
+                this.GeneratedDocument = (global::LightSwitchApplication.Implementation.GeneratedDocument)value;
+            }
         }
         
-        partial void OnHtmlChanged()
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.GeneratedDocument> __GeneratedDocument
         {
-            this.___OnPropertyChanged("Html");
+            get
+            {
+                if (this.___GeneratedDocument == null)
+                {
+                    this.___GeneratedDocument = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.GeneratedDocument>(
+                        this,
+                        "GeneratedDocument",
+                        new string[] { "Id" },
+                        e => global::System.Object.Equals(e.Id, this.Id),
+                        () => this._GeneratedDocument,
+                        e => this._GeneratedDocument = e);
+                }
+                return this.___GeneratedDocument;
+            }
         }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.GeneratedDocument> ___GeneratedDocument;
+        
+    }
+    #endregion
+    
+    #region GeneratedDocument
+    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/ApplicationData.Implementation")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class GeneratedDocument :
+        global::LightSwitchApplication.GeneratedDocument.DetailsClass.IImplementation
+    {
+        partial void OnIdChanged()
+        {
+            this.___OnPropertyChanged("Id");
+            this.___OnPropertyChanged("Documents");
+        }
+        
+        partial void OnRowVersionChanged()
+        {
+            this.___OnPropertyChanged("RowVersion");
+        }
+        
+        partial void OnBytesChanged()
+        {
+            this.___OnPropertyChanged("Bytes");
+        }
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.GeneratedDocument.DetailsClass.IImplementation.Documents
+        {
+            get
+            {
+                return this.Documents;
+            }
+            set
+            {
+                this.Documents = (global::LightSwitchApplication.Implementation.Documents)value;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.Documents> __Documents
+        {
+            get
+            {
+                if (this.___Documents == null)
+                {
+                    this.___Documents = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.Documents>(
+                        this,
+                        "Documents",
+                        new string[] { "Id" },
+                        e => global::System.Object.Equals(e.Id, this.Id),
+                        () => this._Documents,
+                        e => this._Documents = e);
+                }
+                return this.___Documents;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.Documents> ___Documents;
         
     }
     #endregion
@@ -1201,6 +1281,10 @@ namespace LightSwitchApplication.Implementation
             if (typeof(T) == typeof(global::LightSwitchApplication.Documents))
             {
                 return new global::LightSwitchApplication.Implementation.Documents();
+            }
+            if (typeof(T) == typeof(global::LightSwitchApplication.GeneratedDocument))
+            {
+                return new global::LightSwitchApplication.Implementation.GeneratedDocument();
             }
             return null;
         }
@@ -1292,6 +1376,10 @@ namespace LightSwitchApplication.Implementation
             if (typeof(global::LightSwitchApplication.Documents) == definitionType)
             {
                 return typeof(global::LightSwitchApplication.Implementation.Documents);
+            }
+            if (typeof(global::LightSwitchApplication.GeneratedDocument) == definitionType)
+            {
+                return typeof(global::LightSwitchApplication.Implementation.GeneratedDocument);
             }
             return null;
         }

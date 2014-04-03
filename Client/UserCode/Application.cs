@@ -106,6 +106,25 @@
 	
 	public partial class Application
 	{
+		partial void Start_Run(ref bool handled)
+		{
+			CheckDelayedPayment();
+		}
+
+		internal static void CheckDelayedPayment()
+		{
+			var today = DateTime.Today;
+
+			using (var dw = Application.Current.CreateDataWorkspace())
+			{
+				foreach (var item in dw.ApplicationData.InRechnungGestellt().OfType<Rechnungen>())
+					if ((item.Lieferdatum ?? DateTime.MinValue).AddDays(item.Kunde.Zahlungsziel) > today)
+						item.Status = 6;
+
+				dw.ApplicationData.SaveChanges();
+			}
+		}
+
 		partial void FirmenDaten_Run(ref bool handled)
 		{
 

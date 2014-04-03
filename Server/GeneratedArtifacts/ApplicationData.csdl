@@ -182,8 +182,16 @@
     <Property Name="Datum" Type="Edm.DateTime" Nullable="false" />
     <Property Name="Bezeichnung" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="Data" Type="Edm.Binary" MaxLength="Max" />
-    <Property Name="GeneratedData" Type="Edm.Binary" MaxLength="Max" />
-    <Property Name="Html" Type="Edm.String" MaxLength="4000" />
+    <NavigationProperty Name="GeneratedDocument" Relationship="LightSwitchApplication.Documents_GeneratedDocument" ToRole="GeneratedDocument" FromRole="Documents" />
+  </EntityType>
+  <EntityType Name="GeneratedDocument">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Bytes" Type="Edm.Binary" MaxLength="Max" />
+    <NavigationProperty Name="Documents" Relationship="LightSwitchApplication.Documents_GeneratedDocument" ToRole="Documents" FromRole="GeneratedDocument" />
   </EntityType>
   <Association Name="ArtikellisteItem_Rechnungen">
     <End Role="Rechnungen" Type="LightSwitchApplication.Rechnungen" Multiplicity="1">
@@ -287,6 +295,20 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="Documents_GeneratedDocument">
+    <End Role="Documents" Type="LightSwitchApplication.Documents" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="GeneratedDocument" Type="LightSwitchApplication.GeneratedDocument" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Documents">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GeneratedDocument">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="ApplicationDataObjectContext" m:IsDefaultEntityContainer="true">
     <EntitySet Name="Kunden" EntityType="LightSwitchApplication.KundenItem" />
     <EntitySet Name="Kundengruppen" EntityType="LightSwitchApplication.KundengruppenItem" />
@@ -300,6 +322,7 @@
     <EntitySet Name="OutgoingMailSet" EntityType="LightSwitchApplication.OutgoingMail" />
     <EntitySet Name="AnbieterSet" EntityType="LightSwitchApplication.Anbieter" />
     <EntitySet Name="DocumentsSet" EntityType="LightSwitchApplication.Documents" />
+    <EntitySet Name="GeneratedDocumentSet" EntityType="LightSwitchApplication.GeneratedDocument" />
     <AssociationSet Name="ArtikellisteItem_Rechnungen" Association="LightSwitchApplication.ArtikellisteItem_Rechnungen">
       <End Role="Rechnungen" EntitySet="RechnungenSet" />
       <End Role="ArtikellisteItem" EntitySet="Artikelliste" />
@@ -331,6 +354,10 @@
     <AssociationSet Name="Rechnungen_AdressenSetItem" Association="LightSwitchApplication.Rechnungen_AdressenSetItem">
       <End Role="AdressenSetItem" EntitySet="LieferAdresse" />
       <End Role="Rechnungen" EntitySet="RechnungenSet" />
+    </AssociationSet>
+    <AssociationSet Name="Documents_GeneratedDocument" Association="LightSwitchApplication.Documents_GeneratedDocument">
+      <End Role="Documents" EntitySet="DocumentsSet" />
+      <End Role="GeneratedDocument" EntitySet="GeneratedDocumentSet" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

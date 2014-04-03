@@ -275,8 +275,9 @@ namespace LightSwitchApplication
 				entity.Bezeichnung = desc.Auftragsnummer + " - " + desc.Titel + " vom " + entity.Datum.ToShortDateString();
 				byte[] wordDoc = ProcessDocument(desc);
 				byte[] pdfDoc = DocumentToPdf(wordDoc);
-				entity.Html = "";
-		  		entity.GeneratedData = pdfDoc;
+				if (entity.GeneratedDocument == null)
+					entity.GeneratedDocument = GeneratedDocumentSet.AddNew();
+				entity.GeneratedDocument.Bytes = pdfDoc;
 			}
 		}
 
@@ -289,8 +290,9 @@ namespace LightSwitchApplication
 			   entity.Bezeichnung = desc.Auftragsnummer + " - " + desc.Titel + " vom " + entity.Datum.ToShortDateString();
 			   byte[] wordDoc = ProcessDocument(desc);
 			   byte[] pdfDoc = DocumentToPdf(wordDoc);
-			   entity.Html = "";
-			   entity.GeneratedData = pdfDoc;
+			   if (entity.GeneratedDocument == null)
+				   entity.GeneratedDocument = GeneratedDocumentSet.AddNew();
+			   entity.GeneratedDocument.Bytes = pdfDoc;
 		   }
 		}
 

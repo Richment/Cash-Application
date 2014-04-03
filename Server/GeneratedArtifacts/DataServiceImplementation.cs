@@ -68,6 +68,15 @@ namespace LightSwitchApplication.Implementation
             return query;
         }
     
+        public global::System.Linq.IQueryable<global::ApplicationData.Implementation.Rechnungen> InRechnungGestellt()
+        {
+            global::System.Linq.IQueryable<global::ApplicationData.Implementation.Rechnungen> query;
+            query = global::System.Linq.Queryable.Where(
+                this.GetQuery<global::ApplicationData.Implementation.Rechnungen>("RechnungenSet"),
+                (r) => (r.Status == 4));
+            return query;
+        }
+    
     #endregion
 
     #region Protected Methods
@@ -120,6 +129,10 @@ namespace LightSwitchApplication.Implementation
             if (type == typeof(global::ApplicationData.Implementation.Documents))
             {
                 return new global::ApplicationData.Implementation.Documents();
+            }
+            if (type == typeof(global::ApplicationData.Implementation.GeneratedDocument))
+            {
+                return new global::ApplicationData.Implementation.GeneratedDocument();
             }
     
             return base.CreateObject(type);
@@ -183,6 +196,10 @@ namespace LightSwitchApplication.Implementation
             if (typeof(T) == typeof(global::LightSwitchApplication.Documents))
             {
                 return new global::ApplicationData.Implementation.Documents();
+            }
+            if (typeof(T) == typeof(global::LightSwitchApplication.GeneratedDocument))
+            {
+                return new global::ApplicationData.Implementation.GeneratedDocument();
             }
             return null;
         }
@@ -276,6 +293,10 @@ namespace LightSwitchApplication.Implementation
             if (typeof(global::LightSwitchApplication.Documents) == definitionType)
             {
                 return typeof(global::ApplicationData.Implementation.Documents);
+            }
+            if (typeof(global::LightSwitchApplication.GeneratedDocument) == definitionType)
+            {
+                return typeof(global::ApplicationData.Implementation.GeneratedDocument);
             }
             return null;
         }
@@ -910,6 +931,79 @@ namespace ApplicationData.Implementation
         global::LightSwitchApplication.Documents.DetailsClass.IImplementation
     {
     
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Documents.DetailsClass.IImplementation.GeneratedDocument
+        {
+            get
+            {
+                return this.GeneratedDocument;
+            }
+            set
+            {
+                this.GeneratedDocument = (global::ApplicationData.Implementation.GeneratedDocument)value;
+                if (this.__host != null)
+                {
+                    this.__host.RaisePropertyChanged("GeneratedDocument");
+                }
+            }
+        }
+        
+        #region IEntityImplementation Members
+        private global::Microsoft.LightSwitch.Internal.IEntityImplementationHost __host;
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementationHost global::Microsoft.LightSwitch.Internal.IEntityImplementation.Host
+        {
+            get
+            {
+                return this.__host;
+            }
+        }
+        
+        void global::Microsoft.LightSwitch.Internal.IEntityImplementation.Initialize(global::Microsoft.LightSwitch.Internal.IEntityImplementationHost host)
+        {
+            this.__host = host;
+        }
+        
+        protected override void OnPropertyChanged(string propertyName)
+        {
+            base.OnPropertyChanged(propertyName);
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged(propertyName);
+            }
+        }
+        #endregion
+    }
+    
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class GeneratedDocument :
+        global::LightSwitchApplication.GeneratedDocument.DetailsClass.IImplementation
+    {
+    
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.GeneratedDocument.DetailsClass.IImplementation.Documents
+        {
+            get
+            {
+                return this.Documents;
+            }
+            set
+            {
+                this.Documents = (global::ApplicationData.Implementation.Documents)value;
+                if (this.__host != null)
+                {
+                    this.__host.RaisePropertyChanged("Documents");
+                }
+            }
+        }
+        
+        partial void OnIdChanged()
+        {
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged("Documents");
+            }
+        }
+        
         #region IEntityImplementation Members
         private global::Microsoft.LightSwitch.Internal.IEntityImplementationHost __host;
         

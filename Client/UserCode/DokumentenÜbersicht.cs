@@ -21,9 +21,9 @@ namespace LightSwitchApplication
 		{
 			var value = DocumentsSet.SelectedItem;
 			string path = Helper.GetFreeTempFilename("pdf");
-			if (value.GeneratedData != null)
+			if (value.GeneratedDocument != null)
 			{
-				File.WriteAllBytes(path, value.GeneratedData);
+				File.WriteAllBytes(path, value.GeneratedDocument.Bytes);
 				Helper.ShellExecute(path);
 			}
 		}
@@ -37,7 +37,6 @@ namespace LightSwitchApplication
 		{
 			var value = DocumentsSet.SelectedItem;
 			value.Datum = DateTime.Now;
-			value.GeneratedData = null;
 			Save();
 		}
 
@@ -52,7 +51,7 @@ namespace LightSwitchApplication
 			string filename = null;
 			if (!String.IsNullOrWhiteSpace(filename = this.FilenameInputBox("Bitte geben Sie einen Dateinamen für dieses Dokument an.", "Dokument speichern...", ".pdf", value.Bezeichnung)))
 			{
-				File.WriteAllBytes(filename, value.GeneratedData);
+				File.WriteAllBytes(filename, value.GeneratedDocument.Bytes);
 			}
 		}
 

@@ -32,7 +32,7 @@ namespace LightSwitchApplication
 			foreach (var item in lieferscheine)
 			{
 				var file = Helper.GetFreeTempFilename("pdf");
-				File.WriteAllBytes(file, item.GeneratedData);
+				File.WriteAllBytes(file, item.GeneratedDocument.Bytes);
 				Helper.ShellExecute(file, operation: ProcessVerb.Print);
 			}
 			lieferscheine.Clear();

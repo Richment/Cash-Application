@@ -13,6 +13,7 @@
     <EntitySet Name="OutgoingMailSet" EntityType="ApplicationDataStore.OutgoingMail" store:Type="Tables" Schema="dbo" Table="OutgoingMailSet" />
     <EntitySet Name="AnbieterSet" EntityType="ApplicationDataStore.Anbieter" store:Type="Tables" Schema="dbo" Table="AnbieterSet" />
     <EntitySet Name="DocumentsSet" EntityType="ApplicationDataStore.Documents" store:Type="Tables" Schema="dbo" Table="DocumentsSet" />
+    <EntitySet Name="GeneratedDocumentSet" EntityType="ApplicationDataStore.GeneratedDocument" store:Type="Tables" Schema="dbo" Table="GeneratedDocumentSet" />
     <AssociationSet Name="ArtikellisteItem_Rechnungen" Association="ApplicationDataStore.ArtikellisteItem_Rechnungen">
       <End Role="Rechnungen" EntitySet="RechnungenSet" />
       <End Role="ArtikellisteItem" EntitySet="Artikelliste" />
@@ -44,6 +45,10 @@
     <AssociationSet Name="Rechnungen_AdressenSetItem" Association="ApplicationDataStore.Rechnungen_AdressenSetItem">
       <End Role="AdressenSetItem" EntitySet="LieferAdresse" />
       <End Role="Rechnungen" EntitySet="RechnungenSet" />
+    </AssociationSet>
+    <AssociationSet Name="Documents_GeneratedDocument" Association="ApplicationDataStore.Documents_GeneratedDocument">
+      <End Role="Documents" EntitySet="DocumentsSet" />
+      <End Role="GeneratedDocument" EntitySet="GeneratedDocumentSet" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="KundenItem">
@@ -212,8 +217,14 @@
     <Property Name="Datum" Type="datetime" Nullable="false" />
     <Property Name="Bezeichnung" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="Data" Type="varbinary(max)" />
-    <Property Name="GeneratedData" Type="varbinary(max)" />
-    <Property Name="Html" Type="nvarchar" MaxLength="4000" />
+  </EntityType>
+  <EntityType Name="GeneratedDocument">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Bytes" Type="varbinary(max)" />
   </EntityType>
   <Association Name="ArtikellisteItem_Rechnungen">
     <End Role="Rechnungen" Type="ApplicationDataStore.Rechnungen" Multiplicity="1">
@@ -314,6 +325,20 @@
       </Principal>
       <Dependent Role="Rechnungen">
         <PropertyRef Name="Rechnungen_AdressenSetItem" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Documents_GeneratedDocument">
+    <End Role="Documents" Type="ApplicationDataStore.Documents" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="GeneratedDocument" Type="ApplicationDataStore.GeneratedDocument" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Documents">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GeneratedDocument">
+        <PropertyRef Name="Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

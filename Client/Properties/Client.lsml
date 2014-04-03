@@ -10637,6 +10637,10 @@
         Name="DocumentsSet"
         PageSize="45"
         PropertyType="LightSwitchCommonModule:CollectionView$Documents">
+        <ScreenCollectionProperty.Attributes>
+          <DisplayName
+            Value="Dokumente" />
+        </ScreenCollectionProperty.Attributes>
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
             Name="DocumentsSetQuery"
@@ -10862,6 +10866,44 @@
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
+            </ContentItem>
+            <ContentItem
+              Kind="Group"
+              Name="Group">
+              <ContentItem.CommandItems>
+                <ContentItem
+                  Kind="Command"
+                  Name="ShowDocument">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Öffne Dokument" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <CallExpression
+                          Target="DokumentenÜbersicht/Methods[ShowDocument]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Kind="Command"
+                  Name="SaveDocument">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Speichere Dokument" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <CallExpression
+                          Target="DokumentenÜbersicht/Methods[SaveDocument]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem.CommandItems>
             </ContentItem>
           </ContentItem>
         </ContentItem>
