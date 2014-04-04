@@ -43,12 +43,15 @@
 				{
 					string max = query.Where(n=>!String.IsNullOrWhiteSpace(n.Rechnungsnummer)).Max(n => n.Rechnungsnummer);
 
-					if (max.StartsWith(dateString))
+					if (max != null)
 					{
-						int numeric;
-						if (Int32.TryParse(max.Substring(5), out numeric))
+						if (max.StartsWith(dateString))
 						{
-							result = dateString + (++numeric).ToString().PadLeft(3, '0');
+							int numeric;
+							if (Int32.TryParse(max.Substring(5), out numeric))
+							{
+								result = dateString + (++numeric).ToString().PadLeft(3, '0');
+							}
 						}
 					}
 				}

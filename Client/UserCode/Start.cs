@@ -152,11 +152,11 @@ namespace LightSwitchApplication
 					break;
 
 				case (int)Bestellstatus.InRechnung:
-
+					Geliefert();
 					break;
 
 				case (int)Bestellstatus.Geliefert:
-
+					Bezahlt();
 					break;
 			}
 		}
@@ -354,6 +354,7 @@ namespace LightSwitchApplication
 		{
 			InBearbeitung.SelectedItem.Status = (int)Bestellstatus.Bezahlt;
 			this.Details.Commands.Save.ExecuteAsync();
+			this.Refresh();
 		}
 
 		partial void Bezahlung_CanExecute(ref bool result)
