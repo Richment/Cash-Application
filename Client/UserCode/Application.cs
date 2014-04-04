@@ -29,9 +29,12 @@
 
 			using (var dw = Application.Current.CreateDataWorkspace())
 			{
-				foreach (var item in dw.ApplicationData.InRechnungGestellt().OfType<Rechnungen>())
-					if ((item.Lieferdatum ?? DateTime.MinValue).AddDays(item.Kunde.Zahlungsziel) > today)
+				foreach (var item in dw.ApplicationData.Prüfaufgaben().OfType<Rechnungen>())
+					if ((item.Rechnungsdatum ?? DateTime.MinValue).AddDays(item.Kunde.Zahlungsziel) > today)
+					{
 						item.Status = (int)Bestellstatus.Zahlungsverzug;
+						item.RequiresProcessing = true;
+					}
 
 				dw.ApplicationData.SaveChanges();
 			}

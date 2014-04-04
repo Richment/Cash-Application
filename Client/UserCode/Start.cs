@@ -48,6 +48,11 @@ namespace LightSwitchApplication
 				};
 			}
 		}
+   
+		partial void Start_Activated()
+		{
+			InBearbeitung.Refresh();
+		}
 
 		private void HeaderToolbar_BtnClick(object sender, StaticToolbarEventArgs e)
 		{
@@ -123,13 +128,12 @@ namespace LightSwitchApplication
 			switch (InBearbeitung.SelectedItem.Status)
 			{
 				case (int)Bestellstatus.Bearbeitet:
-				case (int)Bestellstatus.InRechnung:
 				case (int)Bestellstatus.Geliefert:
 				case (int)Bestellstatus.Zahlungsverzug:
 					result = true;
 					break;
 
-				case (int)Bestellstatus.Bezahlt:
+				case (int)Bestellstatus.Bezahlt:		
 					result = false;
 					break;
 
@@ -152,7 +156,7 @@ namespace LightSwitchApplication
 					break;
 
 				case (int)Bestellstatus.InRechnung:
-					Geliefert();
+					Lieferung();
 					break;
 
 				case (int)Bestellstatus.Geliefert:
@@ -170,7 +174,7 @@ namespace LightSwitchApplication
 			current = null;
 			current = InBearbeitung.AddNew();
 			InBearbeitung.SelectedItem = current;
-			current.Auftragsnummer = current.GetAuftragsNummer();
+			current.Referenznummer = current.GetAuftragsNummer();
 			current.RequiresProcessing = true;
 			current.Bestelldatum = DateTime.Now;
 			current.Status = (int)Bestellstatus.Neu;
@@ -206,7 +210,7 @@ namespace LightSwitchApplication
 			if (current == null)
 				result = false;
 			else
-				result = (current.BezahlartItem != null) && !String.IsNullOrWhiteSpace(current.Auftragsnummer) && (current.ArtikellisteCollection.Count() > 0) && current.ArtikellisteCollection.All(n => (n.ArtikelstammItem != null) && (n.Anzahl > 0));
+				result = (current.BezahlartItem != null) && !String.IsNullOrWhiteSpace(current.Referenznummer) && (current.ArtikellisteCollection.Count() > 0) && current.ArtikellisteCollection.All(n => (n.ArtikelstammItem != null) && (n.Anzahl > 0));
 		}
 		partial void Ok_NeueRechnung_Execute()
 		{
@@ -339,7 +343,9 @@ namespace LightSwitchApplication
 		partial void Lieferung_Execute()
 		{
 			InBearbeitung.SelectedItem.Status = (int)Bestellstatus.Geliefert;
-			this.Details.Commands.Save.ExecuteAsync();
+			InBearbeitung.SelectedItem.Lieferdatum = DateTime.Today;
+			Save();
+			Refresh();
 		}
 
 		#endregion
@@ -353,7 +359,8 @@ namespace LightSwitchApplication
 		partial void Bezahlt_Execute()
 		{
 			InBearbeitung.SelectedItem.Status = (int)Bestellstatus.Bezahlt;
-			this.Details.Commands.Save.ExecuteAsync();
+			InBearbeitung.SelectedItem.Bezahldatum = DateTime.Today;
+			Save();
 			this.Refresh();
 		}
 
@@ -366,6 +373,24 @@ namespace LightSwitchApplication
 			Bezahlt();
 		}
 
+		#endregion
+
+		#region Mahnen
+
+		partial void Mahnen_CanExecute(ref bool result)
+		{
+			var sel = InBearbeitung.SelectedItem;
+			result = sel == null ? false : (sel.Status == (int)Bestellstatus.Zahlungsverzug) || (sel.Status == (int)Bestellstatus.Zahlungsverzug) && !sel.RequiresProcessing;
+		}
+
+		partial void Mahnen_Execute()
+		{
+			InBearbeitung.SelectedItem.RequiresProcessing = true;
+			InBearbeitung.SelectedItem.Mahnung = true;
+			Save();
+			Refresh();
+		}
+		
 		#endregion
 	}
 }

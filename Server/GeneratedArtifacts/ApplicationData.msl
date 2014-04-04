@@ -6,9 +6,10 @@
         <MappingFragment StoreEntitySet="Kunden">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Firma" ColumnName="Firma" />
+          <ScalarProperty Name="Anrede" ColumnName="Anrede" />
           <ScalarProperty Name="Vorname" ColumnName="Vorname" />
           <ScalarProperty Name="Nachnahme" ColumnName="Nachnahme" />
-          <ScalarProperty Name="Firma" ColumnName="Firma" />
           <ScalarProperty Name="Straße" ColumnName="Straße" />
           <ScalarProperty Name="Hausnummer" ColumnName="Hausnummer" />
           <ScalarProperty Name="PLZ" ColumnName="PLZ" />
@@ -59,18 +60,21 @@
           <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
           <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="Rechnungen_Kunden" ColumnName="Rechnungen_Kunden" />
-          <ScalarProperty Name="Auftragsnummer" ColumnName="Auftragsnummer" />
+          <ScalarProperty Name="Referenznummer" ColumnName="Referenznummer" />
           <ScalarProperty Name="Webshop_ID" ColumnName="Webshop_ID" />
           <ScalarProperty Name="Besteller" ColumnName="Besteller" />
           <ScalarProperty Name="Rechnungen_BezahlartItem" ColumnName="Rechnungen_BezahlartItem" />
           <ScalarProperty Name="Bestelldatum" ColumnName="Bestelldatum" />
           <ScalarProperty Name="Lieferdatum" ColumnName="Lieferdatum" />
           <ScalarProperty Name="Lieferscheinnummer" ColumnName="Lieferscheinnummer" />
+          <ScalarProperty Name="Auftragsnummer" ColumnName="Auftragsnummer" />
           <ScalarProperty Name="Rechnungsdatum" ColumnName="Rechnungsdatum" />
           <ScalarProperty Name="Rechnungsnummer" ColumnName="Rechnungsnummer" />
           <ScalarProperty Name="Lieferkosten" ColumnName="Lieferkosten" />
           <ScalarProperty Name="Rechnungen_AdressenSetItem" ColumnName="Rechnungen_AdressenSetItem" />
           <ScalarProperty Name="Versanddatum" ColumnName="Versanddatum" />
+          <ScalarProperty Name="Bezahldatum" ColumnName="Bezahldatum" />
+          <ScalarProperty Name="Mahnung" ColumnName="Mahnung" />
           <ScalarProperty Name="RequiresProcessing" ColumnName="RequiresProcessing" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -125,6 +129,7 @@
         <MappingFragment StoreEntitySet="LieferAdresse">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Anrede" ColumnName="Anrede" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="zHd_Besteller_optional" ColumnName="zHd_Besteller_optional" />
           <ScalarProperty Name="Straße" ColumnName="Straße" />
@@ -177,6 +182,7 @@
           <ScalarProperty Name="Datum" ColumnName="Datum" />
           <ScalarProperty Name="Bezeichnung" ColumnName="Bezeichnung" />
           <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="Documents_KundenItem" ColumnName="Documents_KundenItem" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -186,6 +192,19 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
           <ScalarProperty Name="Bytes" ColumnName="Bytes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MailSettingsSet">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.MailSettings)">
+        <MappingFragment StoreEntitySet="MailSettingsSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="SmtpServer" ColumnName="SmtpServer" />
+          <ScalarProperty Name="Port" ColumnName="Port" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="SenderAddress" ColumnName="SenderAddress" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Ursprünglicher Dateiname:
-// Erstellungsdatum: 04.04.2014 09:04:48
+// Erstellungsdatum: 04.04.2014 20:03:15
 namespace LightSwitchApplication.Implementation
 {
     
@@ -282,6 +282,23 @@ namespace LightSwitchApplication.Implementation
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceQuery<GeneratedDocument> _GeneratedDocumentSet;
         /// <summary>
+        /// Im Schema sind keine Kommentare für "MailSettingsSet" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceQuery<MailSettings> MailSettingsSet
+        {
+            get
+            {
+                if ((this._MailSettingsSet == null))
+                {
+                    this._MailSettingsSet = base.CreateQuery<MailSettings>("MailSettingsSet");
+                }
+                return this._MailSettingsSet;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceQuery<MailSettings> _MailSettingsSet;
+        /// <summary>
         /// Im Schema sind keine Kommentare für "Kunden" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -385,6 +402,14 @@ namespace LightSwitchApplication.Implementation
         {
             base.AddObject("GeneratedDocumentSet", generatedDocument);
         }
+        /// <summary>
+        /// Im Schema sind keine Kommentare für "MailSettingsSet" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public void AddToMailSettingsSet(MailSettings mailSettings)
+        {
+            base.AddObject("MailSettingsSet", mailSettings);
+        }
     }
     /// <summary>
     /// Im Schema sind keine Kommentare für "LightSwitchApplication.KundenItem" vorhanden.
@@ -401,18 +426,16 @@ namespace LightSwitchApplication.Implementation
         /// </summary>
         /// <param name="ID">Anfangswert von Id.</param>
         /// <param name="rowVersion">Anfangswert von RowVersion.</param>
-        /// <param name="vorname">Anfangswert von Vorname.</param>
         /// <param name="nachnahme">Anfangswert von Nachnahme.</param>
         /// <param name="rabatt">Anfangswert von Rabatt.</param>
         /// <param name="zahlungsziel">Anfangswert von Zahlungsziel.</param>
         /// <param name="kunden_Kundengruppe">Anfangswert von Kunden_Kundengruppe.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static KundenItem CreateKundenItem(int ID, byte[] rowVersion, string vorname, string nachnahme, decimal rabatt, int zahlungsziel, int kunden_Kundengruppe)
+        public static KundenItem CreateKundenItem(int ID, byte[] rowVersion, string nachnahme, decimal rabatt, int zahlungsziel, int kunden_Kundengruppe)
         {
             KundenItem kundenItem = new KundenItem();
             kundenItem.Id = ID;
             kundenItem.RowVersion = rowVersion;
-            kundenItem.Vorname = vorname;
             kundenItem.Nachnahme = nachnahme;
             kundenItem.Rabatt = rabatt;
             kundenItem.Zahlungsziel = zahlungsziel;
@@ -479,6 +502,58 @@ namespace LightSwitchApplication.Implementation
         partial void OnRowVersionChanging(byte[] value);
         partial void OnRowVersionChanged();
         /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "Firma" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Firma
+        {
+            get
+            {
+                return this._Firma;
+            }
+            set
+            {
+                this.OnFirmaChanging(value);
+                if (object.Equals(this.Firma, value))
+                {
+                    return;
+                }
+                this._Firma = value;
+                this.OnFirmaChanged();
+                this.OnPropertyChanged("Firma");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Firma;
+        partial void OnFirmaChanging(string value);
+        partial void OnFirmaChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "Anrede" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Anrede
+        {
+            get
+            {
+                return this._Anrede;
+            }
+            set
+            {
+                this.OnAnredeChanging(value);
+                if (object.Equals(this.Anrede, value))
+                {
+                    return;
+                }
+                this._Anrede = value;
+                this.OnAnredeChanged();
+                this.OnPropertyChanged("Anrede");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Anrede;
+        partial void OnAnredeChanging(string value);
+        partial void OnAnredeChanged();
+        /// <summary>
         /// Im Schema sind keine Kommentare für die Eigenschaft "Vorname" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -530,32 +605,6 @@ namespace LightSwitchApplication.Implementation
         private string _Nachnahme;
         partial void OnNachnahmeChanging(string value);
         partial void OnNachnahmeChanged();
-        /// <summary>
-        /// Im Schema sind keine Kommentare für die Eigenschaft "Firma" vorhanden.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Firma
-        {
-            get
-            {
-                return this._Firma;
-            }
-            set
-            {
-                this.OnFirmaChanging(value);
-                if (object.Equals(this.Firma, value))
-                {
-                    return;
-                }
-                this._Firma = value;
-                this.OnFirmaChanged();
-                this.OnPropertyChanged("Firma");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Firma;
-        partial void OnFirmaChanging(string value);
-        partial void OnFirmaChanged();
         /// <summary>
         /// Im Schema sind keine Kommentare für die Eigenschaft "Straße" vorhanden.
         /// </summary>
@@ -1005,6 +1054,25 @@ namespace LightSwitchApplication.Implementation
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceCollection<Rechnungen> _Rechnungen = new global::System.Data.Services.Client.DataServiceCollection<Rechnungen>(null, global::System.Data.Services.Client.TrackingMode.None);
+        /// <summary>
+        /// Im Schema sind keine Kommentare für "DocumentsCollection" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceCollection<Documents> DocumentsCollection
+        {
+            get
+            {
+                this.@__DocumentsCollection.EnsureValueInitialized();
+                return this._DocumentsCollection;
+            }
+            set
+            {
+                this._DocumentsCollection = value;
+                this.OnPropertyChanged("DocumentsCollection");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<Documents> _DocumentsCollection = new global::System.Data.Services.Client.DataServiceCollection<Documents>(null, global::System.Data.Services.Client.TrackingMode.None);
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -1577,22 +1645,20 @@ namespace LightSwitchApplication.Implementation
         /// <param name="ID">Anfangswert von Id.</param>
         /// <param name="rowVersion">Anfangswert von RowVersion.</param>
         /// <param name="status">Anfangswert von Status.</param>
-        /// <param name="auftragsnummer">Anfangswert von Auftragsnummer.</param>
+        /// <param name="referenznummer">Anfangswert von Referenznummer.</param>
         /// <param name="bestelldatum">Anfangswert von Bestelldatum.</param>
-        /// <param name="lieferkosten">Anfangswert von Lieferkosten.</param>
         /// <param name="requiresProcessing">Anfangswert von RequiresProcessing.</param>
         /// <param name="rechnungen_Kunden">Anfangswert von Rechnungen_Kunden.</param>
         /// <param name="rechnungen_BezahlartItem">Anfangswert von Rechnungen_BezahlartItem.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Rechnungen CreateRechnungen(int ID, byte[] rowVersion, int status, string auftragsnummer, global::System.DateTime bestelldatum, decimal lieferkosten, bool requiresProcessing, int rechnungen_Kunden, int rechnungen_BezahlartItem)
+        public static Rechnungen CreateRechnungen(int ID, byte[] rowVersion, int status, string referenznummer, global::System.DateTime bestelldatum, bool requiresProcessing, int rechnungen_Kunden, int rechnungen_BezahlartItem)
         {
             Rechnungen rechnungen = new Rechnungen();
             rechnungen.Id = ID;
             rechnungen.RowVersion = rowVersion;
             rechnungen.Status = status;
-            rechnungen.Auftragsnummer = auftragsnummer;
+            rechnungen.Referenznummer = referenznummer;
             rechnungen.Bestelldatum = bestelldatum;
-            rechnungen.Lieferkosten = lieferkosten;
             rechnungen.RequiresProcessing = requiresProcessing;
             rechnungen.Rechnungen_Kunden = rechnungen_Kunden;
             rechnungen.Rechnungen_BezahlartItem = rechnungen_BezahlartItem;
@@ -1684,31 +1750,31 @@ namespace LightSwitchApplication.Implementation
         partial void OnStatusChanging(int value);
         partial void OnStatusChanged();
         /// <summary>
-        /// Im Schema sind keine Kommentare für die Eigenschaft "Auftragsnummer" vorhanden.
+        /// Im Schema sind keine Kommentare für die Eigenschaft "Referenznummer" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Auftragsnummer
+        public string Referenznummer
         {
             get
             {
-                return this._Auftragsnummer;
+                return this._Referenznummer;
             }
             set
             {
-                this.OnAuftragsnummerChanging(value);
-                if (object.Equals(this.Auftragsnummer, value))
+                this.OnReferenznummerChanging(value);
+                if (object.Equals(this.Referenznummer, value))
                 {
                     return;
                 }
-                this._Auftragsnummer = value;
-                this.OnAuftragsnummerChanged();
-                this.OnPropertyChanged("Auftragsnummer");
+                this._Referenznummer = value;
+                this.OnReferenznummerChanged();
+                this.OnPropertyChanged("Referenznummer");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Auftragsnummer;
-        partial void OnAuftragsnummerChanging(string value);
-        partial void OnAuftragsnummerChanged();
+        private string _Referenznummer;
+        partial void OnReferenznummerChanging(string value);
+        partial void OnReferenznummerChanged();
         /// <summary>
         /// Im Schema sind keine Kommentare für die Eigenschaft "Webshop_ID" vorhanden.
         /// </summary>
@@ -1840,6 +1906,32 @@ namespace LightSwitchApplication.Implementation
         partial void OnLieferscheinnummerChanging(string value);
         partial void OnLieferscheinnummerChanged();
         /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "Auftragsnummer" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Auftragsnummer
+        {
+            get
+            {
+                return this._Auftragsnummer;
+            }
+            set
+            {
+                this.OnAuftragsnummerChanging(value);
+                if (object.Equals(this.Auftragsnummer, value))
+                {
+                    return;
+                }
+                this._Auftragsnummer = value;
+                this.OnAuftragsnummerChanged();
+                this.OnPropertyChanged("Auftragsnummer");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Auftragsnummer;
+        partial void OnAuftragsnummerChanging(string value);
+        partial void OnAuftragsnummerChanged();
+        /// <summary>
         /// Im Schema sind keine Kommentare für die Eigenschaft "Rechnungsdatum" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -1895,7 +1987,7 @@ namespace LightSwitchApplication.Implementation
         /// Im Schema sind keine Kommentare für die Eigenschaft "Lieferkosten" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public decimal Lieferkosten
+        public global::System.Nullable<decimal> Lieferkosten
         {
             get
             {
@@ -1914,8 +2006,8 @@ namespace LightSwitchApplication.Implementation
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private decimal _Lieferkosten;
-        partial void OnLieferkostenChanging(decimal value);
+        private global::System.Nullable<decimal> _Lieferkosten;
+        partial void OnLieferkostenChanging(global::System.Nullable<decimal> value);
         partial void OnLieferkostenChanged();
         /// <summary>
         /// Im Schema sind keine Kommentare für die Eigenschaft "Versanddatum" vorhanden.
@@ -1943,6 +2035,58 @@ namespace LightSwitchApplication.Implementation
         private global::System.Nullable<global::System.DateTime> _Versanddatum;
         partial void OnVersanddatumChanging(global::System.Nullable<global::System.DateTime> value);
         partial void OnVersanddatumChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "Bezahldatum" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Nullable<global::System.DateTime> Bezahldatum
+        {
+            get
+            {
+                return this._Bezahldatum;
+            }
+            set
+            {
+                this.OnBezahldatumChanging(value);
+                if (object.Equals(this.Bezahldatum, value))
+                {
+                    return;
+                }
+                this._Bezahldatum = value;
+                this.OnBezahldatumChanged();
+                this.OnPropertyChanged("Bezahldatum");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Nullable<global::System.DateTime> _Bezahldatum;
+        partial void OnBezahldatumChanging(global::System.Nullable<global::System.DateTime> value);
+        partial void OnBezahldatumChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "Mahnung" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Nullable<bool> Mahnung
+        {
+            get
+            {
+                return this._Mahnung;
+            }
+            set
+            {
+                this.OnMahnungChanging(value);
+                if (object.Equals(this.Mahnung, value))
+                {
+                    return;
+                }
+                this._Mahnung = value;
+                this.OnMahnungChanged();
+                this.OnPropertyChanged("Mahnung");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Nullable<bool> _Mahnung;
+        partial void OnMahnungChanging(global::System.Nullable<bool> value);
+        partial void OnMahnungChanged();
         /// <summary>
         /// Im Schema sind keine Kommentare für die Eigenschaft "RequiresProcessing" vorhanden.
         /// </summary>
@@ -3184,21 +3328,25 @@ namespace LightSwitchApplication.Implementation
         /// </summary>
         /// <param name="ID">Anfangswert von Id.</param>
         /// <param name="rowVersion">Anfangswert von RowVersion.</param>
+        /// <param name="anrede">Anfangswert von Anrede.</param>
         /// <param name="name">Anfangswert von Name.</param>
         /// <param name="straße">Anfangswert von Straße.</param>
         /// <param name="hausnummer">Anfangswert von Hausnummer.</param>
+        /// <param name="pLZ">Anfangswert von PLZ.</param>
         /// <param name="stadt">Anfangswert von Stadt.</param>
         /// <param name="land">Anfangswert von Land.</param>
         /// <param name="kunden_Rechnungsadressen">Anfangswert von Kunden_Rechnungsadressen.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static AdressenSetItem CreateAdressenSetItem(int ID, byte[] rowVersion, string name, string straße, string hausnummer, string stadt, string land, int kunden_Rechnungsadressen)
+        public static AdressenSetItem CreateAdressenSetItem(int ID, byte[] rowVersion, string anrede, string name, string straße, string hausnummer, string pLZ, string stadt, string land, int kunden_Rechnungsadressen)
         {
             AdressenSetItem adressenSetItem = new AdressenSetItem();
             adressenSetItem.Id = ID;
             adressenSetItem.RowVersion = rowVersion;
+            adressenSetItem.Anrede = anrede;
             adressenSetItem.Name = name;
             adressenSetItem.Straße = straße;
             adressenSetItem.Hausnummer = hausnummer;
+            adressenSetItem.PLZ = pLZ;
             adressenSetItem.Stadt = stadt;
             adressenSetItem.Land = land;
             adressenSetItem.Kunden_Rechnungsadressen = kunden_Rechnungsadressen;
@@ -3263,6 +3411,32 @@ namespace LightSwitchApplication.Implementation
         private byte[] _RowVersion;
         partial void OnRowVersionChanging(byte[] value);
         partial void OnRowVersionChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "Anrede" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Anrede
+        {
+            get
+            {
+                return this._Anrede;
+            }
+            set
+            {
+                this.OnAnredeChanging(value);
+                if (object.Equals(this.Anrede, value))
+                {
+                    return;
+                }
+                this._Anrede = value;
+                this.OnAnredeChanged();
+                this.OnPropertyChanged("Anrede");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Anrede;
+        partial void OnAnredeChanging(string value);
+        partial void OnAnredeChanged();
         /// <summary>
         /// Im Schema sind keine Kommentare für die Eigenschaft "Name" vorhanden.
         /// </summary>
@@ -4130,14 +4304,16 @@ namespace LightSwitchApplication.Implementation
         /// <param name="rowVersion">Anfangswert von RowVersion.</param>
         /// <param name="datum">Anfangswert von Datum.</param>
         /// <param name="bezeichnung">Anfangswert von Bezeichnung.</param>
+        /// <param name="documents_KundenItem">Anfangswert von Documents_KundenItem.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Documents CreateDocuments(int ID, byte[] rowVersion, global::System.DateTime datum, string bezeichnung)
+        public static Documents CreateDocuments(int ID, byte[] rowVersion, global::System.DateTime datum, string bezeichnung, int documents_KundenItem)
         {
             Documents documents = new Documents();
             documents.Id = ID;
             documents.RowVersion = rowVersion;
             documents.Datum = datum;
             documents.Bezeichnung = bezeichnung;
+            documents.Documents_KundenItem = documents_KundenItem;
             return documents;
         }
         /// <summary>
@@ -4285,6 +4461,32 @@ namespace LightSwitchApplication.Implementation
         partial void OnDataChanging(byte[] value);
         partial void OnDataChanged();
         /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "Documents_KundenItem" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public int Documents_KundenItem
+        {
+            get
+            {
+                return this._Documents_KundenItem;
+            }
+            set
+            {
+                this.OnDocuments_KundenItemChanging(value);
+                if (object.Equals(this.Documents_KundenItem, value))
+                {
+                    return;
+                }
+                this._Documents_KundenItem = value;
+                this.OnDocuments_KundenItemChanged();
+                this.OnPropertyChanged("Documents_KundenItem");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private int _Documents_KundenItem;
+        partial void OnDocuments_KundenItemChanging(int value);
+        partial void OnDocuments_KundenItemChanged();
+        /// <summary>
         /// Im Schema sind keine Kommentare für "GeneratedDocument" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -4320,6 +4522,53 @@ namespace LightSwitchApplication.Implementation
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private GeneratedDocument _GeneratedDocument;
+        /// <summary>
+        /// Im Schema sind keine Kommentare für "Kunde" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public KundenItem Kunde
+        {
+            get
+            {
+                this.@__Kunde.EnsureValueInitialized();
+                return this._Kunde;
+            }
+            set
+            {
+                KundenItem previous = this.Kunde;
+                if ((previous == value))
+                {
+                    return;
+                }
+                if ((previous != null))
+                {
+                    this._Kunde = null;
+                    this.@__Kunde.OnValueSet();
+                    previous.DocumentsCollection.Remove(this);
+                }
+                if ((this.___Host != null))
+                {
+                    if ((value != null))
+                    {
+                        this.Documents_KundenItem = value.Id;
+                    }
+                    else
+                    {
+                        this.Documents_KundenItem = default(int);
+                    }
+                }
+                this._Kunde = value;
+                this.@__Kunde.OnValueSet();
+                if ((value != null))
+                {
+                    value.@__DocumentsCollection.Add(this);
+                }
+                this.___OnPropertyChanged("Kunde");
+                this.OnPropertyChanged("Kunde");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private KundenItem _Kunde;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -4493,6 +4742,239 @@ namespace LightSwitchApplication.Implementation
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private Documents _Documents;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// Im Schema sind keine Kommentare für "LightSwitchApplication.MailSettings" vorhanden.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("MailSettingsSet")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
+    public partial class MailSettings : global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityBase, global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Erstellt ein neues MailSettings-Objekt.
+        /// </summary>
+        /// <param name="ID">Anfangswert von Id.</param>
+        /// <param name="rowVersion">Anfangswert von RowVersion.</param>
+        /// <param name="smtpServer">Anfangswert von SmtpServer.</param>
+        /// <param name="port">Anfangswert von Port.</param>
+        /// <param name="username">Anfangswert von Username.</param>
+        /// <param name="password">Anfangswert von Password.</param>
+        /// <param name="senderAddress">Anfangswert von SenderAddress.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static MailSettings CreateMailSettings(int ID, byte[] rowVersion, string smtpServer, int port, string username, string password, string senderAddress)
+        {
+            MailSettings mailSettings = new MailSettings();
+            mailSettings.Id = ID;
+            mailSettings.RowVersion = rowVersion;
+            mailSettings.SmtpServer = smtpServer;
+            mailSettings.Port = port;
+            mailSettings.Username = username;
+            mailSettings.Password = password;
+            mailSettings.SenderAddress = senderAddress;
+            return mailSettings;
+        }
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "Id" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public int Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                if (object.Equals(this.Id, value))
+                {
+                    return;
+                }
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private int _Id;
+        partial void OnIdChanging(int value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "RowVersion" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public byte[] RowVersion
+        {
+            get
+            {
+                if ((this._RowVersion != null))
+                {
+                    return ((byte[])(this._RowVersion.Clone()));
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set
+            {
+                this.OnRowVersionChanging(value);
+                if (object.Equals(this.RowVersion, value))
+                {
+                    return;
+                }
+                this._RowVersion = value;
+                this.OnRowVersionChanged();
+                this.OnPropertyChanged("RowVersion");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private byte[] _RowVersion;
+        partial void OnRowVersionChanging(byte[] value);
+        partial void OnRowVersionChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "SmtpServer" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string SmtpServer
+        {
+            get
+            {
+                return this._SmtpServer;
+            }
+            set
+            {
+                this.OnSmtpServerChanging(value);
+                if (object.Equals(this.SmtpServer, value))
+                {
+                    return;
+                }
+                this._SmtpServer = value;
+                this.OnSmtpServerChanged();
+                this.OnPropertyChanged("SmtpServer");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _SmtpServer;
+        partial void OnSmtpServerChanging(string value);
+        partial void OnSmtpServerChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "Port" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public int Port
+        {
+            get
+            {
+                return this._Port;
+            }
+            set
+            {
+                this.OnPortChanging(value);
+                if (object.Equals(this.Port, value))
+                {
+                    return;
+                }
+                this._Port = value;
+                this.OnPortChanged();
+                this.OnPropertyChanged("Port");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private int _Port;
+        partial void OnPortChanging(int value);
+        partial void OnPortChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "Username" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Username
+        {
+            get
+            {
+                return this._Username;
+            }
+            set
+            {
+                this.OnUsernameChanging(value);
+                if (object.Equals(this.Username, value))
+                {
+                    return;
+                }
+                this._Username = value;
+                this.OnUsernameChanged();
+                this.OnPropertyChanged("Username");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Username;
+        partial void OnUsernameChanging(string value);
+        partial void OnUsernameChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "Password" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Password
+        {
+            get
+            {
+                return this._Password;
+            }
+            set
+            {
+                this.OnPasswordChanging(value);
+                if (object.Equals(this.Password, value))
+                {
+                    return;
+                }
+                this._Password = value;
+                this.OnPasswordChanged();
+                this.OnPropertyChanged("Password");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Password;
+        partial void OnPasswordChanging(string value);
+        partial void OnPasswordChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "SenderAddress" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string SenderAddress
+        {
+            get
+            {
+                return this._SenderAddress;
+            }
+            set
+            {
+                this.OnSenderAddressChanging(value);
+                if (object.Equals(this.SenderAddress, value))
+                {
+                    return;
+                }
+                this._SenderAddress = value;
+                this.OnSenderAddressChanged();
+                this.OnPropertyChanged("SenderAddress");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _SenderAddress;
+        partial void OnSenderAddressChanging(string value);
+        partial void OnSenderAddressChanged();
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]

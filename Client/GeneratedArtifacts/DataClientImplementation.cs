@@ -33,6 +33,16 @@ namespace LightSwitchApplication.Implementation
             this.___OnPropertyChanged("RowVersion");
         }
         
+        partial void OnFirmaChanged()
+        {
+            this.___OnPropertyChanged("Firma");
+        }
+        
+        partial void OnAnredeChanged()
+        {
+            this.___OnPropertyChanged("Anrede");
+        }
+        
         partial void OnVornameChanged()
         {
             this.___OnPropertyChanged("Vorname");
@@ -41,11 +51,6 @@ namespace LightSwitchApplication.Implementation
         partial void OnNachnahmeChanged()
         {
             this.___OnPropertyChanged("Nachnahme");
-        }
-        
-        partial void OnFirmaChanged()
-        {
-            this.___OnPropertyChanged("Firma");
         }
         
         partial void OnStraßeChanged()
@@ -196,6 +201,32 @@ namespace LightSwitchApplication.Implementation
         }
         
         private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.Rechnungen> ___Rechnungen;
+        
+        global::System.Collections.IEnumerable global::LightSwitchApplication.KundenItem.DetailsClass.IImplementation.DocumentsCollection
+        {
+            get
+            {
+                return this.DocumentsCollection;
+            }
+        }
+        
+        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.Documents> __DocumentsCollection
+        {
+            get
+            {
+                if (this.___DocumentsCollection == null)
+                {
+                    this.___DocumentsCollection = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.Documents>(
+                        this,
+                        "DocumentsCollection",
+                        () => this._DocumentsCollection,
+                        e => global::System.Object.Equals(e.Documents_KundenItem, this.Id));
+                }
+                return this.___DocumentsCollection;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.Documents> ___DocumentsCollection;
         
     }
     #endregion
@@ -415,9 +446,9 @@ namespace LightSwitchApplication.Implementation
             this.___OnPropertyChanged("Status");
         }
         
-        partial void OnAuftragsnummerChanged()
+        partial void OnReferenznummerChanged()
         {
-            this.___OnPropertyChanged("Auftragsnummer");
+            this.___OnPropertyChanged("Referenznummer");
         }
         
         partial void OnWebshop_IDChanged()
@@ -445,6 +476,11 @@ namespace LightSwitchApplication.Implementation
             this.___OnPropertyChanged("Lieferscheinnummer");
         }
         
+        partial void OnAuftragsnummerChanged()
+        {
+            this.___OnPropertyChanged("Auftragsnummer");
+        }
+        
         partial void OnRechnungsdatumChanged()
         {
             this.___OnPropertyChanged("Rechnungsdatum");
@@ -463,6 +499,16 @@ namespace LightSwitchApplication.Implementation
         partial void OnVersanddatumChanged()
         {
             this.___OnPropertyChanged("Versanddatum");
+        }
+        
+        partial void OnBezahldatumChanged()
+        {
+            this.___OnPropertyChanged("Bezahldatum");
+        }
+        
+        partial void OnMahnungChanged()
+        {
+            this.___OnPropertyChanged("Mahnung");
         }
         
         partial void OnRequiresProcessingChanged()
@@ -849,6 +895,11 @@ namespace LightSwitchApplication.Implementation
             this.___OnPropertyChanged("RowVersion");
         }
         
+        partial void OnAnredeChanged()
+        {
+            this.___OnPropertyChanged("Anrede");
+        }
+        
         partial void OnNameChanged()
         {
             this.___OnPropertyChanged("Name");
@@ -1109,6 +1160,12 @@ namespace LightSwitchApplication.Implementation
     public partial class Documents :
         global::LightSwitchApplication.Documents.DetailsClass.IImplementation
     {
+        partial void OnDocuments_KundenItemChanged()
+        {
+            this.___OnPropertyChanged("Documents_KundenItem");
+            this.___OnPropertyChanged("Kunde");
+        }
+        
         partial void OnIdChanged()
         {
             this.___OnPropertyChanged("Id");
@@ -1165,6 +1222,38 @@ namespace LightSwitchApplication.Implementation
         }
         
         private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.GeneratedDocument> ___GeneratedDocument;
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Documents.DetailsClass.IImplementation.Kunde
+        {
+            get
+            {
+                return this.Kunde;
+            }
+            set
+            {
+                this.Kunde = (global::LightSwitchApplication.Implementation.KundenItem)value;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.KundenItem> __Kunde
+        {
+            get
+            {
+                if (this.___Kunde == null)
+                {
+                    this.___Kunde = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.KundenItem>(
+                        this,
+                        "Kunde",
+                        new string[] { "Documents_KundenItem" },
+                        e => global::System.Object.Equals(e.Id, this.Documents_KundenItem),
+                        () => this._Kunde,
+                        e => this._Kunde = e);
+                }
+                return this.___Kunde;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.KundenItem> ___Kunde;
         
     }
     #endregion
@@ -1227,6 +1316,51 @@ namespace LightSwitchApplication.Implementation
     }
     #endregion
     
+    #region MailSettings
+    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/ApplicationData.Implementation")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class MailSettings :
+        global::LightSwitchApplication.MailSettings.DetailsClass.IImplementation
+    {
+        partial void OnIdChanged()
+        {
+            this.___OnPropertyChanged("Id");
+        }
+        
+        partial void OnRowVersionChanged()
+        {
+            this.___OnPropertyChanged("RowVersion");
+        }
+        
+        partial void OnSmtpServerChanged()
+        {
+            this.___OnPropertyChanged("SmtpServer");
+        }
+        
+        partial void OnPortChanged()
+        {
+            this.___OnPropertyChanged("Port");
+        }
+        
+        partial void OnUsernameChanged()
+        {
+            this.___OnPropertyChanged("Username");
+        }
+        
+        partial void OnPasswordChanged()
+        {
+            this.___OnPropertyChanged("Password");
+        }
+        
+        partial void OnSenderAddressChanged()
+        {
+            this.___OnPropertyChanged("SenderAddress");
+        }
+        
+    }
+    #endregion
+    
     #region ApplicationDataObjectContext
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1285,6 +1419,10 @@ namespace LightSwitchApplication.Implementation
             if (typeof(T) == typeof(global::LightSwitchApplication.GeneratedDocument))
             {
                 return new global::LightSwitchApplication.Implementation.GeneratedDocument();
+            }
+            if (typeof(T) == typeof(global::LightSwitchApplication.MailSettings))
+            {
+                return new global::LightSwitchApplication.Implementation.MailSettings();
             }
             return null;
         }
@@ -1380,6 +1518,10 @@ namespace LightSwitchApplication.Implementation
             if (typeof(global::LightSwitchApplication.GeneratedDocument) == definitionType)
             {
                 return typeof(global::LightSwitchApplication.Implementation.GeneratedDocument);
+            }
+            if (typeof(global::LightSwitchApplication.MailSettings) == definitionType)
+            {
+                return typeof(global::LightSwitchApplication.Implementation.MailSettings);
             }
             return null;
         }

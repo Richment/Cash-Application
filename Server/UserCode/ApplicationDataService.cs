@@ -17,34 +17,55 @@ namespace LightSwitchApplication
 {
 	public partial class ApplicationDataService
 	{
-		#region E-Mail-Constants
+		#region Constants
+		
 		private const string TEMPLATE = "LightSwitchApplication.Template.docx";
-		private const string SENDER = "order@cast4art.de";
-		private const string HOST = "smtp.1und1.de";
-		private const string USER = "order@cast4art.de";
-		private const string PASS = "!order2014!";
-		private const int PORT = 25;
+		
 		#endregion
 
 		#region DocumentTags
+		
 		private const string ADDRESS_TAG = "[[" + DocDescriptor.ADDRESS + "]]";
-		private const string A_NR_TAG = "[[" + DocDescriptor.A_NR + "]]";
+		private const string A_NR_TAG = "[[" + DocDescriptor.A_NR + "]]";	   		
 		private const string BRUTTO_TAG = "[[" + DocDescriptor.BRUTTO + "]]";
+		private const string K_NR_TAG = "[[" + DocDescriptor.K_NR + "]]";
 		private const string L_AMOUNT_TAG = "[[" + DocDescriptor.L_AMOUNT + "]]";
 		private const string L_DATE_TAG = "[[" + DocDescriptor.L_DATE + "]]";
 		private const string L_NR_TAG = "[[" + DocDescriptor.L_NR + "]]";
+		private const string MAHN_TAG = "[[" + DocDescriptor.MAHN + "]]";
 		private const string NETTO_TAG = "[[" + DocDescriptor.NETTO + "]]";
 		private const string R_DATE_TAG = "[[" + DocDescriptor.R_DATE + "]]";
 		private const string R_NR_TAG = "[[" + DocDescriptor.R_NR + "]]";	 
 		private const string TAX_TAG = "[[" + DocDescriptor.TAX + "]]";
 		private const string TITLE_TAG = "[[" + DocDescriptor.TITLE + "]]";
 		private const string V_DATE_TAG = "[[" + DocDescriptor.V_DATE + "]]";
+		
 		#endregion
-
+	
+		private static string SENDER = "order@cast4art.de";
+		private static string HOST = "smtp.1und1.de";
+		private static string USER = "order@cast4art.de";
+		private static string PASS = "!order2014!";
+		private static int PORT = 25;
+		
 		#region Private methods
 
 		private static void SendEmail(OutgoingMail entity, byte[] attachment = null, string attachmentName = null)
 		{
+			using (var dw = Application.Current.CreateDataWorkspace())
+			{
+				MailSettings settings = dw.ApplicationData.MailSettingsSet.FirstOrDefault();
+				if (settings == null)
+				{
+					entity.Result = "Keine gültigen SMTP-Daten.";
+					return;
+				}
+				HOST = settings.SmtpServer;
+				USER = settings.Username;
+				PASS = settings.Password;
+				SENDER = settings.SenderAddress;
+				PORT = settings.Port;
+			}
 			using (SmtpClient client = new SmtpClient(HOST, PORT))
 			{
 				try
@@ -190,7 +211,7 @@ namespace LightSwitchApplication
 						item.Text = item.Text.Replace(BRUTTO_TAG, String.IsNullOrWhiteSpace(data.Brutto) ? "" : data.Brutto);
 
 					if (item.Text.Contains(R_DATE_TAG))
-						item.Text = item.Text.Replace(R_DATE_TAG, String.IsNullOrWhiteSpace(data.Datum) ? "" : data.Datum);
+						item.Text = item.Text.Replace(R_DATE_TAG, String.IsNullOrWhiteSpace(data.Rechnungsdatum) ? "" : data.Rechnungsdatum);
 
 					if (item.Text.Contains(L_DATE_TAG))
 						item.Text = item.Text.Replace(L_DATE_TAG, String.IsNullOrWhiteSpace(data.Lieferdatum) ? "" : data.Lieferdatum);
@@ -212,9 +233,15 @@ namespace LightSwitchApplication
 
 					if (item.Text.Contains(TITLE_TAG))
 						item.Text = item.Text.Replace(TITLE_TAG, String.IsNullOrWhiteSpace(data.Titel) ? "" : data.Titel);
-				 
+
 					if (item.Text.Contains(V_DATE_TAG))
 						item.Text = item.Text.Replace(V_DATE_TAG, String.IsNullOrWhiteSpace(data.Versanddatum) ? "" : data.Versanddatum);
+					
+					if (item.Text.Contains(K_NR_TAG))
+						item.Text = item.Text.Replace(V_DATE_TAG, String.IsNullOrWhiteSpace(data.Kundennummer) ? "" : data.Kundennummer);
+					
+					if (item.Text.Contains(MAHN_TAG))
+						item.Text = item.Text.Replace(MAHN_TAG, String.IsNullOrWhiteSpace(data.Mahnkosten) ? "" : data.Mahnkosten);
 				}
 				#endregion
 
@@ -256,12 +283,6 @@ namespace LightSwitchApplication
 
 		partial void OutgoingMailSet_Updating(OutgoingMail entity)
 		{
-			/*var doc = new Documents();
-			DocDescriptor desc = new DocDescriptor("R-Test", "Rechnung");
-			desc.Adresse = "Herr Axel Dittrich" + Environment.NewLine + "Geile Straße 1" + Environment.NewLine + "67655 KL";
-			desc.Positionen.Add(new Position() { Anzahl = 1, Artikelnummer = "111-111-0", Bezeichnung = "die Bezeichnung", PosPreis = 12, Preis = 0 });
-			doc.Data = desc.ToDictionary().Serialize();
-			DocumentsSet_Inserting(doc);*/
 			entity.Sended = DateTime.Now;
 			SendEmail(entity);							
 		}

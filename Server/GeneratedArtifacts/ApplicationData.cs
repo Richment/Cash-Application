@@ -28,6 +28,7 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "ArtikelstammItem_Anbieter", "Anbieter", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApplicationData.Implementation.Anbieter), "ArtikelstammItem", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.ArtikelstammItem), true)]
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "Rechnungen_AdressenSetItem", "AdressenSetItem", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ApplicationData.Implementation.AdressenSetItem), "Rechnungen", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.Rechnungen), true)]
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "Documents_GeneratedDocument", "Documents", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApplicationData.Implementation.Documents), "GeneratedDocument", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ApplicationData.Implementation.GeneratedDocument), true)]
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "Documents_KundenItem", "KundenItem", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApplicationData.Implementation.KundenItem), "Documents", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.Documents), true)]
 
 #endregion
 
@@ -283,6 +284,22 @@ namespace ApplicationData.Implementation
             }
         }
         private ObjectSet<GeneratedDocument> _GeneratedDocumentSet;
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        public ObjectSet<MailSettings> MailSettingsSet
+        {
+            get
+            {
+                if ((_MailSettingsSet == null))
+                {
+                    _MailSettingsSet = base.CreateObjectSet<MailSettings>("MailSettingsSet");
+                }
+                return _MailSettingsSet;
+            }
+        }
+        private ObjectSet<MailSettings> _MailSettingsSet;
 
         #endregion
 
@@ -391,6 +408,14 @@ namespace ApplicationData.Implementation
         {
             base.AddObject("GeneratedDocumentSet", generatedDocument);
         }
+    
+        /// <summary>
+        /// Veraltete Methode zum Hinzufügen eines neuen Objekts zum EntitySet 'MailSettingsSet'. Verwenden Sie stattdessen die Methode '.Add' der zugeordneten Eigenschaft 'ObjectSet&lt;T&gt;'.
+        /// </summary>
+        public void AddToMailSettingsSet(MailSettings mailSettings)
+        {
+            base.AddObject("MailSettingsSet", mailSettings);
+        }
 
         #endregion
 
@@ -415,20 +440,24 @@ namespace ApplicationData.Implementation
         /// </summary>
         /// <param name="id">Anfangswert der Eigenschaft Id.</param>
         /// <param name="rowVersion">Anfangswert der Eigenschaft RowVersion.</param>
+        /// <param name="anrede">Anfangswert der Eigenschaft Anrede.</param>
         /// <param name="name">Anfangswert der Eigenschaft Name.</param>
         /// <param name="straße">Anfangswert der Eigenschaft Straße.</param>
         /// <param name="hausnummer">Anfangswert der Eigenschaft Hausnummer.</param>
+        /// <param name="pLZ">Anfangswert der Eigenschaft PLZ.</param>
         /// <param name="stadt">Anfangswert der Eigenschaft Stadt.</param>
         /// <param name="land">Anfangswert der Eigenschaft Land.</param>
         /// <param name="kunden_Rechnungsadressen">Anfangswert der Eigenschaft Kunden_Rechnungsadressen.</param>
-        public static AdressenSetItem CreateAdressenSetItem(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.String name, global::System.String straße, global::System.String hausnummer, global::System.String stadt, global::System.String land, global::System.Int32 kunden_Rechnungsadressen)
+        public static AdressenSetItem CreateAdressenSetItem(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.String anrede, global::System.String name, global::System.String straße, global::System.String hausnummer, global::System.String pLZ, global::System.String stadt, global::System.String land, global::System.Int32 kunden_Rechnungsadressen)
         {
             AdressenSetItem adressenSetItem = new AdressenSetItem();
             adressenSetItem.Id = id;
             adressenSetItem.RowVersion = rowVersion;
+            adressenSetItem.Anrede = anrede;
             adressenSetItem.Name = name;
             adressenSetItem.Straße = straße;
             adressenSetItem.Hausnummer = hausnummer;
+            adressenSetItem.PLZ = pLZ;
             adressenSetItem.Stadt = stadt;
             adressenSetItem.Land = land;
             adressenSetItem.Kunden_Rechnungsadressen = kunden_Rechnungsadressen;
@@ -489,6 +518,30 @@ namespace ApplicationData.Implementation
         private global::System.Byte[] _RowVersion;
         partial void OnRowVersionChanging(global::System.Byte[] value);
         partial void OnRowVersionChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Anrede
+        {
+            get
+            {
+                return _Anrede;
+            }
+            set
+            {
+                OnAnredeChanging(value);
+                ReportPropertyChanging("Anrede");
+                _Anrede = value;
+                ReportPropertyChanged("Anrede");
+                OnAnredeChanged();
+            }
+        }
+        private global::System.String _Anrede;
+        partial void OnAnredeChanging(global::System.String value);
+        partial void OnAnredeChanged();
     
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.
@@ -589,7 +642,7 @@ namespace ApplicationData.Implementation
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String PLZ
         {
@@ -1732,13 +1785,15 @@ namespace ApplicationData.Implementation
         /// <param name="rowVersion">Anfangswert der Eigenschaft RowVersion.</param>
         /// <param name="datum">Anfangswert der Eigenschaft Datum.</param>
         /// <param name="bezeichnung">Anfangswert der Eigenschaft Bezeichnung.</param>
-        public static Documents CreateDocuments(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.DateTime datum, global::System.String bezeichnung)
+        /// <param name="documents_KundenItem">Anfangswert der Eigenschaft Documents_KundenItem.</param>
+        public static Documents CreateDocuments(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.DateTime datum, global::System.String bezeichnung, global::System.Int32 documents_KundenItem)
         {
             Documents documents = new Documents();
             documents.Id = id;
             documents.RowVersion = rowVersion;
             documents.Datum = datum;
             documents.Bezeichnung = bezeichnung;
+            documents.Documents_KundenItem = documents_KundenItem;
             return documents;
         }
 
@@ -1868,6 +1923,30 @@ namespace ApplicationData.Implementation
         private global::System.Byte[] _Data;
         partial void OnDataChanging(global::System.Byte[] value);
         partial void OnDataChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Documents_KundenItem
+        {
+            get
+            {
+                return _Documents_KundenItem;
+            }
+            set
+            {
+                OnDocuments_KundenItemChanging(value);
+                ReportPropertyChanging("Documents_KundenItem");
+                _Documents_KundenItem = value;
+                ReportPropertyChanged("Documents_KundenItem");
+                OnDocuments_KundenItemChanged();
+            }
+        }
+        private global::System.Int32 _Documents_KundenItem;
+        partial void OnDocuments_KundenItemChanging(global::System.Int32 value);
+        partial void OnDocuments_KundenItemChanged();
 
         #endregion
 
@@ -1908,6 +1987,44 @@ namespace ApplicationData.Implementation
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<GeneratedDocument>("LightSwitchApplication.Documents_GeneratedDocument", "GeneratedDocument", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "Documents_KundenItem", "KundenItem")]
+        public KundenItem Kunde
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<KundenItem>("LightSwitchApplication.Documents_KundenItem", "KundenItem").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<KundenItem>("LightSwitchApplication.Documents_KundenItem", "KundenItem").Value = value;
+            }
+        }
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<KundenItem> KundeReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<KundenItem>("LightSwitchApplication.Documents_KundenItem", "KundenItem");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<KundenItem>("LightSwitchApplication.Documents_KundenItem", "KundenItem", value);
                 }
             }
         }
@@ -2548,17 +2665,15 @@ namespace ApplicationData.Implementation
         /// </summary>
         /// <param name="id">Anfangswert der Eigenschaft Id.</param>
         /// <param name="rowVersion">Anfangswert der Eigenschaft RowVersion.</param>
-        /// <param name="vorname">Anfangswert der Eigenschaft Vorname.</param>
         /// <param name="nachnahme">Anfangswert der Eigenschaft Nachnahme.</param>
         /// <param name="rabatt">Anfangswert der Eigenschaft Rabatt.</param>
         /// <param name="zahlungsziel">Anfangswert der Eigenschaft Zahlungsziel.</param>
         /// <param name="kunden_Kundengruppe">Anfangswert der Eigenschaft Kunden_Kundengruppe.</param>
-        public static KundenItem CreateKundenItem(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.String vorname, global::System.String nachnahme, global::System.Decimal rabatt, global::System.Int32 zahlungsziel, global::System.Int32 kunden_Kundengruppe)
+        public static KundenItem CreateKundenItem(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.String nachnahme, global::System.Decimal rabatt, global::System.Int32 zahlungsziel, global::System.Int32 kunden_Kundengruppe)
         {
             KundenItem kundenItem = new KundenItem();
             kundenItem.Id = id;
             kundenItem.RowVersion = rowVersion;
-            kundenItem.Vorname = vorname;
             kundenItem.Nachnahme = nachnahme;
             kundenItem.Rabatt = rabatt;
             kundenItem.Zahlungsziel = zahlungsziel;
@@ -2624,7 +2739,55 @@ namespace ApplicationData.Implementation
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Firma
+        {
+            get
+            {
+                return _Firma;
+            }
+            set
+            {
+                OnFirmaChanging(value);
+                ReportPropertyChanging("Firma");
+                _Firma = value;
+                ReportPropertyChanged("Firma");
+                OnFirmaChanged();
+            }
+        }
+        private global::System.String _Firma;
+        partial void OnFirmaChanging(global::System.String value);
+        partial void OnFirmaChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Anrede
+        {
+            get
+            {
+                return _Anrede;
+            }
+            set
+            {
+                OnAnredeChanging(value);
+                ReportPropertyChanging("Anrede");
+                _Anrede = value;
+                ReportPropertyChanged("Anrede");
+                OnAnredeChanged();
+            }
+        }
+        private global::System.String _Anrede;
+        partial void OnAnredeChanging(global::System.String value);
+        partial void OnAnredeChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
         public global::System.String Vorname
         {
@@ -2668,30 +2831,6 @@ namespace ApplicationData.Implementation
         private global::System.String _Nachnahme;
         partial void OnNachnahmeChanging(global::System.String value);
         partial void OnNachnahmeChanged();
-    
-        /// <summary>
-        /// Keine Dokumentation für Metadaten verfügbar.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String Firma
-        {
-            get
-            {
-                return _Firma;
-            }
-            set
-            {
-                OnFirmaChanging(value);
-                ReportPropertyChanging("Firma");
-                _Firma = value;
-                ReportPropertyChanged("Firma");
-                OnFirmaChanged();
-            }
-        }
-        private global::System.String _Firma;
-        partial void OnFirmaChanging(global::System.String value);
-        partial void OnFirmaChanged();
     
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.
@@ -3115,9 +3254,244 @@ namespace ApplicationData.Implementation
                 }
             }
         }
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "Documents_KundenItem", "Documents")]
+        public EntityCollection<Documents> DocumentsCollection
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Documents>("LightSwitchApplication.Documents_KundenItem", "Documents");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Documents>("LightSwitchApplication.Documents_KundenItem", "Documents", value);
+                }
+            }
+        }
 
         #endregion
 
+    }
+    
+    /// <summary>
+    /// Keine Dokumentation für Metadaten verfügbar.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="MailSettings")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class MailSettings : EntityObject
+    {
+        #region Factory-Methode
+    
+        /// <summary>
+        /// Erstellt ein neues MailSettings-Objekt.
+        /// </summary>
+        /// <param name="id">Anfangswert der Eigenschaft Id.</param>
+        /// <param name="rowVersion">Anfangswert der Eigenschaft RowVersion.</param>
+        /// <param name="smtpServer">Anfangswert der Eigenschaft SmtpServer.</param>
+        /// <param name="port">Anfangswert der Eigenschaft Port.</param>
+        /// <param name="username">Anfangswert der Eigenschaft Username.</param>
+        /// <param name="password">Anfangswert der Eigenschaft Password.</param>
+        /// <param name="senderAddress">Anfangswert der Eigenschaft SenderAddress.</param>
+        public static MailSettings CreateMailSettings(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.String smtpServer, global::System.Int32 port, global::System.String username, global::System.String password, global::System.String senderAddress)
+        {
+            MailSettings mailSettings = new MailSettings();
+            mailSettings.Id = id;
+            mailSettings.RowVersion = rowVersion;
+            mailSettings.SmtpServer = smtpServer;
+            mailSettings.Port = port;
+            mailSettings.Username = username;
+            mailSettings.Password = password;
+            mailSettings.SenderAddress = senderAddress;
+            return mailSettings;
+        }
+
+        #endregion
+
+        #region Primitive Eigenschaften
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = value;
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] RowVersion
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_RowVersion);
+            }
+            set
+            {
+                OnRowVersionChanging(value);
+                ReportPropertyChanging("RowVersion");
+                _RowVersion = value;
+                ReportPropertyChanged("RowVersion");
+                OnRowVersionChanged();
+            }
+        }
+        private global::System.Byte[] _RowVersion;
+        partial void OnRowVersionChanging(global::System.Byte[] value);
+        partial void OnRowVersionChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String SmtpServer
+        {
+            get
+            {
+                return _SmtpServer;
+            }
+            set
+            {
+                OnSmtpServerChanging(value);
+                ReportPropertyChanging("SmtpServer");
+                _SmtpServer = value;
+                ReportPropertyChanged("SmtpServer");
+                OnSmtpServerChanged();
+            }
+        }
+        private global::System.String _SmtpServer;
+        partial void OnSmtpServerChanging(global::System.String value);
+        partial void OnSmtpServerChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Port
+        {
+            get
+            {
+                return _Port;
+            }
+            set
+            {
+                OnPortChanging(value);
+                ReportPropertyChanging("Port");
+                _Port = value;
+                ReportPropertyChanged("Port");
+                OnPortChanged();
+            }
+        }
+        private global::System.Int32 _Port;
+        partial void OnPortChanging(global::System.Int32 value);
+        partial void OnPortChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Username
+        {
+            get
+            {
+                return _Username;
+            }
+            set
+            {
+                OnUsernameChanging(value);
+                ReportPropertyChanging("Username");
+                _Username = value;
+                ReportPropertyChanged("Username");
+                OnUsernameChanged();
+            }
+        }
+        private global::System.String _Username;
+        partial void OnUsernameChanging(global::System.String value);
+        partial void OnUsernameChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Password
+        {
+            get
+            {
+                return _Password;
+            }
+            set
+            {
+                OnPasswordChanging(value);
+                ReportPropertyChanging("Password");
+                _Password = value;
+                ReportPropertyChanged("Password");
+                OnPasswordChanged();
+            }
+        }
+        private global::System.String _Password;
+        partial void OnPasswordChanging(global::System.String value);
+        partial void OnPasswordChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String SenderAddress
+        {
+            get
+            {
+                return _SenderAddress;
+            }
+            set
+            {
+                OnSenderAddressChanging(value);
+                ReportPropertyChanging("SenderAddress");
+                _SenderAddress = value;
+                ReportPropertyChanged("SenderAddress");
+                OnSenderAddressChanged();
+            }
+        }
+        private global::System.String _SenderAddress;
+        partial void OnSenderAddressChanging(global::System.String value);
+        partial void OnSenderAddressChanged();
+
+        #endregion
+
+    
     }
     
     /// <summary>
@@ -3610,21 +3984,19 @@ namespace ApplicationData.Implementation
         /// <param name="id">Anfangswert der Eigenschaft Id.</param>
         /// <param name="rowVersion">Anfangswert der Eigenschaft RowVersion.</param>
         /// <param name="status">Anfangswert der Eigenschaft Status.</param>
-        /// <param name="auftragsnummer">Anfangswert der Eigenschaft Auftragsnummer.</param>
+        /// <param name="referenznummer">Anfangswert der Eigenschaft Referenznummer.</param>
         /// <param name="bestelldatum">Anfangswert der Eigenschaft Bestelldatum.</param>
-        /// <param name="lieferkosten">Anfangswert der Eigenschaft Lieferkosten.</param>
         /// <param name="requiresProcessing">Anfangswert der Eigenschaft RequiresProcessing.</param>
         /// <param name="rechnungen_Kunden">Anfangswert der Eigenschaft Rechnungen_Kunden.</param>
         /// <param name="rechnungen_BezahlartItem">Anfangswert der Eigenschaft Rechnungen_BezahlartItem.</param>
-        public static Rechnungen CreateRechnungen(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.Int32 status, global::System.String auftragsnummer, global::System.DateTime bestelldatum, global::System.Decimal lieferkosten, global::System.Boolean requiresProcessing, global::System.Int32 rechnungen_Kunden, global::System.Int32 rechnungen_BezahlartItem)
+        public static Rechnungen CreateRechnungen(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.Int32 status, global::System.String referenznummer, global::System.DateTime bestelldatum, global::System.Boolean requiresProcessing, global::System.Int32 rechnungen_Kunden, global::System.Int32 rechnungen_BezahlartItem)
         {
             Rechnungen rechnungen = new Rechnungen();
             rechnungen.Id = id;
             rechnungen.RowVersion = rowVersion;
             rechnungen.Status = status;
-            rechnungen.Auftragsnummer = auftragsnummer;
+            rechnungen.Referenznummer = referenznummer;
             rechnungen.Bestelldatum = bestelldatum;
-            rechnungen.Lieferkosten = lieferkosten;
             rechnungen.RequiresProcessing = requiresProcessing;
             rechnungen.Rechnungen_Kunden = rechnungen_Kunden;
             rechnungen.Rechnungen_BezahlartItem = rechnungen_BezahlartItem;
@@ -3715,24 +4087,24 @@ namespace ApplicationData.Implementation
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String Auftragsnummer
+        public global::System.String Referenznummer
         {
             get
             {
-                return _Auftragsnummer;
+                return _Referenznummer;
             }
             set
             {
-                OnAuftragsnummerChanging(value);
-                ReportPropertyChanging("Auftragsnummer");
-                _Auftragsnummer = value;
-                ReportPropertyChanged("Auftragsnummer");
-                OnAuftragsnummerChanged();
+                OnReferenznummerChanging(value);
+                ReportPropertyChanging("Referenznummer");
+                _Referenznummer = value;
+                ReportPropertyChanged("Referenznummer");
+                OnReferenznummerChanged();
             }
         }
-        private global::System.String _Auftragsnummer;
-        partial void OnAuftragsnummerChanging(global::System.String value);
-        partial void OnAuftragsnummerChanged();
+        private global::System.String _Referenznummer;
+        partial void OnReferenznummerChanging(global::System.String value);
+        partial void OnReferenznummerChanged();
     
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.
@@ -3859,6 +4231,30 @@ namespace ApplicationData.Implementation
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
+        public global::System.String Auftragsnummer
+        {
+            get
+            {
+                return _Auftragsnummer;
+            }
+            set
+            {
+                OnAuftragsnummerChanging(value);
+                ReportPropertyChanging("Auftragsnummer");
+                _Auftragsnummer = value;
+                ReportPropertyChanged("Auftragsnummer");
+                OnAuftragsnummerChanged();
+            }
+        }
+        private global::System.String _Auftragsnummer;
+        partial void OnAuftragsnummerChanging(global::System.String value);
+        partial void OnAuftragsnummerChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
         public Nullable<global::System.DateTime> Rechnungsdatum
         {
             get
@@ -3905,9 +4301,9 @@ namespace ApplicationData.Implementation
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Decimal Lieferkosten
+        public Nullable<global::System.Decimal> Lieferkosten
         {
             get
             {
@@ -3922,8 +4318,8 @@ namespace ApplicationData.Implementation
                 OnLieferkostenChanged();
             }
         }
-        private global::System.Decimal _Lieferkosten;
-        partial void OnLieferkostenChanging(global::System.Decimal value);
+        private Nullable<global::System.Decimal> _Lieferkosten;
+        partial void OnLieferkostenChanging(Nullable<global::System.Decimal> value);
         partial void OnLieferkostenChanged();
     
         /// <summary>
@@ -3949,6 +4345,54 @@ namespace ApplicationData.Implementation
         private Nullable<global::System.DateTime> _Versanddatum;
         partial void OnVersanddatumChanging(Nullable<global::System.DateTime> value);
         partial void OnVersanddatumChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> Bezahldatum
+        {
+            get
+            {
+                return _Bezahldatum;
+            }
+            set
+            {
+                OnBezahldatumChanging(value);
+                ReportPropertyChanging("Bezahldatum");
+                _Bezahldatum = value;
+                ReportPropertyChanged("Bezahldatum");
+                OnBezahldatumChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _Bezahldatum;
+        partial void OnBezahldatumChanging(Nullable<global::System.DateTime> value);
+        partial void OnBezahldatumChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Boolean> Mahnung
+        {
+            get
+            {
+                return _Mahnung;
+            }
+            set
+            {
+                OnMahnungChanging(value);
+                ReportPropertyChanging("Mahnung");
+                _Mahnung = value;
+                ReportPropertyChanged("Mahnung");
+                OnMahnungChanged();
+            }
+        }
+        private Nullable<global::System.Boolean> _Mahnung;
+        partial void OnMahnungChanging(Nullable<global::System.Boolean> value);
+        partial void OnMahnungChanged();
     
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.

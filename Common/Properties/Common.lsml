@@ -872,7 +872,7 @@
       <QueryOperation.FilterExpression>
         <QueryFilterExpressionTree>
           <BinaryExpression
-            NodeType="LessThan">
+            NodeType="NotEqual">
             <BinaryExpression.Left>
               <ChainExpression>
                 <MemberExpression
@@ -1270,22 +1270,43 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="InRechnungGestellt"
+      Name="Prüfaufgaben"
       ReturnType="Rechnungen*">
       <QueryOperation.FilterExpression>
         <QueryFilterExpressionTree>
           <BinaryExpression
-            NodeType="Equal">
+            NodeType="Or">
             <BinaryExpression.Left>
-              <ChainExpression>
-                <MemberExpression
-                  Member="Status" />
-              </ChainExpression>
+              <BinaryExpression
+                NodeType="Equal">
+                <BinaryExpression.Left>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="Status" />
+                  </ChainExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <ConstantExpression
+                    ResultType=":Int32"
+                    Value="4" />
+                </BinaryExpression.Right>
+              </BinaryExpression>
             </BinaryExpression.Left>
             <BinaryExpression.Right>
-              <ConstantExpression
-                ResultType=":Int32"
-                Value="4" />
+              <BinaryExpression
+                NodeType="Equal">
+                <BinaryExpression.Left>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="Status" />
+                  </ChainExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <ConstantExpression
+                    ResultType=":Int32"
+                    Value="3" />
+                </BinaryExpression.Right>
+              </BinaryExpression>
             </BinaryExpression.Right>
           </BinaryExpression>
         </QueryFilterExpressionTree>
@@ -1421,6 +1442,102 @@
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
     </QueryOperation>
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="MailSettings"
+      Name="MailSettingsSet" />
+    <QueryOperation
+      Name="MailSettingsSet_Single"
+      ReturnType="MailSettings">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="MailSettingsSet" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der Id-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="MailSettingsSet_SingleOrDefault"
+      ReturnType="MailSettings">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird, oder NULL, wenn keine solche Entität vorhanden ist." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="MailSettingsSet" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der Id-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <AssociationSet
+      Association="Documents_KundenItem"
+      Name="Documents_KundenItemSet">
+      <AssociationSetEnd
+        EntitySet="DocumentsSet"
+        Name="Documents" />
+      <AssociationSetEnd
+        EntitySet="Kunden"
+        Name="KundenItem" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType
     Name="KundenItem">
@@ -1462,12 +1579,27 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
-        Name="Vorname"
-        PropertyType=":String">
+        Name="Firma"
+        PropertyType=":String?">
         <EntityProperty.Attributes>
           <MaxLength
             Value="255" />
-          <Required />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Anrede"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Vorname"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -1477,14 +1609,6 @@
           <MaxLength
             Value="255" />
           <Required />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="Firma"
-        PropertyType=":String?">
-        <EntityProperty.Attributes>
-          <MaxLength
-            Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -1611,6 +1735,15 @@
         FromEnd="KundenItem"
         Name="Rechnungen"
         ToEnd="Rechnungen" />
+      <NavigationProperty
+        Association="Documents_KundenItem"
+        FromEnd="KundenItem"
+        Name="DocumentsCollection"
+        ToEnd="Documents">
+        <NavigationProperty.Attributes>
+          <Hidden />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <EntityProperty
         Name="Kundennummer"
         PropertyType=":String">
@@ -1819,7 +1952,7 @@
     Name="Rechnungen">
     <EntityType.Attributes>
       <SummaryProperty
-        Property="Rechnungen/Properties[Auftragsnummer]" />
+        Property="Rechnungen/Properties[Referenznummer]" />
     </EntityType.Attributes>
     <EntityType.Methods>
       <EntityMethod
@@ -1894,7 +2027,7 @@
         Name="Kunde"
         ToEnd="KundenItem" />
       <EntityProperty
-        Name="Auftragsnummer"
+        Name="Referenznummer"
         PropertyType=":String">
         <EntityProperty.Attributes>
           <Required />
@@ -1948,6 +2081,14 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
+        Name="Auftragsnummer"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
         Name="Rechnungsdatum"
         PropertyType=":Date?">
         <EntityProperty.Attributes>
@@ -1964,7 +2105,7 @@
       </EntityProperty>
       <EntityProperty
         Name="Lieferkosten"
-        PropertyType="Microsoft.LightSwitch.Extensions:Money">
+        PropertyType="Microsoft.LightSwitch.Extensions:Money?">
         <EntityProperty.Attributes>
           <NotSearchable />
           <DecimalConstraint
@@ -1976,7 +2117,6 @@
               Name="IsoCurrencySymbol"
               Value="EUR" />
           </Attribute>
-          <Required />
           <Range
             Minimum="0" />
         </EntityProperty.Attributes>
@@ -1996,6 +2136,33 @@
         PropertyType=":Date?">
         <EntityProperty.Attributes>
           <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Bezahldatum"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <Hidden />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Mahnung"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <Hidden />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="RequiresProcessing"
+        PropertyType=":Boolean">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+          <Hidden />
+          <DisplayName
+            Value="Verarb. ausstehend" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -2070,22 +2237,25 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
-        Name="RequiresProcessing"
-        PropertyType=":Boolean">
-        <EntityProperty.Attributes>
-          <Required />
-          <NotSearchable />
-          <Hidden />
-          <DisplayName
-            Value="Verarb. ausstehend" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
         Name="Bearbeitungsstatus"
         PropertyType=":String">
         <EntityProperty.Attributes>
           <Computed />
           <Hidden />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Mahnkosten"
+        PropertyType="Microsoft.LightSwitch.Extensions:Money">
+        <EntityProperty.Attributes>
+          <Computed />
+          <Hidden />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="IsoCurrencySymbol"
+              Value="EUR" />
+          </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
     </EntityType.Properties>
@@ -2550,6 +2720,16 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
+        Name="Anrede"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
         Name="Name"
         PropertyType=":String">
         <EntityProperty.Attributes>
@@ -2586,10 +2766,11 @@
       </EntityProperty>
       <EntityProperty
         Name="PLZ"
-        PropertyType=":String?">
+        PropertyType=":String">
         <EntityProperty.Attributes>
           <MaxLength
             Value="255" />
+          <Required />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -2945,6 +3126,15 @@
           <Hidden />
         </NavigationProperty.Attributes>
       </NavigationProperty>
+      <NavigationProperty
+        Association="Documents_KundenItem"
+        FromEnd="Documents"
+        Name="Kunde"
+        ToEnd="KundenItem">
+        <NavigationProperty.Attributes>
+          <Hidden />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
     </EntityType.Properties>
   </EntityType>
   <EntityType
@@ -3009,5 +3199,109 @@
     <AssociationEnd
       EntityType="GeneratedDocument"
       Name="GeneratedDocument" />
+  </Association>
+  <EntityType
+    Name="MailSettings">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="RowVersion"
+        PropertyType=":RowVersion">
+        <EntityProperty.Attributes>
+          <UseForConcurrency />
+          <Generated />
+          <Hidden />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="SmtpServer"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+          <NotSearchable />
+          <DisplayName
+            Value="Smtp-Server" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Port"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+          <Range
+            Maximum="65535"
+            Minimum="1" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Username"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+          <DisplayName
+            Value="Benutzername" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Password"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+          <DisplayName
+            Value="Passwort" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="SenderAddress"
+        PropertyType="Microsoft.LightSwitch.Extensions:EmailAddress">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+          <NotSearchable />
+          <DisplayName
+            Value="E-Mail-Adresse" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="Documents_KundenItem">
+    <AssociationEnd
+      EntityType="Documents"
+      Multiplicity="Many"
+      Name="Documents" />
+    <AssociationEnd
+      EntityType="KundenItem"
+      Multiplicity="One"
+      Name="KundenItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
   </Association>
 </ModelFragment>

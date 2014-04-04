@@ -132,6 +132,54 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public string Firma
+        {
+            get
+            {
+                return global::LightSwitchApplication.KundenItem.DetailsClass.GetValue(this, global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties.Firma);
+            }
+            set
+            {
+                global::LightSwitchApplication.KundenItem.DetailsClass.SetValue(this, global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties.Firma, value);
+            }
+        }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Firma_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Firma_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Firma_Changed();
+
+        /// <summary>
+        /// Keine modellierte Beschreibung verfügbar
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public string Anrede
+        {
+            get
+            {
+                return global::LightSwitchApplication.KundenItem.DetailsClass.GetValue(this, global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties.Anrede);
+            }
+            set
+            {
+                global::LightSwitchApplication.KundenItem.DetailsClass.SetValue(this, global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties.Anrede, value);
+            }
+        }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Anrede_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Anrede_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Anrede_Changed();
+
+        /// <summary>
+        /// Keine modellierte Beschreibung verfügbar
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public string Vorname
         {
             get
@@ -174,30 +222,6 @@ namespace LightSwitchApplication
         partial void Nachnahme_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void Nachnahme_Changed();
-
-        /// <summary>
-        /// Keine modellierte Beschreibung verfügbar
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public string Firma
-        {
-            get
-            {
-                return global::LightSwitchApplication.KundenItem.DetailsClass.GetValue(this, global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties.Firma);
-            }
-            set
-            {
-                global::LightSwitchApplication.KundenItem.DetailsClass.SetValue(this, global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties.Firma, value);
-            }
-        }
-        
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Firma_IsReadOnly(ref bool result);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Firma_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Firma_Changed();
 
         /// <summary>
         /// Keine modellierte Beschreibung verfügbar
@@ -599,6 +623,29 @@ namespace LightSwitchApplication
             }
         }
 
+        /// <summary>
+        /// Keine modellierte Beschreibung verfügbar
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Microsoft.LightSwitch.Framework.EntityCollection<global::LightSwitchApplication.Documents> DocumentsCollection
+        {
+            get
+            {
+                return global::LightSwitchApplication.KundenItem.DetailsClass.GetValue(this, global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties.DocumentsCollection);
+            }
+        }
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.Documents> DocumentsCollectionQuery
+        {
+            get
+            {
+                return global::LightSwitchApplication.KundenItem.DetailsClass.GetQuery(this, global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties.DocumentsCollection);
+            }
+        }
+
         #endregion
     
         #region Details Class
@@ -697,6 +744,22 @@ namespace LightSwitchApplication
                     }
                 }
                 
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, string> Firma
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties.Firma) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, string>;
+                    }
+                }
+                
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, string> Anrede
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties.Anrede) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, string>;
+                    }
+                }
+                
                 public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, string> Vorname
                 {
                     get
@@ -710,14 +773,6 @@ namespace LightSwitchApplication
                     get
                     {
                         return base.GetItem(global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties.Nachnahme) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, string>;
-                    }
-                }
-                
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, string> Firma
-                {
-                    get
-                    {
-                        return base.GetItem(global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties.Firma) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, string>;
                     }
                 }
                 
@@ -857,6 +912,14 @@ namespace LightSwitchApplication
                     }
                 }
                 
+                public global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, global::LightSwitchApplication.Documents> DocumentsCollection
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties.DocumentsCollection) as global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, global::LightSwitchApplication.Documents>;
+                    }
+                }
+                
             }
     
             #pragma warning disable 109
@@ -865,9 +928,10 @@ namespace LightSwitchApplication
             {
                 new int Id { get; set; }
                 new byte[] RowVersion { get; set; }
+                new string Firma { get; set; }
+                new string Anrede { get; set; }
                 new string Vorname { get; set; }
                 new string Nachnahme { get; set; }
-                new string Firma { get; set; }
                 new string Straße { get; set; }
                 new global::System.Nullable<int> Hausnummer { get; set; }
                 new global::System.Nullable<int> PLZ { get; set; }
@@ -884,6 +948,7 @@ namespace LightSwitchApplication
                 new global::Microsoft.LightSwitch.Internal.IEntityImplementation KundengruppenItem { get; set; }
                 new global::System.Collections.IEnumerable Adressen { get; }
                 new global::System.Collections.IEnumerable Rechnungen { get; }
+                new global::System.Collections.IEnumerable DocumentsCollection { get; }
             }
             #pragma warning restore 109
     
@@ -969,6 +1034,80 @@ namespace LightSwitchApplication
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, string>.Entry
+                    Firma = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, string>.Entry(
+                        "Firma",
+                        global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties._Firma_Stub,
+                        global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties._Firma_ComputeIsReadOnly,
+                        global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties._Firma_Validate,
+                        global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties._Firma_GetImplementationValue,
+                        global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties._Firma_SetImplementationValue,
+                        global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties._Firma_OnValueChanged);
+                private static void _Firma_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.KundenItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, string>.Data> c, global::LightSwitchApplication.KundenItem.DetailsClass d, object sf)
+                {
+                    c(d, ref d._Firma, sf);
+                }
+                private static bool _Firma_ComputeIsReadOnly(global::LightSwitchApplication.KundenItem e)
+                {
+                    bool result = false;
+                    e.Firma_IsReadOnly(ref result);
+                    return result;
+                }
+                private static void _Firma_Validate(global::LightSwitchApplication.KundenItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                {
+                    e.Firma_Validate(r);
+                }
+                private static string _Firma_GetImplementationValue(global::LightSwitchApplication.KundenItem.DetailsClass d)
+                {
+                    return d.ImplementationEntity.Firma;
+                }
+                private static void _Firma_SetImplementationValue(global::LightSwitchApplication.KundenItem.DetailsClass d, string v)
+                {
+                    d.ImplementationEntity.Firma = v;
+                }
+                private static void _Firma_OnValueChanged(global::LightSwitchApplication.KundenItem e)
+                {
+                    e.Firma_Changed();
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, string>.Entry
+                    Anrede = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, string>.Entry(
+                        "Anrede",
+                        global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties._Anrede_Stub,
+                        global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties._Anrede_ComputeIsReadOnly,
+                        global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties._Anrede_Validate,
+                        global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties._Anrede_GetImplementationValue,
+                        global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties._Anrede_SetImplementationValue,
+                        global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties._Anrede_OnValueChanged);
+                private static void _Anrede_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.KundenItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, string>.Data> c, global::LightSwitchApplication.KundenItem.DetailsClass d, object sf)
+                {
+                    c(d, ref d._Anrede, sf);
+                }
+                private static bool _Anrede_ComputeIsReadOnly(global::LightSwitchApplication.KundenItem e)
+                {
+                    bool result = false;
+                    e.Anrede_IsReadOnly(ref result);
+                    return result;
+                }
+                private static void _Anrede_Validate(global::LightSwitchApplication.KundenItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                {
+                    e.Anrede_Validate(r);
+                }
+                private static string _Anrede_GetImplementationValue(global::LightSwitchApplication.KundenItem.DetailsClass d)
+                {
+                    return d.ImplementationEntity.Anrede;
+                }
+                private static void _Anrede_SetImplementationValue(global::LightSwitchApplication.KundenItem.DetailsClass d, string v)
+                {
+                    d.ImplementationEntity.Anrede = v;
+                }
+                private static void _Anrede_OnValueChanged(global::LightSwitchApplication.KundenItem e)
+                {
+                    e.Anrede_Changed();
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, string>.Entry
                     Vorname = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, string>.Entry(
                         "Vorname",
                         global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties._Vorname_Stub,
@@ -1039,43 +1178,6 @@ namespace LightSwitchApplication
                 private static void _Nachnahme_OnValueChanged(global::LightSwitchApplication.KundenItem e)
                 {
                     e.Nachnahme_Changed();
-                }
-    
-                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, string>.Entry
-                    Firma = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, string>.Entry(
-                        "Firma",
-                        global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties._Firma_Stub,
-                        global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties._Firma_ComputeIsReadOnly,
-                        global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties._Firma_Validate,
-                        global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties._Firma_GetImplementationValue,
-                        global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties._Firma_SetImplementationValue,
-                        global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties._Firma_OnValueChanged);
-                private static void _Firma_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.KundenItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, string>.Data> c, global::LightSwitchApplication.KundenItem.DetailsClass d, object sf)
-                {
-                    c(d, ref d._Firma, sf);
-                }
-                private static bool _Firma_ComputeIsReadOnly(global::LightSwitchApplication.KundenItem e)
-                {
-                    bool result = false;
-                    e.Firma_IsReadOnly(ref result);
-                    return result;
-                }
-                private static void _Firma_Validate(global::LightSwitchApplication.KundenItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
-                {
-                    e.Firma_Validate(r);
-                }
-                private static string _Firma_GetImplementationValue(global::LightSwitchApplication.KundenItem.DetailsClass d)
-                {
-                    return d.ImplementationEntity.Firma;
-                }
-                private static void _Firma_SetImplementationValue(global::LightSwitchApplication.KundenItem.DetailsClass d, string v)
-                {
-                    d.ImplementationEntity.Firma = v;
-                }
-                private static void _Firma_OnValueChanged(global::LightSwitchApplication.KundenItem e)
-                {
-                    e.Firma_Changed();
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -1668,6 +1770,26 @@ namespace LightSwitchApplication
                     return d.ImplementationEntity.Rechnungen;
                 }
     
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, global::LightSwitchApplication.Documents>.Entry
+                    DocumentsCollection = new global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, global::LightSwitchApplication.Documents>.Entry(
+                        "DocumentsCollection",
+                        global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties._DocumentsCollection_Stub,
+                        global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties._DocumentsCollection_GetReferencedEntities,
+                        global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties._DocumentsCollection_GetEntityCollection);
+                private static void _DocumentsCollection_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.KundenItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, global::LightSwitchApplication.Documents>.Data> c, global::LightSwitchApplication.KundenItem.DetailsClass d, object sf)
+                {
+                    c(d, ref d._DocumentsCollection, sf);
+                }
+                private static global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.Documents> _DocumentsCollection_GetReferencedEntities(global::LightSwitchApplication.KundenItem.DetailsClass d)
+                {
+                    return d.GetReferencedEntities<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass>(global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties.DocumentsCollection, ref d._DocumentsCollection);
+                }
+                private static global::System.Collections.IEnumerable _DocumentsCollection_GetEntityCollection(global::LightSwitchApplication.KundenItem.DetailsClass d)
+                {
+                    return d.ImplementationEntity.DocumentsCollection;
+                }
+    
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -1677,13 +1799,16 @@ namespace LightSwitchApplication
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, byte[]>.Data _RowVersion;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, string>.Data _Firma;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, string>.Data _Anrede;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, string>.Data _Vorname;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, string>.Data _Nachnahme;
-            
-            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, string>.Data _Firma;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, string>.Data _Straße;
@@ -1735,6 +1860,9 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, global::LightSwitchApplication.Rechnungen>.Data _Rechnungen;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, global::LightSwitchApplication.Documents>.Data _DocumentsCollection;
             
         }
     

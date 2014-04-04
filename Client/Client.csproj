@@ -222,6 +222,7 @@
     <Compile Include="UserCode\AuftragsSammlung.cs" />
     <Compile Include="UserCode\Bezahlarten.cs" />
     <Compile Include="UserCode\DokumentenÜbersicht.cs" />
+    <Compile Include="UserCode\EMailSettings.cs" />
     <Compile Include="UserCode\GesendeteMails.cs" />
     <Compile Include="UserCode\KundenDetails.cs" />
     <Compile Include="UserCode\ArtikelNeu.cs" />
@@ -299,6 +300,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Document-Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Command-Redo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\LightSwitch\$(LightSwitchVersion)\Microsoft.LightSwitch.Build.Tasks.targets" />

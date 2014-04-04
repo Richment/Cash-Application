@@ -19,8 +19,8 @@
 				return base.ToString();
 
 			string result = String.IsNullOrWhiteSpace(Kundennummer) ? "" : Kundennummer + " - ";
-			result +=  String.IsNullOrWhiteSpace(this.Firma) ? "" : this.Firma + ", ";
-			result += this.Nachnahme.Trim() + ' ' + this.Vorname.Trim();
+			result += String.IsNullOrWhiteSpace(this.Firma) ? "" : this.Firma + ", ";
+			result += ((this.Anrede ?? "").Trim() + ' ' + this.Nachnahme.Trim() + ' ' + this.Vorname.Trim()).Trim();
 			return String.IsNullOrWhiteSpace(result) ? base.ToString() : result;
 		}
 	};

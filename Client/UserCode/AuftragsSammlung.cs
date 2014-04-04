@@ -62,7 +62,7 @@ namespace LightSwitchApplication
 					if (!collection.ContainsKey(key))
 						collection.Add(key, new List<string>());
 
-					collection[key].Add(String.Format("Referenznummer: {0}", item.Auftragsnummer));
+					collection[key].Add(String.Format("Referenznummer: {0}", item.Referenznummer));
 					collection[key].Add("Lieferadresse:");
 
 					if (item.Lieferadresse == null)
@@ -120,7 +120,7 @@ namespace LightSwitchApplication
 			{
 				DocDescriptor desc = DocDescriptor.CreateLieferschein(item);
 				
-				Documents newItem = DocumentsSet.AddNew();
+				Documents newItem = item.Kunde.DocumentsCollection.AddNew();
 				newItem.Bezeichnung = desc.Auftragsnummer + " - " + desc.Titel + " vom " +  DateTime.Now.ToShortDateString();
 				newItem.Datum = DateTime.Now;
 				newItem.Data = desc.ToDictionary().Serialize();
@@ -139,7 +139,7 @@ namespace LightSwitchApplication
 			{
 				DocDescriptor desc = DocDescriptor.CreateRechnung(item);
 
-				Documents newItem = DocumentsSet.AddNew();
+				Documents newItem = item.Kunde.DocumentsCollection.AddNew();
 				newItem.Bezeichnung = desc.Auftragsnummer + " - " + desc.Titel + " vom " + DateTime.Now.ToShortDateString();
 				newItem.Datum = DateTime.Now;
 				newItem.Data = desc.ToDictionary().Serialize();

@@ -43,7 +43,7 @@ namespace LightSwitchApplication.Implementation
             query = global::System.Linq.Queryable.OrderBy(
                 global::System.Linq.Queryable.Where(
                     this.GetQuery<global::ApplicationData.Implementation.Rechnungen>("RechnungenSet"),
-                    (r) => (r.Status < 5)),
+                    (r) => ((r.Status == 5) == false)),
                 (r) => r.Bestelldatum);
             return query;
         }
@@ -68,12 +68,12 @@ namespace LightSwitchApplication.Implementation
             return query;
         }
     
-        public global::System.Linq.IQueryable<global::ApplicationData.Implementation.Rechnungen> InRechnungGestellt()
+        public global::System.Linq.IQueryable<global::ApplicationData.Implementation.Rechnungen> Prüfaufgaben()
         {
             global::System.Linq.IQueryable<global::ApplicationData.Implementation.Rechnungen> query;
             query = global::System.Linq.Queryable.Where(
                 this.GetQuery<global::ApplicationData.Implementation.Rechnungen>("RechnungenSet"),
-                (r) => (r.Status == 4));
+                (r) => ((r.Status == 4) || (r.Status == 3)));
             return query;
         }
     
@@ -143,6 +143,10 @@ namespace LightSwitchApplication.Implementation
             {
                 return new global::ApplicationData.Implementation.GeneratedDocument();
             }
+            if (type == typeof(global::ApplicationData.Implementation.MailSettings))
+            {
+                return new global::ApplicationData.Implementation.MailSettings();
+            }
     
             return base.CreateObject(type);
         }
@@ -209,6 +213,10 @@ namespace LightSwitchApplication.Implementation
             if (typeof(T) == typeof(global::LightSwitchApplication.GeneratedDocument))
             {
                 return new global::ApplicationData.Implementation.GeneratedDocument();
+            }
+            if (typeof(T) == typeof(global::LightSwitchApplication.MailSettings))
+            {
+                return new global::ApplicationData.Implementation.MailSettings();
             }
             return null;
         }
@@ -307,6 +315,10 @@ namespace LightSwitchApplication.Implementation
             {
                 return typeof(global::ApplicationData.Implementation.GeneratedDocument);
             }
+            if (typeof(global::LightSwitchApplication.MailSettings) == definitionType)
+            {
+                return typeof(global::ApplicationData.Implementation.MailSettings);
+            }
             return null;
         }
     }
@@ -350,6 +362,14 @@ namespace ApplicationData.Implementation
             get
             {
                 return this.Rechnungen;
+            }
+        }
+        
+        global::System.Collections.IEnumerable global::LightSwitchApplication.KundenItem.DetailsClass.IImplementation.DocumentsCollection
+        {
+            get
+            {
+                return this.DocumentsCollection;
             }
         }
         
@@ -956,6 +976,30 @@ namespace ApplicationData.Implementation
             }
         }
         
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Documents.DetailsClass.IImplementation.Kunde
+        {
+            get
+            {
+                return this.Kunde;
+            }
+            set
+            {
+                this.Kunde = (global::ApplicationData.Implementation.KundenItem)value;
+                if (this.__host != null)
+                {
+                    this.__host.RaisePropertyChanged("Kunde");
+                }
+            }
+        }
+        
+        partial void OnDocuments_KundenItemChanged()
+        {
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged("Kunde");
+            }
+        }
+        
         #region IEntityImplementation Members
         private global::Microsoft.LightSwitch.Internal.IEntityImplementationHost __host;
         
@@ -1013,6 +1057,39 @@ namespace ApplicationData.Implementation
             }
         }
         
+        #region IEntityImplementation Members
+        private global::Microsoft.LightSwitch.Internal.IEntityImplementationHost __host;
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementationHost global::Microsoft.LightSwitch.Internal.IEntityImplementation.Host
+        {
+            get
+            {
+                return this.__host;
+            }
+        }
+        
+        void global::Microsoft.LightSwitch.Internal.IEntityImplementation.Initialize(global::Microsoft.LightSwitch.Internal.IEntityImplementationHost host)
+        {
+            this.__host = host;
+        }
+        
+        protected override void OnPropertyChanged(string propertyName)
+        {
+            base.OnPropertyChanged(propertyName);
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged(propertyName);
+            }
+        }
+        #endregion
+    }
+    
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class MailSettings :
+        global::LightSwitchApplication.MailSettings.DetailsClass.IImplementation
+    {
+    
         #region IEntityImplementation Members
         private global::Microsoft.LightSwitch.Internal.IEntityImplementationHost __host;
         

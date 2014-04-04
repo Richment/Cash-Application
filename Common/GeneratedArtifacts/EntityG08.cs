@@ -132,6 +132,30 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public string Anrede
+        {
+            get
+            {
+                return global::LightSwitchApplication.AdressenSetItem.DetailsClass.GetValue(this, global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.Anrede);
+            }
+            set
+            {
+                global::LightSwitchApplication.AdressenSetItem.DetailsClass.SetValue(this, global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.Anrede, value);
+            }
+        }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Anrede_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Anrede_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Anrede_Changed();
+
+        /// <summary>
+        /// Keine modellierte Beschreibung verfügbar
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public string Name
         {
             get
@@ -440,6 +464,14 @@ namespace LightSwitchApplication
                     }
                 }
                 
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string> Anrede
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties.Anrede) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>;
+                    }
+                }
+                
                 public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string> Name
                 {
                     get
@@ -520,6 +552,7 @@ namespace LightSwitchApplication
             {
                 new int Id { get; set; }
                 new byte[] RowVersion { get; set; }
+                new string Anrede { get; set; }
                 new string Name { get; set; }
                 new string zHd_Besteller_optional { get; set; }
                 new string Straße { get; set; }
@@ -610,6 +643,43 @@ namespace LightSwitchApplication
                 private static void _RowVersion_OnValueChanged(global::LightSwitchApplication.AdressenSetItem e)
                 {
                     e.RowVersion_Changed();
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Entry
+                    Anrede = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Entry(
+                        "Anrede",
+                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Anrede_Stub,
+                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Anrede_ComputeIsReadOnly,
+                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Anrede_Validate,
+                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Anrede_GetImplementationValue,
+                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Anrede_SetImplementationValue,
+                        global::LightSwitchApplication.AdressenSetItem.DetailsClass.PropertySetProperties._Anrede_OnValueChanged);
+                private static void _Anrede_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.AdressenSetItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Data> c, global::LightSwitchApplication.AdressenSetItem.DetailsClass d, object sf)
+                {
+                    c(d, ref d._Anrede, sf);
+                }
+                private static bool _Anrede_ComputeIsReadOnly(global::LightSwitchApplication.AdressenSetItem e)
+                {
+                    bool result = false;
+                    e.Anrede_IsReadOnly(ref result);
+                    return result;
+                }
+                private static void _Anrede_Validate(global::LightSwitchApplication.AdressenSetItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                {
+                    e.Anrede_Validate(r);
+                }
+                private static string _Anrede_GetImplementationValue(global::LightSwitchApplication.AdressenSetItem.DetailsClass d)
+                {
+                    return d.ImplementationEntity.Anrede;
+                }
+                private static void _Anrede_SetImplementationValue(global::LightSwitchApplication.AdressenSetItem.DetailsClass d, string v)
+                {
+                    d.ImplementationEntity.Anrede = v;
+                }
+                private static void _Anrede_OnValueChanged(global::LightSwitchApplication.AdressenSetItem e)
+                {
+                    e.Anrede_Changed();
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -945,6 +1015,9 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, byte[]>.Data _RowVersion;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Data _Anrede;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.AdressenSetItem, global::LightSwitchApplication.AdressenSetItem.DetailsClass, string>.Data _Name;

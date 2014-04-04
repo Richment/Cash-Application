@@ -41,7 +41,7 @@ namespace LightSwitchApplication
 
 		partial void Rechnungsbetrag_Netto_Compute(ref decimal? result)
 		{
-			result = this.Netto_Gesamtbetrag + Lieferkosten;
+			result = Netto_Gesamtbetrag + Lieferkosten.GetValueOrDefault(0);
 			if (result.HasValue)
 				result = Math.Round(result.Value, 2);
 		}
@@ -50,7 +50,7 @@ namespace LightSwitchApplication
 		{
 			if (this.Rechnungsbetrag_Netto.HasValue)
 			{
-				result = this.Rechnungsbetrag_Netto.Value + (this.Rechnungsbetrag_Netto * 19 / 100);
+				result = Rechnungsbetrag_Netto.Value + Mehrwertsteuer.Value;
 				if (result.HasValue)
 					result = Math.Round(result.Value, 2);
 			}
@@ -60,7 +60,9 @@ namespace LightSwitchApplication
 		{
 			if (this.Rechnungsbetrag_Netto.HasValue)
 			{
-				result = this.Rechnungsbetrag_Netto * 19 / 100;
+				result = Rechnungsbetrag_Netto * 19 / 100;
+				if (Mahnung.GetValueOrDefault(false))
+					result += Mahnkosten;
 				if (result.HasValue)
 					result = Math.Round(result.Value, 2);
 			}
@@ -73,7 +75,7 @@ namespace LightSwitchApplication
 
 			string[] elements = new string[]
 			{
-				Kunde.Firma,
+				String.IsNullOrWhiteSpace(Kunde.Firma) ? Kunde.Anrede : Kunde.Firma,
 				Kunde.Vorname +' '+ Kunde.Nachnahme,
 				Kunde.Straße +' '+ Kunde.Hausnummer,
 				Kunde.PLZ +' '+ Kunde.Stadt,
@@ -84,7 +86,7 @@ namespace LightSwitchApplication
 
 		partial void Netto_Gesamtbetrag_Compute(ref decimal? result)
 		{
-			result = this.ArtikellisteCollection.Sum(i => i.Preis);
+			result = ArtikellisteCollection.Sum(i => i.Preis);
 			if (result.HasValue)
 				result = Math.Round(result.Value, 2);
 		}
@@ -92,21 +94,6 @@ namespace LightSwitchApplication
 		partial void StatusImage_Compute(ref byte[] result)
 		{
 			result = images[Status];
-		}
-
-		public override string ToString()
-		{
-			try
-			{
-				string result = Kunde.Vorname + ' ' + Kunde.Nachnahme;
-				if (!String.IsNullOrWhiteSpace(Kunde.Firma))
-					result = Kunde.Firma + ", " + result;
-				return String.Format("[{0}]\t  {1}  ({2})", this.Bestelldatum.ToString("d"), Auftragsnummer, result);
-			}
-			catch
-			{
-				return base.ToString();
-			}
 		}
 
 		partial void Status_Validate(EntityValidationResultsBuilder results)
@@ -134,5 +121,27 @@ namespace LightSwitchApplication
 		{
 			result = RequiresProcessing ? "In Auftragssammlung" : "";
 		}
-	}
+
+		partial void Mahnkosten_Compute(ref decimal result)
+		{
+			if (Rechnungsdatum == null)
+				return;
+			result = 30M + (decimal)Math.Round(Rechnungsbetrag_Netto.Value * ((int)(Bezahldatum ?? DateTime.Today).Subtract(Rechnungsdatum.Value).TotalDays) * 0.085M / 360, 2);
+		}
+
+		public override string ToString()
+		{
+			try
+			{
+				string result = Kunde.Vorname + ' ' + Kunde.Nachnahme;
+				if (!String.IsNullOrWhiteSpace(Kunde.Firma))
+					result = Kunde.Firma + ", " + result;
+				return String.Format("[{0}]\t  {1}  ({2})", this.Bestelldatum.ToString("d"), Referenznummer, result);
+			}
+			catch
+			{
+				return base.ToString();
+			}
+		}
+	};
 }

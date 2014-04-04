@@ -6,9 +6,10 @@
     </Key>
     <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
-    <Property Name="Vorname" Type="Edm.String" Nullable="false" MaxLength="255" />
-    <Property Name="Nachnahme" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="Firma" Type="Edm.String" MaxLength="255" />
+    <Property Name="Anrede" Type="Edm.String" MaxLength="255" />
+    <Property Name="Vorname" Type="Edm.String" MaxLength="255" />
+    <Property Name="Nachnahme" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="Straße" Type="Edm.String" MaxLength="255" />
     <Property Name="Hausnummer" Type="Edm.Int32" />
     <Property Name="PLZ" Type="Edm.Int32" />
@@ -26,6 +27,7 @@
     <NavigationProperty Name="KundengruppenItem" Relationship="LightSwitchApplication.KundenItem_KundengruppenItem" ToRole="KundengruppenItem" FromRole="KundenItem" />
     <NavigationProperty Name="Adressen" Relationship="LightSwitchApplication.KundenItem_AdressenSetItem" ToRole="AdressenSetItem" FromRole="KundenItem" />
     <NavigationProperty Name="Rechnungen" Relationship="LightSwitchApplication.Rechnungen_KundenItem" ToRole="Rechnungen" FromRole="KundenItem" />
+    <NavigationProperty Name="DocumentsCollection" Relationship="LightSwitchApplication.Documents_KundenItem" ToRole="Documents" FromRole="KundenItem" />
   </EntityType>
   <EntityType Name="KundengruppenItem">
     <Key>
@@ -61,16 +63,19 @@
     <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
     <Property Name="Status" Type="Edm.Int32" Nullable="false" />
-    <Property Name="Auftragsnummer" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="Referenznummer" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="Webshop_ID" Type="Edm.String" MaxLength="255" />
     <Property Name="Besteller" Type="Edm.String" MaxLength="255" />
     <Property Name="Bestelldatum" Type="Edm.DateTime" Nullable="false" />
     <Property Name="Lieferdatum" Type="Edm.DateTime" />
     <Property Name="Lieferscheinnummer" Type="Edm.String" MaxLength="255" />
+    <Property Name="Auftragsnummer" Type="Edm.String" MaxLength="255" />
     <Property Name="Rechnungsdatum" Type="Edm.DateTime" />
     <Property Name="Rechnungsnummer" Type="Edm.String" MaxLength="255" />
-    <Property Name="Lieferkosten" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Lieferkosten" Type="Edm.Decimal" Precision="18" Scale="2" />
     <Property Name="Versanddatum" Type="Edm.DateTime" />
+    <Property Name="Bezahldatum" Type="Edm.DateTime" />
+    <Property Name="Mahnung" Type="Edm.Boolean" />
     <Property Name="RequiresProcessing" Type="Edm.Boolean" Nullable="false" />
     <Property Name="Rechnungen_Kunden" Type="Edm.Int32" Nullable="false" />
     <Property Name="Rechnungen_BezahlartItem" Type="Edm.Int32" Nullable="false" />
@@ -130,11 +135,12 @@
     </Key>
     <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Anrede" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="zHd_Besteller_optional" Type="Edm.String" MaxLength="255" />
     <Property Name="Straße" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="Hausnummer" Type="Edm.String" Nullable="false" MaxLength="255" />
-    <Property Name="PLZ" Type="Edm.String" MaxLength="255" />
+    <Property Name="PLZ" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="Stadt" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="Land" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="Kunden_Rechnungsadressen" Type="Edm.Int32" Nullable="false" />
@@ -182,7 +188,9 @@
     <Property Name="Datum" Type="Edm.DateTime" Nullable="false" />
     <Property Name="Bezeichnung" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="Data" Type="Edm.Binary" MaxLength="Max" />
+    <Property Name="Documents_KundenItem" Type="Edm.Int32" Nullable="false" />
     <NavigationProperty Name="GeneratedDocument" Relationship="LightSwitchApplication.Documents_GeneratedDocument" ToRole="GeneratedDocument" FromRole="Documents" />
+    <NavigationProperty Name="Kunde" Relationship="LightSwitchApplication.Documents_KundenItem" ToRole="KundenItem" FromRole="Documents" />
   </EntityType>
   <EntityType Name="GeneratedDocument">
     <Key>
@@ -192,6 +200,18 @@
     <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
     <Property Name="Bytes" Type="Edm.Binary" MaxLength="Max" />
     <NavigationProperty Name="Documents" Relationship="LightSwitchApplication.Documents_GeneratedDocument" ToRole="Documents" FromRole="GeneratedDocument" />
+  </EntityType>
+  <EntityType Name="MailSettings">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="SmtpServer" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="Port" Type="Edm.Int32" Nullable="false" />
+    <Property Name="Username" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="Password" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="SenderAddress" Type="Edm.String" Nullable="false" MaxLength="255" />
   </EntityType>
   <Association Name="ArtikellisteItem_Rechnungen">
     <End Role="Rechnungen" Type="LightSwitchApplication.Rechnungen" Multiplicity="1">
@@ -309,6 +329,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="Documents_KundenItem">
+    <End Role="KundenItem" Type="LightSwitchApplication.KundenItem" Multiplicity="1" />
+    <End Role="Documents" Type="LightSwitchApplication.Documents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KundenItem">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Documents">
+        <PropertyRef Name="Documents_KundenItem" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="ApplicationDataObjectContext" m:IsDefaultEntityContainer="true">
     <EntitySet Name="Kunden" EntityType="LightSwitchApplication.KundenItem" />
     <EntitySet Name="Kundengruppen" EntityType="LightSwitchApplication.KundengruppenItem" />
@@ -323,6 +355,7 @@
     <EntitySet Name="AnbieterSet" EntityType="LightSwitchApplication.Anbieter" />
     <EntitySet Name="DocumentsSet" EntityType="LightSwitchApplication.Documents" />
     <EntitySet Name="GeneratedDocumentSet" EntityType="LightSwitchApplication.GeneratedDocument" />
+    <EntitySet Name="MailSettingsSet" EntityType="LightSwitchApplication.MailSettings" />
     <AssociationSet Name="ArtikellisteItem_Rechnungen" Association="LightSwitchApplication.ArtikellisteItem_Rechnungen">
       <End Role="Rechnungen" EntitySet="RechnungenSet" />
       <End Role="ArtikellisteItem" EntitySet="Artikelliste" />
@@ -358,6 +391,10 @@
     <AssociationSet Name="Documents_GeneratedDocument" Association="LightSwitchApplication.Documents_GeneratedDocument">
       <End Role="Documents" EntitySet="DocumentsSet" />
       <End Role="GeneratedDocument" EntitySet="GeneratedDocumentSet" />
+    </AssociationSet>
+    <AssociationSet Name="Documents_KundenItem" Association="LightSwitchApplication.Documents_KundenItem">
+      <End Role="KundenItem" EntitySet="Kunden" />
+      <End Role="Documents" EntitySet="DocumentsSet" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

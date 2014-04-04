@@ -14,6 +14,7 @@
     <EntitySet Name="AnbieterSet" EntityType="ApplicationDataStore.Anbieter" store:Type="Tables" Schema="dbo" Table="AnbieterSet" />
     <EntitySet Name="DocumentsSet" EntityType="ApplicationDataStore.Documents" store:Type="Tables" Schema="dbo" Table="DocumentsSet" />
     <EntitySet Name="GeneratedDocumentSet" EntityType="ApplicationDataStore.GeneratedDocument" store:Type="Tables" Schema="dbo" Table="GeneratedDocumentSet" />
+    <EntitySet Name="MailSettingsSet" EntityType="ApplicationDataStore.MailSettings" store:Type="Tables" Schema="dbo" Table="MailSettingsSet" />
     <AssociationSet Name="ArtikellisteItem_Rechnungen" Association="ApplicationDataStore.ArtikellisteItem_Rechnungen">
       <End Role="Rechnungen" EntitySet="RechnungenSet" />
       <End Role="ArtikellisteItem" EntitySet="Artikelliste" />
@@ -50,6 +51,10 @@
       <End Role="Documents" EntitySet="DocumentsSet" />
       <End Role="GeneratedDocument" EntitySet="GeneratedDocumentSet" />
     </AssociationSet>
+    <AssociationSet Name="Documents_KundenItem" Association="ApplicationDataStore.Documents_KundenItem">
+      <End Role="KundenItem" EntitySet="Kunden" />
+      <End Role="Documents" EntitySet="DocumentsSet" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="KundenItem">
     <Key>
@@ -57,9 +62,10 @@
     </Key>
     <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
-    <Property Name="Vorname" Type="nvarchar" Nullable="false" MaxLength="255" />
-    <Property Name="Nachnahme" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="Firma" Type="nvarchar" MaxLength="255" />
+    <Property Name="Anrede" Type="nvarchar" MaxLength="255" />
+    <Property Name="Vorname" Type="nvarchar" MaxLength="255" />
+    <Property Name="Nachnahme" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="Straße" Type="nvarchar" MaxLength="255" />
     <Property Name="Hausnummer" Type="int" />
     <Property Name="PLZ" Type="int" />
@@ -106,16 +112,19 @@
     <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
     <Property Name="Status" Type="int" Nullable="false" />
-    <Property Name="Auftragsnummer" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Referenznummer" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="Webshop_ID" Type="nvarchar" MaxLength="255" />
     <Property Name="Besteller" Type="nvarchar" MaxLength="255" />
     <Property Name="Bestelldatum" Type="datetime" Nullable="false" />
     <Property Name="Lieferdatum" Type="datetime" />
     <Property Name="Lieferscheinnummer" Type="nvarchar" MaxLength="255" />
+    <Property Name="Auftragsnummer" Type="nvarchar" MaxLength="255" />
     <Property Name="Rechnungsdatum" Type="datetime" />
     <Property Name="Rechnungsnummer" Type="nvarchar" MaxLength="255" />
-    <Property Name="Lieferkosten" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Lieferkosten" Type="decimal" Precision="18" Scale="2" />
     <Property Name="Versanddatum" Type="datetime" />
+    <Property Name="Bezahldatum" Type="datetime" />
+    <Property Name="Mahnung" Type="bit" />
     <Property Name="RequiresProcessing" Type="bit" Nullable="false" />
     <Property Name="Rechnungen_Kunden" Type="int" Nullable="false" />
     <Property Name="Rechnungen_BezahlartItem" Type="int" Nullable="false" />
@@ -169,11 +178,12 @@
     </Key>
     <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Anrede" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="zHd_Besteller_optional" Type="nvarchar" MaxLength="255" />
     <Property Name="Straße" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="Hausnummer" Type="nvarchar" Nullable="false" MaxLength="255" />
-    <Property Name="PLZ" Type="nvarchar" MaxLength="255" />
+    <Property Name="PLZ" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="Stadt" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="Land" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="Kunden_Rechnungsadressen" Type="int" Nullable="false" />
@@ -217,6 +227,7 @@
     <Property Name="Datum" Type="datetime" Nullable="false" />
     <Property Name="Bezeichnung" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="Data" Type="varbinary(max)" />
+    <Property Name="Documents_KundenItem" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="GeneratedDocument">
     <Key>
@@ -225,6 +236,18 @@
     <Property Name="Id" Type="int" Nullable="false" />
     <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
     <Property Name="Bytes" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="MailSettings">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="SmtpServer" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Port" Type="int" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="SenderAddress" Type="nvarchar" Nullable="false" MaxLength="255" />
   </EntityType>
   <Association Name="ArtikellisteItem_Rechnungen">
     <End Role="Rechnungen" Type="ApplicationDataStore.Rechnungen" Multiplicity="1">
@@ -339,6 +362,18 @@
       </Principal>
       <Dependent Role="GeneratedDocument">
         <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Documents_KundenItem">
+    <End Role="KundenItem" Type="ApplicationDataStore.KundenItem" Multiplicity="1" />
+    <End Role="Documents" Type="ApplicationDataStore.Documents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KundenItem">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Documents">
+        <PropertyRef Name="Documents_KundenItem" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

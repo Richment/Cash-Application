@@ -16,7 +16,7 @@
 				var query = dw.ApplicationData.RechnungenSet.OfType<Rechnungen>();
 				if (query.Count() > 0)
 				{
-					string max = query.Max(n => n.Auftragsnummer);
+					string max = query.Max(n => n.Referenznummer);
 
 					if (max.StartsWith(dateString))
 					{

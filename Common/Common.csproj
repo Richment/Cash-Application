@@ -65,8 +65,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UserCode\KundenItemExtension.cs" />
+    <Compile Include="UserCode\AdressenSetItemExtension.cs" />
     <Compile Include="UserCode\Bestellstatus.cs" />
     <Compile Include="UserCode\DocDescriptor.cs" />
+    <Compile Include="UserCode\MailSettings.cs" />
     <Compile Include="UserCode\Position.cs" />
     <Compile Include="UserCode\PositionCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

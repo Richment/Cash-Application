@@ -528,6 +528,42 @@ namespace LightSwitchApplication
         partial void GeneratedDocumentSet_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.GeneratedDocument, bool>> filter);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void MailSettingsSet_CanInsert(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void MailSettingsSet_CanUpdate(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void MailSettingsSet_CanDelete(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void MailSettingsSet_CanRead(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void MailSettingsSet_Inserting(global::LightSwitchApplication.MailSettings entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void MailSettingsSet_Inserted(global::LightSwitchApplication.MailSettings entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void MailSettingsSet_Updating(global::LightSwitchApplication.MailSettings entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void MailSettingsSet_Updated(global::LightSwitchApplication.MailSettings entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void MailSettingsSet_Deleting(global::LightSwitchApplication.MailSettings entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void MailSettingsSet_Deleted(global::LightSwitchApplication.MailSettings entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void MailSettingsSet_Validate(global::LightSwitchApplication.MailSettings entity, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder results);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void MailSettingsSet_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.MailSettings, bool>> filter);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void SaveChanges_CanExecute(ref bool result);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -585,19 +621,19 @@ namespace LightSwitchApplication
         partial void LieferAdresssePerKunde_ExecuteFailed(global::System.Nullable<int> Id, global::System.Exception exception);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void InRechnungGestellt_CanExecute(ref bool result);
+        partial void Prüfaufgaben_CanExecute(ref bool result);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        partial void InRechnungGestellt_Executing();
+        partial void Prüfaufgaben_Executing();
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void InRechnungGestellt_PreprocessQuery(ref global::System.Linq.IQueryable<global::LightSwitchApplication.Rechnungen> query);
+        partial void Prüfaufgaben_PreprocessQuery(ref global::System.Linq.IQueryable<global::LightSwitchApplication.Rechnungen> query);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        partial void InRechnungGestellt_Executed(global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.Rechnungen> result);
+        partial void Prüfaufgaben_Executed(global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.Rechnungen> result);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        partial void InRechnungGestellt_ExecuteFailed(global::System.Exception exception);
+        partial void Prüfaufgaben_ExecuteFailed(global::System.Exception exception);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void Zahlungsverzug_CanExecute(ref bool result);
@@ -1613,6 +1649,81 @@ namespace LightSwitchApplication
             }
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.MailSettings>
+                __MailSettingsSetEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.MailSettings>(
+                    "MailSettingsSet",
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__MailSettingsSet_CanInsert,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__MailSettingsSet_CanUpdate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__MailSettingsSet_CanDelete,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__MailSettingsSet_CanRead,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__MailSettingsSet_Inserting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__MailSettingsSet_Inserted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__MailSettingsSet_Updating,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__MailSettingsSet_Updated,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__MailSettingsSet_Deleting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__MailSettingsSet_Deleted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__MailSettingsSet_Validate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__MailSettingsSet_Filter);
+            private static bool __MailSettingsSet_CanInsert(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.MailSettingsSet_CanInsert(ref result);
+                return result;
+            }
+            private static bool __MailSettingsSet_CanUpdate(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.MailSettingsSet_CanUpdate(ref result);
+                return result;
+            }
+            private static bool __MailSettingsSet_CanDelete(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.MailSettingsSet_CanDelete(ref result);
+                return result;
+            }
+            private static bool __MailSettingsSet_CanRead(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.MailSettingsSet_CanRead(ref result);
+                return result;
+            }
+            private static void __MailSettingsSet_Inserting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.MailSettings e)
+            {
+                d.MailSettingsSet_Inserting(e);
+            }
+            private static void __MailSettingsSet_Inserted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.MailSettings e)
+            {
+                d.MailSettingsSet_Inserted(e);
+            }
+            private static void __MailSettingsSet_Updating(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.MailSettings e)
+            {
+                d.MailSettingsSet_Updating(e);
+            }
+            private static void __MailSettingsSet_Updated(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.MailSettings e)
+            {
+                d.MailSettingsSet_Updated(e);
+            }
+            private static void __MailSettingsSet_Deleting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.MailSettings e)
+            {
+                d.MailSettingsSet_Deleting(e);
+            }
+            private static void __MailSettingsSet_Deleted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.MailSettings e)
+            {
+                d.MailSettingsSet_Deleted(e);
+            }
+            private static void __MailSettingsSet_Validate(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.MailSettings e, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder r)
+            {
+                d.MailSettingsSet_Validate(e, r);
+            }
+            private static global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.MailSettings, bool>> __MailSettingsSet_Filter(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.MailSettings, bool>> filter = null;
+                d.MailSettingsSet_Filter(ref filter);
+                return filter;
+            }
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.OperationEntry<global::LightSwitchApplication.ApplicationDataService>
                 __SaveChangesEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.OperationEntry<global::LightSwitchApplication.ApplicationDataService>(
                     "SaveChanges",
@@ -1739,34 +1850,34 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.QueryOperationEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.Rechnungen>
-                __InRechnungGestelltEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.QueryOperationEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.Rechnungen>(
-                    "InRechnungGestellt",
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__InRechnungGestellt_CanExecute,
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__InRechnungGestellt_Executing,
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__InRechnungGestellt_Executed,
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__InRechnungGestellt_Failed,
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__InRechnungGestellt_PreprocessQuery);
-            private static bool __InRechnungGestellt_CanExecute(global::LightSwitchApplication.ApplicationDataService d, bool r)
+                __PrüfaufgabenEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.QueryOperationEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.Rechnungen>(
+                    "Prüfaufgaben",
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Prüfaufgaben_CanExecute,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Prüfaufgaben_Executing,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Prüfaufgaben_Executed,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Prüfaufgaben_Failed,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Prüfaufgaben_PreprocessQuery);
+            private static bool __Prüfaufgaben_CanExecute(global::LightSwitchApplication.ApplicationDataService d, bool r)
             {
-                d.InRechnungGestellt_CanExecute(ref r);
+                d.Prüfaufgaben_CanExecute(ref r);
                 return r;
             }
-            private static void __InRechnungGestellt_Executing(global::LightSwitchApplication.ApplicationDataService d, object[] args)
+            private static void __Prüfaufgaben_Executing(global::LightSwitchApplication.ApplicationDataService d, object[] args)
             {
-                d.InRechnungGestellt_Executing();
+                d.Prüfaufgaben_Executing();
             }
-            private static void __InRechnungGestellt_Executed(global::LightSwitchApplication.ApplicationDataService d, object[] args)
+            private static void __Prüfaufgaben_Executed(global::LightSwitchApplication.ApplicationDataService d, object[] args)
             {
-                d.InRechnungGestellt_Executed((global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.Rechnungen>)args[0]);
+                d.Prüfaufgaben_Executed((global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.Rechnungen>)args[0]);
             }
-            private static void __InRechnungGestellt_Failed(global::LightSwitchApplication.ApplicationDataService d, object[] args, global::System.Exception ex)
+            private static void __Prüfaufgaben_Failed(global::LightSwitchApplication.ApplicationDataService d, object[] args, global::System.Exception ex)
             {
-                d.InRechnungGestellt_ExecuteFailed(ex);
+                d.Prüfaufgaben_ExecuteFailed(ex);
             }
-            private static global::System.Linq.IQueryable __InRechnungGestellt_PreprocessQuery(global::LightSwitchApplication.ApplicationDataService d, object[] args)
+            private static global::System.Linq.IQueryable __Prüfaufgaben_PreprocessQuery(global::LightSwitchApplication.ApplicationDataService d, object[] args)
             {
                 global::System.Linq.IQueryable<global::LightSwitchApplication.Rechnungen> query = (global::System.Linq.IQueryable<global::LightSwitchApplication.Rechnungen>)args[0];
-                d.InRechnungGestellt_PreprocessQuery(ref query);
+                d.Prüfaufgaben_PreprocessQuery(ref query);
                 return query;
             }
             

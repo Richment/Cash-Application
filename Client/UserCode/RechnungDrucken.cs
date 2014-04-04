@@ -131,7 +131,7 @@ namespace LightSwitchApplication
 			wordDoc.Bookmarks("Adresse").Range.InsertAfter(ArtikellisteCollection.SelectedItem.Rechnungen.Adresse);
 			wordDoc.Bookmarks("rechnungsnr").Range.InsertAfter(ArtikellisteCollection.SelectedItem.Rechnungen.Rechnungsnummer);
 			wordDoc.Bookmarks("rechnungsdatum").Range.InsertAfter(ArtikellisteCollection.SelectedItem.Rechnungen.Rechnungsdatum);
-			wordDoc.Bookmarks("auftragsnr").Range.InsertAfter(ArtikellisteCollection.SelectedItem.Rechnungen.Auftragsnummer);
+			wordDoc.Bookmarks("auftragsnr").Range.InsertAfter(ArtikellisteCollection.SelectedItem.Rechnungen.Referenznummer);
 			wordDoc.Bookmarks("lieferscheinnr").Range.InsertAfter(ArtikellisteCollection.SelectedItem.Rechnungen.Lieferscheinnummer);
 			wordDoc.Bookmarks("lieferdatum").Range.InsertAfter(ArtikellisteCollection.SelectedItem.Rechnungen.Lieferdatum);
 			wordDoc.Bookmarks("lieferkosten").Range.InsertAfter(ArtikellisteCollection.SelectedItem.Rechnungen.Lieferkosten);
