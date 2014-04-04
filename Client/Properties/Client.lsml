@@ -3764,32 +3764,16 @@
       </ScreenCollectionProperty>
       <ScreenProperty
         Name="LieferscheinDruck"
-        PropertyType=":Boolean">
-        <ScreenProperty.Attributes>
-          <Required />
-        </ScreenProperty.Attributes>
-      </ScreenProperty>
+        PropertyType=":Boolean?" />
       <ScreenProperty
         Name="RechnungsDruck"
-        PropertyType=":Boolean">
-        <ScreenProperty.Attributes>
-          <Required />
-        </ScreenProperty.Attributes>
-      </ScreenProperty>
+        PropertyType=":Boolean?" />
       <ScreenProperty
         Name="StatusText"
-        PropertyType=":String">
-        <ScreenProperty.Attributes>
-          <Required />
-        </ScreenProperty.Attributes>
-      </ScreenProperty>
+        PropertyType=":String?" />
       <ScreenProperty
         Name="HeaderToolbar"
-        PropertyType=":String">
-        <ScreenProperty.Attributes>
-          <Required />
-        </ScreenProperty.Attributes>
-      </ScreenProperty>
+        PropertyType=":String?" />
     </Screen.Properties>
     <Screen.RootContentItem>
       <ContentItem
@@ -3872,7 +3856,7 @@
               </ControlPropertySource>
             </ContentItem.PropertySources>
             <ContentItem
-              DataType=":String"
+              DataType=":String?"
               Kind="Value"
               Name="HeaderToolbar"
               View="PixataCustomControls:StaticToolbar">
@@ -4051,7 +4035,7 @@
               Kind="Group"
               Name="Group16" />
             <ContentItem
-              DataType=":String"
+              DataType=":String?"
               Kind="Value"
               Name="StatusText"
               View="PixataCustomControls:StylableLabel">
@@ -4242,92 +4226,6 @@
                 DataType="LightSwitchCommonModule:Rechnungen"
                 Kind="Details"
                 Name="InBearbeitungTemplate">
-                <ContentItem.CommandItems>
-                  <ContentItem
-                    Kind="Command"
-                    Name="NextAction1">
-                    <ContentItem.Attributes>
-                      <DisplayName
-                        Value="nächste Aktion" />
-                    </ContentItem.Attributes>
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <CallExpression
-                            Target="Start/Methods[NextAction]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                    <ContentItem.PropertySources>
-                      <ControlPropertySource
-                        Property="Microsoft.LightSwitch:RootControl/Properties[MaxHeight]">
-                        <ScreenExpressionTree>
-                          <ConstantExpression
-                            ResultType=":Double"
-                            Value="20" />
-                        </ScreenExpressionTree>
-                      </ControlPropertySource>
-                      <ControlPropertySource
-                        Property="Microsoft.LightSwitch:RootControl/Properties[VerticalAlignment]">
-                        <ScreenExpressionTree>
-                          <ConstantExpression
-                            ResultType=":String"
-                            Value="Center" />
-                        </ScreenExpressionTree>
-                      </ControlPropertySource>
-                      <ControlPropertySource
-                        Property="Microsoft.LightSwitch:RootControl/Properties[HorizontalAlignment]">
-                        <ScreenExpressionTree>
-                          <ConstantExpression
-                            ResultType=":String"
-                            Value="Right" />
-                        </ScreenExpressionTree>
-                      </ControlPropertySource>
-                    </ContentItem.PropertySources>
-                  </ContentItem>
-                  <ContentItem
-                    Kind="Command"
-                    Name="Delete">
-                    <ContentItem.Attributes>
-                      <DisplayName
-                        Value="löschen" />
-                    </ContentItem.Attributes>
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <CallExpression
-                            Target="LightSwitchCommonModule:Rechnungen/Methods[Delete]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                    <ContentItem.PropertySources>
-                      <ControlPropertySource
-                        Property="Microsoft.LightSwitch:RootControl/Properties[MaxHeight]">
-                        <ScreenExpressionTree>
-                          <ConstantExpression
-                            ResultType=":Double"
-                            Value="20" />
-                        </ScreenExpressionTree>
-                      </ControlPropertySource>
-                      <ControlPropertySource
-                        Property="Microsoft.LightSwitch:RootControl/Properties[HorizontalAlignment]">
-                        <ScreenExpressionTree>
-                          <ConstantExpression
-                            ResultType=":String"
-                            Value="Right" />
-                        </ScreenExpressionTree>
-                      </ControlPropertySource>
-                      <ControlPropertySource
-                        Property="Microsoft.LightSwitch:RootControl/Properties[VerticalAlignment]">
-                        <ScreenExpressionTree>
-                          <ConstantExpression
-                            ResultType=":String"
-                            Value="Center" />
-                        </ScreenExpressionTree>
-                      </ControlPropertySource>
-                    </ContentItem.PropertySources>
-                  </ContentItem>
-                </ContentItem.CommandItems>
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression />
@@ -6181,7 +6079,7 @@
                       </ContentItem.PropertySources>
                     </ContentItem>
                     <ContentItem
-                      DataType=":Boolean"
+                      DataType=":Boolean?"
                       Kind="Value"
                       Name="LieferscheinDruck">
                       <ContentItem.Attributes>

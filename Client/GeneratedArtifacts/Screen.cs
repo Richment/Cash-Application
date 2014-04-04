@@ -2505,8 +2505,6 @@ namespace LightSwitchApplication
 
         partial void HeaderToolbar_Changed();
 
-        partial void MethodToolbar_Changed();
-
         /// <summary>
         /// Ruft die visuelle InBearbeitung-Auflistung ab. Diese Auflistung enthält alle Datensätze, die derzeit in der entsprechenden Liste oder im entsprechenden Rastersteuerelement angezeigt werden.
         /// </summary>
@@ -2554,7 +2552,7 @@ namespace LightSwitchApplication
  
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public bool LieferscheinDruck
+        public global::System.Nullable<bool> LieferscheinDruck
         {
             get 
             {
@@ -2570,7 +2568,7 @@ namespace LightSwitchApplication
  
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public bool RechnungsDruck
+        public global::System.Nullable<bool> RechnungsDruck
         {
             get 
             {
@@ -2615,22 +2613,6 @@ namespace LightSwitchApplication
         }
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void HeaderToolbar_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
- 
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public string MethodToolbar
-        {
-            get 
-            {
-                return global::LightSwitchApplication.Start.DetailsClass.GetValue(this, global::LightSwitchApplication.Start.DetailsClass.PropertySetProperties.MethodToolbar);
-            }
-            set
-            {
-                global::LightSwitchApplication.Start.DetailsClass.SetValue(this, global::LightSwitchApplication.Start.DetailsClass.PropertySetProperties.MethodToolbar, value);
-            }
-        }
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void MethodToolbar_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
  
         /// <summary>
         /// Ruft die Bildschirmmethode StartWizard auf.
@@ -3016,19 +2998,16 @@ namespace LightSwitchApplication
             private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass, global::LightSwitchApplication.AdressenSetItem>.Data _LieferAdresssePerKunde;
 
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass, bool>.Data _LieferscheinDruck;
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass, global::System.Nullable<bool>>.Data _LieferscheinDruck;
 
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass, bool>.Data _RechnungsDruck;
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass, global::System.Nullable<bool>>.Data _RechnungsDruck;
 
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass, string>.Data _StatusText;
 
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass, string>.Data _HeaderToolbar;
-
-            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass, string>.Data _MethodToolbar;
 
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass>.Data _StartWizardCommand;
@@ -3187,19 +3166,19 @@ namespace LightSwitchApplication
                     }
                 }
 
-                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass, bool> LieferscheinDruck
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass, global::System.Nullable<bool>> LieferscheinDruck
                 {
                     get
                     {
-                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass, bool>)base.GetItem(global::LightSwitchApplication.Start.DetailsClass.PropertySetProperties.LieferscheinDruck);
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass, global::System.Nullable<bool>>)base.GetItem(global::LightSwitchApplication.Start.DetailsClass.PropertySetProperties.LieferscheinDruck);
                     }
                 }
 
-                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass, bool> RechnungsDruck
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass, global::System.Nullable<bool>> RechnungsDruck
                 {
                     get
                     {
-                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass, bool>)base.GetItem(global::LightSwitchApplication.Start.DetailsClass.PropertySetProperties.RechnungsDruck);
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass, global::System.Nullable<bool>>)base.GetItem(global::LightSwitchApplication.Start.DetailsClass.PropertySetProperties.RechnungsDruck);
                     }
                 }
 
@@ -3216,14 +3195,6 @@ namespace LightSwitchApplication
                     get
                     {
                         return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass, string>)base.GetItem(global::LightSwitchApplication.Start.DetailsClass.PropertySetProperties.HeaderToolbar);
-                    }
-                }
-
-                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass, string> MethodToolbar
-                {
-                    get
-                    {
-                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass, string>)base.GetItem(global::LightSwitchApplication.Start.DetailsClass.PropertySetProperties.MethodToolbar);
                     }
                 }
 
@@ -3691,14 +3662,14 @@ namespace LightSwitchApplication
                     s.LieferAdresssePerKunde_Loaded(succeeded);
                 }
 
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass, bool>.Entry
-                    LieferscheinDruck = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass, bool>.Entry(
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass, global::System.Nullable<bool>>.Entry
+                    LieferscheinDruck = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass, global::System.Nullable<bool>>.Entry(
                         "LieferscheinDruck",
                         false,
                         global::LightSwitchApplication.Start.DetailsClass.PropertySetProperties._LieferscheinDruck_Stub,
                         global::LightSwitchApplication.Start.DetailsClass.PropertySetProperties._LieferscheinDruck_Validate,
                         global::LightSwitchApplication.Start.DetailsClass.PropertySetProperties._LieferscheinDruck_OnValueChanged);
-                private static void _LieferscheinDruck_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Start.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass, bool>.Data> c, global::LightSwitchApplication.Start.DetailsClass d, object sf)
+                private static void _LieferscheinDruck_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Start.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass, global::System.Nullable<bool>>.Data> c, global::LightSwitchApplication.Start.DetailsClass d, object sf)
                 {
                     c(d, ref d._LieferscheinDruck, sf);
                 }
@@ -3711,14 +3682,14 @@ namespace LightSwitchApplication
                     s.LieferscheinDruck_Changed();
                 }
 
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass, bool>.Entry
-                    RechnungsDruck = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass, bool>.Entry(
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass, global::System.Nullable<bool>>.Entry
+                    RechnungsDruck = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass, global::System.Nullable<bool>>.Entry(
                         "RechnungsDruck",
                         false,
                         global::LightSwitchApplication.Start.DetailsClass.PropertySetProperties._RechnungsDruck_Stub,
                         global::LightSwitchApplication.Start.DetailsClass.PropertySetProperties._RechnungsDruck_Validate,
                         global::LightSwitchApplication.Start.DetailsClass.PropertySetProperties._RechnungsDruck_OnValueChanged);
-                private static void _RechnungsDruck_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Start.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass, bool>.Data> c, global::LightSwitchApplication.Start.DetailsClass d, object sf)
+                private static void _RechnungsDruck_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Start.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass, global::System.Nullable<bool>>.Data> c, global::LightSwitchApplication.Start.DetailsClass d, object sf)
                 {
                     c(d, ref d._RechnungsDruck, sf);
                 }
@@ -3769,26 +3740,6 @@ namespace LightSwitchApplication
                 private static void _HeaderToolbar_OnValueChanged(global::LightSwitchApplication.Start s)
                 {
                     s.HeaderToolbar_Changed();
-                }
-
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass, string>.Entry
-                    MethodToolbar = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass, string>.Entry(
-                        "MethodToolbar",
-                        false,
-                        global::LightSwitchApplication.Start.DetailsClass.PropertySetProperties._MethodToolbar_Stub,
-                        global::LightSwitchApplication.Start.DetailsClass.PropertySetProperties._MethodToolbar_Validate,
-                        global::LightSwitchApplication.Start.DetailsClass.PropertySetProperties._MethodToolbar_OnValueChanged);
-                private static void _MethodToolbar_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Start.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Start, global::LightSwitchApplication.Start.DetailsClass, string>.Data> c, global::LightSwitchApplication.Start.DetailsClass d, object sf)
-                {
-                    c(d, ref d._MethodToolbar, sf);
-                }
-                private static void _MethodToolbar_Validate(global::LightSwitchApplication.Start s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
-                {
-                    s.MethodToolbar_Validate(r);
-                }
-                private static void _MethodToolbar_OnValueChanged(global::LightSwitchApplication.Start s)
-                {
-                    s.MethodToolbar_Changed();
                 }
 
             }

@@ -9,6 +9,8 @@ using Microsoft.LightSwitch.Presentation;
 using Microsoft.LightSwitch.Presentation.Extensions;
 using System.Windows.Controls;
 using PixataCustomControls.Presentation.Controls;
+using Microsoft.LightSwitch.Threading;
+using System.Windows.Threading;
 
 namespace LightSwitchApplication
 {
@@ -18,7 +20,8 @@ namespace LightSwitchApplication
 		private const string TXT_NEW = "Text0";
 		private const string FRM_VERSENDE = "Modal1";
 		private const string TXT_VERSENDE = "Text1";
-		
+
+
 		private ModalWrapper modal;
 		private Rechnungen current;
 
@@ -44,9 +47,8 @@ namespace LightSwitchApplication
 					stb.ButtonClick += new EventHandler<StaticToolbarEventArgs>(HeaderToolbar_BtnClick);
 				};
 			}
-		  
 		}
-		
+
 		private void HeaderToolbar_BtnClick(object sender, StaticToolbarEventArgs e)
 		{
 			switch (e.ButtonNumber)
@@ -58,11 +60,11 @@ namespace LightSwitchApplication
 				case 2:
 					Details.Dispatcher.BeginInvoke(new Action(() => Application.ShowKundenÜbersicht()));
 					break;
-			
+
 				case 3:
 					Details.Dispatcher.BeginInvoke(new Action(() => Application.ShowArtikelÜbersicht()));
 					break;
-		
+
 				case 4:
 					Details.Dispatcher.BeginInvoke(new Action(() => Application.ShowDokumentenÜbersicht()));
 					break;
@@ -77,8 +79,8 @@ namespace LightSwitchApplication
 		{
 			if (this.DataWorkspace.ApplicationData.Details.HasChanges)
 			{
-				EntityChangeSet changeSet =	this.DataWorkspace.ApplicationData.Details.GetChanges();
-			
+				EntityChangeSet changeSet = this.DataWorkspace.ApplicationData.Details.GetChanges();
+
 				foreach (Rechnungen entity in changeSet.AddedEntities.OfType<Rechnungen>())
 				{
 					if (entity.ArtikellisteCollection.Count() == 0)
@@ -87,12 +89,12 @@ namespace LightSwitchApplication
 						//results.AddScreenResult("Eine Bestellung muß mindestens eine Position beinhalten.", ValidationSeverity.Warning);
 						//results.AddPropertyError("Eine Bestellung muß mindestens eine Position beinhalten.");//, entity.Details.Properties.ArtikellisteCollection);
 					}
-				} 
+				}
 				foreach (Rechnungen entity in changeSet.ModifiedEntities.OfType<Rechnungen>())
 				{
 					if (entity.ArtikellisteCollection.Count() == 0)
 					{
-						entity.Details.DiscardChanges(); 
+						entity.Details.DiscardChanges();
 						results.AddScreenResult("Eine Bestellung muß mindestens eine Position beinhalten.", ValidationSeverity.Error);
 						//results.AddPropertyError("<Fehlermeldung>");
 					}
@@ -126,7 +128,7 @@ namespace LightSwitchApplication
 				case (int)Bestellstatus.Zahlungsverzug:
 					result = true;
 					break;
-		
+
 				case (int)Bestellstatus.Bezahlt:
 					result = false;
 					break;
@@ -183,18 +185,22 @@ namespace LightSwitchApplication
 							foreach (ArtikellisteItem pos in DataWorkspace.ApplicationData.Details.GetChanges().AddedEntities.OfType<ArtikellisteItem>())
 								pos.Details.DiscardChanges();
 							foreach (ArtikellisteItem pos in DataWorkspace.ApplicationData.Details.GetChanges().ModifiedEntities.OfType<ArtikellisteItem>())
-								pos.Details.DiscardChanges();		
-							
+								pos.Details.DiscardChanges();
+
 							item.Details.DiscardChanges();
 						}
 					current = null;
+				},
+				ProceedMethod = () =>
+				{
+					this.Details.Commands.Save.ExecuteAsync();
 				}
 			};
 
 			InBearbeitung.SelectedItem = current;
 			modal.Show();
 		}
-		
+
 		partial void Ok_NeueRechnung_CanExecute(ref bool result)
 		{
 			if (current == null)
@@ -205,18 +211,17 @@ namespace LightSwitchApplication
 		partial void Ok_NeueRechnung_Execute()
 		{
 			modal.Close();
-		}		
+		}
 
 		partial void ArtikellisteCollection1AddAndEditNew1_Execute()
 		{
 			var tmp = ArtikellisteCollection.AddNew();
-			 	if (current.Kunde != null)
-					tmp.Rabatt = current.Kunde.Rabatt;
-				
+			if (current.Kunde != null)
+				tmp.Rabatt = current.Kunde.Rabatt;
+
 			this.ArtikellisteCollection.SelectedItem = tmp;
 			ArtikellisteCollection.EditSelected();
 		}
-		
 
 		#endregion
 
@@ -251,13 +256,16 @@ namespace LightSwitchApplication
 		partial void Stornieren_Execute()
 		{
 			var result = this.ShowMessageBox("Wollen Sie die aktuelle Bestellung wirklich stornieren?", "Warnung", MessageBoxOption.YesNo);
-			if(result == System.Windows.MessageBoxResult.Yes)
+			if (result == System.Windows.MessageBoxResult.Yes)
+			{
 				this.InBearbeitung.DeleteSelected();
+				this.Details.Commands.Save.ExecuteAsync();
+			}
 		}
 		#endregion
-	
+
 		#region  Versand
-	
+
 		partial void Versand_CanExecute(ref bool result)
 		{
 			var sel = InBearbeitung.SelectedItem;
@@ -267,7 +275,16 @@ namespace LightSwitchApplication
 		{
 			StartVersendeDialog();
 		}
-		
+
+		partial void OK_Artikel_CanExecute(ref bool result)
+		{
+			result = !String.IsNullOrWhiteSpace(current.Lieferscheinnummer);
+		}
+		partial void OK_Artikel_Execute()
+		{
+			modal.Close();
+		}
+
 		private void StartVersendeDialog()
 		{
 			current = InBearbeitung.SelectedItem;
@@ -286,19 +303,11 @@ namespace LightSwitchApplication
 				ProceedMethod = () =>
 				{
 					current.Status = (int)Bestellstatus.Versendet;
-					current.RequiresProcessing = LieferscheinDruck;
+					current.RequiresProcessing = LieferscheinDruck.GetValueOrDefault(false);
+					this.Details.Commands.Save.ExecuteAsync();
 				}
 			};
 			modal.Show();
-		}				
-		
-		partial void OK_Artikel_CanExecute(ref bool result)
-		{
-			result = !String.IsNullOrWhiteSpace(current.Lieferscheinnummer);
-		}
-		partial void OK_Artikel_Execute()
-		{
-			modal.Close();
 		}
 
 		#endregion
@@ -316,6 +325,7 @@ namespace LightSwitchApplication
 			InBearbeitung.SelectedItem.GetRechnungsNummer();
 			InBearbeitung.SelectedItem.Rechnungsdatum = DateTime.Today;
 			InBearbeitung.SelectedItem.RequiresProcessing = true;
+			this.Details.Commands.Save.ExecuteAsync();
 		}
 
 		#endregion
@@ -330,6 +340,7 @@ namespace LightSwitchApplication
 		partial void Lieferung_Execute()
 		{
 			InBearbeitung.SelectedItem.Status = (int)Bestellstatus.Geliefert;
+			this.Details.Commands.Save.ExecuteAsync();
 		}
 
 		#endregion
@@ -338,13 +349,14 @@ namespace LightSwitchApplication
 		partial void Bezahlt_CanExecute(ref bool result)
 		{
 			var sel = InBearbeitung.SelectedItem;
-			result = sel == null ? false : (sel.Status == (int)Bestellstatus.Geliefert) ||(sel.Status == (int)Bestellstatus.Zahlungsverzug) && !sel.RequiresProcessing;
+			result = sel == null ? false : (sel.Status == (int)Bestellstatus.Geliefert) || (sel.Status == (int)Bestellstatus.Zahlungsverzug) && !sel.RequiresProcessing;
 		}
 		partial void Bezahlt_Execute()
 		{
 			InBearbeitung.SelectedItem.Status = (int)Bestellstatus.Bezahlt;
+			this.Details.Commands.Save.ExecuteAsync();
 		}
-  
+
 		partial void Bezahlung_CanExecute(ref bool result)
 		{
 			Bezahlt_CanExecute(ref result);
@@ -355,9 +367,5 @@ namespace LightSwitchApplication
 		}
 
 		#endregion
-
-
-
-
 	}
 }
