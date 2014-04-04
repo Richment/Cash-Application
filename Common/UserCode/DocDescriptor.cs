@@ -278,9 +278,33 @@
 			result.Adresse = value.Lieferadresse == null ? value.Adresse : value.Lieferadresse.ToString();
 			if (value.Rechnungsbetrag_Brutto.HasValue)
 				result.Brutto = value.Rechnungsbetrag_Brutto.Value.ToString("C");
-			result.Versanddatum = DateTime.Today.ToShortDateString();
+			result.Versanddatum = value.Versanddatum.Value.ToShortDateString();
 			result.Lieferkosten = value.Lieferkosten.ToString("C");
 			result.Lieferscheinnummer = value.Lieferscheinnummer;
+			if (value.Mehrwertsteuer.HasValue)
+				result.Mehrwertsteuer = value.Mehrwertsteuer.Value.ToString("C");
+			if (value.Netto_Gesamtbetrag.HasValue)
+				result.Netto = value.Netto_Gesamtbetrag.Value.ToString("C");
+
+			foreach (var art in value.ArtikellisteCollection)
+				result.Positionen.Add((Position)art);
+
+			return result;
+		}
+
+		public static DocDescriptor CreateRechnung(Rechnungen value)
+		{
+			DocDescriptor result = new DocDescriptor(value.Auftragsnummer, "Rechnung");
+
+			result.Adresse = value.Adresse;
+			result.Rechnungsnummer = value.Rechnungsnummer;
+			result.Datum = value.Rechnungsdatum.Value.ToShortDateString();
+			result.Versanddatum = value.Versanddatum.Value.ToShortDateString();
+			result.Lieferkosten = value.Lieferkosten.ToString("C");
+			result.Lieferscheinnummer = value.Lieferscheinnummer;
+			
+			if (value.Rechnungsbetrag_Brutto.HasValue)
+				result.Brutto = value.Rechnungsbetrag_Brutto.Value.ToString("C");
 			if (value.Mehrwertsteuer.HasValue)
 				result.Mehrwertsteuer = value.Mehrwertsteuer.Value.ToString("C");
 			if (value.Netto_Gesamtbetrag.HasValue)

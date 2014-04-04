@@ -1393,6 +1393,34 @@
         EntitySet="GeneratedDocumentSet"
         Name="GeneratedDocument" />
     </AssociationSet>
+    <QueryOperation
+      Name="Zahlungsverzug"
+      ReturnType="Rechnungen*">
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Status" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ConstantExpression
+                ResultType=":Int32"
+                Value="6" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="RechnungenSet" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+    </QueryOperation>
   </EntityContainer>
   <EntityType
     Name="KundenItem">
@@ -1928,9 +1956,10 @@
       </EntityProperty>
       <EntityProperty
         Name="Rechnungsnummer"
-        PropertyType=":Int32?">
+        PropertyType=":String?">
         <EntityProperty.Attributes>
-          <NotSearchable />
+          <MaxLength
+            Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -2951,7 +2980,11 @@
         Association="Documents_GeneratedDocument"
         FromEnd="GeneratedDocument"
         Name="Documents"
-        ToEnd="Documents" />
+        ToEnd="Documents">
+        <NavigationProperty.Attributes>
+          <Hidden />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
     </EntityType.Properties>
   </EntityType>
   <Association

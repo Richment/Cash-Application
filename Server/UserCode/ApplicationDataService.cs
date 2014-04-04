@@ -241,7 +241,7 @@ namespace LightSwitchApplication
 				File.WriteAllBytes(@"C:\users\Richment\Desktop\test.pdf", result);
 #endif
 				return result;		
-			}
+			}				
 		}
 
 		#endregion
@@ -275,8 +275,7 @@ namespace LightSwitchApplication
 				entity.Bezeichnung = desc.Auftragsnummer + " - " + desc.Titel + " vom " + entity.Datum.ToShortDateString();
 				byte[] wordDoc = ProcessDocument(desc);
 				byte[] pdfDoc = DocumentToPdf(wordDoc);
-				if (entity.GeneratedDocument == null)
-					entity.GeneratedDocument = GeneratedDocumentSet.AddNew();
+				entity.GeneratedDocument.Documents = entity;
 				entity.GeneratedDocument.Bytes = pdfDoc;
 			}
 		}
@@ -290,8 +289,7 @@ namespace LightSwitchApplication
 			   entity.Bezeichnung = desc.Auftragsnummer + " - " + desc.Titel + " vom " + entity.Datum.ToShortDateString();
 			   byte[] wordDoc = ProcessDocument(desc);
 			   byte[] pdfDoc = DocumentToPdf(wordDoc);
-			   if (entity.GeneratedDocument == null)
-				   entity.GeneratedDocument = GeneratedDocumentSet.AddNew();
+			   entity.GeneratedDocument.Documents = entity;
 			   entity.GeneratedDocument.Bytes = pdfDoc;
 		   }
 		}

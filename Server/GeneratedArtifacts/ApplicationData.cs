@@ -3883,7 +3883,7 @@ namespace ApplicationData.Implementation
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> Rechnungsnummer
+        public global::System.String Rechnungsnummer
         {
             get
             {
@@ -3898,8 +3898,8 @@ namespace ApplicationData.Implementation
                 OnRechnungsnummerChanged();
             }
         }
-        private Nullable<global::System.Int32> _Rechnungsnummer;
-        partial void OnRechnungsnummerChanging(Nullable<global::System.Int32> value);
+        private global::System.String _Rechnungsnummer;
+        partial void OnRechnungsnummerChanging(global::System.String value);
         partial void OnRechnungsnummerChanged();
     
         /// <summary>

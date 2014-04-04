@@ -12,7 +12,7 @@ namespace LightSwitchApplication
 {
 	public partial class AuftragsSammlung
 	{
-		private List<Documents> lieferscheine;
+		private List<Documents> lieferscheine, rechnungen;
 
 		partial void ProcessList_CanExecute(ref bool result)
 		{
@@ -23,12 +23,14 @@ namespace LightSwitchApplication
 		{
 			ProcessNew();
 			ProcessVersendet();
+			ProcessInRechnung();
 			this.Save();
 			this.Refresh();
 		}
 
 		partial void AuftragsSammlung_Saved()
 		{
+			AuftragsSammlung1.Refresh();
 			foreach (var item in lieferscheine)
 			{
 				var file = Helper.GetFreeTempFilename("pdf");
@@ -36,6 +38,13 @@ namespace LightSwitchApplication
 				Helper.ShellExecute(file, operation: ProcessVerb.Print);
 			}
 			lieferscheine.Clear();
+			foreach (var item in rechnungen)
+			{
+				var file = Helper.GetFreeTempFilename("pdf");
+				File.WriteAllBytes(file, item.GeneratedDocument.Bytes);
+				Helper.ShellExecute(file, operation: ProcessVerb.Print);
+			}
+			rechnungen.Clear();
 		}
 
 		private void ProcessNew()
@@ -116,9 +125,29 @@ namespace LightSwitchApplication
 				newItem.Datum = DateTime.Now;
 				newItem.Data = desc.ToDictionary().Serialize();
 				lieferscheine.Add(newItem);
-//				item.RequiresProcessing = false;
+				item.RequiresProcessing = false;
 			}
 		}
+
+
+		private void ProcessInRechnung()
+		{
+			var inRechnung = this.AuftragsSammlung1.Where(n => n.Status == (int)Bestellstatus.InRechnung);
+			rechnungen = new List<Documents>();
+
+			foreach (var item in inRechnung)
+			{
+				DocDescriptor desc = DocDescriptor.CreateRechnung(item);
+
+				Documents newItem = DocumentsSet.AddNew();
+				newItem.Bezeichnung = desc.Auftragsnummer + " - " + desc.Titel + " vom " + DateTime.Now.ToShortDateString();
+				newItem.Datum = DateTime.Now;
+				newItem.Data = desc.ToDictionary().Serialize();
+				rechnungen.Add(newItem);
+				item.RequiresProcessing = false;
+			}
+		}
+
 
 	}
 }

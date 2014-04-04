@@ -1556,7 +1556,7 @@
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
                 <ContentItem
-                  DataType=":Int32?"
+                  DataType=":String?"
                   Kind="Value"
                   Name="Rechnungsnummer">
                   <ContentItem.DataSource>
@@ -1821,7 +1821,7 @@
                   Kind="Group"
                   Name="Group2">
                   <ContentItem
-                    DataType=":Int32?"
+                    DataType=":String?"
                     Kind="Value"
                     Name="Rechnungsnummer1">
                     <ContentItem.DataSource>
@@ -2547,7 +2547,7 @@
                     </ContentItem.DataSource>
                   </ContentItem>
                   <ContentItem
-                    DataType=":Int32?"
+                    DataType=":String?"
                     Kind="Value"
                     Name="Rechnungsnummer">
                     <ContentItem.DataSource>
@@ -2850,7 +2850,7 @@
                 </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem
-                DataType=":Int32?"
+                DataType=":String?"
                 Kind="Value"
                 Name="Rechnungsnummer1">
                 <ContentItem.DataSource>
@@ -3654,6 +3654,10 @@
             MethodName="EditSelected" />
         </ScreenMethod.Attributes>
       </ScreenMethod>
+      <ScreenMethod
+        Name="InRechnungStellen" />
+      <ScreenMethod
+        Name="AutomatischeAuswahl" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
@@ -3765,6 +3769,27 @@
           <Required />
         </ScreenProperty.Attributes>
       </ScreenProperty>
+      <ScreenProperty
+        Name="RechnungsDruck"
+        PropertyType=":Boolean">
+        <ScreenProperty.Attributes>
+          <Required />
+        </ScreenProperty.Attributes>
+      </ScreenProperty>
+      <ScreenProperty
+        Name="StatusText"
+        PropertyType=":String">
+        <ScreenProperty.Attributes>
+          <Required />
+        </ScreenProperty.Attributes>
+      </ScreenProperty>
+      <ScreenProperty
+        Name="HeaderToolbar"
+        PropertyType=":String">
+        <ScreenProperty.Attributes>
+          <Required />
+        </ScreenProperty.Attributes>
+      </ScreenProperty>
     </Screen.Properties>
     <Screen.RootContentItem>
       <ContentItem
@@ -3832,6 +3857,284 @@
               </ScreenExpressionTree>
             </ControlPropertySource>
           </ContentItem.PropertySources>
+          <ContentItem
+            Kind="Group"
+            Name="Group14"
+            View=":ColumnsLayout">
+            <ContentItem.PropertySources>
+              <ControlPropertySource
+                Property="Microsoft.LightSwitch:RootControl/Properties[VerticalAlignment]">
+                <ScreenExpressionTree>
+                  <ConstantExpression
+                    ResultType=":String"
+                    Value="Top" />
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+            </ContentItem.PropertySources>
+            <ContentItem
+              DataType=":String"
+              Kind="Value"
+              Name="HeaderToolbar"
+              View="PixataCustomControls:StaticToolbar">
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="Start/Properties[HeaderToolbar]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property="PixataCustomControls:StaticToolbar/Properties[Margin]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        ResultType=":String"
+                        Value="0,0,10,0" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property="PixataCustomControls:StaticToolbar/Properties[Image1]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        ResultType=":String"
+                        Value="Microsoft.LightSwitch.UserImageResources::Resources\Auto-Archive.png" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property="PixataCustomControls:StaticToolbar/Properties[ToolTip1]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        ResultType=":String"
+                        Value="Bildschirm &quot;Auftragssammlung&quot; öffnen." />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property="PixataCustomControls:StaticToolbar/Properties[Text1]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        ResultType=":String"
+                        Value=" Auftragssammlung " />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property="PixataCustomControls:StaticToolbar/Properties[Image2]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        ResultType=":String"
+                        Value="Microsoft.LightSwitch.UserImageResources::Resources\Business-Man-Find 02.png" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property="PixataCustomControls:StaticToolbar/Properties[Text2]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        ResultType=":String"
+                        Value=" Kundenübersicht " />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property="PixataCustomControls:StaticToolbar/Properties[ToolTip2]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        ResultType=":String"
+                        Value="Bildschirm &quot;Kundenübersicht&quot; öffnen." />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property="PixataCustomControls:StaticToolbar/Properties[Image5]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        ResultType=":String"
+                        Value="Microsoft.LightSwitch.UserImageResources::Resources\Sammlung.png" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property="PixataCustomControls:StaticToolbar/Properties[Text5]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        ResultType=":String"
+                        Value=" Gesendete E-Mails " />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property="PixataCustomControls:StaticToolbar/Properties[ToolTip5]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        ResultType=":String"
+                        Value="Bildschirm &quot;Gesendete E-Mails&quot; öffnen." />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property="PixataCustomControls:StaticToolbar/Properties[Image3]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        ResultType=":String"
+                        Value="Microsoft.LightSwitch.UserImageResources::Resources\Product.png" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property="PixataCustomControls:StaticToolbar/Properties[Text3]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        ResultType=":String"
+                        Value=" Artikelübersicht " />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property="PixataCustomControls:StaticToolbar/Properties[ToolTip3]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        ResultType=":String"
+                        Value="Bildschirm &quot;Artikelübersicht&quot; öffnen." />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property="PixataCustomControls:StaticToolbar/Properties[ToolTip4]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        ResultType=":String"
+                        Value="Bildschirm &quot;Dokumente&quot; öffnen." />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property="PixataCustomControls:StaticToolbar/Properties[Text4]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        ResultType=":String"
+                        Value=" Dokumente " />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property="PixataCustomControls:StaticToolbar/Properties[Image4]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        ResultType=":String"
+                        Value="Microsoft.LightSwitch.UserImageResources::Resources\Documents.png" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+              </ContentItem.PropertySources>
+            </ContentItem>
+            <ContentItem
+              Kind="Group"
+              Name="Group16" />
+            <ContentItem
+              DataType=":String"
+              Kind="Value"
+              Name="StatusText"
+              View="PixataCustomControls:StylableLabel">
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="Start/Properties[StatusText]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property="PixataCustomControls:StylableStaticLabel/Properties[StylableText]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        ResultType=":String"
+                        Value="Sas ist ein StatusText" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property="PixataCustomControls:StylableLabel/Properties[StylableFontColour]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        ResultType=":String"
+                        Value="#FF810000" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property="PixataCustomControls:StylableLabel/Properties[StylableBackgroundColour]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        ResultType=":String"
+                        Value="#FFF9F9F9" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch:RootControl/Properties[AttachedLabelPosition]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        ResultType=":String"
+                        Value="None" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch:RootControl/Properties[VerticalAlignment]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        ResultType=":String"
+                        Value="Center" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch:RootControl/Properties[HorizontalAlignment]">
+                  <ScreenExpressionTree>
+                    <ConstantExpression
+                      ResultType=":String"
+                      Value="Right" />
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property="PixataCustomControls:StylableLabel/Properties[StylableFontSize]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        ResultType=":Int32"
+                        Value="12" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+              </ContentItem.PropertySources>
+            </ContentItem>
+          </ContentItem>
           <ContentItem
             Kind="Group"
             Name="GroupRechnungen">
@@ -3939,6 +4242,92 @@
                 DataType="LightSwitchCommonModule:Rechnungen"
                 Kind="Details"
                 Name="InBearbeitungTemplate">
+                <ContentItem.CommandItems>
+                  <ContentItem
+                    Kind="Command"
+                    Name="NextAction1">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="nächste Aktion" />
+                    </ContentItem.Attributes>
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <CallExpression
+                            Target="Start/Methods[NextAction]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                    <ContentItem.PropertySources>
+                      <ControlPropertySource
+                        Property="Microsoft.LightSwitch:RootControl/Properties[MaxHeight]">
+                        <ScreenExpressionTree>
+                          <ConstantExpression
+                            ResultType=":Double"
+                            Value="20" />
+                        </ScreenExpressionTree>
+                      </ControlPropertySource>
+                      <ControlPropertySource
+                        Property="Microsoft.LightSwitch:RootControl/Properties[VerticalAlignment]">
+                        <ScreenExpressionTree>
+                          <ConstantExpression
+                            ResultType=":String"
+                            Value="Center" />
+                        </ScreenExpressionTree>
+                      </ControlPropertySource>
+                      <ControlPropertySource
+                        Property="Microsoft.LightSwitch:RootControl/Properties[HorizontalAlignment]">
+                        <ScreenExpressionTree>
+                          <ConstantExpression
+                            ResultType=":String"
+                            Value="Right" />
+                        </ScreenExpressionTree>
+                      </ControlPropertySource>
+                    </ContentItem.PropertySources>
+                  </ContentItem>
+                  <ContentItem
+                    Kind="Command"
+                    Name="Delete">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="löschen" />
+                    </ContentItem.Attributes>
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <CallExpression
+                            Target="LightSwitchCommonModule:Rechnungen/Methods[Delete]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                    <ContentItem.PropertySources>
+                      <ControlPropertySource
+                        Property="Microsoft.LightSwitch:RootControl/Properties[MaxHeight]">
+                        <ScreenExpressionTree>
+                          <ConstantExpression
+                            ResultType=":Double"
+                            Value="20" />
+                        </ScreenExpressionTree>
+                      </ControlPropertySource>
+                      <ControlPropertySource
+                        Property="Microsoft.LightSwitch:RootControl/Properties[HorizontalAlignment]">
+                        <ScreenExpressionTree>
+                          <ConstantExpression
+                            ResultType=":String"
+                            Value="Right" />
+                        </ScreenExpressionTree>
+                      </ControlPropertySource>
+                      <ControlPropertySource
+                        Property="Microsoft.LightSwitch:RootControl/Properties[VerticalAlignment]">
+                        <ScreenExpressionTree>
+                          <ConstantExpression
+                            ResultType=":String"
+                            Value="Center" />
+                        </ScreenExpressionTree>
+                      </ControlPropertySource>
+                    </ContentItem.PropertySources>
+                  </ContentItem>
+                </ContentItem.CommandItems>
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression />
@@ -3992,13 +4381,43 @@
                       </ScreenExpressionTree>
                     </ControlPropertySource>
                     <ControlPropertySource
+                      Property="Microsoft.LightSwitch:RootControl/Properties[WidthSizingMode]">
+                      <ScreenExpressionTree>
+                        <ConstantExpression
+                          ResultType=":String"
+                          Value="Auto" />
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch:RootControl/Properties[HeightSizingMode]">
+                      <ScreenExpressionTree>
+                        <ConstantExpression
+                          ResultType=":String"
+                          Value="Auto" />
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch:RootControl/Properties[MaxHeight]">
+                      <ScreenExpressionTree>
+                        <ConstantExpression
+                          ResultType=":Double"
+                          Value="20" />
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch:RootControl/Properties[MaxWidth]">
+                      <ScreenExpressionTree>
+                        <ConstantExpression
+                          ResultType=":Double"
+                          Value="20" />
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                    <ControlPropertySource
                       Property="Microsoft.LightSwitch:RootControl/Properties[VerticalAlignment]">
                       <ScreenExpressionTree>
-                        <ChainExpression>
-                          <ConstantExpression
-                            ResultType=":String"
-                            Value="Stretch" />
-                        </ChainExpression>
+                        <ConstantExpression
+                          ResultType=":String"
+                          Value="Center" />
                       </ScreenExpressionTree>
                     </ControlPropertySource>
                   </ContentItem.PropertySources>
@@ -4035,6 +4454,22 @@
                             ResultType=":Boolean"
                             Value="True" />
                         </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch:RootControl/Properties[WidthSizingMode]">
+                      <ScreenExpressionTree>
+                        <ConstantExpression
+                          ResultType=":String"
+                          Value="Characters" />
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch:Label/Properties[Characters]">
+                      <ScreenExpressionTree>
+                        <ConstantExpression
+                          ResultType=":Int32"
+                          Value="10" />
                       </ScreenExpressionTree>
                     </ControlPropertySource>
                   </ContentItem.PropertySources>
@@ -4080,7 +4515,21 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  DataType=":Int32?"
+                  DataType=":String?"
+                  Kind="Value"
+                  Name="Lieferscheinnummer1"
+                  View=":Label">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="LightSwitchCommonModule:Rechnungen/Properties[Lieferscheinnummer]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  DataType=":String?"
                   Kind="Value"
                   Name="Rechnungsnummer"
                   View=":Label">
@@ -4122,24 +4571,14 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  DataType="LightSwitchCommonModule:BezahlartItem"
-                  Kind="Details"
-                  Name="BezahlartItem"
-                  View=":Summary">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="LightSwitchCommonModule:Rechnungen/Properties[BezahlartItem]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
                   DataType=":Date"
                   Kind="Value"
                   Name="Bestelldatum"
                   View=":DateViewer">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Bestellung" />
+                  </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -4154,6 +4593,10 @@
                   Kind="Value"
                   Name="Lieferdatum"
                   View=":DateViewer">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Lieferung" />
+                  </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -4168,6 +4611,10 @@
                   Kind="Value"
                   Name="Rechnungsdatum"
                   View=":DateViewer">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Rechnung" />
+                  </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -4438,7 +4885,7 @@
                         </ContentItem.DataSource>
                       </ContentItem>
                       <ContentItem
-                        DataType=":Int32?"
+                        DataType=":String?"
                         Kind="Value"
                         Name="InBearbeitung_SelectedItem_Rechnungsnummer"
                         View=":Label">
@@ -4577,6 +5024,22 @@
                     <ContentItem.CommandItems>
                       <ContentItem
                         Kind="Command"
+                        Name="AutomatischeAuswahl">
+                        <ContentItem.Attributes>
+                          <Description
+                            Value="Automatische Auswahl der nächten Aktion." />
+                        </ContentItem.Attributes>
+                        <ContentItem.DataSource>
+                          <ScreenExpressionTree>
+                            <ChainExpression>
+                              <CallExpression
+                                Target="Start/Methods[AutomatischeAuswahl]" />
+                            </ChainExpression>
+                          </ScreenExpressionTree>
+                        </ContentItem.DataSource>
+                      </ContentItem>
+                      <ContentItem
+                        Kind="Command"
                         Name="Editieren">
                         <ContentItem.DataSource>
                           <ScreenExpressionTree>
@@ -4623,6 +5086,22 @@
                             <ChainExpression>
                               <CallExpression
                                 Target="Start/Methods[Versand]" />
+                            </ChainExpression>
+                          </ScreenExpressionTree>
+                        </ContentItem.DataSource>
+                      </ContentItem>
+                      <ContentItem
+                        Kind="Command"
+                        Name="InRechnungStellen">
+                        <ContentItem.Attributes>
+                          <DisplayName
+                            Value="In Rechnung stellen" />
+                        </ContentItem.Attributes>
+                        <ContentItem.DataSource>
+                          <ScreenExpressionTree>
+                            <ChainExpression>
+                              <CallExpression
+                                Target="Start/Methods[InRechnungStellen]" />
                             </ChainExpression>
                           </ScreenExpressionTree>
                         </ContentItem.DataSource>
@@ -5780,7 +6259,7 @@
       <SaveChangesTo
         EntityContainer="LightSwitchCommonModule:ApplicationData" />
       <DisplayName
-        Value="Übersicht Kunden" />
+        Value="Kunden Übersicht" />
     </Screen.Attributes>
     <Screen.Methods>
       <ScreenMethod
@@ -7072,7 +7551,7 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  DataType=":Int32?"
+                  DataType=":String?"
                   Kind="Value"
                   Name="Rechnungsnummer1"
                   View=":Label">
@@ -7717,7 +8196,7 @@
               Kind="Group"
               Name="right">
               <ContentItem
-                DataType=":Int32?"
+                DataType=":String?"
                 Kind="Value"
                 Name="Rechnungsnummer">
                 <ContentItem.DataSource>
@@ -8265,6 +8744,9 @@
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
       <ScreenCollectionProperty
+        DisablePaging="True"
+        DisableSearch="True"
+        DisableSorting="True"
         Name="OutgoingMailSet"
         PageSize="45"
         PropertyType="LightSwitchCommonModule:CollectionView$OutgoingMail">
@@ -8291,6 +8773,9 @@
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
       <ScreenCollectionProperty
+        DisablePaging="True"
+        DisableSearch="True"
+        DisableSorting="True"
         Name="DocumentsSet"
         PageSize="45"
         PropertyType="LightSwitchCommonModule:CollectionView$Documents">
@@ -8639,7 +9124,7 @@
                     </ContentItem.DataSource>
                   </ContentItem>
                   <ContentItem
-                    DataType=":Int32?"
+                    DataType=":String?"
                     Kind="Value"
                     Name="Rechnungsnummer2">
                     <ContentItem.DataSource>
@@ -8885,7 +9370,7 @@
                 </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
-                DataType=":Int32?"
+                DataType=":String?"
                 Kind="Value"
                 Name="Rechnungsnummer1"
                 View=":Label">
@@ -9358,7 +9843,7 @@
                 </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
-                DataType=":Int32?"
+                DataType=":String?"
                 Kind="Value"
                 Name="Rechnungsnummer">
                 <ContentItem.DataSource>
@@ -9489,14 +9974,14 @@
                 </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
-                DataType="Microsoft.LightSwitch.Extensions:Money?"
+                DataType=":Date?"
                 Kind="Value"
-                Name="Netto_Gesamtbetrag">
+                Name="Versanddatum">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="LightSwitchCommonModule:Rechnungen/Properties[Netto_Gesamtbetrag]" />
+                        Member="LightSwitchCommonModule:Rechnungen/Properties[Versanddatum]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -10634,6 +11119,7 @@
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
+        DisableSorting="True"
         Name="DocumentsSet"
         PageSize="45"
         PropertyType="LightSwitchCommonModule:CollectionView$Documents">

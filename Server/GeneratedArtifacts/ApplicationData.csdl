@@ -68,7 +68,7 @@
     <Property Name="Lieferdatum" Type="Edm.DateTime" />
     <Property Name="Lieferscheinnummer" Type="Edm.String" MaxLength="255" />
     <Property Name="Rechnungsdatum" Type="Edm.DateTime" />
-    <Property Name="Rechnungsnummer" Type="Edm.Int32" />
+    <Property Name="Rechnungsnummer" Type="Edm.String" MaxLength="255" />
     <Property Name="Lieferkosten" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="2" />
     <Property Name="Versanddatum" Type="Edm.DateTime" />
     <Property Name="RequiresProcessing" Type="Edm.Boolean" Nullable="false" />

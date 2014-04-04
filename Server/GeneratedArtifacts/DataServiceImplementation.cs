@@ -77,6 +77,15 @@ namespace LightSwitchApplication.Implementation
             return query;
         }
     
+        public global::System.Linq.IQueryable<global::ApplicationData.Implementation.Rechnungen> Zahlungsverzug()
+        {
+            global::System.Linq.IQueryable<global::ApplicationData.Implementation.Rechnungen> query;
+            query = global::System.Linq.Queryable.Where(
+                this.GetQuery<global::ApplicationData.Implementation.Rechnungen>("RechnungenSet"),
+                (r) => (r.Status == 6));
+            return query;
+        }
+    
     #endregion
 
     #region Protected Methods

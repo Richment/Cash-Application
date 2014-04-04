@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Ursprünglicher Dateiname:
-// Erstellungsdatum: 03.04.2014 06:09:05
+// Erstellungsdatum: 04.04.2014 04:18:09
 namespace LightSwitchApplication.Implementation
 {
     
@@ -1869,7 +1869,7 @@ namespace LightSwitchApplication.Implementation
         /// Im Schema sind keine Kommentare für die Eigenschaft "Rechnungsnummer" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Nullable<int> Rechnungsnummer
+        public string Rechnungsnummer
         {
             get
             {
@@ -1888,8 +1888,8 @@ namespace LightSwitchApplication.Implementation
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Nullable<int> _Rechnungsnummer;
-        partial void OnRechnungsnummerChanging(global::System.Nullable<int> value);
+        private string _Rechnungsnummer;
+        partial void OnRechnungsnummerChanging(string value);
         partial void OnRechnungsnummerChanged();
         /// <summary>
         /// Im Schema sind keine Kommentare für die Eigenschaft "Lieferkosten" vorhanden.

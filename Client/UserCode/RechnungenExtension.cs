@@ -30,5 +30,30 @@
 			}
 			return result;
 		}
+		public static void GetRechnungsNummer(this Rechnungen value)
+		{
+			var today = DateTime.Today;
+			var dateString = today.Year.ToString() + '-';
+			string result = dateString + "001";
+
+			using (var dw = Application.Current.CreateDataWorkspace())
+			{
+				var query = dw.ApplicationData.RechnungenSet.OfType<Rechnungen>();
+				if (query.Count() > 0)
+				{
+					string max = query.Where(n=>!String.IsNullOrWhiteSpace(n.Rechnungsnummer)).Max(n => n.Rechnungsnummer);
+
+					if (max.StartsWith(dateString))
+					{
+						int numeric;
+						if (Int32.TryParse(max.Substring(5), out numeric))
+						{
+							result = dateString + (++numeric).ToString().PadLeft(3, '0');
+						}
+					}
+				}
+			}
+			value.Rechnungsnummer = result;
+		}
 	};
 }

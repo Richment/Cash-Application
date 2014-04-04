@@ -636,6 +636,14 @@ namespace LightSwitchApplication
             return this.Details.Methods.GeneratedDocumentSet_SingleOrDefault.CreateInvocation(Id).Execute();
         }
         
+        /// <summary>
+        /// Keine modellierte Beschreibung verfügbar
+        /// </summary>
+        public global::Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.Rechnungen> Zahlungsverzug()
+        {
+            return this.Details.Methods.Zahlungsverzug.CreateInvocation().Execute();
+        }
+        
         #endregion
     
         #region Details Class
@@ -921,6 +929,14 @@ namespace LightSwitchApplication
                     get
                     {
                         return base.GetItem(global::LightSwitchApplication.ApplicationData.DetailsClass.MethodSetProperties.GeneratedDocumentSet_SingleOrDefault) as global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.GeneratedDocument>;
+                    }
+                }
+                
+                public global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.Rechnungen> Zahlungsverzug
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.ApplicationData.DetailsClass.MethodSetProperties.Zahlungsverzug) as global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.Rechnungen>;
                     }
                 }
                 
@@ -1349,6 +1365,16 @@ namespace LightSwitchApplication
                     c(d, ref d._GeneratedDocumentSet_SingleOrDefault, sf);
                 }
     
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.Rechnungen>.Entry
+                    Zahlungsverzug = new global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.Rechnungen>.Entry(
+                        "Zahlungsverzug",
+                        global::LightSwitchApplication.ApplicationData.DetailsClass.MethodSetProperties._Zahlungsverzug_Stub);
+                private static void _Zahlungsverzug_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ApplicationData.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.Rechnungen>.Data> c, global::LightSwitchApplication.ApplicationData.DetailsClass d, object sf)
+                {
+                    c(d, ref d._Zahlungsverzug, sf);
+                }
+    
             }
     
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -1617,6 +1643,9 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.GeneratedDocument>.Data _GeneratedDocumentSet_SingleOrDefault;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.Rechnungen>.Data _Zahlungsverzug;
             
         }
     

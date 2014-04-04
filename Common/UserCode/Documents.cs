@@ -1,4 +1,5 @@
-﻿namespace LightSwitchApplication
+﻿using System;
+namespace LightSwitchApplication
 {
 	using System;
 	using System.Collections.Generic;
@@ -12,6 +13,7 @@
 		{
 			this.Datum = DateTime.Now;
 			this.Bezeichnung = String.Empty;
+			this.GeneratedDocument = new GeneratedDocument() { Documents = this };
 		}
 
 		public override string ToString()

@@ -264,6 +264,30 @@
   <ItemGroup>
     <Resource Include="Resources\Process.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Sammlung.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Customer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Cupboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Business-Man-Find 02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Box-02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Box .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Auto-Archive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Documents.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\LightSwitch\$(LightSwitchVersion)\Microsoft.LightSwitch.Build.Tasks.targets" />
   <Target Name="BeforeBuild">

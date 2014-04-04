@@ -600,6 +600,21 @@ namespace LightSwitchApplication
         partial void InRechnungGestellt_ExecuteFailed(global::System.Exception exception);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Zahlungsverzug_CanExecute(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void Zahlungsverzug_Executing();
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Zahlungsverzug_PreprocessQuery(ref global::System.Linq.IQueryable<global::LightSwitchApplication.Rechnungen> query);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void Zahlungsverzug_Executed(global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.Rechnungen> result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void Zahlungsverzug_ExecuteFailed(global::System.Exception exception);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void Query_Executing(global::Microsoft.LightSwitch.QueryExecutingDescriptor queryDescriptor);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1752,6 +1767,39 @@ namespace LightSwitchApplication
             {
                 global::System.Linq.IQueryable<global::LightSwitchApplication.Rechnungen> query = (global::System.Linq.IQueryable<global::LightSwitchApplication.Rechnungen>)args[0];
                 d.InRechnungGestellt_PreprocessQuery(ref query);
+                return query;
+            }
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.QueryOperationEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.Rechnungen>
+                __ZahlungsverzugEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.QueryOperationEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.Rechnungen>(
+                    "Zahlungsverzug",
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Zahlungsverzug_CanExecute,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Zahlungsverzug_Executing,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Zahlungsverzug_Executed,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Zahlungsverzug_Failed,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Zahlungsverzug_PreprocessQuery);
+            private static bool __Zahlungsverzug_CanExecute(global::LightSwitchApplication.ApplicationDataService d, bool r)
+            {
+                d.Zahlungsverzug_CanExecute(ref r);
+                return r;
+            }
+            private static void __Zahlungsverzug_Executing(global::LightSwitchApplication.ApplicationDataService d, object[] args)
+            {
+                d.Zahlungsverzug_Executing();
+            }
+            private static void __Zahlungsverzug_Executed(global::LightSwitchApplication.ApplicationDataService d, object[] args)
+            {
+                d.Zahlungsverzug_Executed((global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.Rechnungen>)args[0]);
+            }
+            private static void __Zahlungsverzug_Failed(global::LightSwitchApplication.ApplicationDataService d, object[] args, global::System.Exception ex)
+            {
+                d.Zahlungsverzug_ExecuteFailed(ex);
+            }
+            private static global::System.Linq.IQueryable __Zahlungsverzug_PreprocessQuery(global::LightSwitchApplication.ApplicationDataService d, object[] args)
+            {
+                global::System.Linq.IQueryable<global::LightSwitchApplication.Rechnungen> query = (global::System.Linq.IQueryable<global::LightSwitchApplication.Rechnungen>)args[0];
+                d.Zahlungsverzug_PreprocessQuery(ref query);
                 return query;
             }
     

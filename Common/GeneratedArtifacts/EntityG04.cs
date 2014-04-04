@@ -342,7 +342,7 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.Nullable<int> Rechnungsnummer
+        public string Rechnungsnummer
         {
             get
             {
@@ -788,11 +788,11 @@ namespace LightSwitchApplication
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::System.Nullable<int>> Rechnungsnummer
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, string> Rechnungsnummer
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties.Rechnungsnummer) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::System.Nullable<int>>;
+                        return base.GetItem(global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties.Rechnungsnummer) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, string>;
                     }
                 }
                 
@@ -908,7 +908,7 @@ namespace LightSwitchApplication
                 new global::System.Nullable<global::System.DateTime> Lieferdatum { get; set; }
                 new string Lieferscheinnummer { get; set; }
                 new global::System.Nullable<global::System.DateTime> Rechnungsdatum { get; set; }
-                new global::System.Nullable<int> Rechnungsnummer { get; set; }
+                new string Rechnungsnummer { get; set; }
                 new decimal Lieferkosten { get; set; }
                 new global::System.Nullable<global::System.DateTime> Versanddatum { get; set; }
                 new bool RequiresProcessing { get; set; }
@@ -1318,8 +1318,8 @@ namespace LightSwitchApplication
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::System.Nullable<int>>.Entry
-                    Rechnungsnummer = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::System.Nullable<int>>.Entry(
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, string>.Entry
+                    Rechnungsnummer = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, string>.Entry(
                         "Rechnungsnummer",
                         global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._Rechnungsnummer_Stub,
                         global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._Rechnungsnummer_ComputeIsReadOnly,
@@ -1327,7 +1327,7 @@ namespace LightSwitchApplication
                         global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._Rechnungsnummer_GetImplementationValue,
                         global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._Rechnungsnummer_SetImplementationValue,
                         global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._Rechnungsnummer_OnValueChanged);
-                private static void _Rechnungsnummer_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Rechnungen.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::System.Nullable<int>>.Data> c, global::LightSwitchApplication.Rechnungen.DetailsClass d, object sf)
+                private static void _Rechnungsnummer_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Rechnungen.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, string>.Data> c, global::LightSwitchApplication.Rechnungen.DetailsClass d, object sf)
                 {
                     c(d, ref d._Rechnungsnummer, sf);
                 }
@@ -1341,11 +1341,11 @@ namespace LightSwitchApplication
                 {
                     e.Rechnungsnummer_Validate(r);
                 }
-                private static global::System.Nullable<int> _Rechnungsnummer_GetImplementationValue(global::LightSwitchApplication.Rechnungen.DetailsClass d)
+                private static string _Rechnungsnummer_GetImplementationValue(global::LightSwitchApplication.Rechnungen.DetailsClass d)
                 {
                     return d.ImplementationEntity.Rechnungsnummer;
                 }
-                private static void _Rechnungsnummer_SetImplementationValue(global::LightSwitchApplication.Rechnungen.DetailsClass d, global::System.Nullable<int> v)
+                private static void _Rechnungsnummer_SetImplementationValue(global::LightSwitchApplication.Rechnungen.DetailsClass d, string v)
                 {
                     d.ImplementationEntity.Rechnungsnummer = v;
                 }
@@ -1772,7 +1772,7 @@ namespace LightSwitchApplication
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::System.Nullable<global::System.DateTime>>.Data _Rechnungsdatum;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::System.Nullable<int>>.Data _Rechnungsnummer;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, string>.Data _Rechnungsnummer;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, decimal>.Data _Lieferkosten;
