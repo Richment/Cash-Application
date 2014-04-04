@@ -1,4 +1,6 @@
-﻿namespace LightSwitchApplication
+﻿using System;
+
+namespace LightSwitchApplication
 {
 	using System;
 	using System.Collections.Generic;
@@ -21,8 +23,8 @@
 
 		partial void Position_Compute(ref int result)
 		{
-		/*	if (this.Rechnungen != null)
-				result = this.Rechnungen.ArtikellisteCollection.ToList().IndexOf(this) + 1;					 */
+			if (this.Rechnungen != null)
+				result = this.Rechnungen.ArtikellisteCollection.ToList().IndexOf(this) + 1;
 		}
 
 		partial void Artikelnummer_Compute(ref string result)

@@ -294,11 +294,6 @@ namespace LightSwitchApplication.Implementation
             this.___OnPropertyChanged("Anzahl_PK");
         }
         
-        partial void OnHK_pro_PKChanged()
-        {
-            this.___OnPropertyChanged("HK_pro_PK");
-        }
-        
         partial void OnEK_pro_PKChanged()
         {
             this.___OnPropertyChanged("EK_pro_PK");
@@ -309,36 +304,15 @@ namespace LightSwitchApplication.Implementation
             this.___OnPropertyChanged("VK_pro_PK");
         }
         
+        partial void OnHK_pro_PKChanged()
+        {
+            this.___OnPropertyChanged("HK_pro_PK");
+        }
+        
         partial void OnMargeChanged()
         {
             this.___OnPropertyChanged("Marge");
         }
-        
-        global::System.Collections.IEnumerable global::LightSwitchApplication.ArtikelstammItem.DetailsClass.IImplementation.ArtikellisteItem
-        {
-            get
-            {
-                return this.ArtikellisteItem;
-            }
-        }
-        
-        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.ArtikellisteItem> __ArtikellisteItem
-        {
-            get
-            {
-                if (this.___ArtikellisteItem == null)
-                {
-                    this.___ArtikellisteItem = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.ArtikellisteItem>(
-                        this,
-                        "ArtikellisteItem",
-                        () => this._ArtikellisteItem,
-                        e => global::System.Object.Equals(e.Artikelliste_Artikelstamm, this.Id));
-                }
-                return this.___ArtikellisteItem;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.ArtikellisteItem> ___ArtikellisteItem;
         
         global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.ArtikelstammItem.DetailsClass.IImplementation.Anbieter
         {
@@ -371,6 +345,32 @@ namespace LightSwitchApplication.Implementation
         }
         
         private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.Anbieter> ___Anbieter;
+        
+        global::System.Collections.IEnumerable global::LightSwitchApplication.ArtikelstammItem.DetailsClass.IImplementation.ArtikellisteItem
+        {
+            get
+            {
+                return this.ArtikellisteItem;
+            }
+        }
+        
+        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.ArtikellisteItem> __ArtikellisteItem
+        {
+            get
+            {
+                if (this.___ArtikellisteItem == null)
+                {
+                    this.___ArtikellisteItem = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.ArtikellisteItem>(
+                        this,
+                        "ArtikellisteItem",
+                        () => this._ArtikellisteItem,
+                        e => global::System.Object.Equals(e.Artikelliste_Artikelstamm, this.Id));
+                }
+                return this.___ArtikellisteItem;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.ArtikellisteItem> ___ArtikellisteItem;
         
     }
     #endregion

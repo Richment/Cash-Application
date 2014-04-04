@@ -21,7 +21,12 @@ namespace LightSwitchApplication
 		{
 			OutgoingMailSet.SelectedItem.Sended = DateTime.Now;
 			Save();
-			Refresh();
+		}
+
+		partial void OutgoingMailSet_SelectionChanged()
+		{
+			MessageText = OutgoingMailSet.SelectedItem == null ? "" : OutgoingMailSet.SelectedItem.Body;
+			Recipient = OutgoingMailSet.SelectedItem == null ? "" : OutgoingMailSet.SelectedItem.Recipient;
 		}
 	}
 }

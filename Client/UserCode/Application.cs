@@ -11,33 +11,19 @@
 	using Microsoft.LightSwitch.Presentation.Extensions;
 	using Microsoft.LightSwitch.Threading;
 	using System.Windows;
+	using Microsoft.LightSwitch.Client;
+	using Microsoft.LightSwitch.Details;
+	using System.Threading;
 
 	public partial class Application
 	{
-		public static string StartScreenMessage
+		public string StartScreenMessage
 		{
 			get;
 			private set;
 		}
 
 		partial void Application_Initialize()
-		{
-			CheckDelayedPayment();
-			SetStartScreenMessage();
-		}
-
-		private void SetStartScreenMessage()
-		{
-			using (var dw = Application.Current.CreateDataWorkspace())
-			{
-				var query = dw.ApplicationData.Zahlungsverzug().OfType<Rechnungen>();
-				int invoices = query.Count();
-				int customers = query.GroupBy(n => n.Kunde).Count();
-				StartScreenMessage = invoices == 0 ? String.Empty : String.Format("{0} Kunden sind mit {1} Rechnungen in Verzug.", customers, invoices);
-			}
-		}
-
-		internal static void CheckDelayedPayment()
 		{
 			var today = DateTime.Today;
 
@@ -48,6 +34,13 @@
 						item.Status = (int)Bestellstatus.Zahlungsverzug;
 
 				dw.ApplicationData.SaveChanges();
+			}
+			using (var dw = Application.Current.CreateDataWorkspace())
+			{
+				var query = dw.ApplicationData.Zahlungsverzug().OfType<Rechnungen>();
+				int invoices = query.Count();
+				int customers = query.GroupBy(n => n.Kunde).Count();
+				StartScreenMessage = invoices == 0 ? String.Empty : String.Format("{0} Kunden sind mit {1} Rechnungen in Verzug.", customers, invoices);
 			}
 		}
 	};

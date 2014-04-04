@@ -1,12 +1,12 @@
-﻿using Microsoft.LightSwitch;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using Microsoft.LightSwitch;
+
 namespace LightSwitchApplication
 {
-	using System;
-	using System.Collections.Generic;
-	using System.IO;
-	using System.Linq;
-	using System.Reflection;
-
 	public partial class Rechnungen
 	{
 		private static List<byte[]> images;
@@ -128,6 +128,11 @@ namespace LightSwitchApplication
 					results.AddEntityResult("Ohne Rechnungdatum kann kein Zahlungsverzug ermittelt werden.", ValidationSeverity.Informational);
 				}
 			}
+		}
+
+		partial void Bearbeitungsstatus_Compute(ref string result)
+		{
+			result = RequiresProcessing ? "In Auftragssammlung" : "";
 		}
 	}
 }

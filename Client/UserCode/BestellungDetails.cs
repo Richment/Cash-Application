@@ -32,7 +32,15 @@ namespace LightSwitchApplication
 
 		partial void BestellungDetails_Saved()
 		{
-			this.SetDisplayNameFromEntity(this.Rechnungen);
+			var startScreen = Application.ActiveScreens.FirstOrDefault(n => n.GetName() == "Start");
+			if (startScreen != null)
+			{
+				startScreen.Screen.Details.Dispatcher.BeginInvoke(() =>
+				{
+					startScreen.Screen.Details.Commands.Refresh.ExecuteAsync();
+				});
+			}
+			this.Close(false);
 		}
 
 

@@ -1712,6 +1712,11 @@
             Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <NavigationProperty
+        Association="ArtikelstammItem_Anbieter"
+        FromEnd="ArtikelstammItem"
+        Name="Anbieter"
+        ToEnd="Anbieter" />
       <EntityProperty
         Name="Vertriebsname"
         PropertyType=":String">
@@ -1729,22 +1734,6 @@
           <Required />
           <Range
             Minimum="1" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="HK_pro_PK"
-        PropertyType="Microsoft.LightSwitch.Extensions:Money?">
-        <EntityProperty.Attributes>
-          <NotSearchable />
-          <DecimalConstraint
-            Precision="18"
-            Scale="2" />
-          <Attribute
-            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
-            <Property
-              Name="IsoCurrencySymbol"
-              Value="EUR" />
-          </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -1784,6 +1773,22 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
+        Name="HK_pro_PK"
+        PropertyType="Microsoft.LightSwitch.Extensions:Money?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="IsoCurrencySymbol"
+              Value="EUR" />
+          </Attribute>
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
         Name="Marge"
         PropertyType="Microsoft.LightSwitch.Extensions:Money?">
         <EntityProperty.Attributes>
@@ -1808,11 +1813,6 @@
           <Hidden />
         </NavigationProperty.Attributes>
       </NavigationProperty>
-      <NavigationProperty
-        Association="ArtikelstammItem_Anbieter"
-        FromEnd="ArtikelstammItem"
-        Name="Anbieter"
-        ToEnd="Anbieter" />
     </EntityType.Properties>
   </EntityType>
   <EntityType
@@ -2078,6 +2078,14 @@
           <Hidden />
           <DisplayName
             Value="Verarb. ausstehend" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Bearbeitungsstatus"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Computed />
+          <Hidden />
         </EntityProperty.Attributes>
       </EntityProperty>
     </EntityType.Properties>

@@ -435,14 +435,6 @@ namespace ApplicationData.Implementation
         global::LightSwitchApplication.ArtikelstammItem.DetailsClass.IImplementation
     {
     
-        global::System.Collections.IEnumerable global::LightSwitchApplication.ArtikelstammItem.DetailsClass.IImplementation.ArtikellisteItem
-        {
-            get
-            {
-                return this.ArtikellisteItem;
-            }
-        }
-        
         global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.ArtikelstammItem.DetailsClass.IImplementation.Anbieter
         {
             get
@@ -456,6 +448,14 @@ namespace ApplicationData.Implementation
                 {
                     this.__host.RaisePropertyChanged("Anbieter");
                 }
+            }
+        }
+        
+        global::System.Collections.IEnumerable global::LightSwitchApplication.ArtikelstammItem.DetailsClass.IImplementation.ArtikellisteItem
+        {
+            get
+            {
+                return this.ArtikellisteItem;
             }
         }
         

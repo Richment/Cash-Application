@@ -242,7 +242,6 @@ namespace LightSwitchApplication
 		}
 		partial void Editieren_Execute()
 		{
-			//InBearbeitung.EditSelected();
 			Application.ShowBestellungDetails(InBearbeitung.SelectedItem.Id);
 		}
 

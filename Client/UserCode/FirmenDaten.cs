@@ -14,7 +14,7 @@ namespace LightSwitchApplication
 	{
 		partial void FirmenDaten_Saved()
 		{
-			this.Refresh();
+			this.Close(false);
 		}
 
 		partial void FirmenDaten_Created()

@@ -42,13 +42,13 @@
           <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
           <ScalarProperty Name="Artikelnummer" ColumnName="Artikelnummer" />
           <ScalarProperty Name="Artikelbeschreibung" ColumnName="Artikelbeschreibung" />
+          <ScalarProperty Name="ArtikelstammItem_Anbieter" ColumnName="ArtikelstammItem_Anbieter" />
           <ScalarProperty Name="Vertriebsname" ColumnName="Vertriebsname" />
           <ScalarProperty Name="Anzahl_PK" ColumnName="Anzahl_PK" />
-          <ScalarProperty Name="HK_pro_PK" ColumnName="HK_pro_PK" />
           <ScalarProperty Name="EK_pro_PK" ColumnName="EK_pro_PK" />
           <ScalarProperty Name="VK_pro_PK" ColumnName="VK_pro_PK" />
+          <ScalarProperty Name="HK_pro_PK" ColumnName="HK_pro_PK" />
           <ScalarProperty Name="Marge" ColumnName="Marge" />
-          <ScalarProperty Name="ArtikelstammItem_Anbieter" ColumnName="ArtikelstammItem_Anbieter" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

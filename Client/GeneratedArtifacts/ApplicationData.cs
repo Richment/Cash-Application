@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Ursprünglicher Dateiname:
-// Erstellungsdatum: 04.04.2014 05:28:18
+// Erstellungsdatum: 04.04.2014 09:04:48
 namespace LightSwitchApplication.Implementation
 {
     
@@ -1355,32 +1355,6 @@ namespace LightSwitchApplication.Implementation
         partial void OnAnzahl_PKChanging(int value);
         partial void OnAnzahl_PKChanged();
         /// <summary>
-        /// Im Schema sind keine Kommentare für die Eigenschaft "HK_pro_PK" vorhanden.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Nullable<decimal> HK_pro_PK
-        {
-            get
-            {
-                return this._HK_pro_PK;
-            }
-            set
-            {
-                this.OnHK_pro_PKChanging(value);
-                if (object.Equals(this.HK_pro_PK, value))
-                {
-                    return;
-                }
-                this._HK_pro_PK = value;
-                this.OnHK_pro_PKChanged();
-                this.OnPropertyChanged("HK_pro_PK");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Nullable<decimal> _HK_pro_PK;
-        partial void OnHK_pro_PKChanging(global::System.Nullable<decimal> value);
-        partial void OnHK_pro_PKChanged();
-        /// <summary>
         /// Im Schema sind keine Kommentare für die Eigenschaft "EK_pro_PK" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -1432,6 +1406,32 @@ namespace LightSwitchApplication.Implementation
         private decimal _VK_pro_PK;
         partial void OnVK_pro_PKChanging(decimal value);
         partial void OnVK_pro_PKChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "HK_pro_PK" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Nullable<decimal> HK_pro_PK
+        {
+            get
+            {
+                return this._HK_pro_PK;
+            }
+            set
+            {
+                this.OnHK_pro_PKChanging(value);
+                if (object.Equals(this.HK_pro_PK, value))
+                {
+                    return;
+                }
+                this._HK_pro_PK = value;
+                this.OnHK_pro_PKChanged();
+                this.OnPropertyChanged("HK_pro_PK");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Nullable<decimal> _HK_pro_PK;
+        partial void OnHK_pro_PKChanging(global::System.Nullable<decimal> value);
+        partial void OnHK_pro_PKChanged();
         /// <summary>
         /// Im Schema sind keine Kommentare für die Eigenschaft "Marge" vorhanden.
         /// </summary>
@@ -1485,25 +1485,6 @@ namespace LightSwitchApplication.Implementation
         partial void OnArtikelstammItem_AnbieterChanging(int value);
         partial void OnArtikelstammItem_AnbieterChanged();
         /// <summary>
-        /// Im Schema sind keine Kommentare für "ArtikellisteItem" vorhanden.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceCollection<ArtikellisteItem> ArtikellisteItem
-        {
-            get
-            {
-                this.@__ArtikellisteItem.EnsureValueInitialized();
-                return this._ArtikellisteItem;
-            }
-            set
-            {
-                this._ArtikellisteItem = value;
-                this.OnPropertyChanged("ArtikellisteItem");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<ArtikellisteItem> _ArtikellisteItem = new global::System.Data.Services.Client.DataServiceCollection<ArtikellisteItem>(null, global::System.Data.Services.Client.TrackingMode.None);
-        /// <summary>
         /// Im Schema sind keine Kommentare für "Anbieter" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -1550,6 +1531,25 @@ namespace LightSwitchApplication.Implementation
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private Anbieter _Anbieter;
+        /// <summary>
+        /// Im Schema sind keine Kommentare für "ArtikellisteItem" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceCollection<ArtikellisteItem> ArtikellisteItem
+        {
+            get
+            {
+                this.@__ArtikellisteItem.EnsureValueInitialized();
+                return this._ArtikellisteItem;
+            }
+            set
+            {
+                this._ArtikellisteItem = value;
+                this.OnPropertyChanged("ArtikellisteItem");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<ArtikellisteItem> _ArtikellisteItem = new global::System.Data.Services.Client.DataServiceCollection<ArtikellisteItem>(null, global::System.Data.Services.Client.TrackingMode.None);
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]

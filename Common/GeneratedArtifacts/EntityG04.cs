@@ -528,6 +528,24 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public string Bearbeitungsstatus
+        {
+            get
+            {
+                return global::LightSwitchApplication.Rechnungen.DetailsClass.GetValue(this, global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties.Bearbeitungsstatus);
+            }
+        }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Bearbeitungsstatus_Compute(ref string result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Bearbeitungsstatus_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+
+        /// <summary>
+        /// Keine modellierte Beschreibung verfügbar
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public global::LightSwitchApplication.KundenItem Kunde
         {
             get
@@ -857,6 +875,14 @@ namespace LightSwitchApplication
                     get
                     {
                         return base.GetItem(global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties.RequiresProcessing) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, bool>;
+                    }
+                }
+                
+                public global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, string> Bearbeitungsstatus
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties.Bearbeitungsstatus) as global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, string>;
                     }
                 }
                 
@@ -1576,6 +1602,28 @@ namespace LightSwitchApplication
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, string>.Entry
+                    Bearbeitungsstatus = new global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, string>.Entry(
+                        "Bearbeitungsstatus",
+                        global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._Bearbeitungsstatus_Stub,
+                        global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._Bearbeitungsstatus_Validate,
+                        global::LightSwitchApplication.Rechnungen.DetailsClass.PropertySetProperties._Bearbeitungsstatus_ComputeValue);
+                private static void _Bearbeitungsstatus_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Rechnungen.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, string>.Data> c, global::LightSwitchApplication.Rechnungen.DetailsClass d, object sf)
+                {
+                    c(d, ref d._Bearbeitungsstatus, sf);
+                }
+                private static void _Bearbeitungsstatus_Validate(global::LightSwitchApplication.Rechnungen e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                {
+                    e.Bearbeitungsstatus_Validate(r);
+                }
+                private static string _Bearbeitungsstatus_ComputeValue(global::LightSwitchApplication.Rechnungen e)
+                {
+                    string value = default(string);
+                    e.Bearbeitungsstatus_Compute(ref value);
+                    return value;
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.KundenItem>.Entry
                     Kunde = new global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.KundenItem>.Entry(
                         "Kunde",
@@ -1797,6 +1845,9 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, bool>.Data _RequiresProcessing;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, string>.Data _Bearbeitungsstatus;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Rechnungen, global::LightSwitchApplication.Rechnungen.DetailsClass, global::LightSwitchApplication.KundenItem>.Data _Kunde;

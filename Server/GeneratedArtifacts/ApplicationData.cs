@@ -1368,30 +1368,6 @@ namespace ApplicationData.Implementation
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Decimal> HK_pro_PK
-        {
-            get
-            {
-                return _HK_pro_PK;
-            }
-            set
-            {
-                OnHK_pro_PKChanging(value);
-                ReportPropertyChanging("HK_pro_PK");
-                _HK_pro_PK = value;
-                ReportPropertyChanged("HK_pro_PK");
-                OnHK_pro_PKChanged();
-            }
-        }
-        private Nullable<global::System.Decimal> _HK_pro_PK;
-        partial void OnHK_pro_PKChanging(Nullable<global::System.Decimal> value);
-        partial void OnHK_pro_PKChanged();
-    
-        /// <summary>
-        /// Keine Dokumentation für Metadaten verfügbar.
-        /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.Decimal EK_pro_PK
@@ -1436,6 +1412,30 @@ namespace ApplicationData.Implementation
         private global::System.Decimal _VK_pro_PK;
         partial void OnVK_pro_PKChanging(global::System.Decimal value);
         partial void OnVK_pro_PKChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> HK_pro_PK
+        {
+            get
+            {
+                return _HK_pro_PK;
+            }
+            set
+            {
+                OnHK_pro_PKChanging(value);
+                ReportPropertyChanging("HK_pro_PK");
+                _HK_pro_PK = value;
+                ReportPropertyChanged("HK_pro_PK");
+                OnHK_pro_PKChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _HK_pro_PK;
+        partial void OnHK_pro_PKChanging(Nullable<global::System.Decimal> value);
+        partial void OnHK_pro_PKChanged();
     
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.
@@ -1496,28 +1496,6 @@ namespace ApplicationData.Implementation
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "ArtikellisteItem_ArtikelstammItem", "ArtikellisteItem")]
-        public EntityCollection<ArtikellisteItem> ArtikellisteItem
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ArtikellisteItem>("LightSwitchApplication.ArtikellisteItem_ArtikelstammItem", "ArtikellisteItem");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ArtikellisteItem>("LightSwitchApplication.ArtikellisteItem_ArtikelstammItem", "ArtikellisteItem", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// Keine Dokumentation für Metadaten verfügbar.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "ArtikelstammItem_Anbieter", "Anbieter")]
         public Anbieter Anbieter
         {
@@ -1546,6 +1524,28 @@ namespace ApplicationData.Implementation
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Anbieter>("LightSwitchApplication.ArtikelstammItem_Anbieter", "Anbieter", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "ArtikellisteItem_ArtikelstammItem", "ArtikellisteItem")]
+        public EntityCollection<ArtikellisteItem> ArtikellisteItem
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ArtikellisteItem>("LightSwitchApplication.ArtikellisteItem_ArtikelstammItem", "ArtikellisteItem");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ArtikellisteItem>("LightSwitchApplication.ArtikellisteItem_ArtikelstammItem", "ArtikellisteItem", value);
                 }
             }
         }

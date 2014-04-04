@@ -14,8 +14,8 @@ namespace LightSwitchApplication
 	public partial class KundenDetails
 	{
 		private const string FRMLiefer = "ModalAddressLiefer";
-		private const string TXTHeader = "HeaderText";		   
-	
+		private const string TXTHeader = "HeaderText";
+
 		private AdressenSetItem newItem;
 		private string header;
 
@@ -32,15 +32,10 @@ namespace LightSwitchApplication
 
 		partial void KundenDetails_Saved()
 		{
-			this.SetDisplayNameFromEntity(this.Kunden);
+			Close(false);
 		}
 
-
-
-
-
-
-		#region Liefer
+		#region LieferAdresse
 
 		private void LieferAvailable(object sender, ControlAvailableEventArgs e)
 		{
@@ -71,12 +66,12 @@ namespace LightSwitchApplication
 			this.CloseModalWindow(FRMLiefer);
 			this.FindControl(FRMLiefer).IsVisible = false;
 		}
-	
+
 		partial void LieferOK_Execute()
 		{
-			this.LieferCloseWindow();	
+			this.LieferCloseWindow();
 		}
-	
+
 		partial void AdressenAddAndEditNew_Execute()
 		{
 			header = "Lieferadresse hinzufügen...";
@@ -86,7 +81,7 @@ namespace LightSwitchApplication
 		}
 
 		partial void AdressenEditSelected_Execute()
-		{	  
+		{
 			header = "Lieferadresse bearbeiten...";
 			newItem = this.Adressen.SelectedItem;
 			this.OpenModalWindow(FRMLiefer);

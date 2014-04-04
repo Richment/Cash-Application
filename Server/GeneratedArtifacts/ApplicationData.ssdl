@@ -93,9 +93,9 @@
     <Property Name="Artikelbeschreibung" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="Vertriebsname" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="Anzahl_PK" Type="int" Nullable="false" />
-    <Property Name="HK_pro_PK" Type="decimal" Precision="18" Scale="2" />
     <Property Name="EK_pro_PK" Type="decimal" Nullable="false" Precision="18" Scale="2" />
     <Property Name="VK_pro_PK" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="HK_pro_PK" Type="decimal" Precision="18" Scale="2" />
     <Property Name="Marge" Type="decimal" Precision="18" Scale="2" />
     <Property Name="ArtikelstammItem_Anbieter" Type="int" Nullable="false" />
   </EntityType>

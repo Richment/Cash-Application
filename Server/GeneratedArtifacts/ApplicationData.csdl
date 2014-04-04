@@ -46,13 +46,13 @@
     <Property Name="Artikelbeschreibung" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="Vertriebsname" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="Anzahl_PK" Type="Edm.Int32" Nullable="false" />
-    <Property Name="HK_pro_PK" Type="Edm.Decimal" Precision="18" Scale="2" />
     <Property Name="EK_pro_PK" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="2" />
     <Property Name="VK_pro_PK" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="HK_pro_PK" Type="Edm.Decimal" Precision="18" Scale="2" />
     <Property Name="Marge" Type="Edm.Decimal" Precision="18" Scale="2" />
     <Property Name="ArtikelstammItem_Anbieter" Type="Edm.Int32" Nullable="false" />
-    <NavigationProperty Name="ArtikellisteItem" Relationship="LightSwitchApplication.ArtikellisteItem_ArtikelstammItem" ToRole="ArtikellisteItem" FromRole="ArtikelstammItem" />
     <NavigationProperty Name="Anbieter" Relationship="LightSwitchApplication.ArtikelstammItem_Anbieter" ToRole="Anbieter" FromRole="ArtikelstammItem" />
+    <NavigationProperty Name="ArtikellisteItem" Relationship="LightSwitchApplication.ArtikellisteItem_ArtikelstammItem" ToRole="ArtikellisteItem" FromRole="ArtikelstammItem" />
   </EntityType>
   <EntityType Name="Rechnungen">
     <Key>
