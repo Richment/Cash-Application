@@ -1361,6 +1361,46 @@ namespace LightSwitchApplication.Implementation
     }
     #endregion
     
+    #region ReportingTemplates
+    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/ApplicationData.Implementation")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class ReportingTemplates :
+        global::LightSwitchApplication.ReportingTemplates.DetailsClass.IImplementation
+    {
+        partial void OnIdChanged()
+        {
+            this.___OnPropertyChanged("Id");
+        }
+        
+        partial void OnRowVersionChanged()
+        {
+            this.___OnPropertyChanged("RowVersion");
+        }
+        
+        partial void OnReleaseDateChanged()
+        {
+            this.___OnPropertyChanged("ReleaseDate");
+        }
+        
+        partial void OnTemplateChanged()
+        {
+            this.___OnPropertyChanged("Template");
+        }
+        
+        partial void OnBeschreibungChanged()
+        {
+            this.___OnPropertyChanged("Beschreibung");
+        }
+        
+        partial void OnOriginalFilenameChanged()
+        {
+            this.___OnPropertyChanged("OriginalFilename");
+        }
+        
+    }
+    #endregion
+    
     #region ApplicationDataObjectContext
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1423,6 +1463,10 @@ namespace LightSwitchApplication.Implementation
             if (typeof(T) == typeof(global::LightSwitchApplication.MailSettings))
             {
                 return new global::LightSwitchApplication.Implementation.MailSettings();
+            }
+            if (typeof(T) == typeof(global::LightSwitchApplication.ReportingTemplates))
+            {
+                return new global::LightSwitchApplication.Implementation.ReportingTemplates();
             }
             return null;
         }
@@ -1522,6 +1566,10 @@ namespace LightSwitchApplication.Implementation
             if (typeof(global::LightSwitchApplication.MailSettings) == definitionType)
             {
                 return typeof(global::LightSwitchApplication.Implementation.MailSettings);
+            }
+            if (typeof(global::LightSwitchApplication.ReportingTemplates) == definitionType)
+            {
+                return typeof(global::LightSwitchApplication.Implementation.ReportingTemplates);
             }
             return null;
         }

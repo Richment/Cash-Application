@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Ursprünglicher Dateiname:
-// Erstellungsdatum: 08.04.2014 03:56:12
+// Erstellungsdatum: 12.04.2014 20:48:46
 namespace LightSwitchApplication.Implementation
 {
     
@@ -299,6 +299,23 @@ namespace LightSwitchApplication.Implementation
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceQuery<MailSettings> _MailSettingsSet;
         /// <summary>
+        /// Im Schema sind keine Kommentare für "ReportingTemplatesSet" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceQuery<ReportingTemplates> ReportingTemplatesSet
+        {
+            get
+            {
+                if ((this._ReportingTemplatesSet == null))
+                {
+                    this._ReportingTemplatesSet = base.CreateQuery<ReportingTemplates>("ReportingTemplatesSet");
+                }
+                return this._ReportingTemplatesSet;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceQuery<ReportingTemplates> _ReportingTemplatesSet;
+        /// <summary>
         /// Im Schema sind keine Kommentare für "Kunden" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -409,6 +426,14 @@ namespace LightSwitchApplication.Implementation
         public void AddToMailSettingsSet(MailSettings mailSettings)
         {
             base.AddObject("MailSettingsSet", mailSettings);
+        }
+        /// <summary>
+        /// Im Schema sind keine Kommentare für "ReportingTemplatesSet" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public void AddToReportingTemplatesSet(ReportingTemplates reportingTemplates)
+        {
+            base.AddObject("ReportingTemplatesSet", reportingTemplates);
         }
     }
     /// <summary>
@@ -4975,6 +5000,216 @@ namespace LightSwitchApplication.Implementation
         private string _SenderAddress;
         partial void OnSenderAddressChanging(string value);
         partial void OnSenderAddressChanged();
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// Im Schema sind keine Kommentare für "LightSwitchApplication.ReportingTemplates" vorhanden.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("ReportingTemplatesSet")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
+    public partial class ReportingTemplates : global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityBase, global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Erstellt ein neues ReportingTemplates-Objekt.
+        /// </summary>
+        /// <param name="ID">Anfangswert von Id.</param>
+        /// <param name="rowVersion">Anfangswert von RowVersion.</param>
+        /// <param name="releaseDate">Anfangswert von ReleaseDate.</param>
+        /// <param name="template">Anfangswert von Template.</param>
+        /// <param name="beschreibung">Anfangswert von Beschreibung.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static ReportingTemplates CreateReportingTemplates(int ID, byte[] rowVersion, global::System.DateTime releaseDate, byte[] template, string beschreibung)
+        {
+            ReportingTemplates reportingTemplates = new ReportingTemplates();
+            reportingTemplates.Id = ID;
+            reportingTemplates.RowVersion = rowVersion;
+            reportingTemplates.ReleaseDate = releaseDate;
+            reportingTemplates.Template = template;
+            reportingTemplates.Beschreibung = beschreibung;
+            return reportingTemplates;
+        }
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "Id" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public int Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                if (object.Equals(this.Id, value))
+                {
+                    return;
+                }
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private int _Id;
+        partial void OnIdChanging(int value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "RowVersion" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public byte[] RowVersion
+        {
+            get
+            {
+                if ((this._RowVersion != null))
+                {
+                    return ((byte[])(this._RowVersion.Clone()));
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set
+            {
+                this.OnRowVersionChanging(value);
+                if (object.Equals(this.RowVersion, value))
+                {
+                    return;
+                }
+                this._RowVersion = value;
+                this.OnRowVersionChanged();
+                this.OnPropertyChanged("RowVersion");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private byte[] _RowVersion;
+        partial void OnRowVersionChanging(byte[] value);
+        partial void OnRowVersionChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "ReleaseDate" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.DateTime ReleaseDate
+        {
+            get
+            {
+                return this._ReleaseDate;
+            }
+            set
+            {
+                this.OnReleaseDateChanging(value);
+                if (object.Equals(this.ReleaseDate, value))
+                {
+                    return;
+                }
+                this._ReleaseDate = value;
+                this.OnReleaseDateChanged();
+                this.OnPropertyChanged("ReleaseDate");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.DateTime _ReleaseDate;
+        partial void OnReleaseDateChanging(global::System.DateTime value);
+        partial void OnReleaseDateChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "Template" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public byte[] Template
+        {
+            get
+            {
+                if ((this._Template != null))
+                {
+                    return ((byte[])(this._Template.Clone()));
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set
+            {
+                this.OnTemplateChanging(value);
+                if (object.Equals(this.Template, value))
+                {
+                    return;
+                }
+                this._Template = value;
+                this.OnTemplateChanged();
+                this.OnPropertyChanged("Template");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private byte[] _Template;
+        partial void OnTemplateChanging(byte[] value);
+        partial void OnTemplateChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "Beschreibung" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Beschreibung
+        {
+            get
+            {
+                return this._Beschreibung;
+            }
+            set
+            {
+                this.OnBeschreibungChanging(value);
+                if (object.Equals(this.Beschreibung, value))
+                {
+                    return;
+                }
+                this._Beschreibung = value;
+                this.OnBeschreibungChanged();
+                this.OnPropertyChanged("Beschreibung");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Beschreibung;
+        partial void OnBeschreibungChanging(string value);
+        partial void OnBeschreibungChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "OriginalFilename" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string OriginalFilename
+        {
+            get
+            {
+                return this._OriginalFilename;
+            }
+            set
+            {
+                this.OnOriginalFilenameChanging(value);
+                if (object.Equals(this.OriginalFilename, value))
+                {
+                    return;
+                }
+                this._OriginalFilename = value;
+                this.OnOriginalFilenameChanged();
+                this.OnPropertyChanged("OriginalFilename");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _OriginalFilename;
+        partial void OnOriginalFilenameChanging(string value);
+        partial void OnOriginalFilenameChanged();
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]

@@ -15,6 +15,7 @@
     <EntitySet Name="DocumentsSet" EntityType="ApplicationDataStore.Documents" store:Type="Tables" Schema="dbo" Table="DocumentsSet" />
     <EntitySet Name="GeneratedDocumentSet" EntityType="ApplicationDataStore.GeneratedDocument" store:Type="Tables" Schema="dbo" Table="GeneratedDocumentSet" />
     <EntitySet Name="MailSettingsSet" EntityType="ApplicationDataStore.MailSettings" store:Type="Tables" Schema="dbo" Table="MailSettingsSet" />
+    <EntitySet Name="ReportingTemplatesSet" EntityType="ApplicationDataStore.ReportingTemplates" store:Type="Tables" Schema="dbo" Table="ReportingTemplatesSet" />
     <AssociationSet Name="ArtikellisteItem_Rechnungen" Association="ApplicationDataStore.ArtikellisteItem_Rechnungen">
       <End Role="Rechnungen" EntitySet="RechnungenSet" />
       <End Role="ArtikellisteItem" EntitySet="Artikelliste" />
@@ -248,6 +249,17 @@
     <Property Name="Username" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="SenderAddress" Type="nvarchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="ReportingTemplates">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="ReleaseDate" Type="datetime" Nullable="false" />
+    <Property Name="Template" Type="varbinary(max)" Nullable="false" />
+    <Property Name="Beschreibung" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="OriginalFilename" Type="nvarchar" MaxLength="255" />
   </EntityType>
   <Association Name="ArtikellisteItem_Rechnungen">
     <End Role="Rechnungen" Type="ApplicationDataStore.Rechnungen" Multiplicity="1">

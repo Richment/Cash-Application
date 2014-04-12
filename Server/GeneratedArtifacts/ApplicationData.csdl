@@ -213,6 +213,17 @@
     <Property Name="Password" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="SenderAddress" Type="Edm.String" Nullable="false" MaxLength="255" />
   </EntityType>
+  <EntityType Name="ReportingTemplates">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="ReleaseDate" Type="Edm.DateTime" Nullable="false" />
+    <Property Name="Template" Type="Edm.Binary" Nullable="false" MaxLength="Max" />
+    <Property Name="Beschreibung" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="OriginalFilename" Type="Edm.String" MaxLength="255" />
+  </EntityType>
   <Association Name="ArtikellisteItem_Rechnungen">
     <End Role="Rechnungen" Type="LightSwitchApplication.Rechnungen" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -356,6 +367,7 @@
     <EntitySet Name="DocumentsSet" EntityType="LightSwitchApplication.Documents" />
     <EntitySet Name="GeneratedDocumentSet" EntityType="LightSwitchApplication.GeneratedDocument" />
     <EntitySet Name="MailSettingsSet" EntityType="LightSwitchApplication.MailSettings" />
+    <EntitySet Name="ReportingTemplatesSet" EntityType="LightSwitchApplication.ReportingTemplates" />
     <AssociationSet Name="ArtikellisteItem_Rechnungen" Association="LightSwitchApplication.ArtikellisteItem_Rechnungen">
       <End Role="Rechnungen" EntitySet="RechnungenSet" />
       <End Role="ArtikellisteItem" EntitySet="Artikelliste" />

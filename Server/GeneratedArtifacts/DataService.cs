@@ -564,6 +564,42 @@ namespace LightSwitchApplication
         partial void MailSettingsSet_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.MailSettings, bool>> filter);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ReportingTemplatesSet_CanInsert(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ReportingTemplatesSet_CanUpdate(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ReportingTemplatesSet_CanDelete(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ReportingTemplatesSet_CanRead(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ReportingTemplatesSet_Inserting(global::LightSwitchApplication.ReportingTemplates entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ReportingTemplatesSet_Inserted(global::LightSwitchApplication.ReportingTemplates entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ReportingTemplatesSet_Updating(global::LightSwitchApplication.ReportingTemplates entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ReportingTemplatesSet_Updated(global::LightSwitchApplication.ReportingTemplates entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ReportingTemplatesSet_Deleting(global::LightSwitchApplication.ReportingTemplates entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ReportingTemplatesSet_Deleted(global::LightSwitchApplication.ReportingTemplates entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ReportingTemplatesSet_Validate(global::LightSwitchApplication.ReportingTemplates entity, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder results);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ReportingTemplatesSet_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.ReportingTemplates, bool>> filter);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void SaveChanges_CanExecute(ref bool result);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1720,6 +1756,81 @@ namespace LightSwitchApplication
             {
                 global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.MailSettings, bool>> filter = null;
                 d.MailSettingsSet_Filter(ref filter);
+                return filter;
+            }
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.ReportingTemplates>
+                __ReportingTemplatesSetEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.ReportingTemplates>(
+                    "ReportingTemplatesSet",
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__ReportingTemplatesSet_CanInsert,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__ReportingTemplatesSet_CanUpdate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__ReportingTemplatesSet_CanDelete,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__ReportingTemplatesSet_CanRead,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__ReportingTemplatesSet_Inserting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__ReportingTemplatesSet_Inserted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__ReportingTemplatesSet_Updating,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__ReportingTemplatesSet_Updated,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__ReportingTemplatesSet_Deleting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__ReportingTemplatesSet_Deleted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__ReportingTemplatesSet_Validate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__ReportingTemplatesSet_Filter);
+            private static bool __ReportingTemplatesSet_CanInsert(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.ReportingTemplatesSet_CanInsert(ref result);
+                return result;
+            }
+            private static bool __ReportingTemplatesSet_CanUpdate(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.ReportingTemplatesSet_CanUpdate(ref result);
+                return result;
+            }
+            private static bool __ReportingTemplatesSet_CanDelete(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.ReportingTemplatesSet_CanDelete(ref result);
+                return result;
+            }
+            private static bool __ReportingTemplatesSet_CanRead(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.ReportingTemplatesSet_CanRead(ref result);
+                return result;
+            }
+            private static void __ReportingTemplatesSet_Inserting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.ReportingTemplates e)
+            {
+                d.ReportingTemplatesSet_Inserting(e);
+            }
+            private static void __ReportingTemplatesSet_Inserted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.ReportingTemplates e)
+            {
+                d.ReportingTemplatesSet_Inserted(e);
+            }
+            private static void __ReportingTemplatesSet_Updating(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.ReportingTemplates e)
+            {
+                d.ReportingTemplatesSet_Updating(e);
+            }
+            private static void __ReportingTemplatesSet_Updated(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.ReportingTemplates e)
+            {
+                d.ReportingTemplatesSet_Updated(e);
+            }
+            private static void __ReportingTemplatesSet_Deleting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.ReportingTemplates e)
+            {
+                d.ReportingTemplatesSet_Deleting(e);
+            }
+            private static void __ReportingTemplatesSet_Deleted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.ReportingTemplates e)
+            {
+                d.ReportingTemplatesSet_Deleted(e);
+            }
+            private static void __ReportingTemplatesSet_Validate(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.ReportingTemplates e, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder r)
+            {
+                d.ReportingTemplatesSet_Validate(e, r);
+            }
+            private static global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.ReportingTemplates, bool>> __ReportingTemplatesSet_Filter(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.ReportingTemplates, bool>> filter = null;
+                d.ReportingTemplatesSet_Filter(ref filter);
                 return filter;
             }
             

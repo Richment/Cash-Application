@@ -83,6 +83,7 @@
     <Compile Include="UserCode\OutgoingMail.cs" />
     <Compile Include="UserCode\Rechnungen.cs" />
     <Compile Include="UserCode\DictionaryExtension.cs" />
+    <Compile Include="UserCode\ReportingTemplates.cs" />
     <Compile Include="UserCode\WaitSimulation.cs" />
   </ItemGroup>
   <ItemGroup>

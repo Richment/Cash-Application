@@ -300,6 +300,22 @@ namespace ApplicationData.Implementation
             }
         }
         private ObjectSet<MailSettings> _MailSettingsSet;
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        public ObjectSet<ReportingTemplates> ReportingTemplatesSet
+        {
+            get
+            {
+                if ((_ReportingTemplatesSet == null))
+                {
+                    _ReportingTemplatesSet = base.CreateObjectSet<ReportingTemplates>("ReportingTemplatesSet");
+                }
+                return _ReportingTemplatesSet;
+            }
+        }
+        private ObjectSet<ReportingTemplates> _ReportingTemplatesSet;
 
         #endregion
 
@@ -415,6 +431,14 @@ namespace ApplicationData.Implementation
         public void AddToMailSettingsSet(MailSettings mailSettings)
         {
             base.AddObject("MailSettingsSet", mailSettings);
+        }
+    
+        /// <summary>
+        /// Veraltete Methode zum Hinzufügen eines neuen Objekts zum EntitySet 'ReportingTemplatesSet'. Verwenden Sie stattdessen die Methode '.Add' der zugeordneten Eigenschaft 'ObjectSet&lt;T&gt;'.
+        /// </summary>
+        public void AddToReportingTemplatesSet(ReportingTemplates reportingTemplates)
+        {
+            base.AddObject("ReportingTemplatesSet", reportingTemplates);
         }
 
         #endregion
@@ -4633,6 +4657,191 @@ namespace ApplicationData.Implementation
 
         #endregion
 
+    }
+    
+    /// <summary>
+    /// Keine Dokumentation für Metadaten verfügbar.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="ReportingTemplates")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class ReportingTemplates : EntityObject
+    {
+        #region Factory-Methode
+    
+        /// <summary>
+        /// Erstellt ein neues ReportingTemplates-Objekt.
+        /// </summary>
+        /// <param name="id">Anfangswert der Eigenschaft Id.</param>
+        /// <param name="rowVersion">Anfangswert der Eigenschaft RowVersion.</param>
+        /// <param name="releaseDate">Anfangswert der Eigenschaft ReleaseDate.</param>
+        /// <param name="template">Anfangswert der Eigenschaft Template.</param>
+        /// <param name="beschreibung">Anfangswert der Eigenschaft Beschreibung.</param>
+        public static ReportingTemplates CreateReportingTemplates(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.DateTime releaseDate, global::System.Byte[] template, global::System.String beschreibung)
+        {
+            ReportingTemplates reportingTemplates = new ReportingTemplates();
+            reportingTemplates.Id = id;
+            reportingTemplates.RowVersion = rowVersion;
+            reportingTemplates.ReleaseDate = releaseDate;
+            reportingTemplates.Template = template;
+            reportingTemplates.Beschreibung = beschreibung;
+            return reportingTemplates;
+        }
+
+        #endregion
+
+        #region Primitive Eigenschaften
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = value;
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] RowVersion
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_RowVersion);
+            }
+            set
+            {
+                OnRowVersionChanging(value);
+                ReportPropertyChanging("RowVersion");
+                _RowVersion = value;
+                ReportPropertyChanged("RowVersion");
+                OnRowVersionChanged();
+            }
+        }
+        private global::System.Byte[] _RowVersion;
+        partial void OnRowVersionChanging(global::System.Byte[] value);
+        partial void OnRowVersionChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime ReleaseDate
+        {
+            get
+            {
+                return _ReleaseDate;
+            }
+            set
+            {
+                OnReleaseDateChanging(value);
+                ReportPropertyChanging("ReleaseDate");
+                _ReleaseDate = value;
+                ReportPropertyChanged("ReleaseDate");
+                OnReleaseDateChanged();
+            }
+        }
+        private global::System.DateTime _ReleaseDate;
+        partial void OnReleaseDateChanging(global::System.DateTime value);
+        partial void OnReleaseDateChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] Template
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_Template);
+            }
+            set
+            {
+                OnTemplateChanging(value);
+                ReportPropertyChanging("Template");
+                _Template = value;
+                ReportPropertyChanged("Template");
+                OnTemplateChanged();
+            }
+        }
+        private global::System.Byte[] _Template;
+        partial void OnTemplateChanging(global::System.Byte[] value);
+        partial void OnTemplateChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Beschreibung
+        {
+            get
+            {
+                return _Beschreibung;
+            }
+            set
+            {
+                OnBeschreibungChanging(value);
+                ReportPropertyChanging("Beschreibung");
+                _Beschreibung = value;
+                ReportPropertyChanged("Beschreibung");
+                OnBeschreibungChanged();
+            }
+        }
+        private global::System.String _Beschreibung;
+        partial void OnBeschreibungChanging(global::System.String value);
+        partial void OnBeschreibungChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String OriginalFilename
+        {
+            get
+            {
+                return _OriginalFilename;
+            }
+            set
+            {
+                OnOriginalFilenameChanging(value);
+                ReportPropertyChanging("OriginalFilename");
+                _OriginalFilename = value;
+                ReportPropertyChanged("OriginalFilename");
+                OnOriginalFilenameChanged();
+            }
+        }
+        private global::System.String _OriginalFilename;
+        partial void OnOriginalFilenameChanging(global::System.String value);
+        partial void OnOriginalFilenameChanged();
+
+        #endregion
+
+    
     }
 
     #endregion

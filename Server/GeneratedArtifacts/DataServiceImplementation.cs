@@ -147,6 +147,10 @@ namespace LightSwitchApplication.Implementation
             {
                 return new global::ApplicationData.Implementation.MailSettings();
             }
+            if (type == typeof(global::ApplicationData.Implementation.ReportingTemplates))
+            {
+                return new global::ApplicationData.Implementation.ReportingTemplates();
+            }
     
             return base.CreateObject(type);
         }
@@ -217,6 +221,10 @@ namespace LightSwitchApplication.Implementation
             if (typeof(T) == typeof(global::LightSwitchApplication.MailSettings))
             {
                 return new global::ApplicationData.Implementation.MailSettings();
+            }
+            if (typeof(T) == typeof(global::LightSwitchApplication.ReportingTemplates))
+            {
+                return new global::ApplicationData.Implementation.ReportingTemplates();
             }
             return null;
         }
@@ -318,6 +326,10 @@ namespace LightSwitchApplication.Implementation
             if (typeof(global::LightSwitchApplication.MailSettings) == definitionType)
             {
                 return typeof(global::ApplicationData.Implementation.MailSettings);
+            }
+            if (typeof(global::LightSwitchApplication.ReportingTemplates) == definitionType)
+            {
+                return typeof(global::ApplicationData.Implementation.ReportingTemplates);
             }
             return null;
         }
@@ -1088,6 +1100,39 @@ namespace ApplicationData.Implementation
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public partial class MailSettings :
         global::LightSwitchApplication.MailSettings.DetailsClass.IImplementation
+    {
+    
+        #region IEntityImplementation Members
+        private global::Microsoft.LightSwitch.Internal.IEntityImplementationHost __host;
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementationHost global::Microsoft.LightSwitch.Internal.IEntityImplementation.Host
+        {
+            get
+            {
+                return this.__host;
+            }
+        }
+        
+        void global::Microsoft.LightSwitch.Internal.IEntityImplementation.Initialize(global::Microsoft.LightSwitch.Internal.IEntityImplementationHost host)
+        {
+            this.__host = host;
+        }
+        
+        protected override void OnPropertyChanged(string propertyName)
+        {
+            base.OnPropertyChanged(propertyName);
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged(propertyName);
+            }
+        }
+        #endregion
+    }
+    
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class ReportingTemplates :
+        global::LightSwitchApplication.ReportingTemplates.DetailsClass.IImplementation
     {
     
         #region IEntityImplementation Members

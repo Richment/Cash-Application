@@ -233,6 +233,10 @@
     <Compile Include="UserCode\BestellungenÜbersicht.cs" />
     <Compile Include="UserCode\BestellungDetails.cs" />
     <Compile Include="UserCode\RechnungenExtension.cs" />
+    <Compile Include="UserCode\Rechnungsvorlage.cs" />
+    <Compile Include="UserCode\SelectFileWindow.xaml.cs">
+      <DependentUpon>SelectFileWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserCode\Start.cs" />
     <Compile Include="WordDocument.cs" />
   </ItemGroup>
@@ -303,6 +307,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Command-Redo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\upload32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="UserCode\SelectFileWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\LightSwitch\$(LightSwitchVersion)\Microsoft.LightSwitch.Build.Tasks.targets" />
