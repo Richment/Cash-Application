@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Linq;
+using System.Collections.Specialized;
 using System.IO;
-using System.IO.IsolatedStorage;
-using System.Collections.Generic;
-using Microsoft.LightSwitch;
-using Microsoft.LightSwitch.Framework.Client;
-using Microsoft.LightSwitch.Presentation;
+using System.Linq;
 using Microsoft.LightSwitch.Presentation.Extensions;
 using Microsoft.LightSwitch.Threading;
-using System.Collections.Specialized;
 
 namespace LightSwitchApplication
 {
@@ -91,6 +86,7 @@ namespace LightSwitchApplication
 		partial void ReportingTemplatesSet_Changed(NotifyCollectionChangedEventArgs e)
 		{
 			CurrentReport = ReportingTemplatesSet.OrderBy(n => n.ReleaseDate).LastOrDefault();
+			CurrentDescription = CurrentReport == null ? "" : CurrentReport.Beschreibung;
 		}
 
 		partial void ViewCurrent_CanExecute(ref bool result)
@@ -136,7 +132,13 @@ namespace LightSwitchApplication
 			{
 				Anzahl = 1,
 				Rabatt = 3,
-				ArtikelstammItem = new ArtikelstammItem() { Artikelnummer = "A00001", Artikelbeschreibung = "Testartikel", Vertriebsname = "Testartikel" }
+				ArtikelstammItem = new ArtikelstammItem() 
+				{ 
+					Artikelnummer = "A00001", 
+					Artikelbeschreibung = "Testartikel",
+					Vertriebsname = "Testartikel", 
+					VK_pro_PK = 10M 
+				}
 			});
 			DocDescriptor test = DocDescriptor.CreateRechnung(tmp);
 
@@ -152,6 +154,8 @@ namespace LightSwitchApplication
 				newDoc.Delete();
 				dw.ApplicationData.SaveChanges();
 			}
+			
+			Refresh();
 
 			if (documentBytes != null)
 			{
@@ -159,6 +163,11 @@ namespace LightSwitchApplication
 				File.WriteAllBytes(file, documentBytes);
 				Helper.ShellExecute(file);
 			}
+		}
+
+		partial void ReportingTemplatesSet_SelectionChanged()
+		{
+			SelectedDescription = ReportingTemplatesSet.SelectedItem == null ? "" : ReportingTemplatesSet.SelectedItem.Beschreibung;
 		}
 	};
 }

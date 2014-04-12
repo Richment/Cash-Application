@@ -12827,8 +12827,15 @@
         Name="Spacer"
         PropertyType=":String?" />
       <ScreenProperty
+        ManualLoad="True"
         Name="CurrentReport"
         PropertyType="LightSwitchCommonModule:ReportingTemplates" />
+      <ScreenProperty
+        Name="CurrentDescription"
+        PropertyType=":String?" />
+      <ScreenProperty
+        Name="SelectedDescription"
+        PropertyType=":String?" />
     </Screen.Properties>
     <Screen.RootContentItem>
       <ContentItem
@@ -13148,35 +13155,41 @@
                 </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
-                DataType=":String"
+                DataType=":String?"
                 Kind="Value"
-                Name="Beschreibung"
+                Name="SelectedDescription"
                 View="PixataCustomControls:StylableTextBox">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Beschreibung" />
+                </ContentItem.Attributes>
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="LightSwitchCommonModule:ReportingTemplates/Properties[Beschreibung]" />
+                        Member="Rechnungsvorlage/Properties[SelectedDescription]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
-                    Property="Microsoft.LightSwitch:Label/Properties[Lines]">
+                    Property="PixataCustomControls:StylableTextBox/Properties[AcceptsReturn]">
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <ConstantExpression
-                          ResultType=":Int32"
-                          Value="4" />
+                          ResultType=":Boolean"
+                          Value="True" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>
                   <ControlPropertySource
                     Property="Microsoft.LightSwitch:RootControl/Properties[MinHeight]">
                     <ScreenExpressionTree>
-                      <ConstantExpression
-                        ResultType=":Double"
-                        Value="70" />
+                      <ChainExpression>
+                        <ConstantExpression
+                          ResultType=":Double"
+                          Value="70" />
+                      </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>
                 </ContentItem.PropertySources>
@@ -13318,17 +13331,19 @@
                     </ContentItem.DataSource>
                   </ContentItem>
                   <ContentItem
-                    DataType=":String"
+                    DataType=":String?"
                     Kind="Value"
-                    Name="CurrentReport_Beschreibung1"
+                    Name="CurrentDescription"
                     View="PixataCustomControls:StylableTextBox">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Beschreibung" />
+                    </ContentItem.Attributes>
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <MemberExpression
-                            Member="Rechnungsvorlage/Properties[CurrentReport]" />
-                          <MemberExpression
-                            Member="Beschreibung" />
+                            Member="Rechnungsvorlage/Properties[CurrentDescription]" />
                         </ChainExpression>
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>

@@ -10108,6 +10108,10 @@ namespace LightSwitchApplication
 
         partial void CurrentReport_Changed();
 
+        partial void CurrentDescription_Changed();
+
+        partial void SelectedDescription_Changed();
+
         /// <summary>
         /// Ruft die visuelle ReportingTemplatesSet-Auflistung ab. Diese Auflistung enthält alle Datensätze, die derzeit in der entsprechenden Liste oder im entsprechenden Rastersteuerelement angezeigt werden.
         /// </summary>
@@ -10154,6 +10158,38 @@ namespace LightSwitchApplication
         }
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void CurrentReport_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
+ 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public string CurrentDescription
+        {
+            get 
+            {
+                return global::LightSwitchApplication.Rechnungsvorlage.DetailsClass.GetValue(this, global::LightSwitchApplication.Rechnungsvorlage.DetailsClass.PropertySetProperties.CurrentDescription);
+            }
+            set
+            {
+                global::LightSwitchApplication.Rechnungsvorlage.DetailsClass.SetValue(this, global::LightSwitchApplication.Rechnungsvorlage.DetailsClass.PropertySetProperties.CurrentDescription, value);
+            }
+        }
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void CurrentDescription_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
+ 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public string SelectedDescription
+        {
+            get 
+            {
+                return global::LightSwitchApplication.Rechnungsvorlage.DetailsClass.GetValue(this, global::LightSwitchApplication.Rechnungsvorlage.DetailsClass.PropertySetProperties.SelectedDescription);
+            }
+            set
+            {
+                global::LightSwitchApplication.Rechnungsvorlage.DetailsClass.SetValue(this, global::LightSwitchApplication.Rechnungsvorlage.DetailsClass.PropertySetProperties.SelectedDescription, value);
+            }
+        }
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void SelectedDescription_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
  
         /// <summary>
         /// Ruft die Bildschirmmethode Import auf.
@@ -10307,6 +10343,12 @@ namespace LightSwitchApplication
             private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Rechnungsvorlage, global::LightSwitchApplication.Rechnungsvorlage.DetailsClass, global::LightSwitchApplication.ReportingTemplates>.Data _CurrentReport;
 
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Rechnungsvorlage, global::LightSwitchApplication.Rechnungsvorlage.DetailsClass, string>.Data _CurrentDescription;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Rechnungsvorlage, global::LightSwitchApplication.Rechnungsvorlage.DetailsClass, string>.Data _SelectedDescription;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Rechnungsvorlage, global::LightSwitchApplication.Rechnungsvorlage.DetailsClass>.Data _ImportCommand;
 
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -10358,6 +10400,22 @@ namespace LightSwitchApplication
                     get
                     {
                         return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Rechnungsvorlage, global::LightSwitchApplication.Rechnungsvorlage.DetailsClass, global::LightSwitchApplication.ReportingTemplates>)base.GetItem(global::LightSwitchApplication.Rechnungsvorlage.DetailsClass.PropertySetProperties.CurrentReport);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Rechnungsvorlage, global::LightSwitchApplication.Rechnungsvorlage.DetailsClass, string> CurrentDescription
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Rechnungsvorlage, global::LightSwitchApplication.Rechnungsvorlage.DetailsClass, string>)base.GetItem(global::LightSwitchApplication.Rechnungsvorlage.DetailsClass.PropertySetProperties.CurrentDescription);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Rechnungsvorlage, global::LightSwitchApplication.Rechnungsvorlage.DetailsClass, string> SelectedDescription
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Rechnungsvorlage, global::LightSwitchApplication.Rechnungsvorlage.DetailsClass, string>)base.GetItem(global::LightSwitchApplication.Rechnungsvorlage.DetailsClass.PropertySetProperties.SelectedDescription);
                     }
                 }
 
@@ -10523,6 +10581,46 @@ namespace LightSwitchApplication
                 private static void _CurrentReport_OnValueChanged(global::LightSwitchApplication.Rechnungsvorlage s)
                 {
                     s.CurrentReport_Changed();
+                }
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Rechnungsvorlage, global::LightSwitchApplication.Rechnungsvorlage.DetailsClass, string>.Entry
+                    CurrentDescription = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Rechnungsvorlage, global::LightSwitchApplication.Rechnungsvorlage.DetailsClass, string>.Entry(
+                        "CurrentDescription",
+                        false,
+                        global::LightSwitchApplication.Rechnungsvorlage.DetailsClass.PropertySetProperties._CurrentDescription_Stub,
+                        global::LightSwitchApplication.Rechnungsvorlage.DetailsClass.PropertySetProperties._CurrentDescription_Validate,
+                        global::LightSwitchApplication.Rechnungsvorlage.DetailsClass.PropertySetProperties._CurrentDescription_OnValueChanged);
+                private static void _CurrentDescription_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Rechnungsvorlage.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Rechnungsvorlage, global::LightSwitchApplication.Rechnungsvorlage.DetailsClass, string>.Data> c, global::LightSwitchApplication.Rechnungsvorlage.DetailsClass d, object sf)
+                {
+                    c(d, ref d._CurrentDescription, sf);
+                }
+                private static void _CurrentDescription_Validate(global::LightSwitchApplication.Rechnungsvorlage s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
+                {
+                    s.CurrentDescription_Validate(r);
+                }
+                private static void _CurrentDescription_OnValueChanged(global::LightSwitchApplication.Rechnungsvorlage s)
+                {
+                    s.CurrentDescription_Changed();
+                }
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Rechnungsvorlage, global::LightSwitchApplication.Rechnungsvorlage.DetailsClass, string>.Entry
+                    SelectedDescription = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Rechnungsvorlage, global::LightSwitchApplication.Rechnungsvorlage.DetailsClass, string>.Entry(
+                        "SelectedDescription",
+                        false,
+                        global::LightSwitchApplication.Rechnungsvorlage.DetailsClass.PropertySetProperties._SelectedDescription_Stub,
+                        global::LightSwitchApplication.Rechnungsvorlage.DetailsClass.PropertySetProperties._SelectedDescription_Validate,
+                        global::LightSwitchApplication.Rechnungsvorlage.DetailsClass.PropertySetProperties._SelectedDescription_OnValueChanged);
+                private static void _SelectedDescription_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Rechnungsvorlage.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Rechnungsvorlage, global::LightSwitchApplication.Rechnungsvorlage.DetailsClass, string>.Data> c, global::LightSwitchApplication.Rechnungsvorlage.DetailsClass d, object sf)
+                {
+                    c(d, ref d._SelectedDescription, sf);
+                }
+                private static void _SelectedDescription_Validate(global::LightSwitchApplication.Rechnungsvorlage s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
+                {
+                    s.SelectedDescription_Validate(r);
+                }
+                private static void _SelectedDescription_OnValueChanged(global::LightSwitchApplication.Rechnungsvorlage s)
+                {
+                    s.SelectedDescription_Changed();
                 }
 
             }
