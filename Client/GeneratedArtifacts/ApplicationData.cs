@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Ursprünglicher Dateiname:
-// Erstellungsdatum: 12.04.2014 20:48:46
+// Erstellungsdatum: 12.04.2014 21:50:17
 namespace LightSwitchApplication.Implementation
 {
     
@@ -1079,25 +1079,6 @@ namespace LightSwitchApplication.Implementation
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceCollection<Rechnungen> _Rechnungen = new global::System.Data.Services.Client.DataServiceCollection<Rechnungen>(null, global::System.Data.Services.Client.TrackingMode.None);
-        /// <summary>
-        /// Im Schema sind keine Kommentare für "DocumentsCollection" vorhanden.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceCollection<Documents> DocumentsCollection
-        {
-            get
-            {
-                this.@__DocumentsCollection.EnsureValueInitialized();
-                return this._DocumentsCollection;
-            }
-            set
-            {
-                this._DocumentsCollection = value;
-                this.OnPropertyChanged("DocumentsCollection");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<Documents> _DocumentsCollection = new global::System.Data.Services.Client.DataServiceCollection<Documents>(null, global::System.Data.Services.Client.TrackingMode.None);
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -4329,16 +4310,14 @@ namespace LightSwitchApplication.Implementation
         /// <param name="rowVersion">Anfangswert von RowVersion.</param>
         /// <param name="datum">Anfangswert von Datum.</param>
         /// <param name="bezeichnung">Anfangswert von Bezeichnung.</param>
-        /// <param name="documents_KundenItem">Anfangswert von Documents_KundenItem.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Documents CreateDocuments(int ID, byte[] rowVersion, global::System.DateTime datum, string bezeichnung, int documents_KundenItem)
+        public static Documents CreateDocuments(int ID, byte[] rowVersion, global::System.DateTime datum, string bezeichnung)
         {
             Documents documents = new Documents();
             documents.Id = ID;
             documents.RowVersion = rowVersion;
             documents.Datum = datum;
             documents.Bezeichnung = bezeichnung;
-            documents.Documents_KundenItem = documents_KundenItem;
             return documents;
         }
         /// <summary>
@@ -4486,32 +4465,6 @@ namespace LightSwitchApplication.Implementation
         partial void OnDataChanging(byte[] value);
         partial void OnDataChanged();
         /// <summary>
-        /// Im Schema sind keine Kommentare für die Eigenschaft "Documents_KundenItem" vorhanden.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public int Documents_KundenItem
-        {
-            get
-            {
-                return this._Documents_KundenItem;
-            }
-            set
-            {
-                this.OnDocuments_KundenItemChanging(value);
-                if (object.Equals(this.Documents_KundenItem, value))
-                {
-                    return;
-                }
-                this._Documents_KundenItem = value;
-                this.OnDocuments_KundenItemChanged();
-                this.OnPropertyChanged("Documents_KundenItem");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private int _Documents_KundenItem;
-        partial void OnDocuments_KundenItemChanging(int value);
-        partial void OnDocuments_KundenItemChanged();
-        /// <summary>
         /// Im Schema sind keine Kommentare für "GeneratedDocument" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -4547,53 +4500,6 @@ namespace LightSwitchApplication.Implementation
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private GeneratedDocument _GeneratedDocument;
-        /// <summary>
-        /// Im Schema sind keine Kommentare für "Kunde" vorhanden.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public KundenItem Kunde
-        {
-            get
-            {
-                this.@__Kunde.EnsureValueInitialized();
-                return this._Kunde;
-            }
-            set
-            {
-                KundenItem previous = this.Kunde;
-                if ((previous == value))
-                {
-                    return;
-                }
-                if ((previous != null))
-                {
-                    this._Kunde = null;
-                    this.@__Kunde.OnValueSet();
-                    previous.DocumentsCollection.Remove(this);
-                }
-                if ((this.___Host != null))
-                {
-                    if ((value != null))
-                    {
-                        this.Documents_KundenItem = value.Id;
-                    }
-                    else
-                    {
-                        this.Documents_KundenItem = default(int);
-                    }
-                }
-                this._Kunde = value;
-                this.@__Kunde.OnValueSet();
-                if ((value != null))
-                {
-                    value.@__DocumentsCollection.Add(this);
-                }
-                this.___OnPropertyChanged("Kunde");
-                this.OnPropertyChanged("Kunde");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private KundenItem _Kunde;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]

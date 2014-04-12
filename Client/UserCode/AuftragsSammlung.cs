@@ -120,7 +120,7 @@ namespace LightSwitchApplication
 			{
 				DocDescriptor desc = DocDescriptor.CreateLieferschein(item);
 				
-				Documents newItem = item.Kunde.DocumentsCollection.AddNew();
+				Documents newItem = DocumentsSet.AddNew();
 				newItem.Bezeichnung = desc.Auftragsnummer + " - " + desc.Titel + " vom " +  DateTime.Now.ToShortDateString();
 				newItem.Datum = DateTime.Now;
 				newItem.Data = desc.ToDictionary().Serialize();
@@ -139,7 +139,7 @@ namespace LightSwitchApplication
 			{
 				DocDescriptor desc = DocDescriptor.CreateRechnung(item);
 
-				Documents newItem = item.Kunde.DocumentsCollection.AddNew();
+				Documents newItem = DocumentsSet.AddNew();
 				newItem.Bezeichnung = desc.Auftragsnummer + " - " + desc.Titel + " vom " + DateTime.Now.ToShortDateString();
 				newItem.Datum = DateTime.Now;
 				newItem.Data = desc.ToDictionary().Serialize();

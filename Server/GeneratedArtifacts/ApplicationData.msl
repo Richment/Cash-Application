@@ -182,7 +182,6 @@
           <ScalarProperty Name="Datum" ColumnName="Datum" />
           <ScalarProperty Name="Bezeichnung" ColumnName="Bezeichnung" />
           <ScalarProperty Name="Data" ColumnName="Data" />
-          <ScalarProperty Name="Documents_KundenItem" ColumnName="Documents_KundenItem" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

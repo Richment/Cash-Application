@@ -1528,16 +1528,6 @@
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
-    <AssociationSet
-      Association="Documents_KundenItem"
-      Name="Documents_KundenItemSet">
-      <AssociationSetEnd
-        EntitySet="DocumentsSet"
-        Name="Documents" />
-      <AssociationSetEnd
-        EntitySet="Kunden"
-        Name="KundenItem" />
-    </AssociationSet>
     <EntitySet
       CanDelete="True"
       CanInsert="True"
@@ -1821,15 +1811,6 @@
         FromEnd="KundenItem"
         Name="Rechnungen"
         ToEnd="Rechnungen" />
-      <NavigationProperty
-        Association="Documents_KundenItem"
-        FromEnd="KundenItem"
-        Name="DocumentsCollection"
-        ToEnd="Documents">
-        <NavigationProperty.Attributes>
-          <Hidden />
-        </NavigationProperty.Attributes>
-      </NavigationProperty>
       <EntityProperty
         Name="Kundennummer"
         PropertyType=":String">
@@ -3212,15 +3193,6 @@
           <Hidden />
         </NavigationProperty.Attributes>
       </NavigationProperty>
-      <NavigationProperty
-        Association="Documents_KundenItem"
-        FromEnd="Documents"
-        Name="Kunde"
-        ToEnd="KundenItem">
-        <NavigationProperty.Attributes>
-          <Hidden />
-        </NavigationProperty.Attributes>
-      </NavigationProperty>
     </EntityType.Properties>
   </EntityType>
   <EntityType
@@ -3374,22 +3346,6 @@
       </EntityProperty>
     </EntityType.Properties>
   </EntityType>
-  <Association
-    Name="Documents_KundenItem">
-    <AssociationEnd
-      EntityType="Documents"
-      Multiplicity="Many"
-      Name="Documents" />
-    <AssociationEnd
-      EntityType="KundenItem"
-      Multiplicity="One"
-      Name="KundenItem">
-      <AssociationEnd.Attributes>
-        <DeleteRule
-          Action="Restrict" />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-  </Association>
   <EntityType
     Name="ReportingTemplates">
     <EntityType.Methods>

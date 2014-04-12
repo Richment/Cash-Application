@@ -90,24 +90,6 @@ namespace LightSwitchApplication
 
 		#endregion
 
-		partial void Anzeigen_Execute()
-		{
-			var sel = DocumentsCollection.SelectedItem;
-			if (sel == null)
-				return;
-			
-			string path = Helper.GetFreeTempFilename("pdf");
-			if (sel.GeneratedDocument != null)
-			{
-				File.WriteAllBytes(path, sel.GeneratedDocument.Bytes);
-				Helper.ShellExecute(path);
-			}
-		}
-
-		partial void Speichern_Execute()
-		{
-			// Erstellen Sie hier Ihren Code.
-
-		}
+		
 	}
 }

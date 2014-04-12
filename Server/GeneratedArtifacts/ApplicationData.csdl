@@ -27,7 +27,6 @@
     <NavigationProperty Name="KundengruppenItem" Relationship="LightSwitchApplication.KundenItem_KundengruppenItem" ToRole="KundengruppenItem" FromRole="KundenItem" />
     <NavigationProperty Name="Adressen" Relationship="LightSwitchApplication.KundenItem_AdressenSetItem" ToRole="AdressenSetItem" FromRole="KundenItem" />
     <NavigationProperty Name="Rechnungen" Relationship="LightSwitchApplication.Rechnungen_KundenItem" ToRole="Rechnungen" FromRole="KundenItem" />
-    <NavigationProperty Name="DocumentsCollection" Relationship="LightSwitchApplication.Documents_KundenItem" ToRole="Documents" FromRole="KundenItem" />
   </EntityType>
   <EntityType Name="KundengruppenItem">
     <Key>
@@ -188,9 +187,7 @@
     <Property Name="Datum" Type="Edm.DateTime" Nullable="false" />
     <Property Name="Bezeichnung" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="Data" Type="Edm.Binary" MaxLength="Max" />
-    <Property Name="Documents_KundenItem" Type="Edm.Int32" Nullable="false" />
     <NavigationProperty Name="GeneratedDocument" Relationship="LightSwitchApplication.Documents_GeneratedDocument" ToRole="GeneratedDocument" FromRole="Documents" />
-    <NavigationProperty Name="Kunde" Relationship="LightSwitchApplication.Documents_KundenItem" ToRole="KundenItem" FromRole="Documents" />
   </EntityType>
   <EntityType Name="GeneratedDocument">
     <Key>
@@ -340,18 +337,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="Documents_KundenItem">
-    <End Role="KundenItem" Type="LightSwitchApplication.KundenItem" Multiplicity="1" />
-    <End Role="Documents" Type="LightSwitchApplication.Documents" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="KundenItem">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Documents">
-        <PropertyRef Name="Documents_KundenItem" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="ApplicationDataObjectContext" m:IsDefaultEntityContainer="true">
     <EntitySet Name="Kunden" EntityType="LightSwitchApplication.KundenItem" />
     <EntitySet Name="Kundengruppen" EntityType="LightSwitchApplication.KundengruppenItem" />
@@ -403,10 +388,6 @@
     <AssociationSet Name="Documents_GeneratedDocument" Association="LightSwitchApplication.Documents_GeneratedDocument">
       <End Role="Documents" EntitySet="DocumentsSet" />
       <End Role="GeneratedDocument" EntitySet="GeneratedDocumentSet" />
-    </AssociationSet>
-    <AssociationSet Name="Documents_KundenItem" Association="LightSwitchApplication.Documents_KundenItem">
-      <End Role="KundenItem" EntitySet="Kunden" />
-      <End Role="Documents" EntitySet="DocumentsSet" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

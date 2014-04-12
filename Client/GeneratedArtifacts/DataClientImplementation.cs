@@ -202,32 +202,6 @@ namespace LightSwitchApplication.Implementation
         
         private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.Rechnungen> ___Rechnungen;
         
-        global::System.Collections.IEnumerable global::LightSwitchApplication.KundenItem.DetailsClass.IImplementation.DocumentsCollection
-        {
-            get
-            {
-                return this.DocumentsCollection;
-            }
-        }
-        
-        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.Documents> __DocumentsCollection
-        {
-            get
-            {
-                if (this.___DocumentsCollection == null)
-                {
-                    this.___DocumentsCollection = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.Documents>(
-                        this,
-                        "DocumentsCollection",
-                        () => this._DocumentsCollection,
-                        e => global::System.Object.Equals(e.Documents_KundenItem, this.Id));
-                }
-                return this.___DocumentsCollection;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.Documents> ___DocumentsCollection;
-        
     }
     #endregion
     
@@ -1160,12 +1134,6 @@ namespace LightSwitchApplication.Implementation
     public partial class Documents :
         global::LightSwitchApplication.Documents.DetailsClass.IImplementation
     {
-        partial void OnDocuments_KundenItemChanged()
-        {
-            this.___OnPropertyChanged("Documents_KundenItem");
-            this.___OnPropertyChanged("Kunde");
-        }
-        
         partial void OnIdChanged()
         {
             this.___OnPropertyChanged("Id");
@@ -1222,38 +1190,6 @@ namespace LightSwitchApplication.Implementation
         }
         
         private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.GeneratedDocument> ___GeneratedDocument;
-        
-        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Documents.DetailsClass.IImplementation.Kunde
-        {
-            get
-            {
-                return this.Kunde;
-            }
-            set
-            {
-                this.Kunde = (global::LightSwitchApplication.Implementation.KundenItem)value;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.KundenItem> __Kunde
-        {
-            get
-            {
-                if (this.___Kunde == null)
-                {
-                    this.___Kunde = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.KundenItem>(
-                        this,
-                        "Kunde",
-                        new string[] { "Documents_KundenItem" },
-                        e => global::System.Object.Equals(e.Id, this.Documents_KundenItem),
-                        () => this._Kunde,
-                        e => this._Kunde = e);
-                }
-                return this.___Kunde;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.KundenItem> ___Kunde;
         
     }
     #endregion

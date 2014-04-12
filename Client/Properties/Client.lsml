@@ -7503,8 +7503,6 @@
         </ScreenMethod.Attributes>
       </ScreenMethod>
       <ScreenMethod
-        Name="Anzeigen" />
-      <ScreenMethod
         Name="Speichern" />
     </Screen.Methods>
     <Screen.Properties>
@@ -7592,37 +7590,6 @@
           <ChainExpression>
             <CallExpression
               Target="KundenDetails/Properties[Adressen]/Query" />
-          </ChainExpression>
-        </ScreenExpressionTree>
-      </ScreenCollectionProperty>
-      <ScreenCollectionProperty
-        DisableSorting="True"
-        Name="DocumentsCollection"
-        PageSize="45"
-        PropertyType="LightSwitchCommonModule:CollectionView$Documents">
-        <ScreenCollectionProperty.Query>
-          <ScreenQueryDefinition
-            Name="DocumentsCollectionQuery"
-            ReturnType="LightSwitchCommonModule:Documents*">
-            <ScreenQueryDefinition.FilterExpression>
-              <QueryFilterExpressionTree />
-            </ScreenQueryDefinition.FilterExpression>
-            <ScreenQueryDefinition.Source>
-              <QuerySourceExpressionTree>
-                <ChainExpression>
-                  <MemberExpression
-                    Member="KundenDetails/Properties[Kunden]" />
-                  <MemberExpression
-                    Member="DocumentsCollection" />
-                </ChainExpression>
-              </QuerySourceExpressionTree>
-            </ScreenQueryDefinition.Source>
-          </ScreenQueryDefinition>
-        </ScreenCollectionProperty.Query>
-        <ScreenExpressionTree>
-          <ChainExpression>
-            <CallExpression
-              Target="KundenDetails/Properties[DocumentsCollection]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
@@ -8482,190 +8449,6 @@
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
-                </ContentItem>
-              </ContentItem>
-            </ContentItem>
-            <ContentItem
-              DataType="LightSwitchCommonModule:CollectionView$Documents"
-              Kind="Collection"
-              Name="DocumentsCollection"
-              View=":DataGrid">
-              <ContentItem.Attributes>
-                <DisplayName
-                  Value="Documente" />
-              </ContentItem.Attributes>
-              <ContentItem.CommandItems>
-                <ContentItem
-                  Kind="Command"
-                  Name="Anzeigen">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <CallExpression
-                          Target="KundenDetails/Methods[Anzeigen]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem.PropertySources>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch:RootControl/Properties[Image]">
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <ConstantExpression
-                            ResultType=":String"
-                            Value="Microsoft.LightSwitch.UserImageResources::Resources\View.png" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                  </ContentItem.PropertySources>
-                </ContentItem>
-                <ContentItem
-                  Kind="Command"
-                  Name="Speichern">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <CallExpression
-                          Target="KundenDetails/Methods[Speichern]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem.PropertySources>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch:RootControl/Properties[Image]">
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <ConstantExpression
-                            ResultType=":String"
-                            Value="Microsoft.LightSwitch.UserImageResources::Resources\Document-Save.png" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                  </ContentItem.PropertySources>
-                </ContentItem>
-              </ContentItem.CommandItems>
-              <ContentItem.DataSource>
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <MemberExpression
-                      Member="KundenDetails/Properties[DocumentsCollection]" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ContentItem.DataSource>
-              <ContentItem.PropertySources>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch:DataGrid/Properties[ShowVirtualRow]">
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <ConstantExpression
-                        ResultType=":Boolean"
-                        Value="False" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch:CollectionControlSupportingExport/Properties[HideExportButton]">
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <ConstantExpression
-                        ResultType=":Boolean"
-                        Value="True" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-              </ContentItem.PropertySources>
-              <ContentItem
-                DataType="LightSwitchCommonModule:Documents"
-                Kind="Details"
-                Name="DocumentsCollectionTemplate">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value="Documente" />
-                </ContentItem.Attributes>
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression />
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch:RootControl/Properties[BrowseOnly]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <ConstantExpression
-                          ResultType=":Boolean"
-                          Value="True" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch:RootControl/Properties[MinWidth]">
-                    <ScreenExpressionTree>
-                      <ConstantExpression
-                        ResultType=":Double"
-                        Value="600" />
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
-                <ContentItem
-                  DataType=":String"
-                  Kind="Value"
-                  Name="Bezeichnung"
-                  View=":Label">
-                  <ContentItem.Attributes>
-                    <DisplayName
-                      Value="Bezeichnung" />
-                  </ContentItem.Attributes>
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="LightSwitchCommonModule:Documents/Properties[Bezeichnung]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem.PropertySources>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch:RootControl/Properties[MinHeight]">
-                      <ScreenExpressionTree>
-                        <ConstantExpression
-                          ResultType=":Double"
-                          Value="21" />
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch:RootControl/Properties[AttachedLabelPosition]">
-                      <ScreenExpressionTree>
-                        <ConstantExpression
-                          ResultType=":String"
-                          Value="Collapsed" />
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch:RootControl/Properties[WidthSizingMode]">
-                      <ScreenExpressionTree>
-                        <ConstantExpression
-                          ResultType=":String"
-                          Value="Auto" />
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch:RootControl/Properties[VerticalAlignment]">
-                      <ScreenExpressionTree>
-                        <ConstantExpression
-                          ResultType=":String"
-                          Value="Stretch" />
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch:RootControl/Properties[MinWidth]">
-                      <ScreenExpressionTree>
-                        <ConstantExpression
-                          ResultType=":Double"
-                          Value="600" />
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                  </ContentItem.PropertySources>
                 </ContentItem>
               </ContentItem>
             </ContentItem>
@@ -9866,6 +9649,34 @@
           <ChainExpression>
             <CallExpression
               Target="AuftragsSammlung/Properties[OutgoingMailSet]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+      <ScreenCollectionProperty
+        DisableSearch="True"
+        DisableSorting="True"
+        Name="DocumentsSet"
+        PageSize="3"
+        PropertyType="LightSwitchCommonModule:CollectionView$Documents">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="DocumentsSetQuery"
+            ReturnType="LightSwitchCommonModule:Documents*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <MemberExpression
+                  Member="LightSwitchCommonModule:ApplicationData/Members[DocumentsSet]" />
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="AuftragsSammlung/Properties[DocumentsSet]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
@@ -12967,6 +12778,8 @@
         Name="View" />
       <ScreenMethod
         Name="ViewCurrent" />
+      <ScreenMethod
+        Name="Test" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
@@ -13456,6 +13269,22 @@
                           <ChainExpression>
                             <CallExpression
                               Target="Rechnungsvorlage/Methods[ViewCurrent]" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                    </ContentItem>
+                    <ContentItem
+                      Kind="Command"
+                      Name="Test">
+                      <ContentItem.Attributes>
+                        <DisplayName
+                          Value="Testen" />
+                      </ContentItem.Attributes>
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <CallExpression
+                              Target="Rechnungsvorlage/Methods[Test]" />
                           </ChainExpression>
                         </ScreenExpressionTree>
                       </ContentItem.DataSource>

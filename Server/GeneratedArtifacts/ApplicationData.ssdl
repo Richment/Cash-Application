@@ -52,10 +52,6 @@
       <End Role="Documents" EntitySet="DocumentsSet" />
       <End Role="GeneratedDocument" EntitySet="GeneratedDocumentSet" />
     </AssociationSet>
-    <AssociationSet Name="Documents_KundenItem" Association="ApplicationDataStore.Documents_KundenItem">
-      <End Role="KundenItem" EntitySet="Kunden" />
-      <End Role="Documents" EntitySet="DocumentsSet" />
-    </AssociationSet>
   </EntityContainer>
   <EntityType Name="KundenItem">
     <Key>
@@ -228,7 +224,6 @@
     <Property Name="Datum" Type="datetime" Nullable="false" />
     <Property Name="Bezeichnung" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="Data" Type="varbinary(max)" />
-    <Property Name="Documents_KundenItem" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="GeneratedDocument">
     <Key>
@@ -374,18 +369,6 @@
       </Principal>
       <Dependent Role="GeneratedDocument">
         <PropertyRef Name="Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="Documents_KundenItem">
-    <End Role="KundenItem" Type="ApplicationDataStore.KundenItem" Multiplicity="1" />
-    <End Role="Documents" Type="ApplicationDataStore.Documents" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="KundenItem">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Documents">
-        <PropertyRef Name="Documents_KundenItem" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

@@ -223,30 +223,6 @@ namespace LightSwitchApplication
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void GeneratedDocument_Changed();
 
-        /// <summary>
-        /// Keine modellierte Beschreibung verfügbar
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::LightSwitchApplication.KundenItem Kunde
-        {
-            get
-            {
-                return global::LightSwitchApplication.Documents.DetailsClass.GetValue(this, global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties.Kunde);
-            }
-            set
-            {
-                global::LightSwitchApplication.Documents.DetailsClass.SetValue(this, global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties.Kunde, value);
-            }
-        }
-        
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Kunde_IsReadOnly(ref bool result);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Kunde_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Kunde_Changed();
-
         #endregion
     
         #region Details Class
@@ -377,14 +353,6 @@ namespace LightSwitchApplication
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, global::LightSwitchApplication.KundenItem> Kunde
-                {
-                    get
-                    {
-                        return base.GetItem(global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties.Kunde) as global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, global::LightSwitchApplication.KundenItem>;
-                    }
-                }
-                
             }
     
             #pragma warning disable 109
@@ -397,7 +365,6 @@ namespace LightSwitchApplication
                 new string Bezeichnung { get; set; }
                 new byte[] Data { get; set; }
                 new global::Microsoft.LightSwitch.Internal.IEntityImplementation GeneratedDocument { get; set; }
-                new global::Microsoft.LightSwitch.Internal.IEntityImplementation Kunde { get; set; }
             }
             #pragma warning restore 109
     
@@ -639,53 +606,6 @@ namespace LightSwitchApplication
                     e.GeneratedDocument_Changed();
                 }
     
-                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, global::LightSwitchApplication.KundenItem>.Entry
-                    Kunde = new global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, global::LightSwitchApplication.KundenItem>.Entry(
-                        "Kunde",
-                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._Kunde_Stub,
-                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._Kunde_ComputeIsReadOnly,
-                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._Kunde_Validate,
-                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._Kunde_GetCoreImplementationValue,
-                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._Kunde_GetImplementationValue,
-                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._Kunde_SetImplementationValue,
-                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._Kunde_Refresh,
-                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._Kunde_OnValueChanged);
-                private static void _Kunde_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Documents.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, global::LightSwitchApplication.KundenItem>.Data> c, global::LightSwitchApplication.Documents.DetailsClass d, object sf)
-                {
-                    c(d, ref d._Kunde, sf);
-                }
-                private static bool _Kunde_ComputeIsReadOnly(global::LightSwitchApplication.Documents e)
-                {
-                    bool result = false;
-                    e.Kunde_IsReadOnly(ref result);
-                    return result;
-                }
-                private static void _Kunde_Validate(global::LightSwitchApplication.Documents e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
-                {
-                    e.Kunde_Validate(r);
-                }
-                private static global::Microsoft.LightSwitch.Internal.IEntityImplementation _Kunde_GetCoreImplementationValue(global::LightSwitchApplication.Documents.DetailsClass d)
-                {
-                    return d.ImplementationEntity.Kunde;
-                }
-                private static global::LightSwitchApplication.KundenItem _Kunde_GetImplementationValue(global::LightSwitchApplication.Documents.DetailsClass d)
-                {
-                    return d.GetImplementationValue<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass>(global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties.Kunde, ref d._Kunde);
-                }
-                private static void _Kunde_SetImplementationValue(global::LightSwitchApplication.Documents.DetailsClass d, global::LightSwitchApplication.KundenItem v)
-                {
-                    d.SetImplementationValue(global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties.Kunde, ref d._Kunde, (i, ev) => i.Kunde = ev, v);
-                }
-                private static void _Kunde_Refresh(global::LightSwitchApplication.Documents.DetailsClass d)
-                {
-                    d.RefreshNavigationProperty(global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties.Kunde, ref d._Kunde);
-                }
-                private static void _Kunde_OnValueChanged(global::LightSwitchApplication.Documents e)
-                {
-                    e.Kunde_Changed();
-                }
-    
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -705,9 +625,6 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, global::LightSwitchApplication.GeneratedDocument>.Data _GeneratedDocument;
-            
-            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, global::LightSwitchApplication.KundenItem>.Data _Kunde;
             
         }
     

@@ -59,9 +59,9 @@ namespace LightSwitchApplication
 				return;
 
 			string filename = selectFileWindow.SafeFileName;
-			
+
 			Details.Dispatcher.EnsureInvoke(() =>
-			{	
+			{
 				using (var dw = Application.Current.CreateDataWorkspace())
 				{
 					var newItem = dw.ApplicationData.ReportingTemplatesSet.AddNew();
@@ -103,6 +103,62 @@ namespace LightSwitchApplication
 			string temp = Helper.GetFreeTempFilename(Path.GetExtension(CurrentReport.OriginalFilename));
 			File.WriteAllBytes(temp, CurrentReport.Template);
 			Helper.ShellExecute(temp);
+		}
+
+		partial void Test_CanExecute(ref bool result)
+		{
+			result = CurrentReport != null;
+		}
+
+		partial void Test_Execute()
+		{
+			Rechnungen tmp = new Rechnungen();
+			tmp.Kunde = new KundenItem()
+			{
+				Anrede = "Herr",
+				Hausnummer = 1,
+				Land = "Deutschland",
+				Nachnahme = "Mustermann",
+				PLZ = 12345,
+				Stadt = "Musterstadt",
+				Straße = "Musterstraße",
+				Vorname = "Max"
+			};
+			tmp.Rechnungsnummer = "R00001";
+			tmp.Rechnungsdatum = DateTime.Today;
+			tmp.Auftragsnummer = "A000-0001";
+			tmp.Bestelldatum = DateTime.Today;
+			tmp.Lieferdatum = DateTime.Today;
+			tmp.Lieferscheinnummer = "L-0001";
+			tmp.Referenznummer = "R-00001";
+			tmp.Versanddatum = DateTime.Today;
+			tmp.ArtikellisteCollection.Add(new ArtikellisteItem()
+			{
+				Anzahl = 1,
+				Rabatt = 3,
+				ArtikelstammItem = new ArtikelstammItem() { Artikelnummer = "A00001", Artikelbeschreibung = "Testartikel", Vertriebsname = "Testartikel" }
+			});
+			DocDescriptor test = DocDescriptor.CreateRechnung(tmp);
+
+			byte[] documentBytes = null;
+			using (var dw = Application.Current.CreateDataWorkspace())
+			{
+				var newDoc = dw.ApplicationData.DocumentsSet.AddNew();
+				newDoc.Bezeichnung = "Vorlagentest";
+				newDoc.Datum = DateTime.Now;
+				newDoc.Data = test.ToByteArray();
+				dw.ApplicationData.SaveChanges();
+				documentBytes = newDoc.GeneratedDocument.Bytes;
+				newDoc.Delete();
+				dw.ApplicationData.SaveChanges();
+			}
+
+			if (documentBytes != null)
+			{
+				string file = Helper.GetFreeTempFilename("pdf");
+				File.WriteAllBytes(file, documentBytes);
+				Helper.ShellExecute(file);
+			}
 		}
 	};
 }

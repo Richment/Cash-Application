@@ -377,14 +377,6 @@ namespace ApplicationData.Implementation
             }
         }
         
-        global::System.Collections.IEnumerable global::LightSwitchApplication.KundenItem.DetailsClass.IImplementation.DocumentsCollection
-        {
-            get
-            {
-                return this.DocumentsCollection;
-            }
-        }
-        
         partial void OnKunden_KundengruppeChanged()
         {
             if (this.__host != null)
@@ -985,30 +977,6 @@ namespace ApplicationData.Implementation
                 {
                     this.__host.RaisePropertyChanged("GeneratedDocument");
                 }
-            }
-        }
-        
-        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Documents.DetailsClass.IImplementation.Kunde
-        {
-            get
-            {
-                return this.Kunde;
-            }
-            set
-            {
-                this.Kunde = (global::ApplicationData.Implementation.KundenItem)value;
-                if (this.__host != null)
-                {
-                    this.__host.RaisePropertyChanged("Kunde");
-                }
-            }
-        }
-        
-        partial void OnDocuments_KundenItemChanged()
-        {
-            if (this.__host != null)
-            {
-                this.__host.RaisePropertyChanged("Kunde");
             }
         }
         

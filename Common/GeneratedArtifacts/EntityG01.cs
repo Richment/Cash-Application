@@ -623,29 +623,6 @@ namespace LightSwitchApplication
             }
         }
 
-        /// <summary>
-        /// Keine modellierte Beschreibung verfügbar
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::Microsoft.LightSwitch.Framework.EntityCollection<global::LightSwitchApplication.Documents> DocumentsCollection
-        {
-            get
-            {
-                return global::LightSwitchApplication.KundenItem.DetailsClass.GetValue(this, global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties.DocumentsCollection);
-            }
-        }
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.Documents> DocumentsCollectionQuery
-        {
-            get
-            {
-                return global::LightSwitchApplication.KundenItem.DetailsClass.GetQuery(this, global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties.DocumentsCollection);
-            }
-        }
-
         #endregion
     
         #region Details Class
@@ -912,14 +889,6 @@ namespace LightSwitchApplication
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, global::LightSwitchApplication.Documents> DocumentsCollection
-                {
-                    get
-                    {
-                        return base.GetItem(global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties.DocumentsCollection) as global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, global::LightSwitchApplication.Documents>;
-                    }
-                }
-                
             }
     
             #pragma warning disable 109
@@ -948,7 +917,6 @@ namespace LightSwitchApplication
                 new global::Microsoft.LightSwitch.Internal.IEntityImplementation KundengruppenItem { get; set; }
                 new global::System.Collections.IEnumerable Adressen { get; }
                 new global::System.Collections.IEnumerable Rechnungen { get; }
-                new global::System.Collections.IEnumerable DocumentsCollection { get; }
             }
             #pragma warning restore 109
     
@@ -1770,26 +1738,6 @@ namespace LightSwitchApplication
                     return d.ImplementationEntity.Rechnungen;
                 }
     
-                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, global::LightSwitchApplication.Documents>.Entry
-                    DocumentsCollection = new global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, global::LightSwitchApplication.Documents>.Entry(
-                        "DocumentsCollection",
-                        global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties._DocumentsCollection_Stub,
-                        global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties._DocumentsCollection_GetReferencedEntities,
-                        global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties._DocumentsCollection_GetEntityCollection);
-                private static void _DocumentsCollection_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.KundenItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, global::LightSwitchApplication.Documents>.Data> c, global::LightSwitchApplication.KundenItem.DetailsClass d, object sf)
-                {
-                    c(d, ref d._DocumentsCollection, sf);
-                }
-                private static global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.Documents> _DocumentsCollection_GetReferencedEntities(global::LightSwitchApplication.KundenItem.DetailsClass d)
-                {
-                    return d.GetReferencedEntities<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass>(global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties.DocumentsCollection, ref d._DocumentsCollection);
-                }
-                private static global::System.Collections.IEnumerable _DocumentsCollection_GetEntityCollection(global::LightSwitchApplication.KundenItem.DetailsClass d)
-                {
-                    return d.ImplementationEntity.DocumentsCollection;
-                }
-    
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -1860,9 +1808,6 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, global::LightSwitchApplication.Rechnungen>.Data _Rechnungen;
-            
-            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, global::LightSwitchApplication.Documents>.Data _DocumentsCollection;
             
         }
     

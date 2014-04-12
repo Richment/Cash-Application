@@ -28,7 +28,6 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "ArtikelstammItem_Anbieter", "Anbieter", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApplicationData.Implementation.Anbieter), "ArtikelstammItem", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.ArtikelstammItem), true)]
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "Rechnungen_AdressenSetItem", "AdressenSetItem", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ApplicationData.Implementation.AdressenSetItem), "Rechnungen", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.Rechnungen), true)]
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "Documents_GeneratedDocument", "Documents", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApplicationData.Implementation.Documents), "GeneratedDocument", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ApplicationData.Implementation.GeneratedDocument), true)]
-[assembly: EdmRelationshipAttribute("LightSwitchApplication", "Documents_KundenItem", "KundenItem", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApplicationData.Implementation.KundenItem), "Documents", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.Documents), true)]
 
 #endregion
 
@@ -1809,15 +1808,13 @@ namespace ApplicationData.Implementation
         /// <param name="rowVersion">Anfangswert der Eigenschaft RowVersion.</param>
         /// <param name="datum">Anfangswert der Eigenschaft Datum.</param>
         /// <param name="bezeichnung">Anfangswert der Eigenschaft Bezeichnung.</param>
-        /// <param name="documents_KundenItem">Anfangswert der Eigenschaft Documents_KundenItem.</param>
-        public static Documents CreateDocuments(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.DateTime datum, global::System.String bezeichnung, global::System.Int32 documents_KundenItem)
+        public static Documents CreateDocuments(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.DateTime datum, global::System.String bezeichnung)
         {
             Documents documents = new Documents();
             documents.Id = id;
             documents.RowVersion = rowVersion;
             documents.Datum = datum;
             documents.Bezeichnung = bezeichnung;
-            documents.Documents_KundenItem = documents_KundenItem;
             return documents;
         }
 
@@ -1947,30 +1944,6 @@ namespace ApplicationData.Implementation
         private global::System.Byte[] _Data;
         partial void OnDataChanging(global::System.Byte[] value);
         partial void OnDataChanged();
-    
-        /// <summary>
-        /// Keine Dokumentation für Metadaten verfügbar.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 Documents_KundenItem
-        {
-            get
-            {
-                return _Documents_KundenItem;
-            }
-            set
-            {
-                OnDocuments_KundenItemChanging(value);
-                ReportPropertyChanging("Documents_KundenItem");
-                _Documents_KundenItem = value;
-                ReportPropertyChanged("Documents_KundenItem");
-                OnDocuments_KundenItemChanged();
-            }
-        }
-        private global::System.Int32 _Documents_KundenItem;
-        partial void OnDocuments_KundenItemChanging(global::System.Int32 value);
-        partial void OnDocuments_KundenItemChanged();
 
         #endregion
 
@@ -2011,44 +1984,6 @@ namespace ApplicationData.Implementation
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<GeneratedDocument>("LightSwitchApplication.Documents_GeneratedDocument", "GeneratedDocument", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// Keine Dokumentation für Metadaten verfügbar.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "Documents_KundenItem", "KundenItem")]
-        public KundenItem Kunde
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<KundenItem>("LightSwitchApplication.Documents_KundenItem", "KundenItem").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<KundenItem>("LightSwitchApplication.Documents_KundenItem", "KundenItem").Value = value;
-            }
-        }
-        /// <summary>
-        /// Keine Dokumentation für Metadaten verfügbar.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<KundenItem> KundeReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<KundenItem>("LightSwitchApplication.Documents_KundenItem", "KundenItem");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<KundenItem>("LightSwitchApplication.Documents_KundenItem", "KundenItem", value);
                 }
             }
         }
@@ -3275,28 +3210,6 @@ namespace ApplicationData.Implementation
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Rechnungen>("LightSwitchApplication.Rechnungen_KundenItem", "Rechnungen", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// Keine Dokumentation für Metadaten verfügbar.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "Documents_KundenItem", "Documents")]
-        public EntityCollection<Documents> DocumentsCollection
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Documents>("LightSwitchApplication.Documents_KundenItem", "Documents");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Documents>("LightSwitchApplication.Documents_KundenItem", "Documents", value);
                 }
             }
         }

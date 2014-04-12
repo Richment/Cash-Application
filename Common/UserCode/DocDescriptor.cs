@@ -19,7 +19,7 @@
 		public const string L_AMOUNT = "lieferkosten";
 		public const string BRUTTO = "brutto";
 		public const string NETTO = "gesamtnetto";
-		public const string TAX = "mehrwertsteuer";		 
+		public const string TAX = "mehrwertsteuer";
 		public const string V_DATE = "versanddatum";
 		public const string MAHN = "mahnkosten";
 
@@ -203,7 +203,7 @@
 				else
 					data.Remove(V_DATE);
 			}
-		}		
+		}
 		public string Brutto
 		{
 			get
@@ -254,7 +254,7 @@
 				else
 					data.Remove(TAX);
 			}
-		}			
+		}
 		public string Mahnkosten
 		{
 			get
@@ -307,6 +307,11 @@
 			return data.Where(n => !String.IsNullOrWhiteSpace(n.Value)).ToDictionary(n => n.Key, m => m.Value);
 		}
 
+		public byte[] ToByteArray()
+		{
+			return ToDictionary().Serialize();
+		}
+
 		public static DocDescriptor CreateLieferschein(Rechnungen value)
 		{
 			DocDescriptor result = new DocDescriptor(value.Auftragsnummer, "Lieferschein");
@@ -316,7 +321,7 @@
 				result.Kundennummer = value.Kunde.Kundennummer;
 			if (value.Rechnungsbetrag_Brutto.HasValue)
 				result.Brutto = value.Rechnungsbetrag_Brutto.Value.ToString("C");
-			if(value.Versanddatum.HasValue)
+			if (value.Versanddatum.HasValue)
 				result.Versanddatum = value.Versanddatum.Value.ToShortDateString();
 			if (value.Lieferkosten.HasValue)
 				result.Lieferkosten = value.Lieferkosten.Value.ToString("C");
