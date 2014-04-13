@@ -253,8 +253,8 @@
     <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
     <Property Name="ReleaseDate" Type="datetime" Nullable="false" />
     <Property Name="Template" Type="varbinary(max)" Nullable="false" />
-    <Property Name="Beschreibung" Type="nvarchar" Nullable="false" MaxLength="255" />
-    <Property Name="OriginalFilename" Type="nvarchar" MaxLength="255" />
+    <Property Name="Beschreibung" Type="nvarchar" MaxLength="255" />
+    <Property Name="OriginalFilename" Type="nvarchar" Nullable="false" MaxLength="255" />
   </EntityType>
   <Association Name="ArtikellisteItem_Rechnungen">
     <End Role="Rechnungen" Type="ApplicationDataStore.Rechnungen" Multiplicity="1">

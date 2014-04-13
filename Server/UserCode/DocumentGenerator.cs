@@ -34,6 +34,14 @@
 
 		#endregion
 
+		internal static byte[] DefaultTemplate
+		{
+			get
+			{
+				return templateBytes;
+			}
+		}
+		
 		private static readonly byte[] templateBytes;
 
 		static DocumentGenerator()
@@ -214,6 +222,10 @@
 				}
 				return result;
 			}
+		}
+		internal static byte[] DocumentToPdf(DocDescriptor data)
+		{
+			return DocumentToPdf(ProcessDocument(data));
 		}
 
 		#region Private methods

@@ -4589,15 +4589,15 @@ namespace ApplicationData.Implementation
         /// <param name="rowVersion">Anfangswert der Eigenschaft RowVersion.</param>
         /// <param name="releaseDate">Anfangswert der Eigenschaft ReleaseDate.</param>
         /// <param name="template">Anfangswert der Eigenschaft Template.</param>
-        /// <param name="beschreibung">Anfangswert der Eigenschaft Beschreibung.</param>
-        public static ReportingTemplates CreateReportingTemplates(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.DateTime releaseDate, global::System.Byte[] template, global::System.String beschreibung)
+        /// <param name="originalFilename">Anfangswert der Eigenschaft OriginalFilename.</param>
+        public static ReportingTemplates CreateReportingTemplates(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.DateTime releaseDate, global::System.Byte[] template, global::System.String originalFilename)
         {
             ReportingTemplates reportingTemplates = new ReportingTemplates();
             reportingTemplates.Id = id;
             reportingTemplates.RowVersion = rowVersion;
             reportingTemplates.ReleaseDate = releaseDate;
             reportingTemplates.Template = template;
-            reportingTemplates.Beschreibung = beschreibung;
+            reportingTemplates.OriginalFilename = originalFilename;
             return reportingTemplates;
         }
 
@@ -4707,7 +4707,7 @@ namespace ApplicationData.Implementation
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
         public global::System.String Beschreibung
         {
@@ -4731,7 +4731,7 @@ namespace ApplicationData.Implementation
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String OriginalFilename
         {

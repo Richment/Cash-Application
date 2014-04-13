@@ -129,17 +129,17 @@ namespace LightSwitchApplication
 			tmp.Lieferkosten = 6M;
 			tmp.Referenznummer = "R-00001";
 			tmp.Versanddatum = DateTime.Today;
-			
+
 			tmp.ArtikellisteCollection.Add(new ArtikellisteItem()
 			{
 				Anzahl = 2,
 				Rabatt = 3,
-				ArtikelstammItem = new ArtikelstammItem() 
-				{ 
-					Artikelnummer = "A00001", 
+				ArtikelstammItem = new ArtikelstammItem()
+				{
+					Artikelnummer = "A00001",
 					Artikelbeschreibung = "Testartikel",
-					Vertriebsname = "Testartikel", 
-					VK_pro_PK = 10M 
+					Vertriebsname = "Testartikel",
+					VK_pro_PK = 10M
 				}
 			});
 			tmp.ArtikellisteCollection.Add(new ArtikellisteItem()
@@ -169,7 +169,7 @@ namespace LightSwitchApplication
 				newDoc.Delete();
 				dw.ApplicationData.SaveChanges();
 			}
-			
+
 			Refresh();
 
 			if (documentBytes != null)

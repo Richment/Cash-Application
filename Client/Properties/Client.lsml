@@ -13274,7 +13274,7 @@
                 </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem
-                DataType=":String?"
+                DataType=":String"
                 Kind="Value"
                 Name="OriginalFilename">
                 <ContentItem.DataSource>
@@ -13450,7 +13450,7 @@
                     </ContentItem.PropertySources>
                   </ContentItem>
                   <ContentItem
-                    DataType=":String?"
+                    DataType=":String"
                     Kind="Value"
                     Name="CurrentReport_OriginalFilename1">
                     <ContentItem.DataSource>
@@ -13468,6 +13468,10 @@
                     DataType=":Int32"
                     Kind="Value"
                     Name="CurrentReport_Size1">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Dateigröße in byte" />
+                    </ContentItem.Attributes>
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression>

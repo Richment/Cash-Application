@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Ursprünglicher Dateiname:
-// Erstellungsdatum: 13.04.2014 02:38:15
+// Erstellungsdatum: 13.04.2014 04:57:20
 namespace LightSwitchApplication.Implementation
 {
     
@@ -4934,16 +4934,16 @@ namespace LightSwitchApplication.Implementation
         /// <param name="rowVersion">Anfangswert von RowVersion.</param>
         /// <param name="releaseDate">Anfangswert von ReleaseDate.</param>
         /// <param name="template">Anfangswert von Template.</param>
-        /// <param name="beschreibung">Anfangswert von Beschreibung.</param>
+        /// <param name="originalFilename">Anfangswert von OriginalFilename.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static ReportingTemplates CreateReportingTemplates(int ID, byte[] rowVersion, global::System.DateTime releaseDate, byte[] template, string beschreibung)
+        public static ReportingTemplates CreateReportingTemplates(int ID, byte[] rowVersion, global::System.DateTime releaseDate, byte[] template, string originalFilename)
         {
             ReportingTemplates reportingTemplates = new ReportingTemplates();
             reportingTemplates.Id = ID;
             reportingTemplates.RowVersion = rowVersion;
             reportingTemplates.ReleaseDate = releaseDate;
             reportingTemplates.Template = template;
-            reportingTemplates.Beschreibung = beschreibung;
+            reportingTemplates.OriginalFilename = originalFilename;
             return reportingTemplates;
         }
         /// <summary>

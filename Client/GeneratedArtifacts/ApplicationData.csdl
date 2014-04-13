@@ -218,8 +218,8 @@
     <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
     <Property Name="ReleaseDate" Type="Edm.DateTime" Nullable="false" />
     <Property Name="Template" Type="Edm.Binary" Nullable="false" MaxLength="Max" />
-    <Property Name="Beschreibung" Type="Edm.String" Nullable="false" MaxLength="255" />
-    <Property Name="OriginalFilename" Type="Edm.String" MaxLength="255" />
+    <Property Name="Beschreibung" Type="Edm.String" MaxLength="255" />
+    <Property Name="OriginalFilename" Type="Edm.String" Nullable="false" MaxLength="255" />
   </EntityType>
   <Association Name="ArtikellisteItem_Rechnungen">
     <End Role="Rechnungen" Type="LightSwitchApplication.Rechnungen" Multiplicity="1">

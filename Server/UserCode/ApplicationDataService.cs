@@ -15,35 +15,38 @@ namespace LightSwitchApplication
 		partial void OutgoingMailSet_Updating(OutgoingMail entity)
 		{
 			entity.Sended = DateTime.Now;
-			SmtpSender.SendEmail(entity);							
+			SmtpSender.SendEmail(entity);
 		}
 
 		partial void DocumentsSet_Inserting(Documents entity)
 		{
-			var data = new Dictionary<string, string>();
-			if (data.Deserialize(entity.Data))
+			var desc = DocDescriptor.FromByteArray(entity.Data);
+			if (desc != null)
 			{
-				DocDescriptor desc = new DocDescriptor(initial: data);
 				entity.Bezeichnung = desc.Auftragsnummer + " - " + desc.Titel + " vom " + entity.Datum.ToShortDateString();
-				byte[] wordDoc = DocumentGenerator.ProcessDocument(desc);
-				byte[] pdfDoc = DocumentGenerator.DocumentToPdf(wordDoc);
 				entity.GeneratedDocument.Documents = entity;
-				entity.GeneratedDocument.Bytes = pdfDoc;
+				entity.GeneratedDocument.Bytes = DocumentGenerator.DocumentToPdf(desc);
 			}
 		}
 
 		partial void DocumentsSet_Updating(Documents entity)
 		{
-		   var data = new Dictionary<string, string>();
-		   if (data.Deserialize(entity.Data))
-		   {
-			   DocDescriptor desc = new DocDescriptor(initial: data);
-			   entity.Bezeichnung = desc.Auftragsnummer + " - " + desc.Titel + " vom " + entity.Datum.ToShortDateString();
-			   byte[] wordDoc = DocumentGenerator.ProcessDocument(desc);
-			   byte[] pdfDoc = DocumentGenerator.DocumentToPdf(wordDoc);
-			   entity.GeneratedDocument.Documents = entity;
-			   entity.GeneratedDocument.Bytes = pdfDoc;
-		   }
+			var desc = DocDescriptor.FromByteArray(entity.Data);
+			if (desc != null)
+			{
+				entity.Bezeichnung = desc.Auftragsnummer + " - " + desc.Titel + " vom " + entity.Datum.ToShortDateString();
+				entity.GeneratedDocument.Documents = entity;
+				entity.GeneratedDocument.Bytes = DocumentGenerator.DocumentToPdf(desc);
+			}
 		}
-	}
+
+		partial void ReportingTemplatesSet_Inserting(ReportingTemplates entity)
+		{
+			if ((entity.ReleaseDate == ReportingTemplates.Minimum) && (entity.Template.Length == 0) && String.IsNullOrWhiteSpace(entity.OriginalFilename))
+			{
+				entity.Beschreibung = "Standardvorlage";
+				entity.Template = DocumentGenerator.DefaultTemplate;
+			}
+		}
+	};
 }

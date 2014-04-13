@@ -3418,9 +3418,8 @@
       </EntityProperty>
       <EntityProperty
         Name="Beschreibung"
-        PropertyType=":String">
+        PropertyType=":String?">
         <EntityProperty.Attributes>
-          <Required />
           <MaxLength
             Value="255" />
           <NotSearchable />
@@ -3438,13 +3437,14 @@
       </EntityProperty>
       <EntityProperty
         Name="OriginalFilename"
-        PropertyType=":String?">
+        PropertyType=":String">
         <EntityProperty.Attributes>
           <MaxLength
             Value="255" />
           <NotSearchable />
           <DisplayName
             Value="Ursprünglicher Dateiname" />
+          <Required />
         </EntityProperty.Attributes>
       </EntityProperty>
     </EntityType.Properties>
