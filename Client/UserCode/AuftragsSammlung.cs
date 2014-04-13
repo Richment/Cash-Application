@@ -19,6 +19,11 @@ namespace LightSwitchApplication
 			result = this.AuftragsSammlung1.Count > 0;
 		}
 
+		partial void AuftragsSammlung_Activated()
+		{
+			AuftragsSammlung1.Refresh();
+		}
+
 		partial void ProcessList_Execute()
 		{
 			ProcessNew();
@@ -147,7 +152,5 @@ namespace LightSwitchApplication
 				item.RequiresProcessing = false;
 			}
 		}
-
-
 	}
 }

@@ -3,10 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{ECD6D718-D1CF-4119-97F3-97C25A0DFBF9}") = "Cash-Application", "Cash-Application.lsproj", "{0EBAE129-20AB-4929-8A55-DB2AED44DF9A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dokumentvorlagen", "Dokumentvorlagen", "{F8260462-5771-44F7-A035-310FFB8EED75}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dokumente", "Dokumente", "{F8260462-5771-44F7-A035-310FFB8EED75}"
 	ProjectSection(SolutionItems) = preProject
-		..\Documents\RechnungExport.docx = ..\Documents\RechnungExport.docx
-		..\Documents\RechnungExport.dotx = ..\Documents\RechnungExport.dotx
+		Bestellvorgang2.doc = Bestellvorgang2.doc
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{8735E759-C20C-4A91-BEF2-FA24FAD6FDAA}"
