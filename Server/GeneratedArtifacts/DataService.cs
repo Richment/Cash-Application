@@ -702,6 +702,36 @@ namespace LightSwitchApplication
         partial void YoungestFirst_ExecuteFailed(global::System.Exception exception);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void DokumentePerKunde_CanExecute(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void DokumentePerKunde_Executing(global::System.Nullable<int> Kunde);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void DokumentePerKunde_PreprocessQuery(global::System.Nullable<int> Kunde, ref global::System.Linq.IQueryable<global::LightSwitchApplication.Documents> query);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void DokumentePerKunde_Executed(global::System.Nullable<int> Kunde, global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.Documents> result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void DokumentePerKunde_ExecuteFailed(global::System.Nullable<int> Kunde, global::System.Exception exception);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void DokumentePerRechnung_CanExecute(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void DokumentePerRechnung_Executing(global::System.Nullable<int> Rechnung);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void DokumentePerRechnung_PreprocessQuery(global::System.Nullable<int> Rechnung, ref global::System.Linq.IQueryable<global::LightSwitchApplication.Documents> query);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void DokumentePerRechnung_Executed(global::System.Nullable<int> Rechnung, global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.Documents> result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void DokumentePerRechnung_ExecuteFailed(global::System.Nullable<int> Rechnung, global::System.Exception exception);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void Query_Executing(global::Microsoft.LightSwitch.QueryExecutingDescriptor queryDescriptor);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2070,6 +2100,72 @@ namespace LightSwitchApplication
             {
                 global::System.Linq.IQueryable<global::LightSwitchApplication.ReportingTemplates> query = (global::System.Linq.IQueryable<global::LightSwitchApplication.ReportingTemplates>)args[0];
                 d.YoungestFirst_PreprocessQuery(ref query);
+                return query;
+            }
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.QueryOperationEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.Documents>
+                __DokumentePerKundeEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.QueryOperationEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.Documents>(
+                    "DokumentePerKunde",
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__DokumentePerKunde_CanExecute,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__DokumentePerKunde_Executing,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__DokumentePerKunde_Executed,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__DokumentePerKunde_Failed,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__DokumentePerKunde_PreprocessQuery);
+            private static bool __DokumentePerKunde_CanExecute(global::LightSwitchApplication.ApplicationDataService d, bool r)
+            {
+                d.DokumentePerKunde_CanExecute(ref r);
+                return r;
+            }
+            private static void __DokumentePerKunde_Executing(global::LightSwitchApplication.ApplicationDataService d, object[] args)
+            {
+                d.DokumentePerKunde_Executing((global::System.Nullable<int>)args[0]);
+            }
+            private static void __DokumentePerKunde_Executed(global::LightSwitchApplication.ApplicationDataService d, object[] args)
+            {
+                d.DokumentePerKunde_Executed((global::System.Nullable<int>)args[0], (global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.Documents>)args[1]);
+            }
+            private static void __DokumentePerKunde_Failed(global::LightSwitchApplication.ApplicationDataService d, object[] args, global::System.Exception ex)
+            {
+                d.DokumentePerKunde_ExecuteFailed((global::System.Nullable<int>)args[0], ex);
+            }
+            private static global::System.Linq.IQueryable __DokumentePerKunde_PreprocessQuery(global::LightSwitchApplication.ApplicationDataService d, object[] args)
+            {
+                global::System.Linq.IQueryable<global::LightSwitchApplication.Documents> query = (global::System.Linq.IQueryable<global::LightSwitchApplication.Documents>)args[1];
+                d.DokumentePerKunde_PreprocessQuery((global::System.Nullable<int>)args[0], ref query);
+                return query;
+            }
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.QueryOperationEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.Documents>
+                __DokumentePerRechnungEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.QueryOperationEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.Documents>(
+                    "DokumentePerRechnung",
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__DokumentePerRechnung_CanExecute,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__DokumentePerRechnung_Executing,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__DokumentePerRechnung_Executed,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__DokumentePerRechnung_Failed,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__DokumentePerRechnung_PreprocessQuery);
+            private static bool __DokumentePerRechnung_CanExecute(global::LightSwitchApplication.ApplicationDataService d, bool r)
+            {
+                d.DokumentePerRechnung_CanExecute(ref r);
+                return r;
+            }
+            private static void __DokumentePerRechnung_Executing(global::LightSwitchApplication.ApplicationDataService d, object[] args)
+            {
+                d.DokumentePerRechnung_Executing((global::System.Nullable<int>)args[0]);
+            }
+            private static void __DokumentePerRechnung_Executed(global::LightSwitchApplication.ApplicationDataService d, object[] args)
+            {
+                d.DokumentePerRechnung_Executed((global::System.Nullable<int>)args[0], (global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.Documents>)args[1]);
+            }
+            private static void __DokumentePerRechnung_Failed(global::LightSwitchApplication.ApplicationDataService d, object[] args, global::System.Exception ex)
+            {
+                d.DokumentePerRechnung_ExecuteFailed((global::System.Nullable<int>)args[0], ex);
+            }
+            private static global::System.Linq.IQueryable __DokumentePerRechnung_PreprocessQuery(global::LightSwitchApplication.ApplicationDataService d, object[] args)
+            {
+                global::System.Linq.IQueryable<global::LightSwitchApplication.Documents> query = (global::System.Linq.IQueryable<global::LightSwitchApplication.Documents>)args[1];
+                d.DokumentePerRechnung_PreprocessQuery((global::System.Nullable<int>)args[0], ref query);
                 return query;
             }
     

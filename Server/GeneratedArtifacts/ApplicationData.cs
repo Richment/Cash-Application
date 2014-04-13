@@ -1808,13 +1808,17 @@ namespace ApplicationData.Implementation
         /// <param name="rowVersion">Anfangswert der Eigenschaft RowVersion.</param>
         /// <param name="datum">Anfangswert der Eigenschaft Datum.</param>
         /// <param name="bezeichnung">Anfangswert der Eigenschaft Bezeichnung.</param>
-        public static Documents CreateDocuments(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.DateTime datum, global::System.String bezeichnung)
+        /// <param name="kundenId">Anfangswert der Eigenschaft KundenId.</param>
+        /// <param name="rechnungsId">Anfangswert der Eigenschaft RechnungsId.</param>
+        public static Documents CreateDocuments(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.DateTime datum, global::System.String bezeichnung, global::System.Int32 kundenId, global::System.Int32 rechnungsId)
         {
             Documents documents = new Documents();
             documents.Id = id;
             documents.RowVersion = rowVersion;
             documents.Datum = datum;
             documents.Bezeichnung = bezeichnung;
+            documents.KundenId = kundenId;
+            documents.RechnungsId = rechnungsId;
             return documents;
         }
 
@@ -1944,6 +1948,54 @@ namespace ApplicationData.Implementation
         private global::System.Byte[] _Data;
         partial void OnDataChanging(global::System.Byte[] value);
         partial void OnDataChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 KundenId
+        {
+            get
+            {
+                return _KundenId;
+            }
+            set
+            {
+                OnKundenIdChanging(value);
+                ReportPropertyChanging("KundenId");
+                _KundenId = value;
+                ReportPropertyChanged("KundenId");
+                OnKundenIdChanged();
+            }
+        }
+        private global::System.Int32 _KundenId;
+        partial void OnKundenIdChanging(global::System.Int32 value);
+        partial void OnKundenIdChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 RechnungsId
+        {
+            get
+            {
+                return _RechnungsId;
+            }
+            set
+            {
+                OnRechnungsIdChanging(value);
+                ReportPropertyChanging("RechnungsId");
+                _RechnungsId = value;
+                ReportPropertyChanged("RechnungsId");
+                OnRechnungsIdChanged();
+            }
+        }
+        private global::System.Int32 _RechnungsId;
+        partial void OnRechnungsIdChanging(global::System.Int32 value);
+        partial void OnRechnungsIdChanged();
 
         #endregion
 

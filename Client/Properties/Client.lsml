@@ -174,6 +174,9 @@
         <ApplicationNavigationLink
           Command="!module/Commands[ScreenCommandShowBezahlarten]"
           Name="Bezahlarten" />
+        <ApplicationNavigationLink
+          Command="!module/Commands[ScreenCommandShowDokumentenÜbersicht]"
+          Name="DokumentenÜbersicht" />
       </ApplicationNavigationGroup>
       <ApplicationNavigationGroup
         Name="group2">
@@ -236,9 +239,6 @@
         <ApplicationNavigationLink
           Command="!module/Commands[ScreenCommandShowGesendeteMails]"
           Name="link3" />
-        <ApplicationNavigationLink
-          Command="!module/Commands[ScreenCommandShowDokumentenÜbersicht]"
-          Name="DokumentenÜbersicht" />
       </ApplicationNavigationGroup>
     </Application.NavigationItems>
     <ApplicationCommand
@@ -278,14 +278,14 @@
       Name="ScreenCommandShowGesendeteMails"
       Target="!module/Methods[ShowGesendeteMails]" />
     <ApplicationCommand
-      Name="ScreenCommandShowDokumentenÜbersicht"
-      Target="!module/Methods[ShowDokumentenÜbersicht]" />
-    <ApplicationCommand
       Name="ScreenCommandShowEMailSettings"
       Target="!module/Methods[ShowEMailSettings]" />
     <ApplicationCommand
       Name="ScreenCommandShowRechnungsvorlage"
       Target="!module/Methods[ShowRechnungsvorlage]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowDokumentenÜbersicht"
+      Target="!module/Methods[ShowDokumentenÜbersicht]" />
   </Application>
   <Screen
     LaunchMode="Multiple"
@@ -1574,6 +1574,44 @@
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
+      <ScreenCollectionProperty
+        Name="DokumentePerRechnung"
+        PageSize="20"
+        PropertyType="LightSwitchCommonModule:CollectionView$Documents">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="DokumentePerRechnungQuery"
+            ReturnType="LightSwitchCommonModule:Documents*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <MemberExpression
+                  Member="LightSwitchCommonModule:ApplicationData/Members[DokumentePerRechnung]" />
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="BestellungListDetails/Properties[DokumentePerRechnung]/Query">
+              <ArgumentExpression
+                Parameter="Rechnung">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="BestellungListDetails/Properties[RechnungenSet]" />
+                  <MemberExpression
+                    Member="SelectedItem" />
+                  <MemberExpression
+                    Member="Id" />
+                </ChainExpression>
+              </ArgumentExpression>
+            </CallExpression>
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
     </Screen.Properties>
     <Screen.RootContentItem>
       <ContentItem
@@ -2171,6 +2209,76 @@
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Kind="Group"
+                Name="Group3">
+                <ContentItem
+                  DataType="LightSwitchCommonModule:CollectionView$Documents"
+                  Kind="Collection"
+                  Name="DokumentePerRechnung"
+                  View=":List">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Dokumente" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="BestellungListDetails/Properties[DokumentePerRechnung]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch:CollectionControlSupportingExport/Properties[HideExportButton]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            ResultType=":Boolean"
+                            Value="True" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                  <ContentItem
+                    DataType="LightSwitchCommonModule:Documents"
+                    Kind="Details"
+                    Name="DokumentePerRechnungTemplate">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                    <ContentItem
+                      DataType=":Date"
+                      Kind="Value"
+                      Name="Datum">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="LightSwitchCommonModule:Documents/Properties[Datum]" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                    </ContentItem>
+                    <ContentItem
+                      DataType=":String"
+                      Kind="Value"
+                      Name="Bezeichnung">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="LightSwitchCommonModule:Documents/Properties[Bezeichnung]" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                    </ContentItem>
+                  </ContentItem>
+                </ContentItem>
               </ContentItem>
             </ContentItem>
           </ContentItem>
@@ -7504,6 +7612,8 @@
       </ScreenMethod>
       <ScreenMethod
         Name="Speichern" />
+      <ScreenMethod
+        Name="ViewDocument" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenProperty
@@ -7590,6 +7700,40 @@
           <ChainExpression>
             <CallExpression
               Target="KundenDetails/Properties[Adressen]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+      <ScreenCollectionProperty
+        Name="DokumentePerKunde"
+        PageSize="10"
+        PropertyType="LightSwitchCommonModule:CollectionView$Documents">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="DokumentePerKundeQuery"
+            ReturnType="LightSwitchCommonModule:Documents*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <MemberExpression
+                  Member="LightSwitchCommonModule:ApplicationData/Members[DokumentePerKunde]" />
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="KundenDetails/Properties[DokumentePerKunde]/Query">
+              <ArgumentExpression
+                Parameter="Kunde">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="KundenDetails/Properties[KundenId]" />
+                </ChainExpression>
+              </ArgumentExpression>
+            </CallExpression>
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
@@ -8036,6 +8180,10 @@
                 DataType="LightSwitchCommonModule:AdressenSetItem"
                 Kind="Details"
                 Name="AdressenTemplate">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Lieferadressen" />
+                </ContentItem.Attributes>
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression />
@@ -8155,6 +8303,10 @@
               DataType="LightSwitchCommonModule:CollectionView$Rechnungen"
               Kind="Collection"
               Name="Rechnungen1">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Bestellungen" />
+              </ContentItem.Attributes>
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
@@ -8185,6 +8337,10 @@
                 DataType="LightSwitchCommonModule:Rechnungen"
                 Kind="Details"
                 Name="Rechnungen1Template">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Bestellungen" />
+                </ContentItem.Attributes>
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression />
@@ -8446,6 +8602,149 @@
                       <ChainExpression>
                         <MemberExpression
                           Member="LightSwitchCommonModule:Rechnungen/Properties[Netto_Gesamtbetrag]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem>
+            </ContentItem>
+            <ContentItem
+              DataType="LightSwitchCommonModule:CollectionView$Documents"
+              Kind="Collection"
+              Name="DokumentePerKunde">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Dokumente" />
+              </ContentItem.Attributes>
+              <ContentItem.CommandItems>
+                <ContentItem
+                  Kind="Command"
+                  Name="ViewDocument">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Anzeigen" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <CallExpression
+                          Target="KundenDetails/Methods[ViewDocument]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch:RootControl/Properties[Image]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            ResultType=":String"
+                            Value="Microsoft.LightSwitch.UserImageResources::Resources\View.png" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+              </ContentItem.CommandItems>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="KundenDetails/Properties[DokumentePerKunde]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property=":DataGrid/Properties[ShowVirtualRow]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        ResultType=":Boolean"
+                        Value="False" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property=":CollectionControlSupportingExport/Properties[HideExportButton]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        ResultType=":Boolean"
+                        Value="True" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+              </ContentItem.PropertySources>
+              <ContentItem
+                DataType="LightSwitchCommonModule:Documents"
+                Kind="Details"
+                Name="DokumentePerKundeTemplate">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Documente" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression />
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property=":RootControl/Properties[BrowseOnly]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          ResultType=":Boolean"
+                          Value="True" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+                <ContentItem
+                  DataType=":Date"
+                  Kind="Value"
+                  Name="Datum">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="LightSwitchCommonModule:Documents/Properties[Datum]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch:DateViewerBase/Properties[LongDate]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            ResultType=":Boolean"
+                            Value="True" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch:RootControl/Properties[MinWidth]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            ResultType=":Double"
+                            Value="150" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem
+                  DataType=":String"
+                  Kind="Value"
+                  Name="Bezeichnung">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="LightSwitchCommonModule:Documents/Properties[Bezeichnung]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -9689,6 +9988,10 @@
           <ContentItem
             Kind="Command"
             Name="Save">
+            <ContentItem.Attributes>
+              <DisplayName
+                Value="Speichern (DEBUG)" />
+            </ContentItem.Attributes>
             <ContentItem.DataSource>
               <ScreenExpressionTree>
                 <ChainExpression>

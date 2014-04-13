@@ -204,6 +204,54 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public int KundenId
+        {
+            get
+            {
+                return global::LightSwitchApplication.Documents.DetailsClass.GetValue(this, global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties.KundenId);
+            }
+            set
+            {
+                global::LightSwitchApplication.Documents.DetailsClass.SetValue(this, global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties.KundenId, value);
+            }
+        }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void KundenId_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void KundenId_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void KundenId_Changed();
+
+        /// <summary>
+        /// Keine modellierte Beschreibung verfügbar
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public int RechnungsId
+        {
+            get
+            {
+                return global::LightSwitchApplication.Documents.DetailsClass.GetValue(this, global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties.RechnungsId);
+            }
+            set
+            {
+                global::LightSwitchApplication.Documents.DetailsClass.SetValue(this, global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties.RechnungsId, value);
+            }
+        }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void RechnungsId_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void RechnungsId_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void RechnungsId_Changed();
+
+        /// <summary>
+        /// Keine modellierte Beschreibung verfügbar
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public global::LightSwitchApplication.GeneratedDocument GeneratedDocument
         {
             get
@@ -345,6 +393,22 @@ namespace LightSwitchApplication
                     }
                 }
                 
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, int> KundenId
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties.KundenId) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, int>;
+                    }
+                }
+                
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, int> RechnungsId
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties.RechnungsId) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, int>;
+                    }
+                }
+                
                 public global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, global::LightSwitchApplication.GeneratedDocument> GeneratedDocument
                 {
                     get
@@ -364,6 +428,8 @@ namespace LightSwitchApplication
                 new global::System.DateTime Datum { get; set; }
                 new string Bezeichnung { get; set; }
                 new byte[] Data { get; set; }
+                new int KundenId { get; set; }
+                new int RechnungsId { get; set; }
                 new global::Microsoft.LightSwitch.Internal.IEntityImplementation GeneratedDocument { get; set; }
             }
             #pragma warning restore 109
@@ -560,6 +626,80 @@ namespace LightSwitchApplication
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, int>.Entry
+                    KundenId = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, int>.Entry(
+                        "KundenId",
+                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._KundenId_Stub,
+                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._KundenId_ComputeIsReadOnly,
+                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._KundenId_Validate,
+                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._KundenId_GetImplementationValue,
+                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._KundenId_SetImplementationValue,
+                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._KundenId_OnValueChanged);
+                private static void _KundenId_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Documents.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, int>.Data> c, global::LightSwitchApplication.Documents.DetailsClass d, object sf)
+                {
+                    c(d, ref d._KundenId, sf);
+                }
+                private static bool _KundenId_ComputeIsReadOnly(global::LightSwitchApplication.Documents e)
+                {
+                    bool result = false;
+                    e.KundenId_IsReadOnly(ref result);
+                    return result;
+                }
+                private static void _KundenId_Validate(global::LightSwitchApplication.Documents e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                {
+                    e.KundenId_Validate(r);
+                }
+                private static int _KundenId_GetImplementationValue(global::LightSwitchApplication.Documents.DetailsClass d)
+                {
+                    return d.ImplementationEntity.KundenId;
+                }
+                private static void _KundenId_SetImplementationValue(global::LightSwitchApplication.Documents.DetailsClass d, int v)
+                {
+                    d.ImplementationEntity.KundenId = v;
+                }
+                private static void _KundenId_OnValueChanged(global::LightSwitchApplication.Documents e)
+                {
+                    e.KundenId_Changed();
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, int>.Entry
+                    RechnungsId = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, int>.Entry(
+                        "RechnungsId",
+                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._RechnungsId_Stub,
+                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._RechnungsId_ComputeIsReadOnly,
+                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._RechnungsId_Validate,
+                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._RechnungsId_GetImplementationValue,
+                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._RechnungsId_SetImplementationValue,
+                        global::LightSwitchApplication.Documents.DetailsClass.PropertySetProperties._RechnungsId_OnValueChanged);
+                private static void _RechnungsId_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Documents.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, int>.Data> c, global::LightSwitchApplication.Documents.DetailsClass d, object sf)
+                {
+                    c(d, ref d._RechnungsId, sf);
+                }
+                private static bool _RechnungsId_ComputeIsReadOnly(global::LightSwitchApplication.Documents e)
+                {
+                    bool result = false;
+                    e.RechnungsId_IsReadOnly(ref result);
+                    return result;
+                }
+                private static void _RechnungsId_Validate(global::LightSwitchApplication.Documents e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                {
+                    e.RechnungsId_Validate(r);
+                }
+                private static int _RechnungsId_GetImplementationValue(global::LightSwitchApplication.Documents.DetailsClass d)
+                {
+                    return d.ImplementationEntity.RechnungsId;
+                }
+                private static void _RechnungsId_SetImplementationValue(global::LightSwitchApplication.Documents.DetailsClass d, int v)
+                {
+                    d.ImplementationEntity.RechnungsId = v;
+                }
+                private static void _RechnungsId_OnValueChanged(global::LightSwitchApplication.Documents e)
+                {
+                    e.RechnungsId_Changed();
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, global::LightSwitchApplication.GeneratedDocument>.Entry
                     GeneratedDocument = new global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, global::LightSwitchApplication.GeneratedDocument>.Entry(
                         "GeneratedDocument",
@@ -622,6 +762,12 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, byte[]>.Data _Data;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, int>.Data _KundenId;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, int>.Data _RechnungsId;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Documents, global::LightSwitchApplication.Documents.DetailsClass, global::LightSwitchApplication.GeneratedDocument>.Data _GeneratedDocument;

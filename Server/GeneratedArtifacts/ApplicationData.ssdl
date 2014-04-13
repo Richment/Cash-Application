@@ -224,6 +224,8 @@
     <Property Name="Datum" Type="datetime" Nullable="false" />
     <Property Name="Bezeichnung" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="Data" Type="varbinary(max)" />
+    <Property Name="KundenId" Type="int" Nullable="false" />
+    <Property Name="RechnungsId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="GeneratedDocument">
     <Key>

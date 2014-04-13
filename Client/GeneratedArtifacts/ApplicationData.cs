@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Ursprünglicher Dateiname:
-// Erstellungsdatum: 13.04.2014 04:57:20
+// Erstellungsdatum: 13.04.2014 05:51:11
 namespace LightSwitchApplication.Implementation
 {
     
@@ -4310,14 +4310,18 @@ namespace LightSwitchApplication.Implementation
         /// <param name="rowVersion">Anfangswert von RowVersion.</param>
         /// <param name="datum">Anfangswert von Datum.</param>
         /// <param name="bezeichnung">Anfangswert von Bezeichnung.</param>
+        /// <param name="kundenId">Anfangswert von KundenId.</param>
+        /// <param name="rechnungsId">Anfangswert von RechnungsId.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Documents CreateDocuments(int ID, byte[] rowVersion, global::System.DateTime datum, string bezeichnung)
+        public static Documents CreateDocuments(int ID, byte[] rowVersion, global::System.DateTime datum, string bezeichnung, int kundenId, int rechnungsId)
         {
             Documents documents = new Documents();
             documents.Id = ID;
             documents.RowVersion = rowVersion;
             documents.Datum = datum;
             documents.Bezeichnung = bezeichnung;
+            documents.KundenId = kundenId;
+            documents.RechnungsId = rechnungsId;
             return documents;
         }
         /// <summary>
@@ -4464,6 +4468,58 @@ namespace LightSwitchApplication.Implementation
         private byte[] _Data;
         partial void OnDataChanging(byte[] value);
         partial void OnDataChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "KundenId" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public int KundenId
+        {
+            get
+            {
+                return this._KundenId;
+            }
+            set
+            {
+                this.OnKundenIdChanging(value);
+                if (object.Equals(this.KundenId, value))
+                {
+                    return;
+                }
+                this._KundenId = value;
+                this.OnKundenIdChanged();
+                this.OnPropertyChanged("KundenId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private int _KundenId;
+        partial void OnKundenIdChanging(int value);
+        partial void OnKundenIdChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "RechnungsId" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public int RechnungsId
+        {
+            get
+            {
+                return this._RechnungsId;
+            }
+            set
+            {
+                this.OnRechnungsIdChanging(value);
+                if (object.Equals(this.RechnungsId, value))
+                {
+                    return;
+                }
+                this._RechnungsId = value;
+                this.OnRechnungsIdChanged();
+                this.OnPropertyChanged("RechnungsId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private int _RechnungsId;
+        partial void OnRechnungsIdChanging(int value);
+        partial void OnRechnungsIdChanged();
         /// <summary>
         /// Im Schema sind keine Kommentare für "GeneratedDocument" vorhanden.
         /// </summary>

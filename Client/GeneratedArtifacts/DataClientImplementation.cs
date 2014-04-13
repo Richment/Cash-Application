@@ -1159,6 +1159,16 @@ namespace LightSwitchApplication.Implementation
             this.___OnPropertyChanged("Data");
         }
         
+        partial void OnKundenIdChanged()
+        {
+            this.___OnPropertyChanged("KundenId");
+        }
+        
+        partial void OnRechnungsIdChanged()
+        {
+            this.___OnPropertyChanged("RechnungsId");
+        }
+        
         global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Documents.DetailsClass.IImplementation.GeneratedDocument
         {
             get

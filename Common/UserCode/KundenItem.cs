@@ -1,11 +1,11 @@
-﻿namespace LightSwitchApplication
-{
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Text;
-	using Microsoft.LightSwitch;
+﻿using System;	 
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Microsoft.LightSwitch;
 
+namespace LightSwitchApplication
+{
 	public partial class KundenItem
 	{
 		partial void Kundennummer_Compute(ref string result)
@@ -22,6 +22,11 @@
 			result += String.IsNullOrWhiteSpace(this.Firma) ? "" : this.Firma + ", ";
 			result += ((this.Anrede ?? "").Trim() + ' ' + this.Nachnahme.Trim() + ' ' + this.Vorname.Trim()).Trim();
 			return String.IsNullOrWhiteSpace(result) ? base.ToString() : result;
+		}
+
+		partial void KundenItem_Created()
+		{
+			Zahlungsziel = 30;
 		}
 	};
 }

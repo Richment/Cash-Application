@@ -95,6 +95,28 @@ namespace LightSwitchApplication.Implementation
             return query;
         }
     
+        public global::System.Linq.IQueryable<global::ApplicationData.Implementation.Documents> DokumentePerKunde(global::System.Nullable<int> Kunde)
+        {
+            global::System.Linq.IQueryable<global::ApplicationData.Implementation.Documents> query;
+            query = global::System.Linq.Queryable.OrderByDescending(
+                global::System.Linq.Queryable.Where(
+                    this.GetQuery<global::ApplicationData.Implementation.Documents>("DocumentsSet"),
+                    (d) => (Kunde.HasValue && (d.KundenId == Kunde))),
+                (d) => d.Datum);
+            return query;
+        }
+    
+        public global::System.Linq.IQueryable<global::ApplicationData.Implementation.Documents> DokumentePerRechnung(global::System.Nullable<int> Rechnung)
+        {
+            global::System.Linq.IQueryable<global::ApplicationData.Implementation.Documents> query;
+            query = global::System.Linq.Queryable.OrderByDescending(
+                global::System.Linq.Queryable.Where(
+                    this.GetQuery<global::ApplicationData.Implementation.Documents>("DocumentsSet"),
+                    (d) => (Rechnung.HasValue && (d.RechnungsId == Rechnung))),
+                (d) => d.Datum);
+            return query;
+        }
+    
     #endregion
 
     #region Protected Methods

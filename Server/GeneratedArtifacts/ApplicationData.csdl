@@ -187,6 +187,8 @@
     <Property Name="Datum" Type="Edm.DateTime" Nullable="false" />
     <Property Name="Bezeichnung" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="Data" Type="Edm.Binary" MaxLength="Max" />
+    <Property Name="KundenId" Type="Edm.Int32" Nullable="false" />
+    <Property Name="RechnungsId" Type="Edm.Int32" Nullable="false" />
     <NavigationProperty Name="GeneratedDocument" Relationship="LightSwitchApplication.Documents_GeneratedDocument" ToRole="GeneratedDocument" FromRole="Documents" />
   </EntityType>
   <EntityType Name="GeneratedDocument">
