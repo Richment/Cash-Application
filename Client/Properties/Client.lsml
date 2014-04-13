@@ -174,9 +174,6 @@
         <ApplicationNavigationLink
           Command="!module/Commands[ScreenCommandShowBezahlarten]"
           Name="Bezahlarten" />
-        <ApplicationNavigationLink
-          Command="!module/Commands[ScreenCommandShowDokumentenÜbersicht]"
-          Name="DokumentenÜbersicht" />
       </ApplicationNavigationGroup>
       <ApplicationNavigationGroup
         Name="group2">
@@ -239,6 +236,9 @@
         <ApplicationNavigationLink
           Command="!module/Commands[ScreenCommandShowGesendeteMails]"
           Name="link3" />
+        <ApplicationNavigationLink
+          Command="!module/Commands[ScreenCommandShowDokumentenÜbersicht]"
+          Name="link4" />
       </ApplicationNavigationGroup>
     </Application.NavigationItems>
     <ApplicationCommand

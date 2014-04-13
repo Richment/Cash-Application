@@ -73,6 +73,7 @@
     <Property Name="EMailadresse" Type="nvarchar" MaxLength="255" />
     <Property Name="Webseite" Type="nvarchar" MaxLength="255" />
     <Property Name="Rabatt" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="UstId" Type="nvarchar" MaxLength="25" />
     <Property Name="Zahlungsziel" Type="int" Nullable="false" />
     <Property Name="Bemerkungen" Type="nvarchar" MaxLength="255" />
     <Property Name="Sonstiges" Type="nvarchar" MaxLength="255" />

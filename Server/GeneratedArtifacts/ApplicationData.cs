@@ -3086,6 +3086,30 @@ namespace ApplicationData.Implementation
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.
         /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String UstId
+        {
+            get
+            {
+                return _UstId;
+            }
+            set
+            {
+                OnUstIdChanging(value);
+                ReportPropertyChanging("UstId");
+                _UstId = value;
+                ReportPropertyChanged("UstId");
+                OnUstIdChanged();
+            }
+        }
+        private global::System.String _UstId;
+        partial void OnUstIdChanging(global::System.String value);
+        partial void OnUstIdChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.Int32 Zahlungsziel

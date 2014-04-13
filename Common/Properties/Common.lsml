@@ -1871,6 +1871,15 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
+        Name="UstId"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="25" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
         Name="Zahlungsziel"
         PropertyType=":Int32">
         <EntityProperty.Attributes>

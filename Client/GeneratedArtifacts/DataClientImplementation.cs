@@ -103,6 +103,11 @@ namespace LightSwitchApplication.Implementation
             this.___OnPropertyChanged("Rabatt");
         }
         
+        partial void OnUstIdChanged()
+        {
+            this.___OnPropertyChanged("UstId");
+        }
+        
         partial void OnZahlungszielChanged()
         {
             this.___OnPropertyChanged("Zahlungsziel");

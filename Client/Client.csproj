@@ -186,6 +186,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(WCFRIASERVICESSDKPath)\v1.0\Libraries\Silverlight\System.Windows.Controls.DomainServices.dll</HintPath>
     </Reference>
+    <Reference Include="system.windows.controls.theming.bubblecreme, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Theming.Toolkit, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="system.windows.controls.theming.twilightblue, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Windows.Controls.Toolkit, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Windows.Data" />
     <Reference Include="mscorlib" />

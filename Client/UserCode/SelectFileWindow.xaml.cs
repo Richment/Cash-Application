@@ -9,7 +9,6 @@
 	{
 		public static readonly DependencyProperty TextProperty = DependencyProperty.Register("Text", typeof(string), typeof(SelectFileWindow), new PropertyMetadata(String.Empty));
 		public static readonly DependencyProperty FilterProperty = DependencyProperty.Register("Filter", typeof(string), typeof(SelectFileWindow), new PropertyMetadata("Alle Dateien (*.*)|*.*"));
-		
 
 		public string Text
 		{

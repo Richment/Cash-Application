@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Ursprünglicher Dateiname:
-// Erstellungsdatum: 13.04.2014 05:51:11
+// Erstellungsdatum: 13.04.2014 14:09:16
 namespace LightSwitchApplication.Implementation
 {
     
@@ -890,6 +890,32 @@ namespace LightSwitchApplication.Implementation
         private decimal _Rabatt;
         partial void OnRabattChanging(decimal value);
         partial void OnRabattChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "UstId" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string UstId
+        {
+            get
+            {
+                return this._UstId;
+            }
+            set
+            {
+                this.OnUstIdChanging(value);
+                if (object.Equals(this.UstId, value))
+                {
+                    return;
+                }
+                this._UstId = value;
+                this.OnUstIdChanged();
+                this.OnPropertyChanged("UstId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _UstId;
+        partial void OnUstIdChanging(string value);
+        partial void OnUstIdChanged();
         /// <summary>
         /// Im Schema sind keine Kommentare für die Eigenschaft "Zahlungsziel" vorhanden.
         /// </summary>

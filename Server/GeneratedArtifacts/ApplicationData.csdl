@@ -20,6 +20,7 @@
     <Property Name="EMailadresse" Type="Edm.String" MaxLength="255" />
     <Property Name="Webseite" Type="Edm.String" MaxLength="255" />
     <Property Name="Rabatt" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="UstId" Type="Edm.String" MaxLength="25" />
     <Property Name="Zahlungsziel" Type="Edm.Int32" Nullable="false" />
     <Property Name="Bemerkungen" Type="Edm.String" MaxLength="255" />
     <Property Name="Sonstiges" Type="Edm.String" MaxLength="255" />

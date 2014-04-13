@@ -249,7 +249,7 @@
 			</Setter>
 		</Style>
 	</controls:ChildWindow.Resources>
-	<Grid x:Name="LayoutRoot"
+		<Grid x:Name="LayoutRoot"
 		  Margin="4,2,2,2">
 		<Grid.RowDefinitions>
 			<RowDefinition />

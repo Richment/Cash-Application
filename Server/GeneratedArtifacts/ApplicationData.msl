@@ -20,6 +20,7 @@
           <ScalarProperty Name="EMailadresse" ColumnName="EMailadresse" />
           <ScalarProperty Name="Webseite" ColumnName="Webseite" />
           <ScalarProperty Name="Rabatt" ColumnName="Rabatt" />
+          <ScalarProperty Name="UstId" ColumnName="UstId" />
           <ScalarProperty Name="Zahlungsziel" ColumnName="Zahlungsziel" />
           <ScalarProperty Name="Bemerkungen" ColumnName="Bemerkungen" />
           <ScalarProperty Name="Sonstiges" ColumnName="Sonstiges" />

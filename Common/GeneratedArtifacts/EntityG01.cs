@@ -468,6 +468,30 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public string UstId
+        {
+            get
+            {
+                return global::LightSwitchApplication.KundenItem.DetailsClass.GetValue(this, global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties.UstId);
+            }
+            set
+            {
+                global::LightSwitchApplication.KundenItem.DetailsClass.SetValue(this, global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties.UstId, value);
+            }
+        }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void UstId_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void UstId_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void UstId_Changed();
+
+        /// <summary>
+        /// Keine modellierte Beschreibung verfügbar
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public int Zahlungsziel
         {
             get
@@ -833,6 +857,14 @@ namespace LightSwitchApplication
                     }
                 }
                 
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, string> UstId
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties.UstId) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, string>;
+                    }
+                }
+                
                 public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, int> Zahlungsziel
                 {
                     get
@@ -911,6 +943,7 @@ namespace LightSwitchApplication
                 new string EMailadresse { get; set; }
                 new string Webseite { get; set; }
                 new decimal Rabatt { get; set; }
+                new string UstId { get; set; }
                 new int Zahlungsziel { get; set; }
                 new string Bemerkungen { get; set; }
                 new string Sonstiges { get; set; }
@@ -1519,6 +1552,43 @@ namespace LightSwitchApplication
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, string>.Entry
+                    UstId = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, string>.Entry(
+                        "UstId",
+                        global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties._UstId_Stub,
+                        global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties._UstId_ComputeIsReadOnly,
+                        global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties._UstId_Validate,
+                        global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties._UstId_GetImplementationValue,
+                        global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties._UstId_SetImplementationValue,
+                        global::LightSwitchApplication.KundenItem.DetailsClass.PropertySetProperties._UstId_OnValueChanged);
+                private static void _UstId_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.KundenItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, string>.Data> c, global::LightSwitchApplication.KundenItem.DetailsClass d, object sf)
+                {
+                    c(d, ref d._UstId, sf);
+                }
+                private static bool _UstId_ComputeIsReadOnly(global::LightSwitchApplication.KundenItem e)
+                {
+                    bool result = false;
+                    e.UstId_IsReadOnly(ref result);
+                    return result;
+                }
+                private static void _UstId_Validate(global::LightSwitchApplication.KundenItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                {
+                    e.UstId_Validate(r);
+                }
+                private static string _UstId_GetImplementationValue(global::LightSwitchApplication.KundenItem.DetailsClass d)
+                {
+                    return d.ImplementationEntity.UstId;
+                }
+                private static void _UstId_SetImplementationValue(global::LightSwitchApplication.KundenItem.DetailsClass d, string v)
+                {
+                    d.ImplementationEntity.UstId = v;
+                }
+                private static void _UstId_OnValueChanged(global::LightSwitchApplication.KundenItem e)
+                {
+                    e.UstId_Changed();
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, int>.Entry
                     Zahlungsziel = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, int>.Entry(
                         "Zahlungsziel",
@@ -1787,6 +1857,9 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, decimal>.Data _Rabatt;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, string>.Data _UstId;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KundenItem, global::LightSwitchApplication.KundenItem.DetailsClass, int>.Data _Zahlungsziel;
