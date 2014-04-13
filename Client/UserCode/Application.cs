@@ -27,7 +27,7 @@
 		{
 			var today = DateTime.Today;
 			
-			// Prüfe DocTemplate
+			// Prüfe Dokumentenvorlage
 			using (var dw = Application.Current.CreateDataWorkspace())
 			{
 				var defaultItem = dw.ApplicationData.ReportingTemplatesSet.FirstOrDefault();

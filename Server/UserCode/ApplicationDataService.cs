@@ -6,18 +6,20 @@ namespace LightSwitchApplication
 {
 	public partial class ApplicationDataService
 	{
+		// E-MAIL
 		partial void OutgoingMailSet_Inserting(OutgoingMail entity)
 		{
 			entity.Sended = DateTime.Now;
 			SmtpSender.SendEmail(entity);
 		}
-
 		partial void OutgoingMailSet_Updating(OutgoingMail entity)
 		{
 			entity.Sended = DateTime.Now;
 			SmtpSender.SendEmail(entity);
 		}
 
+
+		// DOCUMENT
 		partial void DocumentsSet_Inserting(Documents entity)
 		{
 			var desc = DocDescriptor.FromByteArray(entity.Data);
@@ -28,7 +30,6 @@ namespace LightSwitchApplication
 				entity.GeneratedDocument.Bytes = DocumentGenerator.DocumentToPdf(desc);
 			}
 		}
-
 		partial void DocumentsSet_Updating(Documents entity)
 		{
 			var desc = DocDescriptor.FromByteArray(entity.Data);
@@ -40,6 +41,7 @@ namespace LightSwitchApplication
 			}
 		}
 
+		// TEMPLATE
 		partial void ReportingTemplatesSet_Inserting(ReportingTemplates entity)
 		{
 			if ((entity.ReleaseDate == ReportingTemplates.Minimum) && (entity.Template.Length == 0) && String.IsNullOrWhiteSpace(entity.OriginalFilename))

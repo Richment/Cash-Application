@@ -35,6 +35,18 @@ namespace LightSwitchApplication
 			Close(false);
 		}
 
+		partial void ViewDocument_CanExecute(ref bool result)
+		{
+			result = DokumentePerKunde.SelectedItem != null;
+		}
+
+		partial void ViewDocument_Execute()
+		{
+			string temp = Helper.GetFreeTempFilename("pdf");
+			File.WriteAllBytes(temp, DokumentePerKunde.SelectedItem.GeneratedDocument.Bytes);
+			Helper.ShellExecute(temp);
+		}
+
 		#region LieferAdresse
 
 		private void LieferAvailable(object sender, ControlAvailableEventArgs e)
@@ -89,17 +101,5 @@ namespace LightSwitchApplication
 		}
 
 		#endregion
-
-		partial void ViewDocument_CanExecute(ref bool result)
-		{
-			result = DokumentePerKunde.SelectedItem != null;
-		}
-
-		partial void ViewDocument_Execute()
-		{
-			string temp = Helper.GetFreeTempFilename("pdf");
-			File.WriteAllBytes(temp, DokumentePerKunde.SelectedItem.GeneratedDocument.Bytes);
-			Helper.ShellExecute(temp);
-		}
 	}
 }
