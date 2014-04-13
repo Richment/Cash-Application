@@ -1614,6 +1614,28 @@
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
+    <QueryOperation
+      Name="YoungestFirst"
+      ReturnType="ReportingTemplates*">
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree />
+      </QueryOperation.FilterExpression>
+      <QueryOperation.SortCriteria>
+        <SortCriterion
+          Direction="Descending">
+          <ChainExpression>
+            <MemberExpression
+              Member="ReleaseDate" />
+          </ChainExpression>
+        </SortCriterion>
+      </QueryOperation.SortCriteria>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="ReportingTemplatesSet" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+    </QueryOperation>
   </EntityContainer>
   <EntityType
     Name="KundenItem">

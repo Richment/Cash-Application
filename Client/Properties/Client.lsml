@@ -12910,6 +12910,19 @@
               </ScreenExpressionTree>
             </ContentItem.DataSource>
           </ContentItem>
+          <ContentItem
+            IsHidden="True"
+            Kind="Command"
+            Name="Save">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <CallExpression
+                    Target="Rechnungsvorlage/Methods[Save]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+          </ContentItem>
         </ContentItem.CommandItems>
         <ContentItem
           Kind="Group"
@@ -12935,6 +12948,35 @@
               Kind="Collection"
               Name="ReportingTemplatesList"
               View="Microsoft.LightSwitch:List">
+              <ContentItem.CommandItems>
+                <ContentItem
+                  IsHidden="True"
+                  Kind="Command"
+                  Name="ReportingTemplatesSet_DeleteSelected">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Rechnungsvorlage/Properties[ReportingTemplatesSet]" />
+                        <CallExpression
+                          Target="DeleteSelected" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch:RootControl/Properties[Image]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            ResultType=":String"
+                            Value="Microsoft.LightSwitch.UserImageResources::Resources\delete.png" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+              </ContentItem.CommandItems>
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>

@@ -15,10 +15,6 @@
 
 		private const string TEMPLATE = "LightSwitchApplication.Template.docx";
 
-		#endregion
-
-		#region DocumentTags
-
 		private const string ADDRESS_TAG = "[[" + DocDescriptor.ADDRESS + "]]";
 		private const string A_NR_TAG = "[[" + DocDescriptor.A_NR + "]]";
 		private const string BRUTTO_TAG = "[[" + DocDescriptor.BRUTTO + "]]";
@@ -26,7 +22,7 @@
 		private const string L_AMOUNT_TAG = "[[" + DocDescriptor.L_AMOUNT + "]]";
 		private const string L_DATE_TAG = "[[" + DocDescriptor.L_DATE + "]]";
 		private const string L_NR_WORD = "Lieferscheinnummer:";
-		private const string L_NR_TAG = "[[" + DocDescriptor.L_NR + "]]";						
+		private const string L_NR_TAG = "[[" + DocDescriptor.L_NR + "]]";
 		private const string MAHN_TAG = "[[" + DocDescriptor.MAHN + "]]";
 		private const string NETTO_TAG = "[[" + DocDescriptor.NETTO + "]]";
 		private const string R_DATE_TAG = "[[" + DocDescriptor.R_DATE + "]]";
@@ -36,23 +32,41 @@
 		private const string V_DATE_WORD = "Versanddatum:";
 		private const string V_DATE_TAG = "[[" + DocDescriptor.V_DATE + "]]";
 
-
 		#endregion
 
-		internal static byte[] ProcessDocument(DocDescriptor data, bool asPdf = false)
+		private static readonly byte[] templateBytes;
+
+		static DocumentGenerator()
+		{
+			using (var resourceStream = Assembly.GetExecutingAssembly().GetManifestResourceStream(TEMPLATE))
+			{
+				if (resourceStream != null)
+				{
+					using (var ms = new MemoryStream())
+					{
+						resourceStream.CopyTo(ms);
+						templateBytes = ms.ToArray();
+					}
+				}
+			}
+		}
+
+		internal static byte[] ProcessDocument(DocDescriptor data)
 		{
 			using (MemoryStream ms = CreateTemplate())
 			{
 				WordprocessingDocument doc = WordprocessingDocument.Open(ms, true);
 				Body body = doc.MainDocumentPart.Document.Body;
 
-				#region Table
+				#region Positions
+
 				if (data.Positionen.Count > 0)
 				{
 					var table = body.Elements<Table>().FirstOrDefault(n => n.Any(m => m.OuterXml.Contains("MapTableNoHeading")));
 					var row = table.ChildElements.OfType<TableRow>().LastOrDefault();
+					var outerXml = row.OuterXml;
 					var rowParas = FindElements<Paragraph>(row).ToArray();
-					var first = data.Positionen.OfType<Position>().First();
+					var first = data.Positionen[0];
 					InsertTextRun(rowParas[0], "1");
 					InsertTextRun(rowParas[1], first.Artikelnummer);
 					InsertTextRun(rowParas[2], first.Bezeichnung);
@@ -65,24 +79,47 @@
 						OpenXmlElement last = row;
 						for (int i = 1; i < data.Positionen.Count; i++)
 						{
-							var newRow = new TableRow(row.OuterXml);
+							var newRow = new TableRow(outerXml);
 							last = last.InsertAfterSelf(newRow);
-							var current = data.Positionen.OfType<Position>().ElementAt(i);
-							var paras = FindElements<Paragraph>(last).ToArray();
-							InsertTextRun(rowParas[0], (i + 1).ToString());
-							InsertTextRun(rowParas[1], first.Artikelnummer);
-							InsertTextRun(rowParas[2], first.Bezeichnung);
-							InsertTextRun(rowParas[3], first.Anzahl.ToString());
-							InsertTextRun(rowParas[4], first.PosPreis.ToString("C"));
-							InsertTextRun(rowParas[5], first.Preis.ToString("C"));
+							var current = data.Positionen[i];
+							var paras = FindElements<Paragraph>(newRow).ToArray();
+							InsertTextRun(paras[0], (i + 1).ToString());
+							InsertTextRun(paras[1], current.Artikelnummer);
+							InsertTextRun(paras[2], current.Bezeichnung);
+							InsertTextRun(paras[3], current.Anzahl.ToString());
+							InsertTextRun(paras[4], current.PosPreis.ToString("C"));
+							InsertTextRun(paras[5], current.Preis.ToString("C"));
 						}
 					}
 				}
+
+				#endregion
+
+				#region Summary
+
+				var otherTable = body.Elements<Table>().FirstOrDefault(n => n.Any(m => m.OuterXml.Contains("liste2")));
+				var lieferKostenRow = otherTable.ChildElements.OfType<TableRow>().FirstOrDefault(n => n.InnerText.Contains(L_AMOUNT_TAG));
+				var mahnKostenRow = otherTable.ChildElements.OfType<TableRow>().FirstOrDefault(n => n.InnerText.Contains(MAHN_TAG));
+
+				if (String.IsNullOrWhiteSpace(data.Lieferkosten) && (lieferKostenRow != null))
+				{
+					lieferKostenRow.RemoveAllChildren();
+					lieferKostenRow.Remove();
+				}
+
+				if (String.IsNullOrWhiteSpace(data.Mahnkosten) && (mahnKostenRow != null))
+				{
+					mahnKostenRow.RemoveAllChildren();
+					mahnKostenRow.Remove();
+				}
+
 				#endregion
 
 				#region Replacements
 				foreach (var item in FindElements<Text>(body, n => !String.IsNullOrWhiteSpace(n.Text)))
 				{
+					#region Adress
+
 					if (item.Text.Contains(ADDRESS_TAG))
 					{
 						if (data.Adresse == null)
@@ -103,6 +140,8 @@
 							}
 						}
 					}
+
+					#endregion
 
 					if (item.Text.Contains(A_NR_TAG))
 						item.Text = item.Text.Replace(A_NR_TAG, String.IsNullOrWhiteSpace(data.Auftragsnummer) ? "" : data.Auftragsnummer);
@@ -146,22 +185,19 @@
 					if (item.Text.Contains(L_NR_WORD))
 						if (String.IsNullOrWhiteSpace(data.Lieferscheinnummer))
 							item.Text = item.Text.Replace(L_NR_WORD, "");
-					
+
 					if (item.Text.Contains(V_DATE_WORD))
 						if (String.IsNullOrWhiteSpace(data.Versanddatum))
 							item.Text = item.Text.Replace(V_DATE_WORD, "");
-					
+
+
 				}
 				#endregion
 
+				doc.CompressionOption = System.IO.Packaging.CompressionOption.Maximum;
 				doc.Close();
-#if DEBUG
-				File.WriteAllBytes(@"C:\users\Richment\Desktop\test.docx", ms.ToArray());
-#endif
-				if (asPdf)
-					return DocumentToPdf(ms.ToArray());
-				else
-					return ms.ToArray();
+
+				return ms.ToArray();
 			}
 		}
 
@@ -176,16 +212,27 @@
 					doc.SaveToStream(target, Spire.Doc.FileFormat.PDF);
 					result = target.ToArray();
 				}
-#if DEBUG
-				File.WriteAllBytes(@"C:\users\Richment\Desktop\test.pdf", result);
-#endif
 				return result;
 			}
 		}
 
 		#region Private methods
 
-		private static MemoryStream CreateTemplate()
+		private static MemoryStream CreateTemplate(bool defaultTemplate = false)
+		{
+			if (defaultTemplate)
+				return new MemoryStream(templateBytes);
+
+			using (var dw = Application.Current.CreateDataWorkspace())
+			{
+				var current = dw.ApplicationData.YoungestFirst().Execute().FirstOrDefault();
+				if (current != null)
+					return new MemoryStream(current.Template);
+			}
+			return CreateTemplate(true);
+		}
+
+		/*private static MemoryStream CreateTemplate()
 		{
 			var result = new MemoryStream();
 			using (Stream resourceStream = Assembly.GetExecutingAssembly().GetManifestResourceStream(TEMPLATE))
@@ -197,7 +244,7 @@
 			}
 			result.Seek(0L, SeekOrigin.Begin);
 			return result;
-		}
+		} */
 
 		private static IEnumerable<T> FindElements<T>(OpenXmlElement root, Predicate<T> predicate = null) where T : OpenXmlElement
 		{
@@ -234,7 +281,7 @@
 				return last.AppendChild(new Text(text));
 			return InsertTextRun(last.AppendChild(new Paragraph()), text);
 		}
-		
+
 		#endregion
 	};
 }

@@ -312,6 +312,15 @@
 			return ToDictionary().Serialize();
 		}
 
+		public static DocDescriptor FromByteArray(byte[] bytes)
+		{
+			Dictionary<string, string> tmp = new Dictionary<string, string>();
+			if (!tmp.Deserialize(bytes))
+				return null;
+
+			return new DocDescriptor(initial: tmp);
+		}
+
 		public static DocDescriptor CreateLieferschein(Rechnungen value)
 		{
 			DocDescriptor result = new DocDescriptor(value.Auftragsnummer, "Lieferschein");
@@ -349,21 +358,23 @@
 				result.Rechnungsdatum = value.Rechnungsdatum.Value.ToShortDateString();
 			if (value.Versanddatum.HasValue)
 				result.Versanddatum = value.Versanddatum.Value.ToShortDateString();
-			if (value.Lieferkosten.HasValue)
-				result.Lieferkosten = value.Lieferkosten.Value.ToString("C");
 			if (!String.IsNullOrWhiteSpace(value.Lieferscheinnummer))
 				result.Lieferscheinnummer = value.Lieferscheinnummer;
 
+			if (value.Lieferkosten.HasValue)
+				result.Lieferkosten = value.Lieferkosten.Value.ToString("C");
 			if (value.Rechnungsbetrag_Brutto.HasValue)
 				result.Brutto = value.Rechnungsbetrag_Brutto.Value.ToString("C");
 			if (value.Mehrwertsteuer.HasValue)
 				result.Mehrwertsteuer = value.Mehrwertsteuer.Value.ToString("C");
 			if (value.Netto_Gesamtbetrag.HasValue)
 				result.Netto = value.Netto_Gesamtbetrag.Value.ToString("C");
+			if (value.Mahnung.GetValueOrDefault(false))
+				result.Mahnkosten = value.Mahnkosten.ToString("C");
 
 			foreach (var art in value.ArtikellisteCollection)
 				result.Positionen.Add((Position)art);
-
+					
 			return result;
 		}
 	};

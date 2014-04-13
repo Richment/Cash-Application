@@ -86,6 +86,15 @@ namespace LightSwitchApplication.Implementation
             return query;
         }
     
+        public global::System.Linq.IQueryable<global::ApplicationData.Implementation.ReportingTemplates> YoungestFirst()
+        {
+            global::System.Linq.IQueryable<global::ApplicationData.Implementation.ReportingTemplates> query;
+            query = global::System.Linq.Queryable.OrderByDescending(
+                this.GetQuery<global::ApplicationData.Implementation.ReportingTemplates>("ReportingTemplatesSet"),
+                (r) => r.ReleaseDate);
+            return query;
+        }
+    
     #endregion
 
     #region Protected Methods

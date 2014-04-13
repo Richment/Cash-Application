@@ -1,12 +1,20 @@
 ﻿namespace LightSwitchApplication
 {
 	using System;
-	using System.Linq;
-	using System.Collections.Generic;
 	using System.Collections;
+	using System.Collections.Generic;
+	using System.Linq;
 
 	public class PositionCollection : IEnumerable
 	{
+		public Position this[int index]
+		{
+			get
+			{
+				return data[index];
+			}
+		}
+
 		private List<Position> data;
 
 		public PositionCollection()
@@ -17,7 +25,7 @@
 		{
 			data.AddRange(inital);
 		}
-		
+
 
 		public void Add(Position item)
 		{
@@ -79,5 +87,5 @@
 		{
 			return new PositionCollection(value.Split(new string[] { Position.DATASET_SEPERATOR }, StringSplitOptions.None).Select(n => Position.FromString(n)));
 		}
-	}
+	};
 }

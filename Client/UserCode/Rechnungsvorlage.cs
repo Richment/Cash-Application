@@ -120,17 +120,19 @@ namespace LightSwitchApplication
 				Straße = "Musterstraße",
 				Vorname = "Max"
 			};
-			tmp.Rechnungsnummer = "R00001";
-			tmp.Rechnungsdatum = DateTime.Today;
-			tmp.Auftragsnummer = "A000-0001";
+			tmp.GetRechnungsNummer();
+			tmp.Auftragsnummer = tmp.GetAuftragsNummer();
 			tmp.Bestelldatum = DateTime.Today;
+			tmp.Rechnungsdatum = DateTime.Today;
 			tmp.Lieferdatum = DateTime.Today;
 			tmp.Lieferscheinnummer = "L-0001";
+			tmp.Lieferkosten = 6M;
 			tmp.Referenznummer = "R-00001";
 			tmp.Versanddatum = DateTime.Today;
+			
 			tmp.ArtikellisteCollection.Add(new ArtikellisteItem()
 			{
-				Anzahl = 1,
+				Anzahl = 2,
 				Rabatt = 3,
 				ArtikelstammItem = new ArtikelstammItem() 
 				{ 
@@ -140,6 +142,19 @@ namespace LightSwitchApplication
 					VK_pro_PK = 10M 
 				}
 			});
+			tmp.ArtikellisteCollection.Add(new ArtikellisteItem()
+			{
+				Anzahl = 1,
+				Rabatt = 0,
+				ArtikelstammItem = new ArtikelstammItem()
+				{
+					Artikelnummer = "A00002",
+					Artikelbeschreibung = "Testartikel 2",
+					Vertriebsname = "Testartikel 2",
+					VK_pro_PK = 19.9M
+				}
+			});
+
 			DocDescriptor test = DocDescriptor.CreateRechnung(tmp);
 
 			byte[] documentBytes = null;

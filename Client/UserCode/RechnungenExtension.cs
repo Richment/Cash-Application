@@ -1,6 +1,6 @@
 ﻿namespace LightSwitchApplication
 {
-	using System;	  
+	using System;
 	using System.Linq;
 
 	public static class RechnungenExtension
@@ -10,7 +10,7 @@
 			var today = DateTime.Today;
 			var dateString = (today.Year - 2000).ToString().PadLeft(2, '0') + today.Month.ToString().PadLeft(2, '0') + today.Day.ToString().PadLeft(2, '0');
 			string result = dateString + "000";
-			
+
 			using (var dw = Application.Current.CreateDataWorkspace())
 			{
 				var query = dw.ApplicationData.RechnungenSet.OfType<Rechnungen>();
@@ -41,7 +41,7 @@
 				var query = dw.ApplicationData.RechnungenSet.OfType<Rechnungen>();
 				if (query.Count() > 0)
 				{
-					string max = query.Where(n=>!String.IsNullOrWhiteSpace(n.Rechnungsnummer)).Max(n => n.Rechnungsnummer);
+					string max = query.Where(n => !String.IsNullOrWhiteSpace(n.Rechnungsnummer)).Max(n => n.Rechnungsnummer);
 
 					if (max != null)
 					{
