@@ -49,6 +49,7 @@ namespace LightSwitchApplication
 				entity.Beschreibung = "Standardvorlage";
 				entity.Template = DocumentGenerator.DefaultTemplate;
 			}
+			DocumentGenerator.UpdateTemplate();
 		}
 	};
 }

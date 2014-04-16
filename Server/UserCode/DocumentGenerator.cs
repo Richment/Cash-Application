@@ -43,6 +43,7 @@
 		}
 		
 		private static readonly byte[] templateBytes;
+		private static byte[] currentBytes;
 
 		static DocumentGenerator()
 		{
@@ -228,18 +229,32 @@
 			return DocumentToPdf(ProcessDocument(data));
 		}
 
+		internal static void UpdateTemplate()
+		{
+			using (var ms = CreateTemplate())
+				currentBytes = ms.ToArray();
+		}
+
 		#region Private methods
 
 		private static MemoryStream CreateTemplate(bool defaultTemplate = false)
 		{
 			if (defaultTemplate)
 				return new MemoryStream(templateBytes);
+			
+			if (currentBytes != null)
+				return new MemoryStream(currentBytes);
 
 			using (var dw = Application.Current.CreateDataWorkspace())
 			{
 				var current = dw.ApplicationData.YoungestFirst().Execute().FirstOrDefault();
 				if (current != null)
+				{
+					if (currentBytes == null)
+						currentBytes = current.Template.ToArray();
+
 					return new MemoryStream(current.Template);
+				}
 			}
 			return CreateTemplate(true);
 		}
