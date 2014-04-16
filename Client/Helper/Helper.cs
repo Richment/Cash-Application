@@ -4,9 +4,7 @@
 	using System.Diagnostics;
 	using System.IO;
 	using System.Runtime.InteropServices.Automation;
-	using System.Windows.Controls;
 	using Microsoft.LightSwitch.Client;
-	using Microsoft.LightSwitch.Presentation;
 	using Microsoft.LightSwitch.Presentation.Extensions;
 
 	/// <summary>

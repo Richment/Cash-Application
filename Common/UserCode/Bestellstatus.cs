@@ -1,6 +1,5 @@
 ﻿namespace LightSwitchApplication
 {
-	using System;
 
 	public enum Bestellstatus : int
 	{

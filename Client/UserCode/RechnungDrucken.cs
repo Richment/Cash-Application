@@ -4,11 +4,10 @@ using System.IO;
 using System.Reflection;
 using System.Windows;
 using Microsoft.LightSwitch.Presentation.Extensions;
-using OfficeIntegration;
 
 namespace LightSwitchApplication
 {
-	public partial class RechnungDrucken
+	/*public partial class RechnungDrucken
 	{
 		private string currentFilename;
 
@@ -51,7 +50,7 @@ namespace LightSwitchApplication
 					object wdoc = Word.GetDocument(Word.GetWord(), doc.Filename);
 					Word.Export(wdoc, "MapTableNoHeading", 2, false, this.ArtikellisteCollection, artikelFields);	  */
 
-					if (!doc.Print())
+	/*				if (!doc.Print())
 						this.ShowError(new Exception("Dokument konnte nicht gedruckt werden."));
 				}
 				catch (Exception ex)
@@ -91,7 +90,7 @@ namespace LightSwitchApplication
 			
 				return;			 */
 
-			using (WordDocument doc = new WordDocument(currentFilename, ProcessDocument))
+	/*		using (WordDocument doc = new WordDocument(currentFilename, ProcessDocument))
 			{
 				try
 				{
@@ -214,9 +213,6 @@ namespace LightSwitchApplication
 	 //' don't generate column headings, and start at row 2 of the table
 	 Word.Export(this.Application.WordExportDocument, "MapTableNoHeading", 2, false, this.ArtikellisteCollection, mappings);
 
-
+				   */
 			
  }
-
- */
-

@@ -72,12 +72,6 @@
     <Reference Include="Microsoft.LightSwitch.Extensions.Server">
       <HintPath>..\_Pvt_Extensions\Microsoft.LightSwitch.Extensions\ServerGen\Reference\Microsoft.LightSwitch.Extensions.Server.dll</HintPath>
     </Reference>
-    <Reference Include="OfficeIntegration.Common">
-      <HintPath>..\_Pvt_Extensions\OfficeIntegration\ServerGen\Reference\OfficeIntegration.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="OfficeIntegration.Server">
-      <HintPath>..\_Pvt_Extensions\OfficeIntegration\Server\Reference\OfficeIntegration.Server.dll</HintPath>
-    </Reference>
     <Reference Include="PixataCustomControls.Common">
       <HintPath>..\_Pvt_Extensions\PixataCustomControls\Server\Reference\PixataCustomControls.Common.dll</HintPath>
     </Reference>

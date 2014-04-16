@@ -58,7 +58,6 @@
     <Reference Include="system" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.LightSwitch, Version=10.0.11.0, Culture=neutral, PublicKeyToken=8e9329cecb4700e9, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(LightSwitchPath)\LightSwitch\Client\Microsoft.LightSwitch.dll</HintPath>
