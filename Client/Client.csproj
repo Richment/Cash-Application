@@ -220,7 +220,6 @@
     <Compile Include="UserCode\FirmenDaten.cs" />
     <Compile Include="UserCode\BestellungListDetails.cs" />
     <Compile Include="UserCode\KundenÜbersicht.cs" />
-    <Compile Include="UserCode\RechnungDrucken.cs" />
     <Compile Include="UserCode\BestellungenÜbersicht.cs" />
     <Compile Include="UserCode\BestellungDetails.cs" />
     <Compile Include="UserCode\RechnungenExtension.cs" />

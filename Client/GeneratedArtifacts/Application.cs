@@ -172,21 +172,6 @@ namespace LightSwitchApplication
         }
         
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void RechnungDrucken_CanRun(ref bool result, int RechnungenId);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void RechnungDrucken_Run(ref bool handled, int RechnungenId);
-    
-        /// <summary>
-        /// Öffnet den Bildschirm ShowRechnungDrucken. Wenn der Bildschirm bereits geöffnet ist, wird er aktiviert und angezeigt.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public void ShowRechnungDrucken(int RechnungenId)
-        {
-            ((global::Microsoft.LightSwitch.Details.Client.IClientApplicationDetails)this.Details).InvokeMethod(this.Details.Methods.ShowRechnungDrucken, RechnungenId);
-        }
-        
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void Bezahlarten_CanRun(ref bool result);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void Bezahlarten_Run(ref bool handled);
@@ -383,8 +368,6 @@ namespace LightSwitchApplication
                         return global::LightSwitchApplication.KundenÜbersicht.CreateInstance();
                     case "KundenDetails":
                         return global::LightSwitchApplication.KundenDetails.CreateInstance((int)args[0]);
-                    case "RechnungDrucken":
-                        return global::LightSwitchApplication.RechnungDrucken.CreateInstance((int)args[0]);
                     case "Bezahlarten":
                         return global::LightSwitchApplication.Bezahlarten.CreateInstance();
                     case "AuftragsSammlung":
@@ -644,15 +627,6 @@ namespace LightSwitchApplication
                     {
                         return (global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>)
                                base.GetItem(global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties.ShowKundenDetails);
-                    }
-                }
-
-                public global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowRechnungDrucken
-                {
-                    get
-                    {
-                        return (global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>)
-                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties.ShowRechnungDrucken);
                     }
                 }
 
@@ -1197,32 +1171,6 @@ namespace LightSwitchApplication
                 }
  
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
-                    ShowRechnungDrucken = new global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
-                        "ShowRechnungDrucken",
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowRechnungDrucken_Stub,
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowRechnungDrucken_CanInvoke,
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowRechnungDrucken_InvokeMethod);
-                private static void _ShowRechnungDrucken_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
-                {
-                    c(d, ref d._ShowRechnungDruckenMethod, sf);
-                }
-                private static global::System.Exception _ShowRechnungDrucken_CanInvoke(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
-                {
-                    bool result = true;
-                    d.Application.RechnungDrucken_CanRun(ref result, (int)args[0]);
-                    return result ? null : ex;
-                }
-                private static void _ShowRechnungDrucken_InvokeMethod(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
-                {
-                    bool handled = false;
-                    d.Application.RechnungDrucken_Run(ref handled, (int)args[0]);
-                    if (!handled)
-                    {
-                        d.ShowScreen("LightSwitchApplication:RechnungDrucken", () => global::LightSwitchApplication.RechnungDrucken.CreateInstance((int)args[0]), args);
-                    }
-                }
- 
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
                     ShowBezahlarten = new global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
                         "ShowBezahlarten",
                         global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowBezahlarten_Stub,
@@ -1449,8 +1397,6 @@ namespace LightSwitchApplication
             private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowKundenÜbersichtMethod;
 
             private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowKundenDetailsMethod;
-
-            private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowRechnungDruckenMethod;
 
             private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowBezahlartenMethod;
 
