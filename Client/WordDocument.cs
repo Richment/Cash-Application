@@ -1,6 +1,6 @@
 ﻿namespace LightSwitchApplication
 {
-	using System;
+/*	using System;
 	using System.Diagnostics;
 	using System.IO;
 	using System.Runtime.InteropServices.Automation;
@@ -192,7 +192,7 @@
 		/// </summary>
 		/// <param name="saveOnExit">If <code>true</code>, the document will be saved before it closes.</param>
 		/// <returns><code>true</code> if the operation succeeds, otherwise <code>false</code>.</returns>
-		public bool Close(bool saveOnExit = false)
+/*		public bool Close(bool saveOnExit = false)
 		{
 			if (app == null)
 				throw new ObjectDisposedException("The document has been already disposed.");
@@ -263,5 +263,5 @@
 		}
 
 		#endregion
-	};
+	};			*/
 }
