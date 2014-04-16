@@ -14,32 +14,60 @@
 
 	internal static class SmtpSender
 	{
+		private class SmtpSettings
+		{
+			public string Host
+			{
+				get;
+				private set;
+			}
+			public string User
+			{
+				get;
+				private set;
+			}
+			public string Pass
+			{
+				get;
+				private set;
+			}
+			public string Sender
+			{
+				get;
+				private set;
+			}
+			public int Port
+			{
+				get;
+				private set;
+			}
+			public SmtpSettings(string host, string user, string pass, string sender, int port)
+			{
+				Host = host;
+				User = user;
+				Pass = pass;
+				Port = port;
+			}
+		};
+
+		private static SmtpSettings currentSettings;
+
 		internal static void SendEmail(OutgoingMail entity, byte[] attachment = null, string attachmentName = null)
 		{
-			string host, user, pass, sender;
-			int port;
-			using (var dw = Application.Current.CreateDataWorkspace())
+			var settings = GetSettings();
+			if (settings == null)
 			{
-				MailSettings settings = dw.ApplicationData.MailSettingsSet.FirstOrDefault();
-				if (settings == null)
-				{
-					entity.Result = "Keine gültigen SMTP-Daten.";
-					return;
-				}
-				host = settings.SmtpServer;
-				user = settings.Username;
-				pass = settings.Password;
-				sender = settings.SenderAddress;
-				port = settings.Port;
+				entity.Result = "Keine gültigen SMTP-Daten.";
+				return;
 			}
 
-			using (SmtpClient client = new SmtpClient(host, port))
+			using (SmtpClient client = new SmtpClient(settings.Host, settings.Port))
 			{
 				try
 				{
 					client.UseDefaultCredentials = false;
-					client.Credentials = new NetworkCredential(user, pass);
-					MailMessage message = new MailMessage(sender, entity.Recipient, entity.Subject, entity.Body);
+					client.Credentials = new NetworkCredential(settings.User, settings.Pass);
+					MailMessage message = new MailMessage(settings.Sender, entity.Recipient, entity.Subject, entity.Body);
 					message.IsBodyHtml = false;
 
 					if ((attachment != null) && !String.IsNullOrWhiteSpace(attachmentName))
@@ -54,6 +82,26 @@
 					entity.Result = ex.Message;
 				}
 			}
+		}
+		
+		internal static void UpdateSettings()
+		{
+			currentSettings = null;
+		}
+
+		private static SmtpSettings GetSettings()
+		{
+			if (currentSettings == null)
+			{
+				using (var dw = Application.Current.CreateDataWorkspace())
+				{
+					MailSettings settings = dw.ApplicationData.MailSettingsSet.FirstOrDefault();
+					if (settings == null)
+						return null;
+					currentSettings = new SmtpSettings(settings.SmtpServer, settings.Username, settings.Password, settings.SenderAddress, settings.Port);
+				}
+			}
+			return currentSettings;
 		}
 	};
 }

@@ -41,6 +41,7 @@ namespace LightSwitchApplication
 			}
 		}
 
+
 		// TEMPLATE
 		partial void ReportingTemplatesSet_Inserting(ReportingTemplates entity)
 		{
@@ -49,7 +50,21 @@ namespace LightSwitchApplication
 				entity.Beschreibung = "Standardvorlage";
 				entity.Template = DocumentGenerator.DefaultTemplate;
 			}
+		}
+		partial void ReportingTemplatesSet_Inserted(ReportingTemplates entity)
+		{
 			DocumentGenerator.UpdateTemplate();
+		}
+
+
+		// MAILSETTINGS
+		partial void MailSettingsSet_Inserted(MailSettings entity)
+		{
+			SmtpSender.UpdateSettings();
+		}
+		partial void MailSettingsSet_Updated(MailSettings entity)
+		{
+			SmtpSender.UpdateSettings();
 		}
 	};
 }
