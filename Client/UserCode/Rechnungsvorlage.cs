@@ -96,7 +96,7 @@ namespace LightSwitchApplication
 
 		partial void ViewCurrent_Execute()
 		{
-			string temp = Helper.GetFreeTempFilename(Path.GetExtension(CurrentReport.OriginalFilename));
+			string temp = Helper.GetFreeTempFilename(String.IsNullOrWhiteSpace(CurrentReport.OriginalFilename) ? "docx" : Path.GetExtension(CurrentReport.OriginalFilename));
 			File.WriteAllBytes(temp, CurrentReport.Template);
 			Helper.ShellExecute(temp);
 		}
